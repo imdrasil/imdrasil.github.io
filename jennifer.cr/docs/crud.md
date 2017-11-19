@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # CRUD
 
 #### Create
@@ -156,3 +156,4 @@ Jennifer::Adapter.adapter.truncate(Contact)
 ```
 
 This functionality could be useful to clear db between test cases.
+{% endraw %}

@@ -3,7 +3,6 @@ email: moranibaca@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://imdrasil.github.io"
 github_username:  imdrasil
-source: site/
 
 # Build settings
 markdown: kramdown
@@ -17,3 +16,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - scripts/
+  # DEV
+  - index.html
+
+destination: site

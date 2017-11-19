@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Relations
 
 There are 4 types of relations: `has_many`, `has_and_belongs_to_many`, `belongs_to` and `has_one`. All of them have same semantic but generate slightly different methods.
@@ -104,4 +104,4 @@ Also `mas_many`, `belongs_to` and `has_one` relations have `dependent` parameter
 
 #### Inverse of
 
-`has_many` and `has_one` relations also accepts `inverse_of` option which represents inverse relation name. Specifying this option will automatically load owner object during any relation loading (because of `ModelQuery#includes` or `ModelQuery#eager_load` or even plaint `SomeModel#relation_name` mathod call) 
+`has_many` and `has_one` relations also accepts `inverse_of` option which represents inverse relation name. Specifying this option will automatically load owner object during any relation loading (because of `ModelQuery#includes` or `ModelQuery#eager_load` or even plaint `SomeModel#relation_name` mathod call) {% endraw %}

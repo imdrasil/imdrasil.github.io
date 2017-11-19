@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Validation
 
 For validation purposes is used [accord](https://github.com/neovintage/accord) shard. So this allows to specify custom class validator:
@@ -90,3 +90,4 @@ Next macrosses accept `allow_blank` key (which is be default is `false`) which d
 Methods `#save!` and `#create!` will raise an exception if at validation fails. `#save` will return true\false representing object saving.
 
 > To manually check validity call `#validate!` before `#valid?`.
+{% endraw %}

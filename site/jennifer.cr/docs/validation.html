@@ -113,12 +113,12 @@
 
 <ul>
   <li><code class="highlighter-rouge">validates_with_method(*names)</code> - accepts method name/names</li>
-  <li><code class="highlighter-rouge">validates_inclusion(field, value)</code> - checks if <code class="highlighter-rouge">value</code> includes <code class="highlighter-rouge">@</code></li>
-  <li><code class="highlighter-rouge">validates_exclusion(field, value)</code> - checks if <code class="highlighter-rouge">value</code> excludes <code class="highlighter-rouge">@</code></li>
-  <li><code class="highlighter-rouge">validates_format(field, format)</code> - checks if `` matches <code class="highlighter-rouge">@</code></li>
-  <li><code class="highlighter-rouge">validates_length(field, **options)</code> - check <code class="highlighter-rouge">@</code> size; allowed options are: <code class="highlighter-rouge">:in</code>, <code class="highlighter-rouge">:is</code>, <code class="highlighter-rouge">:maximum</code>, <code class="highlighter-rouge">:minimum</code></li>
-  <li><code class="highlighter-rouge">validates_uniqueness(field)</code> - check if <code class="highlighter-rouge">@</code> is unique</li>
-  <li><code class="highlighter-rouge">validates_presence_of(field)</code> - check if <code class="highlighter-rouge">@</code> is not <code class="highlighter-rouge">nil</code></li>
+  <li><code class="highlighter-rouge">validates_inclusion(field, value)</code> - checks if <code class="highlighter-rouge">value</code> includes <code class="highlighter-rouge">@{{field}}</code></li>
+  <li><code class="highlighter-rouge">validates_exclusion(field, value)</code> - checks if <code class="highlighter-rouge">value</code> excludes <code class="highlighter-rouge">@{{field}}</code></li>
+  <li><code class="highlighter-rouge">validates_format(field, format)</code> - checks if <code class="highlighter-rouge">{{format}}</code> matches <code class="highlighter-rouge">@{{field}}</code></li>
+  <li><code class="highlighter-rouge">validates_length(field, **options)</code> - check <code class="highlighter-rouge">@{{field}}</code> size; allowed options are: <code class="highlighter-rouge">:in</code>, <code class="highlighter-rouge">:is</code>, <code class="highlighter-rouge">:maximum</code>, <code class="highlighter-rouge">:minimum</code></li>
+  <li><code class="highlighter-rouge">validates_uniqueness(field)</code> - check if <code class="highlighter-rouge">@{{field.id}}</code> is unique</li>
+  <li><code class="highlighter-rouge">validates_presence_of(field)</code> - check if <code class="highlighter-rouge">@{{field.id}}</code> is not <code class="highlighter-rouge">nil</code></li>
 </ul>
 
 <p>Next macrosses accept <code class="highlighter-rouge">allow_blank</code> key (which is be default is <code class="highlighter-rouge">false</code>) which describe <code class="highlighter-rouge">null</code> allowness during validation: <code class="highlighter-rouge">validates_inclucion</code>, <code class="highlighter-rouge">validates_exclusion</code>, <code class="highlighter-rouge">validates_format</code> and <code class="highlighter-rouge">validates_length</code>. This means that if <code class="highlighter-rouge">allow_blank: true</code> is passed, validation will pass if field is <code class="highlighter-rouge">nil</code> or validation condition is satified. In another words - validation will be sciped if field is <code class="highlighter-rouge">nil</code>.</p>

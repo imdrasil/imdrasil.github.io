@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Scopes
 
 Also you can specify prepared query statement.
@@ -68,3 +68,4 @@ ModelName.all.where { _some_field > 1 }
          .query_with_arguments("done", [1,2])
          .order(f1: :asc).no_argument_query
 ```
+{% endraw %}

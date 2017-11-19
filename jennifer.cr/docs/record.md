@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Record
 
 There are 2 types of query classes:
@@ -71,4 +71,4 @@ In major amount of cases you will use second one which will return `Array(T)`. B
 
 ```crystal
 Contact.all.select { [_name, _id] }.results # Jennifer::DBAny
-```
+```{% endraw %}

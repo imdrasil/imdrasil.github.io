@@ -107,11 +107,11 @@
 <p>All relation macroses provide next methods:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">#</code> - cache relation object (or array of them) and returns it;</li>
-  <li><code class="highlighter-rouge">#_reload</code> - reload relation and returns it;</li>
-  <li><code class="highlighter-rouge">#_query</code> - returns query which is used to get objects of this object relation entities form db.</li>
-  <li><code class="highlighter-rouge">#remove_</code> - removes given object from relation</li>
-  <li><code class="highlighter-rouge">#add_</code> - adds given object to relation or builds it from has and adds</li>
+  <li><code class="highlighter-rouge">#{{relation_name}}</code> - cache relation object (or array of them) and returns it;</li>
+  <li><code class="highlighter-rouge">#{{relation_name}}_reload</code> - reload relation and returns it;</li>
+  <li><code class="highlighter-rouge">#{{relation_name}}_query</code> - returns query which is used to get objects of this object relation entities form db.</li>
+  <li><code class="highlighter-rouge">#remove_{{relation_name}}</code> - removes given object from relation</li>
+  <li><code class="highlighter-rouge">#add_{{relation_name}}</code> - adds given object to relation or builds it from has and adds</li>
 </ul>
 
 <p>This allows dynamically adds objects to relations with automatically setting foreign id:</p>

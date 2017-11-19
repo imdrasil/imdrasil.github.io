@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Query DSL
 
 My favorite part. Jennifer allows you to build lazy evaluated queries with chaining syntax. But some of them could be only at the and of a chain (such as `#fisrt` or `#pluck`).
@@ -331,3 +331,4 @@ q.to_a
 ```
 
 But be carefull - all further chainable method calls will continue modify the object - only db call will be avoided.
+{% endraw %}

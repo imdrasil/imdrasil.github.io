@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Eager Loading
 
 As was said Jennifer provide lazy query evaluation  so it will be performed only after trying to access to element from collection (any array method - it implements Enumerable). Also you can extract first entity via `first`. If you are sure that at least one entity in db satisfies you query you can call `#first!`.
@@ -69,3 +69,4 @@ To load relations using same query joins needed tables (yep you should specify j
 ```crystal
 Contact.all.left_join(Address) { _contacts__id == _contact_id }.with(:addresses)
 ```
+{% endraw %}

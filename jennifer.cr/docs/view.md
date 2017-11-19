@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Views
 
 #### Materialized
@@ -59,4 +59,4 @@ To refresh content of materialized view use:
 
 ```crystal
 Jennifer::Adapter.adapter.refresh_materialized_view("materialized_view_name")
-```
+```{% endraw %}

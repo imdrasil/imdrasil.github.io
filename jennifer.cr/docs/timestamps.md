@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Timestamps
 
 `with_timestamps` macros adds callbacks for `created_at` and `updated_at` fields update. But now they still should be mentioned in mapping manually:
@@ -60,3 +60,4 @@ class MyModel < Jennifer::Model::Base
   )
 end
 ```
+{% endraw %}

@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Migration
 
 For command management Jennifer now uses [Sam](https://github.com/imdrasil/sam.cr). So in your `sam.cr` just add loading migrations and Jennifer hooks.
@@ -287,3 +287,4 @@ change_enum(:gender_enum, {:rename_values => ["unknown", "other"]})
 change_enum(:gender_enum, {:remove_values => ["other"]})
 ```
 For more details check source code and PostgreSQL docs.
+{% endraw %}

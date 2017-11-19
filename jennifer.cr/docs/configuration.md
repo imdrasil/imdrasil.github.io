@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Configuration
 
 Put
@@ -141,3 +141,4 @@ Jennifer::Config.configure do |conf|
   conf.logger.level = Logger::DEBUG
 end
 ```
+{% endraw %}

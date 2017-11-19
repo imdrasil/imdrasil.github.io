@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # STI
 
 Single table inheritance could be used in next way:
@@ -80,3 +80,4 @@ end
 Subclass extends superclass definition with new fields and use string fild `type` to indentify itself.
 
 > Now `Profile.all` will return objects of `Profile` class not taking into account `type` field.
+{% endraw %}

@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Pagination & Ordering
 
 #### Pagination
@@ -72,4 +72,4 @@ To avoid all existing ordering and assign new one:
 ```crystal
 c = Contact.all.order(name: :desc)
 c.reoder(id: :asc).to_a
-```
+```{% endraw %}

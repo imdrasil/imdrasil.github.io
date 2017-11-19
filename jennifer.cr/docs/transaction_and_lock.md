@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Transaction & Lock
 
 ### Transaction
@@ -124,3 +124,4 @@ end
 Database-specific information on row locking:
 - [MySQL](http://dev.mysql.com/doc/refman/5.7/en/innodb-locking-reads.html)
 - [PostgreSQL](http://www.postgresql.org/docs/current/interactive/sql-select.html#SQL-FOR-UPDATE-SHARE)
+{% endraw %}

@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Jennifer Documentation
 
 ## Content
@@ -84,3 +84,4 @@ layout: page
 * [Aggregation](./aggregation)
  
 * [Transaction and Lock](./transaction_and_lock)
+{% endraw %}

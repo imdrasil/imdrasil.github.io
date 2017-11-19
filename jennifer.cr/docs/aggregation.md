@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Aggregations
 
 There are 2 types of aggregation functions: ones which are orking without GROUP clause and returns single values (e.g. `max`, `min`, `count`) and ones, working with GROUP clause and returning array of values.
@@ -114,3 +114,4 @@ Contact.all.group(:gender).group_sum(:age, Int64) # postgres specific
 ```crystal
 Contact.all.group(:gender).group_count(:age)
 ```
+{% endraw %}

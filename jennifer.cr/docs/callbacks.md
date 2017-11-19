@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Callbacks
 
 There are next macroses for defining callbacks:
@@ -63,3 +63,4 @@ There are next macroses for defining callbacks:
 They accept method names.
 
 Raising `::Jennifer::Skip` exception inside of any calback will stop further callback invoking; such behavior in the any before callback stops current action from being processed. 
+{% endraw %}

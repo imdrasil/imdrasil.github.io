@@ -42,9 +42,10 @@ class Jennifer < Project
         ---
         YAML
         f << header
-        f << "\n"
+        f << "{% raw %}\n"
         content.gsub!(".md)", ")")
         f << content
+        f << "{% endraw %}"
       end
     end
   end

@@ -46,7 +46,7 @@ layout: page
     </nav>
   </div>
 </header>
-
+{% raw %}
 # Mapping
 
 Several model examples
@@ -214,4 +214,4 @@ class SomeModel < ApplicationRecord
     name: String
   )
 end
-```
+```{% endraw %}
