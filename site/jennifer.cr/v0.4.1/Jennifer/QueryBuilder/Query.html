@@ -1,0 +1,2756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/imdrasil/jennifer.cr">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../js/doc.js"></script>
+  <title>Jennifer::QueryBuilder::Query - github.com/imdrasil/jennifer.cr</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/jennifer.cr/Jennifer" data-name="jennifer">
+      <a href="../../Jennifer.html">Jennifer</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter" data-name="jennifer::adapter">
+      <a href="../../Jennifer/Adapter.html">Adapter</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Base" data-name="jennifer::adapter::base">
+      <a href="../../Jennifer/Adapter/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/BaseSqlGenerator" data-name="jennifer::adapter::basesqlgenerator">
+      <a href="../../Jennifer/Adapter/BaseSqlGenerator.html">BaseSqlGenerator</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/EnumType" data-name="jennifer::adapter::enumtype">
+      <a href="../../Jennifer/Adapter/EnumType.html">EnumType</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Postgres" data-name="jennifer::adapter::postgres">
+      <a href="../../Jennifer/Adapter/Postgres.html">Postgres</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Postgres/ExecResult" data-name="jennifer::adapter::postgres::execresult">
+      <a href="../../Jennifer/Adapter/Postgres/ExecResult.html">ExecResult</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/RequestMethods" data-name="jennifer::adapter::requestmethods">
+      <a href="../../Jennifer/Adapter/RequestMethods.html">RequestMethods</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/ResultParsers" data-name="jennifer::adapter::resultparsers">
+      <a href="../../Jennifer/Adapter/ResultParsers.html">ResultParsers</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/SqlGenerator" data-name="jennifer::adapter::sqlgenerator">
+      <a href="../../Jennifer/Adapter/SqlGenerator.html">SqlGenerator</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/SqlNotation" data-name="jennifer::adapter::sqlnotation">
+      <a href="../../Jennifer/Adapter/SqlNotation.html">SqlNotation</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Transactions" data-name="jennifer::adapter::transactions">
+      <a href="../../Jennifer/Adapter/Transactions.html">Transactions</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/AlreadyInitialized" data-name="jennifer::alreadyinitialized">
+      <a href="../../Jennifer/AlreadyInitialized.html">AlreadyInitialized</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/AnyArgument" data-name="jennifer::anyargument">
+      <a href="../../Jennifer/AnyArgument.html">AnyArgument</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/AnyResult" data-name="jennifer::anyresult">
+      <a href="../../Jennifer/AnyResult.html">AnyResult</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/BadQuery" data-name="jennifer::badquery">
+      <a href="../../Jennifer/BadQuery.html">BadQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/BaseException" data-name="jennifer::baseexception">
+      <a href="../../Jennifer/BaseException.html">BaseException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Config" data-name="jennifer::config">
+      <a href="../../Jennifer/Config.html">Config</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/DataTypeCasting" data-name="jennifer::datatypecasting">
+      <a href="../../Jennifer/DataTypeCasting.html">DataTypeCasting</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/DataTypeMismatch" data-name="jennifer::datatypemismatch">
+      <a href="../../Jennifer/DataTypeMismatch.html">DataTypeMismatch</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/DBAny" data-name="jennifer::dbany">
+      <a href="../../Jennifer/DBAny.html">DBAny</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/InvalidConfig" data-name="jennifer::invalidconfig">
+      <a href="../../Jennifer/InvalidConfig.html">InvalidConfig</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration" data-name="jennifer::migration">
+      <a href="../../Jennifer/Migration.html">Migration</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/Base" data-name="jennifer::migration::base">
+      <a href="../../Jennifer/Migration/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/Runner" data-name="jennifer::migration::runner">
+      <a href="../../Jennifer/Migration/Runner.html">Runner</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder" data-name="jennifer::migration::tablebuilder">
+      <a href="../../Jennifer/Migration/TableBuilder.html">TableBuilder</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base" data-name="jennifer::migration::tablebuilder::base">
+      <a href="../../Jennifer/Migration/TableBuilder/Base.html">Base</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base/AAllowedTypes" data-name="jennifer::migration::tablebuilder::base::aallowedtypes">
+      <a href="../../Jennifer/Migration/TableBuilder/Base/AAllowedTypes.html">AAllowedTypes</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base/AllowedTypes" data-name="jennifer::migration::tablebuilder::base::allowedtypes">
+      <a href="../../Jennifer/Migration/TableBuilder/Base/AllowedTypes.html">AllowedTypes</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base/DB_OPTIONS" data-name="jennifer::migration::tablebuilder::base::db_options">
+      <a href="../../Jennifer/Migration/TableBuilder/Base/DB_OPTIONS.html">DB_OPTIONS</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base/EAllowedTypes" data-name="jennifer::migration::tablebuilder::base::eallowedtypes">
+      <a href="../../Jennifer/Migration/TableBuilder/Base/EAllowedTypes.html">EAllowedTypes</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/ChangeEnum" data-name="jennifer::migration::tablebuilder::changeenum">
+      <a href="../../Jennifer/Migration/TableBuilder/ChangeEnum.html">ChangeEnum</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/ChangeTable" data-name="jennifer::migration::tablebuilder::changetable">
+      <a href="../../Jennifer/Migration/TableBuilder/ChangeTable.html">ChangeTable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateEnum" data-name="jennifer::migration::tablebuilder::createenum">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateEnum.html">CreateEnum</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateIndex" data-name="jennifer::migration::tablebuilder::createindex">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateIndex.html">CreateIndex</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateMaterializedView" data-name="jennifer::migration::tablebuilder::creatematerializedview">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateMaterializedView.html">CreateMaterializedView</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateTable" data-name="jennifer::migration::tablebuilder::createtable">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateTable.html">CreateTable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateView" data-name="jennifer::migration::tablebuilder::createview">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateView.html">CreateView</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropEnum" data-name="jennifer::migration::tablebuilder::dropenum">
+      <a href="../../Jennifer/Migration/TableBuilder/DropEnum.html">DropEnum</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropIndex" data-name="jennifer::migration::tablebuilder::dropindex">
+      <a href="../../Jennifer/Migration/TableBuilder/DropIndex.html">DropIndex</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropMaterializedView" data-name="jennifer::migration::tablebuilder::dropmaterializedview">
+      <a href="../../Jennifer/Migration/TableBuilder/DropMaterializedView.html">DropMaterializedView</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropTable" data-name="jennifer::migration::tablebuilder::droptable">
+      <a href="../../Jennifer/Migration/TableBuilder/DropTable.html">DropTable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropView" data-name="jennifer::migration::tablebuilder::dropview">
+      <a href="../../Jennifer/Migration/TableBuilder/DropView.html">DropView</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Raw" data-name="jennifer::migration::tablebuilder::raw">
+      <a href="../../Jennifer/Migration/TableBuilder/Raw.html">Raw</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/Version" data-name="jennifer::migration::version">
+      <a href="../../Jennifer/Migration/Version.html">Version</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model" data-name="jennifer::model">
+      <a href="../../Jennifer/Model.html">Model</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Base" data-name="jennifer::model::base">
+      <a href="../../Jennifer/Model/Base.html">Base</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Base/Supportable" data-name="jennifer::model::base::supportable">
+      <a href="../../Jennifer/Model/Base/Supportable.html">Supportable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Callback" data-name="jennifer::model::callback">
+      <a href="../../Jennifer/Model/Callback.html">Callback</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/IRelationContainer" data-name="jennifer::model::irelationcontainer">
+      <a href="../../Jennifer/Model/IRelationContainer.html">IRelationContainer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Mapping" data-name="jennifer::model::mapping">
+      <a href="../../Jennifer/Model/Mapping.html">Mapping</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/RelationContainer" data-name="jennifer::model::relationcontainer(t, q)">
+      <a href="../../Jennifer/Model/RelationContainer.html">RelationContainer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/RelationDefinition" data-name="jennifer::model::relationdefinition">
+      <a href="../../Jennifer/Model/RelationDefinition.html">RelationDefinition</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Scoping" data-name="jennifer::model::scoping">
+      <a href="../../Jennifer/Model/Scoping.html">Scoping</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/STIMapping" data-name="jennifer::model::stimapping">
+      <a href="../../Jennifer/Model/STIMapping.html">STIMapping</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Validation" data-name="jennifer::model::validation">
+      <a href="../../Jennifer/Model/Validation.html">Validation</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Query" data-name="jennifer::query">
+      <a href="../../Jennifer/Query.html">Query</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder" data-name="jennifer::querybuilder">
+      <a href="../../Jennifer/QueryBuilder.html">QueryBuilder</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Aggregations" data-name="jennifer::querybuilder::aggregations">
+      <a href="../../Jennifer/QueryBuilder/Aggregations.html">Aggregations</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/All" data-name="jennifer::querybuilder::all">
+      <a href="../../Jennifer/QueryBuilder/All.html">All</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/And" data-name="jennifer::querybuilder::and">
+      <a href="../../Jennifer/QueryBuilder/And.html">And</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Any" data-name="jennifer::querybuilder::any">
+      <a href="../../Jennifer/QueryBuilder/Any.html">Any</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Condition" data-name="jennifer::querybuilder::condition">
+      <a href="../../Jennifer/QueryBuilder/Condition.html">Condition</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Criteria" data-name="jennifer::querybuilder::criteria">
+      <a href="../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Criteria/Rightable" data-name="jennifer::querybuilder::criteria::rightable">
+      <a href="../../Jennifer/QueryBuilder/Criteria/Rightable.html">Rightable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Executables" data-name="jennifer::querybuilder::executables">
+      <a href="../../Jennifer/QueryBuilder/Executables.html">Executables</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/ExpressionBuilder" data-name="jennifer::querybuilder::expressionbuilder">
+      <a href="../../Jennifer/QueryBuilder/ExpressionBuilder.html">ExpressionBuilder</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Grouping" data-name="jennifer::querybuilder::grouping">
+      <a href="../../Jennifer/QueryBuilder/Grouping.html">Grouping</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/IModelQuery" data-name="jennifer::querybuilder::imodelquery">
+      <a href="../../Jennifer/QueryBuilder/IModelQuery.html">IModelQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Join" data-name="jennifer::querybuilder::join">
+      <a href="../../Jennifer/QueryBuilder/Join.html">Join</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Joining" data-name="jennifer::querybuilder::joining">
+      <a href="../../Jennifer/QueryBuilder/Joining.html">Joining</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/JSONSelector" data-name="jennifer::querybuilder::jsonselector">
+      <a href="../../Jennifer/QueryBuilder/JSONSelector.html">JSONSelector</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/LateralJoin" data-name="jennifer::querybuilder::lateraljoin">
+      <a href="../../Jennifer/QueryBuilder/LateralJoin.html">LateralJoin</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/LogicOperator" data-name="jennifer::querybuilder::logicoperator">
+      <a href="../../Jennifer/QueryBuilder/LogicOperator.html">LogicOperator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/LogicOperator/Operandable" data-name="jennifer::querybuilder::logicoperator::operandable">
+      <a href="../../Jennifer/QueryBuilder/LogicOperator/Operandable.html">Operandable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/LogicOperator/Operators" data-name="jennifer::querybuilder::logicoperator::operators">
+      <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html">Operators</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/ModelQuery" data-name="jennifer::querybuilder::modelquery(t)">
+      <a href="../../Jennifer/QueryBuilder/ModelQuery.html">ModelQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Or" data-name="jennifer::querybuilder::or">
+      <a href="../../Jennifer/QueryBuilder/Or.html">Or</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Ordering" data-name="jennifer::querybuilder::ordering">
+      <a href="../../Jennifer/QueryBuilder/Ordering.html">Ordering</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Query" data-name="jennifer::querybuilder::query">
+      <a href="../../Jennifer/QueryBuilder/Query.html">Query</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/QueryObject" data-name="jennifer::querybuilder::queryobject">
+      <a href="../../Jennifer/QueryBuilder/QueryObject.html">QueryObject</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/RawSql" data-name="jennifer::querybuilder::rawsql">
+      <a href="../../Jennifer/QueryBuilder/RawSql.html">RawSql</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/SQLNode" data-name="jennifer::querybuilder::sqlnode">
+      <a href="../../Jennifer/QueryBuilder/SQLNode.html">SQLNode</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Star" data-name="jennifer::querybuilder::star">
+      <a href="../../Jennifer/QueryBuilder/Star.html">Star</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Xor" data-name="jennifer::querybuilder::xor">
+      <a href="../../Jennifer/QueryBuilder/Xor.html">Xor</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Record" data-name="jennifer::record">
+      <a href="../../Jennifer/Record.html">Record</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/RecordExists" data-name="jennifer::recordexists">
+      <a href="../../Jennifer/RecordExists.html">RecordExists</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/RecordInvalid" data-name="jennifer::recordinvalid">
+      <a href="../../Jennifer/RecordInvalid.html">RecordInvalid</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/RecordNotFound" data-name="jennifer::recordnotfound">
+      <a href="../../Jennifer/RecordNotFound.html">RecordNotFound</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation" data-name="jennifer::relation">
+      <a href="../../Jennifer/Relation.html">Relation</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/Base" data-name="jennifer::relation::base(t, q)">
+      <a href="../../Jennifer/Relation/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/BelongsTo" data-name="jennifer::relation::belongsto(t, q)">
+      <a href="../../Jennifer/Relation/BelongsTo.html">BelongsTo</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/HasMany" data-name="jennifer::relation::hasmany(t, q)">
+      <a href="../../Jennifer/Relation/HasMany.html">HasMany</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/HasOne" data-name="jennifer::relation::hasone(t, q)">
+      <a href="../../Jennifer/Relation/HasOne.html">HasOne</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/IRelation" data-name="jennifer::relation::irelation">
+      <a href="../../Jennifer/Relation/IRelation.html">IRelation</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/ManyToMany" data-name="jennifer::relation::manytomany(t, q)">
+      <a href="../../Jennifer/Relation/ManyToMany.html">ManyToMany</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Skip" data-name="jennifer::skip">
+      <a href="../../Jennifer/Skip.html">Skip</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/StubRelation" data-name="jennifer::stubrelation">
+      <a href="../../Jennifer/StubRelation.html">StubRelation</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/UnknownRelation" data-name="jennifer::unknownrelation">
+      <a href="../../Jennifer/UnknownRelation.html">UnknownRelation</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/View" data-name="jennifer::view">
+      <a href="../../Jennifer/View.html">View</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/View/Base" data-name="jennifer::view::base">
+      <a href="../../Jennifer/View/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/View/ExperimentalMapping" data-name="jennifer::view::experimentalmapping">
+      <a href="../../Jennifer/View/ExperimentalMapping.html">ExperimentalMapping</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/PG" data-name="pg">
+      <a href="../../PG.html">PG</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/PG/Numeric" data-name="pg::numeric">
+      <a href="../../PG/Numeric.html">Numeric</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/PG/ResultSet" data-name="pg::resultset">
+      <a href="../../PG/ResultSet.html">ResultSet</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Time" data-name="time">
+      <a href="../../Time.html">Time</a>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Jennifer::QueryBuilder::Query
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Jennifer/QueryBuilder/Query.html">Jennifer::QueryBuilder::Query</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../Jennifer/QueryBuilder/Aggregations.html">Jennifer::QueryBuilder::Aggregations</a></li>
+  
+    <li class="other-type"><a href="../../Jennifer/QueryBuilder/Executables.html">Jennifer::QueryBuilder::Executables</a></li>
+  
+    <li class="other-type"><a href="../../Jennifer/QueryBuilder/Joining.html">Jennifer::QueryBuilder::Joining</a></li>
+  
+    <li class="other-type"><a href="../../Jennifer/QueryBuilder/Ordering.html">Jennifer::QueryBuilder::Ordering</a></li>
+  
+  </ul>
+
+
+
+  <h2>Extended Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type">Ifrit</li>
+  
+  </ul>
+
+
+
+  <h2>Direct Known Subclasses</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../Jennifer/QueryBuilder/IModelQuery.html">Jennifer::QueryBuilder::IModelQuery</a></li>
+  
+  </ul>
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L9" target="_blank">jennifer/query_builder/query.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28table%29-class-method" class="signature"><strong>.new</strong>(table)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new-class-method" class="signature"><strong>.new</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%5B%5D%28%2Aopts%29-class-method" class="signature"><strong>.[]</strong>(*opts)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#build%28%2Aopts%29-class-method" class="signature"><strong>.build</strong>(*opts)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#_distinct%3ABool-instance-method" class="signature"><strong>#_distinct</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_distinct%21-instance-method" class="signature"><strong>#_distinct!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_from%3AJennifer%3A%3AQueryBuilder%3A%3AQuery%7CString%7CNil-instance-method" class="signature"><strong>#_from</strong> : Jennifer::QueryBuilder::Query | String | Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_from%21-instance-method" class="signature"><strong>#_from!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_groups%3AArray%28Jennifer%3A%3AQueryBuilder%3A%3ACriteria%29-instance-method" class="signature"><strong>#_groups</strong> : Array(Jennifer::QueryBuilder::Criteria)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_groups%21-instance-method" class="signature"><strong>#_groups!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_having%3AJennifer%3A%3AQueryBuilder%3A%3ACondition%7CJennifer%3A%3AQueryBuilder%3A%3ALogicOperator%7CNil-instance-method" class="signature"><strong>#_having</strong> : Jennifer::QueryBuilder::Condition | Jennifer::QueryBuilder::LogicOperator | Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_having%21-instance-method" class="signature"><strong>#_having!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_joins%3AArray%28Jennifer%3A%3AQueryBuilder%3A%3AJoin%29%3F-instance-method" class="signature"><strong>#_joins</strong> : Array(Jennifer::QueryBuilder::Join)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_joins%21-instance-method" class="signature"><strong>#_joins!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_limit%3AInt32%3F-instance-method" class="signature"><strong>#_limit</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_limit%21-instance-method" class="signature"><strong>#_limit!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_lock%3ABool%7CString%7CNil-instance-method" class="signature"><strong>#_lock</strong> : Bool | String | Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_lock%21-instance-method" class="signature"><strong>#_lock!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_offset%3AInt32%3F-instance-method" class="signature"><strong>#_offset</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_offset%21-instance-method" class="signature"><strong>#_offset!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_order%3AHash%28Jennifer%3A%3AQueryBuilder%3A%3ACriteria%2CString%29-instance-method" class="signature"><strong>#_order</strong> : Hash(Jennifer::QueryBuilder::Criteria, String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_order%21-instance-method" class="signature"><strong>#_order!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_raw_select%3AString%3F-instance-method" class="signature"><strong>#_raw_select</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_raw_select%21-instance-method" class="signature"><strong>#_raw_select!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_relations%3AArray%28String%29-instance-method" class="signature"><strong>#_relations</strong> : Array(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_relations%21-instance-method" class="signature"><strong>#_relations!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_select_fields%3AArray%28Criteria%29-instance-method" class="signature"><strong>#_select_fields</strong> : Array(Criteria)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_table%3AString-instance-method" class="signature"><strong>#_table</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_table%21-instance-method" class="signature"><strong>#_table!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_table_aliases%3AHash%28String%2CString%29-instance-method" class="signature"><strong>#_table_aliases</strong> : Hash(String, String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_table_aliases%21-instance-method" class="signature"><strong>#_table_aliases!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_unions%3AArray%28Jennifer%3A%3AQueryBuilder%3A%3AQuery%29%3F-instance-method" class="signature"><strong>#_unions</strong> : Array(Jennifer::QueryBuilder::Query)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_unions%21-instance-method" class="signature"><strong>#_unions!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_sql-instance-method" class="signature"><strong>#as_sql</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clone-instance-method" class="signature"><strong>#clone</strong></a>
+        
+          <div class="summary"><p>Returns a copy of <code>self</code> with all instance variables cloned.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#distinct-instance-method" class="signature"><strong>#distinct</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#empty%3F-instance-method" class="signature"><strong>#empty?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#exec%28%26block%29-instance-method" class="signature"><strong>#exec</strong>(&block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#expression_builder%3AJennifer%3A%3AQueryBuilder%3A%3AExpressionBuilder-instance-method" class="signature"><strong>#expression_builder</strong> : Jennifer::QueryBuilder::ExpressionBuilder</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#from%28_from%3AString%7CQuery%29-instance-method" class="signature"><strong>#from</strong>(_from : String | Query)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group%28column%3ACriteria%29-instance-method" class="signature"><strong>#group</strong>(column : Criteria)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group%28column%3ASymbol%29-instance-method" class="signature"><strong>#group</strong>(column : Symbol)</a>
+        
+          <div class="summary"><p>Groups by given column realizes it as current table's field</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group%28column%3AString%29-instance-method" class="signature"><strong>#group</strong>(column : String)</a>
+        
+          <div class="summary"><p>Groups by given column realizes it as is</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group%28%2Acolumns%3AString%29-instance-method" class="signature"><strong>#group</strong>(*columns : String)</a>
+        
+          <div class="summary"><p>Groups by given columns realizes them as are</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group%28%2Acolumns%3ASymbol%29-instance-method" class="signature"><strong>#group</strong>(*columns : Symbol)</a>
+        
+          <div class="summary"><p>Groups by given columns realizes them as current table's ones</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group%28%26block%29-instance-method" class="signature"><strong>#group</strong>(&block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#having%28%26block%29-instance-method" class="signature"><strong>#having</strong>(&block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#limit%28count%3AInt32%29-instance-method" class="signature"><strong>#limit</strong>(count : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#lock%28type%3AString%7CBool%3Dtrue%29-instance-method" class="signature"><strong>#lock</strong>(type : String | Bool = <span class="n">true</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#none-instance-method" class="signature"><strong>#none</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#offset%28count%3AInt32%29-instance-method" class="signature"><strong>#offset</strong>(count : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select%28%2Afields%3ASymbol%29-instance-method" class="signature"><strong>#select</strong>(*fields : Symbol)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select%28fields%3AArray%28Criteria%29%29-instance-method" class="signature"><strong>#select</strong>(fields : Array(Criteria))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select%28field_name%3ASymbol%29-instance-method" class="signature"><strong>#select</strong>(field_name : Symbol)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select%28field%3ACriteria%29-instance-method" class="signature"><strong>#select</strong>(field : Criteria)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select%28%26block%29-instance-method" class="signature"><strong>#select</strong>(&block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select%28raw_sql%3AString%29-instance-method" class="signature"><strong>#select</strong>(raw_sql : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select_args-instance-method" class="signature"><strong>#select_args</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select_args_count-instance-method" class="signature"><strong>#select_args_count</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_tree%28other%3ALogicOperator%7CCondition%29-instance-method" class="signature"><strong>#set_tree</strong>(other : LogicOperator | Condition)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_tree%28other%3AQuery%29-instance-method" class="signature"><strong>#set_tree</strong>(other : Query)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_tree%28other%3ACriteria%29-instance-method" class="signature"><strong>#set_tree</strong>(other : Criteria)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_tree%28other%3ANil%29-instance-method" class="signature"><strong>#set_tree</strong>(other : Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sql_args-instance-method" class="signature"><strong>#sql_args</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sql_args_count-instance-method" class="signature"><strong>#sql_args_count</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s-instance-method" class="signature"><strong>#to_s</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_sql-instance-method" class="signature"><strong>#to_sql</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tree%3ACondition%7CLogicOperator%7CNil-instance-method" class="signature"><strong>#tree</strong> : Condition | LogicOperator | Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tree%3D%28tree%3ACondition%7CLogicOperator%7CNil%29-instance-method" class="signature"><strong>#tree=</strong>(tree : Condition | LogicOperator | Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#union%28query%29-instance-method" class="signature"><strong>#union</strong>(query)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#where%28%26block%29-instance-method" class="signature"><strong>#where</strong>(&block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#with_relation%21-instance-method" class="signature"><strong>#with_relation!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#with_relation%3F%3ABool-instance-method" class="signature"><strong>#with_relation?</strong> : Bool</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Macro Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#str_hash%28hash%2Ctypes%29-macro" class="signature"><strong>str_hash</strong>(hash, types)</a>
+        
+          <div class="summary"><p>accepts hash literal</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#str_hash_cast%28hash%2Ctypes%29-macro" class="signature"><strong>str_hash_cast</strong>(hash, types)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stringify_hash%28hash%2Ctypes%29-macro" class="signature"><strong>stringify_hash</strong>(hash, types)</a>
+        
+          <div class="summary"><p>accepts any hash</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sym_hash%28hash%2Ctypes%29-macro" class="signature"><strong>sym_hash</strong>(hash, types)</a>
+        
+          <div class="summary"><p>accepts hash literal</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sym_hash_cast%28hash%2Ctypes%29-macro" class="signature"><strong>sym_hash_cast</strong>(hash, types)</a>
+        
+          <div class="summary"><p>accepts any hash or named tuple example: Ifrit.as_sym_hash(hash, String | Int32)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#typed_array%28arr%2Cklass%29-macro" class="signature"><strong>typed_array</strong>(arr, klass)</a>
+        
+          <div class="summary"><p>accepts arrayliteral</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#typed_array_cast%28arr%2Cklass%29-macro" class="signature"><strong>typed_array_cast</strong>(arr, klass)</a>
+        
+          <div class="summary"><p>accepts any array</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#typed_hash%28hash%2Ckey%2Ctypes%29-macro" class="signature"><strong>typed_hash</strong>(hash, key, types)</a>
+        
+          <div class="summary"><p>accepts only hash literals example: Ifrit.typed_hash({"a" => 1, "b" => "b"}, String, Int32 | String)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#typed_hash_cast%28hash%2Ckey%2Ctypes%29-macro" class="signature"><strong>typed_hash_cast</strong>(hash, key, types)</a>
+        
+          <div class="summary"><p>accepts any hash</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/Executables.html">Jennifer::QueryBuilder::Executables</a></code></h3>
+  
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#count%3AInt32-instance-method" class="tooltip">
+      <span>count : Int32</span>
+    count</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#db_results-instance-method" class="tooltip">
+      <span>db_results</span>
+    db_results</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#decrement-instance-method" class="tooltip">
+      <span>decrement<br/>decrement(fields : Hash)</span>
+    decrement</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#delete-instance-method" class="tooltip">
+      <span>delete</span>
+    delete</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#each%28%26block%29-instance-method" class="tooltip">
+      <span>each(&block)</span>
+    each</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#each_result_set%28%26block%29-instance-method" class="tooltip">
+      <span>each_result_set(&block)</span>
+    each_result_set</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#exists%3F-instance-method" class="tooltip">
+      <span>exists?</span>
+    exists?</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#find_in_batches%28start%3Dnil%2Cbatch_size%3AInt32%3D1000%2Cprimary_key%3AString%3F%3Dnil%2C%26block%29-instance-method" class="tooltip">
+      <span>find_in_batches(start = <span class="n">nil</span>, batch_size : Int32 = <span class="n">1000</span>, primary_key : String? = <span class="n">nil</span>, &block)<br/>find_in_batches(start = <span class="n">nil</span>, batch_size : Int32 = <span class="n">1000</span>, primary_key : Criteria? = <span class="n">nil</span>, &block)</span>
+    find_in_batches</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#find_records_by_sql%28query%3AString%2Cargs%3AArray%28DBAny%29%3D%5B%5DofDBAny%29-instance-method" class="tooltip">
+      <span>find_records_by_sql(query : String, args : Array(DBAny) = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>)</span>
+    find_records_by_sql</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#first-instance-method" class="tooltip">
+      <span>first</span>
+    first</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#first%21-instance-method" class="tooltip">
+      <span>first!</span>
+    first!</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#ids-instance-method" class="tooltip">
+      <span>ids</span>
+    ids</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#increment-instance-method" class="tooltip">
+      <span>increment<br/>increment(fields : Hash)</span>
+    increment</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#last-instance-method" class="tooltip">
+      <span>last</span>
+    last</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#last%21-instance-method" class="tooltip">
+      <span>last!</span>
+    last!</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#modify%28options%3AHash%29-instance-method" class="tooltip">
+      <span>modify(options : Hash)</span>
+    modify</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#pluck%28%2Afields%3AString%7CSymbol%29-instance-method" class="tooltip">
+      <span>pluck(*fields : String | Symbol)<br/>pluck(field : String | Symbol)<br/>pluck(fields : Array)</span>
+    pluck</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#results-instance-method" class="tooltip">
+      <span>results</span>
+    results</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#to_a-instance-method" class="tooltip">
+      <span>to_a</span>
+    to_a</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#update-instance-method" class="tooltip">
+      <span>update<br/>update(options : Hash)</span>
+    update</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/Joining.html">Jennifer::QueryBuilder::Joining</a></code></h3>
+  
+  
+    <a href="../../Jennifer/QueryBuilder/Joining.html#join%28source%3AClass%2Caliass%3AString%3F%3Dnil%2Ctype%3D%3Ainner%2Crelation%3AString%3F%3Dnil%2C%26block%29-instance-method" class="tooltip">
+      <span>join(source : Class, aliass : String? = <span class="n">nil</span>, type = <span class="n">:inner</span>, relation : String? = <span class="n">nil</span>, &block)<br/>join(source : String, aliass : String? = <span class="n">nil</span>, type = <span class="n">:inner</span>, relation : String? = <span class="n">nil</span>, &block)<br/>join(source : Query, aliass : String, type = <span class="n">:inner</span>, &block)</span>
+    join</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Joining.html#lateral_join%28source%3AQuery%2Caliass%3AString%3F%3Dnil%2Ctype%3D%3Ainner%2Crelation%3AString%3F%3Dnil%2C%26block%29-instance-method" class="tooltip">
+      <span>lateral_join(source : Query, aliass : String? = <span class="n">nil</span>, type = <span class="n">:inner</span>, relation : String? = <span class="n">nil</span>, &block)</span>
+    lateral_join</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Joining.html#left_join%28source%3AClass%2Caliass%3AString%3F%3Dnil%2C%26block%29-instance-method" class="tooltip">
+      <span>left_join(source : Class, aliass : String? = <span class="n">nil</span>, &block)<br/>left_join(source : String, aliass : String? = <span class="n">nil</span>, &block)</span>
+    left_join</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Joining.html#right_join%28source%3AClass%2Caliass%3AString%3F%3Dnil%2C%26block%29-instance-method" class="tooltip">
+      <span>right_join(source : Class, aliass : String? = <span class="n">nil</span>, &block)<br/>right_join(source : String, &block)</span>
+    right_join</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/Ordering.html">Jennifer::QueryBuilder::Ordering</a></code></h3>
+  
+  
+    <a href="../../Jennifer/QueryBuilder/Ordering.html#order%28opts%3AHash%28String%2CString%7CSymbol%29%29-instance-method" class="tooltip">
+      <span>order(opts : Hash(String, String | Symbol))<br/>order(opts : Hash(Symbol, String | Symbol))<br/>order(opts : Hash(Criteria, String | Symbol))<br/>order(opts : Hash(String | Symbol, String | Symbol))<br/>order<br/>order(&block)</span>
+    order</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Ordering.html#reorder%28opts%3AHash%28String%2CString%7CSymbol%29%29-instance-method" class="tooltip">
+      <span>reorder(opts : Hash(String, String | Symbol))<br/>reorder(opts : Hash(Symbol, String | Symbol))<br/>reorder(opts : Hash(Criteria, String | Symbol))<br/>reorder(opts : Hash(String | Symbol, String | Symbol))<br/>reorder<br/>reorder(&block)</span>
+    reorder</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/Aggregations.html">Jennifer::QueryBuilder::Aggregations</a></code></h3>
+  
+  
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#avg%28field%2Cklass%3AT.class%29%3ATforallT-instance-method" class="tooltip">
+      <span>avg(field, klass : T.class) : T forall T</span>
+    avg</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_avg%28field%2Cklass%3AT.class%29%3AArray%28T%29forallT-instance-method" class="tooltip">
+      <span>group_avg(field, klass : T.class) : Array(T) forall T</span>
+    group_avg</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_count%28field%29-instance-method" class="tooltip">
+      <span>group_count(field)</span>
+    group_count</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_max%28field%2Cklass%3AT.class%29%3AArray%28T%29forallT-instance-method" class="tooltip">
+      <span>group_max(field, klass : T.class) : Array(T) forall T</span>
+    group_max</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_min%28field%2Cklass%3AT.class%29%3AArray%28T%29forallT-instance-method" class="tooltip">
+      <span>group_min(field, klass : T.class) : Array(T) forall T</span>
+    group_min</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_sum%28field%2Cklass%3AT.class%29%3AArray%28T%29forallT-instance-method" class="tooltip">
+      <span>group_sum(field, klass : T.class) : Array(T) forall T</span>
+    group_sum</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#max%28field%2Cklass%3AT.class%29%3ATforallT-instance-method" class="tooltip">
+      <span>max(field, klass : T.class) : T forall T</span>
+    max</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#min%28field%2Cklass%3AT.class%29%3ATforallT-instance-method" class="tooltip">
+      <span>min(field, klass : T.class) : T forall T</span>
+    min</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#sum%28field%2Cklass%3AT.class%29%3ATforallT-instance-method" class="tooltip">
+      <span>sum(field, klass : T.class) : T forall T</span>
+    sum</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new&#40;table&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(table)
+
+        <a class="method-permalink" href="#new%28table%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L52" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>
+
+        <a class="method-permalink" href="#new-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L41" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="&#91;&#93;&#40;*opts&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>[]</strong>(*opts)
+
+        <a class="method-permalink" href="#%5B%5D%28%2Aopts%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L81" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="build&#40;*opts&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>build</strong>(*opts)
+
+        <a class="method-permalink" href="#build%28%2Aopts%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L75" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="_distinct:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>_distinct</strong> : Bool
+
+        <a class="method-permalink" href="#_distinct%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_distinct&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_distinct!</strong>
+
+        <a class="method-permalink" href="#_distinct%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_from:Jennifer::QueryBuilder::Query|String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>_from</strong> : <a href="../../Jennifer/QueryBuilder/Query.html">Jennifer::QueryBuilder::Query</a> | String | Nil
+
+        <a class="method-permalink" href="#_from%3AJennifer%3A%3AQueryBuilder%3A%3AQuery%7CString%7CNil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_from&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_from!</strong>
+
+        <a class="method-permalink" href="#_from%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_groups:Array&#40;Jennifer::QueryBuilder::Criteria&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>_groups</strong> : Array(<a href="../../Jennifer/QueryBuilder/Criteria.html">Jennifer::QueryBuilder::Criteria</a>)
+
+        <a class="method-permalink" href="#_groups%3AArray%28Jennifer%3A%3AQueryBuilder%3A%3ACriteria%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_groups&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_groups!</strong>
+
+        <a class="method-permalink" href="#_groups%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_having:Jennifer::QueryBuilder::Condition|Jennifer::QueryBuilder::LogicOperator|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>_having</strong> : <a href="../../Jennifer/QueryBuilder/Condition.html">Jennifer::QueryBuilder::Condition</a> | <a href="../../Jennifer/QueryBuilder/LogicOperator.html">Jennifer::QueryBuilder::LogicOperator</a> | Nil
+
+        <a class="method-permalink" href="#_having%3AJennifer%3A%3AQueryBuilder%3A%3ACondition%7CJennifer%3A%3AQueryBuilder%3A%3ALogicOperator%7CNil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_having&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_having!</strong>
+
+        <a class="method-permalink" href="#_having%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_joins:Array&#40;Jennifer::QueryBuilder::Join&#41;?-instance-method">
+      <div class="signature">
+        
+        def <strong>_joins</strong> : Array(<a href="../../Jennifer/QueryBuilder/Join.html">Jennifer::QueryBuilder::Join</a>)?
+
+        <a class="method-permalink" href="#_joins%3AArray%28Jennifer%3A%3AQueryBuilder%3A%3AJoin%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_joins&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_joins!</strong>
+
+        <a class="method-permalink" href="#_joins%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_limit:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>_limit</strong> : Int32?
+
+        <a class="method-permalink" href="#_limit%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_limit&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_limit!</strong>
+
+        <a class="method-permalink" href="#_limit%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_lock:Bool|String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>_lock</strong> : Bool | String | Nil
+
+        <a class="method-permalink" href="#_lock%3ABool%7CString%7CNil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_lock&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_lock!</strong>
+
+        <a class="method-permalink" href="#_lock%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_offset:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>_offset</strong> : Int32?
+
+        <a class="method-permalink" href="#_offset%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_offset&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_offset!</strong>
+
+        <a class="method-permalink" href="#_offset%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_order:Hash&#40;Jennifer::QueryBuilder::Criteria,String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>_order</strong> : Hash(<a href="../../Jennifer/QueryBuilder/Criteria.html">Jennifer::QueryBuilder::Criteria</a>, String)
+
+        <a class="method-permalink" href="#_order%3AHash%28Jennifer%3A%3AQueryBuilder%3A%3ACriteria%2CString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_order&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_order!</strong>
+
+        <a class="method-permalink" href="#_order%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_raw_select:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>_raw_select</strong> : String?
+
+        <a class="method-permalink" href="#_raw_select%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_raw_select&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_raw_select!</strong>
+
+        <a class="method-permalink" href="#_raw_select%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_relations:Array&#40;String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>_relations</strong> : Array(String)
+
+        <a class="method-permalink" href="#_relations%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_relations&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_relations!</strong>
+
+        <a class="method-permalink" href="#_relations%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_select_fields:Array&#40;Criteria&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>_select_fields</strong> : Array(<a href="../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>)
+
+        <a class="method-permalink" href="#_select_fields%3AArray%28Criteria%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L60" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_table:String-instance-method">
+      <div class="signature">
+        
+        def <strong>_table</strong> : String
+
+        <a class="method-permalink" href="#_table%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_table&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_table!</strong>
+
+        <a class="method-permalink" href="#_table%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_table_aliases:Hash&#40;String,String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>_table_aliases</strong> : Hash(String, String)
+
+        <a class="method-permalink" href="#_table_aliases%3AHash%28String%2CString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_table_aliases&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_table_aliases!</strong>
+
+        <a class="method-permalink" href="#_table_aliases%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_unions:Array&#40;Jennifer::QueryBuilder::Query&#41;?-instance-method">
+      <div class="signature">
+        
+        def <strong>_unions</strong> : Array(<a href="../../Jennifer/QueryBuilder/Query.html">Jennifer::QueryBuilder::Query</a>)?
+
+        <a class="method-permalink" href="#_unions%3AArray%28Jennifer%3A%3AQueryBuilder%3A%3AQuery%29%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_unions&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>_unions!</strong>
+
+        <a class="method-permalink" href="#_unions%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_sql-instance-method">
+      <div class="signature">
+        
+        def <strong>as_sql</strong>
+
+        <a class="method-permalink" href="#as_sql-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clone-instance-method">
+      <div class="signature">
+        
+        def <strong>clone</strong>
+
+        <a class="method-permalink" href="#clone-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns a copy of <code>self</code> with all instance variables cloned.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="distinct-instance-method">
+      <div class="signature">
+        
+        def <strong>distinct</strong>
+
+        <a class="method-permalink" href="#distinct-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L210" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="empty?-instance-method">
+      <div class="signature">
+        
+        def <strong>empty?</strong>
+
+        <a class="method-permalink" href="#empty%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L131" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="exec&#40;&amp;block&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>exec</strong>(&block)
+
+        <a class="method-permalink" href="#exec%28%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L136" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="expression_builder:Jennifer::QueryBuilder::ExpressionBuilder-instance-method">
+      <div class="signature">
+        
+        def <strong>expression_builder</strong> : <a href="../../Jennifer/QueryBuilder/ExpressionBuilder.html">Jennifer::QueryBuilder::ExpressionBuilder</a>
+
+        <a class="method-permalink" href="#expression_builder%3AJennifer%3A%3AQueryBuilder%3A%3AExpressionBuilder-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L56" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="from&#40;_from:String|Query&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>from</strong>(_from : String | <a href="../../Jennifer/QueryBuilder/Query.html">Query</a>)
+
+        <a class="method-permalink" href="#from%28_from%3AString%7CQuery%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L185" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group&#40;column:Criteria&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>group</strong>(column : <a href="../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>)
+
+        <a class="method-permalink" href="#group%28column%3ACriteria%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L239" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group&#40;column:Symbol&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>group</strong>(column : Symbol)
+
+        <a class="method-permalink" href="#group%28column%3ASymbol%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Groups by given column realizes it as current table's field</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L222" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group&#40;column:String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>group</strong>(column : String)
+
+        <a class="method-permalink" href="#group%28column%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Groups by given column realizes it as is</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L216" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group&#40;*columns:String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>group</strong>(*columns : String)
+
+        <a class="method-permalink" href="#group%28%2Acolumns%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Groups by given columns realizes them as are</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L228" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group&#40;*columns:Symbol&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>group</strong>(*columns : Symbol)
+
+        <a class="method-permalink" href="#group%28%2Acolumns%3ASymbol%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Groups by given columns realizes them as current table's ones</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L234" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group&#40;&amp;block&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>group</strong>(&block)
+
+        <a class="method-permalink" href="#group%28%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L245" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="having&#40;&amp;block&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>having</strong>(&block)
+
+        <a class="method-permalink" href="#having%28%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L195" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="limit&#40;count:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>limit</strong>(count : Int32)
+
+        <a class="method-permalink" href="#limit%28count%3AInt32%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L252" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="lock&#40;type:String|Bool&#61;true&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>lock</strong>(type : String | Bool = <span class="n">true</span>)
+
+        <a class="method-permalink" href="#lock%28type%3AString%7CBool%3Dtrue%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L262" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="none-instance-method">
+      <div class="signature">
+        
+        def <strong>none</strong>
+
+        <a class="method-permalink" href="#none-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L190" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="offset&#40;count:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>offset</strong>(count : Int32)
+
+        <a class="method-permalink" href="#offset%28count%3AInt32%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L257" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select&#40;*fields:Symbol&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(*fields : Symbol)
+
+        <a class="method-permalink" href="#select%28%2Afields%3ASymbol%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L163" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select&#40;fields:Array&#40;Criteria&#41;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(fields : Array(<a href="../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>))
+
+        <a class="method-permalink" href="#select%28fields%3AArray%28Criteria%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L168" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select&#40;field_name:Symbol&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(field_name : Symbol)
+
+        <a class="method-permalink" href="#select%28field_name%3ASymbol%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L158" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select&#40;field:Criteria&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(field : <a href="../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>)
+
+        <a class="method-permalink" href="#select%28field%3ACriteria%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L152" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select&#40;&amp;block&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(&block)
+
+        <a class="method-permalink" href="#select%28%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L176" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select&#40;raw_sql:String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(raw_sql : String)
+
+        <a class="method-permalink" href="#select%28raw_sql%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L147" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select_args-instance-method">
+      <div class="signature">
+        
+        def <strong>select_args</strong>
+
+        <a class="method-permalink" href="#select_args-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L105" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select_args_count-instance-method">
+      <div class="signature">
+        
+        def <strong>select_args_count</strong>
+
+        <a class="method-permalink" href="#select_args_count-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L114" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_tree&#40;other:LogicOperator|Condition&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>set_tree</strong>(other : <a href="../../Jennifer/QueryBuilder/LogicOperator.html">LogicOperator</a> | <a href="../../Jennifer/QueryBuilder/Condition.html">Condition</a>)
+
+        <a class="method-permalink" href="#set_tree%28other%3ALogicOperator%7CCondition%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L271" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_tree&#40;other:Query&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>set_tree</strong>(other : <a href="../../Jennifer/QueryBuilder/Query.html">Query</a>)
+
+        <a class="method-permalink" href="#set_tree%28other%3AQuery%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L280" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_tree&#40;other:Criteria&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>set_tree</strong>(other : <a href="../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>)
+
+        <a class="method-permalink" href="#set_tree%28other%3ACriteria%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L284" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_tree&#40;other:Nil&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>set_tree</strong>(other : Nil)
+
+        <a class="method-permalink" href="#set_tree%28other%3ANil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L288" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sql_args-instance-method">
+      <div class="signature">
+        
+        def <strong>sql_args</strong>
+
+        <a class="method-permalink" href="#sql_args-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L93" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sql_args_count-instance-method">
+      <div class="signature">
+        
+        def <strong>sql_args_count</strong>
+
+        <a class="method-permalink" href="#sql_args_count-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L101" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>
+
+        <a class="method-permalink" href="#to_s-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L267" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_sql-instance-method">
+      <div class="signature">
+        
+        def <strong>to_sql</strong>
+
+        <a class="method-permalink" href="#to_sql-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L85" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tree:Condition|LogicOperator|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>tree</strong> : <a href="../../Jennifer/QueryBuilder/Condition.html">Condition</a> | <a href="../../Jennifer/QueryBuilder/LogicOperator.html">LogicOperator</a> | Nil
+
+        <a class="method-permalink" href="#tree%3ACondition%7CLogicOperator%7CNil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L39" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tree&#61;&#40;tree:Condition|LogicOperator|Nil&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>tree=</strong>(tree : <a href="../../Jennifer/QueryBuilder/Condition.html">Condition</a> | <a href="../../Jennifer/QueryBuilder/LogicOperator.html">LogicOperator</a> | Nil)
+
+        <a class="method-permalink" href="#tree%3D%28tree%3ACondition%7CLogicOperator%7CNil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L39" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="union&#40;query&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>union</strong>(query)
+
+        <a class="method-permalink" href="#union%28query%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L205" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="where&#40;&amp;block&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>where</strong>(&block)
+
+        <a class="method-permalink" href="#where%28%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L141" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with_relation&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>with_relation!</strong>
+
+        <a class="method-permalink" href="#with_relation%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L123" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with_relation?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>with_relation?</strong> : Bool
+
+        <a class="method-permalink" href="#with_relation%3F%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0ae1626f0605702598a72ff992580b51bc6617c7/src/jennifer/query_builder/query.cr#L127" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Macro Detail</h2>
+  
+    <div class="entry-detail" id="str_hash&#40;hash,types&#41;-macro">
+      <div class="signature">
+        
+        macro <strong>str_hash</strong>(hash, types)
+
+        <a class="method-permalink" href="#str_hash%28hash%2Ctypes%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>accepts hash literal</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="str_hash_cast&#40;hash,types&#41;-macro">
+      <div class="signature">
+        
+        macro <strong>str_hash_cast</strong>(hash, types)
+
+        <a class="method-permalink" href="#str_hash_cast%28hash%2Ctypes%29-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stringify_hash&#40;hash,types&#41;-macro">
+      <div class="signature">
+        
+        macro <strong>stringify_hash</strong>(hash, types)
+
+        <a class="method-permalink" href="#stringify_hash%28hash%2Ctypes%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>accepts any hash</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sym_hash&#40;hash,types&#41;-macro">
+      <div class="signature">
+        
+        macro <strong>sym_hash</strong>(hash, types)
+
+        <a class="method-permalink" href="#sym_hash%28hash%2Ctypes%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>accepts hash literal</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sym_hash_cast&#40;hash,types&#41;-macro">
+      <div class="signature">
+        
+        macro <strong>sym_hash_cast</strong>(hash, types)
+
+        <a class="method-permalink" href="#sym_hash_cast%28hash%2Ctypes%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>accepts any hash or named tuple
+example: Ifrit.as_sym_hash(hash, String | Int32)</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="typed_array&#40;arr,klass&#41;-macro">
+      <div class="signature">
+        
+        macro <strong>typed_array</strong>(arr, klass)
+
+        <a class="method-permalink" href="#typed_array%28arr%2Cklass%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>accepts arrayliteral</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="typed_array_cast&#40;arr,klass&#41;-macro">
+      <div class="signature">
+        
+        macro <strong>typed_array_cast</strong>(arr, klass)
+
+        <a class="method-permalink" href="#typed_array_cast%28arr%2Cklass%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>accepts any array</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="typed_hash&#40;hash,key,types&#41;-macro">
+      <div class="signature">
+        
+        macro <strong>typed_hash</strong>(hash, key, types)
+
+        <a class="method-permalink" href="#typed_hash%28hash%2Ckey%2Ctypes%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>accepts only hash literals
+example: Ifrit.typed_hash({"a" => 1, "b" => "b"}, String, Int32 | String)</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="typed_hash_cast&#40;hash,key,types&#41;-macro">
+      <div class="signature">
+        
+        macro <strong>typed_hash_cast</strong>(hash, key, types)
+
+        <a class="method-permalink" href="#typed_hash_cast%28hash%2Ckey%2Ctypes%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>accepts any hash</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>

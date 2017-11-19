@@ -1,0 +1,2163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/imdrasil/jennifer.cr">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../js/doc.js"></script>
+  <title>Jennifer::Migration::Version - github.com/imdrasil/jennifer.cr</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/jennifer.cr/Jennifer" data-name="jennifer">
+      <a href="../../Jennifer.html">Jennifer</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter" data-name="jennifer::adapter">
+      <a href="../../Jennifer/Adapter.html">Adapter</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Base" data-name="jennifer::adapter::base">
+      <a href="../../Jennifer/Adapter/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/BaseSqlGenerator" data-name="jennifer::adapter::basesqlgenerator">
+      <a href="../../Jennifer/Adapter/BaseSqlGenerator.html">BaseSqlGenerator</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/EnumType" data-name="jennifer::adapter::enumtype">
+      <a href="../../Jennifer/Adapter/EnumType.html">EnumType</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Postgres" data-name="jennifer::adapter::postgres">
+      <a href="../../Jennifer/Adapter/Postgres.html">Postgres</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Postgres/ExecResult" data-name="jennifer::adapter::postgres::execresult">
+      <a href="../../Jennifer/Adapter/Postgres/ExecResult.html">ExecResult</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/RequestMethods" data-name="jennifer::adapter::requestmethods">
+      <a href="../../Jennifer/Adapter/RequestMethods.html">RequestMethods</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/ResultParsers" data-name="jennifer::adapter::resultparsers">
+      <a href="../../Jennifer/Adapter/ResultParsers.html">ResultParsers</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/SqlGenerator" data-name="jennifer::adapter::sqlgenerator">
+      <a href="../../Jennifer/Adapter/SqlGenerator.html">SqlGenerator</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/SqlNotation" data-name="jennifer::adapter::sqlnotation">
+      <a href="../../Jennifer/Adapter/SqlNotation.html">SqlNotation</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Transactions" data-name="jennifer::adapter::transactions">
+      <a href="../../Jennifer/Adapter/Transactions.html">Transactions</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/AnyArgument" data-name="jennifer::anyargument">
+      <a href="../../Jennifer/AnyArgument.html">AnyArgument</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/AnyResult" data-name="jennifer::anyresult">
+      <a href="../../Jennifer/AnyResult.html">AnyResult</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/BadQuery" data-name="jennifer::badquery">
+      <a href="../../Jennifer/BadQuery.html">BadQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/BaseException" data-name="jennifer::baseexception">
+      <a href="../../Jennifer/BaseException.html">BaseException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Config" data-name="jennifer::config">
+      <a href="../../Jennifer/Config.html">Config</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/DataTypeCasting" data-name="jennifer::datatypecasting">
+      <a href="../../Jennifer/DataTypeCasting.html">DataTypeCasting</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/DataTypeMismatch" data-name="jennifer::datatypemismatch">
+      <a href="../../Jennifer/DataTypeMismatch.html">DataTypeMismatch</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/DBAny" data-name="jennifer::dbany">
+      <a href="../../Jennifer/DBAny.html">DBAny</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration" data-name="jennifer::migration">
+      <a href="../../Jennifer/Migration.html">Migration</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/Base" data-name="jennifer::migration::base">
+      <a href="../../Jennifer/Migration/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/Runner" data-name="jennifer::migration::runner">
+      <a href="../../Jennifer/Migration/Runner.html">Runner</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder" data-name="jennifer::migration::tablebuilder">
+      <a href="../../Jennifer/Migration/TableBuilder.html">TableBuilder</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base" data-name="jennifer::migration::tablebuilder::base">
+      <a href="../../Jennifer/Migration/TableBuilder/Base.html">Base</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base/AAllowedTypes" data-name="jennifer::migration::tablebuilder::base::aallowedtypes">
+      <a href="../../Jennifer/Migration/TableBuilder/Base/AAllowedTypes.html">AAllowedTypes</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base/AllowedTypes" data-name="jennifer::migration::tablebuilder::base::allowedtypes">
+      <a href="../../Jennifer/Migration/TableBuilder/Base/AllowedTypes.html">AllowedTypes</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base/DB_OPTIONS" data-name="jennifer::migration::tablebuilder::base::db_options">
+      <a href="../../Jennifer/Migration/TableBuilder/Base/DB_OPTIONS.html">DB_OPTIONS</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base/EAllowedTypes" data-name="jennifer::migration::tablebuilder::base::eallowedtypes">
+      <a href="../../Jennifer/Migration/TableBuilder/Base/EAllowedTypes.html">EAllowedTypes</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/ChangeEnum" data-name="jennifer::migration::tablebuilder::changeenum">
+      <a href="../../Jennifer/Migration/TableBuilder/ChangeEnum.html">ChangeEnum</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/ChangeTable" data-name="jennifer::migration::tablebuilder::changetable">
+      <a href="../../Jennifer/Migration/TableBuilder/ChangeTable.html">ChangeTable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateEnum" data-name="jennifer::migration::tablebuilder::createenum">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateEnum.html">CreateEnum</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateIndex" data-name="jennifer::migration::tablebuilder::createindex">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateIndex.html">CreateIndex</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateMaterializedView" data-name="jennifer::migration::tablebuilder::creatematerializedview">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateMaterializedView.html">CreateMaterializedView</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateTable" data-name="jennifer::migration::tablebuilder::createtable">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateTable.html">CreateTable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateView" data-name="jennifer::migration::tablebuilder::createview">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateView.html">CreateView</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropEnum" data-name="jennifer::migration::tablebuilder::dropenum">
+      <a href="../../Jennifer/Migration/TableBuilder/DropEnum.html">DropEnum</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropIndex" data-name="jennifer::migration::tablebuilder::dropindex">
+      <a href="../../Jennifer/Migration/TableBuilder/DropIndex.html">DropIndex</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropMaterializedView" data-name="jennifer::migration::tablebuilder::dropmaterializedview">
+      <a href="../../Jennifer/Migration/TableBuilder/DropMaterializedView.html">DropMaterializedView</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropTable" data-name="jennifer::migration::tablebuilder::droptable">
+      <a href="../../Jennifer/Migration/TableBuilder/DropTable.html">DropTable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropView" data-name="jennifer::migration::tablebuilder::dropview">
+      <a href="../../Jennifer/Migration/TableBuilder/DropView.html">DropView</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Raw" data-name="jennifer::migration::tablebuilder::raw">
+      <a href="../../Jennifer/Migration/TableBuilder/Raw.html">Raw</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/Version" data-name="jennifer::migration::version">
+      <a href="../../Jennifer/Migration/Version.html">Version</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model" data-name="jennifer::model">
+      <a href="../../Jennifer/Model.html">Model</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Base" data-name="jennifer::model::base">
+      <a href="../../Jennifer/Model/Base.html">Base</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Base/Supportable" data-name="jennifer::model::base::supportable">
+      <a href="../../Jennifer/Model/Base/Supportable.html">Supportable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Callback" data-name="jennifer::model::callback">
+      <a href="../../Jennifer/Model/Callback.html">Callback</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/IRelationContainer" data-name="jennifer::model::irelationcontainer">
+      <a href="../../Jennifer/Model/IRelationContainer.html">IRelationContainer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Mapping" data-name="jennifer::model::mapping">
+      <a href="../../Jennifer/Model/Mapping.html">Mapping</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/RelationContainer" data-name="jennifer::model::relationcontainer(t, q)">
+      <a href="../../Jennifer/Model/RelationContainer.html">RelationContainer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/RelationDefinition" data-name="jennifer::model::relationdefinition">
+      <a href="../../Jennifer/Model/RelationDefinition.html">RelationDefinition</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Scoping" data-name="jennifer::model::scoping">
+      <a href="../../Jennifer/Model/Scoping.html">Scoping</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/STIMapping" data-name="jennifer::model::stimapping">
+      <a href="../../Jennifer/Model/STIMapping.html">STIMapping</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Validation" data-name="jennifer::model::validation">
+      <a href="../../Jennifer/Model/Validation.html">Validation</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Query" data-name="jennifer::query">
+      <a href="../../Jennifer/Query.html">Query</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder" data-name="jennifer::querybuilder">
+      <a href="../../Jennifer/QueryBuilder.html">QueryBuilder</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Aggregations" data-name="jennifer::querybuilder::aggregations">
+      <a href="../../Jennifer/QueryBuilder/Aggregations.html">Aggregations</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/And" data-name="jennifer::querybuilder::and">
+      <a href="../../Jennifer/QueryBuilder/And.html">And</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Condition" data-name="jennifer::querybuilder::condition">
+      <a href="../../Jennifer/QueryBuilder/Condition.html">Condition</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Criteria" data-name="jennifer::querybuilder::criteria">
+      <a href="../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Criteria/Rightable" data-name="jennifer::querybuilder::criteria::rightable">
+      <a href="../../Jennifer/QueryBuilder/Criteria/Rightable.html">Rightable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/ExpressionBuilder" data-name="jennifer::querybuilder::expressionbuilder">
+      <a href="../../Jennifer/QueryBuilder/ExpressionBuilder.html">ExpressionBuilder</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/IModelQuery" data-name="jennifer::querybuilder::imodelquery">
+      <a href="../../Jennifer/QueryBuilder/IModelQuery.html">IModelQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Join" data-name="jennifer::querybuilder::join">
+      <a href="../../Jennifer/QueryBuilder/Join.html">Join</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/JSONSelector" data-name="jennifer::querybuilder::jsonselector">
+      <a href="../../Jennifer/QueryBuilder/JSONSelector.html">JSONSelector</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/LogicOperator" data-name="jennifer::querybuilder::logicoperator">
+      <a href="../../Jennifer/QueryBuilder/LogicOperator.html">LogicOperator</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/ModelQuery" data-name="jennifer::querybuilder::modelquery(t)">
+      <a href="../../Jennifer/QueryBuilder/ModelQuery.html">ModelQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Or" data-name="jennifer::querybuilder::or">
+      <a href="../../Jennifer/QueryBuilder/Or.html">Or</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Query" data-name="jennifer::querybuilder::query">
+      <a href="../../Jennifer/QueryBuilder/Query.html">Query</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/QueryObject" data-name="jennifer::querybuilder::queryobject">
+      <a href="../../Jennifer/QueryBuilder/QueryObject.html">QueryObject</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/RawSql" data-name="jennifer::querybuilder::rawsql">
+      <a href="../../Jennifer/QueryBuilder/RawSql.html">RawSql</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Star" data-name="jennifer::querybuilder::star">
+      <a href="../../Jennifer/QueryBuilder/Star.html">Star</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Xor" data-name="jennifer::querybuilder::xor">
+      <a href="../../Jennifer/QueryBuilder/Xor.html">Xor</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Record" data-name="jennifer::record">
+      <a href="../../Jennifer/Record.html">Record</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/RecordExists" data-name="jennifer::recordexists">
+      <a href="../../Jennifer/RecordExists.html">RecordExists</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/RecordInvalid" data-name="jennifer::recordinvalid">
+      <a href="../../Jennifer/RecordInvalid.html">RecordInvalid</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/RecordNotFound" data-name="jennifer::recordnotfound">
+      <a href="../../Jennifer/RecordNotFound.html">RecordNotFound</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation" data-name="jennifer::relation">
+      <a href="../../Jennifer/Relation.html">Relation</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/Base" data-name="jennifer::relation::base(t, q)">
+      <a href="../../Jennifer/Relation/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/BelongsTo" data-name="jennifer::relation::belongsto(t, q)">
+      <a href="../../Jennifer/Relation/BelongsTo.html">BelongsTo</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/HasMany" data-name="jennifer::relation::hasmany(t, q)">
+      <a href="../../Jennifer/Relation/HasMany.html">HasMany</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/HasOne" data-name="jennifer::relation::hasone(t, q)">
+      <a href="../../Jennifer/Relation/HasOne.html">HasOne</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/IRelation" data-name="jennifer::relation::irelation">
+      <a href="../../Jennifer/Relation/IRelation.html">IRelation</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/ManyToMany" data-name="jennifer::relation::manytomany(t, q)">
+      <a href="../../Jennifer/Relation/ManyToMany.html">ManyToMany</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Skip" data-name="jennifer::skip">
+      <a href="../../Jennifer/Skip.html">Skip</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/StubRelation" data-name="jennifer::stubrelation">
+      <a href="../../Jennifer/StubRelation.html">StubRelation</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/UnknownRelation" data-name="jennifer::unknownrelation">
+      <a href="../../Jennifer/UnknownRelation.html">UnknownRelation</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/View" data-name="jennifer::view">
+      <a href="../../Jennifer/View.html">View</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/View/Base" data-name="jennifer::view::base">
+      <a href="../../Jennifer/View/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/View/ExperimentalMapping" data-name="jennifer::view::experimentalmapping">
+      <a href="../../Jennifer/View/ExperimentalMapping.html">ExperimentalMapping</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/PG" data-name="pg">
+      <a href="../../PG.html">PG</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/PG/Numeric" data-name="pg::numeric">
+      <a href="../../PG/Numeric.html">Numeric</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/PG/ResultSet" data-name="pg::resultset">
+      <a href="../../PG/ResultSet.html">ResultSet</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Time" data-name="time">
+      <a href="../../Time.html">Time</a>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Jennifer::Migration::Version
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Jennifer/Migration/Version.html">Jennifer::Migration::Version</a></li><li class="superclass"><a href="../../Jennifer/Model/Base.html">Jennifer::Model::Base</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/e8d2ff08ab26f88a377f1bca529da304e57d292c/src/jennifer/migration/version.cr#L3" target="_blank">jennifer/migration/version.cr</a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="AFTER_CREATE_CALLBACKS">
+        <strong>AFTER_CREATE_CALLBACKS</strong> = <code><span class="o">[]</span> <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AFTER_DESTROY_CALLBACKS">
+        <strong>AFTER_DESTROY_CALLBACKS</strong> = <code><span class="o">[]</span> <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AFTER_INITIALIZE_CALLBACKS">
+        <strong>AFTER_INITIALIZE_CALLBACKS</strong> = <code><span class="o">[]</span> <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AFTER_SAVE_CALLBACKS">
+        <strong>AFTER_SAVE_CALLBACKS</strong> = <code>[<span class="s">&quot;__refresh_changes&quot;</span>] <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AFTER_VALIDATION_CALLBACKS">
+        <strong>AFTER_VALIDATION_CALLBACKS</strong> = <code><span class="o">[]</span> <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BEFORE_CREATE_CALLBACKS">
+        <strong>BEFORE_CREATE_CALLBACKS</strong> = <code><span class="o">[]</span> <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BEFORE_DESTROY_CALLBACKS">
+        <strong>BEFORE_DESTROY_CALLBACKS</strong> = <code><span class="o">[]</span> <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BEFORE_SAVE_CALLBACKS">
+        <strong>BEFORE_SAVE_CALLBACKS</strong> = <code>[<span class="s">&quot;__check_if_changed&quot;</span>] <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BEFORE_VALIDATION_CALLBACKS">
+        <strong>BEFORE_VALIDATION_CALLBACKS</strong> = <code><span class="o">[]</span> <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FIELD_NAMES">
+        <strong>FIELD_NAMES</strong> = <code>[<span class="s">&quot;id&quot;</span>, <span class="s">&quot;version&quot;</span>]</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="RELATION_NAMES">
+        <strong>RELATION_NAMES</strong> = <code><span class="o">[]</span> <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VALIDATION_METHODS">
+        <strong>VALIDATION_METHODS</strong> = <code><span class="o">[]</span> <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28values%3AHash%28String%2CJennifer%3A%3ADBAny%29%29-class-method" class="signature"><strong>.new</strong>(values : Hash(String, Jennifer::DBAny))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28values%3AHash%28Symbol%2CJennifer%3A%3ADBAny%29%7CNamedTuple%29-class-method" class="signature"><strong>.new</strong>(values : Hash(Symbol, Jennifer::DBAny) | NamedTuple)</a>
+        
+          <div class="summary"><p>Accepts symbol hash or named tuple, stringify it and calls TODO: check how converting affects performance</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28__temp_67%3ADB%3A%3AResultSet%29-class-method" class="signature"><strong>.new</strong>(__temp_67 : DB::ResultSet)</a>
+        
+          <div class="summary"><p>Creates object from <code><a href="../../DB/ResultSet.html">DB::ResultSet</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28values%3AHash%7CNamedTuple%2Cnew_record%29-class-method" class="signature"><strong>.new</strong>(values : Hash | NamedTuple, new_record)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#_id-class-method" class="signature"><strong>._id</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_version-class-method" class="signature"><strong>._version</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#children_classes-class-method" class="signature"><strong>.children_classes</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#field_count-class-method" class="signature"><strong>.field_count</strong></a>
+        
+          <div class="summary"><p>Returns field count</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#field_names-class-method" class="signature"><strong>.field_names</strong></a>
+        
+          <div class="summary"><p>Returns array of field names</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_table%3F-class-method" class="signature"><strong>.has_table?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#primary-class-method" class="signature"><strong>.primary</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#primary_auto_incrementable%3F-class-method" class="signature"><strong>.primary_auto_incrementable?</strong></a>
+        
+          <div class="summary"><p>Returns if primary field is autoincrementable</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#primary_field_name-class-method" class="signature"><strong>.primary_field_name</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#primary_field_type-class-method" class="signature"><strong>.primary_field_type</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#relation%28name%3AString%29-class-method" class="signature"><strong>.relation</strong>(name : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#relations-class-method" class="signature"><strong>.relations</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#singular_table_name-class-method" class="signature"><strong>.singular_table_name</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#strict_mapping%3F-class-method" class="signature"><strong>.strict_mapping?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#superclass-class-method" class="signature"><strong>.superclass</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#__after_create_callback-instance-method" class="signature"><strong>#__after_create_callback</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#__after_destroy_callback-instance-method" class="signature"><strong>#__after_destroy_callback</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#__after_initialize_callback-instance-method" class="signature"><strong>#__after_initialize_callback</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#__after_save_callback-instance-method" class="signature"><strong>#__after_save_callback</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#__after_validation_callback-instance-method" class="signature"><strong>#__after_validation_callback</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#__before_create_callback-instance-method" class="signature"><strong>#__before_create_callback</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#__before_destroy_callback-instance-method" class="signature"><strong>#__before_destroy_callback</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#__before_save_callback-instance-method" class="signature"><strong>#__before_save_callback</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#__before_validation_callback-instance-method" class="signature"><strong>#__before_validation_callback</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#__refresh_relation_retrieves-instance-method" class="signature"><strong>#__refresh_relation_retrieves</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_extract_attributes%28values%3AHash%28String%2CJennifer%3A%3ADBAny%29%29-instance-method" class="signature"><strong>#_extract_attributes</strong>(values : Hash(String, Jennifer::DBAny))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_extract_attributes%28pull%3ADB%3A%3AResultSet%29-instance-method" class="signature"><strong>#_extract_attributes</strong>(pull : DB::ResultSet)</a>
+        
+          <div class="summary"><p>Extracts arguments due to mapping from <em>pull</em> and returns tuple for fields assignment.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#append_relation%28name%2Chash%29-instance-method" class="signature"><strong>#append_relation</strong>(name, hash)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#arguments_to_insert-instance-method" class="signature"><strong>#arguments_to_insert</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#arguments_to_save-instance-method" class="signature"><strong>#arguments_to_save</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attribute%28name%3AString%7CSymbol%2Craise_exception%3Dtrue%29-instance-method" class="signature"><strong>#attribute</strong>(name : String | Symbol, raise_exception = <span class="n">true</span>)</a>
+        
+          <div class="summary"><p>Returns field by given name.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attributes_hash-instance-method" class="signature"><strong>#attributes_hash</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#changed%3F-instance-method" class="signature"><strong>#changed?</strong></a>
+        
+          <div class="summary"><p>Returns if any field was changed.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3AInt32%3F-instance-method" class="signature"><strong>#id</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%21-instance-method" class="signature"><strong>#id!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3D%28_id%3AInt32%3F%29-instance-method" class="signature"><strong>#id=</strong>(_id : Int32?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id_changed%3F%3ABool-instance-method" class="signature"><strong>#id_changed?</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#init_primary_field%28value%3AInt32%29-instance-method" class="signature"><strong>#init_primary_field</strong>(value : Int32)</a>
+        
+          <div class="summary"><p>Inits primary field</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#primary%3AInt32%3F-instance-method" class="signature"><strong>#primary</strong> : Int32?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reload-instance-method" class="signature"><strong>#reload</strong></a>
+        
+          <div class="summary"><p>Reloads all fields from db</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#save%28skip_validation%3Dfalse%29%3ABool-instance-method" class="signature"><strong>#save</strong>(skip_validation = <span class="n">false</span>) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#save%21%28skip_validation%3Dfalse%29-instance-method" class="signature"><strong>#save!</strong>(skip_validation = <span class="n">false</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#save_without_transaction%28skip_validation%3Dfalse%29%3ABool-instance-method" class="signature"><strong>#save_without_transaction</strong>(skip_validation = <span class="n">false</span>) : Bool</a>
+        
+          <div class="summary"><p>Saves all changes to db without invoking transaction; if validation not passed - returns <code>false</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_attribute%28name%2Cvalue%3AJennifer%3A%3ADBAny%29-instance-method" class="signature"><strong>#set_attribute</strong>(name, value : Jennifer::DBAny)</a>
+        
+          <div class="summary"><p>Sets <em>name</em> field with <em>value</em></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_h-instance-method" class="signature"><strong>#to_h</strong></a>
+        
+          <div class="summary"><p>Returns hash with all attributes and symbol keys</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_str_h-instance-method" class="signature"><strong>#to_str_h</strong></a>
+        
+          <div class="summary"><p>Returns hash with all attributes and string keys</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#update_column%28name%2Cvalue%3AJennifer%3A%3ADBAny%29-instance-method" class="signature"><strong>#update_column</strong>(name, value : Jennifer::DBAny)</a>
+        
+          <div class="summary"><p>Sets <em>value</em> to field with name <em>name</em> and stores them directly to db without any validation or callback</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#update_columns%28values%3AHash%28String%7CSymbol%2CJennifer%3A%3ADBAny%29%29-instance-method" class="signature"><strong>#update_columns</strong>(values : Hash(String | Symbol, Jennifer::DBAny))</a>
+        
+          <div class="summary"><p>Sets given <em>values</em> to proper fields and stores them directly to db without any validation or callback</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#validate%28skip%3Dfalse%29-instance-method" class="signature"><strong>#validate</strong>(skip = <span class="n">false</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#version%3AString-instance-method" class="signature"><strong>#version</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#version%21-instance-method" class="signature"><strong>#version!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#version%3D%28_version%3AString%29-instance-method" class="signature"><strong>#version=</strong>(_version : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#version_changed%3F%3ABool-instance-method" class="signature"><strong>#version_changed?</strong> : Bool</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../../Jennifer/Model/Base.html">Jennifer::Model::Base</a></code></h3>
+  
+  
+    <a href="../../Jennifer/Model/Base.html#append_relation%28name%2Chash%29-instance-method" class="tooltip">
+      <span>append_relation(name, hash)</span>
+    append_relation</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#attribute%28name%29-instance-method" class="tooltip">
+      <span>attribute(name)</span>
+    attribute</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#delete-instance-method" class="tooltip">
+      <span>delete</span>
+    delete</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#destroy-instance-method" class="tooltip">
+      <span>destroy</span>
+    destroy</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#destroy_without_transaction-instance-method" class="tooltip">
+      <span>destroy_without_transaction</span>
+    destroy_without_transaction</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#destroyed%3F%3ABool%3F-instance-method" class="tooltip">
+      <span>destroyed? : Bool?</span>
+    destroyed?</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#lock%21%28type%3AString%7CBool%3Dtrue%29-instance-method" class="tooltip">
+      <span>lock!(type : String | Bool = <span class="n">true</span>)</span>
+    lock!</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#new_record%3F-instance-method" class="tooltip">
+      <span>new_record?</span>
+    new_record?</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#primary-instance-method" class="tooltip">
+      <span>primary</span>
+    primary</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#set_attribute%28name%2Cvalue%29-instance-method" class="tooltip">
+      <span>set_attribute(name, value)</span>
+    set_attribute</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#update_attributes%28hash%3AHash%29-instance-method" class="tooltip">
+      <span>update_attributes(hash : Hash)</span>
+    update_attributes</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#with_lock%28type%3AString%7CBool%3Dtrue%2C%26block%29-instance-method" class="tooltip">
+      <span>with_lock(type : String | Bool = <span class="n">true</span>, &block)</span>
+    with_lock</a>
+    
+  
+
+
+    
+
+
+    
+
+  <h3>Class methods inherited from class <code><a href="../../Jennifer/Model/Base.html">Jennifer::Model::Base</a></code></h3>
+  
+  
+    <a href="../../Jennifer/Model/Base.html#actual_table_field_count-class-method" class="tooltip">
+      <span>actual_table_field_count</span>
+    actual_table_field_count</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#all-class-method" class="tooltip">
+      <span>all</span>
+    all</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#build%28pull%3ADB%3A%3AResultSet%29-class-method" class="tooltip">
+      <span>build(pull : DB::ResultSet)<br/>build<br/>build(values : Hash(String, Jennifer::DBAny))<br/>build(values : Hash | NamedTuple, new_record : Bool)<br/>build(values : Hash(Symbol, Jennifer::DBAny) | NamedTuple)</span>
+    build</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#c%28name%3AString%7CSymbol%2Crelation%29-class-method" class="tooltip">
+      <span>c(name : String | Symbol, relation)<br/>c(name)</span>
+    c</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#context-class-method" class="tooltip">
+      <span>context</span>
+    context</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#create%28values%3AHash%7CNamedTuple%29-class-method" class="tooltip">
+      <span>create(values : Hash | NamedTuple)<br/>create</span>
+    create</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#create%21%28values%3AHash%7CNamedTuple%29-class-method" class="tooltip">
+      <span>create!(values : Hash | NamedTuple)<br/>create!</span>
+    create!</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#delete%28ids%3AArray%29-class-method" class="tooltip">
+      <span>delete(ids : Array)<br/>delete(*ids)</span>
+    delete</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#destroy%28ids%3AArray%29-class-method" class="tooltip">
+      <span>destroy(ids : Array)<br/>destroy(*ids)</span>
+    destroy</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#find%28id%29-class-method" class="tooltip">
+      <span>find(id)</span>
+    find</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#find%21%28id%29-class-method" class="tooltip">
+      <span>find!(id)</span>
+    find!</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#has_table%3F-class-method" class="tooltip">
+      <span>has_table?</span>
+    has_table?</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#models-class-method" class="tooltip">
+      <span>models</span>
+    models</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#relation%28name%29-class-method" class="tooltip">
+      <span>relation(name)</span>
+    relation</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#relations-class-method" class="tooltip">
+      <span>relations</span>
+    relations</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#search_by_sql%28query%3AString%2Cargs%3D%5B%5DofSupportable%29-class-method" class="tooltip">
+      <span>search_by_sql(query : String, args = <span class="o">[]</span> <span class="k">of</span> <span class="t">Supportable</span>)</span>
+    search_by_sql</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#singular_table_name%28value%3AString%7CSymbol%29-class-method" class="tooltip">
+      <span>singular_table_name(value : String | Symbol)</span>
+    singular_table_name</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#star-class-method" class="tooltip">
+      <span>star</span>
+    star</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#table_name%3AString-class-method" class="tooltip">
+      <span>table_name : String<br/>table_name(value : String | Symbol)</span>
+    table_name</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#transaction%28%26block%29-class-method" class="tooltip">
+      <span>transaction(&block)</span>
+    transaction</a>, 
+    
+  
+    <a href="../../Jennifer/Model/Base.html#where%28%26block%29-class-method" class="tooltip">
+      <span>where(&block)</span>
+    where</a>
+    
+  
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../../Jennifer/Model/Validation.html">Jennifer::Model::Validation</a></code></h3>
+  
+  
+    <a href="../../Jennifer/Model/Validation.html#validate%28skip%3Dfalse%29-instance-method" class="tooltip">
+      <span>validate(skip = <span class="n">false</span>)</span>
+    validate</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new&#40;values:Hash&#40;String,Jennifer::DBAny&#41;&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(values : Hash(String, <a href="../../Jennifer/DBAny.html">Jennifer::DBAny</a>))
+
+        <a class="method-permalink" href="#new%28values%3AHash%28String%2CJennifer%3A%3ADBAny%29%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new&#40;values:Hash&#40;Symbol,Jennifer::DBAny&#41;|NamedTuple&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(values : Hash(Symbol, <a href="../../Jennifer/DBAny.html">Jennifer::DBAny</a>) | NamedTuple)
+
+        <a class="method-permalink" href="#new%28values%3AHash%28Symbol%2CJennifer%3A%3ADBAny%29%7CNamedTuple%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Accepts symbol hash or named tuple, stringify it and calls</p>
+
+<p><span class="flag orange">TODO</span>  check how converting affects performance</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new&#40;__temp_67:DB::ResultSet&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(__temp_67 : <a href="../../DB/ResultSet.html">DB::ResultSet</a>)
+
+        <a class="method-permalink" href="#new%28__temp_67%3ADB%3A%3AResultSet%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates object from <code><a href="../../DB/ResultSet.html">DB::ResultSet</a></code></p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new&#40;values:Hash|NamedTuple,new_record&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(values : Hash | NamedTuple, new_record)
+
+        <a class="method-permalink" href="#new%28values%3AHash%7CNamedTuple%2Cnew_record%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="_id-class-method">
+      <div class="signature">
+        
+        def self.<strong>_id</strong>
+
+        <a class="method-permalink" href="#_id-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_version-class-method">
+      <div class="signature">
+        
+        def self.<strong>_version</strong>
+
+        <a class="method-permalink" href="#_version-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="children_classes-class-method">
+      <div class="signature">
+        
+        def self.<strong>children_classes</strong>
+
+        <a class="method-permalink" href="#children_classes-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="field_count-class-method">
+      <div class="signature">
+        
+        def self.<strong>field_count</strong>
+
+        <a class="method-permalink" href="#field_count-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns field count</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="field_names-class-method">
+      <div class="signature">
+        
+        def self.<strong>field_names</strong>
+
+        <a class="method-permalink" href="#field_names-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns array of field names</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_table?-class-method">
+      <div class="signature">
+        
+        def self.<strong>has_table?</strong>
+
+        <a class="method-permalink" href="#has_table%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/e8d2ff08ab26f88a377f1bca529da304e57d292c/src/jennifer/migration/version.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="primary-class-method">
+      <div class="signature">
+        
+        def self.<strong>primary</strong>
+
+        <a class="method-permalink" href="#primary-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="primary_auto_incrementable?-class-method">
+      <div class="signature">
+        
+        def self.<strong>primary_auto_incrementable?</strong>
+
+        <a class="method-permalink" href="#primary_auto_incrementable%3F-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns if primary field is autoincrementable</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="primary_field_name-class-method">
+      <div class="signature">
+        
+        def self.<strong>primary_field_name</strong>
+
+        <a class="method-permalink" href="#primary_field_name-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="primary_field_type-class-method">
+      <div class="signature">
+        
+        def self.<strong>primary_field_type</strong>
+
+        <a class="method-permalink" href="#primary_field_type-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="relation&#40;name:String&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>relation</strong>(name : String)
+
+        <a class="method-permalink" href="#relation%28name%3AString%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="relations-class-method">
+      <div class="signature">
+        
+        def self.<strong>relations</strong>
+
+        <a class="method-permalink" href="#relations-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/e8d2ff08ab26f88a377f1bca529da304e57d292c/src/jennifer/migration/version.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="singular_table_name-class-method">
+      <div class="signature">
+        
+        def self.<strong>singular_table_name</strong>
+
+        <a class="method-permalink" href="#singular_table_name-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/e8d2ff08ab26f88a377f1bca529da304e57d292c/src/jennifer/migration/version.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="strict_mapping?-class-method">
+      <div class="signature">
+        
+        def self.<strong>strict_mapping?</strong>
+
+        <a class="method-permalink" href="#strict_mapping%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="superclass-class-method">
+      <div class="signature">
+        
+        def self.<strong>superclass</strong>
+
+        <a class="method-permalink" href="#superclass-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/e8d2ff08ab26f88a377f1bca529da304e57d292c/src/jennifer/migration/version.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="__after_create_callback-instance-method">
+      <div class="signature">
+        
+        def <strong>__after_create_callback</strong>
+
+        <a class="method-permalink" href="#__after_create_callback-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="__after_destroy_callback-instance-method">
+      <div class="signature">
+        
+        def <strong>__after_destroy_callback</strong>
+
+        <a class="method-permalink" href="#__after_destroy_callback-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="__after_initialize_callback-instance-method">
+      <div class="signature">
+        
+        def <strong>__after_initialize_callback</strong>
+
+        <a class="method-permalink" href="#__after_initialize_callback-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="__after_save_callback-instance-method">
+      <div class="signature">
+        
+        def <strong>__after_save_callback</strong>
+
+        <a class="method-permalink" href="#__after_save_callback-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="__after_validation_callback-instance-method">
+      <div class="signature">
+        
+        def <strong>__after_validation_callback</strong>
+
+        <a class="method-permalink" href="#__after_validation_callback-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="__before_create_callback-instance-method">
+      <div class="signature">
+        
+        def <strong>__before_create_callback</strong>
+
+        <a class="method-permalink" href="#__before_create_callback-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="__before_destroy_callback-instance-method">
+      <div class="signature">
+        
+        def <strong>__before_destroy_callback</strong>
+
+        <a class="method-permalink" href="#__before_destroy_callback-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="__before_save_callback-instance-method">
+      <div class="signature">
+        
+        def <strong>__before_save_callback</strong>
+
+        <a class="method-permalink" href="#__before_save_callback-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="__before_validation_callback-instance-method">
+      <div class="signature">
+        
+        def <strong>__before_validation_callback</strong>
+
+        <a class="method-permalink" href="#__before_validation_callback-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="__refresh_relation_retrieves-instance-method">
+      <div class="signature">
+        
+        def <strong>__refresh_relation_retrieves</strong>
+
+        <a class="method-permalink" href="#__refresh_relation_retrieves-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_extract_attributes&#40;values:Hash&#40;String,Jennifer::DBAny&#41;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>_extract_attributes</strong>(values : Hash(String, <a href="../../Jennifer/DBAny.html">Jennifer::DBAny</a>))
+
+        <a class="method-permalink" href="#_extract_attributes%28values%3AHash%28String%2CJennifer%3A%3ADBAny%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_extract_attributes&#40;pull:DB::ResultSet&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>_extract_attributes</strong>(pull : <a href="../../DB/ResultSet.html">DB::ResultSet</a>)
+
+        <a class="method-permalink" href="#_extract_attributes%28pull%3ADB%3A%3AResultSet%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Extracts arguments due to mapping from <em>pull</em> and returns tuple for
+fields assignment. It stands on that fact result set has all defined fields in a raw</p>
+
+<p><span class="flag orange">TODO</span>  think about moving it to class scope</p>
+
+<p><span class="flag purple">NOTE</span>  don't use it manually - there is some dependencies on caller such as reading tesult set to the end
+if eception was raised</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="append_relation&#40;name,hash&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>append_relation</strong>(name, hash)
+
+        <a class="method-permalink" href="#append_relation%28name%2Chash%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="arguments_to_insert-instance-method">
+      <div class="signature">
+        
+        def <strong>arguments_to_insert</strong>
+
+        <a class="method-permalink" href="#arguments_to_insert-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="arguments_to_save-instance-method">
+      <div class="signature">
+        
+        def <strong>arguments_to_save</strong>
+
+        <a class="method-permalink" href="#arguments_to_save-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attribute&#40;name:String|Symbol,raise_exception&#61;true&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>attribute</strong>(name : String | Symbol, raise_exception = <span class="n">true</span>)
+
+        <a class="method-permalink" href="#attribute%28name%3AString%7CSymbol%2Craise_exception%3Dtrue%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns field by given name. If object has no such field - will raise <code><a href="../../Jennifer/BaseException.html">BaseException</a></code>.
+To avoid raising exception set <code>raise_exception</code> to <code>false</code>.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attributes_hash-instance-method">
+      <div class="signature">
+        
+        def <strong>attributes_hash</strong>
+
+        <a class="method-permalink" href="#attributes_hash-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="changed?-instance-method">
+      <div class="signature">
+        
+        def <strong>changed?</strong>
+
+        <a class="method-permalink" href="#changed%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns if any field was changed. If field again got first value - <code>true</code> anyway
+will be returned</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>id</strong> : Int32?
+
+        <a class="method-permalink" href="#id%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>id!</strong>
+
+        <a class="method-permalink" href="#id%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id&#61;&#40;_id:Int32?&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>id=</strong>(_id : Int32?)
+
+        <a class="method-permalink" href="#id%3D%28_id%3AInt32%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id_changed?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>id_changed?</strong> : Bool
+
+        <a class="method-permalink" href="#id_changed%3F%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="init_primary_field&#40;value:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>init_primary_field</strong>(value : Int32)
+
+        <a class="method-permalink" href="#init_primary_field%28value%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Inits primary field</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="primary:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>primary</strong> : Int32?
+
+        <a class="method-permalink" href="#primary%3AInt32%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reload-instance-method">
+      <div class="signature">
+        
+        def <strong>reload</strong>
+
+        <a class="method-permalink" href="#reload-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Reloads all fields from db</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="save&#40;skip_validation&#61;false&#41;:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>save</strong>(skip_validation = <span class="n">false</span>) : Bool
+
+        <a class="method-permalink" href="#save%28skip_validation%3Dfalse%29%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="save&#33;&#40;skip_validation&#61;false&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>save!</strong>(skip_validation = <span class="n">false</span>)
+
+        <a class="method-permalink" href="#save%21%28skip_validation%3Dfalse%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="save_without_transaction&#40;skip_validation&#61;false&#41;:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>save_without_transaction</strong>(skip_validation = <span class="n">false</span>) : Bool
+
+        <a class="method-permalink" href="#save_without_transaction%28skip_validation%3Dfalse%29%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Saves all changes to db without invoking transaction; if validation not passed - returns <code>false</code></p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_attribute&#40;name,value:Jennifer::DBAny&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>set_attribute</strong>(name, value : <a href="../../Jennifer/DBAny.html">Jennifer::DBAny</a>)
+
+        <a class="method-permalink" href="#set_attribute%28name%2Cvalue%3AJennifer%3A%3ADBAny%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Sets <em>name</em> field with <em>value</em></p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_h-instance-method">
+      <div class="signature">
+        
+        def <strong>to_h</strong>
+
+        <a class="method-permalink" href="#to_h-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns hash with all attributes and symbol keys</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_str_h-instance-method">
+      <div class="signature">
+        
+        def <strong>to_str_h</strong>
+
+        <a class="method-permalink" href="#to_str_h-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns hash with all attributes and string keys</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="update_column&#40;name,value:Jennifer::DBAny&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>update_column</strong>(name, value : <a href="../../Jennifer/DBAny.html">Jennifer::DBAny</a>)
+
+        <a class="method-permalink" href="#update_column%28name%2Cvalue%3AJennifer%3A%3ADBAny%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Sets <em>value</em> to field with name <em>name</em> and stores them directly to db without
+any validation or callback</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="update_columns&#40;values:Hash&#40;String|Symbol,Jennifer::DBAny&#41;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>update_columns</strong>(values : Hash(String | Symbol, <a href="../../Jennifer/DBAny.html">Jennifer::DBAny</a>))
+
+        <a class="method-permalink" href="#update_columns%28values%3AHash%28String%7CSymbol%2CJennifer%3A%3ADBAny%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Sets given <em>values</em> to proper fields and stores them directly to db without
+any validation or callback</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="validate&#40;skip&#61;false&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>validate</strong>(skip = <span class="n">false</span>)
+
+        <a class="method-permalink" href="#validate%28skip%3Dfalse%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="version:String-instance-method">
+      <div class="signature">
+        
+        def <strong>version</strong> : String
+
+        <a class="method-permalink" href="#version%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="version&#33;-instance-method">
+      <div class="signature">
+        
+        def <strong>version!</strong>
+
+        <a class="method-permalink" href="#version%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="version&#61;&#40;_version:String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>version=</strong>(_version : String)
+
+        <a class="method-permalink" href="#version%3D%28_version%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="version_changed?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>version_changed?</strong> : Bool
+
+        <a class="method-permalink" href="#version_changed%3F%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

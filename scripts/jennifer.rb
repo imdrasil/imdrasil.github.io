@@ -1,0 +1,75 @@
+class Jennifer < Project
+  def initialize
+    super(name: "jennifer.cr", doc_builder: "sh generate-docs.sh")
+  end
+
+  def process_after_deploy
+    if Dir.exists?(docs_path)
+      FileUtils.rm_r(docs_path)
+    end
+    FileUtils.mkdir(docs_path)
+    repo_dir do |deep|
+      Git.checkout("master")
+      FileUtils.cp(Dir["docs/*"], File.join(deep, docs_path))
+    end
+
+    add_doc_files
+  end
+
+  def docs_path
+    File.join(name, "docs")
+  end
+
+  def doc_titles
+    @doc_titles ||= doc_files.map { |f| File.readlines(f)[0].tr("#", "").strip }
+  end
+
+  private
+
+  
+
+  def doc_files
+    @doc_files ||= Dir[File.join(docs_path, "*.md")]
+  end
+
+  def add_doc_files
+    doc_titles
+    doc_files.each do |path|
+      content = File.read(path)
+      # title = content.split("\n")[0].tr("#", "").strip
+      File.open(path, "w") do |f|
+        f << <<~YAML
+        ---
+        layout: page
+        ---
+        YAML
+        f << header
+        f << "\n"
+        content.gsub!(".md)", ")")
+        f << content
+      end
+    end
+  end
+
+  def header
+    @common_header ||= 
+      begin
+        b = binding
+        template = 
+          <<~'HTML'
+          <header class="site-header" role="banner">
+            <div class="wrapper">
+              <nav class="site-nav">
+                <div class="trigger">
+                  <% doc_files.each_with_index do |file, i| %>
+                    <a class="page-link" href="./<%= File.basename(file, ".md") %>">{{ "<%= doc_titles[i] %>" | escape }}</a>
+                  <% end %>
+                </div>
+              </nav>
+            </div>
+          </header>
+          HTML
+        ERB.new(template).result(b)
+      end
+  end
+end

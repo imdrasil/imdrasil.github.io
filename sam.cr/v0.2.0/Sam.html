@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/imdrasil/sam.cr">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/doc.js"></script>
+  <title>Sam - github.com/imdrasil/sam.cr</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent current" data-id="github.com/imdrasil/sam.cr/Sam" data-name="sam">
+      <a href="Sam.html">Sam</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/sam.cr/Sam/Args" data-name="sam::args">
+      <a href="Sam/Args.html">Args</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/sam.cr/Sam/Args/ALLOWED_HASH" data-name="sam::args::allowed_hash">
+      <a href="Sam/Args/ALLOWED_HASH.html">ALLOWED_HASH</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/sam.cr/Sam/Args/ALLOWED_TYPES" data-name="sam::args::allowed_types">
+      <a href="Sam/Args/ALLOWED_TYPES.html">ALLOWED_TYPES</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/sam.cr/Sam/Namespace" data-name="sam::namespace">
+      <a href="Sam/Namespace.html">Namespace</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/sam.cr/Sam/Task" data-name="sam::task">
+      <a href="Sam/Task.html">Task</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Sam
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/sam.cr/blob/18ceb30df9dfc6eb5985a2d35ed76988620f1001/src/sam/args.cr#L1" target="_blank">sam/args.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/imdrasil/sam.cr/blob/18ceb30df9dfc6eb5985a2d35ed76988620f1001/src/sam/namespace.cr#L1" target="_blank">sam/namespace.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/imdrasil/sam.cr/blob/18ceb30df9dfc6eb5985a2d35ed76988620f1001/src/sam/task.cr#L1" target="_blank">sam/task.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/imdrasil/sam.cr/blob/18ceb30df9dfc6eb5985a2d35ed76988620f1001/src/sam.cr#L3" target="_blank">sam.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#find%28path%29-class-method" class="signature"><strong>.find</strong>(path)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find%21%28path%29-class-method" class="signature"><strong>.find!</strong>(path)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#help-class-method" class="signature"><strong>.help</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#invoke%28name%2Cargs%3AArgs%29-class-method" class="signature"><strong>.invoke</strong>(name, args : Args)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#invoke%28name%2Cargs%3AArray%28String%29%29-class-method" class="signature"><strong>.invoke</strong>(name, args : Array(String))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#invoke%28name%29-class-method" class="signature"><strong>.invoke</strong>(name)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#namespace%28name%3AString%2C%26block%29-class-method" class="signature"><strong>.namespace</strong>(name : String, &block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#task%28name%3AString%2Cdeps%3D%5B%5DofString%29-class-method" class="signature"><strong>.task</strong>(name : String, deps = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="find&#40;path&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>find</strong>(path)
+
+        <a class="method-permalink" href="#find%28path%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/18ceb30df9dfc6eb5985a2d35ed76988620f1001/src/sam.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find&#33;&#40;path&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>find!</strong>(path)
+
+        <a class="method-permalink" href="#find%21%28path%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/18ceb30df9dfc6eb5985a2d35ed76988620f1001/src/sam.cr#L41" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="help-class-method">
+      <div class="signature">
+        
+        def self.<strong>help</strong>
+
+        <a class="method-permalink" href="#help-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/18ceb30df9dfc6eb5985a2d35ed76988620f1001/src/sam.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="invoke&#40;name,args:Args&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>invoke</strong>(name, args : <a href="Sam/Args.html">Args</a>)
+
+        <a class="method-permalink" href="#invoke%28name%2Cargs%3AArgs%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/18ceb30df9dfc6eb5985a2d35ed76988620f1001/src/sam.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="invoke&#40;name,args:Array&#40;String&#41;&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>invoke</strong>(name, args : Array(String))
+
+        <a class="method-permalink" href="#invoke%28name%2Cargs%3AArray%28String%29%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/18ceb30df9dfc6eb5985a2d35ed76988620f1001/src/sam.cr#L28" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="invoke&#40;name&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>invoke</strong>(name)
+
+        <a class="method-permalink" href="#invoke%28name%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/18ceb30df9dfc6eb5985a2d35ed76988620f1001/src/sam.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="namespace&#40;name:String,&amp;block&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>namespace</strong>(name : String, &block)
+
+        <a class="method-permalink" href="#namespace%28name%3AString%2C%26block%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/18ceb30df9dfc6eb5985a2d35ed76988620f1001/src/sam.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="task&#40;name:String,deps&#61;&#91;&#93;ofString&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>task</strong>(name : String, deps = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)
+
+        <a class="method-permalink" href="#task%28name%3AString%2Cdeps%3D%5B%5DofString%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/18ceb30df9dfc6eb5985a2d35ed76988620f1001/src/sam.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

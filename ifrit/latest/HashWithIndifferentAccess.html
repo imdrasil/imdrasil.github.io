@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/imdrasil/ifrit">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/doc.js"></script>
+  <title>HashWithIndifferentAccess(V) - github.com/imdrasil/ifrit</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Array" data-name="array(t)">
+      <a href="Array.html">Array</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/BitArray" data-name="bitarray">
+      <a href="BitArray.html">BitArray</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Hash" data-name="hash(k, v)">
+      <a href="Hash.html">Hash</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/imdrasil/ifrit/HashWithIndifferentAccess" data-name="hashwithindifferentaccess(v)">
+      <a href="HashWithIndifferentAccess.html">HashWithIndifferentAccess</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/ifrit/Ifrit" data-name="ifrit">
+      <a href="Ifrit.html">Ifrit</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Ifrit/Inflector" data-name="ifrit::inflector">
+      <a href="Ifrit/Inflector.html">Inflector</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/InheritableJSON" data-name="inheritablejson">
+      <a href="InheritableJSON.html">InheritableJSON</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/NamedTuple" data-name="namedtuple(**t)">
+      <a href="NamedTuple.html">NamedTuple</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Nil" data-name="nil">
+      <a href="Nil.html">Nil</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Number" data-name="number">
+      <a href="Number.html">Number</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Object" data-name="object">
+      <a href="Object.html">Object</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/String" data-name="string">
+      <a href="String.html">String</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Struct" data-name="struct">
+      <a href="Struct.html">Struct</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/ifrit/SymbolTable" data-name="symboltable">
+      <a href="SymbolTable.html">SymbolTable</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/SymbolTable/Methods" data-name="symboltable::methods">
+      <a href="SymbolTable/Methods.html">Methods</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/SymbolTable/UnknownSymbol" data-name="symboltable::unknownsymbol">
+      <a href="SymbolTable/UnknownSymbol.html">UnknownSymbol</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Tuple" data-name="tuple(*t)">
+      <a href="Tuple.html">Tuple</a>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> HashWithIndifferentAccess(V)
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="HashWithIndifferentAccess.html">HashWithIndifferentAccess(V)</a></li><li class="superclass"><a href="Hash.html">Hash</a>(<a href="String.html">String</a>, V)</li><li class="superclass">Reference</li><li class="superclass"><a href="Object.html">Object</a></li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/ifrit/blob/62d6c33f373ffb736d69c573e3e28329392257af/src/ifrit/hash_with_indifferent_access.cr#L3" target="_blank">ifrit/hash_with_indifferent_access.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%5B%5D%3D%28key%3ASymbol%2Cvalue%3AV%29-instance-method" class="signature"><strong>#[]=</strong>(key : Symbol, value : V)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete%28key%3ASymbol%29-instance-method" class="signature"><strong>#delete</strong>(key : Symbol)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete%28key%3ASymbol%2C%26block%29-instance-method" class="signature"><strong>#delete</strong>(key : Symbol, &block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#values_at%28%2Aindexes%3ASymbol%29-instance-method" class="signature"><strong>#values_at</strong>(*indexes : Symbol)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="Hash.html">Hash</a>(<a href="String.html">String</a>, V)</code></h3>
+  
+  
+    <a href="Hash.html#blank%3F-instance-method" class="tooltip">
+      <span>blank?</span>
+    blank?</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="Object.html">Object</a></code></h3>
+  
+  
+    <a href="Object.html#blank%3F%3ABool-instance-method" class="tooltip">
+      <span>blank? : Bool</span>
+    blank?</a>, 
+    
+  
+    <a href="Object.html#present%3F-instance-method" class="tooltip">
+      <span>present?</span>
+    present?</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="&#91;&#93;&#61;&#40;key:Symbol,value:V&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>[]=</strong>(key : Symbol, value : V)
+
+        <a class="method-permalink" href="#%5B%5D%3D%28key%3ASymbol%2Cvalue%3AV%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/ifrit/blob/62d6c33f373ffb736d69c573e3e28329392257af/src/ifrit/hash_with_indifferent_access.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete&#40;key:Symbol&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>delete</strong>(key : Symbol)
+
+        <a class="method-permalink" href="#delete%28key%3ASymbol%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/ifrit/blob/62d6c33f373ffb736d69c573e3e28329392257af/src/ifrit/hash_with_indifferent_access.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete&#40;key:Symbol,&amp;block&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>delete</strong>(key : Symbol, &block)
+
+        <a class="method-permalink" href="#delete%28key%3ASymbol%2C%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/ifrit/blob/62d6c33f373ffb736d69c573e3e28329392257af/src/ifrit/hash_with_indifferent_access.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="values_at&#40;*indexes:Symbol&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>values_at</strong>(*indexes : Symbol)
+
+        <a class="method-permalink" href="#values_at%28%2Aindexes%3ASymbol%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/ifrit/blob/62d6c33f373ffb736d69c573e3e28329392257af/src/ifrit/hash_with_indifferent_access.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

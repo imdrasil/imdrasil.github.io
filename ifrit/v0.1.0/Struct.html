@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/imdrasil/ifrit">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/doc.js"></script>
+  <title>Struct - github.com/imdrasil/ifrit</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Array" data-name="array(t)">
+      <a href="Array.html">Array</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/BitArray" data-name="bitarray">
+      <a href="BitArray.html">BitArray</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Hash" data-name="hash(k, v)">
+      <a href="Hash.html">Hash</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/HashWithIndifferentAccess" data-name="hashwithindifferentaccess(v)">
+      <a href="HashWithIndifferentAccess.html">HashWithIndifferentAccess</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Ifrit" data-name="ifrit">
+      <a href="Ifrit.html">Ifrit</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/InheritableJSON" data-name="inheritablejson">
+      <a href="InheritableJSON.html">InheritableJSON</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/NamedTuple" data-name="namedtuple(**t)">
+      <a href="NamedTuple.html">NamedTuple</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Nil" data-name="nil">
+      <a href="Nil.html">Nil</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Number" data-name="number">
+      <a href="Number.html">Number</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Object" data-name="object">
+      <a href="Object.html">Object</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/String" data-name="string">
+      <a href="String.html">String</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/imdrasil/ifrit/Struct" data-name="struct">
+      <a href="Struct.html">Struct</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/ifrit/SymbolTable" data-name="symboltable">
+      <a href="SymbolTable.html">SymbolTable</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/SymbolTable/Methods" data-name="symboltable::methods">
+      <a href="SymbolTable/Methods.html">Methods</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/SymbolTable/UnknownSymbol" data-name="symboltable::unknownsymbol">
+      <a href="SymbolTable/UnknownSymbol.html">UnknownSymbol</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Tuple" data-name="tuple(*t)">
+      <a href="Tuple.html">Tuple</a>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">abstract struct</span> Struct
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="Struct.html">Struct</a></li><li class="superclass">Value</li><li class="superclass"><a href="Object.html">Object</a></li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p><code><a href="Struct.html">Struct</a></code> is the base type of structs you create in your program.
+It is set as a struct's superstruct when you don't specify one:</p>
+
+<pre><code><span class="k">struct</span> <span class="t">Foo</span> <span class="c"># &lt; Struct</span>
+<span class="k">end</span></code></pre>
+
+<p>Structs inherit from <code>Value</code> so they are allocated on the stack and passed
+by value. For this reason you should prefer using structs for immutable
+data types and/or stateless wrappers of other types.</p>
+
+<p>Mutable structs are still allowed, but code involving them must remember
+that passing a struct to a method actually passes a copy to it, so the
+method should return the modified struct:</p>
+
+<pre><code><span class="k">struct</span> <span class="t">Mutable</span>
+  property value
+
+  <span class="k">def</span> <span class="m">initialize</span>(@value : <span class="t">Int32</span>)
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="m">change_bad</span>(mutable)
+  mutable.value <span class="o">=</span> <span class="n">2</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="m">change_good</span>(mutable)
+  mutable.value <span class="o">=</span> <span class="n">2</span>
+  mutable
+<span class="k">end</span>
+
+mut <span class="o">=</span> <span class="t">Mutable</span>.<span class="k">new</span> <span class="n">1</span>
+change_bad(mut)
+mut.value <span class="c"># &#61;&gt; 1</span>
+
+mut <span class="o">=</span> change_good(mut)
+mut.value <span class="c"># &#61;&gt; 2</span></code></pre>
+
+<p>The standard library provides a useful <code>record</code> macro that allows you to
+create immutable structs with some fields, similar to a <code><a href="Tuple.html">Tuple</a></code> but using
+names instead of indices.</p>
+
+
+
+
+
+
+
+
+
+  <h2>Direct Known Subclasses</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="BitArray.html">BitArray</a></li>
+  
+  </ul>
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/ifrit/blob/5eca14c269be59a188dacfc2f2679e8d04618f6c/src/ifrit/core.cr#L19" target="_blank">ifrit/core.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#blank%3F-instance-method" class="signature"><strong>#blank?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#present%3F-instance-method" class="signature"><strong>#present?</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Macro Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#singleton_delegate%28%2Amethods%2Cto%29-macro" class="signature"><strong>singleton_delegate</strong>(*methods, to)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="Object.html">Object</a></code></h3>
+  
+  
+    <a href="Object.html#blank%3F%3ABool-instance-method" class="tooltip">
+      <span>blank? : Bool</span>
+    blank?</a>, 
+    
+  
+    <a href="Object.html#present%3F-instance-method" class="tooltip">
+      <span>present?</span>
+    present?</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="blank?-instance-method">
+      <div class="signature">
+        
+        def <strong>blank?</strong>
+
+        <a class="method-permalink" href="#blank%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/ifrit/blob/5eca14c269be59a188dacfc2f2679e8d04618f6c/src/ifrit/core.cr#L28" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="present?-instance-method">
+      <div class="signature">
+        
+        def <strong>present?</strong>
+
+        <a class="method-permalink" href="#present%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/ifrit/blob/5eca14c269be59a188dacfc2f2679e8d04618f6c/src/ifrit/core.cr#L32" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Macro Detail</h2>
+  
+    <div class="entry-detail" id="singleton_delegate&#40;*methods,to&#41;-macro">
+      <div class="signature">
+        
+        macro <strong>singleton_delegate</strong>(*methods, to)
+
+        <a class="method-permalink" href="#singleton_delegate%28%2Amethods%2Cto%29-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/ifrit/blob/5eca14c269be59a188dacfc2f2679e8d04618f6c/src/ifrit/core.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Imdrasil Homebrew Stuff</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/jennifer.cr/docs/query_dsl.html">
+  <link rel="alternate" type="application/rss+xml" title="Imdrasil Homebrew Stuff" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/">Imdrasil Homebrew Stuff</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    <header class="site-header" role="banner">
+  <div class="wrapper">
+    <nav class="site-nav">
+      <div class="trigger">
+        
+          <a class="page-link" href="./model_mapping">Mapping</a>
+        
+          <a class="page-link" href="./model_scopes">Scopes</a>
+        
+          <a class="page-link" href="./crud">CRUD</a>
+        
+          <a class="page-link" href="./query_dsl">Query DSL</a>
+        
+          <a class="page-link" href="./callbacks">Callbacks</a>
+        
+          <a class="page-link" href="./view">Views</a>
+        
+          <a class="page-link" href="./timestamps">Timestamps</a>
+        
+          <a class="page-link" href="./pagination_and_ordering">Pagination &amp; Ordering</a>
+        
+          <a class="page-link" href="./configuration">Configuration</a>
+        
+          <a class="page-link" href="./aggregation">Aggregations</a>
+        
+          <a class="page-link" href="./relations">Relations</a>
+        
+          <a class="page-link" href="./validation">Validation</a>
+        
+          <a class="page-link" href="./record">Record</a>
+        
+          <a class="page-link" href="./migration">Migration</a>
+        
+          <a class="page-link" href="./eager_loading">Eager Loading</a>
+        
+          <a class="page-link" href="./model_sti">STI</a>
+        
+          <a class="page-link" href="./index">Jennifer Documentation</a>
+        
+          <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+<h1 id="query-dsl">Query DSL</h1>
+
+<p>My favorite part. Jennifer allows you to build lazy evaluated queries with chaining syntax. But some of them could be only at the and of a chain (such as <code class="highlighter-rouge">#fisrt</code> or <code class="highlighter-rouge">#pluck</code>).</p>
+
+<h4 id="where">Where</h4>
+
+<p><code class="highlighter-rouge">#all</code> retrieves everything (only at the beginning; creates empty request)</p>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span>
+</code></pre></div></div>
+
+<p>Specifying where clause is really flexible. Method accepts block which represents where clause of request (or it’s part - you can chain several <code class="highlighter-rouge">#where</code> and they will be concatenated using <code class="highlighter-rouge">AND</code>).</p>
+
+<p>To specify field use <code class="highlighter-rouge">#c</code> method which accepts string as field name. As I’ve mentioned after declaring model attributes, you can use their names inside of block: <code class="highlighter-rouge">_field_name</code> if it is for current table and <code class="highlighter-rouge">ModelName._field_name</code> if for another model. Also there you can specify attribute of some model or table using underscores: <code class="highlighter-rouge">_some_model_or_table_name__field_name</code> - model/table name is separated from field name by “__”. You can specify relation in space of which you want to declare condition using double _ at the beginning and block. Several examples:</p>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">c</span><span class="p">(</span><span class="s2">"id"</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_id</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">Address</span><span class="p">)</span> <span class="p">{</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">_id</span> <span class="o">==</span> <span class="n">_contact_id</span> <span class="p">}</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">relation</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">).</span><span class="nf">where</span> <span class="p">{</span> <span class="n">__addresses</span> <span class="p">{</span> <span class="n">_id</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span> <span class="p">}</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_contacts__id</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Also you can use <code class="highlighter-rouge">primary</code> to mention primary field:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Passport</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">primary</span><span class="p">.</span><span class="nf">like</span><span class="p">(</span><span class="s2">"%123%"</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Supported operators:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>SQL variant</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">==</code></td>
+      <td><code class="highlighter-rouge">=</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">!=</code></td>
+      <td><code class="highlighter-rouge">!=</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;</code></td>
+      <td><code class="highlighter-rouge">&lt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;=</code></td>
+      <td><code class="highlighter-rouge">&lt;=</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&gt;</code></td>
+      <td><code class="highlighter-rouge">&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&gt;=</code></td>
+      <td><code class="highlighter-rouge">&gt;=</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">=~</code></td>
+      <td><code class="highlighter-rouge">REGEXP</code>, <code class="highlighter-rouge">~</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&amp;</code></td>
+      <td><code class="highlighter-rouge">AND</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">|</code></td>
+      <td><code class="highlighter-rouge">OR</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">xor</code></td>
+      <td><code class="highlighter-rouge">XOR</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>And operator-like methods:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>SQL variant</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">regexp</code></td>
+      <td><code class="highlighter-rouge">REGEXP</code>, <code class="highlighter-rouge">~</code> (accepts <code class="highlighter-rouge">String</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">not_regexp</code></td>
+      <td><code class="highlighter-rouge">NOT REGEXP</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">like</code></td>
+      <td><code class="highlighter-rouge">LIKE</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">not_like</code></td>
+      <td><code class="highlighter-rouge">NOT LIKE</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">is</code></td>
+      <td><code class="highlighter-rouge">IS</code> and provided value</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">not</code></td>
+      <td><code class="highlighter-rouge">NOT</code> and provided value (or as unary operator if no one is given)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">in</code></td>
+      <td><code class="highlighter-rouge">IN</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">between</code></td>
+      <td><code class="highlighter-rouge">BETWEEN</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>And postgres specific:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>SQL variant</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">contain</code></td>
+      <td><code class="highlighter-rouge">@&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">contained</code></td>
+      <td><code class="highlighter-rouge">&lt;@</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">overlap</code></td>
+      <td><code class="highlighter-rouge">&amp;&amp;</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Also Jennifer supports json field path methods for criterias: <code class="highlighter-rouge">Criteria#take</code> (also accessible as <code class="highlighter-rouge">Criteria#[]</code>) and <code class="highlighter-rouge">Criteria#path</code>.</p>
+
+<p><strong>MySQL</strong></p>
+
+<p>For mysql both <code class="highlighter-rouge">take</code> and <code class="highlighter-rouge">path</code> methods behave in the same way.</p>
+
+<p>Thera are 2 supported cases:</p>
+
+<ul>
+  <li>
+    <pre><code class="language-SQL"> WHERE field_name-&gt;"$.selector"
+</code></pre>
+    <p>could be specified using</p>
+  </li>
+</ul>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">where</span> <span class="p">{</span> <span class="n">_field_name</span><span class="p">[</span><span class="s2">"$.selector"</span><span class="p">]}</span>
+</code></pre></div></div>
+
+<p>*</p>
+<pre><code class="language-SQL">WHERE field_name-&gt;"$[1]"
+</code></pre>
+
+<p>can be specified as:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">where</span> <span class="p">{</span> <span class="n">_field_name</span><span class="p">.</span><span class="nf">take</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>**PostgreSQL</p>
+
+<ul>
+  <li><code class="highlighter-rouge">#path</code> method use <code class="highlighter-rouge">#&gt;</code> operator</li>
+  <li><code class="highlighter-rouge">#take</code> method use <code class="highlighter-rouge">-&gt;</code> operator</li>
+</ul>
+
+<p>To specify exact sql query use <code class="highlighter-rouge">#sql</code> method:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># it behaves like regular criteria</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"age &gt; ?"</span><span class="p">,</span>  <span class="p">[</span><span class="mi">15</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">_name</span> <span class="o">==</span> <span class="s2">"Stephan"</span><span class="p">)</span> <span class="p">}</span> 
+</code></pre></div></div>
+
+<p>Query will be inserted “as is”. Usage of <code class="highlighter-rouge">#sql</code> allows to use nested plain request. Such plain sql will be surrounded by brackets (in common case).</p>
+
+<p><strong>Tips</strong></p>
+
+<ul>
+  <li>all regexp methods accepts string representation of regexp</li>
+  <li>use parenthesis for binary operators (<code class="highlighter-rouge">&amp;</code> and <code class="highlighter-rouge">|</code>)</li>
+  <li><code class="highlighter-rouge">nil</code> given to <code class="highlighter-rouge">!=</code> and <code class="highlighter-rouge">==</code> will be transformed to <code class="highlighter-rouge">IS NOT NULL</code> and <code class="highlighter-rouge">IS NULL</code></li>
+  <li><code class="highlighter-rouge">is</code> and <code class="highlighter-rouge">not</code> operator accepts next values: <code class="highlighter-rouge">:nil</code>, <code class="highlighter-rouge">nil</code>, <code class="highlighter-rouge">:unknown</code>, <code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">false</code></li>
+</ul>
+
+<p>At the end - several examples:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="p">(</span><span class="n">_id</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">_name</span><span class="p">.</span><span class="nf">regexp</span><span class="p">(</span><span class="s2">"^[a-d]"</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="no">Address</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_contact_id</span><span class="p">.</span><span class="nf">is</span><span class="p">(</span><span class="kp">nil</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">ANY</code> and <code class="highlighter-rouge">ALL</code> statement allow to path nested query:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Cotnact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_id</span> <span class="o">==</span> <span class="n">any</span><span class="p">(</span><span class="no">Address</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_main</span> <span class="p">}.</span><span class="nf">select</span><span class="p">(</span><span class="ss">:contact_id</span><span class="p">))</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="complex-logical-condition">Complex logical condition</h5>
+
+<p>To design some complex logcal expression like: <code class="highlighter-rouge">a &amp; (b | c) &amp; d</code> use <code class="highlighter-rouge">ExpressionBuilder#g</code> method:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="p">(</span><span class="n">_id</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">g</span><span class="p">(</span><span class="n">_name</span><span class="p">.</span><span class="nf">like</span><span class="p">(</span><span class="s2">"%asd%"</span><span class="p">)</span> <span class="o">|</span> <span class="n">_age</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">id</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="smart-arguments-parsing">Smart arguments parsing</h5>
+
+<p>Next methods provide flexible api for passing arguments:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">#order</code></li>
+  <li><code class="highlighter-rouge">#reorder</code></li>
+  <li><code class="highlighter-rouge">#group</code></li>
+  <li><code class="highlighter-rouge">#select</code></li>
+</ul>
+
+<p>Theys allows pass argument (tuple, named tuple or hash - depending on context) of <code class="highlighter-rouge">String</code>, <code class="highlighter-rouge">Symbol</code> or <code class="highlighter-rouge">Cryteria</code>. <code class="highlighter-rouge">String</code> arguments will be parsed as plain sql (<code class="highlighter-rouge">RawSql</code>) and <code class="highlighter-rouge">Symbol</code> - as <code class="highlighter-rouge">Criteria</code>.</p>
+
+<h4 id="select">Select</h4>
+
+<p>Raw sql for <code class="highlighter-rouge">SELECT</code> clause could be passed into <code class="highlighter-rouge">#select</code> method. This have highest priority during forming this query part.</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="s2">"COUNT(id) as count, contacts.name"</span><span class="p">).</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span>
+       <span class="p">.</span><span class="nf">having</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"COUNT(id)"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Also <code class="highlighter-rouge">#select</code> accepts block where all fields could be specified and aliased:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="p">[</span><span class="n">sql</span><span class="p">(</span><span class="s2">"COUNT(id)"</span><span class="p">).</span><span class="nf">alias</span><span class="p">(</span><span class="s2">"count"</span><span class="p">),</span> <span class="n">_name</span><span class="p">]</span> <span class="p">}.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span>
+	   <span class="p">.</span><span class="nf">having</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"count"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="from">From</h4>
+
+<p>Also you can provide subquery to specify FROM clause (but be carefull with source fields during result retriving and mapping to objects)</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="s2">"select * from contacts where id &gt; 2"</span><span class="p">)</span>
+<span class="no">Contacts</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_id</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<h4 id="joins">Joins</h4>
+
+<p>To join another table you can use <code class="highlighter-rouge">join</code> method passing model class or table name (<code class="highlighter-rouge">String</code>) and join type (default is <code class="highlighter-rouge">:inner</code>).</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">field</span> <span class="o">=</span> <span class="s2">"contact_id"</span>
+<span class="n">table</span> <span class="o">=</span> <span class="s2">"passports"</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">Address</span><span class="p">)</span> <span class="p">{</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">_id</span> <span class="o">==</span> <span class="n">_contact_id</span> <span class="p">}.</span><span class="nf">join</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="p">{</span> <span class="n">c</span><span class="p">(</span><span class="n">field</span><span class="p">)</span> <span class="o">==</span> <span class="n">_id</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Query, built inside of block, will passed to <code class="highlighter-rouge">ON</code> section of <code class="highlighter-rouge">JOIN</code>. Current context of block is joined table.</p>
+
+<p>Also there is two shortcuts for left and right joins:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">left_join</span><span class="p">(</span><span class="no">Address</span><span class="p">)</span> <span class="p">{</span> <span class="n">_contacts__id</span> <span class="o">==</span> <span class="n">_contact_id</span> <span class="p">}</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">right_join</span><span class="p">(</span><span class="s2">"addresses"</span><span class="p">)</span> <span class="p">{</span> <span class="n">_contacts__id</span> <span class="o">==</span> <span class="n">c</span><span class="p">(</span><span class="s2">"contact_id"</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>For now Jennifer provide manual aliasing as second argument for <code class="highlighter-rouge">#join</code> and automatic when using <code class="highlighter-rouge">#eager_load</code> and <code class="highlighter-rouge">#with</code> methods. For details check out the code.</p>
+</blockquote>
+
+<h4 id="relation">Relation</h4>
+
+<p>To join model relation (has_many, belongs_to and has_one) pass it’s name and join type:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">relation</span><span class="p">(</span><span class="s2">"addresses"</span><span class="p">).</span><span class="nf">relation</span><span class="p">(</span><span class="ss">:passport</span><span class="p">,</span> <span class="ss">type: :left</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="relation-eager-loading">Relation eager loading</h4>
+
+<h5 id="actual-eager-load">Actual eager load</h5>
+
+<p>To automatically join some relation and get it from db use <code class="highlighter-rouge">#eager_load</code> and pass relation name:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">eager_load</span><span class="p">(</span><span class="s2">"addresses"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>If there are several eager_load with same table - Jennifer will auto alias tables.</p>
+
+<h5 id="includes-preload">Includes (preload)</h5>
+
+<p>To load all related objects after main query being executed use <code class="highlighter-rouge">#includes</code> method (or it’s alias <code class="highlighter-rouge">#preload</code>):</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="group">Group</h4>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"id"</span><span class="p">).</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:id</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">#group</code> allows to add columns for <code class="highlighter-rouge">GROUP BY</code> section. If passing arguments are tuple of strings or just one string - all columns will be parsed as current table columns. If there is a need to group on joined table or using fields from several tables use next:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">relation</span><span class="p">(</span><span class="s2">"addresses"</span><span class="p">).</span><span class="nf">group</span><span class="p">(</span><span class="ss">addresses: </span><span class="p">[</span><span class="s2">"street"</span><span class="p">],</span> <span class="ss">contacts: </span><span class="p">[</span><span class="s2">"name"</span><span class="p">])</span>
+       <span class="p">.</span><span class="nf">pluck</span><span class="p">(</span><span class="s2">"addresses.street"</span><span class="p">,</span> <span class="s2">"contacts.name"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Here keys should be <em>table names</em>.</p>
+
+<h4 id="having">Having</h4>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">).</span><span class="nf">having</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">&gt;</span> <span class="mi">15</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">#having</code> allows to add <code class="highlighter-rouge">HAVING</code> part of query. It accepts block same way as <code class="highlighter-rouge">#where</code> does.</p>
+
+<h4 id="exists">Exists</h4>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">&gt;</span> <span class="mi">42</span> <span class="p">}.</span><span class="nf">exists?</span> <span class="c1"># returns true or false</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">#exists?</code> check is there is any record with provided conditions. Can be only at the end of query chain - it hit the db.</p>
+
+<h4 id="distinct">Distinct</h4>
+
+<p>Adds <code class="highlighter-rouge">DISTINCT</code> keyword of at the very beginning of <code class="highlighter-rouge">SELECT</code> statement</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contant</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">distinct</span> <span class="c1"># Array(Contact) with unique attributes (all)</span>
+</code></pre></div></div>
+
+<h4 id="union">Union</h4>
+
+<p>To make common SQL <code class="highlighter-rouge">UNION</code> you can use <code class="highlighter-rouge">#union</code> method which accepts nother query object. But be carefull - all selected fields should be same.</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Address</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_street</span><span class="p">.</span><span class="nf">like</span><span class="p">(</span><span class="s2">"%St. Paul%"</span><span class="p">)</span> <span class="p">}.</span><span class="nf">union</span><span class="p">(</span><span class="no">Profile</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_login</span><span class="p">.</span><span class="nf">in</span><span class="p">([</span><span class="s2">"login1"</span><span class="p">,</span> <span class="s2">"login2"</span><span class="p">])</span> <span class="p">}.</span><span class="nf">select</span><span class="p">(</span><span class="ss">:contact_id</span><span class="p">)).</span><span class="nf">select</span><span class="p">(</span><span class="ss">:contact_id</span><span class="p">).</span><span class="nf">results</span>
+</code></pre></div></div>
+
+<p>In this example you can’t use regular <code class="highlighter-rouge">#to_a</code> because result reords will be not an address or profile so it couldn’t be mapped to any of these models. That’s why only <code class="highlighter-rouge">Jennifer::Record</code> could be got.</p>
+
+<h4 id="none">None</h4>
+
+<p>If at some point you desides to make query to return empty result set - use next:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">q</span> <span class="o">=</span> <span class="no">Contats</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">&gt;</span> <span class="mi">19</span> <span class="p">}</span>
+<span class="n">q</span><span class="p">.</span><span class="nf">none</span>
+<span class="n">q</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_name</span><span class="p">.</span><span class="nf">like</span><span class="p">(</span><span class="s2">"Jo%"</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">q</span><span class="p">.</span><span class="nf">to_a</span>
+</code></pre></div></div>
+
+<p>But be carefull - all further chainable method calls will continue modify the object - only db call will be avoided.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imdrasil Homebrew Stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Imdrasil Homebrew Stuff
+            
+            </li>
+            
+            <li><a href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/imdrasil"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">imdrasil</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

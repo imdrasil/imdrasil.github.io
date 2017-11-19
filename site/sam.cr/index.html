@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Imdrasil Homebrew Stuff</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/sam.cr/">
+  <link rel="alternate" type="application/rss+xml" title="Imdrasil Homebrew Stuff" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/">Imdrasil Homebrew Stuff</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="sam--">Sam <a href="https://travis-ci.org/imdrasil/sam.cr"><img src="https://travis-ci.org/imdrasil/sam.cr.svg" alt="Build Status" /></a> <a href="https://github.com/imdrasil/sam.cr/releases"><img src="https://img.shields.io/github/release/imdrasil/sam.cr.svg" alt="Latest Release" /></a></h1>
+
+<p>Sam is a Make-like utility which allows to specify tasks like Ruby’s Rake do using plain Crystal.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Add this to your application’s <code class="highlighter-rouge">shard.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
+  <span class="na">sam</span><span class="pi">:</span>
+    <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/sam.cr</span>
+</code></pre></div></div>
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="simple-example">Simple example</h3>
+
+<p>Create <code class="highlighter-rouge">sam.cr</code> file in your app root directory and paste next:</p>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># here you should load your app configuration if </span>
+<span class="c1"># it will be needed to perform tasks</span>
+<span class="no">Sam</span><span class="p">.</span><span class="nf">namespace</span> <span class="s2">"db"</span> <span class="k">do</span>
+  <span class="n">namespace</span> <span class="s2">"schema"</span> <span class="k">do</span>
+    <span class="n">desc</span> <span class="s2">"Outputs smth: requrie 2 named arguments"</span>
+    <span class="n">task</span> <span class="s2">"load"</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
+      <span class="nb">puts</span> <span class="n">args</span><span class="p">[</span><span class="s2">"f1"</span><span class="p">]</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">invoke</span><span class="p">(</span><span class="s2">"1"</span><span class="p">)</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">invoke</span><span class="p">(</span><span class="s2">"schema:1"</span><span class="p">)</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">invoke</span><span class="p">(</span><span class="s2">"db:migrate"</span><span class="p">)</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">invoke</span><span class="p">(</span><span class="s2">"db:db:migrate"</span><span class="p">)</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">invoke</span><span class="p">(</span><span class="s2">"db:ping"</span><span class="p">)</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">invoke</span><span class="p">(</span><span class="s2">"din:dong"</span><span class="p">)</span>
+      <span class="nb">puts</span> <span class="s2">"------"</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">invoke</span><span class="p">(</span><span class="s2">"2"</span><span class="p">,</span> <span class="p">{</span><span class="s2">"f2"</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="k">end</span>
+
+    <span class="n">task</span> <span class="s2">"1"</span> <span class="k">do</span>
+      <span class="nb">puts</span> <span class="s2">"1"</span>
+    <span class="k">end</span>
+
+    <span class="n">task</span> <span class="s2">"2"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"db:migrate"</span><span class="p">]</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
+      <span class="nb">puts</span> <span class="n">args</span><span class="p">.</span><span class="nf">named</span><span class="p">[</span><span class="s2">"f2"</span><span class="p">].</span><span class="nf">as</span><span class="p">(</span><span class="no">Int32</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="n">namespace</span> <span class="s2">"db"</span> <span class="k">do</span>
+    <span class="n">task</span> <span class="s2">"schema"</span> <span class="k">do</span>
+        <span class="nb">puts</span> <span class="s2">"same as namespace"</span>
+    <span class="k">end</span>
+    
+    <span class="n">task</span> <span class="s2">"migrate"</span> <span class="k">do</span>
+      <span class="nb">puts</span> <span class="s2">"migrate"</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="n">task</span> <span class="s2">"ping"</span> <span class="k">do</span>
+    <span class="nb">puts</span> <span class="s2">"ping"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="no">Sam</span><span class="p">.</span><span class="nf">help</span>
+</code></pre></div></div>
+
+<p>To ran any of this task open prompt in root location and paste:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> &lt;your_task_path&gt; <span class="o">[</span>options]
+</code></pre></div></div>
+
+<p>To get list of all available tasks:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> <span class="nb">help</span>
+</code></pre></div></div>
+
+<p>Each tasks has own “path” which consists of namespace names and task name joined together by “:”.</p>
+
+<p>Also tasks can accept space separated arguments from prompt. To pass named argument (which have associated name) use next rules:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">-name value</code></li>
+  <li><code class="highlighter-rouge">-name "value with spaces"</code></li>
+  <li><code class="highlighter-rouge">name=value</code></li>
+  <li><code class="highlighter-rouge">name="value with spaces"</code></li>
+</ul>
+
+<p>Also just array of arguments can be passed - just past everything needed without any flags anywhere:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> &lt;your_task_path&gt; first_raw_option <span class="s2">"options with spaces"</span>
+</code></pre></div></div>
+
+<p>All arguments from prompt will be parsed as <code class="highlighter-rouge">String</code>.</p>
+
+<p>So to invoke first task from example (“load”) will be used next command:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crystal sam.cr <span class="nt">--</span> db:schema:load <span class="nt">-f1</span> asd
+</code></pre></div></div>
+
+<p>Makefile-like usage is supported. To autogenerate receipt just call</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> generate:makefile
+</code></pre></div></div>
+<p>This will modify existing Makefile or creates new one. Be carefull - this will silent all unexisting tasks. For more details take a look on template in code. This will allow to call tasks in the next way:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make sam some:task raw_arg1
+</code></pre></div></div>
+
+<p>But for named argument you need to add <code class="highlighter-rouge">--</code></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make sam db:shema:load <span class="nt">--</span> <span class="nt">-f1</span> asd
+</code></pre></div></div>
+
+<p>By default it will try to use your samfile in the app root. To override it pass proper way as second argument</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal src/sam.cr <span class="nt">--</span> generate:makefile <span class="s2">"src/sam.cr"</span>
+</code></pre></div></div>
+
+<p>To autoload Sam files from your dependencies - just past</p>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">load_dependencies</span> <span class="s2">"dep1"</span><span class="p">,</span> <span class="s2">"dep2"</span><span class="sb">`
+</span></code></pre></div></div>
+
+<p>If library provides some optional files with tasks they could be laod as well using named tuple  literal:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">load_dependencies</span> <span class="s2">"lib1"</span><span class="p">,</span> <span class="s2">"lib2"</span><span class="p">:</span> <span class="s2">"special_file"</span><span class="p">,</span> <span class="s2">"lib3"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"special_file"</span><span class="p">],</span> <span class="s2">"lib3"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"/root_special_file"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>By default any nested dependency will be loaded from “tasks” folder at the lib root level. Any dependecy with leading “/” makes to load them using given path. So <code class="highlighter-rouge">root_special_file</code> for <code class="highlighter-rouge">lib3</code> will be loaded with <code class="highlighter-rouge">lib3/src/lib3/root_special_file.cr</code>.</p>
+
+<p>To execute multiple tasks at once just list them separted by <code class="highlighter-rouge">@</code> character:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">crystal</span> <span class="n">sam</span><span class="p">.</span><span class="nf">cr</span> <span class="o">--</span> <span class="n">namespace1</span><span class="ss">:task1</span> <span class="n">arg1</span><span class="o">=</span><span class="mi">2</span> <span class="err">@</span> <span class="n">other_task</span> <span class="n">arg1</span><span class="o">=</span><span class="mi">3</span>
+</code></pre></div></div>
+
+<p>Each task will be executed only if the previous one is successfully finished (without throwing any exception).</p>
+
+<h4 id="namespace">Namespace</h4>
+
+<p>To define namespace (for now they only used for namespacing tasks) use <code class="highlighter-rouge">Sam.namespace</code> (opens <code class="highlighter-rouge">root</code> namespace) or just <code class="highlighter-rouge">namespace</code> inside of it. <code class="highlighter-rouge">Sam.namespace</code> can be called any times - everything will be added to existing staff.</p>
+
+<h4 id="task">Task</h4>
+<p>To define task use <code class="highlighter-rouge">task</code> method with it’s name and block. Given block could take 0..2 arguments: <code class="highlighter-rouge">Task</code> object and <code class="highlighter-rouge">Args</code> object. Also as second parameter could be provided array of dependent tasks which will be invoked before current.</p>
+
+<p>Another task could be invoked from current using <code class="highlighter-rouge">invoke</code> method. It has next signatures:</p>
+
+<ul>
+  <li></li>
+  <li>
+    <p><code class="highlighter-rouge">name : String</code> - task path</p>
+  </li>
+  <li></li>
+  <li><code class="highlighter-rouge">name : String</code> - task path</li>
+  <li>
+    <p><code class="highlighter-rouge">args : Args</code> - prepared argument object</p>
+  </li>
+  <li></li>
+  <li><code class="highlighter-rouge">name : String</code> - task path</li>
+  <li>
+    <p><code class="highlighter-rouge">hash : Hash(String, String | Int32, Float32)</code> - hash with arguments</p>
+  </li>
+  <li></li>
+  <li><code class="highlighter-rouge">name : String</code> - task path</li>
+  <li><code class="highlighter-rouge">args : Tuple</code> - raw arguments</li>
+</ul>
+
+<h4 id="routing">Routing</h4>
+
+<p>When task is invoked from other one provided path will float up through current task namespace nesting and search given path on each level. Task could have same name as any existing namespace.</p>
+
+<h4 id="args">Args</h4>
+
+<p>This class represents argument set for task. It can handle named arguments and just raw array of arguments. Now it supports only <code class="highlighter-rouge">String</code>, <code class="highlighter-rouge">Int32</code> and <code class="highlighter-rouge">Float64</code> types. To get access to named argument you can use <code class="highlighter-rouge">[](name : String)</code> and <code class="highlighter-rouge">[]?(name : String)</code> methods. For raw attributes there are <code class="highlighter-rouge">[](index : Int32)</code> and <code class="highlighter-rouge">[]?(index : Int32)</code> as well.</p>
+
+<h2 id="development">Development</h2>
+
+<p>Before running tests call</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal examples/sam.cr <span class="nt">--</span> setup
+</code></pre></div></div>
+
+<h2 id="contributing">Contributing</h2>
+
+<ol>
+  <li><a href="https://github.com/imdrasil/sam.cr/fork">Fork it</a></li>
+  <li>Create your feature branch (git checkout -b my-new-feature)</li>
+  <li>Commit your changes (git commit -am ‘Add some feature’)</li>
+  <li>Push to the branch (git push origin my-new-feature)</li>
+  <li>Create a new Pull Request</li>
+</ol>
+
+<h2 id="contributors">Contributors</h2>
+
+<ul>
+  <li><a href="https://github.com/[your-github-name]">imdrasil</a> Roman Kalnytskyi - creator, maintainer</li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imdrasil Homebrew Stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Imdrasil Homebrew Stuff
+            
+            </li>
+            
+            <li><a href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/imdrasil"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">imdrasil</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
