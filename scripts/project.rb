@@ -48,9 +48,11 @@ class Project
         current_deep = File.join(deep, "..")
         build(current_deep)
 
-        gv = Git.versions - @scip_versions
-        latest_gv = gv.size < KEEP_COUNT ? gv : gv[-KEEP_COUNT..-1]
-        @new_versions = latest_gv - versions
+        gv = NaturalSort.sort(Git.versions - @scip_versions).reverse!
+        @new_versions = gv[0...KEEP_COUNT] - versions
+
+        #require "pry"
+        #binding.pry
 
         new_versions.each do |v|
           build(current_deep, v)
@@ -83,7 +85,6 @@ class Project
     Dir.mkdir(version_path)
     FileUtils.cp_r(Dir['doc/*'], version_path)
     FileUtils.rm_r('doc')
-    @site.say("Builded")
   end
 
   def repo_dir
@@ -119,14 +120,23 @@ class Project
   end
 
   def parse_versions
-    Dir.chdir(File.join(@site.root_dir, @name)) do
-      Dir["v*"] - ["versions.md"]
-    end
+    NaturalSort.sort(
+      Dir.chdir(File.join(@site.root_dir, @name)) do
+        Dir["v*"] - ["versions.md"]
+      end
+    ).reverse!
   end
 
   def add_versions_file
     versions_file_path = File.join(@name, "versions.md")
-    template = 
+    b = binding
+    File.open(versions_file_path, "w") do |f|
+      f << ERB.new(versions_file_template).result(b)
+    end
+  end
+
+  def versions_file_template
+    template =
       <<~'MARKDOWN'
       Available documentation versions:
 
@@ -135,7 +145,7 @@ class Project
       - [<%= v %>](<%= "./#{v}" %>)
       <% end %>
       MARKDOWN
-    template = <<~MARKDOWN
+    <<~MARKDOWN
     ---
     layout: page
     ---
@@ -143,9 +153,5 @@ class Project
 
     #{template}  
     MARKDOWN
-    b = binding
-    File.open(versions_file_path, "w") do |f|
-      f << ERB.new(template).result(b)
-    end
   end
 end

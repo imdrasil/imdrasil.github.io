@@ -26,8 +26,6 @@ class Jennifer < Project
 
   private
 
-  
-
   def doc_files
     @doc_files ||= Dir[File.join(docs_path, "*.md")]
   end
@@ -49,6 +47,14 @@ class Jennifer < Project
         f << content
       end
     end
+  end
+
+  def versions_file_template
+    super +
+      <<~MD
+      > All versions up to 0.5.0 represent documentations for PostgreSQL adapter. For MySQL one - please compile 
+      it locally as described in the [README](./index#documentation) file.
+      MD
   end
 
   def header

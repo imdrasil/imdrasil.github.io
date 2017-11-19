@@ -1,4 +1,5 @@
 require "erb"
+require "natural_sort"
 
 require_relative "git"
 require_relative "site"

@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-Hi to everyone. I'm ruby engineer and maintainer for several [crystal](https://crystal-lang.org/) shards. If you are interested in them check them out:
+Hi to everyone. I'm ruby engineer and maintainer of several [crystal](https://crystal-lang.org/) shards. If you are interested in them check them out:
 
 - Jennifer ([code](https://github.com/imdrasil/jennifer.cr), [guides](./jennifer.cr/docs), [api](./jennifer.cr/versions))
 - Sam ([code](https://github.com/imdrasil/sam.cr), [api](./sam.cr/versions))
