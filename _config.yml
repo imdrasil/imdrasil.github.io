@@ -17,3 +17,9 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - scripts/
+  - sam.cr/
+  - jennifer.cr/
+  - ifrit/
+  - hermes.cr/
+  - factory/
+  - crymagick/

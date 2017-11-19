@@ -20,4 +20,4 @@ site.add_projects(
 site.prepare
 site.deploy
 
-`bundle exec jekyll build --destination site --source .`
+`./scripts/compile.sh`
