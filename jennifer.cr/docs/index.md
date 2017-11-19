@@ -49,6 +49,10 @@ layout: page
 {% raw %}
 # Jennifer Documentation
 
+* [Latest API Documentation](https://imdrasil.github.io/site/jennifer.cr/latest/)
+
+* [Other API versions](https://imdrasil.github.io/site/jennifer.cr/versions)
+
 ## Content
 
 * [Configuration](./configuration)
