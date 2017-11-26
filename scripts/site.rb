@@ -6,17 +6,20 @@
 #   io.close_write    
 # end
 require "fileutils"
+require_relative "manifest"
 
 class Site
   DELIMITER = "=" * 40
 
-  attr_reader :user, :data_dir, :root_dir
+  attr_reader :user, :data_dir, :root_dir, :target_dir, :projects, :manifest
 
-  def initialize(data_dir = "_data", user)
+  def initialize(user:, data_dir: "_data", target_dir: "")
     @data_dir = data_dir
     @user = user
     @projects = []
     @root_dir = Dir.pwd
+    @target_dir = target_dir
+    @manifest = Manifest.new(File.join(@root_dir, data_dir, "manifest.json"))
   end
 
   def add_projects(*projects)
@@ -61,6 +64,10 @@ class Site
 
   def repo_path
     File.join(data_dir, "repos")
+  end
+
+  def target_path
+    File.join(@root_dir, target_dir)
   end
 
   class << self

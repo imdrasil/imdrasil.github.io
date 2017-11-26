@@ -28,4 +28,8 @@ module Git
   def fetch
     `git fetch`
   end
+
+  def sha
+    `git rev-parse HEAD`.chomp
+  end
 end

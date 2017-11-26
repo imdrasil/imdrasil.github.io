@@ -25,6 +25,11 @@
       
         <ul>
   
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/AbstractMethod" data-name="jennifer::abstractmethod">
+      <a href="../../Jennifer/AbstractMethod.html">AbstractMethod</a>
+      
+    </li>
+  
   <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter" data-name="jennifer::adapter">
       <a href="../../Jennifer/Adapter.html">Adapter</a>
       
@@ -620,6 +625,16 @@
       
     </li>
   
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Primary32" data-name="primary32">
+      <a href="../../Primary32.html">Primary32</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Primary64" data-name="primary64">
+      <a href="../../Primary64.html">Primary64</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/imdrasil/jennifer.cr/Time" data-name="time">
       <a href="../../Time.html">Time</a>
       
@@ -658,29 +673,17 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L3" target="_blank">jennifer/migration/base.cr</a>
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L3" target="_blank">jennifer/migration/base.cr</a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres/migration/base.cr#L3" target="_blank">jennifer/adapter/postgres/migration/base.cr</a>
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres/migration/base.cr#L3" target="_blank">jennifer/adapter/postgres/migration/base.cr</a>
     
     <br/>
   
 
 
-
-  
-    <h2>Constant Summary</h2>
-  
-  <dl>
-    
-      <dt class="entry-const" id="TABLE_NAME">
-        <strong>TABLE_NAME</strong> = <code><span class="s">&quot;migration_versions&quot;</span></code>
-      </dt>
-      
-    
-  </dl>
 
 
 
@@ -727,17 +730,22 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#change_table%28name%2C%26block%29-instance-method" class="signature"><strong>#change_table</strong>(name, &block)</a>
+        <a href="#change_enum%28name%3AString%7CSymbol%2Coptions%29-instance-method" class="signature"><strong>#change_enum</strong>(name : String | Symbol, options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#column_exists?</strong>(*args, **options, &block)</a>
+        <a href="#change_table%28name%3AString%7CSymbol%2C%26block%29-instance-method" class="signature"><strong>#change_table</strong>(name : String | Symbol, &block)</a>
         
       </li>
     
       <li class="entry-summary">
         <a href="#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#column_exists?</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#column_exists?</strong>(*args, **options, &block)</a>
         
       </li>
     
@@ -752,7 +760,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#create_enum%28name%2Cvalues%29-instance-method" class="signature"><strong>#create_enum</strong>(name, values)</a>
+        <a href="#create_enum%28name%2Coptions%29-instance-method" class="signature"><strong>#create_enum</strong>(name, options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_enum%28name%3AString%7CSymbol%2Cvalues%29-instance-method" class="signature"><strong>#create_enum</strong>(name : String | Symbol, values)</a>
         
       </li>
     
@@ -771,22 +784,22 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#create_materialized_view%28name%2C_as%29-instance-method" class="signature"><strong>#create_materialized_view</strong>(name, _as)</a>
+        <a href="#create_materialized_view%28name%3AString%7CSymbol%2Csource%29-instance-method" class="signature"><strong>#create_materialized_view</strong>(name : String | Symbol, source)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_table%28name%2Cid%3Dtrue%2C%26block%29-instance-method" class="signature"><strong>#create_table</strong>(name, id = <span class="n">true</span>, &block)</a>
+        <a href="#create_table%28name%2Cid%3ABool%3Dtrue%2C%26block%29-instance-method" class="signature"><strong>#create_table</strong>(name, id : Bool = <span class="n">true</span>, &block)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_view%28name%2Csource%29-instance-method" class="signature"><strong>#create_view</strong>(name, source)</a>
+        <a href="#create_view%28name%3AString%7CSymbol%2Csource%29-instance-method" class="signature"><strong>#create_view</strong>(name : String | Symbol, source)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#data_type_exists%3F%28name%29-instance-method" class="signature"><strong>#data_type_exists?</strong>(name)</a>
+        <a href="#data_type_exists%3F%28name%3AString%7CSymbol%29-instance-method" class="signature"><strong>#data_type_exists?</strong>(name : String | Symbol)</a>
         
       </li>
     
@@ -801,6 +814,11 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#drop_enum%28name%3AString%7CSymbol%29-instance-method" class="signature"><strong>#drop_enum</strong>(name : String | Symbol)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#drop_index%28table_name%2Cname%29-instance-method" class="signature"><strong>#drop_index</strong>(table_name, name)</a>
         
       </li>
@@ -811,7 +829,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#drop_materialized_view%28name%29-instance-method" class="signature"><strong>#drop_materialized_view</strong>(name)</a>
+        <a href="#drop_materialized_view%28name%3AString%7CSymbol%29-instance-method" class="signature"><strong>#drop_materialized_view</strong>(name : String | Symbol)</a>
         
       </li>
     
@@ -821,7 +839,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#drop_view%28name%29-instance-method" class="signature"><strong>#drop_view</strong>(name)</a>
+        <a href="#drop_view%28name%3AString%7CSymbol%29-instance-method" class="signature"><strong>#drop_view</strong>(name : String | Symbol)</a>
         
       </li>
     
@@ -911,7 +929,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L99" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L97" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -927,7 +945,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -943,7 +961,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L95" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L93" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -964,7 +982,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L63" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L61" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -980,7 +998,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L65" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -996,39 +1014,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres/migration/base.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L89" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="change_table&#40;name,&amp;block&#41;-instance-method">
+    <div class="entry-detail" id="change_enum&#40;name:String|Symbol,options&#41;-instance-method">
       <div class="signature">
         
-        def <strong>change_table</strong>(name, &block)
+        def <strong>change_enum</strong>(name : String | Symbol, options)
 
-        <a class="method-permalink" href="#change_table%28name%2C%26block%29-instance-method">#</a>
+        <a class="method-permalink" href="#change_enum%28name%3AString%7CSymbol%2Coptions%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L49" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres/migration/base.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="column_exists?&#40;*args,**options,&amp;block&#41;-instance-method">
+    <div class="entry-detail" id="change_table&#40;name:String|Symbol,&amp;block&#41;-instance-method">
       <div class="signature">
         
-        def <strong>column_exists?</strong>(*args, **options, &block)
+        def <strong>change_table</strong>(name : String | Symbol, &block)
 
-        <a class="method-permalink" href="#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+        <a class="method-permalink" href="#change_table%28name%3AString%7CSymbol%2C%26block%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L47" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1044,7 +1062,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="column_exists?&#40;*args,**options,&amp;block&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>column_exists?</strong>(*args, **options, &block)
+
+        <a class="method-permalink" href="#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1060,7 +1094,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1076,23 +1110,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_enum&#40;name,values&#41;-instance-method">
+    <div class="entry-detail" id="create_enum&#40;name,options&#41;-instance-method">
       <div class="signature">
         
-        def <strong>create_enum</strong>(name, values)
+        def <strong>create_enum</strong>(name, options)
 
-        <a class="method-permalink" href="#create_enum%28name%2Cvalues%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_enum%28name%2Coptions%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres/migration/base.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L81" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_enum&#40;name:String|Symbol,values&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>create_enum</strong>(name : String | Symbol, values)
+
+        <a class="method-permalink" href="#create_enum%28name%3AString%7CSymbol%2Cvalues%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres/migration/base.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1110,7 +1160,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1128,71 +1178,71 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_materialized_view&#40;name,_as&#41;-instance-method">
+    <div class="entry-detail" id="create_materialized_view&#40;name:String|Symbol,source&#41;-instance-method">
       <div class="signature">
         
-        def <strong>create_materialized_view</strong>(name, _as)
+        def <strong>create_materialized_view</strong>(name : String | Symbol, source)
 
-        <a class="method-permalink" href="#create_materialized_view%28name%2C_as%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_materialized_view%28name%3AString%7CSymbol%2Csource%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres/migration/base.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres/migration/base.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_table&#40;name,id&#61;true,&amp;block&#41;-instance-method">
+    <div class="entry-detail" id="create_table&#40;name,id:Bool&#61;true,&amp;block&#41;-instance-method">
       <div class="signature">
         
-        def <strong>create_table</strong>(name, id = <span class="n">true</span>, &block)
+        def <strong>create_table</strong>(name, id : Bool = <span class="n">true</span>, &block)
 
-        <a class="method-permalink" href="#create_table%28name%2Cid%3Dtrue%2C%26block%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_table%28name%2Cid%3ABool%3Dtrue%2C%26block%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_view&#40;name,source&#41;-instance-method">
+    <div class="entry-detail" id="create_view&#40;name:String|Symbol,source&#41;-instance-method">
       <div class="signature">
         
-        def <strong>create_view</strong>(name, source)
+        def <strong>create_view</strong>(name : String | Symbol, source)
 
-        <a class="method-permalink" href="#create_view%28name%2Csource%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_view%28name%3AString%7CSymbol%2Csource%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="data_type_exists?&#40;name&#41;-instance-method">
+    <div class="entry-detail" id="data_type_exists?&#40;name:String|Symbol&#41;-instance-method">
       <div class="signature">
         
-        def <strong>data_type_exists?</strong>(name)
+        def <strong>data_type_exists?</strong>(name : String | Symbol)
 
-        <a class="method-permalink" href="#data_type_exists%3F%28name%29-instance-method">#</a>
+        <a class="method-permalink" href="#data_type_exists%3F%28name%3AString%7CSymbol%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres/migration/base.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres/migration/base.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1208,7 +1258,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1224,7 +1274,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres/migration/base.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L85" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="drop_enum&#40;name:String|Symbol&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>drop_enum</strong>(name : String | Symbol)
+
+        <a class="method-permalink" href="#drop_enum%28name%3AString%7CSymbol%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres/migration/base.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1240,7 +1306,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L78" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L76" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1256,23 +1322,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="drop_materialized_view&#40;name&#41;-instance-method">
+    <div class="entry-detail" id="drop_materialized_view&#40;name:String|Symbol&#41;-instance-method">
       <div class="signature">
         
-        def <strong>drop_materialized_view</strong>(name)
+        def <strong>drop_materialized_view</strong>(name : String | Symbol)
 
-        <a class="method-permalink" href="#drop_materialized_view%28name%29-instance-method">#</a>
+        <a class="method-permalink" href="#drop_materialized_view%28name%3AString%7CSymbol%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres/migration/base.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres/migration/base.cr#L24" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1288,23 +1354,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L45" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L43" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="drop_view&#40;name&#41;-instance-method">
+    <div class="entry-detail" id="drop_view&#40;name:String|Symbol&#41;-instance-method">
       <div class="signature">
         
-        def <strong>drop_view</strong>(name)
+        def <strong>drop_view</strong>(name : String | Symbol)
 
-        <a class="method-permalink" href="#drop_view%28name%29-instance-method">#</a>
+        <a class="method-permalink" href="#drop_view%28name%3AString%7CSymbol%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L57" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1320,7 +1386,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L39" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1336,7 +1402,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1352,7 +1418,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1368,7 +1434,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1384,7 +1450,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1400,7 +1466,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1416,7 +1482,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1432,7 +1498,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/migration/base.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/migration/base.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Imdrasil Homebrew Stuff</title>
+  <meta name="description" content="Personal site">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/model_mapping.html">
+  <link rel="alternate" type="application/rss+xml" title="Imdrasil Homebrew Stuff" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/">Imdrasil Homebrew Stuff</a>
+  </div>
+</header>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    <header class="site-header" role="banner">
+  <div class="wrapper">
+    <nav class="site-nav">
+      <div class="trigger">
+        
+          <a class="page-link" href="./model_mapping">Mapping</a>
+        
+          <a class="page-link" href="./model_scopes">Scopes</a>
+        
+          <a class="page-link" href="./crud">CRUD</a>
+        
+          <a class="page-link" href="./query_dsl">Query DSL</a>
+        
+          <a class="page-link" href="./callbacks">Callbacks</a>
+        
+          <a class="page-link" href="./view">Views</a>
+        
+          <a class="page-link" href="./timestamps">Timestamps</a>
+        
+          <a class="page-link" href="./pagination_and_ordering">Pagination &amp; Ordering</a>
+        
+          <a class="page-link" href="./configuration">Configuration</a>
+        
+          <a class="page-link" href="./aggregation">Aggregations</a>
+        
+          <a class="page-link" href="./relations">Relations</a>
+        
+          <a class="page-link" href="./validation">Validation</a>
+        
+          <a class="page-link" href="./record">Record</a>
+        
+          <a class="page-link" href="./migration">Migration</a>
+        
+          <a class="page-link" href="./eager_loading">Eager Loading</a>
+        
+          <a class="page-link" href="./model_sti">STI</a>
+        
+          <a class="page-link" href="./index">Jennifer Documentation</a>
+        
+          <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+<h1 id="mapping">Mapping</h1>
+
+<p>Several model examples</p>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Contact</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">with_timestamps</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span> <span class="c1"># same as {type: Int32, primary: true}</span>
+    <span class="ss">name: </span><span class="no">String</span><span class="p">,</span>
+    <span class="ss">gender: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">?,</span> <span class="ss">default: </span><span class="s2">"male"</span><span class="p">},</span>
+    <span class="ss">age: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int32</span><span class="p">,</span> <span class="ss">default: </span><span class="mi">10</span><span class="p">},</span>
+    <span class="ss">description: </span><span class="no">String</span><span class="p">?,</span>
+    <span class="ss">created_at: </span><span class="no">Time</span><span class="p">?,</span>
+    <span class="ss">updated_at: </span><span class="no">Time</span> <span class="o">|</span> <span class="no">Nil</span>
+  <span class="p">)</span>
+
+  <span class="n">has_many</span> <span class="p">:</span><span class="n">addresses</span><span class="p">,</span> <span class="no">Address</span>
+  <span class="n">has_many</span> <span class="p">:</span><span class="n">facebook_profiles</span><span class="p">,</span> <span class="no">FacebookProfile</span>
+  <span class="n">has_and_belongs_to_many</span> <span class="p">:</span><span class="n">countries</span><span class="p">,</span> <span class="no">Country</span>
+  <span class="n">has_and_belongs_to_many</span> <span class="ss">:facebook_many_profiles</span><span class="p">,</span> <span class="no">FacebookProfile</span><span class="p">,</span> <span class="ss">join_foreign: :profile_id</span>
+  <span class="n">has_one</span> <span class="ss">:main_address</span><span class="p">,</span> <span class="no">Address</span><span class="p">,</span> <span class="p">{</span><span class="n">where</span> <span class="p">{</span> <span class="n">_main</span> <span class="p">}}</span>
+  <span class="n">has_one</span> <span class="ss">:passport</span><span class="p">,</span> <span class="no">Passport</span>
+
+  <span class="n">validates_inclucion</span> <span class="ss">:age</span><span class="p">,</span> <span class="mi">13</span><span class="o">..</span><span class="mi">75</span>
+  <span class="n">validates_length</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">minimum: </span><span class="mi">1</span><span class="p">,</span> <span class="ss">maximum: </span><span class="mi">15</span>
+  <span class="n">validates_with_method</span> <span class="ss">:name_check</span>
+
+  <span class="n">scope</span> <span class="ss">:main</span> <span class="p">{</span> <span class="n">where</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">&gt;</span> <span class="mi">18</span> <span class="p">}</span> <span class="p">}</span>
+  <span class="n">scope</span> <span class="ss">:older</span> <span class="p">{</span> <span class="o">|</span><span class="n">age</span><span class="o">|</span> <span class="n">where</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">&gt;=</span> <span class="n">age</span> <span class="p">}</span> <span class="p">}</span>
+  <span class="n">scope</span> <span class="ss">:ordered</span> <span class="p">{</span> <span class="n">order</span><span class="p">(</span><span class="ss">name: :asc</span><span class="p">)</span> <span class="p">}</span>
+
+  <span class="k">def</span> <span class="nf">name_check</span>
+    <span class="k">if</span> <span class="vi">@description</span> <span class="o">&amp;&amp;</span> <span class="vi">@description</span><span class="p">.</span><span class="nf">not_nil!</span><span class="p">.</span><span class="nf">size</span> <span class="o">&gt;</span> <span class="mi">10</span>
+      <span class="n">errors</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="ss">:description</span><span class="p">,</span> <span class="s2">"Too large description"</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Address</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int32</span><span class="p">,</span> <span class="ss">primary: </span><span class="kp">true</span><span class="p">},</span>
+    <span class="ss">main: </span><span class="no">Bool</span><span class="p">,</span>
+    <span class="ss">street: </span><span class="no">String</span><span class="p">,</span>
+    <span class="ss">contact_id: </span><span class="no">Int32</span><span class="p">?,</span>
+    <span class="ss">details: </span><span class="no">JSON</span><span class="o">::</span><span class="no">Any</span><span class="p">?</span>
+  <span class="p">)</span>
+  <span class="n">validates_format</span> <span class="p">:</span><span class="n">street</span><span class="p">,</span> <span class="sr">/st\.|street/</span>
+
+  <span class="n">belongs_to</span> <span class="p">:</span><span class="n">contact</span><span class="p">,</span> <span class="no">Contact</span>
+
+  <span class="n">scope</span> <span class="ss">:main</span> <span class="p">{</span> <span class="n">where</span> <span class="p">{</span> <span class="n">_main</span> <span class="p">}</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Passport</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">enn: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">,</span> <span class="ss">primary: </span><span class="kp">true</span><span class="p">},</span>
+    <span class="ss">contact_id: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int32</span><span class="p">,</span> <span class="ss">null: </span><span class="kp">true</span><span class="p">}</span>
+  <span class="p">)</span>
+
+  <span class="n">validates_with</span> <span class="p">[</span><span class="no">EnnValidator</span><span class="p">]</span>
+  <span class="n">belongs_to</span> <span class="ss">:contact</span><span class="p">,</span> <span class="no">Contact</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Profile</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">login: </span><span class="no">String</span><span class="p">,</span>
+    <span class="ss">contact_id: </span><span class="no">Int32</span><span class="p">?,</span>
+    <span class="ss">type: </span><span class="no">String</span>
+  <span class="p">)</span>
+
+  <span class="n">belongs_to</span> <span class="p">:</span><span class="n">contact</span><span class="p">,</span> <span class="no">Contact</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">FacebookProfile</span> <span class="o">&lt;</span> <span class="no">Profile</span>
+  <span class="n">sti_mapping</span><span class="p">(</span>
+    <span class="ss">uid: </span><span class="no">String</span>
+  <span class="p">)</span>
+
+  <span class="n">has_and_belongs_to_many</span> <span class="ss">:facebook_contacts</span><span class="p">,</span> <span class="no">Contact</span><span class="p">,</span> <span class="ss">foreign: :profile_id</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">TwitterProfile</span> <span class="o">&lt;</span> <span class="no">Profile</span>
+  <span class="n">sti_mapping</span><span class="p">(</span>
+    <span class="ss">email: </span><span class="no">String</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Country</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">name: </span><span class="no">String</span>
+  <span class="p">)</span>
+
+  <span class="n">validates_exclusion</span> <span class="ss">:name</span><span class="p">,</span> <span class="p">[</span><span class="s2">"asd"</span><span class="p">,</span> <span class="s2">"qwe"</span><span class="p">]</span>
+  <span class="n">validates_uniqueness</span> <span class="ss">:name</span>
+
+  <span class="n">has_and_belongs_to_many</span> <span class="ss">:contacts</span><span class="p">,</span> <span class="no">Contact</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">%mapping(options, strict = true)</code> macros stands for describing all model attributes. If field has no extra parameter, you can just specify name and type (type in case of crystal language): <code class="highlighter-rouge">field_name: :Type</code>. But you can use tuple and provide next parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>argument</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">:type</code></td>
+      <td>crystal data type (don’t use question mark - for now you can use only <code class="highlighter-rouge">:null</code> option)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">:primary</code></td>
+      <td>mark field as primary key (default is <code class="highlighter-rouge">false</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">:null</code></td>
+      <td>allows field to be <code class="highlighter-rouge">nil</code> (default is <code class="highlighter-rouge">false</code> for all fields except primary key</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">:default</code></td>
+      <td>default value which be set during creating <strong>new</strong> object</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">:getter</code></td>
+      <td>if getter should be created (default - <code class="highlighter-rouge">true</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">:setter</code></td>
+      <td>if setter should be created (default - <code class="highlighter-rouge">true</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To make some field nillable tou can use any of next options:</p>
+
+<ul>
+  <li>pass <code class="highlighter-rouge">null: true</code> option to the named tuple</li>
+  <li>use <code class="highlighter-rouge">?</code> in type declaration (e.g. <code class="highlighter-rouge">some_field: String?</code> and <code class="highlighter-rouge">some_filed: {type: String?}</code>)</li>
+  <li>use union with <code class="highlighter-rouge">Nil</code> in the type declaration (e.g. <code class="highlighter-rouge">some_field: String | Nil</code> and <code class="highlighter-rouge">some_filed: {type: String | Nil}</code>)</li>
+</ul>
+
+<p>Also for there is a shortcut for defining <code class="highlighter-rouge">Int32</code> and <code class="highlighter-rouge">Int64</code> primary keys</p>
+
+<p>If you don’t want to define all the table fields - pass <code class="highlighter-rouge">false</code> as second argument.</p>
+
+<p><code class="highlighter-rouge">%mapping</code> defines next methods:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>method</th>
+      <th>args</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">#initialize</code></td>
+      <td><code class="highlighter-rouge">Hash(String \| Symbol, DB::Any), NamedTuple, MySql::ResultSet</code></td>
+      <td>constructors</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">::field_count</code></td>
+      <td> </td>
+      <td>number of fields</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">::field_names</code></td>
+      <td> </td>
+      <td>all fields names</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#{{field_name}}</code></td>
+      <td> </td>
+      <td>getter</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#{{field_name}}_changed?</code></td>
+      <td> </td>
+      <td>represents if field is changed</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#{{field_name}}!</code></td>
+      <td> </td>
+      <td>getter with <code class="highlighter-rouge">not_nil!</code> if <code class="highlighter-rouge">null: true</code> was passed</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#{{field_name}}=</code></td>
+      <td> </td>
+      <td>setter</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">::_{{field_name}}</code></td>
+      <td> </td>
+      <td>helper method for building queries</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#{{field_name}}_changed?</code></td>
+      <td> </td>
+      <td>shows if field was changed</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#changed?</code></td>
+      <td> </td>
+      <td>shows if any field was changed</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#primary</code></td>
+      <td> </td>
+      <td>value of primary key field</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">::primary</code></td>
+      <td> </td>
+      <td>returns criteria for primary field (query dsl)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">::primary_field_name</code></td>
+      <td> </td>
+      <td>name of primary field</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">::primary_field_type</code></td>
+      <td> </td>
+      <td>type of primary key</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#new_record?</code></td>
+      <td> </td>
+      <td>returns <code class="highlighter-rouge">true</code> if record has <code class="highlighter-rouge">nil</code> primary key (is not stored to db)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">::create</code></td>
+      <td><code class="highlighter-rouge">Hash(String \| Symbol, DB::Any)</code>, <code class="highlighter-rouge">NamedTuple</code></td>
+      <td>creates object, stores it to db and returns it</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">::create!</code></td>
+      <td><code class="highlighter-rouge">Hash(String \| Symbol, DB::Any)</code>, <code class="highlighter-rouge">NamedTuple</code></td>
+      <td>creates object, stores it to db and returns it; otherwise raise exception</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">::build</code></td>
+      <td><code class="highlighter-rouge">Hash(String \| Symbol, DB::Any), NamedTuple</code></td>
+      <td>builds object</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">::create</code></td>
+      <td><code class="highlighter-rouge">Hash(String \| Symbol, DB::Any)</code>, <code class="highlighter-rouge">NamedTuple</code></td>
+      <td>builds object from hash and saves it to db with all callbacks</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">::create!</code></td>
+      <td><code class="highlighter-rouge">Hash(String \| Symbol, DB::Any)</code>, <code class="highlighter-rouge">NamedTuple</code></td>
+      <td>builds object from hash and saves it to db with callbacks or raise exception</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#save</code></td>
+      <td> </td>
+      <td>saves object to db; returns <code class="highlighter-rouge">true</code> if success and <code class="highlighter-rouge">false</code> elsewhere</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#save!</code></td>
+      <td> </td>
+      <td>saves object to db; returns <code class="highlighter-rouge">true</code> if success or rise exception otherwise</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#to_h</code></td>
+      <td> </td>
+      <td>returns hash with all attributes</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#to_str_h</code></td>
+      <td> </td>
+      <td>same as <code class="highlighter-rouge">#to_h</code> but with String keys</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#attribute</code></td>
+      <td><code class="highlighter-rouge">String \| Symbol</code></td>
+      <td>returns attribute value by it’s name</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#attributes_hash</code></td>
+      <td> </td>
+      <td>returns <code class="highlighter-rouge">to_h</code> with deleted <code class="highlighter-rouge">nil</code> entries</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#changed?</code></td>
+      <td> </td>
+      <td>check if any field was changed</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#set_attribute</code></td>
+      <td><code class="highlighter-rouge">String \| Symbol</code>, <code class="highlighter-rouge">DB::Any</code></td>
+      <td>sets attribute by given name</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#attribute</code></td>
+      <td><code class="highlighter-rouge">String \| Symbol</code></td>
+      <td>returns attribute value by it’s name</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>All allowed types are listed on the <a href="https://imdrasil.github.io/jennifer.cr/docs/migration">Migration</a> page.</p>
+
+<p>Automatically model is associated with table with underscored pluralized name of it’s class, but special name can be defined using <code class="highlighter-rouge">::table_name</code> method in own body before using any relation (<code class="highlighter-rouge">::singular_table_name</code> - for singular variant).</p>
+
+<p><strong>Important restriction</strong> - model with no primary field is not allowed for now.</p>
+
+<p>You can inherite from one basic abstract class:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">abstract</span> <span class="k">class</span> <span class="nc">ApplicationRecord</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">SomeModel</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Int32</span><span class="p">,</span>
+    <span class="ss">name: </span><span class="no">String</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imdrasil Homebrew Stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Imdrasil Homebrew Stuff
+            
+            </li>
+            
+            <li><a href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/imdrasil"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">imdrasil</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Personal site</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

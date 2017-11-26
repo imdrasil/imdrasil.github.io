@@ -10,14 +10,14 @@ class Jennifer < Project
     FileUtils.mkdir(docs_path)
     repo_dir do |deep|
       Git.checkout("master")
-      FileUtils.cp(Dir["docs/*"], File.join(deep, docs_path))
+      FileUtils.cp(Dir["docs/*"], docs_path)
     end
 
     add_doc_files
   end
 
   def docs_path
-    File.join(name, "docs")
+    File.join(target_path, "docs")
   end
 
   def doc_titles

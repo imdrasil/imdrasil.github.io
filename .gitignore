@@ -1,4 +1,8 @@
 node_modules
 _data/repos
 .sass-cache
+_src
+src/**
+!src/_includes/**
+!src/index.md
 _site

@@ -25,6 +25,11 @@
       
         <ul>
   
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/AbstractMethod" data-name="jennifer::abstractmethod">
+      <a href="../../Jennifer/AbstractMethod.html">AbstractMethod</a>
+      
+    </li>
+  
   <li class="parent open current" data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter" data-name="jennifer::adapter">
       <a href="../../Jennifer/Adapter.html">Adapter</a>
       
@@ -620,6 +625,16 @@
       
     </li>
   
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Primary32" data-name="primary32">
+      <a href="../../Primary32.html">Primary32</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Primary64" data-name="primary64">
+      <a href="../../Primary64.html">Primary64</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/imdrasil/jennifer.cr/Time" data-name="time">
       <a href="../../Time.html">Time</a>
       
@@ -658,12 +673,12 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L74" target="_blank">jennifer/adapter/postgres.cr</a>
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L74" target="_blank">jennifer/adapter/postgres.cr</a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres/exec_result.cr#L3" target="_blank">jennifer/adapter/postgres/exec_result.cr</a>
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres/exec_result.cr#L3" target="_blank">jennifer/adapter/postgres/exec_result.cr</a>
     
     <br/>
   
@@ -819,13 +834,13 @@
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/Adapter/Base.html">Jennifer::Adapter::Base</a></code></h3>
   
   
-    <a href="../../Jennifer/Adapter/Base.html#add_column%28table%2Cname%2Copts%29-instance-method" class="tooltip">
-      <span>add_column(table, name, opts)</span>
+    <a href="../../Jennifer/Adapter/Base.html#add_column%28table%3AString%7CSymbol%2Cname%3AString%7CSymbol%2Copts%29-instance-method" class="tooltip">
+      <span>add_column(table : String | Symbol, name : String | Symbol, opts)</span>
     add_column</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#add_index%28table%2Cname%2Coptions%29-instance-method" class="tooltip">
-      <span>add_index(table, name, options)</span>
+    <a href="../../Jennifer/Adapter/Base.html#add_index%28table%3AString%7CSymbol%2Cname%3AString%7CSymbol%2Coptions%29-instance-method" class="tooltip">
+      <span>add_index(table : String | Symbol, name : String | Symbol, options)</span>
     add_index</a>, 
     
   
@@ -834,13 +849,13 @@
     bulk_insert</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#change_column%28table%2Cold_name%2Cnew_name%2Copts%29-instance-method" class="tooltip">
-      <span>change_column(table, old_name, new_name, opts)</span>
+    <a href="../../Jennifer/Adapter/Base.html#change_column%28table%3AString%7CSymbol%2Cold_name%3AString%7CSymbol%2Cnew_name%3AString%7CSymbol%2Copts%29-instance-method" class="tooltip">
+      <span>change_column(table : String | Symbol, old_name : String | Symbol, new_name : String | Symbol, opts)</span>
     change_column</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#change_enum%28name%2Coptions%29-instance-method" class="tooltip">
-      <span>change_enum(name, options)</span>
+    <a href="../../Jennifer/Adapter/Base.html#change_enum%28name%3AString%7CSymbol%2Coptions%29-instance-method" class="tooltip">
+      <span>change_enum(name : String | Symbol, options)</span>
     change_enum</a>, 
     
   
@@ -854,8 +869,8 @@
     count</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#create_enum%28name%2Coptions%29-instance-method" class="tooltip">
-      <span>create_enum(name, options)</span>
+    <a href="../../Jennifer/Adapter/Base.html#create_enum%28name%3AString%7CSymbol%2Coptions%29-instance-method" class="tooltip">
+      <span>create_enum(name : String | Symbol, options)</span>
     create_enum</a>, 
     
   
@@ -864,8 +879,8 @@
     create_table</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#create_view%28name%2Cquery%2Csilent%3Dtrue%29-instance-method" class="tooltip">
-      <span>create_view(name, query, silent = <span class="n">true</span>)</span>
+    <a href="../../Jennifer/Adapter/Base.html#create_view%28name%3AString%7CSymbol%2Cquery%2Csilent%3ABool%3Dtrue%29-instance-method" class="tooltip">
+      <span>create_view(name : String | Symbol, query, silent : Bool = <span class="n">true</span>)</span>
     create_view</a>, 
     
   
@@ -884,18 +899,18 @@
     delete</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#drop_column%28table%2Cname%29-instance-method" class="tooltip">
-      <span>drop_column(table, name)</span>
+    <a href="../../Jennifer/Adapter/Base.html#drop_column%28table%3AString%7CSymbol%2Cname%3AString%7CSymbol%29-instance-method" class="tooltip">
+      <span>drop_column(table : String | Symbol, name : String | Symbol)</span>
     drop_column</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#drop_enum%28name%2Coptions%29-instance-method" class="tooltip">
-      <span>drop_enum(name, options)</span>
+    <a href="../../Jennifer/Adapter/Base.html#drop_enum%28name%3AString%7CSymbol%2Coptions%29-instance-method" class="tooltip">
+      <span>drop_enum(name : String | Symbol, options)</span>
     drop_enum</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#drop_index%28table%2Cname%29-instance-method" class="tooltip">
-      <span>drop_index(table, name)</span>
+    <a href="../../Jennifer/Adapter/Base.html#drop_index%28table%3AString%7CSymbol%2Cname%3AString%7CSymbol%29-instance-method" class="tooltip">
+      <span>drop_index(table : String | Symbol, name : String | Symbol)</span>
     drop_index</a>, 
     
   
@@ -904,8 +919,8 @@
     drop_table</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#drop_view%28name%2Csilent%3Dtrue%29-instance-method" class="tooltip">
-      <span>drop_view(name, silent = <span class="n">true</span>)</span>
+    <a href="../../Jennifer/Adapter/Base.html#drop_view%28name%3AString%7CSymbol%2Csilent%3ABool%3Dtrue%29-instance-method" class="tooltip">
+      <span>drop_view(name : String | Symbol, silent : Bool = <span class="n">true</span>)</span>
     drop_view</a>, 
     
   
@@ -954,13 +969,13 @@
     ready_to_migrate!</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#rename_table%28old_name%2Cnew_name%29-instance-method" class="tooltip">
-      <span>rename_table(old_name, new_name)</span>
+    <a href="../../Jennifer/Adapter/Base.html#rename_table%28old_name%3AString%7CSymbol%2Cnew_name%3AString%7CSymbol%29-instance-method" class="tooltip">
+      <span>rename_table(old_name : String | Symbol, new_name : String | Symbol)</span>
     rename_table</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#scalar%28_query%2Cargs%3D%5B%5DofDB%3A%3AAny%29-instance-method" class="tooltip">
-      <span>scalar(_query, args = <span class="o">[]</span> <span class="k">of</span> <span class="t">DB</span><span class="t">::</span><span class="t">Any</span>)</span>
+    <a href="../../Jennifer/Adapter/Base.html#scalar%28_query%2Cargs%3AArray%28DB%3A%3AAny%29%3D%5B%5DofDB%3A%3AAny%29-instance-method" class="tooltip">
+      <span>scalar(_query, args : Array(DB::Any) = <span class="o">[]</span> <span class="k">of</span> <span class="t">DB</span><span class="t">::</span><span class="t">Any</span>)</span>
     scalar</a>, 
     
   
@@ -1048,13 +1063,13 @@
     drop_database</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#escape_string%28size%3D1%29-class-method" class="tooltip">
-      <span>escape_string(size = <span class="n">1</span>)</span>
+    <a href="../../Jennifer/Adapter/Base.html#escape_string%28size%3AInt32%3D1%29-class-method" class="tooltip">
+      <span>escape_string(size : Int32 = <span class="n">1</span>)</span>
     escape_string</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#extract_arguments%28hash%29-class-method" class="tooltip">
-      <span>extract_arguments(hash)</span>
+    <a href="../../Jennifer/Adapter/Base.html#extract_arguments%28hash%3AHash%29-class-method" class="tooltip">
+      <span>extract_arguments(hash : Hash)</span>
     extract_arguments</a>, 
     
   
@@ -1063,8 +1078,8 @@
     generate_schema</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#join_table_name%28table1%2Ctable2%29-class-method" class="tooltip">
-      <span>join_table_name(table1, table2)</span>
+    <a href="../../Jennifer/Adapter/Base.html#join_table_name%28table1%3AString%7CSymbol%2Ctable2%3AString%7CSymbol%29-class-method" class="tooltip">
+      <span>join_table_name(table1 : String | Symbol, table2 : String | Symbol)</span>
     join_table_name</a>, 
     
   
@@ -1073,8 +1088,8 @@
     load_schema</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#t%28field%29-class-method" class="tooltip">
-      <span>t(field)</span>
+    <a href="../../Jennifer/Adapter/Base.html#t%28field%3ANil%29-class-method" class="tooltip">
+      <span>t(field : Nil)<br/>t(field : String)<br/>t(field)</span>
     t</a>
     
   
@@ -1251,7 +1266,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L263" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L263" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1267,7 +1282,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L308" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L308" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1283,7 +1298,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L324" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L324" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1299,7 +1314,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L333" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L333" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1315,7 +1330,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L340" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L340" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1336,7 +1351,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L186" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L186" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1352,7 +1367,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L207" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L207" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1368,7 +1383,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L139" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L139" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1384,7 +1399,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L152" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L152" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1400,7 +1415,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L96" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1418,7 +1433,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L170" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L170" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1434,7 +1449,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L176" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L176" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1450,7 +1465,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L180" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L180" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1466,7 +1481,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L156" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L156" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1482,7 +1497,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L276" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L276" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1498,7 +1513,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L145" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L145" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1514,7 +1529,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L243" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L243" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1530,7 +1545,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L125" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L125" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1546,7 +1561,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L75" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L75" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1562,7 +1577,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L100" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L100" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1578,7 +1593,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L106" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L106" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1594,7 +1609,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L133" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L133" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1610,7 +1625,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L90" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1626,7 +1641,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/ef9164d23888dadbf93fbe7b0cee949ff7f14f2b/src/jennifer/adapter/postgres.cr#L160" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/5473d7d671215de1e07e01a418220ba9fe2e14b3/src/jennifer/adapter/postgres.cr#L160" target="_blank">View source</a>]
         
       </div>
     </div>

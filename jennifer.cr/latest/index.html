@@ -25,6 +25,11 @@
       
         <ul>
   
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/AbstractMethod" data-name="jennifer::abstractmethod">
+      <a href="Jennifer/AbstractMethod.html">AbstractMethod</a>
+      
+    </li>
+  
   <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter" data-name="jennifer::adapter">
       <a href="Jennifer/Adapter.html">Adapter</a>
       
@@ -620,6 +625,16 @@
       
     </li>
   
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Primary32" data-name="primary32">
+      <a href="Primary32.html">Primary32</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Primary64" data-name="primary64">
+      <a href="Primary64.html">Primary64</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/imdrasil/jennifer.cr/Time" data-name="time">
       <a href="Time.html">Time</a>
       
@@ -630,7 +645,7 @@
 </div>
 
 <div id="main-content">
-<h1>Jennifer <a href="https://travis-ci.org/imdrasil/jennifer.cr" target="_blank"><img src="https://travis-ci.org/imdrasil/jennifer.cr.svg" alt="Build Status"/></a> <a href="https://github.com/imdrasil/jennifer.cr/releases" target="_blank"><img src="https://img.shields.io/github/release/imdrasil/jennifer.cr.svg" alt="Latest Release"/></a> <a href="https://imdrasil.github.io/site/jennifer.cr/docs/" target="_blank"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs"/></a></h1>
+<h1>Jennifer <a href="https://travis-ci.org/imdrasil/jennifer.cr" target="_blank"><img src="https://travis-ci.org/imdrasil/jennifer.cr.svg" alt="Build Status"/></a> <a href="https://github.com/imdrasil/jennifer.cr/releases" target="_blank"><img src="https://img.shields.io/github/release/imdrasil/jennifer.cr.svg" alt="Latest Release"/></a> <a href="https://imdrasil.github.io/jennifer.cr/docs/" target="_blank"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs"/></a></h1>
 
 <p>Another ActiveRecord pattern implementation for Crystal with a great query DSL and migration mechanism.</p>
 
@@ -646,7 +661,7 @@
 
 <h2>Usage</h2>
 
-<p>Jennifer allows you to maintain everything for your models - from db migrations and field mapping to callbacks and building queries. For detailed information see the <a href="https://imdrasil.github.io/site/jennifer.cr/docs/" target="_blank">guide</a> or <a href="https://imdrasil.github.io/site/jennifer.cr/versions" target="_blank">api documentation</a>.</p>
+<p>Jennifer allows you to maintain everything for your models - from db migrations and field mapping to callbacks and building queries. For detailed information see the <a href="https://imdrasil.github.io/jennifer.cr/docs/" target="_blank">guide</a> or <a href="https://imdrasil.github.io/jennifer.cr/versions" target="_blank">api documentation</a>.</p>
 
 <h4>Migration</h4>
 
@@ -689,13 +704,13 @@
 <pre><code class='language-crystal'><span class="k">class</span> <span class="t">Contact</span> <span class="o"><</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   with_timestamps
   mapping(
-    id: {<span class="k">type</span>: <span class="t">Int32</span>, primary: <span class="n">true</span>},
+    id: <span class="t">Primary32</span>,
     name: <span class="t">String</span>,
-    gender: {<span class="k">type</span>: <span class="t">String</span>, default: <span class="s">&quot;male&quot;</span>, null: <span class="n">true</span>},
+    gender: {<span class="k">type</span>: <span class="t">String</span>?, default: <span class="s">&quot;male&quot;</span>},
     age: {<span class="k">type</span>: <span class="t">Int32</span>, default: <span class="n">10</span>},
-    description: {<span class="k">type</span>: <span class="t">String</span>, null: <span class="n">true</span>},
-    created_at: {<span class="k">type</span>: <span class="t">Time</span>, null: <span class="n">true</span>},
-    updated_at: {<span class="k">type</span>: <span class="t">Time</span>, null: <span class="n">true</span>}
+    description: <span class="t">String</span>?,
+    created_at: <span class="t">Time</span>?,
+    updated_at: <span class="t">Time</span>?
   )
 
   has_many <span class="n">:facebook_profiles</span>, <span class="t">FacebookProfile</span>
@@ -721,7 +736,7 @@
 <span class="k">class</span> <span class="t">Passport</span> <span class="o"><</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   mapping(
     enn: {<span class="k">type</span>: <span class="t">String</span>, primary: <span class="n">true</span>},
-    contact_id: {<span class="k">type</span>: <span class="t">Int32</span>, null: <span class="n">true</span>}
+    contact_id: <span class="t">Int32</span>?
   )
 
   validates_with [<span class="t">EnnValidator</span>]
@@ -730,7 +745,7 @@
 
 <span class="k">class</span> <span class="t">Profile</span> <span class="o"><</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   mapping(
-    id: {<span class="k">type</span>: <span class="t">Int32</span>, primary: <span class="n">true</span>},
+    id: <span class="t">Primary32</span>,
     login: <span class="t">String</span>,
     contact_id: <span class="t">Int32</span>?,
     <span class="k">type</span>: <span class="t">String</span>
@@ -749,7 +764,7 @@
 
 <span class="k">class</span> <span class="t">Country</span> <span class="o"><</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   mapping(
-    id: {<span class="k">type</span>: <span class="t">Int32</span>, primary: <span class="n">true</span>},
+    id: <span class="t">Primary32</span>,
     name: <span class="t">String</span>
   )
 
@@ -775,21 +790,9 @@
 
 <ul><li>sqlite3 has many limitations so its support won't be added any time soon</li></ul>
 
-<h3>Similar shards</h3>
-
-<ul><li><a href="https://github.com/waterlink/active_record.cr" target="_blank">active_record.cr</a> - small simple AR realization</li></ul>
-
-<ul><li><a href="https://github.com/vladfaust/core.cr" target="_blank">crecto</a> - based on Phoenix's ecto lib and follows the repository pattern; </li></ul>
-
-<ul><li><a href="https://github.com/amberframework/granite-orm" target="_blank">granite-orm</a> - light weight orm focusing on mapping fields from request to your objects</li></ul>
-
-<ul><li><a href="https://github.com/topaz-crystal/topaz" target="_blank">topaz</a> - inspired by AR ORM with migration mechanism</li></ul>
-
-<ul><li><a href="https://github.com/juanedi/micrate" target="_blank">micrate</a> - standalone migration tool for crystal</li></ul>
-
 <h3>Versioning</h3>
 
-<p>Now that Jennifer is under heavy development, there could be many breaking changes. So please check the release notes (which will be added to each release starting from 0.3.4) to check if any of the changes may prevent you from using it. Also, until this library reaches a beta version, the next version rules will be followed:</p>
+<p>Now that Jennifer is under heavy development, there could be many breaking changes. So please check the release notes to check if any of the changes may prevent you from using it. Also, until this library reaches a beta version, the next version rules will be followed:</p>
 
 <ul><li>all bugfixies, new minor features or (sometimes) ones that don't break the existing API will be added as a patch number (e.g. 0.3.<strong>4</strong>);</li></ul>
 
@@ -827,6 +830,8 @@
 
 <pre><code class='language-shell'>$ DB=mysql crystal spec</code></pre>
 
+<p>Also you can override used user name and password using <code>DB_USER</code> and <code>DB_PASSWORD</code> env variables.</p>
+
 <h2>Documentation</h2>
 
 <p>Self documentation is not fully support yet but docs can be compiled using this shell script:</p>
@@ -835,7 +840,17 @@
 
 <p>NB. It also depends on then choosen adapter (postgres by default).</p>
 
-<p>The wiki pages also have a lot of usefull information. But from version 0.3.4 no new information will be added there untill it is moved to separate <code>.md</code> pages to allow contributing.</p>
+<h2>Similar shards</h2>
+
+<ul><li><a href="https://github.com/waterlink/active_record.cr" target="_blank">active_record.cr</a> - small simple AR realization</li></ul>
+
+<ul><li><a href="https://github.com/vladfaust/core.cr" target="_blank">crecto</a> - based on Phoenix's ecto lib and follows the repository pattern; </li></ul>
+
+<ul><li><a href="https://github.com/amberframework/granite-orm" target="_blank">granite-orm</a> - light weight orm focusing on mapping fields from request to your objects</li></ul>
+
+<ul><li><a href="https://github.com/topaz-crystal/topaz" target="_blank">topaz</a> - inspired by AR ORM with migration mechanism</li></ul>
+
+<ul><li><a href="https://github.com/juanedi/micrate" target="_blank">micrate</a> - standalone migration tool for crystal</li></ul>
 
 <h2>Contributing</h2>
 

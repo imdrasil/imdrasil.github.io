@@ -16,7 +16,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - scripts/
-  # DEV
-  - index.html
+  - src
 
-destination: site
+source: src
+destination: _src
