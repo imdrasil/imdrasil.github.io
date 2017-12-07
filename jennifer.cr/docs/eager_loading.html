@@ -84,23 +84,71 @@
 
 <h1 id="eager-loading">Eager Loading</h1>
 
-<p>As was said Jennifer provide lazy query evaluation  so it will be performed only after trying to access to element from collection (any array method - it implements Enumerable). Also you can extract first entity via <code class="highlighter-rouge">first</code>. If you are sure that at least one entity in db satisfies you query you can call <code class="highlighter-rouge">#first!</code>.</p>
+<p>As was said Jennifer provide lazy query evaluation  so it will be performed only after invoking executing method. Here is a list of all executing methods:</p>
 
-<p>To extract only some fields rather then entire objects use <code class="highlighter-rouge">pluck</code>:</p>
+<ul>
+  <li><code class="highlighter-rouge">#last</code> - returns last found record or <code class="highlighter-rouge">nil</code> if nothing was found;</li>
+  <li><code class="highlighter-rouge">#last!</code> - returns last record or raise <code class="highlighter-rouge">RecordNotFound</code> if nothing was foound;</li>
+  <li><code class="highlighter-rouge">#first</code> - returns first found record or <code class="highlighter-rouge">nil</code> if nothing was found;</li>
+  <li><code class="highlighter-rouge">#first!</code> - returns first record or raise <code class="highlighter-rouge">RecordNotFound</code> if nothing was foound;</li>
+  <li><code class="highlighter-rouge">#pluck</code> - returns array of specified fields values instead of records;</li>
+  <li><code class="highlighter-rouge">#delete</code> - deletes all records in db by query;</li>
+  <li><code class="highlighter-rouge">#exists?</code> - checks if there is any record in DB that fits query;</li>
+  <li><code class="highlighter-rouge">#update</code> - updates fields by given values;</li>
+  <li><code class="highlighter-rouge">#modify</code> - modify fields by given values using specified operators;</li>
+  <li><code class="highlighter-rouge">#increment</code> - increments fields by given values;</li>
+  <li><code class="highlighter-rouge">#decrement</code> - decrements fields by given values;</li>
+  <li><code class="highlighter-rouge">#to_a</code> - calls <code class="highlighter-rouge">#results</code>;</li>
+  <li><code class="highlighter-rouge">#db_results</code> - returns array of hashes found by query execution;</li>
+  <li><code class="highlighter-rouge">#results</code> - returns array of results found by query execution;</li>
+  <li><code class="highlighter-rouge">#ids</code> - plucks <code class="highlighter-rouge">id</code> field and converts it to the <code class="highlighter-rouge">Int32</code>;</li>
+  <li><code class="highlighter-rouge">#each</code> - calls <code class="highlighter-rouge">#to_a</code> and yields each object;</li>
+  <li><code class="highlighter-rouge">#each_result_set</code> - perform request and yield each result set;</li>
+  <li><code class="highlighter-rouge">#find_in_batches</code> - retrieves from db result sets of given size and yields them;</li>
+  <li><code class="highlighter-rouge">#find_each</code> - same as <code class="highlighter-rouge">#find_in_batches</code> but yields each result instead of array;</li>
+  <li><code class="highlighter-rouge">#find_records_by_sql</code> - returns array of <code class="highlighter-rouge">Jennifer::Record</code> found by given plain sql request;</li>
+  <li><code class="highlighter-rouge">#destroy</code> - invokes <code class="highlighter-rouge">#to_a</code> and calls <code class="highlighter-rouge">#destroy</code> on each record`.</li>
+</ul>
+
+<p>Also you can extract first entity via <code class="highlighter-rouge">first</code>. If you are sure that at least one entity in db satisfies you query you can call <code class="highlighter-rouge">#first!</code>.</p>
+
+<p>To extract only some fields rather then entire objects use <code class="highlighter-rouge">#pluck</code>:</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:id</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>It returns array of values if only one field was given and array of arrays if more. It accepts raw sql arguments so be care when using this with joining tables with same field names. But this allows to retrieve some custom data from specified select clause.</p>
+<p>It returns array of values if only one field was given and array of arrays if more. By default if uses scope of current table (e.g. in previous example select clause included <code class="highlighter-rouge">contacts.id</code>). To allow grepping custom fields or any statement you need to specify custom select clause:</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="s2">"COUNT(id) as count, contacts.name"</span><span class="p">).</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span>
        <span class="p">.</span><span class="nf">having</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"COUNT(id)"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:count</span><span class="p">)</span>
 </code></pre></div></div>
 
+<h3 id="relation-eager-loading">Relation Eager Loading</h3>
+
 <p>To load relations using same query joins needed tables (yep you should specify join on condition by yourself again) and specifies all needed relations in <code class="highlighter-rouge">with</code> (relation name not table).</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">left_join</span><span class="p">(</span><span class="no">Address</span><span class="p">)</span> <span class="p">{</span> <span class="n">_contacts__id</span> <span class="o">==</span> <span class="n">_contact_id</span> <span class="p">}.</span><span class="nf">with</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span>
+
+<span class="c1"># or simpler</span>
+
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">relation</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">).</span><span class="nf">with</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span>
 </code></pre></div></div>
+
+<p>But there is also similar functionality as for Rails Eager Loading - methods <code class="highlighter-rouge">#includes</code>, <code class="highlighter-rouge">#eager_load</code> and <code class="highlighter-rouge">#preload</code>. For now <code class="highlighter-rouge">#includes</code> (and <code class="highlighter-rouge">#preload</code>) uses preloading strategy - all specified relations will be loaded in separated requests and will be setted to appropriate owner. E.g.:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">preload</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">#eager_load</code> joins all relations to the request using <code class="highlighter-rouge">LEFT OUTER JOIN</code>:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">eager_load</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note: in such way only relations of given model could be loaded, e.g. not relation of relation <code class="highlighter-rouge">:addresses</code> could be retrieved in the upper example.</p>
+</blockquote>
 
   </div>
 

@@ -111,11 +111,24 @@
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>Subclass extends superclass definition with new fields and use string fild <code class="highlighter-rouge">type</code> to indentify itself.</p>
+<p>Requirements:</p>
+
+<ul>
+  <li>created table for STI should include <strong>all</strong> fields of all subclasses (that’s why it is cold STI);</li>
+  <li>STI table have to have field named <code class="highlighter-rouge">type</code> of any string type which will be able to store class name of your models;</li>
+  <li>parent class should have definition for <code class="highlighter-rouge">type</code> field;</li>
+</ul>
 
 <blockquote>
-  <p>Now <code class="highlighter-rouge">Profile.all</code> will return objects of <code class="highlighter-rouge">Profile</code> class not taking into account <code class="highlighter-rouge">type</code> field.</p>
+  <p>Currently type field is not configurable and hardcoded to name <code class="highlighter-rouge">type</code>.</p>
 </blockquote>
+
+<p>To extract from DB several subclasses in one request - just use parent class to query:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Profile</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_login</span><span class="p">.</span><span class="nf">like</span><span class="p">(</span><span class="s2">"%eter%"</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Each retrieved object will respect values in <code class="highlighter-rouge">type</code> field and appropriate class object will be builded (including invoking of <code class="highlighter-rouge">after_initialize</code> callbacks).</p>
 
   </div>
 

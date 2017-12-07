@@ -5,7 +5,7 @@
   <meta id="repository-name" content="github.com/imdrasil/jennifer.cr">
   <link href="../css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="../js/doc.js"></script>
-  <title>Jennifer::UnknownRelation - github.com/imdrasil/jennifer.cr</title>
+  <title>Jennifer::UnknownSTIType - github.com/imdrasil/jennifer.cr</title>
 </head>
 <body>
 
@@ -580,12 +580,12 @@
       
     </li>
   
-  <li class=" current" data-id="github.com/imdrasil/jennifer.cr/Jennifer/UnknownRelation" data-name="jennifer::unknownrelation">
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/UnknownRelation" data-name="jennifer::unknownrelation">
       <a href="../Jennifer/UnknownRelation.html">UnknownRelation</a>
       
     </li>
   
-  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/UnknownSTIType" data-name="jennifer::unknownstitype">
+  <li class=" current" data-id="github.com/imdrasil/jennifer.cr/Jennifer/UnknownSTIType" data-name="jennifer::unknownstitype">
       <a href="../Jennifer/UnknownSTIType.html">UnknownSTIType</a>
       
     </li>
@@ -662,12 +662,12 @@
 <div id="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Jennifer::UnknownRelation
+  <span class="kind">class</span> Jennifer::UnknownSTIType
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Jennifer/UnknownRelation.html">Jennifer::UnknownRelation</a></li><li class="superclass"><a href="../Jennifer/BaseException.html">Jennifer::BaseException</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Jennifer/UnknownSTIType.html">Jennifer::UnknownSTIType</a></li><li class="superclass"><a href="../Jennifer/BaseException.html">Jennifer::BaseException</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -688,7 +688,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/c5cac40b166cf1bd0bb4cc5b84c66b77540ebfec/src/jennifer/exceptions.cr#L63" target="_blank">jennifer/exceptions.cr</a>
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/c5cac40b166cf1bd0bb4cc5b84c66b77540ebfec/src/jennifer/exceptions.cr#L128" target="_blank">jennifer/exceptions.cr</a>
     
     <br/>
   
@@ -701,12 +701,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28owner%2Cexception%3AKeyError%29-class-method" class="signature"><strong>.new</strong>(owner, exception : KeyError)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new%28owner%2Crelation%29-class-method" class="signature"><strong>.new</strong>(owner, relation)</a>
+        <a href="#new%28parent_klass%2Ctype%29-class-method" class="signature"><strong>.new</strong>(parent_klass, type)</a>
         
       </li>
     
@@ -794,34 +789,18 @@
 
   <h2>Constructor Detail</h2>
   
-    <div class="entry-detail" id="new&#40;owner,exception:KeyError&#41;-class-method">
+    <div class="entry-detail" id="new&#40;parent_klass,type&#41;-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(owner, exception : KeyError)
+        def self.<strong>new</strong>(parent_klass, type)
 
-        <a class="method-permalink" href="#new%28owner%2Cexception%3AKeyError%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28parent_klass%2Ctype%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/c5cac40b166cf1bd0bb4cc5b84c66b77540ebfec/src/jennifer/exceptions.cr#L64" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new&#40;owner,relation&#41;-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(owner, relation)
-
-        <a class="method-permalink" href="#new%28owner%2Crelation%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/c5cac40b166cf1bd0bb4cc5b84c66b77540ebfec/src/jennifer/exceptions.cr#L68" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/c5cac40b166cf1bd0bb4cc5b84c66b77540ebfec/src/jennifer/exceptions.cr#L129" target="_blank">View source</a>]
         
       </div>
     </div>

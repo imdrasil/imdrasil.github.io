@@ -85,7 +85,7 @@
 <h1 id="views">Views</h1>
 
 <blockquote>
-  <p>For now any type of view should have defined primary key as well as model</p>
+  <p>For now any type of view should have defined primary key as well as model.</p>
 </blockquote>
 
 <h2 id="non-materialized">Non Materialized</h2>
@@ -105,7 +105,7 @@
 
 <p>Second argument of <code class="highlighter-rouge">#create_view</code> describes query which will  be used to retrieve data.</p>
 
-<p><strong>Importent restriction</strong>: any prepared argument is not allowed for now - any argument should be escaped by your own.</p>
+<p><strong>Importent restriction</strong>: any prepared argument is not allowed for now - all arguments should be escaped by your own.</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># bad</span>
 <span class="n">create_view</span><span class="p">(</span><span class="ss">:male_contacts</span><span class="p">,</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Query</span><span class="p">[</span><span class="s2">"contacts"</span><span class="p">].</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_gender</span> <span class="o">==</span> <span class="s2">"male"</span> <span class="p">})</span>
@@ -132,6 +132,8 @@
 
 <p>All regular model mapping functionality are also available for views (except any functionality for deleting, updating or creating new view objects). Any scoping functionality is allowed as well. Only <code class="highlighter-rouge">after_initialize</code> callback is allowed. STI is not supported.</p>
 
+<p>Also all defined mapping properties are accessible via <code class="highlighter-rouge">COLUMNS_METADA</code> constant and <code class="highlighter-rouge">::columns_tuple</code> method.</p>
+
 <h2 id="materialized">Materialized</h2>
 
 <blockquote>
@@ -155,15 +157,15 @@
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div></div>
-<p>As for non materialized view here all arguments should be escaped explicitly as well.</p>
+<p>As for non materialized view all arguments should be escaped explicitly as well.</p>
 
 <blockquote>
   <p>Until 0.5.0 source could be represented as stringgified raw sql, but this will be removed.</p>
 </blockquote>
 
-<p>For defining materialized view <code class="highlighter-rouge">Jennfer::View::Base</code> superclass is used as well. So example of defining created before materialized view looks like:</p>
+<p>Example of defining created before materialized view looks like:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">FemaleContact</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">FemaleContact</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Materialized</span>
   <span class="n">mapping</span><span class="p">({</span>
     <span class="ss">id:   </span><span class="no">Primary32</span><span class="p">,</span>
     <span class="ss">name: </span><span class="no">String</span><span class="p">?,</span>
@@ -173,7 +175,7 @@
 
 <p>To refresh content of materialized view use:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jennifer</span><span class="o">::</span><span class="no">Adapter</span><span class="p">.</span><span class="nf">adapter</span><span class="p">.</span><span class="nf">refresh_materialized_view</span><span class="p">(</span><span class="s2">"materialized_view_name"</span><span class="p">)</span>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">FemaleContact</span><span class="p">.</span><span class="nf">refresh</span>
 </code></pre></div></div>
 
   </div>

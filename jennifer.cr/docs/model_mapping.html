@@ -368,11 +368,6 @@
       <td>returns attribute value by it’s name</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#attributes_hash</code></td>
-      <td> </td>
-      <td>returns <code class="highlighter-rouge">to_h</code> with deleted <code class="highlighter-rouge">nil</code> entries</td>
-    </tr>
-    <tr>
       <td><code class="highlighter-rouge">#changed?</code></td>
       <td> </td>
       <td>check if any field was changed</td>
@@ -394,9 +389,11 @@
 
 <p>Automatically model is associated with table with underscored pluralized name of it’s class, but special name can be defined using <code class="highlighter-rouge">::table_name</code> method in own body before using any relation (<code class="highlighter-rouge">::singular_table_name</code> - for singular variant).</p>
 
+<p>All defined mapping properties are accessible via <code class="highlighter-rouge">COLUMNS_METADA</code> constant and <code class="highlighter-rouge">::columns_tuple</code> method.</p>
+
 <p><strong>Important restriction</strong> - model with no primary field is not allowed for now.</p>
 
-<p>You can inherite from one basic abstract class:</p>
+<p>It may be usefull to have one parent class for your model - just make it abstract and everything will work well:</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">abstract</span> <span class="k">class</span> <span class="nc">ApplicationRecord</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
 <span class="k">end</span>

@@ -5,7 +5,7 @@
   <meta id="repository-name" content="github.com/imdrasil/jennifer.cr">
   <link href="../css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="../js/doc.js"></script>
-  <title>Jennifer::UnknownRelation - github.com/imdrasil/jennifer.cr</title>
+  <title>Jennifer::Macros - github.com/imdrasil/jennifer.cr</title>
 </head>
 <body>
 
@@ -145,7 +145,7 @@
       
     </li>
   
-  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Macros" data-name="jennifer::macros">
+  <li class=" current" data-id="github.com/imdrasil/jennifer.cr/Jennifer/Macros" data-name="jennifer::macros">
       <a href="../Jennifer/Macros.html">Macros</a>
       
     </li>
@@ -580,7 +580,7 @@
       
     </li>
   
-  <li class=" current" data-id="github.com/imdrasil/jennifer.cr/Jennifer/UnknownRelation" data-name="jennifer::unknownrelation">
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/UnknownRelation" data-name="jennifer::unknownrelation">
       <a href="../Jennifer/UnknownRelation.html">UnknownRelation</a>
       
     </li>
@@ -662,15 +662,17 @@
 <div id="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Jennifer::UnknownRelation
+  <span class="kind">module</span> Jennifer::Macros
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Jennifer/UnknownRelation.html">Jennifer::UnknownRelation</a></li><li class="superclass"><a href="../Jennifer/BaseException.html">Jennifer::BaseException</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
+  <h2>Overview</h2>
+
+  <p>This module contais constants needed only during compilation process to avoid their recreating.</p>
 
 
 
@@ -688,29 +690,46 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/c5cac40b166cf1bd0bb4cc5b84c66b77540ebfec/src/jennifer/exceptions.cr#L63" target="_blank">jennifer/exceptions.cr</a>
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/c5cac40b166cf1bd0bb4cc5b84c66b77540ebfec/src/jennifer/macros.cr#L3" target="_blank">jennifer/macros.cr</a>
     
     <br/>
   
 
 
 
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="AUTOINCREMENTABLE_STR_TYPES">
+        <strong>AUTOINCREMENTABLE_STR_TYPES</strong> = <code>[<span class="s">&quot;Int32&quot;</span>, <span class="s">&quot;Int64&quot;</span>, <span class="s">&quot;Primary32&quot;</span>, <span class="s">&quot;Primary64&quot;</span>]</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="JSON_REGEXP">
+        <strong>JSON_REGEXP</strong> = <code><span class="s">/JSON::Any/</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="NILLABLE_REGEXP">
+        <strong>NILLABLE_REGEXP</strong> = <code><span class="s">/&#40;::Nil&#41;|&#40; Nil&#41;/</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PRIMARY_32">
+        <strong>PRIMARY_32</strong> = <code><span class="s">&quot;Primary32&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PRIMARY_64">
+        <strong>PRIMARY_64</strong> = <code><span class="s">&quot;Primary64&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
 
 
-  <h2>Constructors</h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#new%28owner%2Cexception%3AKeyError%29-class-method" class="signature"><strong>.new</strong>(owner, exception : KeyError)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new%28owner%2Crelation%29-class-method" class="signature"><strong>.new</strong>(owner, relation)</a>
-        
-      </li>
-    
-  </ul>
 
 
 
@@ -722,110 +741,8 @@
 
 <div class="methods-inherited">
   
-    
-
-  <h3>Instance methods inherited from class <code><a href="../Jennifer/BaseException.html">Jennifer::BaseException</a></code></h3>
-  
-  
-    <a href="../Jennifer/BaseException.html#message%3D%28message%29-instance-method" class="tooltip">
-      <span>message=(message)</span>
-    message=</a>
-    
-  
-
-
-    
-
-  <h3>Constructor methods inherited from class <code><a href="../Jennifer/BaseException.html">Jennifer::BaseException</a></code></h3>
-  
-  
-    <a href="../Jennifer/BaseException.html#new%28base_exception%3AException%2Cextra_message%3AString%3F%3Dnil%29-class-method" class="tooltip">
-      <span>new(base_exception : Exception, extra_message : String? = <span class="n">nil</span>)<br/>new(message)</span>
-    new</a>
-    
-  
-
-
-    
-
-  <h3>Class methods inherited from class <code><a href="../Jennifer/BaseException.html">Jennifer::BaseException</a></code></h3>
-  
-  
-    <a href="../Jennifer/BaseException.html#assert_column_count%28requested%2Cactual%29-class-method" class="tooltip">
-      <span>assert_column_count(requested, actual)</span>
-    assert_column_count</a>
-    
-  
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
 </div>
 
-
-  <h2>Constructor Detail</h2>
-  
-    <div class="entry-detail" id="new&#40;owner,exception:KeyError&#41;-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(owner, exception : KeyError)
-
-        <a class="method-permalink" href="#new%28owner%2Cexception%3AKeyError%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/c5cac40b166cf1bd0bb4cc5b84c66b77540ebfec/src/jennifer/exceptions.cr#L64" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new&#40;owner,relation&#41;-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(owner, relation)
-
-        <a class="method-permalink" href="#new%28owner%2Crelation%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/c5cac40b166cf1bd0bb4cc5b84c66b77540ebfec/src/jennifer/exceptions.cr#L68" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
 
 
 
