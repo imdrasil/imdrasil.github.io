@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Migration</title>
+  <meta name="description" content="Personal site">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/latest/migration.html">
+  <link rel="alternate" type="application/rss+xml" title="Imdrasil Homebrew Stuff" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/">Imdrasil Homebrew Stuff</a>
+  </div>
+</header>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Migration</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="migration">Migration</h1>
+
+<p>For command management Jennifer now uses <a href="https://github.com/imdrasil/sam.cr">Sam</a>. So in your <code class="highlighter-rouge">sam.cr</code> just add loading migrations and Jennifer hooks.</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"./your_configuration_folder/*"</span> <span class="c1"># with requiring jennifer and her adapter</span>
+<span class="nb">require</span> <span class="s2">"./migrations/*"</span>
+<span class="nb">require</span> <span class="s2">"sam"</span>
+<span class="n">load_dependencies</span> <span class="s2">"jennifer"</span>
+<span class="c1"># your another tasks here</span>
+<span class="no">Sam</span><span class="p">.</span><span class="nf">help</span>
+</code></pre></div></div>
+
+<h4 id="commands">Commands</h4>
+<p>Now you can use next commands:</p>
+
+<ul>
+  <li>create database
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> db:create
+</code></pre></div>    </div>
+  </li>
+  <li>drop database
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> db:drop
+</code></pre></div>    </div>
+  </li>
+  <li>run all migrations (only new ones will be run)
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> db:migrate
+</code></pre></div>    </div>
+  </li>
+  <li>run several migrations
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> db:step
+<span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> db:step 2
+</code></pre></div>    </div>
+  </li>
+  <li>create db and run all migrations (only new ones will be run)
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> db:setup
+</code></pre></div>    </div>
+  </li>
+  <li>rollback last migration
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> db:rollback
+</code></pre></div>    </div>
+  </li>
+  <li>rollback <code class="highlighter-rouge">n</code> migrations
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> db:rollback n
+</code></pre></div>    </div>
+  </li>
+  <li>rollback untill version <code class="highlighter-rouge">a</code>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> db:rollback <span class="nt">-v</span> a
+</code></pre></div>    </div>
+  </li>
+  <li>generate new migration file
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> generate:migration your_migration_name
+</code></pre></div>    </div>
+  </li>
+  <li>get last migration version
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> db:version
+</code></pre></div>    </div>
+  </li>
+  <li>load schema
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> db:schema:load
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="migration-dsl">Migration DSL</h4>
+
+<p>Generator will create template file for you with next name  pattern “timestamp_your_underscored_migration_name.cr”. Empty file looks like this:</p>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">YourCamelcasedMigrationName20170119011451314</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Migration</span><span class="o">::</span><span class="no">Base</span>
+  <span class="k">def</span> <span class="nf">up</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">down</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">up</code> method is needed for placing your db changes there, <code class="highlighter-rouge">down</code> - for reverting your changes back.</p>
+
+<p>Regular example for creating table:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_table</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">reference</span> <span class="ss">:contact</span> <span class="c1"># creates field contact_id with Int type and allows null values</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:street</span><span class="p">,</span> <span class="p">{</span><span class="ss">:size</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">:sql_type</span> <span class="o">=&gt;</span> <span class="s2">"char"</span><span class="p">}</span> <span class="c1"># creates string field with CHAR(20) db type</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">bool</span> <span class="ss">:main</span><span class="p">,</span> <span class="p">{</span><span class="ss">:default</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">}</span> <span class="c1"># sets false as default value</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>There are next methods which represents corresponding types:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>PostgreSQL</th>
+      <th>MySql</th>
+      <th>Crystal type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">#integer</code></td>
+      <td><code class="highlighter-rouge">int</code></td>
+      <td><code class="highlighter-rouge">int</code></td>
+      <td><code class="highlighter-rouge">Int32</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#short</code></td>
+      <td><code class="highlighter-rouge">SMALLINT</code></td>
+      <td><code class="highlighter-rouge">SMALLINT</code></td>
+      <td><code class="highlighter-rouge">Int16</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#bigint</code></td>
+      <td><code class="highlighter-rouge">BIGINT</code></td>
+      <td><code class="highlighter-rouge">BIGINT</code></td>
+      <td><code class="highlighter-rouge">Int64</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#tinyint</code></td>
+      <td>-</td>
+      <td><code class="highlighter-rouge">TINYINT</code></td>
+      <td><code class="highlighter-rouge">Int8</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#float</code></td>
+      <td><code class="highlighter-rouge">real</code></td>
+      <td><code class="highlighter-rouge">float</code></td>
+      <td><code class="highlighter-rouge">Float32</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#double</code></td>
+      <td><code class="highlighter-rouge">double precision</code></td>
+      <td><code class="highlighter-rouge">double</code></td>
+      <td><code class="highlighter-rouge">Float64</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#numeric</code></td>
+      <td><code class="highlighter-rouge">NUMERIC</code></td>
+      <td>-</td>
+      <td><code class="highlighter-rouge">PG::Numeric</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#decimal</code></td>
+      <td><code class="highlighter-rouge">DECIMAL</code></td>
+      <td><code class="highlighter-rouge">DECIMAL</code></td>
+      <td><code class="highlighter-rouge">PG::Numeric</code> (pg); <code class="highlighter-rouge">Float64</code> (mysql)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#string</code></td>
+      <td><code class="highlighter-rouge">varchar(254)</code></td>
+      <td><code class="highlighter-rouge">varchar(254)</code></td>
+      <td><code class="highlighter-rouge">String</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#char</code></td>
+      <td><code class="highlighter-rouge">char</code></td>
+      <td>-</td>
+      <td><code class="highlighter-rouge">String</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#var_string</code> / <code class="highlighter-rouge">#varchar</code></td>
+      <td><code class="highlighter-rouge">varchar(254)</code></td>
+      <td><code class="highlighter-rouge">varstring</code></td>
+      <td><code class="highlighter-rouge">String</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#text</code></td>
+      <td><code class="highlighter-rouge">TEXT</code></td>
+      <td><code class="highlighter-rouge">TEXT</code></td>
+      <td><code class="highlighter-rouge">String</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#bool</code></td>
+      <td><code class="highlighter-rouge">boolean</code></td>
+      <td><code class="highlighter-rouge">bool</code></td>
+      <td><code class="highlighter-rouge">Bool</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#timestamp</code></td>
+      <td><code class="highlighter-rouge">timestamp</code></td>
+      <td><code class="highlighter-rouge">datetime</code></td>
+      <td><code class="highlighter-rouge">Time</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#date_time</code></td>
+      <td><code class="highlighter-rouge">datetime</code></td>
+      <td><code class="highlighter-rouge">datetime</code></td>
+      <td><code class="highlighter-rouge">Time</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#blob</code></td>
+      <td><code class="highlighter-rouge">blob</code></td>
+      <td><code class="highlighter-rouge">blob</code></td>
+      <td><code class="highlighter-rouge">Bytes</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#json</code></td>
+      <td><code class="highlighter-rouge">json</code></td>
+      <td><code class="highlighter-rouge">json</code></td>
+      <td><code class="highlighter-rouge">JSON::Any</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#enum</code></td>
+      <td>-</td>
+      <td><code class="highlighter-rouge">ENUM</code></td>
+      <td><code class="highlighter-rouge">String</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In Postgres enum type is defined using custom user datatype which also is mapped to the <code class="highlighter-rouge">String</code>.</p>
+
+<p>PostgreSQL specific datatypes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Datatype</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">#oid</code></td>
+      <td><code class="highlighter-rouge">OID</code></td>
+      <td><code class="highlighter-rouge">UInt32</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#jsonb</code></td>
+      <td><code class="highlighter-rouge">JSONB</code></td>
+      <td><code class="highlighter-rouge">JSON::Any</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#xml</code></td>
+      <td><code class="highlighter-rouge">XML</code></td>
+      <td><code class="highlighter-rouge">String</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#blchar</code></td>
+      <td><code class="highlighter-rouge">BLCHAR</code></td>
+      <td><code class="highlighter-rouge">String</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#uuid</code></td>
+      <td><code class="highlighter-rouge">UUID</code></td>
+      <td><code class="highlighter-rouge">String</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#timestampz</code></td>
+      <td><code class="highlighter-rouge">TIMESTAMPZ</code></td>
+      <td><code class="highlighter-rouge">Time</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#point</code></td>
+      <td><code class="highlighter-rouge">POINT</code></td>
+      <td><code class="highlighter-rouge">PG::Geo::Point</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#lseg</code></td>
+      <td><code class="highlighter-rouge">lseg</code></td>
+      <td><code class="highlighter-rouge">PG::Geo::LineSegment</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#path</code></td>
+      <td><code class="highlighter-rouge">PATH</code></td>
+      <td><code class="highlighter-rouge">PG::Geo::Path</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#box</code></td>
+      <td><code class="highlighter-rouge">BOX</code></td>
+      <td><code class="highlighter-rouge">PG::Geo::Box</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#polygon</code></td>
+      <td><code class="highlighter-rouge">POLYGON</code></td>
+      <td><code class="highlighter-rouge">PG::Geo::Polygon</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#line</code></td>
+      <td><code class="highlighter-rouge">LINE</code></td>
+      <td><code class="highlighter-rouge">PG::Geo::Line</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#circle</code></td>
+      <td><code class="highlighter-rouge">CIRCLE</code></td>
+      <td><code class="highlighter-rouge">PG::Geo::Circle</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Also if you use postgres array types are available as well: <code class="highlighter-rouge">Array(Int32)</code>, <code class="highlighter-rouge">Array(Char)</code>, <code class="highlighter-rouge">Array(Float32)</code>,  <code class="highlighter-rouge">Array(Float64)</code>, <code class="highlighter-rouge">Array(Int16)</code>, <code class="highlighter-rouge">Array(Int32)</code>, <code class="highlighter-rouge">Array(Int64)</code>, <code class="highlighter-rouge">Array(String)</code>.</p>
+
+<p>All those methods accepts additional options:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">:sql_type</code> - gets exact (except size) field type;</li>
+  <li><code class="highlighter-rouge">:null</code> - represent nullable if field (by default is <code class="highlighter-rouge">false</code> for all types and field);</li>
+  <li><code class="highlighter-rouge">:primary</code> - marks field as primary key field (could be several ones but this provides some bugs with query generation for such model - for now try to avoid this).</li>
+  <li><code class="highlighter-rouge">:default</code> - default value for field</li>
+  <li><code class="highlighter-rouge">:auto_increment</code> - marks field to use auto increment (properly works only with <code class="highlighter-rouge">Int32</code> fields, another crystal types have cut functionality for it);</li>
+  <li><code class="highlighter-rouge">:array</code> - mark field to be array type (postgres only)</li>
+</ul>
+
+<p>Also there is <code class="highlighter-rouge">#field</code> method which allows to directly define sql type (very suitable for snums in postgres).</p>
+
+<p>To drop table just write</p>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop_table</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span> <span class="c1"># drops if exists</span>
+</code></pre></div></div>
+
+<p>To create materialized view (postgres only):</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_materialized_view</span><span class="p">(</span><span class="s2">"female_contacts"</span><span class="p">,</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_gender</span> <span class="o">==</span> <span class="s2">"female"</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<p>And to drop it:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop_materialized_view</span><span class="p">(</span><span class="s2">"female_contacts"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>To alter existing table use next methods:</p>
+<ul>
+  <li><code class="highlighter-rouge">#change_column(name, [new_name], options)</code> - to change column definition; postgres has slighly another implementation of this than mysql one - check source code for details;</li>
+  <li><code class="highlighter-rouge">#add_column(name, type, options)</code> - add new column;</li>
+  <li><code class="highlighter-rouge">#drop_column(name)</code> - drops existing column</li>
+  <li><code class="highlighter-rouge">#add_index(name : String, field : Symbol, type : Symbol, order : Symbol?, length : Int32?)</code> - adds new index (postgres doesn’t support length parameter and only support <code class="highlighter-rouge">:unique</code> type);</li>
+  <li><code class="highlighter-rouge">#drop_index(name : String)</code> - drops existing index;</li>
+  <li><code class="highlighter-rouge">#rename_table(new_name)</code> - renames table.</li>
+</ul>
+
+<p>Also next support methods are available:</p>
+<ul>
+  <li><code class="highlighter-rouge">#table_exists?(name)</code></li>
+  <li><code class="highlighter-rouge">#index_exists?(table, name)</code></li>
+  <li><code class="highlighter-rouge">#column_exists?(table, name)</code></li>
+  <li><code class="highlighter-rouge">#data_type_exists?(name)</code> for postgres ENUM</li>
+  <li><code class="highlighter-rouge">#material_view_exists?(name)</code></li>
+</ul>
+
+<p>Here is quick example:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">up</span>
+  <span class="n">change_table</span><span class="p">(</span><span class="ss">:contacts</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">change_column</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="ss">:short</span><span class="p">,</span> <span class="p">{</span><span class="ss">default: </span><span class="mi">0</span><span class="p">})</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">add_column</span><span class="p">(</span><span class="ss">:description</span><span class="p">,</span> <span class="ss">:text</span><span class="p">)</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">add_index</span><span class="p">(</span><span class="s2">"contacts_description_index"</span><span class="p">,</span> <span class="ss">:description</span><span class="p">,</span> <span class="ss">type: :uniq</span><span class="p">,</span> <span class="ss">order: :asc</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">change_table</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">add_column</span><span class="p">(</span><span class="ss">:details</span><span class="p">,</span> <span class="ss">:json</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">down</span>
+  <span class="n">change_table</span><span class="p">(</span><span class="ss">:contacts</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">change_column</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="ss">:integer</span><span class="p">,</span> <span class="p">{</span><span class="ss">default: </span><span class="mi">0</span><span class="p">})</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">drop_column</span><span class="p">(</span><span class="ss">:description</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">change_table</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">drop_column</span><span class="p">(</span><span class="ss">:details</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Also plain SQL could be executed as well:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">execute</span><span class="p">(</span><span class="s2">"ALTER TABLE addresses CHANGE street st VARCHAR(20)"</span><span class="p">)</span>
+</code></pre></div></div>
+<p>All changes are executed one by one so you also could add data changes here (in <code class="highlighter-rouge">up</code> method) but if execution of <code class="highlighter-rouge">up</code> method fails - <code class="highlighter-rouge">down</code> method will be called and all process will stop - be ready for such behavior.</p>
+
+<p>To be sure that your db is up to date before run tests of your application, add <code class="highlighter-rouge">Jennifer::Migration::Runner.migrate</code>.</p>
+
+<h4 id="enum">Enum</h4>
+
+<p>Now enums are supported as well but it has different implementation for adapters. For mysql is enought just write down all values:</p>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_table</span><span class="p">(</span><span class="ss">:contacts</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">enum</span><span class="p">(</span><span class="ss">:gender</span><span class="p">,</span> <span class="ss">values: </span><span class="p">[</span><span class="s2">"male"</span><span class="p">,</span> <span class="s2">"female"</span><span class="p">])</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Postgres provide much more flexible and complex behaviour. Using it you need to create it firstly:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_enum</span><span class="p">(</span><span class="ss">:gender_enum</span><span class="p">,</span> <span class="p">[</span><span class="s2">"male"</span><span class="p">,</span> <span class="s2">"female"</span><span class="p">])</span>
+<span class="n">create_table</span><span class="p">(</span><span class="ss">:contacts</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:name</span><span class="p">,</span> <span class="p">{</span><span class="ss">:size</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">}</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">integer</span> <span class="ss">:age</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">field</span> <span class="ss">:gender</span><span class="p">,</span> <span class="ss">:gender_enum</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">timestamps</span>
+<span class="k">end</span>
+<span class="n">change_enum</span><span class="p">(</span><span class="ss">:gender_enum</span><span class="p">,</span> <span class="p">{</span><span class="ss">:add_values</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"unknown"</span><span class="p">]})</span>
+<span class="n">change_enum</span><span class="p">(</span><span class="ss">:gender_enum</span><span class="p">,</span> <span class="p">{</span><span class="ss">:rename_values</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"unknown"</span><span class="p">,</span> <span class="s2">"other"</span><span class="p">]})</span>
+<span class="n">change_enum</span><span class="p">(</span><span class="ss">:gender_enum</span><span class="p">,</span> <span class="p">{</span><span class="ss">:remove_values</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"other"</span><span class="p">]})</span>
+</code></pre></div></div>
+<p>For more details check source code and PostgreSQL docs.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imdrasil Homebrew Stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Imdrasil Homebrew Stuff
+            
+            </li>
+            
+            <li><a href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/imdrasil"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">imdrasil</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Personal site</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

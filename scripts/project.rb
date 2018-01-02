@@ -55,14 +55,14 @@ class Project
         gv = NaturalSort.sort(Git.versions - @scip_versions).reverse!
         @new_versions = gv[0...KEEP_COUNT] - versions
 
-        #require "pry"
         #binding.pry
 
         new_versions.each do |v|
           build(current_deep, v)
         end
 
-        versions![0...-KEEP_COUNT].each do |v|
+        #binding.pry
+        (versions![KEEP_COUNT..-1] || []).each do |v|
           FileUtils.rm_r(File.join(current_deep, @name, v))
         end
       end
@@ -90,8 +90,9 @@ class Project
     FileUtils.remove_dir(version_path) if Dir.exists?(version_path)
     Dir.mkdir(version_path)
     FileUtils.cp_r(Dir[doc_folder + "/*"], version_path)
-    binding.pry
     FileUtils.rm_r(doc_folder)
+  rescue => e
+    binding.pry
   end
 
   def repo_dir
@@ -117,7 +118,7 @@ class Project
   private
 
   def doc_folder
-    "doc"
+    "docs"
   end
 
   def up_to_date?

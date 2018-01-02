@@ -36,7 +36,7 @@
   </header>
 
   <div class="post-content">
-    <h1 id="factory--">Factory <a href="https://travis-ci.org/imdrasil/factory"><img src="https://travis-ci.org/imdrasil/factory.svg" alt="Build Status" /></a> <a href="https://github.com/imdrasil/factory/releases"><img src="https://img.shields.io/github/release/imdrasil/factory.svg" alt="Latest Release" /></a></h1>
+    <h1 id="factory---">Factory <a href="https://travis-ci.org/imdrasil/factory"><img src="https://travis-ci.org/imdrasil/factory.svg" alt="Build Status" /></a> <a href="https://github.com/imdrasil/factory/releases"><img src="https://img.shields.io/github/release/imdrasil/factory.svg" alt="Latest Release" /></a> <a href="https://imdrasil.github.io/factory/latest/"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs" /></a></h1>
 
 <p>Easy to use but flexible factory definition utility. Coul be used for testing purpose and for developing as well.</p>
 
@@ -62,7 +62,7 @@
 <p>By convenience this factory will builds <code class="highlighter-rouge">Human</code> class but this behavior can be overrided using <code class="highlighter-rouge">describe_class</code> macro:</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AdminFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Base</span>
-    <span class="n">describe_class</span> <span class="no">User</span>
+  <span class="n">describe_class</span> <span class="no">User</span>
 <span class="k">end</span>
 </code></pre></div></div>
 
@@ -121,18 +121,18 @@
 <p>Also <code class="highlighter-rouge">after_initialize</code> callback could be specified:</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TestFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Base</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">after_initialize</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+  <span class="n">after_initialize</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
     <span class="k">super</span> <span class="c1"># if you want parrent one to be inked as well</span>
     <span class="n">t</span><span class="p">.</span><span class="nf">f1</span><span class="p">.</span><span class="nf">not_nil!</span> <span class="o">+=</span> <span class="mi">1</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>The way of object initializing could be specified:</p>
+<p>Builder method could be specified as well:</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TestFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Base</span>
   <span class="c1"># here is default builder</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">initialize_with</span><span class="p">(</span><span class="nb">hash</span><span class="p">,</span> <span class="n">traits</span><span class="p">)</span>
+  <span class="n">initialize_with</span> <span class="k">do</span> <span class="o">|</span><span class="nb">hash</span><span class="p">,</span> <span class="n">traits</span><span class="o">|</span>
     <span class="n">obj</span> <span class="o">=</span> <span class="no">Test</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
     <span class="n">make_assigns</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">traits</span><span class="p">)</span> <span class="c1"># makes all assignements (traits will be described later)</span>
     <span class="n">obj</span>
@@ -236,12 +236,8 @@
 <p>Possible next tasks:</p>
 
 <ul>
-  <li>
-    <p>think  about adding assigning via hash or named tuble argument</p>
-  </li>
-  <li>
-    <p>adding <code class="highlighter-rouge">%attr</code> to traits</p>
-  </li>
+  <li>think  about adding assigning via hash or named tuble argument;</li>
+  <li>adding <code class="highlighter-rouge">%attr</code> to traits.</li>
 </ul>
 
 <h2 id="contributing">Contributing</h2>

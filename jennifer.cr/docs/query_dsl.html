@@ -183,6 +183,10 @@
       <td><code class="highlighter-rouge">LIKE</code></td>
     </tr>
     <tr>
+      <td><code class="highlighter-rouge">ilike</code></td>
+      <td><code class="highlighter-rouge">ILIKE</code> for pg and <code class="highlighter-rouge">LIKE</code> for mysql</td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">not_like</code></td>
       <td><code class="highlighter-rouge">NOT LIKE</code></td>
     </tr>
@@ -240,7 +244,7 @@
 
 <ul>
   <li>
-    <pre><code class="language-SQL"> WHERE field_name-&gt;"$.selector"
+    <pre><code class="language-SQL">WHERE field_name-&gt;"$.selector"
 </code></pre>
     <p>could be specified using</p>
   </li>
@@ -279,7 +283,7 @@
   <li>all regexp methods accepts string representation of regexp</li>
   <li>use parenthesis for binary operators (<code class="highlighter-rouge">&amp;</code> and <code class="highlighter-rouge">|</code>)</li>
   <li><code class="highlighter-rouge">nil</code> given to <code class="highlighter-rouge">!=</code> and <code class="highlighter-rouge">==</code> will be transformed to <code class="highlighter-rouge">IS NOT NULL</code> and <code class="highlighter-rouge">IS NULL</code></li>
-  <li><code class="highlighter-rouge">is</code> and <code class="highlighter-rouge">not</code> operator accepts next values: <code class="highlighter-rouge">:nil</code>, <code class="highlighter-rouge">nil</code>, <code class="highlighter-rouge">:unknown</code>, <code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">false</code></li>
+  <li><code class="highlighter-rouge">is</code> and <code class="highlighter-rouge">not</code> operator accepts next values: <code class="highlighter-rouge">nil</code>, <code class="highlighter-rouge">:unknown</code>, <code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">false</code></li>
 </ul>
 
 <p>At the end - several examples:</p>

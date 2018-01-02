@@ -6,3 +6,4 @@ src/**
 !src/_includes/**
 !src/index.md
 _site
+.idea

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/imdrasil/ifrit">
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../js/doc.js"></script>
+  <title>Ifrit::Inflector - github.com/imdrasil/ifrit</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Array" data-name="array(t)">
+      <a href="../Array.html">Array</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/BitArray" data-name="bitarray">
+      <a href="../BitArray.html">BitArray</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Hash" data-name="hash(k, v)">
+      <a href="../Hash.html">Hash</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/HashWithIndifferentAccess" data-name="hashwithindifferentaccess(v)">
+      <a href="../HashWithIndifferentAccess.html">HashWithIndifferentAccess</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/ifrit/Ifrit" data-name="ifrit">
+      <a href="../Ifrit.html">Ifrit</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/imdrasil/ifrit/Ifrit/Inflector" data-name="ifrit::inflector">
+      <a href="../Ifrit/Inflector.html">Inflector</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/InheritableJSON" data-name="inheritablejson">
+      <a href="../InheritableJSON.html">InheritableJSON</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/NamedTuple" data-name="namedtuple(**t)">
+      <a href="../NamedTuple.html">NamedTuple</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Nil" data-name="nil">
+      <a href="../Nil.html">Nil</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Number" data-name="number">
+      <a href="../Number.html">Number</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Object" data-name="object">
+      <a href="../Object.html">Object</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/String" data-name="string">
+      <a href="../String.html">String</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Struct" data-name="struct">
+      <a href="../Struct.html">Struct</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/ifrit/SymbolTable" data-name="symboltable">
+      <a href="../SymbolTable.html">SymbolTable</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/SymbolTable/Methods" data-name="symboltable::methods">
+      <a href="../SymbolTable/Methods.html">Methods</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/SymbolTable/UnknownSymbol" data-name="symboltable::unknownsymbol">
+      <a href="../SymbolTable/UnknownSymbol.html">UnknownSymbol</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/ifrit/Tuple" data-name="tuple(*t)">
+      <a href="../Tuple.html">Tuple</a>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Ifrit::Inflector
+
+</h1>
+
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Allows to pluralize values in compile-time.</p>
+
+<p>This is a port of <a href="https://github.com/phoffer/inflector.cr" target="_blank">inflector.cr</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/ifrit/blob/3d062527c231b233714bf70c2563988429ff4c9a/src/ifrit/inflector.cr#L5" target="_blank">ifrit/inflector.cr</a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="IRREGULAR_PLURAL_RULES">
+        <strong>IRREGULAR_PLURAL_RULES</strong> = <code>[[<span class="s">/person$/</span>, <span class="s">&quot;people&quot;</span>], [<span class="s">/man$/</span>, <span class="s">&quot;men&quot;</span>], [<span class="s">/child$/</span>, <span class="s">&quot;children&quot;</span>], [<span class="s">/sex$/</span>, <span class="s">&quot;sexes&quot;</span>], [<span class="s">/move$/</span>, <span class="s">&quot;moves&quot;</span>], [<span class="s">/zombie$/</span>, <span class="s">&quot;zombies&quot;</span>]]</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="IRREGULAR_SINGULAR_RULES">
+        <strong>IRREGULAR_SINGULAR_RULES</strong> = <code>[[<span class="s">/people$/</span>, <span class="s">&quot;person&quot;</span>], [<span class="s">/men$/</span>, <span class="s">&quot;man&quot;</span>], [<span class="s">/children$/</span>, <span class="s">&quot;child&quot;</span>], [<span class="s">/sexes$/</span>, <span class="s">&quot;sex&quot;</span>], [<span class="s">/moves$/</span>, <span class="s">&quot;move&quot;</span>], [<span class="s">/zombies$/</span>, <span class="s">&quot;zombie&quot;</span>]]</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PLURAL_RULES">
+        <strong>PLURAL_RULES</strong> = <code>[[<span class="s">/(quiz)$/</span>i, <span class="s">&quot;zes&quot;</span>, <span class="s">/$/</span>i], [<span class="s">/^(oxen)$/</span>i, <span class="s">&quot;oxen&quot;</span>, <span class="s">/^(oxen)$/</span>i], [<span class="s">/^(ox)$/</span>i, <span class="s">&quot;en&quot;</span>, <span class="s">/$/</span>i], [<span class="s">/^(m|l)ice$/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/$/</span>i], [<span class="s">/^(m|l)ouse$/</span>i, <span class="s">&quot;ice&quot;</span>, <span class="s">/ouse$/</span>i], [<span class="s">/(matr|vert|ind)(ix|ex)$/</span>i, <span class="s">&quot;ices&quot;</span>, <span class="s">/(ix|ex)$/</span>i], [<span class="s">/(x|ch|ss|sh)$/</span>i, <span class="s">&quot;es&quot;</span>, <span class="s">/$/</span>i], [<span class="s">/([^aeiouy]|qu)y$/</span>i, <span class="s">&quot;ies&quot;</span>, <span class="s">/y$/</span>i], [<span class="s">/(hive)$/</span>i, <span class="s">&quot;s&quot;</span>, <span class="s">/$/</span>i], [<span class="s">/([^f]fe)$/</span>i, <span class="s">&quot;ves&quot;</span>, <span class="s">/fe$/</span>i], [<span class="s">/([lr]f)$/</span>i, <span class="s">&quot;ves&quot;</span>, <span class="s">/f$/</span>i], [<span class="s">/sis$/</span>i, <span class="s">&quot;ses&quot;</span>, <span class="s">/sis$/</span>i], [<span class="s">/[ti]a$/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/$/</span>i], [<span class="s">/([ti])um$/</span>i, <span class="s">&quot;a&quot;</span>, <span class="s">/um$/</span>i], [<span class="s">/(buffal|tomat)o$/</span>i, <span class="s">&quot;es&quot;</span>, <span class="s">/$/</span>i], [<span class="s">/(bu)s$/</span>i, <span class="s">&quot;es&quot;</span>, <span class="s">/$/</span>], [<span class="s">/(alias|status)$/</span>i, <span class="s">&quot;es&quot;</span>, <span class="s">/$/</span>], [<span class="s">/(octop|vir)i$/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/$/</span>], [<span class="s">/(octop|vir)us$/</span>i, <span class="s">&quot;i&quot;</span>, <span class="s">/us$/</span>i], [<span class="s">/^(ax|test)is$/</span>i, <span class="s">&quot;es&quot;</span>, <span class="s">/is$/</span>i], [<span class="s">/s$/</span>i, <span class="s">&quot;s&quot;</span>, <span class="s">/s$/</span>i], [<span class="s">/$/</span>, <span class="s">&quot;s&quot;</span>, <span class="s">/$/</span>]]</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SINGULAR_RULES">
+        <strong>SINGULAR_RULES</strong> = <code>[[<span class="s">/(database)s$/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/s$/</span>i], [<span class="s">/(quiz)zes$/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/zes$/</span>i], [<span class="s">/(matr)ices$/</span>i, <span class="s">&quot;ix&quot;</span>, <span class="s">/ices$/</span>i], [<span class="s">/(vert|ind)ices$/</span>i, <span class="s">&quot;ex&quot;</span>, <span class="s">/ices$/</span>i], [<span class="s">/^(ox)en/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/en$/</span>i], [<span class="s">/(alias|status)(es)$/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/es$/</span>i], [<span class="s">/(octop|vir)(us|i)$/</span>i, <span class="s">&quot;us&quot;</span>, <span class="s">/(us|i)$/</span>i], [<span class="s">/^(a)x[ie]s$/</span>i, <span class="s">&quot;xis&quot;</span>, <span class="s">/x[ie]s$/</span>i], [<span class="s">/(cris|test)(is|es)$/</span>i, <span class="s">&quot;is&quot;</span>, <span class="s">/(is|es)$/</span>i], [<span class="s">/(shoe)s$/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/s$/</span>i], [<span class="s">/(o)es$/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/es$/</span>i], [<span class="s">/(bus)(es)$/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/es$/</span>i], [<span class="s">/^(m|l)ice$/</span>i, <span class="s">&quot;ouse&quot;</span>, <span class="s">/ice$/</span>i], [<span class="s">/(x|ch|ss|sh)es$/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/es$/</span>i], [<span class="s">/(m)ovies$/</span>i, <span class="s">&quot;ovie&quot;</span>, <span class="s">/ovies$/</span>i], [<span class="s">/(s)eries$/</span>i, <span class="s">&quot;eries&quot;</span>, <span class="s">/eries$/</span>i], [<span class="s">/([^aeiouy]|qu)ies$/</span>i, <span class="s">&quot;y&quot;</span>, <span class="s">/ies$/</span>i], [<span class="s">/([lr])ves$/</span>i, <span class="s">&quot;f&quot;</span>, <span class="s">/ves$/</span>i], [<span class="s">/(tive|hive)s$/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/s$/</span>i], [<span class="s">/([^f])ves$/</span>i, <span class="s">&quot;fe&quot;</span>, <span class="s">/ves$/</span>i], [<span class="s">/(^analy)(sis|ses)$/</span>i, <span class="s">&quot;sis&quot;</span>, <span class="s">/(sis|ses)$/</span>i], [<span class="s">/((a)naly|(b)a|(d)iagno|(p)arenthe|(p)rogno|(s)ynop|(t)he)(sis|ses)$/</span>i, <span class="s">&quot;sis&quot;</span>, <span class="s">/(sis|ses)$/</span>i], [<span class="s">/([ti])a$/</span>i, <span class="s">&quot;um&quot;</span>, <span class="s">/a$/</span>i], [<span class="s">/(n)ews$/</span>i, <span class="s">&quot;ews&quot;</span>, <span class="s">/ews$/</span>i], [<span class="s">/(ss)$/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/$/</span>], [<span class="s">/s$/</span>i, <span class="s">&quot;&quot;</span>, <span class="s">/s$/</span>]]</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="UNCOUNTABLE">
+        <strong>UNCOUNTABLE</strong> = <code>[<span class="s">&quot;equipment&quot;</span>, <span class="s">&quot;information&quot;</span>, <span class="s">&quot;rice&quot;</span>, <span class="s">&quot;money&quot;</span>, <span class="s">&quot;species&quot;</span>, <span class="s">&quot;series&quot;</span>, <span class="s">&quot;fish&quot;</span>, <span class="s">&quot;sheep&quot;</span>, <span class="s">&quot;jeans&quot;</span>, <span class="s">&quot;police&quot;</span>] <span class="k">of</span> <span class="t">::</span><span class="t">String</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2>Macro Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#pluralize%28string%29-macro" class="signature"><strong>pluralize</strong>(string)</a>
+        
+          <div class="summary"><p>Pluralize given string literal.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#singularize%28string%29-macro" class="signature"><strong>singularize</strong>(string)</a>
+        
+          <div class="summary"><p>Singularize given string literal.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+
+
+  <h2>Macro Detail</h2>
+  
+    <div class="entry-detail" id="pluralize(string)-macro">
+      <div class="signature">
+        
+        macro <strong>pluralize</strong>(string)
+
+        <a class="method-permalink" href="#pluralize%28string%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>Pluralize given string literal.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/ifrit/blob/3d062527c231b233714bf70c2563988429ff4c9a/src/ifrit/inflector.cr#L80" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="singularize(string)-macro">
+      <div class="signature">
+        
+        macro <strong>singularize</strong>(string)
+
+        <a class="method-permalink" href="#singularize%28string%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>Singularize given string literal.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/ifrit/blob/3d062527c231b233714bf70c2563988429ff4c9a/src/ifrit/inflector.cr#L110" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>

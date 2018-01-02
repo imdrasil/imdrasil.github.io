@@ -314,7 +314,7 @@ load_dependencies <span class="s">&quot;./&quot;</span>, <span class="s">&quot;h
   })
 <span class="k">end</span></code></pre>
 
-<blockquote>You could use both `NamedTuple` and hash notation</blockquote>
+<blockquote>You could use both <code>NamedTuple</code> and hash notation</blockquote>
 
 <p><code>config</code> macros allows you specify configs for index (settings, mappings, etc.). Here regular Elasticsearch options should be used. </p>
 
@@ -452,7 +452,7 @@ obj <span class="o">=</span> <span class="t">Post</span>.<span class="k">new</sp
 
 <span class="t">PostRepository</span>.update_by_script(<span class="s">&quot;some_id&quot;</span>, {
   script: {
-    inline: <span class="s">&quot;ctx._source.likes &#43;&#61; params.count&quot;</span>,
+    inline: <span class="s">&quot;ctx._source.likes += params.count&quot;</span>,
     lang:   <span class="s">&quot;painless&quot;</span>,
     params: {count: <span class="n">1</span>},
   },
@@ -462,7 +462,7 @@ obj <span class="o">=</span> <span class="t">Post</span>.<span class="k">new</sp
 
 <pre><code class='language-crystal'><span class="t">PostRepository</span>.update_by_query({
   script: {
-    inline: <span class="s">&quot;ctx._source.likes &#43;&#61; params.count&quot;</span>,
+    inline: <span class="s">&quot;ctx._source.likes += params.count&quot;</span>,
     lang:   <span class="s">&quot;painless&quot;</span>,
     params: {count: <span class="n">1</span>},
   },

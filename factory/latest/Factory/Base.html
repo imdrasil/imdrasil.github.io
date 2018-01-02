@@ -100,7 +100,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L4" target="_blank">factory/base.cr</a>
+      <a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L4" target="_blank">factory/base.cr</a>
     
     <br/>
   
@@ -127,7 +127,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#after_initialize%28obj%29-class-method" class="signature"><strong>.after_initialize</strong>(obj)</a>
+        <a href="#_after_initialize%28obj%29-class-method" class="signature"><strong>._after_initialize</strong>(obj)</a>
         
       </li>
     
@@ -216,6 +216,11 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#skip_all_constructors-macro" class="signature"><strong>skip_all_constructors</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#trait%28name%29-macro" class="signature"><strong>trait</strong>(name)</a>
         
           <div class="summary"><p>traits could be defined only for some class</p></div>
@@ -255,23 +260,23 @@
 
   <h2>Class Method Detail</h2>
   
-    <div class="entry-detail" id="after_initialize&#40;obj&#41;-class-method">
+    <div class="entry-detail" id="_after_initialize(obj)-class-method">
       <div class="signature">
         
-        def self.<strong>after_initialize</strong>(obj)
+        def self.<strong>_after_initialize</strong>(obj)
 
-        <a class="method-permalink" href="#after_initialize%28obj%29-class-method">#</a>
+        <a class="method-permalink" href="#_after_initialize%28obj%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="assign_attr&#40;obj,name,value&#41;-class-method">
+    <div class="entry-detail" id="assign_attr(obj,name,value)-class-method">
       <div class="signature">
         
         def self.<strong>assign_attr</strong>(obj, name, value)
@@ -282,7 +287,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -298,7 +303,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L27" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L27" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -314,12 +319,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="get_trait&#40;name:String,go_deep&#41;-class-method">
+    <div class="entry-detail" id="get_trait(name:String,go_deep)-class-method">
       <div class="signature">
         
         def self.<strong>get_trait</strong>(name : String, go_deep)
@@ -330,12 +335,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="get_trait&#40;name:Symbol&#41;-class-method">
+    <div class="entry-detail" id="get_trait(name:Symbol)-class-method">
       <div class="signature">
         
         def self.<strong>get_trait</strong>(name : Symbol)
@@ -346,7 +351,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -369,7 +374,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -385,12 +390,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L38" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="argument_type&#40;type&#41;-macro">
+    <div class="entry-detail" id="argument_type(type)-macro">
       <div class="signature">
         
         macro <strong>argument_type</strong>(type)
@@ -401,12 +406,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L55" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="assign&#40;name,value,klass&#61;nil&#41;-macro">
+    <div class="entry-detail" id="assign(name,value,klass=nil)-macro">
       <div class="signature">
         
         macro <strong>assign</strong>(name, value, klass = nil)
@@ -417,12 +422,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="attr&#40;name,value,klass&#61;nil&#41;-macro">
+    <div class="entry-detail" id="attr(name,value,klass=nil)-macro">
       <div class="signature">
         
         macro <strong>attr</strong>(name, value, klass = nil)
@@ -433,12 +438,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="describe_class&#40;klass&#41;-macro">
+    <div class="entry-detail" id="describe_class(klass)-macro">
       <div class="signature">
         
         macro <strong>describe_class</strong>(klass)
@@ -449,12 +454,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="factory_builders&#40;factory_name&#41;-macro">
+    <div class="entry-detail" id="factory_builders(factory_name)-macro">
       <div class="signature">
         
         macro <strong>factory_builders</strong>(factory_name)
@@ -465,7 +470,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -481,7 +486,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L45" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L45" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -497,12 +502,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="sequence&#40;name,init&#61;0&#41;-macro">
+    <div class="entry-detail" id="sequence(name,init=0)-macro">
       <div class="signature">
         
         macro <strong>sequence</strong>(name, init = 0)
@@ -513,12 +518,28 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="trait&#40;name&#41;-macro">
+    <div class="entry-detail" id="skip_all_constructors-macro">
+      <div class="signature">
+        
+        macro <strong>skip_all_constructors</strong>
+
+        <a class="method-permalink" href="#skip_all_constructors-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L73" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="trait(name)-macro">
       <div class="signature">
         
         macro <strong>trait</strong>(name)
@@ -531,7 +552,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/factory/blob/2fb0d7bc22daca3dcac6bdd1e7385dc0e7feeaa2/src/factory/base.cr#L60" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/factory/blob/d58ad5d9d60ce7344195eead9f9393d9c672866b/src/factory/base.cr#L60" target="_blank">View source</a>]
         
       </div>
     </div>

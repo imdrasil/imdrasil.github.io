@@ -47,9 +47,15 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.4.3"</span>
 </code></pre></div></div>
 
-<p><strong>Also</strong> you need to choose one of existing adapters for your db: <a href="https://github.com/crystal-lang/crystal-mysql">mysql</a> or <a href="https://github.com/will/crystal-pg">postgres</a>.</p>
+<h4 id="requirements">Requirements</h4>
+
+<ul>
+  <li>you need to choose one of existing adapters for your db: <a href="https://github.com/crystal-lang/crystal-mysql">mysql</a> or <a href="https://github.com/will/crystal-pg">postgres</a>;</li>
+  <li>if you prefer to use crystal <code class="highlighter-rouge">&lt;0.23.1</code> - use jennifer <code class="highlighter-rouge">&lt;0.4.2</code> (crystal <code class="highlighter-rouge">0.23.0</code> is buggy and not supported).</li>
+</ul>
 
 <h2 id="usage">Usage</h2>
 
@@ -237,12 +243,20 @@
   <p>Before developing any feature please create an issue where you describe your idea.</p>
 </blockquote>
 
-<p>Before development create the db user (see <code class="highlighter-rouge">/spec/config.cr</code> file) by running</p>
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal example/migrate.cr <span class="nt">--</span> db:setup
+<p>Before development create the db user (see <code class="highlighter-rouge">/spec/config.cr</code> file) by running:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Postgres</span>
+<span class="nv">$ </span>crystal examples/run.cr <span class="nt">--</span> db:setup
+
+<span class="c"># Mysql</span>
+<span class="nv">$ DB</span><span class="o">=</span>mysql crystal examples/run.cr <span class="nt">--</span> db:setup
 </code></pre></div></div>
 
 <p>PostgreSQL is used by default, but MySql is also supported while running tests by using:</p>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ DB</span><span class="o">=</span>mysql crystal spec
+</code></pre></div></div>
+
+<p>In case you need to set the database user or password, use:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ DB_USER</span><span class="o">=</span>user <span class="nv">DB_PASSWORD</span><span class="o">=</span>pass crystal spec
 </code></pre></div></div>
 
 <p>Also you can override used user name and password using <code class="highlighter-rouge">DB_USER</code> and <code class="highlighter-rouge">DB_PASSWORD</code> env variables.</p>

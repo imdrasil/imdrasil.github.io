@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CRUD</title>
+  <meta name="description" content="Personal site">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/latest/crud.html">
+  <link rel="alternate" type="application/rss+xml" title="Imdrasil Homebrew Stuff" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/">Imdrasil Homebrew Stuff</a>
+  </div>
+</header>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">CRUD</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="crud">CRUD</h1>
+
+<h4 id="create">Create</h4>
+
+<p>To create new object there are several ways:</p>
+
+<ul>
+  <li>create it passing arguments to <code class="highlighter-rouge">#create</code> method</li>
+</ul>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"John"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">18</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>building it and saving manually</li>
+</ul>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">build</span><span class="p">({</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Horus"</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">4000</span><span class="p">})</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">age</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">save</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Any <code class="highlighter-rouge">::create</code> and <code class="highlighter-rouge">#save</code> method call by default process under a transation. If transation is already started will not create new one.</p>
+</blockquote>
+
+<p>To insert multiple records at once use <code class="highlighter-rouge">::import</code>:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">objects</span> <span class="o">=</span> <span class="p">[</span><span class="no">Contact</span><span class="p">.</span><span class="nf">new</span><span class="p">({</span><span class="ss">name: </span><span class="s2">"Tom"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">18</span><span class="p">}),</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">new</span><span class="p">({</span><span class="ss">name: </span><span class="s2">"Jerry"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">16</span><span class="p">})]</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">import</span><span class="p">(</span><span class="n">objects</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="read">Read</h4>
+
+<p>Object could be retrieved by id using <code class="highlighter-rouge">#find</code> (returns <code class="highlighter-rouge">T?</code>) and <code class="highlighter-rouge">#find!</code> (returns <code class="highlighter-rouge">T</code> or raise <code class="highlighter-rouge">RecordNotFound</code> exception) methods.</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">find!</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Also there is flexible dsl for building queries.</p>
+
+<p>To reload all fields from db use <code class="highlighter-rouge">#reload</code></p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c1</span> <span class="o">=</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Sam"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">25</span><span class="p">)</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_id</span> <span class="o">==</span> <span class="n">c1</span><span class="p">.</span><span class="nf">id</span> <span class="p">}.</span><span class="nf">update</span><span class="p">(</span><span class="ss">age: </span><span class="mi">30</span><span class="p">)</span>
+<span class="n">c1</span><span class="p">.</span><span class="nf">reload</span>
+<span class="nb">puts</span> <span class="n">c1</span><span class="p">.</span><span class="nf">age</span> <span class="c1"># 30</span>
+</code></pre></div></div>
+
+<h4 id="update">Update</h4>
+
+<p>There are several ways which allows to update object. Some of them were mentioned in mapping section. There are few extra methods to do this:</p>
+<ul>
+  <li><code class="highlighter-rouge">#update_column(name, value)</code> - sets directly attribute and store it to db without any callback</li>
+  <li><code class="highlighter-rouge">#update_columns(values)</code> - same for several ones</li>
+  <li><code class="highlighter-rouge">#update_attributes(values)</code> - just set attributes</li>
+  <li><code class="highlighter-rouge">#set_attribute(name, value)</code> - set attribute by given name</li>
+</ul>
+
+<p>You can provide hash or named tuple with new field values to update all records satisfying given conditions:</p>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="ss">age: </span><span class="mi">1</span><span class="p">,</span> <span class="ss">name: </span><span class="s2">"Wonder"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Will not trigger any callback.</p>
+
+<p>Also relative modification allowed as well:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># UPDATE contacts SET age = age + 2 WHERE id = 12</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_id</span> <span class="o">==</span> <span class="mi">12</span> <span class="p">}.</span><span class="nf">increment</span><span class="p">(</span><span class="ss">age: </span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="destroy">Destroy</h4>
+
+<p>To destroy object use <code class="highlighter-rouge">#delete</code> (is called without callbacks) or <code class="highlighter-rouge">#destroy</code>. To destroy several objects by their ids use class method:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">18</span><span class="p">]</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">destroy</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+<span class="no">Address</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="no">Country</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>To stop deleting from a callback just add some error:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyModel</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+  <span class="c1"># ...</span>
+  <span class="p">)</span>
+  <span class="n">before_destroy</span> <span class="ss">:check</span>
+
+  <span class="k">def</span> <span class="nf">check</span>
+    <span class="k">if</span> <span class="n">some_field</span> <span class="o">&gt;</span> <span class="mi">10</span>
+     <span class="n">errors</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="ss">:some_field</span><span class="p">,</span> <span class="s2">"Can't be deleted"</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<blockquote>
+  <p>Any <code class="highlighter-rouge">#destroy</code> method call as well as <code class="highlighter-rouge">#save</code> use a transaction.</p>
+</blockquote>
+
+<h5 id="truncation">Truncation</h5>
+
+<p>To truncate entire table use:</p>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jennifer</span><span class="o">::</span><span class="no">Adapter</span><span class="p">.</span><span class="nf">adapter</span><span class="p">.</span><span class="nf">truncate</span><span class="p">(</span><span class="s2">"contacts"</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="no">Jennifer</span><span class="o">::</span><span class="no">Adapter</span><span class="p">.</span><span class="nf">adapter</span><span class="p">.</span><span class="nf">truncate</span><span class="p">(</span><span class="no">Contact</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This functionality could be useful to clear db between test cases.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imdrasil Homebrew Stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Imdrasil Homebrew Stuff
+            
+            </li>
+            
+            <li><a href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/imdrasil"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">imdrasil</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Personal site</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Views</title>
+  <meta name="description" content="Personal site">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/latest/view.html">
+  <link rel="alternate" type="application/rss+xml" title="Imdrasil Homebrew Stuff" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/">Imdrasil Homebrew Stuff</a>
+  </div>
+</header>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Views</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="views">Views</h1>
+
+<blockquote>
+  <p>For now any type of view should have defined primary key as well as model.</p>
+</blockquote>
+
+<h2 id="non-materialized">Non Materialized</h2>
+
+<p>Both adapters support non materialized view. Here is an example of migration:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AddView20170916095004544</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Migration</span><span class="o">::</span><span class="no">Base</span>
+  <span class="k">def</span> <span class="nf">up</span>
+    <span class="n">create_view</span><span class="p">(</span><span class="ss">:male_contacts</span><span class="p">,</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Query</span><span class="p">[</span><span class="s2">"contacts"</span><span class="p">].</span><span class="nf">where</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"gender = 'male'"</span><span class="p">)</span> <span class="p">})</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">down</span>
+    <span class="n">drop_view</span><span class="p">(</span><span class="ss">:male_contacts</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Second argument of <code class="highlighter-rouge">#create_view</code> describes query which will  be used to retrieve data.</p>
+
+<p><strong>Importent restriction</strong>: any prepared argument is not allowed for now - all arguments should be escaped by your own.</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># bad</span>
+<span class="n">create_view</span><span class="p">(</span><span class="ss">:male_contacts</span><span class="p">,</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Query</span><span class="p">[</span><span class="s2">"contacts"</span><span class="p">].</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_gender</span> <span class="o">==</span> <span class="s2">"male"</span> <span class="p">})</span>
+
+<span class="c1"># good</span>
+<span class="n">create_view</span><span class="p">(</span><span class="ss">:male_contacts</span><span class="p">,</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Query</span><span class="p">[</span><span class="s2">"contacts"</span><span class="p">].</span><span class="nf">where</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"gender = 'male'"</span><span class="p">)</span> <span class="p">})</span>
+<span class="n">create_view</span><span class="p">(</span><span class="ss">:male_contacts</span><span class="p">,</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Query</span><span class="p">[</span><span class="s2">"contacts"</span><span class="p">].</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_gender</span> <span class="o">==</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"male"</span><span class="p">)</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<p>There is an example of defining view:</p>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MaleContact</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">View</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">({</span>
+    <span class="ss">id:     </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">name:   </span><span class="no">String</span><span class="p">,</span>
+    <span class="ss">gender: </span><span class="no">String</span><span class="p">,</span>
+    <span class="ss">age:    </span><span class="no">Int32</span><span class="p">,</span>
+  <span class="p">},</span> <span class="kp">false</span><span class="p">)</span>
+
+  <span class="n">scope</span> <span class="ss">:main</span> <span class="p">{</span> <span class="n">where</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="p">}</span> <span class="p">}</span>
+  <span class="n">scope</span> <span class="ss">:older</span> <span class="p">{</span> <span class="o">|</span><span class="n">age</span><span class="o">|</span> <span class="n">where</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">&gt;=</span> <span class="n">age</span> <span class="p">}</span> <span class="p">}</span>
+  <span class="n">scope</span> <span class="ss">:johny</span><span class="p">,</span> <span class="no">JohnyQuery</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>All regular model mapping functionality are also available for views (except any functionality for deleting, updating or creating new view objects). Any scoping functionality is allowed as well. Only <code class="highlighter-rouge">after_initialize</code> callback is allowed. STI is not supported.</p>
+
+<p>Also all defined mapping properties are accessible via <code class="highlighter-rouge">COLUMNS_METADA</code> constant and <code class="highlighter-rouge">::columns_tuple</code> method.</p>
+
+<h2 id="materialized">Materialized</h2>
+
+<blockquote>
+  <p>Materialized view is partially supported only by postgre adapter. MySQL doesn’t provide support of materiazed view at all. This could be simulated only by using common table.</p>
+</blockquote>
+
+<p>Common migration for adding materialized view looks like this:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AddMaterializedView20170829000433679</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Migration</span><span class="o">::</span><span class="no">Base</span>
+  <span class="no">VIEW_NAME</span> <span class="o">=</span> <span class="s2">"female_contacts"</span>
+
+  <span class="k">def</span> <span class="nf">up</span>
+    <span class="n">create_materialized_view</span><span class="p">(</span>
+      <span class="no">VIEW_NAME</span><span class="p">,</span>
+      <span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_gender</span> <span class="o">==</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"'female'"</span><span class="p">)</span> <span class="p">}</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">down</span>
+    <span class="n">drop_materialized_view</span><span class="p">(</span><span class="no">VIEW_NAME</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>As for non materialized view all arguments should be escaped explicitly as well.</p>
+
+<blockquote>
+  <p>Until 0.5.0 source could be represented as stringgified raw sql, but this will be removed.</p>
+</blockquote>
+
+<p>Example of defining created before materialized view looks like:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">FemaleContact</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Materialized</span>
+  <span class="n">mapping</span><span class="p">({</span>
+    <span class="ss">id:   </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">name: </span><span class="no">String</span><span class="p">?,</span>
+  <span class="p">},</span> <span class="kp">false</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>To refresh content of materialized view use:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">FemaleContact</span><span class="p">.</span><span class="nf">refresh</span>
+</code></pre></div></div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imdrasil Homebrew Stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Imdrasil Homebrew Stuff
+            
+            </li>
+            
+            <li><a href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/imdrasil"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">imdrasil</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Personal site</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

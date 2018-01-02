@@ -65,7 +65,7 @@
 </div>
 
 <div id="main-content">
-<h1>Factory <a href="https://travis-ci.org/imdrasil/factory" target="_blank"><img src="https://travis-ci.org/imdrasil/factory.svg" alt="Build Status"/></a> <a href="https://github.com/imdrasil/factory/releases" target="_blank"><img src="https://img.shields.io/github/release/imdrasil/factory.svg" alt="Latest Release"/></a></h1>
+<h1>Factory <a href="https://travis-ci.org/imdrasil/factory" target="_blank"><img src="https://travis-ci.org/imdrasil/factory.svg" alt="Build Status"/></a> <a href="https://github.com/imdrasil/factory/releases" target="_blank"><img src="https://img.shields.io/github/release/imdrasil/factory.svg" alt="Latest Release"/></a> <a href="https://imdrasil.github.io/factory/latest/" target="_blank"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs"/></a></h1>
 
 <p>Easy to use but flexible factory definition utility. Coul be used for testing purpose and for developing as well.</p>
 
@@ -89,7 +89,7 @@
 <p>By convenience this factory will builds <code>Human</code> class but this behavior can be overrided using <code>describe_class</code> macro:</p>
 
 <pre><code class='language-crystal'><span class="k">class</span> <span class="t">AdminFactory</span> <span class="o"><</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Base</span>
-    describe_class <span class="t">User</span>
+  describe_class <span class="t">User</span>
 <span class="k">end</span></code></pre>
 
 <p>Factory will build class passing to constructor hash with string keys, so those class should be ready for this. To define attributes for passing to constructor use <code>attr</code> macro:</p>
@@ -144,26 +144,26 @@ obj.f3 <span class="o">=</span> -> { rand(<span class="n">1</span>..<span class=
 <p>Also <code>after_initialize</code> callback could be specified:</p>
 
 <pre><code class='language-crystal'><span class="k">class</span> <span class="t">TestFactory</span> <span class="o"><</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Base</span>
-  <span class="k">def</span> <span class="m">self</span>.after_initialize(t)
+  after_initialize <span class="k">do</span> <span class="o">|</span>t<span class="o">|</span>
     <span class="k">super</span> <span class="c"># if you want parrent one to be inked as well</span>
     t.f1.not_nil! += <span class="n">1</span>
   <span class="k">end</span>
 <span class="k">end</span></code></pre>
 
-<p>The way of object initializing could be specified:</p>
+<p>Builder method could be specified as well:</p>
 
 <pre><code class='language-crystal'><span class="k">class</span> <span class="t">TestFactory</span> <span class="o"><</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Base</span>
   <span class="c"># here is default builder</span>
-  <span class="k">def</span> <span class="m">self</span>.initialize_with(hash, traits)
+  initialize_with <span class="k">do</span> <span class="o">|</span>hash, traits<span class="o">|</span>
     obj <span class="o">=</span> <span class="t">Test</span>.<span class="k">new</span>(hash)
-    make_assigns(obj, traits) <span class="c"># makes all assignements &#40;traits will be described later&#41;</span>
+    make_assigns(obj, traits) <span class="c"># makes all assignements (traits will be described later)</span>
     obj
   <span class="k">end</span>
 <span class="k">end</span></code></pre>
 
 <p>To specify sequence of some attributes (only allowed as attr hook) use <code>sequence</code>:</p>
 
-<pre><code class='language-crystal'>sequence(<span class="n">:f1</span>) { <span class="o">|</span>i<span class="o">|</span> <span class="s">&quot;user</span><span class="i">#{</span></span>i<span class="s"><span class="i">}</span>&#64;example.com&quot;</span> }</code></pre>
+<pre><code class='language-crystal'>sequence(<span class="n">:f1</span>) { <span class="o">|</span>i<span class="o">|</span> <span class="s">&quot;user</span><span class="i">#{</span></span>i<span class="s"><span class="i">}</span>@example.com&quot;</span> }</code></pre>
 
 <p>You could inherite from existing factory and override some parameters:</p>
 
@@ -245,9 +245,7 @@ obj.f3 <span class="o">=</span> -> { rand(<span class="n">1</span>..<span class=
 
 <p>Possible next tasks:</p>
 
-<ul><li>think  about adding assigning via hash or named tuble argument</li></ul>
-
-<ul><li>adding <code>%attr</code> to traits</li></ul>
+<ul><li>think  about adding assigning via hash or named tuble argument;</li><li>adding <code>%attr</code> to traits.</li></ul>
 
 <h2>Contributing</h2>
 
