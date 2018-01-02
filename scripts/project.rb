@@ -73,13 +73,13 @@ class Project
   end
 
   def build(deep, version = "latest")
-    @site.say "Start building of #{version}"
+    @site.say "Start building of #{version} (#{@name})"
     is_latest = version == "latest"
     if is_latest
       Git.fetch
       Git.checkout("master")
       Git.pull
-      return if Git.sha == @site.manifest.hash(@name)
+      return if up_to_date?
       @site.manifest.set_hash(@name, Git.sha)
     else
       Git.checkout(version)
@@ -89,8 +89,9 @@ class Project
     version_path = File.join(target_path, version)
     FileUtils.remove_dir(version_path) if Dir.exists?(version_path)
     Dir.mkdir(version_path)
-    FileUtils.cp_r(Dir['doc/*'], version_path)
-    FileUtils.rm_r('doc')
+    FileUtils.cp_r(Dir[doc_folder + "/*"], version_path)
+    binding.pry
+    FileUtils.rm_r(doc_folder)
   end
 
   def repo_dir
@@ -114,6 +115,14 @@ class Project
   end
 
   private
+
+  def doc_folder
+    "doc"
+  end
+
+  def up_to_date?
+    Git.sha == @site.manifest.hash(@name)
+  end
 
   def add_index_file
     project_index_path = File.join(target_path, "index.md")

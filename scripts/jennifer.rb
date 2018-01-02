@@ -26,6 +26,10 @@ class Jennifer < Project
 
   private
 
+  def doc_folder
+    "docs"
+  end
+
   def doc_files
     @doc_files ||= Dir[File.join(docs_path, "*.md")]
   end

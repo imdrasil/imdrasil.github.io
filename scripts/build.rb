@@ -1,6 +1,8 @@
 require "erb"
 require "natural_sort"
 
+require "pry"
+
 require_relative "git"
 require_relative "site"
 require_relative "project"
