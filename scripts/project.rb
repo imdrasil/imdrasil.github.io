@@ -31,7 +31,10 @@ class Project
   end
 
   def install_shards
-    `shards install`
+    result = `shards install`
+    if result =~ /Please run shards update instead/
+      `shards update`
+    end
   end
 
   def build_docs
@@ -61,7 +64,7 @@ class Project
           build(current_deep, v)
         end
 
-        #binding.pry
+        # binding.pry
         (versions![KEEP_COUNT..-1] || []).each do |v|
           FileUtils.rm_r(File.join(current_deep, @name, v))
         end

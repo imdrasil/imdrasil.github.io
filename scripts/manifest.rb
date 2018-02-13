@@ -20,7 +20,7 @@ class Manifest
 
   def sync
     File.open(@path, "w") do |f|
-      f << @data.to_json
+      f << JSON.pretty_generate(@data)
     end
   end
 end

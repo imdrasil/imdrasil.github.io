@@ -59,6 +59,8 @@
         
           <a class="page-link" href="./configuration">Configuration</a>
         
+          <a class="page-link" href="./internationalization">Internationalization</a>
+        
           <a class="page-link" href="./aggregation">Aggregations</a>
         
           <a class="page-link" href="./relations">Relations</a>
@@ -70,6 +72,8 @@
           <a class="page-link" href="./migration">Migration</a>
         
           <a class="page-link" href="./eager_loading">Eager Loading</a>
+        
+          <a class="page-link" href="./time">Time</a>
         
           <a class="page-link" href="./model_sti">STI</a>
         
@@ -85,6 +89,7 @@
 <h1 id="mapping">Mapping</h1>
 
 <p>Several model examples</p>
+
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Contact</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">with_timestamps</span>
   <span class="n">mapping</span><span class="p">(</span>
@@ -140,7 +145,7 @@
     <span class="ss">contact_id: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int32</span><span class="p">,</span> <span class="ss">null: </span><span class="kp">true</span><span class="p">}</span>
   <span class="p">)</span>
 
-  <span class="n">validates_with</span> <span class="p">[</span><span class="no">EnnValidator</span><span class="p">]</span>
+  <span class="n">validates_with</span> <span class="no">EnnValidator</span>
   <span class="n">belongs_to</span> <span class="ss">:contact</span><span class="p">,</span> <span class="no">Contact</span>
 <span class="k">end</span>
 
@@ -156,7 +161,7 @@
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">FacebookProfile</span> <span class="o">&lt;</span> <span class="no">Profile</span>
-  <span class="n">sti_mapping</span><span class="p">(</span>
+  <span class="n">mapping</span><span class="p">(</span>
     <span class="ss">uid: </span><span class="no">String</span>
   <span class="p">)</span>
 
@@ -164,7 +169,7 @@
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">TwitterProfile</span> <span class="o">&lt;</span> <span class="no">Profile</span>
-  <span class="n">sti_mapping</span><span class="p">(</span>
+  <span class="n">mapping</span><span class="p">(</span>
     <span class="ss">email: </span><span class="no">String</span>
   <span class="p">)</span>
 <span class="k">end</span>

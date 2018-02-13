@@ -59,6 +59,8 @@
         
           <a class="page-link" href="./configuration">Configuration</a>
         
+          <a class="page-link" href="./internationalization">Internationalization</a>
+        
           <a class="page-link" href="./aggregation">Aggregations</a>
         
           <a class="page-link" href="./relations">Relations</a>
@@ -70,6 +72,8 @@
           <a class="page-link" href="./migration">Migration</a>
         
           <a class="page-link" href="./eager_loading">Eager Loading</a>
+        
+          <a class="page-link" href="./time">Time</a>
         
           <a class="page-link" href="./model_sti">STI</a>
         
@@ -85,6 +89,7 @@
 <h1 id="timestamps">Timestamps</h1>
 
 <p><code class="highlighter-rouge">with_timestamps</code> macros adds callbacks for <code class="highlighter-rouge">created_at</code> and <code class="highlighter-rouge">updated_at</code> fields update. But now they still should be mentioned in mapping manually:</p>
+
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyModel</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">with_timestamps</span>
   <span class="n">mapping</span><span class="p">(</span>

@@ -59,6 +59,8 @@
         
           <a class="page-link" href="./configuration">Configuration</a>
         
+          <a class="page-link" href="./internationalization">Internationalization</a>
+        
           <a class="page-link" href="./aggregation">Aggregations</a>
         
           <a class="page-link" href="./relations">Relations</a>
@@ -70,6 +72,8 @@
           <a class="page-link" href="./migration">Migration</a>
         
           <a class="page-link" href="./eager_loading">Eager Loading</a>
+        
+          <a class="page-link" href="./time">Time</a>
         
           <a class="page-link" href="./model_sti">STI</a>
         
@@ -84,7 +88,8 @@
 
 <h1 id="sti">STI</h1>
 
-<p>Single table inheritance could be used in next way:</p>
+<p>To use single table inheritance just inherit from your parent model and use regular <code class="highlighter-rouge">%mapping</code> macro:</p>
+
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Profile</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">mapping</span><span class="p">(</span>
     <span class="ss">id: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int32</span><span class="p">,</span> <span class="ss">primary: </span><span class="kp">true</span><span class="p">},</span>
@@ -97,7 +102,7 @@
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">FacebookProfile</span> <span class="o">&lt;</span> <span class="no">Profile</span>
-  <span class="n">sti_mapping</span><span class="p">(</span>
+  <span class="n">mapping</span><span class="p">(</span>
     <span class="ss">uid: </span><span class="no">String</span>
   <span class="p">)</span>
 
@@ -105,7 +110,7 @@
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">TwitterProfile</span> <span class="o">&lt;</span> <span class="no">Profile</span>
-  <span class="n">sti_mapping</span><span class="p">(</span>
+  <span class="n">mapping</span><span class="p">(</span>
     <span class="ss">email: </span><span class="no">String</span>
   <span class="p">)</span>
 <span class="k">end</span>
@@ -115,13 +120,9 @@
 
 <ul>
   <li>created table for STI should include <strong>all</strong> fields of all subclasses (that’s why it is cold STI);</li>
-  <li>STI table have to have field named <code class="highlighter-rouge">type</code> of any string type which will be able to store class name of your models;</li>
+  <li>STI table has to have field named as <code class="highlighter-rouge">type</code> of any string type which will be able to store class name of child models;</li>
   <li>parent class should have definition for <code class="highlighter-rouge">type</code> field;</li>
 </ul>
-
-<blockquote>
-  <p>Currently type field is not configurable and hardcoded to name <code class="highlighter-rouge">type</code>.</p>
-</blockquote>
 
 <p>To extract from DB several subclasses in one request - just use parent class to query:</p>
 

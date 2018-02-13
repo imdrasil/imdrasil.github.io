@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/imdrasil/time_zone">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../js/doc.js"></script>
+  <title>TimeZone::Time::Format - github.com/imdrasil/time_zone</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/Time" data-name="time">
+      <a href="../../Time.html">Time</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/time_zone/TimeZone" data-name="timezone">
+      <a href="../../TimeZone.html">TimeZone</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/AmbiguousTime" data-name="timezone::ambiguoustime">
+      <a href="../../TimeZone/AmbiguousTime.html">AmbiguousTime</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/BaseExeption" data-name="timezone::baseexeption">
+      <a href="../../TimeZone/BaseExeption.html">BaseExeption</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/BSearch" data-name="timezone::bsearch">
+      <a href="../../TimeZone/BSearch.html">BSearch</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/Country" data-name="timezone::country">
+      <a href="../../TimeZone/Country.html">Country</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/FixedOffsetPeriod" data-name="timezone::fixedoffsetperiod">
+      <a href="../../TimeZone/FixedOffsetPeriod.html">FixedOffsetPeriod</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/FixedOffsetPeriodSet" data-name="timezone::fixedoffsetperiodset">
+      <a href="../../TimeZone/FixedOffsetPeriodSet.html">FixedOffsetPeriodSet</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/InvalidCountryCode" data-name="timezone::invalidcountrycode">
+      <a href="../../TimeZone/InvalidCountryCode.html">InvalidCountryCode</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/InvalidTimeZoneName" data-name="timezone::invalidtimezonename">
+      <a href="../../TimeZone/InvalidTimeZoneName.html">InvalidTimeZoneName</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/IPeriod" data-name="timezone::iperiod">
+      <a href="../../TimeZone/IPeriod.html">IPeriod</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/IZone" data-name="timezone::izone">
+      <a href="../../TimeZone/IZone.html">IZone</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/LastPeriod" data-name="timezone::lastperiod">
+      <a href="../../TimeZone/LastPeriod.html">LastPeriod</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/LinkedZone" data-name="timezone::linkedzone">
+      <a href="../../TimeZone/LinkedZone.html">LinkedZone</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/Offset" data-name="timezone::offset">
+      <a href="../../TimeZone/Offset.html">Offset</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/Period" data-name="timezone::period">
+      <a href="../../TimeZone/Period.html">Period</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/PeriodSet" data-name="timezone::periodset">
+      <a href="../../TimeZone/PeriodSet.html">PeriodSet</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/time_zone/TimeZone/Register" data-name="timezone::register">
+      <a href="../../TimeZone/Register.html">Register</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/Register/CountryBuilder" data-name="timezone::register::countrybuilder">
+      <a href="../../TimeZone/Register/CountryBuilder.html">CountryBuilder</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/Register/ZoneBuilder" data-name="timezone::register::zonebuilder">
+      <a href="../../TimeZone/Register/ZoneBuilder.html">ZoneBuilder</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/StartPeriod" data-name="timezone::startperiod">
+      <a href="../../TimeZone/StartPeriod.html">StartPeriod</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/time_zone/TimeZone/Time" data-name="timezone::time">
+      <a href="../../TimeZone/Time.html">Time</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/time_zone/TimeZone/Time/CanonicalTimeInstanceMethods" data-name="timezone::time::canonicaltimeinstancemethods">
+      <a href="../../TimeZone/Time/CanonicalTimeInstanceMethods.html">CanonicalTimeInstanceMethods</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/Time/CanonicalTimeInstanceMethods/DayOfWeek" data-name="timezone::time::canonicaltimeinstancemethods::dayofweek">
+      <a href="../../TimeZone/Time/CanonicalTimeInstanceMethods/DayOfWeek.html">DayOfWeek</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/Time/CanonicalTimeInstanceMethods/Kind" data-name="timezone::time::canonicaltimeinstancemethods::kind">
+      <a href="../../TimeZone/Time/CanonicalTimeInstanceMethods/Kind.html">Kind</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/Time/CanonicalTimeInstanceMethods/MonthSpan" data-name="timezone::time::canonicaltimeinstancemethods::monthspan">
+      <a href="../../TimeZone/Time/CanonicalTimeInstanceMethods/MonthSpan.html">MonthSpan</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/Time/CanonicalTimeInstanceMethods/Span" data-name="timezone::time::canonicaltimeinstancemethods::span">
+      <a href="../../TimeZone/Time/CanonicalTimeInstanceMethods/Span.html">Span</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/imdrasil/time_zone/TimeZone/Time/Format" data-name="timezone::time::format">
+      <a href="../../TimeZone/Time/Format.html">Format</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/Time/Formatter" data-name="timezone::time::formatter">
+      <a href="../../TimeZone/Time/Formatter.html">Formatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/Time/Parser" data-name="timezone::time::parser">
+      <a href="../../TimeZone/Time/Parser.html">Parser</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/Transition" data-name="timezone::transition">
+      <a href="../../TimeZone/Transition.html">Transition</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/time_zone/TimeZone/Zone" data-name="timezone::zone">
+      <a href="../../TimeZone/Zone.html">Zone</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> TimeZone::Time::Format
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../TimeZone/Time/Format.html">TimeZone::Time::Format</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/time_zone/blob/006bf2a991a3207b70ab8dd0e598eecbd8b5b124/src/time_zone/time/format.cr#L56" target="_blank">time_zone/time/format.cr</a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="ISO_8601_DATE">
+        <strong>ISO_8601_DATE</strong> = <code><span class="k">new</span>(<span class="s">&quot;%F&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The ISO 8601 date format. This is just <code>"%F"</code>.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ISO_8601_DATE_TIME">
+        <strong>ISO_8601_DATE_TIME</strong> = <code><span class="k">new</span>(<span class="s">&quot;%FT%X%z&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The ISO 8601 datetime format. This is just <code>"%FT%X%z"</code>.</p>
+      </dd>
+      
+    
+  </dl>
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28pattern%3AString%2Czone%3AZone%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(pattern : String, zone : Zone? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Creates a new <code><a href="../../TimeZone/Time.html">TimeZone::Time</a>::Format</code> with the given <em>pattern</em>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#format%28time%3ATime%2Cio%3AIO%29-instance-method" class="signature"><strong>#format</strong>(time : Time, io : IO)</a>
+        
+          <div class="summary"><p>Formats a <code><a href="../../TimeZone/Time.html">TimeZone::Time</a></code> into the given <em>io</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#format%28time%3ATime%29%3AString-instance-method" class="signature"><strong>#format</strong>(time : Time) : String</a>
+        
+          <div class="summary"><p>Turns a <code><a href="../../TimeZone/Time.html">TimeZone::Time</a></code> into a <code>String</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parse%28string%2Czone%3AZone%3F%3D%40zone%29%3ATime-instance-method" class="signature"><strong>#parse</strong>(string, zone : Zone? = @zone) : Time</a>
+        
+          <div class="summary"><p>Parses a string into a <code><a href="../../TimeZone/Time.html">TimeZone::Time</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pattern%3AString-instance-method" class="signature"><strong>#pattern</strong> : String</a>
+        
+          <div class="summary"><p>Returns the string pattern of this format.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(pattern:String,zone:Zone?=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pattern : String, zone : <a href="../../TimeZone/Zone.html">Zone</a>? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new%28pattern%3AString%2Czone%3AZone%3F%3Dnil%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a new <code><a href="../../TimeZone/Time.html">TimeZone::Time</a>::Format</code> with the given <em>pattern</em>. The given time
+<em>zone</em> will be used when parsing a <code><a href="../../TimeZone/Time.html">Time</a></code> and no time zone is found in it.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/time_zone/blob/006bf2a991a3207b70ab8dd0e598eecbd8b5b124/src/time_zone/time/format.cr#L68" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="format(time:Time,io:IO)-instance-method">
+      <div class="signature">
+        
+        def <strong>format</strong>(time : <a href="../../TimeZone/Time.html">Time</a>, io : IO)
+
+        <a class="method-permalink" href="#format%28time%3ATime%2Cio%3AIO%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Formats a <code><a href="../../TimeZone/Time.html">TimeZone::Time</a></code> into the given <em>io</em>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/time_zone/blob/006bf2a991a3207b70ab8dd0e598eecbd8b5b124/src/time_zone/time/format.cr#L86" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="format(time:Time):String-instance-method">
+      <div class="signature">
+        
+        def <strong>format</strong>(time : <a href="../../TimeZone/Time.html">Time</a>) : String
+
+        <a class="method-permalink" href="#format%28time%3ATime%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Turns a <code><a href="../../TimeZone/Time.html">TimeZone::Time</a></code> into a <code>String</code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/time_zone/blob/006bf2a991a3207b70ab8dd0e598eecbd8b5b124/src/time_zone/time/format.cr#L79" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse(string,zone:Zone?=@zone):Time-instance-method">
+      <div class="signature">
+        
+        def <strong>parse</strong>(string, zone : <a href="../../TimeZone/Zone.html">Zone</a>? = @zone) : <a href="../../TimeZone/Time.html">Time</a>
+
+        <a class="method-permalink" href="#parse%28string%2Czone%3AZone%3F%3D%40zone%29%3ATime-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Parses a string into a <code><a href="../../TimeZone/Time.html">TimeZone::Time</a></code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/time_zone/blob/006bf2a991a3207b70ab8dd0e598eecbd8b5b124/src/time_zone/time/format.cr#L72" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pattern:String-instance-method">
+      <div class="signature">
+        
+        def <strong>pattern</strong> : String
+
+        <a class="method-permalink" href="#pattern%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns the string pattern of this format.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/time_zone/blob/006bf2a991a3207b70ab8dd0e598eecbd8b5b124/src/time_zone/time/format.cr#L64" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

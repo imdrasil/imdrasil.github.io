@@ -1,6 +1,10 @@
 class Jennifer < Project
+  BUILD_COMMAND = "crystal doc ./src/jennifer.cr ./src/jennifer/adapter/mysql.cr ./src/jennifer/adapter/postgres.cr -o ./doc" 
+
   def initialize
-    super(name: "jennifer.cr", doc_builder: "sh generate-docs.sh")
+    # super(name: "jennifer.cr", doc_builder: "sh generate-docs.sh")
+    # TODO: temporary solution
+    super(name: "jennifer.cr", doc_builder: BUILD_COMMAND)
   end
 
   def process_after_deploy
@@ -13,7 +17,7 @@ class Jennifer < Project
       FileUtils.cp(Dir["docs/*"], docs_path)
     end
 
-    add_doc_files
+    add_guide
   end
 
   def docs_path
@@ -27,14 +31,14 @@ class Jennifer < Project
   private
 
   def doc_folder
-    "docs"
+    "doc"
   end
 
   def doc_files
     @doc_files ||= Dir[File.join(docs_path, "*.md")]
   end
 
-  def add_doc_files
+  def add_guide
     doc_titles
     doc_files.each do |path|
       content = File.read(path)
@@ -73,7 +77,7 @@ class Jennifer < Project
               <nav class="site-nav">
                 <div class="trigger">
                   <% doc_files.each_with_index do |file, i| %>
-                    <a class="page-link" href="./<%= File.basename(file, ".md") %>">{{ "<%= doc_titles[i] %>" | escape }}</a>
+                    <a class="page-link" href="./<%= File.basename(file, ".md") %>">{{ "<%= doc_titles[i] %>" }}</a>
                   <% end %>
                 </div>
               </nav>

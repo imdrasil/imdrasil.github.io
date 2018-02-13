@@ -59,6 +59,8 @@
         
           <a class="page-link" href="./configuration">Configuration</a>
         
+          <a class="page-link" href="./internationalization">Internationalization</a>
+        
           <a class="page-link" href="./aggregation">Aggregations</a>
         
           <a class="page-link" href="./relations">Relations</a>
@@ -70,6 +72,8 @@
           <a class="page-link" href="./migration">Migration</a>
         
           <a class="page-link" href="./eager_loading">Eager Loading</a>
+        
+          <a class="page-link" href="./time">Time</a>
         
           <a class="page-link" href="./model_sti">STI</a>
         
@@ -84,22 +88,148 @@
 
 <h1 id="callbacks">Callbacks</h1>
 
-<p>There are next macroses for defining callbacks:</p>
+<p>During the normal operation of your application, objects may be created, updated, and destroyed. Jennifer provides hooks into this object life cycle so that you can control your application and its data.</p>
+
+<p>Callbacks allow you to trigger logic before or after an alteration of an object’s state.</p>
+
+<h2 id="callbacks-overview">Callbacks overview</h2>
+
+<h3 id="registration">Registration</h3>
+
+<p>In order to use available callbacks, you need to define them. To do this implement callback as instance method and use macro to register it as callback:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Base</span><span class="o">::</span><span class="no">Model</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">email: </span><span class="no">String</span>
+  <span class="p">)</span>
+
+  <span class="n">before_validation</span> <span class="ss">:clean_up_email</span>
+
+  <span class="kp">private</span> <span class="k">def</span> <span class="nf">clean_up_email</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">email</span> <span class="o">=</span> <span class="n">email</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="s1">'+'</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h2 id="available-callbacks">Available callbacks</h2>
+
+<p>Here is a list with all the available callbacks, listed in the same order in which they will get called during the respective operations:</p>
+
+<h3 id="creating-new-object">Creating new object</h3>
+
 <ul>
-  <li><code class="highlighter-rouge">before_save</code></li>
-  <li><code class="highlighter-rouge">after_save</code></li>
-  <li><code class="highlighter-rouge">before_create</code></li>
-  <li><code class="highlighter-rouge">after_create</code></li>
-  <li><code class="highlighter-rouge">after_initialize</code></li>
-  <li><code class="highlighter-rouge">before_destroy</code></li>
-  <li><code class="highlighter-rouge">after_destroy</code></li>
   <li><code class="highlighter-rouge">before_validation</code></li>
   <li><code class="highlighter-rouge">after_validation</code></li>
+  <li><code class="highlighter-rouge">before_save</code></li>
+  <li><code class="highlighter-rouge">before_create</code></li>
+  <li><code class="highlighter-rouge">after_create</code></li>
+  <li><code class="highlighter-rouge">after_save</code></li>
+  <li><code class="highlighter-rouge">after_commit</code> / <code class="highlighter-rouge">after_rollback</code></li>
 </ul>
 
-<p>They accept method names.</p>
+<h3 id="updating-existing-object">Updating existing object</h3>
 
-<p>Raising <code class="highlighter-rouge">::Jennifer::Skip</code> exception inside of any calback will stop further callback invoking; such behavior in the any before callback stops current action from being processed.</p>
+<ul>
+  <li><code class="highlighter-rouge">before_validation</code></li>
+  <li><code class="highlighter-rouge">after_validation</code></li>
+  <li><code class="highlighter-rouge">before_save</code></li>
+  <li><code class="highlighter-rouge">before_update</code></li>
+  <li><code class="highlighter-rouge">after_update</code></li>
+  <li><code class="highlighter-rouge">after_save</code></li>
+  <li><code class="highlighter-rouge">after_commit</code> / <code class="highlighter-rouge">after_rollback</code></li>
+</ul>
+
+<h3 id="destroying-an-object">Destroying an object</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">before_destroy</code></li>
+  <li><code class="highlighter-rouge">after_destroy</code></li>
+  <li><code class="highlighter-rouge">after_commit</code> / <code class="highlighter-rouge">after_rollback</code></li>
+</ul>
+
+<h2 id="invoking-callbacks">Invoking callbacks</h2>
+
+<p>The following methods trigger callbacks:</p>
+
+<ul>
+  <li>validate!</li>
+  <li>valid?</li>
+  <li>create</li>
+  <li>create!</li>
+  <li>destroy</li>
+  <li>destroy_without_transaction</li>
+  <li>save</li>
+  <li>save!</li>
+  <li>save_without_transaction</li>
+  <li>update</li>
+  <li>update!</li>
+</ul>
+
+<p>The <code class="highlighter-rouge">after_initialize</code> callback is triggered each time record is initialized using method <code class="highlighter-rouge">::build</code>.</p>
+
+<h2 id="skipping-callbacks">Skipping callbacks</h2>
+
+<p>The following methods allows to skip some callbacks or process without them:</p>
+
+<ul>
+  <li>validate</li>
+  <li>invalid?</li>
+  <li>save(skip_validation: true)</li>
+  <li>destroy_without_transaction (no transaction callback will be triggered)</li>
+  <li>save_without_transaction (no transaction callback will be triggered)</li>
+  <li>update_column</li>
+  <li>update_columns</li>
+  <li>delete</li>
+  <li>modify</li>
+  <li>increment</li>
+  <li>decrement</li>
+</ul>
+
+<p>Carefully use this methods because otherwise you might get invalid data in a db.</p>
+
+<h2 id="stopping-execution">Stopping execution</h2>
+
+<p>Raising <code class="highlighter-rouge">::Jennifer::Skip</code> exception inside of any callback will stop further callback invoking; such behavior in the any <code class="highlighter-rouge">before</code> callback stops current action from being processed.</p>
+
+<h2 id="transaction-callbacks">Transaction callbacks</h2>
+
+<p>There are 2 additional callbacks that are triggered right after database transaction completion: <code class="highlighter-rouge">after_commit</code> and <code class="highlighter-rouge">after_rollback</code>. The main difference of these callbacks is they will be executed only after top level transaction will be completed (committed or rolled back) - instead invoking just in place. Also they expect context to be invoked on: create, save, update or destroy. E.g.:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">name: </span><span class="no">String</span>
+  <span class="p">)</span>
+  <span class="n">after_save</span> <span class="ss">:saved</span>
+  <span class="n">after_commit</span> <span class="ss">:committed</span><span class="p">,</span> <span class="ss">on: :save</span>
+
+  <span class="k">def</span> <span class="nf">saved</span>
+    <span class="nb">puts</span> <span class="s2">"saved"</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">committed</span>
+    <span class="nb">puts</span> <span class="s2">"committed"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">first!</span>
+
+<span class="no">User</span><span class="p">.</span><span class="nf">transaction</span> <span class="k">do</span>
+  <span class="n">user</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"new name"</span>
+  <span class="n">user</span><span class="p">.</span><span class="nf">save</span>
+  <span class="nb">puts</span> <span class="s2">"end of transaction"</span>
+<span class="k">end</span>
+<span class="nb">puts</span> <span class="s2">"after transaction"</span>
+</code></pre></div></div>
+
+<p>will ends with next output:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>saved
+end of transaction
+committed
+after transaction
+</code></pre></div></div>
 
   </div>
 

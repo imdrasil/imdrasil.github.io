@@ -59,6 +59,8 @@
         
           <a class="page-link" href="./configuration">Configuration</a>
         
+          <a class="page-link" href="./internationalization">Internationalization</a>
+        
           <a class="page-link" href="./aggregation">Aggregations</a>
         
           <a class="page-link" href="./relations">Relations</a>
@@ -70,6 +72,8 @@
           <a class="page-link" href="./migration">Migration</a>
         
           <a class="page-link" href="./eager_loading">Eager Loading</a>
+        
+          <a class="page-link" href="./time">Time</a>
         
           <a class="page-link" href="./model_sti">STI</a>
         
@@ -85,18 +89,19 @@
 <h1 id="configuration">Configuration</h1>
 
 <p>Put</p>
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"jennifer/adapter/mysql"</span> <span class="c1"># for mysql</span>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"jennifer"</span>
+<span class="nb">require</span> <span class="s2">"jennifer/adapter/mysql"</span> <span class="c1"># for mysql</span>
 <span class="nb">require</span> <span class="s2">"jennifer/adapter/postgres"</span> <span class="c1"># for postgres</span>
-<span class="nb">require</span> <span class="s2">"jennifer"</span> 
 </code></pre></div></div>
 
 <blockquote>
-  <p>Be attentive - adapter should be required before main staff. Only one adapter can be required at once.</p>
+  <p>Be attentive - adapter should be required <strong>after</strong> main staff. From <code class="highlighter-rouge">0.5.0</code> several adapters could be required at the same time.</p>
 </blockquote>
 
 <p>This should be done before you load your application configurations (or at least models). Now configuration could be loaded from yaml file:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jennifer</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="s2">"./spec/fixtures/database.yml"</span><span class="p">,</span> <span class="ss">:development</span><span class="p">)</span> 
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jennifer</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="s2">"./spec/fixtures/database.yml"</span><span class="p">,</span> <span class="ss">:development</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Second argument represents environment and just use it as namespace key grapping values from yml.</p>
@@ -202,6 +207,10 @@
     <tr>
       <td><code class="highlighter-rouge">retry_delay</code></td>
       <td>1.0</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">local_time_zone_name</code></td>
+      <td>default time zone name for <code class="highlighter-rouge">TimeZone</code></td>
     </tr>
   </tbody>
 </table>
