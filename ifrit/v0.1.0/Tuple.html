@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
   <meta id="repository-name" content="github.com/imdrasil/ifrit">
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="js/doc.js"></script>
   <title>Tuple(*T) - github.com/imdrasil/ifrit</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class=" " data-id="github.com/imdrasil/ifrit/Array" data-name="array(t)">
       <a href="Array.html">Array</a>
@@ -107,9 +123,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">struct</span> Tuple(*T)
@@ -132,10 +150,10 @@ are known at compile time.</p>
 
 <p>A tuple can be created with the usual <code>new</code> method or with a tuple literal:</p>
 
-<pre><code>tuple <span class="o">=</span> {<span class="n">1</span>, <span class="s">&quot;hello&quot;</span>, <span class="s">'x'</span>} <span class="c"># Tuple&#40;Int32, String, Char&#41;</span>
-tuple[<span class="n">0</span>]                  <span class="c"># &#61;&gt; 1</span>
-tuple[<span class="n">1</span>]                  <span class="c"># &#61;&gt; &quot;hello&quot;</span>
-tuple[<span class="n">2</span>]                  <span class="c"># &#61;&gt; &#39;x&#39;</span></code></pre>
+<pre><code>tuple <span class="o">=</span> {<span class="n">1</span>, <span class="s">&quot;hello&quot;</span>, <span class="s">&#39;x&#39;</span>} <span class="c"># Tuple(Int32, String, Char)</span>
+tuple[<span class="n">0</span>]                  <span class="c"># =&gt; 1</span>
+tuple[<span class="n">1</span>]                  <span class="c"># =&gt; &quot;hello&quot;</span>
+tuple[<span class="n">2</span>]                  <span class="c"># =&gt; &#39;x&#39;</span></code></pre>
 
 <p>The compiler knows what types are in each position, so when indexing
 a tuple with an integer literal the compiler will return
@@ -155,8 +173,8 @@ values because no memory is needed to be allocated for them:</p>
 <span class="k">end</span>
 
 one, hello <span class="o">=</span> one_and_hello
-one   <span class="c"># &#61;&gt; 1</span>
-hello <span class="c"># &#61;&gt; &quot;hello&quot;</span></code></pre>
+one   <span class="c"># =&gt; 1</span>
+hello <span class="c"># =&gt; &quot;hello&quot;</span></code></pre>
 
 <p>Good examples of the above are <code>Number#divmod</code> and <code>Enumerable#minmax</code>.</p>
 
@@ -167,8 +185,8 @@ hello <span class="c"># &#61;&gt; &quot;hello&quot;</span></code></pre>
 <span class="k">end</span>
 
 tuple <span class="o">=</span> {<span class="s">&quot;hey&quot;</span>, <span class="n">2</span>}
-value <span class="o">=</span> multiply(<span class="o">*</span>tuple) <span class="c"># same as multiply tuple&#91;0&#93;, tuple&#91;1&#93;</span>
-value                    <span class="c"># &#61;&gt; &quot;heyhey&quot;</span></code></pre>
+value <span class="o">=</span> multiply(<span class="o">*</span>tuple) <span class="c"># same as multiply tuple[0], tuple[1]</span>
+value                    <span class="c"># =&gt; &quot;heyhey&quot;</span></code></pre>
 
 <p>Finally, when using a splat argument in a method definition its type
 will be a tuple of the call arguments:</p>
@@ -177,9 +195,9 @@ will be a tuple of the call arguments:</p>
   args
 <span class="k">end</span>
 
-tuple <span class="o">=</span> splat_test <span class="n">1</span>, <span class="s">&quot;hello&quot;</span>, <span class="s">'x'</span>
-tuple.<span class="k">class</span> <span class="c"># &#61;&gt; Tuple&#40;Int32, String, Char&#41;</span>
-tuple       <span class="c"># &#61;&gt; &#123;1, &quot;hello&quot;, &#39;x&#39;&#125;</span></code></pre>
+tuple <span class="o">=</span> splat_test <span class="n">1</span>, <span class="s">&quot;hello&quot;</span>, <span class="s">&#39;x&#39;</span>
+tuple.<span class="k">class</span> <span class="c"># =&gt; Tuple(Int32, String, Char)</span>
+tuple       <span class="c"># =&gt; {1, &quot;hello&quot;, &#39;x&#39;}</span></code></pre>
 
 
 
@@ -206,7 +224,9 @@ tuple       <span class="c"># &#61;&gt; &#123;1, &quot;hello&quot;, &#39;x&#39;&
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/ifrit/blob/5eca14c269be59a188dacfc2f2679e8d04618f6c/src/ifrit/core.cr#L68" target="_blank">ifrit/core.cr</a>
+      <a href="https://github.com/imdrasil/ifrit/blob/5eca14c269be59a188dacfc2f2679e8d04618f6c/src/ifrit/core.cr#L68" target="_blank">
+        ifrit/core.cr
+      </a>
     
     <br/>
   

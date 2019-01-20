@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
   <meta id="repository-name" content="github.com/imdrasil/factory">
-  <link href="../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../js/doc.js"></script>
   <title>Factory::Trait - github.com/imdrasil/factory</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/imdrasil/factory/Factory" data-name="factory">
       <a href="../Factory.html">Factory</a>
@@ -52,9 +68,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">class</span> Factory::Trait
@@ -83,7 +101,9 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/factory/blob/98a8f8450d4998949806372627a6e5fa5c6611a9/src/factory/trait.cr#L2" target="_blank">factory/trait.cr</a>
+      <a href="https://github.com/imdrasil/factory/blob/98a8f8450d4998949806372627a6e5fa5c6611a9/src/factory/trait.cr#L2" target="_blank">
+        factory/trait.cr
+      </a>
     
     <br/>
   
@@ -164,7 +184,7 @@
 
   <h2>Class Method Detail</h2>
   
-    <div class="entry-detail" id="add_attributes&#40;hash&#41;-class-method">
+    <div class="entry-detail" id="add_attributes(hash)-class-method">
       <div class="signature">
         
         def self.<strong>add_attributes</strong>(hash)
@@ -180,7 +200,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="make_assignes&#40;obj&#41;-class-method">
+    <div class="entry-detail" id="make_assignes(obj)-class-method">
       <div class="signature">
         
         def self.<strong>make_assignes</strong>(obj)
@@ -203,7 +223,7 @@
 
   <h2>Macro Detail</h2>
   
-    <div class="entry-detail" id="assign&#40;name,value,klass&#61;nil&#41;-macro">
+    <div class="entry-detail" id="assign(name,value,klass=nil)-macro">
       <div class="signature">
         
         macro <strong>assign</strong>(name, value, klass = nil)
@@ -219,7 +239,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="attr&#40;name,value,klass&#61;nil&#41;-macro">
+    <div class="entry-detail" id="attr(name,value,klass=nil)-macro">
       <div class="signature">
         
         macro <strong>attr</strong>(name, value, klass = nil)
@@ -235,7 +255,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="sequence&#40;name,init&#61;0&#41;-macro">
+    <div class="entry-detail" id="sequence(name,init=0)-macro">
       <div class="signature">
         
         macro <strong>sequence</strong>(name, init = 0)

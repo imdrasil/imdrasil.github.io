@@ -1,4 +1,5 @@
 require "rouge"
+
 module Rouge
   module Lexers
     class Crystal < Ruby

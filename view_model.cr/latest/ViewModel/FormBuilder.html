@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/view_model.cr">
+  <title>ViewModel::FormBuilder - github.com/imdrasil/view_model.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/view_model.cr/ViewModel" data-name="viewmodel">
+      <a href="../ViewModel.html">ViewModel</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/view_model.cr/ViewModel/Base" data-name="viewmodel::base">
+      <a href="../ViewModel/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/view_model.cr/ViewModel/Config" data-name="viewmodel::config">
+      <a href="../ViewModel/Config.html">Config</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/imdrasil/view_model.cr/ViewModel/FormBuilder" data-name="viewmodel::formbuilder">
+      <a href="../ViewModel/FormBuilder.html">FormBuilder</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/view_model.cr/ViewModel/FormTags" data-name="viewmodel::formtags">
+      <a href="../ViewModel/FormTags.html">FormTags</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/view_model.cr/ViewModel/FormTags/SHash" data-name="viewmodel::formtags::shash">
+      <a href="../ViewModel/FormTags/SHash.html">SHash</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/view_model.cr/ViewModel/Helpers" data-name="viewmodel::helpers">
+      <a href="../ViewModel/Helpers.html">Helpers</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> ViewModel::FormBuilder
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../ViewModel/FormBuilder.html">ViewModel::FormBuilder</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Default form builder.</p>
+
+<p>All methods print data to <em>io</em> and return <code>nil</code> that's why it is not necessary to add their return value
+to context <code>String::Builder</code>.</p>
+
+<p>Each field gets HTML classes based on it's name, type and form name.</p>
+
+<pre><code><span class="o">-</span> build_form <span class="n">:user</span> <span class="k">do</span> <span class="o">|</span>f<span class="o">|</span>
+  <span class="o">-</span> f.text_field <span class="n">:name</span> <span class="c"># &quot;vm-form-input vm-form-text user-name&quot;</span></code></pre>
+
+
+
+
+
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../ViewModel/FormTags.html">ViewModel::FormTags</a></li>
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L15" target="_blank">
+        view_model/form_builder.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28io%2Cname%2Curl%2Cmethod%2Coptions%3D%7B%7DofString%3D%3EString%29-class-method" class="signature"><strong>.new</strong>(io, name, url, method, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#checkbox_field%28name%2Cvalue%3Dfalse%2Coptions%3D%7B%7DofString%3D%3EString%29%3AVoid-instance-method" class="signature"><strong>#checkbox_field</strong>(name, value = <span class="n">false</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : Void</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#date_field%28name%2Cvalue%3Dnil%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#date_field</strong>(name, value = <span class="n">nil</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#email_field%28name%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#email_field</strong>(name, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#file_field%28name%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#file_field</strong>(name, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hidden_field%28name%2Cvalue%3D%26quot%3B%26quot%3B%2Coptions%3D%7B%7DofString%3D%3EString%29%3AVoid-instance-method" class="signature"><strong>#hidden_field</strong>(name, value = <span class="s">&quot;&quot;</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : Void</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#io%3AString%3A%3ABuilder-instance-method" class="signature"><strong>#io</strong> : String::Builder</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#io%3D%28io%3AString%3A%3ABuilder%29-instance-method" class="signature"><strong>#io=</strong>(io : String::Builder)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#label_for%28name%2Ctext%3AString%3F%3Dnil%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#label_for</strong>(name, text : String? = <span class="n">nil</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#label_for%28name%2Coptions%3D%7B%7DofString%3D%3EString%2C%26block%29-instance-method" class="signature"><strong>#label_for</strong>(name, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>, &block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#number_field%28name%2Cvalue%3Dnil%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#number_field</strong>(name, value = <span class="n">nil</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#password_field%28name%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#password_field</strong>(name, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#radio_field%28name%2Cvalue%3Dfalse%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#radio_field</strong>(name, value = <span class="n">false</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render%28%26block%29-instance-method" class="signature"><strong>#render</strong>(&block)</a>
+        
+          <div class="summary"><p>Renders form tag and yields itself to the block.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select_field%28name%2Copts%2Cvalue%3Dnil%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#select_field</strong>(name, opts, value = <span class="n">nil</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#submit%28value%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#submit</strong>(value, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#text_area_field%28name%2Ctext%3D%26quot%3B%26quot%3B%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#text_area_field</strong>(name, text = <span class="s">&quot;&quot;</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#text_field%28name%2Cvalue%3D%26quot%3B%26quot%3B%2Coptions%3D%7B%7DofString%3D%3EString%29%3AVoid-instance-method" class="signature"><strong>#text_field</strong>(name, value = <span class="s">&quot;&quot;</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : Void</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#time_field%28name%2Cvalue%3Dnil%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#time_field</strong>(name, value = <span class="n">nil</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../ViewModel/FormTags.html">ViewModel::FormTags</a></code></h3>
+  
+  
+    <a href="../ViewModel/FormTags.html#checkbox_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>checkbox_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>checkbox_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    checkbox_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#content_tag%28io%3AString%3A%3ABuilder%2Ctag%2Chtml_options%3DSHash.new%29-instance-method" class="tooltip">
+      <span>content_tag(io : String::Builder, tag, html_options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>content_tag(tag, html_options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)<br/>content_tag(io : String::Builder, tag, html_options = <span class="t">SHash</span>.<span class="k">new</span>, &block)<br/>content_tag(tag, html_options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>, &block)</span>
+    content_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#date_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>date_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>date_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    date_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#email_tag%28io%3AString%3A%3ABuilder%2Cname%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>email_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>email_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    email_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#file_tag%28io%3AString%3A%3ABuilder%2Cname%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>file_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>file_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    file_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#hidden_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>hidden_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>hidden_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    hidden_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#label_tag%28io%3AString%3A%3ABuilder%2Cfor%3ASymbol%7CString%3F%3Dnil%2Chtml_options%3DSHash.new%2C%26block%29-instance-method" class="tooltip">
+      <span>label_tag(io : String::Builder, for : Symbol | String? = <span class="n">nil</span>, html_options = <span class="t">SHash</span>.<span class="k">new</span>, &block)<br/>label_tag(io : String::Builder, text, for : Symbol | String? = <span class="n">nil</span>, html_options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>label_tag(text, for : Symbol | String? = <span class="n">nil</span>, html_options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)<br/>label_tag(for : Symbol | String? = <span class="n">nil</span>, html_options = <span class="t">SHash</span>.<span class="k">new</span>, &block)</span>
+    label_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#number_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>number_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>number_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    number_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#password_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>password_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>password_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    password_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#radio_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>radio_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>radio_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    radio_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#select_tag%28io%3AString%3A%3ABuilder%2Cname%3AString%7CSymbol%2Coptions%3AArray%28Array%29%2Cvalue%3Dnil%2Chtml_options%3DSHash.new%29-instance-method" class="tooltip">
+      <span>select_tag(io : String::Builder, name : String | Symbol, options : Array(Array), value = <span class="n">nil</span>, html_options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>select_tag(name, options : Array(Array), value = <span class="n">nil</span>, html_options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
+    select_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#submit_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>submit_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>submit_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    submit_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#text_area_tag%28io%3AString%3A%3ABuilder%2Cname%2Ctext%3D%26quot%3B%26quot%3B%2Chtml_options%3D%7B%7DofString%3D%3EString%29-instance-method" class="tooltip">
+      <span>text_area_tag(io : String::Builder, name, text = <span class="s">&quot;&quot;</span>, html_options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)<br/>text_area_tag(name, text = <span class="s">&quot;&quot;</span>, html_options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
+    text_area_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#text_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>text_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>text_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    text_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#time_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>time_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>time_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    time_tag</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(io,name,url,method,options={}ofString=&gt;String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(io, name, url, method, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#new%28io%2Cname%2Curl%2Cmethod%2Coptions%3D%7B%7DofString%3D%3EString%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="checkbox_field(name,value=false,options={}ofString=&gt;String):Void-instance-method">
+      <div class="signature">
+        
+        def <strong>checkbox_field</strong>(name, value = <span class="n">false</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : Void
+
+        <a class="method-permalink" href="#checkbox_field%28name%2Cvalue%3Dfalse%2Coptions%3D%7B%7DofString%3D%3EString%29%3AVoid-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L77" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="date_field(name,value=nil,options={}ofString=&gt;String)-instance-method">
+      <div class="signature">
+        
+        def <strong>date_field</strong>(name, value = <span class="n">nil</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#date_field%28name%2Cvalue%3Dnil%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L87" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="email_field(name,options={}ofString=&gt;String)-instance-method">
+      <div class="signature">
+        
+        def <strong>email_field</strong>(name, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#email_field%28name%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="file_field(name,options={}ofString=&gt;String)-instance-method">
+      <div class="signature">
+        
+        def <strong>file_field</strong>(name, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#file_field%28name%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L61" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hidden_field(name,value=&amp;quot;&amp;quot;,options={}ofString=&gt;String):Void-instance-method">
+      <div class="signature">
+        
+        def <strong>hidden_field</strong>(name, value = <span class="s">&quot;&quot;</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : Void
+
+        <a class="method-permalink" href="#hidden_field%28name%2Cvalue%3D%26quot%3B%26quot%3B%2Coptions%3D%7B%7DofString%3D%3EString%29%3AVoid-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L43" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="io:String::Builder-instance-method">
+      <div class="signature">
+        
+        def <strong>io</strong> : String::Builder
+
+        <a class="method-permalink" href="#io%3AString%3A%3ABuilder-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="io=(io:String::Builder)-instance-method">
+      <div class="signature">
+        
+        def <strong>io=</strong>(io : String::Builder)
+
+        <a class="method-permalink" href="#io%3D%28io%3AString%3A%3ABuilder%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="label_for(name,text:String?=nil,options={}ofString=&gt;String)-instance-method">
+      <div class="signature">
+        
+        def <strong>label_for</strong>(name, text : String? = <span class="n">nil</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#label_for%28name%2Ctext%3AString%3F%3Dnil%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L51" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="label_for(name,options={}ofString=&gt;String,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>label_for</strong>(name, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>, &block)
+
+        <a class="method-permalink" href="#label_for%28name%2Coptions%3D%7B%7DofString%3D%3EString%2C%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="number_field(name,value=nil,options={}ofString=&gt;String)-instance-method">
+      <div class="signature">
+        
+        def <strong>number_field</strong>(name, value = <span class="n">nil</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#number_field%28name%2Cvalue%3Dnil%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L95" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="password_field(name,options={}ofString=&gt;String)-instance-method">
+      <div class="signature">
+        
+        def <strong>password_field</strong>(name, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#password_field%28name%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="radio_field(name,value=false,options={}ofString=&gt;String)-instance-method">
+      <div class="signature">
+        
+        def <strong>radio_field</strong>(name, value = <span class="n">false</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#radio_field%28name%2Cvalue%3Dfalse%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L82" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render(&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>render</strong>(&block)
+
+        <a class="method-permalink" href="#render%28%26block%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Renders form tag and yields itself to the block.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L28" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select_field(name,opts,value=nil,options={}ofString=&gt;String)-instance-method">
+      <div class="signature">
+        
+        def <strong>select_field</strong>(name, opts, value = <span class="n">nil</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#select_field%28name%2Copts%2Cvalue%3Dnil%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L47" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="submit(value,options={}ofString=&gt;String)-instance-method">
+      <div class="signature">
+        
+        def <strong>submit</strong>(value, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#submit%28value%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L39" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="text_area_field(name,text=&amp;quot;&amp;quot;,options={}ofString=&gt;String)-instance-method">
+      <div class="signature">
+        
+        def <strong>text_area_field</strong>(name, text = <span class="s">&quot;&quot;</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#text_area_field%28name%2Ctext%3D%26quot%3B%26quot%3B%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L73" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="text_field(name,value=&amp;quot;&amp;quot;,options={}ofString=&gt;String):Void-instance-method">
+      <div class="signature">
+        
+        def <strong>text_field</strong>(name, value = <span class="s">&quot;&quot;</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : Void
+
+        <a class="method-permalink" href="#text_field%28name%2Cvalue%3D%26quot%3B%26quot%3B%2Coptions%3D%7B%7DofString%3D%3EString%29%3AVoid-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="time_field(name,value=nil,options={}ofString=&gt;String)-instance-method">
+      <div class="signature">
+        
+        def <strong>time_field</strong>(name, value = <span class="n">nil</span>, options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#time_field%28name%2Cvalue%3Dnil%2Coptions%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/form_builder.cr#L91" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

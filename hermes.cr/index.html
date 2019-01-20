@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
+<html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Hermes | Imdrasil Homebrew Stuff</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Hermes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal site" />
+<meta property="og:description" content="Personal site" />
+<link rel="canonical" href="https://imdrasil.github.io/hermes.cr/" />
+<meta property="og:url" content="https://imdrasil.github.io/hermes.cr/" />
+<meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<script type="application/ld+json">
+{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/hermes.cr/","headline":"Hermes","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
+<body><header class="site-header" role="banner">
 
-  <title>Hermes</title>
-  <meta name="description" content="Personal site">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Imdrasil Homebrew Stuff</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
 
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://imdrasil.github.io/hermes.cr/">
-  <link rel="alternate" type="application/rss+xml" title="Imdrasil Homebrew Stuff" href="/feed.xml">
-  
-  
-</head>
-
-
-  <body>
-
-    <header class="site-header" role="banner">
-  <div class="wrapper">
-    
-    
-    <a class="site-title" href="/">Imdrasil Homebrew Stuff</a>
-  </div>
+        <div class="trigger"><a class="page-link" href="/email_opener/">Email Opener</a><a class="page-link" href="/sage/">Sage</a><a class="page-link" href="/flash_container.cr/">flash_container</a><a class="page-link" href="/jennifer.cr/">Jennifer</a><a class="page-link" href="/jennifer_sqlite3_adapter/">Jennifer SQLite3 adapter</a><a class="page-link" href="/http_method_emulator/">http_method_emulator</a><a class="page-link" href="/sam.cr/">Sam</a><a class="page-link" href="/view_model.cr/">ViewModel</a><a class="page-link" href="/form_object/">FormObject</a><a class="page-link" href="/hermes.cr/">Hermes</a><a class="page-link" href="/crymagick/">CryMagick</a><a class="page-link" href="/factory/">Factory</a><a class="page-link" href="/pager/">Pager</a><a class="page-link" href="/ifrit/">Ifrit</a><a class="page-link" href="/email_opener/versions.html">email_opener</a><a class="page-link" href="/sage/versions.html">sage</a><a class="page-link" href="/flash_container.cr/versions.html">flash_container.cr</a><a class="page-link" href="/jennifer.cr/versions.html">jennifer.cr</a><a class="page-link" href="/jennifer_sqlite3_adapter/versions.html">jennifer_sqlite3_adapter</a><a class="page-link" href="/http_method_emulator/versions.html">http_method_emulator</a><a class="page-link" href="/sam.cr/versions.html">sam.cr</a><a class="page-link" href="/view_model.cr/versions.html">view_model.cr</a><a class="page-link" href="/form_object/versions.html">form_object</a><a class="page-link" href="/hermes.cr/versions.html">hermes.cr</a><a class="page-link" href="/crymagick/versions.html">crymagick</a><a class="page-link" href="/factory/versions.html">factory</a><a class="page-link" href="/pager/versions.html">pager</a><a class="page-link" href="/ifrit/versions.html">ifrit</a></div>
+      </nav></div>
 </header>
-
-    <main class="page-content" aria-label="Content">
+<main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post">
 
@@ -54,16 +58,17 @@
 <h3 id="configuration">Configuration</h3>
 
 <p>Put</p>
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"hermes"</span>
-</code></pre></div></div>
+
+<pre><code class="language-crystal">require "hermes"
+</code></pre>
 
 <p>in places where you load your configurations. For now you need to specify all configurations using dsl but in future support of yaml configuration files for different environments will be added. So this is regular configuration for playground environment:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Hermes</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">conf</span><span class="o">|</span>
-  <span class="n">conf</span><span class="p">.</span><span class="nf">host</span> <span class="o">=</span> <span class="s2">"localhost"</span>
-  <span class="n">conf</span><span class="p">.</span><span class="nf">port</span> <span class="o">=</span> <span class="mi">9200</span>
-<span class="k">end</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">Hermes::Config.configure do |conf|
+  conf.host = "localhost"
+  conf.port = 9200
+end
+</code></pre>
 
 <p>Default values:</p>
 
@@ -94,84 +99,103 @@
 
 <p>For command management Hermes uses <a href="https://github.com/imdrasil/sam.cr">Sam</a>. So in your <code class="highlighter-rouge">sam.cr</code> just add loading migrations and Jennifer hooks.</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"./your_configuration_folder/*"</span>
-<span class="n">load_dependencies</span> <span class="s2">"./"</span><span class="p">,</span> <span class="s2">"hermes"</span>
-<span class="c1"># your another tasks here</span>
-<span class="no">Sam</span><span class="p">.</span><span class="nf">help</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">require "./your_configuration_folder/*"
+load_dependencies "./", "hermes"
+# your another tasks here
+Sam.help
+</code></pre>
 
 <h4 id="commands">Commands</h4>
 <p>Now you can use next commands:</p>
 
 <ul>
-  <li>put all mappings to Elasticsearch
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:mapping:update
-</code></pre></div>    </div>
-  </li>
-  <li>updates configurations of all indexes
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:index:update_all
-</code></pre></div>    </div>
-  </li>
-  <li>creates all indexes
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:index:create_all
-</code></pre></div>    </div>
-  </li>
-  <li>updates configuration of provided index
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:index:update index_name
-</code></pre></div>    </div>
-  </li>
-  <li>creates given index
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:index:create index_name
-</code></pre></div>    </div>
-  </li>
-  <li>destroy given index
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:index:destroy index_name
-</code></pre></div>    </div>
-  </li>
-  <li>destroy all indexes
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:index:destroy_all
-</code></pre></div>    </div>
-  </li>
+  <li>put all mappings to Elasticsearch</li>
 </ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:mapping:update
+</code></pre></div></div>
+
+<ul>
+  <li>updates configurations of all indexes</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:index:update_all
+</code></pre></div></div>
+
+<ul>
+  <li>creates all indexes</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:index:create_all
+</code></pre></div></div>
+
+<ul>
+  <li>updates configuration of provided index</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:index:update index_name
+</code></pre></div></div>
+
+<ul>
+  <li>creates given index</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:index:create index_name
+</code></pre></div></div>
+
+<ul>
+  <li>destroy given index</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:index:destroy index_name
+</code></pre></div></div>
+
+<ul>
+  <li>destroy all indexes</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> es:index:destroy_all
+</code></pre></div></div>
 
 <h3 id="index">Index</h3>
 
 <p>First of all specify all your indexes. Here is example of some test index:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TestIndex</span> <span class="o">&lt;</span> <span class="no">Hermes</span><span class="o">::</span><span class="no">Index</span>
-  <span class="n">index_name</span> <span class="s2">"test_index"</span>
+<pre><code class="language-crystal">class TestIndex &lt; Hermes::Index
+  index_name "test_index"
 
-  <span class="n">config</span><span class="p">({</span>
-    <span class="ss">mappings: </span><span class="p">{</span>
-      <span class="ss">post: </span><span class="p">{</span>
-        <span class="ss">properties: </span><span class="p">{</span>
-          <span class="ss">title: </span><span class="p">{</span>
-            <span class="ss">type:   </span><span class="s2">"text"</span><span class="p">,</span>
-            <span class="ss">fields: </span><span class="p">{</span>
-              <span class="ss">raw: </span><span class="p">{</span>
-                <span class="ss">type: </span><span class="s2">"keyword"</span><span class="p">,</span>
-              <span class="p">},</span>
-            <span class="p">},</span>
-          <span class="p">},</span>
-          <span class="ss">likes:      </span><span class="p">{</span><span class="ss">type: </span><span class="s2">"integer"</span><span class="p">},</span>
-          <span class="ss">user:       </span><span class="p">{</span><span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s2">"text"</span><span class="p">},</span>
-          <span class="ss">text:       </span><span class="p">{</span><span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s2">"text"</span><span class="p">},</span>
-          <span class="ss">tag:        </span><span class="p">{</span><span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s2">"keyword"</span><span class="p">},</span>
-          <span class="ss">created_at: </span><span class="p">{</span><span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s2">"date"</span><span class="p">},</span>
-        <span class="p">},</span>
-      <span class="p">},</span>
+  config({
+    mappings: {
+      post: {
+        properties: {
+          title: {
+            type:   "text",
+            fields: {
+              raw: {
+                type: "keyword",
+              },
+            },
+          },
+          likes:      {type: "integer"},
+          user:       {:type =&gt; "text"},
+          text:       {:type =&gt; "text"},
+          tag:        {:type =&gt; "keyword"},
+          created_at: {:type =&gt; "date"},
+        },
+      },
 
-      <span class="ss">user: </span><span class="p">{</span>
-        <span class="ss">properties: </span><span class="p">{</span>
-          <span class="ss">full_name: </span><span class="p">{</span><span class="ss">type: </span><span class="s2">"text"</span><span class="p">},</span>
-          <span class="ss">location:  </span><span class="p">{</span><span class="ss">type: </span><span class="s2">"geo_point"</span><span class="p">},</span>
-          <span class="ss">photo:     </span><span class="p">{</span><span class="ss">type: </span><span class="s2">"binary"</span><span class="p">},</span>
-        <span class="p">},</span>
-      <span class="p">},</span>
-    <span class="p">},</span>
-  <span class="p">})</span>
-<span class="k">end</span>
-</code></pre></div></div>
+      user: {
+        properties: {
+          full_name: {type: "text"},
+          location:  {type: "geo_point"},
+          photo:     {type: "binary"},
+        },
+      },
+    },
+  })
+end
+</code></pre>
+
 <blockquote>
   <p>You could use both <code class="highlighter-rouge">NamedTuple</code> and hash notation</p>
 </blockquote>
@@ -184,9 +208,9 @@
 
 <p>Hermes implements some kind of Datamapper pattern so all CRUD and search logic will be inside of repository which allows to separate search and domain logic. So regular repository looks like this:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PostRepository</span> <span class="o">&lt;</span> <span class="no">Hermes</span><span class="o">::</span><span class="no">Repository</span><span class="p">(</span><span class="no">TestIndex</span><span class="p">,</span> <span class="no">Post</span><span class="p">)</span>
-<span class="k">end</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">class PostRepository &lt; Hermes::Repository(TestIndex, Post)
+end
+</code></pre>
 
 <p>By default repository name is underscored class name without last “_repository” part. But it can be specified using <code class="highlighter-rouge">document_type</code> method.</p>
 
@@ -194,20 +218,20 @@
 
 <p>This is module which includes mapping rules for fields. This allows to mix it into any class. Here is simple example:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Post</span>
-  <span class="kp">include</span> <span class="no">Hermes</span><span class="o">::</span><span class="no">Persistent</span>
+<pre><code class="language-crystal">class Post
+  include Hermes::Persistent
 
-  <span class="n">es_fields</span><span class="p">(</span>
-    <span class="ss">title: </span><span class="no">String</span><span class="p">,</span>
-    <span class="ss">likes: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int32</span><span class="p">,</span> <span class="ss">default: </span><span class="mi">0</span><span class="p">},</span>
-    <span class="ss">user: </span><span class="no">String</span><span class="p">,</span>
-    <span class="ss">text: </span><span class="no">String</span><span class="p">,</span>
-    <span class="ss">tag: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">,</span> <span class="ss">nilable: </span><span class="kp">true</span><span class="p">},</span>
-    <span class="ss">created_at: </span><span class="no">Time</span> <span class="o">|</span> <span class="no">Nil</span><span class="p">,</span>
-    <span class="ss">non_existing_field: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int32</span> <span class="o">|</span> <span class="no">Nil</span><span class="p">,</span> <span class="ss">nilable: </span><span class="kp">true</span><span class="p">}</span>
-  <span class="p">)</span>
-<span class="k">end</span>
-</code></pre></div></div>
+  es_fields(
+    title: String,
+    likes: {type: Int32, default: 0},
+    user: String,
+    text: String,
+    tag: {type: String, nilable: true},
+    created_at: Time | Nil,
+    non_existing_field: {type: Int32 | Nil, nilable: true}
+  )
+end
+</code></pre>
 
 <p><code class="highlighter-rouge">es_fields</code> macros works almost same way as <code class="highlighter-rouge">JSON.mapping</code> except generating several extra methods:</p>
 
@@ -223,7 +247,7 @@
 
 <h4 id="data-types">Data types</h4>
 
-<p>All regular Crystal data types, which could be mapped from Elasticsearch data types, are supportd (like <code class="highlighter-rouge">Int32</code>, <code class="highlighter-rouge">String</code> or <code class="highlighter-rouge">Times</code>, or <code class="highlighter-rouge">Array(Int32)</code>). Also supported all “special” data types:</p>
+<p>All regular Crystal data types, which could be mapped from Elasticsearch data types, are supported (like <code class="highlighter-rouge">Int32</code>, <code class="highlighter-rouge">String</code> or <code class="highlighter-rouge">Times</code>, or <code class="highlighter-rouge">Array(Int32)</code>). Also supported all “special” data types:</p>
 
 <ul>
   <li>binary (<code class="highlighter-rouge">Hermes::Types::Binary</code>)</li>
@@ -257,21 +281,21 @@
 
 <p>New object can be created from Hash (with string keys), NamedTuple or new Persistent object.</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">PostRepository</span><span class="p">.</span><span class="nf">create</span><span class="p">({</span><span class="s2">"user"</span> <span class="o">=&gt;</span> <span class="s2">"kim"</span><span class="p">,</span> <span class="s2">"message"</span> <span class="o">=&gt;</span> <span class="s2">"some message"</span><span class="p">,</span> <span class="s2">"tag"</span> <span class="o">=&gt;</span> <span class="s2">"es"</span><span class="p">,</span> <span class="s2">"time"</span> <span class="o">=&gt;</span> <span class="no">Time</span><span class="p">.</span><span class="nf">now</span> <span class="p">})</span>
+<pre><code class="language-crystal">PostRepository.create({"user" =&gt; "kim", "message" =&gt; "some message", "tag" =&gt; "es", "time" =&gt; Time.now })
 
-<span class="no">PostRepository</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">user: </span><span class="s2">"eddy"</span><span class="p">,</span> <span class="ss">message: </span><span class="s2">"some message"</span><span class="p">,</span> <span class="ss">tag: </span><span class="s2">"es"</span><span class="p">,</span> <span class="ss">time: </span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span> <span class="p">)</span>
+PostRepository.create(user: "eddy", message: "some message", tag: "es", time: Time.now )
 
-<span class="n">obj</span> <span class="o">=</span> <span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">({</span><span class="s2">"user"</span> <span class="o">=&gt;</span> <span class="s2">"kim"</span><span class="p">,</span> <span class="s2">"message"</span> <span class="o">=&gt;</span> <span class="s2">"some message"</span><span class="p">,</span> <span class="s2">"tag"</span> <span class="o">=&gt;</span> <span class="s2">"es"</span><span class="p">,</span> <span class="s2">"time"</span> <span class="o">=&gt;</span> <span class="no">Time</span><span class="p">.</span><span class="nf">now</span> <span class="p">})</span>
-<span class="no">PostRepository</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-</code></pre></div></div>
+obj = Post.new({"user" =&gt; "kim", "message" =&gt; "some message", "tag" =&gt; "es", "time" =&gt; Time.now })
+PostRepository.save(obj)
+</code></pre>
 
 <p>Due to Elasticsearch documentations, new object will be indexed in several seconds. So to do it immediatly you can manualy refresh:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">TestIndex</span><span class="p">.</span><span class="nf">refresh</span>
-<span class="c1"># or passing true as second parameter for #save</span>
+<pre><code class="language-crystal">TestIndex.refresh
+# or passing true as second parameter for #save
 
-<span class="no">PostRepository</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span>
-</code></pre></div></div>
+PostRepository.save(obj, true)
+</code></pre>
 
 <p>Such usage could slow down everything.</p>
 
@@ -279,56 +303,56 @@
 
 <p>Single document can be retrieved by it’s id:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">PostRepository</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="s2">"elastic_uid_here"</span><span class="p">)</span> <span class="c1"># object or nil</span>
-<span class="no">PostRepository</span><span class="p">.</span><span class="nf">find!</span><span class="p">(</span><span class="s2">"elastic_uid_here"</span><span class="p">)</span> <span class="c1"># object or exception</span>
-<span class="no">PostRepository</span><span class="p">.</span><span class="nf">multi_get</span><span class="p">([</span><span class="s2">"uid1"</span><span class="p">,</span> <span class="s2">"uid2"</span><span class="p">])</span> <span class="c1"># array of found objects by their ids</span>
-<span class="no">PostRepository</span><span class="p">.</span><span class="nf">all</span>
-
-</code></pre></div></div>
+<pre><code class="language-crystal">PostRepository.find("elastic_uid_here") # object or nil
+PostRepository.find!("elastic_uid_here") # object or exception
+PostRepository.multi_get(["uid1", "uid2"]) # array of found objects by their ids
+PostRepository.all
+</code></pre>
 
 <p>Also regular Elasticsearch query dsl could be used:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">PostRepository</span><span class="p">.</span><span class="nf">search</span><span class="p">({</span>
-    <span class="ss">query: </span><span class="p">{</span>
-        <span class="ss">bool: </span><span class="p">{</span>
-            <span class="ss">must: </span><span class="p">{</span>
-                <span class="ss">term: </span><span class="p">{</span><span class="ss">user: </span><span class="s2">"kim"</span><span class="p">},</span>
-            <span class="p">},</span>
-            <span class="ss">should: </span><span class="p">[</span>
-                <span class="p">{</span><span class="ss">term: </span><span class="p">{</span><span class="ss">tag: </span><span class="s2">"wow"</span><span class="p">}},</span>
-                <span class="p">{</span><span class="ss">term: </span><span class="p">{</span><span class="ss">tag: </span><span class="s2">"es"</span><span class="p">}},</span>
-            <span class="p">],</span>
-            <span class="ss">minimum_should_match: </span><span class="mi">1</span><span class="p">,</span>
-            <span class="ss">boost:                </span><span class="mf">1.0</span><span class="p">,</span>
-        <span class="p">},</span>
-    <span class="p">},</span>
-<span class="p">})</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">PostRepository.search({
+    query: {
+        bool: {
+            must: {
+                term: {user: "kim"},
+            },
+            should: [
+                {term: {tag: "wow"}},
+                {term: {tag: "es"}},
+            ],
+            minimum_should_match: 1,
+            boost:                1.0,
+        },
+    },
+})
+</code></pre>
 
 <p>It will return <code class="highlighter-rouge">SearchResponse(T)</code> object (in this case <code class="highlighter-rouge">T</code> is a <code class="highlighter-rouge">Post</code>). It provide access to all response data and has shortcuts for search and aggregation results (<code class="highlighter-rouge">entries</code> and <code class="highlighter-rouge">aggs</code> methods).</p>
 
 <p>If you need only count of matched objects:</p>
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">PostRepository</span><span class="p">.</span><span class="nf">count</span><span class="p">({</span>
-    <span class="ss">query: </span><span class="p">{</span>
-        <span class="ss">bool: </span><span class="p">{</span>
-            <span class="ss">must: </span><span class="p">{</span>
-                <span class="ss">term: </span><span class="p">{</span><span class="ss">user: </span><span class="s2">"kim"</span><span class="p">},</span>
-            <span class="p">},</span>
-            <span class="ss">should: </span><span class="p">[</span>
-                <span class="p">{</span><span class="ss">term: </span><span class="p">{</span><span class="ss">tag: </span><span class="s2">"wow"</span><span class="p">}},</span>
-                <span class="p">{</span><span class="ss">term: </span><span class="p">{</span><span class="ss">tag: </span><span class="s2">"es"</span><span class="p">}},</span>
-            <span class="p">],</span>
-            <span class="ss">minimum_should_match: </span><span class="mi">1</span><span class="p">,</span>
-            <span class="ss">boost:                </span><span class="mf">1.0</span><span class="p">,</span>
-        <span class="p">},</span>
-    <span class="p">},</span>
-<span class="p">})</span> <span class="c1"># some Int32 value</span>
-</code></pre></div></div>
+
+<pre><code class="language-crystal">PostRepository.count({
+    query: {
+        bool: {
+            must: {
+                term: {user: "kim"},
+            },
+            should: [
+                {term: {tag: "wow"}},
+                {term: {tag: "es"}},
+            ],
+            minimum_should_match: 1,
+            boost:                1.0,
+        },
+    },
+}) # some Int32 value
+</code></pre>
 
 <p>Also there is shortcut for aggregations:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">PostRepository</span><span class="p">.</span><span class="nf">aggregate</span><span class="p">({</span><span class="ss">max_date: </span><span class="p">{</span><span class="ss">max: </span><span class="p">{</span><span class="ss">field: </span><span class="s2">"time"</span><span class="p">}}})</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">PostRepository.aggregate({max_date: {max: {field: "time"}}})
+</code></pre>
 
 <p>It will return object of <code class="highlighter-rouge">SearchResponse(T)</code> as well as <code class="highlighter-rouge">search</code> but without entries inside.</p>
 
@@ -336,50 +360,53 @@
 
 <p>If you want to save new version of object, use regular same:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">obj</span><span class="p">.</span><span class="nf">message</span> <span class="o">=</span> <span class="s2">"another message"</span>
-<span class="no">PostRepository</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">obj.message = "another message"
+PostRepository.save(obj)
+</code></pre>
 
 <p>Also there is method for <code class="highlighter-rouge">_update</code> Elasticsearch endpoint:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">PostRepository</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="s2">"some_id"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">script: </span><span class="p">{</span><span class="o">...</span><span class="p">}})</span> <span class="c1"># allow specify entire request body</span>
+<pre><code class="language-crystal">PostRepository.update("some_id", { script: {...}}) # allow specify entire request body
 
-<span class="no">PostRepository</span><span class="p">.</span><span class="nf">update_doc</span><span class="p">(</span><span class="s2">"some_id"</span><span class="p">,</span> <span class="p">{</span><span class="ss">user: </span><span class="s2">"tomas"</span><span class="p">})</span> <span class="c1"># accepts "doc" part of body </span>
+PostRepository.update_doc("some_id", {user: "tomas"}) # accepts "doc" part of body
 
-<span class="no">PostRepository</span><span class="p">.</span><span class="nf">update_by_script</span><span class="p">(</span><span class="s2">"some_id"</span><span class="p">,</span> <span class="p">{</span>
-  <span class="ss">script: </span><span class="p">{</span>
-    <span class="ss">inline: </span><span class="s2">"ctx._source.likes += params.count"</span><span class="p">,</span>
-    <span class="ss">lang:   </span><span class="s2">"painless"</span><span class="p">,</span>
-    <span class="ss">params: </span><span class="p">{</span><span class="ss">count: </span><span class="mi">1</span><span class="p">},</span>
-  <span class="p">},</span>
-<span class="p">})</span> <span class="c1"># allow specify entire request body</span>
-</code></pre></div></div>
+PostRepository.update_by_script("some_id", {
+  script: {
+    inline: "ctx._source.likes += params.count",
+    lang:   "painless",
+    params: {count: 1},
+  },
+}) # allow specify entire request body
+</code></pre>
 
 <p>and <code class="highlighter-rouge">_update_by_query</code></p>
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">PostRepository</span><span class="p">.</span><span class="nf">update_by_query</span><span class="p">({</span>
-  <span class="ss">script: </span><span class="p">{</span>
-    <span class="ss">inline: </span><span class="s2">"ctx._source.likes += params.count"</span><span class="p">,</span>
-    <span class="ss">lang:   </span><span class="s2">"painless"</span><span class="p">,</span>
-    <span class="ss">params: </span><span class="p">{</span><span class="ss">count: </span><span class="mi">1</span><span class="p">},</span>
-  <span class="p">},</span>
-  <span class="ss">query: </span><span class="p">{</span>
-    <span class="ss">term: </span><span class="p">{</span>
-      <span class="ss">user: </span><span class="s2">"kim"</span><span class="p">,</span>
-    <span class="p">},</span>
-  <span class="p">},</span>
-<span class="p">})</span>
-</code></pre></div></div>
+
+<pre><code class="language-crystal">PostRepository.update_by_query({
+  script: {
+    inline: "ctx._source.likes += params.count",
+    lang:   "painless",
+    params: {count: 1},
+  },
+  query: {
+    term: {
+      user: "kim",
+    },
+  },
+})
+</code></pre>
 
 <h4 id="delete">Delete</h4>
 
 <p>To delete object by it’s id use:</p>
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">PostRepository</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="nf">_id</span><span class="p">)</span>
-</code></pre></div></div>
+
+<pre><code class="language-crystal">PostRepository.delete(obj._id)
+</code></pre>
 
 <p>Also you can do it using query:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">PostRepository</span><span class="p">.</span><span class="nf">delete_by_query</span><span class="p">({</span><span class="ss">query: </span><span class="p">{</span><span class="ss">match: </span><span class="p">{</span><span class="ss">message: </span><span class="s2">"some message"</span><span class="p">}}})</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">PostRepository.delete_by_query({query: {match: {message: "some message"}}})
+</code></pre>
+
 <h2 id="restrictions">Restrictions</h2>
 
 <p>Hermes uses one connection and is needed to be tested with multi-threading (check safety).</p>
@@ -388,12 +415,12 @@
 
 <p>There are still a lot of work to do. Tasks for next versions:</p>
 
-<ul>
-  <li>[ ] fully cover with tests</li>
-  <li>[ ] add IP related logic to <code class="highlighter-rouge">Hermes::Types::IP</code> and move it to separate shard (like <a href="https://github.com/deploy2/ruby-ip">ruby-ip</a>)</li>
-  <li>[ ] think about adding smth like <a href="https://github.com/ysbaddaden/pool">connection pool</a></li>
-  <li>[ ] add <a href="https://github.com/imdrasil/jennifer.cr">Jennifer</a> support</li>
-  <li>[ ] add more things below…</li>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />fully cover with tests</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />add IP related logic to <code class="highlighter-rouge">Hermes::Types::IP</code> and move it to separate shard (like <a href="https://github.com/deploy2/ruby-ip">ruby-ip</a>)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />think about adding smth like <a href="https://github.com/ysbaddaden/pool">connection pool</a></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />add <a href="https://github.com/imdrasil/jennifer.cr">Jennifer</a> support</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />add more things below…</li>
 </ul>
 
 <h2 id="contributing">Contributing</h2>
@@ -415,8 +442,7 @@
 <h2 id="contributors">Contributors</h2>
 
 <ul>
-  <li><a href="https://github.com/imdrasil">imdrasil</a> Roman Kalnytskyi - creator, maintainer
-s</li>
+  <li><a href="https://github.com/imdrasil">imdrasil</a> Roman Kalnytskyi - creator, maintainer</li>
 </ul>
 
   </div>
@@ -424,9 +450,8 @@ s</li>
 </article>
 
       </div>
-    </main>
-
-    <footer class="site-footer">
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
 
   <div class="wrapper">
 
@@ -435,30 +460,11 @@ s</li>
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li>
-            
-              Imdrasil Homebrew Stuff
-            
-            </li>
-            
-            <li><a href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li>
-            
-        </ul>
+          <li class="p-name">Imdrasil Homebrew Stuff</li><li><a class="u-email" href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li></ul>
       </div>
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          
-          <li>
-            <a href="https://github.com/imdrasil"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
-</span><span class="username">imdrasil</span></a>
-
-          </li>
-          
-
-          
-        </ul>
-      </div>
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/imdrasil"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">imdrasil</span></a></li></ul>
+</div>
 
       <div class="footer-col footer-col-3">
         <p>Personal site</p>
@@ -468,8 +474,6 @@ s</li>
   </div>
 
 </footer>
-
-
-  </body>
+</body>
 
 </html>

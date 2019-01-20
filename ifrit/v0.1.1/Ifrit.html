@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
   <meta id="repository-name" content="github.com/imdrasil/ifrit">
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="js/doc.js"></script>
   <title>Ifrit - github.com/imdrasil/ifrit</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class=" " data-id="github.com/imdrasil/ifrit/Array" data-name="array(t)">
       <a href="Array.html">Array</a>
@@ -107,9 +123,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">module</span> Ifrit
@@ -136,17 +154,23 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/ifrit/blob/7c5eeb78c9b830ee05a16f3d98345ee7bb96dd73/src/ifrit/version.cr#L1" target="_blank">ifrit/version.cr</a>
+      <a href="https://github.com/imdrasil/ifrit/blob/7c5eeb78c9b830ee05a16f3d98345ee7bb96dd73/src/ifrit/version.cr#L1" target="_blank">
+        ifrit/version.cr
+      </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/ifrit/blob/7c5eeb78c9b830ee05a16f3d98345ee7bb96dd73/src/ifrit/converter.cr#L3" target="_blank">ifrit/converter.cr</a>
+      <a href="https://github.com/imdrasil/ifrit/blob/7c5eeb78c9b830ee05a16f3d98345ee7bb96dd73/src/ifrit/converter.cr#L3" target="_blank">
+        ifrit/converter.cr
+      </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/ifrit/blob/7c5eeb78c9b830ee05a16f3d98345ee7bb96dd73/src/ifrit.cr#L3" target="_blank">ifrit.cr</a>
+      <a href="https://github.com/imdrasil/ifrit/blob/7c5eeb78c9b830ee05a16f3d98345ee7bb96dd73/src/ifrit.cr#L3" target="_blank">
+        ifrit.cr
+      </a>
     
     <br/>
   
@@ -275,7 +299,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="str_hash&#40;hash,types&#41;-macro">
+    <div class="entry-detail" id="str_hash(hash,types)-macro">
       <div class="signature">
         
         macro <strong>str_hash</strong>(hash, types)
@@ -293,7 +317,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="str_hash_cast&#40;hash,types&#41;-macro">
+    <div class="entry-detail" id="str_hash_cast(hash,types)-macro">
       <div class="signature">
         
         macro <strong>str_hash_cast</strong>(hash, types)
@@ -309,7 +333,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="stringify_hash&#40;hash,types&#41;-macro">
+    <div class="entry-detail" id="stringify_hash(hash,types)-macro">
       <div class="signature">
         
         macro <strong>stringify_hash</strong>(hash, types)
@@ -327,7 +351,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="sym_hash&#40;hash,types&#41;-macro">
+    <div class="entry-detail" id="sym_hash(hash,types)-macro">
       <div class="signature">
         
         macro <strong>sym_hash</strong>(hash, types)
@@ -345,7 +369,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="sym_hash_cast&#40;hash,types&#41;-macro">
+    <div class="entry-detail" id="sym_hash_cast(hash,types)-macro">
       <div class="signature">
         
         macro <strong>sym_hash_cast</strong>(hash, types)
@@ -364,7 +388,7 @@ example: Ifrit.as_sym_hash(hash, String | Int32)</p></div>
       </div>
     </div>
   
-    <div class="entry-detail" id="typed_array&#40;arr,klass&#41;-macro">
+    <div class="entry-detail" id="typed_array(arr,klass)-macro">
       <div class="signature">
         
         macro <strong>typed_array</strong>(arr, klass)
@@ -382,7 +406,7 @@ example: Ifrit.as_sym_hash(hash, String | Int32)</p></div>
       </div>
     </div>
   
-    <div class="entry-detail" id="typed_array_cast&#40;arr,klass&#41;-macro">
+    <div class="entry-detail" id="typed_array_cast(arr,klass)-macro">
       <div class="signature">
         
         macro <strong>typed_array_cast</strong>(arr, klass)
@@ -400,7 +424,7 @@ example: Ifrit.as_sym_hash(hash, String | Int32)</p></div>
       </div>
     </div>
   
-    <div class="entry-detail" id="typed_hash&#40;hash,key,types&#41;-macro">
+    <div class="entry-detail" id="typed_hash(hash,key,types)-macro">
       <div class="signature">
         
         macro <strong>typed_hash</strong>(hash, key, types)
@@ -419,7 +443,7 @@ example: Ifrit.typed_hash({"a" => 1, "b" => "b"}, String, Int32 | String)</p></d
       </div>
     </div>
   
-    <div class="entry-detail" id="typed_hash_cast&#40;hash,key,types&#41;-macro">
+    <div class="entry-detail" id="typed_hash_cast(hash,key,types)-macro">
       <div class="signature">
         
         macro <strong>typed_hash_cast</strong>(hash, key, types)

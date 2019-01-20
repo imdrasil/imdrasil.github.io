@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
   <meta id="repository-name" content="github.com/imdrasil/hermes.cr">
-  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../../js/doc.js"></script>
   <title>Hermes::Types::Range(T) - github.com/imdrasil/hermes.cr</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/imdrasil/hermes.cr/Hermes" data-name="hermes">
       <a href="../../Hermes.html">Hermes</a>
@@ -197,9 +213,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">struct</span> Hermes::Types::Range(T)
@@ -228,7 +246,9 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/hermes.cr/blob/7144e11d5c1b2823f891e23e8becc1d7586ea72e/src/hermes/types/range.cr#L3" target="_blank">hermes/types/range.cr</a>
+      <a href="https://github.com/imdrasil/hermes.cr/blob/7144e11d5c1b2823f891e23e8becc1d7586ea72e/src/hermes/types/range.cr#L3" target="_blank">
+        hermes/types/range.cr
+      </a>
     
     <br/>
   
@@ -246,7 +266,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28__temp_35%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(__temp_35 : JSON::PullParser)</a>
+        <a href="#new%28__temp_38%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(__temp_38 : JSON::PullParser)</a>
         
       </li>
     
@@ -260,7 +280,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#gte-instance-method" class="signature"><strong>#gte</strong></a>
+        <a href="#gte%3AT-instance-method" class="signature"><strong>#gte</strong> : T</a>
         
       </li>
     
@@ -270,7 +290,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#lte-instance-method" class="signature"><strong>#lte</strong></a>
+        <a href="#lte%3AT-instance-method" class="signature"><strong>#lte</strong> : T</a>
         
       </li>
     
@@ -327,7 +347,7 @@
 
   <h2>Constructor Detail</h2>
   
-    <div class="entry-detail" id="new&#40;lte,gte&#41;-class-method">
+    <div class="entry-detail" id="new(lte,gte)-class-method">
       <div class="signature">
         
         def self.<strong>new</strong>(lte, gte)
@@ -343,12 +363,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="new&#40;__temp_35:JSON::PullParser&#41;-class-method">
+    <div class="entry-detail" id="new(__temp_38:JSON::PullParser)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(__temp_35 : JSON::PullParser)
+        def self.<strong>new</strong>(__temp_38 : JSON::PullParser)
 
-        <a class="method-permalink" href="#new%28__temp_35%3AJSON%3A%3APullParser%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28__temp_38%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
       <br/>
@@ -364,12 +384,12 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="gte-instance-method">
+    <div class="entry-detail" id="gte:T-instance-method">
       <div class="signature">
         
-        def <strong>gte</strong>
+        def <strong>gte</strong> : T
 
-        <a class="method-permalink" href="#gte-instance-method">#</a>
+        <a class="method-permalink" href="#gte%3AT-instance-method">#</a>
       </div>
       
       <br/>
@@ -378,7 +398,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="gte&#61;&#40;_gte:T&#41;-instance-method">
+    <div class="entry-detail" id="gte=(_gte:T)-instance-method">
       <div class="signature">
         
         def <strong>gte=</strong>(_gte : T)
@@ -392,12 +412,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="lte-instance-method">
+    <div class="entry-detail" id="lte:T-instance-method">
       <div class="signature">
         
-        def <strong>lte</strong>
+        def <strong>lte</strong> : T
 
-        <a class="method-permalink" href="#lte-instance-method">#</a>
+        <a class="method-permalink" href="#lte%3AT-instance-method">#</a>
       </div>
       
       <br/>
@@ -406,7 +426,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="lte&#61;&#40;_lte:T&#41;-instance-method">
+    <div class="entry-detail" id="lte=(_lte:T)-instance-method">
       <div class="signature">
         
         def <strong>lte=</strong>(_lte : T)
@@ -420,7 +440,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="to_json&#40;json:JSON::Builder&#41;-instance-method">
+    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
       <div class="signature">
         
         def <strong>to_json</strong>(json : JSON::Builder)

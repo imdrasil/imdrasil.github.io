@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/crymagick">
+  <title>CryMagick::Image::Info - github.com/imdrasil/crymagick</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/crymagick/CryMagick" data-name="crymagick">
+      <a href="../../CryMagick.html">CryMagick</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Configuration" data-name="crymagick::configuration">
+      <a href="../../CryMagick/Configuration.html">Configuration</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Error" data-name="crymagick::error">
+      <a href="../../CryMagick/Error.html">Error</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/crymagick/CryMagick/Image" data-name="crymagick::image">
+      <a href="../../CryMagick/Image.html">Image</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/imdrasil/crymagick/CryMagick/Image/Info" data-name="crymagick::image::info">
+      <a href="../../CryMagick/Image/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Image/Pixel" data-name="crymagick::image::pixel">
+      <a href="../../CryMagick/Image/Pixel.html">Pixel</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Invalid" data-name="crymagick::invalid">
+      <a href="../../CryMagick/Invalid.html">Invalid</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Shell" data-name="crymagick::shell">
+      <a href="../../CryMagick/Shell.html">Shell</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/crymagick/CryMagick/Tool" data-name="crymagick::tool">
+      <a href="../../CryMagick/Tool.html">Tool</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Animate" data-name="crymagick::tool::animate">
+      <a href="../../CryMagick/Tool/Animate.html">Animate</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Compare" data-name="crymagick::tool::compare">
+      <a href="../../CryMagick/Tool/Compare.html">Compare</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Composite" data-name="crymagick::tool::composite">
+      <a href="../../CryMagick/Tool/Composite.html">Composite</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Conjure" data-name="crymagick::tool::conjure">
+      <a href="../../CryMagick/Tool/Conjure.html">Conjure</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Convert" data-name="crymagick::tool::convert">
+      <a href="../../CryMagick/Tool/Convert.html">Convert</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Display" data-name="crymagick::tool::display">
+      <a href="../../CryMagick/Tool/Display.html">Display</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Identify" data-name="crymagick::tool::identify">
+      <a href="../../CryMagick/Tool/Identify.html">Identify</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Import" data-name="crymagick::tool::import">
+      <a href="../../CryMagick/Tool/Import.html">Import</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Mogrify" data-name="crymagick::tool::mogrify">
+      <a href="../../CryMagick/Tool/Mogrify.html">Mogrify</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Montage" data-name="crymagick::tool::montage">
+      <a href="../../CryMagick/Tool/Montage.html">Montage</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Stream" data-name="crymagick::tool::stream">
+      <a href="../../CryMagick/Tool/Stream.html">Stream</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Utilities" data-name="crymagick::utilities">
+      <a href="../../CryMagick/Utilities.html">Utilities</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> CryMagick::Image::Info
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../CryMagick/Image/Info.html">CryMagick::Image::Info</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L5" target="_blank">
+        crymagick/image/info.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="ALL_ATTRS">
+        <strong>ALL_ATTRS</strong> = <code>[<span class="s">&quot;format&quot;</span>, <span class="s">&quot;mime_type&quot;</span>, <span class="s">&quot;width&quot;</span>, <span class="s">&quot;height&quot;</span>, <span class="s">&quot;dimensions&quot;</span>, <span class="s">&quot;size&quot;</span>, <span class="s">&quot;human_size&quot;</span>, <span class="s">&quot;colorspace&quot;</span>, <span class="s">&quot;mime_type&quot;</span>, <span class="s">&quot;exif&quot;</span>, <span class="s">&quot;resolution&quot;</span>, <span class="s">&quot;signature&quot;</span>, <span class="s">&quot;details&quot;</span>] <span class="k">of</span> <span class="t">::</span><span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ASCII_ENCODED_EXIF_KEYS">
+        <strong>ASCII_ENCODED_EXIF_KEYS</strong> = <code>[<span class="s">&quot;ExifVersion&quot;</span>, <span class="s">&quot;FlashPixVersion&quot;</span>] <span class="k">of</span> <span class="t">::</span><span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="INT_ATTR">
+        <strong>INT_ATTR</strong> = <code>[<span class="s">&quot;width&quot;</span>, <span class="s">&quot;height&quot;</span>] <span class="k">of</span> <span class="t">::</span><span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="STRING_ATTRS">
+        <strong>STRING_ATTRS</strong> = <code>[<span class="s">&quot;format&quot;</span>, <span class="s">&quot;mime_type&quot;</span>, <span class="s">&quot;human_size&quot;</span>, <span class="s">&quot;colorspace&quot;</span>, <span class="s">&quot;signature&quot;</span>, <span class="s">&quot;details&quot;</span>] <span class="k">of</span> <span class="t">::</span><span class="t">String</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28path%3AString%29-class-method" class="signature"><strong>.new</strong>(path : String)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%5B%5D%28value%2C%2Aargs%29-instance-method" class="signature"><strong>#[]</strong>(value, *args)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cheap_info%28value%29-instance-method" class="signature"><strong>#cheap_info</strong>(value)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clear-instance-method" class="signature"><strong>#clear</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#colorspace-instance-method" class="signature"><strong>#colorspace</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#data-instance-method" class="signature"><strong>#data</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#details-instance-method" class="signature"><strong>#details</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dimensions-instance-method" class="signature"><strong>#dimensions</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#exif-instance-method" class="signature"><strong>#exif</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#format-instance-method" class="signature"><strong>#format</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#height-instance-method" class="signature"><strong>#height</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#human_size-instance-method" class="signature"><strong>#human_size</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#identify%28%26block%29%3AString-instance-method" class="signature"><strong>#identify</strong>(&block) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mime_type-instance-method" class="signature"><strong>#mime_type</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#raw%28value%29-instance-method" class="signature"><strong>#raw</strong>(value)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#raw_exif%28value%29-instance-method" class="signature"><strong>#raw_exif</strong>(value)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resolution%28unit%3D%26quot%3B%26quot%3B%29-instance-method" class="signature"><strong>#resolution</strong>(unit = <span class="s">&quot;&quot;</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#signature-instance-method" class="signature"><strong>#signature</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size-instance-method" class="signature"><strong>#size</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#width-instance-method" class="signature"><strong>#width</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(path:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(path : String)
+
+        <a class="method-permalink" href="#new%28path%3AString%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L25" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="[](value,*args)-instance-method">
+      <div class="signature">
+        
+        def <strong>[]</strong>(value, *args)
+
+        <a class="method-permalink" href="#%5B%5D%28value%2C%2Aargs%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L30" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cheap_info(value)-instance-method">
+      <div class="signature">
+        
+        def <strong>cheap_info</strong>(value)
+
+        <a class="method-permalink" href="#cheap_info%28value%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L122" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clear-instance-method">
+      <div class="signature">
+        
+        def <strong>clear</strong>
+
+        <a class="method-permalink" href="#clear-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="colorspace-instance-method">
+      <div class="signature">
+        
+        def <strong>colorspace</strong>
+
+        <a class="method-permalink" href="#colorspace-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L52" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="data-instance-method">
+      <div class="signature">
+        
+        def <strong>data</strong>
+
+        <a class="method-permalink" href="#data-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L102" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="details-instance-method">
+      <div class="signature">
+        
+        def <strong>details</strong>
+
+        <a class="method-permalink" href="#details-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L98" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dimensions-instance-method">
+      <div class="signature">
+        
+        def <strong>dimensions</strong>
+
+        <a class="method-permalink" href="#dimensions-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L114" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="exif-instance-method">
+      <div class="signature">
+        
+        def <strong>exif</strong>
+
+        <a class="method-permalink" href="#exif-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L56" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="format-instance-method">
+      <div class="signature">
+        
+        def <strong>format</strong>
+
+        <a class="method-permalink" href="#format-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L114" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="height-instance-method">
+      <div class="signature">
+        
+        def <strong>height</strong>
+
+        <a class="method-permalink" href="#height-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L114" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="human_size-instance-method">
+      <div class="signature">
+        
+        def <strong>human_size</strong>
+
+        <a class="method-permalink" href="#human_size-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L114" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="identify(&amp;block):String-instance-method">
+      <div class="signature">
+        
+        def <strong>identify</strong>(&block) : String
+
+        <a class="method-permalink" href="#identify%28%26block%29%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L143" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mime_type-instance-method">
+      <div class="signature">
+        
+        def <strong>mime_type</strong>
+
+        <a class="method-permalink" href="#mime_type-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="raw(value)-instance-method">
+      <div class="signature">
+        
+        def <strong>raw</strong>(value)
+
+        <a class="method-permalink" href="#raw%28value%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L135" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="raw_exif(value)-instance-method">
+      <div class="signature">
+        
+        def <strong>raw_exif</strong>(value)
+
+        <a class="method-permalink" href="#raw_exif%28value%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L139" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resolution(unit=&amp;quot;&amp;quot;)-instance-method">
+      <div class="signature">
+        
+        def <strong>resolution</strong>(unit = <span class="s">&quot;&quot;</span>)
+
+        <a class="method-permalink" href="#resolution%28unit%3D%26quot%3B%26quot%3B%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L83" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="signature-instance-method">
+      <div class="signature">
+        
+        def <strong>signature</strong>
+
+        <a class="method-permalink" href="#signature-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L94" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size-instance-method">
+      <div class="signature">
+        
+        def <strong>size</strong>
+
+        <a class="method-permalink" href="#size-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L114" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="width-instance-method">
+      <div class="signature">
+        
+        def <strong>width</strong>
+
+        <a class="method-permalink" href="#width-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/image/info.cr#L114" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

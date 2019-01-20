@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/crymagick">
+  <title>CryMagick::Configuration - github.com/imdrasil/crymagick</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/crymagick/CryMagick" data-name="crymagick">
+      <a href="../CryMagick.html">CryMagick</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/imdrasil/crymagick/CryMagick/Configuration" data-name="crymagick::configuration">
+      <a href="../CryMagick/Configuration.html">Configuration</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Error" data-name="crymagick::error">
+      <a href="../CryMagick/Error.html">Error</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/crymagick/CryMagick/Image" data-name="crymagick::image">
+      <a href="../CryMagick/Image.html">Image</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Image/Info" data-name="crymagick::image::info">
+      <a href="../CryMagick/Image/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Image/Pixel" data-name="crymagick::image::pixel">
+      <a href="../CryMagick/Image/Pixel.html">Pixel</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Invalid" data-name="crymagick::invalid">
+      <a href="../CryMagick/Invalid.html">Invalid</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Shell" data-name="crymagick::shell">
+      <a href="../CryMagick/Shell.html">Shell</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/crymagick/CryMagick/Tool" data-name="crymagick::tool">
+      <a href="../CryMagick/Tool.html">Tool</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Animate" data-name="crymagick::tool::animate">
+      <a href="../CryMagick/Tool/Animate.html">Animate</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Compare" data-name="crymagick::tool::compare">
+      <a href="../CryMagick/Tool/Compare.html">Compare</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Composite" data-name="crymagick::tool::composite">
+      <a href="../CryMagick/Tool/Composite.html">Composite</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Conjure" data-name="crymagick::tool::conjure">
+      <a href="../CryMagick/Tool/Conjure.html">Conjure</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Convert" data-name="crymagick::tool::convert">
+      <a href="../CryMagick/Tool/Convert.html">Convert</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Display" data-name="crymagick::tool::display">
+      <a href="../CryMagick/Tool/Display.html">Display</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Identify" data-name="crymagick::tool::identify">
+      <a href="../CryMagick/Tool/Identify.html">Identify</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Import" data-name="crymagick::tool::import">
+      <a href="../CryMagick/Tool/Import.html">Import</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Mogrify" data-name="crymagick::tool::mogrify">
+      <a href="../CryMagick/Tool/Mogrify.html">Mogrify</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Montage" data-name="crymagick::tool::montage">
+      <a href="../CryMagick/Tool/Montage.html">Montage</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Tool/Stream" data-name="crymagick::tool::stream">
+      <a href="../CryMagick/Tool/Stream.html">Stream</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/crymagick/CryMagick/Utilities" data-name="crymagick::utilities">
+      <a href="../CryMagick/Utilities.html">Utilities</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> CryMagick::Configuration
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/configuration.cr#L4" target="_blank">
+        crymagick/configuration.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#cli-class-method" class="signature"><strong>.cli</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cli%3D%28value%3ASymbol%29-class-method" class="signature"><strong>.cli=</strong>(value : Symbol)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cli_path-class-method" class="signature"><strong>.cli_path</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cli_path%3D%28value%3AString%29-class-method" class="signature"><strong>.cli_path=</strong>(value : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#configure%28%26block%29-class-method" class="signature"><strong>.configure</strong>(&block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#processor-class-method" class="signature"><strong>.processor</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#processor%3D%28value%3ASymbol%29-class-method" class="signature"><strong>.processor=</strong>(value : Symbol)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#processor_path-class-method" class="signature"><strong>.processor_path</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#processor_path%3D%28value%3AString%29-class-method" class="signature"><strong>.processor_path=</strong>(value : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#validate_on_create-class-method" class="signature"><strong>.validate_on_create</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#validate_on_create%3D%28value%3ABool%29-class-method" class="signature"><strong>.validate_on_create=</strong>(value : Bool)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#validate_on_write-class-method" class="signature"><strong>.validate_on_write</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#validate_on_write%3D%28value%3ABool%29-class-method" class="signature"><strong>.validate_on_write=</strong>(value : Bool)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#whiny-class-method" class="signature"><strong>.whiny</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#whiny%3D%28value%3ABool%29-class-method" class="signature"><strong>.whiny=</strong>(value : Bool)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Macro Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#class_property%28name%2Ctype%2Cdefault%29-macro" class="signature"><strong>class_property</strong>(name, type, default)</a>
+        
+          <div class="summary"><p>[logger, Logger?, nil]</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="cli-class-method">
+      <div class="signature">
+        
+        def self.<strong>cli</strong>
+
+        <a class="method-permalink" href="#cli-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cli=(value:Symbol)-class-method">
+      <div class="signature">
+        
+        def self.<strong>cli=</strong>(value : Symbol)
+
+        <a class="method-permalink" href="#cli%3D%28value%3ASymbol%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cli_path-class-method">
+      <div class="signature">
+        
+        def self.<strong>cli_path</strong>
+
+        <a class="method-permalink" href="#cli_path-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cli_path=(value:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>cli_path=</strong>(value : String)
+
+        <a class="method-permalink" href="#cli_path%3D%28value%3AString%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="configure(&amp;block)-class-method">
+      <div class="signature">
+        
+        def self.<strong>configure</strong>(&block)
+
+        <a class="method-permalink" href="#configure%28%26block%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/configuration.cr#L33" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="processor-class-method">
+      <div class="signature">
+        
+        def self.<strong>processor</strong>
+
+        <a class="method-permalink" href="#processor-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="processor=(value:Symbol)-class-method">
+      <div class="signature">
+        
+        def self.<strong>processor=</strong>(value : Symbol)
+
+        <a class="method-permalink" href="#processor%3D%28value%3ASymbol%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="processor_path-class-method">
+      <div class="signature">
+        
+        def self.<strong>processor_path</strong>
+
+        <a class="method-permalink" href="#processor_path-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="processor_path=(value:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>processor_path=</strong>(value : String)
+
+        <a class="method-permalink" href="#processor_path%3D%28value%3AString%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="validate_on_create-class-method">
+      <div class="signature">
+        
+        def self.<strong>validate_on_create</strong>
+
+        <a class="method-permalink" href="#validate_on_create-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="validate_on_create=(value:Bool)-class-method">
+      <div class="signature">
+        
+        def self.<strong>validate_on_create=</strong>(value : Bool)
+
+        <a class="method-permalink" href="#validate_on_create%3D%28value%3ABool%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="validate_on_write-class-method">
+      <div class="signature">
+        
+        def self.<strong>validate_on_write</strong>
+
+        <a class="method-permalink" href="#validate_on_write-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="validate_on_write=(value:Bool)-class-method">
+      <div class="signature">
+        
+        def self.<strong>validate_on_write=</strong>(value : Bool)
+
+        <a class="method-permalink" href="#validate_on_write%3D%28value%3ABool%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="whiny-class-method">
+      <div class="signature">
+        
+        def self.<strong>whiny</strong>
+
+        <a class="method-permalink" href="#whiny-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="whiny=(value:Bool)-class-method">
+      <div class="signature">
+        
+        def self.<strong>whiny=</strong>(value : Bool)
+
+        <a class="method-permalink" href="#whiny%3D%28value%3ABool%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Macro Detail</h2>
+  
+    <div class="entry-detail" id="class_property(name,type,default)-macro">
+      <div class="signature">
+        
+        macro <strong>class_property</strong>(name, type, default)
+
+        <a class="method-permalink" href="#class_property%28name%2Ctype%2Cdefault%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>[logger, Logger?, nil]</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/b6450e952a221cf2fec63f99cff6ff2c2970c6b0/src/crymagick/configuration.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>

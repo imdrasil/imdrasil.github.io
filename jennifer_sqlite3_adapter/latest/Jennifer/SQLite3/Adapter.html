@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/jennifer_sqlite3_adapter">
+  <title>Jennifer::SQLite3::Adapter - github.com/imdrasil/jennifer_sqlite3_adapter</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer" data-name="jennifer">
+      <a href="../../Jennifer.html">Jennifer</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer/SQLite3" data-name="jennifer::sqlite3">
+      <a href="../../Jennifer/SQLite3.html">SQLite3</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer/SQLite3/Adapter" data-name="jennifer::sqlite3::adapter">
+      <a href="../../Jennifer/SQLite3/Adapter.html">Adapter</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer/SQLite3/Adapter/EnumType" data-name="jennifer::sqlite3::adapter::enumtype">
+      <a href="../../Jennifer/SQLite3/Adapter/EnumType.html">EnumType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer/SQLite3/CommandInterface" data-name="jennifer::sqlite3::commandinterface">
+      <a href="../../Jennifer/SQLite3/CommandInterface.html">CommandInterface</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer/SQLite3/SchemaProcessor" data-name="jennifer::sqlite3::schemaprocessor">
+      <a href="../../Jennifer/SQLite3/SchemaProcessor.html">SchemaProcessor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer/SQLite3/SQLGenerator" data-name="jennifer::sqlite3::sqlgenerator">
+      <a href="../../Jennifer/SQLite3/SQLGenerator.html">SQLGenerator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Jennifer::SQLite3::Adapter
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Jennifer/SQLite3/Adapter.html">Jennifer::SQLite3::Adapter</a></li><li class="superclass">Jennifer::Adapter::Base</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L13" target="_blank">
+        jennifer_sqlite3_adapter.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="TYPE_TRANSLATIONS">
+        <strong>TYPE_TRANSLATIONS</strong> = <code>{<span class="s">&quot;bool&quot;</span> => <span class="s">&quot;integer&quot;</span>, <span class="s">&quot;integer&quot;</span> => <span class="s">&quot;integer&quot;</span>, <span class="s">&quot;bigint&quot;</span> => <span class="s">&quot;integer&quot;</span>, <span class="s">&quot;short&quot;</span> => <span class="s">&quot;integer&quot;</span>, <span class="s">&quot;tinyint&quot;</span> => <span class="s">&quot;integer&quot;</span>, <span class="s">&quot;float&quot;</span> => <span class="s">&quot;real&quot;</span>, <span class="s">&quot;double&quot;</span> => <span class="s">&quot;real&quot;</span>, <span class="s">&quot;real&quot;</span> => <span class="s">&quot;real&quot;</span>, <span class="s">&quot;text&quot;</span> => <span class="s">&quot;text&quot;</span>, <span class="s">&quot;string&quot;</span> => <span class="s">&quot;text&quot;</span>, <span class="s">&quot;varchar&quot;</span> => <span class="s">&quot;text&quot;</span>, <span class="s">&quot;time&quot;</span> => <span class="s">&quot;text&quot;</span>, <span class="s">&quot;timestamp&quot;</span> => <span class="s">&quot;text&quot;</span>}</code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#command_interface-class-method" class="signature"><strong>.command_interface</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#column_exists%3F%28table%2Cname%29-instance-method" class="signature"><strong>#column_exists?</strong>(table, name)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#default_type_size%28name%29-instance-method" class="signature"><strong>#default_type_size</strong>(name)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#foreign_key_exists%3F%28from_table%2Cto_table%29-instance-method" class="signature"><strong>#foreign_key_exists?</strong>(from_table, to_table)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#foreign_key_exists%3F%28name%29-instance-method" class="signature"><strong>#foreign_key_exists?</strong>(name)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#index_exists%3F%28table%2Cname%29-instance-method" class="signature"><strong>#index_exists?</strong>(table, name)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#schema_processor-instance-method" class="signature"><strong>#schema_processor</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sql_generator-instance-method" class="signature"><strong>#sql_generator</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#table_column_count%28table%29-instance-method" class="signature"><strong>#table_column_count</strong>(table)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#table_exists%3F%28table%29-instance-method" class="signature"><strong>#table_exists?</strong>(table)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#translate_type%28name%3ASymbol%29-instance-method" class="signature"><strong>#translate_type</strong>(name : Symbol)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#translate_type%28name%3AString%29-instance-method" class="signature"><strong>#translate_type</strong>(name : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#view_exists%3F%28table%29-instance-method" class="signature"><strong>#view_exists?</strong>(table)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#with_table_lock%28table%3AString%2Ctype%3AString%3D%26quot%3Bdefault%26quot%3B%2C%26block%29-instance-method" class="signature"><strong>#with_table_lock</strong>(table : String, type : String = <span class="s">&quot;default&quot;</span>, &block)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="command_interface-class-method">
+      <div class="signature">
+        
+        def self.<strong>command_interface</strong>
+
+        <a class="method-permalink" href="#command_interface-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L96" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="column_exists?(table,name)-instance-method">
+      <div class="signature">
+        
+        def <strong>column_exists?</strong>(table, name)
+
+        <a class="method-permalink" href="#column_exists%3F%28table%2Cname%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L76" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="default_type_size(name)-instance-method">
+      <div class="signature">
+        
+        def <strong>default_type_size</strong>(name)
+
+        <a class="method-permalink" href="#default_type_size%28name%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L54" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="foreign_key_exists?(from_table,to_table)-instance-method">
+      <div class="signature">
+        
+        def <strong>foreign_key_exists?</strong>(from_table, to_table)
+
+        <a class="method-permalink" href="#foreign_key_exists%3F%28from_table%2Cto_table%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L80" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="foreign_key_exists?(name)-instance-method">
+      <div class="signature">
+        
+        def <strong>foreign_key_exists?</strong>(name)
+
+        <a class="method-permalink" href="#foreign_key_exists%3F%28name%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L84" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="index_exists?(table,name)-instance-method">
+      <div class="signature">
+        
+        def <strong>index_exists?</strong>(table, name)
+
+        <a class="method-permalink" href="#index_exists%3F%28table%2Cname%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L72" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="schema_processor-instance-method">
+      <div class="signature">
+        
+        def <strong>schema_processor</strong>
+
+        <a class="method-permalink" href="#schema_processor-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L40" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sql_generator-instance-method">
+      <div class="signature">
+        
+        def <strong>sql_generator</strong>
+
+        <a class="method-permalink" href="#sql_generator-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L36" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="table_column_count(table)-instance-method">
+      <div class="signature">
+        
+        def <strong>table_column_count</strong>(table)
+
+        <a class="method-permalink" href="#table_column_count%28table%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L56" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="table_exists?(table)-instance-method">
+      <div class="signature">
+        
+        def <strong>table_exists?</strong>(table)
+
+        <a class="method-permalink" href="#table_exists%3F%28table%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L64" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="translate_type(name:Symbol)-instance-method">
+      <div class="signature">
+        
+        def <strong>translate_type</strong>(name : Symbol)
+
+        <a class="method-permalink" href="#translate_type%28name%3ASymbol%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L44" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="translate_type(name:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>translate_type</strong>(name : String)
+
+        <a class="method-permalink" href="#translate_type%28name%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="view_exists?(table)-instance-method">
+      <div class="signature">
+        
+        def <strong>view_exists?</strong>(table)
+
+        <a class="method-permalink" href="#view_exists%3F%28table%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L68" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with_table_lock(table:String,type:String=&amp;quot;default&amp;quot;,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>with_table_lock</strong>(table : String, type : String = <span class="s">&quot;default&quot;</span>, &block)
+
+        <a class="method-permalink" href="#with_table_lock%28table%3AString%2Ctype%3AString%3D%26quot%3Bdefault%26quot%3B%2C%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/blob/b3e67418a0d0afdb1aa143f307e32634ba1a28d8/src/jennifer_sqlite3_adapter.cr#L88" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

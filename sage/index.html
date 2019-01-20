@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Sage | Imdrasil Homebrew Stuff</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Sage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal site" />
+<meta property="og:description" content="Personal site" />
+<link rel="canonical" href="https://imdrasil.github.io/sage/" />
+<meta property="og:url" content="https://imdrasil.github.io/sage/" />
+<meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<script type="application/ld+json">
+{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/sage/","headline":"Sage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Imdrasil Homebrew Stuff</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/email_opener/">Email Opener</a><a class="page-link" href="/sage/">Sage</a><a class="page-link" href="/flash_container.cr/">flash_container</a><a class="page-link" href="/jennifer.cr/">Jennifer</a><a class="page-link" href="/jennifer_sqlite3_adapter/">Jennifer SQLite3 adapter</a><a class="page-link" href="/http_method_emulator/">http_method_emulator</a><a class="page-link" href="/sam.cr/">Sam</a><a class="page-link" href="/view_model.cr/">ViewModel</a><a class="page-link" href="/form_object/">FormObject</a><a class="page-link" href="/hermes.cr/">Hermes</a><a class="page-link" href="/crymagick/">CryMagick</a><a class="page-link" href="/factory/">Factory</a><a class="page-link" href="/pager/">Pager</a><a class="page-link" href="/ifrit/">Ifrit</a><a class="page-link" href="/email_opener/versions.html">email_opener</a><a class="page-link" href="/sage/versions.html">sage</a><a class="page-link" href="/flash_container.cr/versions.html">flash_container.cr</a><a class="page-link" href="/jennifer.cr/versions.html">jennifer.cr</a><a class="page-link" href="/jennifer_sqlite3_adapter/versions.html">jennifer_sqlite3_adapter</a><a class="page-link" href="/http_method_emulator/versions.html">http_method_emulator</a><a class="page-link" href="/sam.cr/versions.html">sam.cr</a><a class="page-link" href="/view_model.cr/versions.html">view_model.cr</a><a class="page-link" href="/form_object/versions.html">form_object</a><a class="page-link" href="/hermes.cr/versions.html">hermes.cr</a><a class="page-link" href="/crymagick/versions.html">crymagick</a><a class="page-link" href="/factory/versions.html">factory</a><a class="page-link" href="/pager/versions.html">pager</a><a class="page-link" href="/ifrit/versions.html">ifrit</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Sage</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="sage">Sage</h1>
+
+<p>Sage - is a lightweight library for defining resource access policy rules.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Add this to your application’s <code class="highlighter-rouge">shard.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
+  <span class="na">sage</span><span class="pi">:</span>
+    <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/sage</span>
+</code></pre></div></div>
+
+<h2 id="usage">Usage</h2>
+
+<p>The core component of Sage is a <em>policy class</em> - it describes access policies to resource. That’s why it is assumed you define a separate policy class for each resource you want to specify access restrictions.</p>
+
+<p>Consider a simple example:</p>
+
+<pre><code class="language-crystal"># It is not necessary to define application base policy class
+# but this allows to put all shared behavior and configs in one place
+abstract class ApplicationPolicy &lt; Sage::Base
+end
+
+class PostPolicy &lt; ApplicationPolicy
+  constructor(User, Post)
+
+  ability :edit?
+    user.admin? || user.id == resource.id
+  end
+
+  ability :show?
+    true
+  end
+end
+</code></pre>
+
+<p>Now you can add authorization to your app:</p>
+
+<pre><code class="language-crystal">abstract class ApplicationController
+  include Sage::Behavior
+
+  private def current_user
+    User.current_user
+  end
+end
+
+class PostsController
+  def update
+    @post = Post.find(params["id"])
+    authorize! :update?, @post
+
+    # ...
+  end
+end
+</code></pre>
+
+<p>In the above example Sage automatically refers policy class from the given <code class="highlighter-rouge">@post</code> variable - <code class="highlighter-rouge">Post -&gt; PostPolicy</code>. The <code class="highlighter-rouge">user</code> is automatically used from calling <code class="highlighter-rouge">sage_user</code> method (which by default calls <code class="highlighter-rouge">current_user</code>).</p>
+
+<p>When authorization is passed successfully (corresponding ability returned <code class="highlighter-rouge">true</code>), nothing happens, but in case of an authorization failure <code class="highlighter-rouge">Sage::UnauthorizedError</code> error is raised.</p>
+
+<p>There are also an <code class="highlighter-rouge">able?</code> nad <code class="highlighter-rouge">unable?</code> methods which return <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>:</p>
+
+<pre><code class="language-crystal">able?(:update?, @post)
+unable?(:update?, @post)
+</code></pre>
+
+<p>Also you may specify exact policy class:</p>
+
+<pre><code class="language-crystal">able?(:update, @post, within: EditorPostPolicy)
+authorize!(:update?, @post, within: EditorPostPolicy)
+</code></pre>
+
+<h3 id="writing-policies">Writing Policies</h3>
+
+<p>Policy class contains defined abilities (partially they are just a predicate methods) which are used to authorize activities.</p>
+
+<p>Each policy record is instantiated with the target <code class="highlighter-rouge">resource : T</code> object and authorization context <code class="highlighter-rouge">user : U</code>. To avoid generics, they should define corresponding attribute types for themselves. As a plugin <code class="highlighter-rouge">constructor</code> macro could be used for doing this:</p>
+
+<pre><code class="language-crystal">class PostPolicy &lt; Sage::Base
+  constructor(User, Post)
+
+  # This call is the same as
+
+  getter user : User, resource : Post
+
+  def initialize(@user, @resource)
+  end
+end
+</code></pre>
+
+<blockquote>
+  <p>NOTE: <code class="highlighter-rouge">#user</code> method is abstract so should be defined by subclasses.</p>
+</blockquote>
+
+<p>To define ability use corresponding macro <code class="highlighter-rouge">ability</code>:</p>
+
+<pre><code class="language-crystal">class PostPolicy &lt; Sage::Base
+  # ...
+  ability :update? do
+    user.admin? || user.id == resource.user_id
+  end
+end
+</code></pre>
+
+<h4 id="calling-other-policies">Calling other policies</h4>
+
+<p>It may be useful to call other resource policy from within a current one. For doing this you can use standard <code class="highlighter-rouge">#able?</code> and <code class="highlighter-rouge">#unable?</code> methods:</p>
+
+<pre><code class="language-crystal">class CommentPolicy &lt; Sage::Policy
+  # ...
+
+  ability :update? do
+    user.admin? || user.id == resource.id || able?(:update?, resource.post)
+  end
+end
+</code></pre>
+
+<h3 id="testing">Testing</h3>
+
+<p>Policies can be tested as any other Crystal classes:</p>
+
+<pre><code class="language-crystal">describe PostPolicy do
+  described_class = PostPolicy
+
+  describe "#update?"
+    it "returns false when the user is not admin nor author" do
+      user = User.new
+      post = Post.new
+      policy = described_class.new(user, post)
+      policy.apply(:update?).should be_false
+    end
+
+    it "returns true when the user is admin" do
+      user = User.new(:admin)
+      post = Post.new
+      policy = described_class.new(user, post)
+      policy.apply(:update?).should be_true
+    end
+
+    it "returns true when the user is author" do
+      user = User.new
+      post = Post.new(user_id: user.id)
+      policy = described_class.new(user, post)
+      policy.apply(:update?).should be_true
+    end
+  end
+end
+</code></pre>
+
+<h3 id="aliases">Aliases</h3>
+
+<p>Sage allows you to add ability aliases. It may be useful when you rely on implicit rules in your code:</p>
+
+<pre><code class="language-crystal">class PostController
+  def edit
+    # ...
+    authorize! :edit?, @post
+    # ...
+  end
+
+  def update
+    # ...
+    authorize! :update?, @post
+    # ...
+  end
+
+  def destroy
+    # ...
+    authorize! :destroy?, @post
+    # ...
+  end
+end
+</code></pre>
+
+<p>In your policy you can create alias to avoid code duplication:</p>
+
+<pre><code class="language-crystal">class PostPolicy &lt; Sage::Base
+  # ...
+  alias_ability :update?, :edit?, to: :update?
+  # ...
+end
+</code></pre>
+
+<blockquote>
+  <p>NOTE: <code class="highlighter-rouge">alias_ability</code> doesn’t create aliased methods and resolve them only during <code class="highlighter-rouge">Sage::Base#apply</code> call (which is under the hood of <code class="highlighter-rouge">able?</code> and <code class="highlighter-rouge">authorize!</code>).</p>
+</blockquote>
+
+<h4 id="default-ability">Default Ability</h4>
+
+<p>When Sage can’t resolve ability name it calls <code class="highlighter-rouge">Sage::Base#default_ability</code> method which by default returns <code class="highlighter-rouge">false</code>. You may override it to define another behavior.</p>
+
+<h3 id="pre-checks">Pre-Checks</h3>
+
+<p>Sometimes it happens that some of your abilities (or even all of them) starts with the same conditions. Example:</p>
+
+<pre><code class="language-crystal">class PostPolicy &lt; Sage::Base
+  # ...
+  ability :show? do
+    user.admin? || resource.published?
+  end
+
+  ability :update? do
+    user.admin? || user.id == resource.user_id
+  end
+  # ...
+end
+</code></pre>
+
+<p>You can separate the common parts from all abilities to a separate <em>pre-checks</em>:</p>
+
+<pre><code class="language-crystal">class PostPolicy &lt; Sage::Base
+  # ...
+  pre_check :admin?
+
+  ability :show? do
+    resource.published?
+  end
+
+  ability :update? do
+    user.id == resource.user_id
+  end
+
+  private def admin?
+    allow! if user.admin?
+  end
+  # ...
+end
+</code></pre>
+
+<p>Pre-checks are executed before ability invocation. They allow to halt the authorization process - just return <code class="highlighter-rouge">allow!</code> or <code class="highlighter-rouge">disallow!</code> call value. Any other returned value is ignored.</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<ol>
+  <li>Fork it ( https://github.com/imdrasil/sage/fork )</li>
+  <li>Create your feature branch (git checkout -b my-new-feature)</li>
+  <li>Commit your changes (git commit -am ‘Add some feature’)</li>
+  <li>Push to the branch (git push origin my-new-feature)</li>
+  <li>Create a new Pull Request</li>
+</ol>
+
+<h2 id="contributors">Contributors</h2>
+
+<ul>
+  <li><a href="https://github.com/imdrasil">imdrasil</a> Roman Kalnytskyi - creator, maintainer</li>
+</ul>
+
+<h3 id="inspired-by">Inspired by</h3>
+
+<ul>
+  <li><a href="https://github.com/palkan/action_policy">Action Policy</a></li>
+  <li><a href="https://github.com/varvet/pundit">Pundit</a></li>
+  <li><a href="https://github.com/CanCanCommunity/cancancan">CancanCan</a></li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imdrasil Homebrew Stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Imdrasil Homebrew Stuff</li><li><a class="u-email" href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/imdrasil"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">imdrasil</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Personal site</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

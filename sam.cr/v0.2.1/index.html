@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
   <meta id="repository-name" content="github.com/imdrasil/sam.cr">
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="js/doc.js"></script>
   <title>README - github.com/imdrasil/sam.cr</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li class="current"><a href="index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent " data-id="github.com/imdrasil/sam.cr/Sam" data-name="sam">
       <a href="Sam.html">Sam</a>
@@ -62,9 +78,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1>Sam <a href="https://travis-ci.org/imdrasil/sam.cr" target="_blank"><img src="https://travis-ci.org/imdrasil/sam.cr.svg" alt="Build Status"/></a></h1>
 
 <p>Sam is a Make-like shard which allows to specify tasks like Ruby's Rake do using plain Crystal.</p>
@@ -73,7 +91,7 @@
 
 <p>Add this to your application's <code>shard.yml</code>:</p>
 
-<pre><code class='language-yaml'>dependencies:
+<pre><code class="language-yaml">dependencies:
   sam:
     github: imdrasil/sam.cr</code></pre>
 
@@ -83,7 +101,7 @@
 
 <p>Create <code>sam.cr</code> file in your app root directory and paste next: </p>
 
-<pre><code class='language-crystal'><span class="c"># here you should load your app configuration if </span>
+<pre><code class="language-crystal"><span class="c"># here you should load your app configuration if </span>
 <span class="c"># it will be needed to perform tasks</span>
 <span class="t">Sam</span>.namespace <span class="s">&quot;db&quot;</span> <span class="k">do</span>
   namespace <span class="s">&quot;schema&quot;</span> <span class="k">do</span>
@@ -123,11 +141,11 @@
 
 <p>To ran any of this task open prompt in root location and paste:</p>
 
-<pre><code class='language-shell'>$ crystal sam.cr -- &lt;your_task_path> [options]</code></pre>
+<pre><code class="language-shell">$ crystal sam.cr -- &lt;your_task_path> [options]</code></pre>
 
 <p>To get list of all available tasks:</p>
 
-<pre><code class='language-shell'>$ crystal sam.cr -- help</code></pre>
+<pre><code class="language-shell">$ crystal sam.cr -- help</code></pre>
 
 <p>Each tasks has own "path" which consists of namespace names and task name joined together by ":". </p>
 
@@ -137,17 +155,17 @@
 
 <p>Also just array of arguments can be passed - just past everything needed without any flags anywhere:</p>
 
-<pre><code class='language-shell'>$ crystal sam.cr -- &lt;your_task_path> first_raw_option "options with spaces"</code></pre>
+<pre><code class="language-shell">$ crystal sam.cr -- &lt;your_task_path> first_raw_option "options with spaces"</code></pre>
 
 <p>All arguments from prompt will be parsed as <code>String</code>.</p>
 
 <p>So to invoke first task from example ("load") will be used next command:</p>
 
-<pre><code class='language-shell'>crystal sam.cr -- db:schema:load -f1 asd</code></pre>
+<pre><code class="language-shell">crystal sam.cr -- db:schema:load -f1 asd</code></pre>
 
 <p>To autoload Sam files from your dependencies - just past </p>
 
-<pre><code class='language-crystal'>load_dependencies <span class="s">&quot;dep1&quot;</span>, <span class="s">&quot;dep2&quot;</span><span class="s">&#96;</code></pre>
+<pre><code class="language-crystal">load_dependencies <span class="s">&quot;dep1&quot;</span>, <span class="s">&quot;dep2&quot;</span><span class="s">`</code></pre>
 
 <h4>Namespace</h4>
 
@@ -181,7 +199,7 @@
 
 <p>Before running tests call</p>
 
-<pre><code class='language-shell'>$ crystal examples/sam.cr -- prepare</code></pre>
+<pre><code class="language-shell">$ crystal examples/sam.cr -- prepare</code></pre>
 
 <h2>Contributing</h2>
 

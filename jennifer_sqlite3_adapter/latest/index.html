@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/jennifer_sqlite3_adapter">
+  <title>README - github.com/imdrasil/jennifer_sqlite3_adapter</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer" data-name="jennifer">
+      <a href="Jennifer.html">Jennifer</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer/SQLite3" data-name="jennifer::sqlite3">
+      <a href="Jennifer/SQLite3.html">SQLite3</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer/SQLite3/Adapter" data-name="jennifer::sqlite3::adapter">
+      <a href="Jennifer/SQLite3/Adapter.html">Adapter</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer/SQLite3/Adapter/EnumType" data-name="jennifer::sqlite3::adapter::enumtype">
+      <a href="Jennifer/SQLite3/Adapter/EnumType.html">EnumType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer/SQLite3/CommandInterface" data-name="jennifer::sqlite3::commandinterface">
+      <a href="Jennifer/SQLite3/CommandInterface.html">CommandInterface</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer/SQLite3/SchemaProcessor" data-name="jennifer::sqlite3::schemaprocessor">
+      <a href="Jennifer/SQLite3/SchemaProcessor.html">SchemaProcessor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer_sqlite3_adapter/Jennifer/SQLite3/SQLGenerator" data-name="jennifer::sqlite3::sqlgenerator">
+      <a href="Jennifer/SQLite3/SQLGenerator.html">SQLGenerator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1>Jennifer SQLite3 adapter <a href="https://travis-ci.org/imdrasil/jennifer_sqlite3_adapter" target="_blank"><img src="https://travis-ci.org/imdrasil/jennifer_sqlite3_adapter.svg" alt="Build Status"/></a> <a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/releases" target="_blank"><img src="https://img.shields.io/github/release/imdrasil/jennifer_sqlite3_adapter.svg" alt="Latest Release"/></a> <a href="https://imdrasil.github.io/jennifer_sqlite3_adapter/versions" target="_blank"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs"/></a></h1>
+
+<p>SQLite3 adapter for <a href="https://github.com/imdrasil/jennifer.cr" target="_blank">Jennifer</a>.</p>
+
+<h2>Installation</h2>
+
+<ol><li>Add the dependency to your <code>shard.yml</code>:</li></ol>
+
+<pre><code class="language-yaml">dependencies:
+  jennifer_sqlite3_adapter:
+    github: imdrasil/jennifer_sqlite3_adapter</code></pre>
+
+<ol><li>Run <code>shards install</code></li></ol>
+
+<h2>Usage</h2>
+
+<p>This shard requires Jennifer <code>~> 0.7.0</code>. It is tested with SQLite 3.22.0 version.</p>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;jennifer&quot;</span>
+<span class="k">require</span> <span class="s">&quot;jennifer_sqlite3_adapter&quot;</span>
+
+<span class="t">Jennifer</span><span class="t">::</span><span class="t">Config</span>.configure <span class="k">do</span> <span class="o">|</span>conf<span class="o">|</span>
+  conf.adapter <span class="o">=</span> <span class="s">&quot;sqlite3&quot;</span>
+  conf.host <span class="o">=</span> <span class="s">&quot;.&quot;</span>
+  conf.db <span class="o">=</span> <span class="s">&quot;test.db&quot;</span>
+<span class="k">end</span></code></pre>
+
+<p><code>user</code> and <code>password</code> configuration is not required as database is SQLite doesn't provide db-user authentication and they are ignored. <code>host</code> options is used to specify path to db-file, <code>db</code> - file name.</p>
+
+<p>As</p>
+
+<h3>Supported data types</h3>
+
+<p>| Method | SQLite3 | Crystal type |
+| --- | --- | --- |
+| <code>#bool</code> | <code>INTEGER</code> | <code>Bool</code> |
+| <code>#integer</code> | <code>INTEGER</code> | <code>Int32</code> |
+| <code>#bigint</code> | <code>INTEGER</code> | <code>Int32</code> |
+| <code>#short</code> | <code>INTEGER</code> | <code>Int32</code> |
+| <code>#tinyint</code> | <code>INTEGER</code> | <code>Int32</code> |
+| <code>#float</code>| <code>REAL</code> | <code>Float64</code> |
+| <code>#double</code> | <code>REAL</code> | <code>Float64</code> |
+| <code>#real</code> | <code>REAL</code> | <code>Float64</code> |
+| <code>#text</code> | <code>TEXT</code> | <code>String</code> |
+| <code>#string</code> | <code>TEXT</code> | <code>String</code> |
+| <code>#varchar</code> | <code>TEXT</code> | <code>String</code> |
+| <code>#time</code> | <code>TEXT</code> | <code>Time</code> |
+| <code>#timestamp</code> | <code>TEXT</code> | <code>Time</code> |</p>
+
+<h3>Altering table</h3>
+
+<p>SQLite has no mechanism to alter existing table (except renaming it). Therefore operations, listed below, do multiple steps to achieve altering table: coping table schema to new temp table, coping data to new table, extending new table with required options, dropping old table and renaming temp table to original name:</p>
+
+<ul><li>dropping column</li><li>changing column</li><li>adding foreign key</li><li>dropping foreign key</li></ul>
+
+<p>It is necessary to notice that all those operations keep all data and indexes.</p>
+
+<h2>Contributing</h2>
+
+<ol><li>Fork it (&lt;https://github.com/imdrasil/jennifer_sqlite3_adapter/fork>)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
+
+<h2>Contributors</h2>
+
+<ul><li><a href="https://github.com/imdrasil" target="_blank">Roman Kalnytskyi</a> - creator and maintainer</li></ul>
+</div>
+</body>
+</html>

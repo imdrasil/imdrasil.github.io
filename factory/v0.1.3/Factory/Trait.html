@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/factory">
+  <title>Factory::Trait(T) - github.com/imdrasil/factory</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/factory/Factory" data-name="factory">
+      <a href="../Factory.html">Factory</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/factory/Factory/Base" data-name="factory::base">
+      <a href="../Factory/Base.html">Base</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/factory/Factory/Jennifer" data-name="factory::jennifer">
+      <a href="../Factory/Jennifer.html">Jennifer</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/factory/Factory/Jennifer/Base" data-name="factory::jennifer::base">
+      <a href="../Factory/Jennifer/Base.html">Base</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/factory/Factory/Sequence" data-name="factory::sequence">
+      <a href="../Factory/Sequence.html">Sequence</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/imdrasil/factory/Factory/Trait" data-name="factory::trait(t)">
+      <a href="../Factory/Trait.html">Trait</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">abstract class</span> Factory::Trait(T)
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Factory/Trait.html">Factory::Trait(T)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/trait.cr#L2" target="_blank">
+        factory/trait.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/jennifer/trait.cr#L2" target="_blank">
+        factory/jennifer/trait.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#add_attributes%28hash%29%3AVoid-class-method" class="signature"><strong>.add_attributes</strong>(hash) : Void</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#associations-class-method" class="signature"><strong>.associations</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#make_assignes%28obj%3AT%29%3AVoid-class-method" class="signature"><strong>.make_assignes</strong>(obj : T) : Void</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#process_association%28obj%2Cassoc%29-class-method" class="signature"><strong>.process_association</strong>(obj, assoc)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Macro Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#assign%28name%2Cvalue%2Cklass%3Dnil%29-macro" class="signature"><strong>assign</strong>(name, value, klass = nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr%28name%2Cvalue%2Cklass%3Dnil%29-macro" class="signature"><strong>attr</strong>(name, value, klass = nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sequence%28name%2Cinit%3D0%29-macro" class="signature"><strong>sequence</strong>(name, init = 0)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="add_attributes(hash):Void-class-method">
+      <div class="signature">
+        
+        def self.<strong>add_attributes</strong>(hash) : Void
+
+        <a class="method-permalink" href="#add_attributes%28hash%29%3AVoid-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/trait.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="associations-class-method">
+      <div class="signature">
+        
+        def self.<strong>associations</strong>
+
+        <a class="method-permalink" href="#associations-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/trait.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="make_assignes(obj:T):Void-class-method">
+      <div class="signature">
+        
+        def self.<strong>make_assignes</strong>(obj : T) : Void
+
+        <a class="method-permalink" href="#make_assignes%28obj%3AT%29%3AVoid-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/trait.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="process_association(obj,assoc)-class-method">
+      <div class="signature">
+        
+        def self.<strong>process_association</strong>(obj, assoc)
+
+        <a class="method-permalink" href="#process_association%28obj%2Cassoc%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/trait.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Macro Detail</h2>
+  
+    <div class="entry-detail" id="assign(name,value,klass=nil)-macro">
+      <div class="signature">
+        
+        macro <strong>assign</strong>(name, value, klass = nil)
+
+        <a class="method-permalink" href="#assign%28name%2Cvalue%2Cklass%3Dnil%29-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/trait.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr(name,value,klass=nil)-macro">
+      <div class="signature">
+        
+        macro <strong>attr</strong>(name, value, klass = nil)
+
+        <a class="method-permalink" href="#attr%28name%2Cvalue%2Cklass%3Dnil%29-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/trait.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sequence(name,init=0)-macro">
+      <div class="signature">
+        
+        macro <strong>sequence</strong>(name, init = 0)
+
+        <a class="method-permalink" href="#sequence%28name%2Cinit%3D0%29-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/trait.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>

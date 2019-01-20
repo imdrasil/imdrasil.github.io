@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>ViewModel | Imdrasil Homebrew Stuff</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="ViewModel" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal site" />
+<meta property="og:description" content="Personal site" />
+<link rel="canonical" href="https://imdrasil.github.io/view_model.cr/" />
+<meta property="og:url" content="https://imdrasil.github.io/view_model.cr/" />
+<meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<script type="application/ld+json">
+{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/view_model.cr/","headline":"ViewModel","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Imdrasil Homebrew Stuff</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/email_opener/">Email Opener</a><a class="page-link" href="/sage/">Sage</a><a class="page-link" href="/flash_container.cr/">flash_container</a><a class="page-link" href="/jennifer.cr/">Jennifer</a><a class="page-link" href="/jennifer_sqlite3_adapter/">Jennifer SQLite3 adapter</a><a class="page-link" href="/http_method_emulator/">http_method_emulator</a><a class="page-link" href="/sam.cr/">Sam</a><a class="page-link" href="/view_model.cr/">ViewModel</a><a class="page-link" href="/form_object/">FormObject</a><a class="page-link" href="/hermes.cr/">Hermes</a><a class="page-link" href="/crymagick/">CryMagick</a><a class="page-link" href="/factory/">Factory</a><a class="page-link" href="/pager/">Pager</a><a class="page-link" href="/ifrit/">Ifrit</a><a class="page-link" href="/email_opener/versions.html">email_opener</a><a class="page-link" href="/sage/versions.html">sage</a><a class="page-link" href="/flash_container.cr/versions.html">flash_container.cr</a><a class="page-link" href="/jennifer.cr/versions.html">jennifer.cr</a><a class="page-link" href="/jennifer_sqlite3_adapter/versions.html">jennifer_sqlite3_adapter</a><a class="page-link" href="/http_method_emulator/versions.html">http_method_emulator</a><a class="page-link" href="/sam.cr/versions.html">sam.cr</a><a class="page-link" href="/view_model.cr/versions.html">view_model.cr</a><a class="page-link" href="/form_object/versions.html">form_object</a><a class="page-link" href="/hermes.cr/versions.html">hermes.cr</a><a class="page-link" href="/crymagick/versions.html">crymagick</a><a class="page-link" href="/factory/versions.html">factory</a><a class="page-link" href="/pager/versions.html">pager</a><a class="page-link" href="/ifrit/versions.html">ifrit</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">ViewModel</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="viewmodel-">ViewModel <a href="https://travis-ci.org/imdrasil/view_model.cr"><img src="https://travis-ci.org/imdrasil/view_model.cr.svg" alt="Build Status" /></a></h1>
+
+<p>ViewModel pattern implementation with simple and effective form builder and view helpers.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Add this to your application’s <code class="highlighter-rouge">shard.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
+  <span class="na">view_object</span><span class="pi">:</span>
+    <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/view_model.cr</span>
+</code></pre></div></div>
+
+<p>It uses <code class="highlighter-rouge">kilt</code> for template rendering so you also need to add template engine you want to use and require it as well.</p>
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="viewmodel">ViewModel</h3>
+
+<p>Putting page rendering into action class ends with having fat helpers (like in rails) or putting a lot of view logic inside of templates. Also lack of native reusability in kilt makes you to define local variables with right name to be able to reuse them in a partials. Therefor much more suitable alternative is to have a separate class which encapsulates specific logic for a corresponding view. For such purpose this shard is created.</p>
+
+<p>To do that load ViewModel</p>
+
+<pre><code class="language-crystal">require "view_model"
+require "kilt/slang" # or any other template engine supported by kilt
+</code></pre>
+
+<p>Create a base view class:</p>
+
+<pre><code class="language-crystal">class ApplicationView &lt; ViewModel::Base
+end
+</code></pre>
+
+<p>By default layout path is <code class="highlighter-rouge">"src/views/layouts/layout.slang"</code> but this can be easily redefined by <code class="highlighter-rouge">.layout</code> macro:</p>
+
+<pre><code class="language-crystal">class ApplicationView &lt; ViewModel::Base
+  layout "app/views/layouts/layout"
+end
+</code></pre>
+
+<blockquote>
+  <p>Pay special attention - layout path doesn’t include file extension.</p>
+</blockquote>
+
+<p>If you’d like to render your view without a layout - pass <code class="highlighter-rouge">false</code> as an argument.</p>
+
+<p>Next define specified layout:</p>
+
+<pre><code class="language-slang">html
+  head
+    title Page title
+  body
+    - yield_content
+</code></pre>
+
+<p><code class="highlighter-rouge">yield_content</code> macro is just a alias for <code class="highlighter-rouge">yield(__kilt_io__)</code> - it yields <code class="highlighter-rouge">IO</code> to view <code class="highlighter-rouge">#content</code> method which renders content.</p>
+
+<p>Now we can specify a view class.</p>
+
+<pre><code class="language-crystal"># src/views/posts/show_view.cr
+module Posts
+  class ShowView &lt; ViewModel::Base
+    model post : Post
+
+    delegate :title, :content, to: post
+  end
+end
+</code></pre>
+
+<p><code class="highlighter-rouge">.model</code> macro creates getter for given attributes and generates constructor accepting them.</p>
+
+<p>Content for a post object:</p>
+
+<pre><code class="language-slang">.header
+  h3 = title
+.content
+  = content
+</code></pre>
+
+<p>By a convention this template file should be located in <code class="highlighter-rouge">&lt;view_class_folder&gt;/&lt;view_class_name_without_view/content.slang&gt;</code>, in our case it will be <code class="highlighter-rouge">src/views/posts/show/content.slang</code>.</p>
+
+<p>For a view rendering <code class="highlighter-rouge">.view</code> macro can be used - just pass view name and required arguments:</p>
+
+<pre><code class="language-crystal">view("posts/show", post)
+# or for a collection
+collection_view("posts/show", posts)
+</code></pre>
+
+<h3 id="partials">Partials</h3>
+
+<p>If you would like to define some shared templates or separate your view into several partials use <code class="highlighter-rouge">.def_partial</code> macro:</p>
+
+<pre><code class="language-crystal">module SharedPartials
+  include ViewModel::Helpers
+
+  def_partial button, color
+end
+
+module Posts
+  class ShowView &lt; ApplicationView
+    include SharedPartials
+
+    def_partial body
+  end
+end
+</code></pre>
+
+<p>If you need to define a module with partials - include <code class="highlighter-rouge">ViewModel::Helpers</code> module into it. <code class="highlighter-rouge">.def_partial</code> accepts partial name as a first argument and partial arguments as all others. All partial template paths are calculated same was as for content files of view objects. The only difference is that partial files name has a <code class="highlighter-rouge">_</code> symbol prefix: <code class="highlighter-rouge">src/views/shared_partials/_button.slang</code>.</p>
+
+<p>To render a partial use <code class="highlighter-rouge">.render_partial</code> macro:</p>
+
+<pre><code class="language-slang">.buttons
+  - render_partial :button, :read
+</code></pre>
+
+<h3 id="html-helpers">Html helpers</h3>
+
+<p>Also this shard provides HTML helper methods. All methods are automatically included in <code class="highlighter-rouge">ViewModel::Base</code>.</p>
+
+<p>Methods description:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">content_tag</code> - builds given tag with given options; could accept block for nested content</li>
+  <li><code class="highlighter-rouge">link_to</code> - builds link</li>
+  <li><code class="highlighter-rouge">label_tag</code> - builds <code class="highlighter-rouge">label</code></li>
+  <li><code class="highlighter-rouge">select_tag</code> - builds <code class="highlighter-rouge">select</code> tag; automatically generates <code class="highlighter-rouge">option</code> tags for given array</li>
+  <li><code class="highlighter-rouge">text_area_tag</code></li>
+  <li><code class="highlighter-rouge">hidden_tag</code></li>
+  <li><code class="highlighter-rouge">text_tag</code></li>
+  <li><code class="highlighter-rouge">submit_tag</code></li>
+  <li><code class="highlighter-rouge">file_tag</code></li>
+  <li><code class="highlighter-rouge">password_tag</code></li>
+  <li><code class="highlighter-rouge">email_tag</code></li>
+  <li><code class="highlighter-rouge">checkbox_tag</code></li>
+  <li><code class="highlighter-rouge">radio_tag</code></li>
+  <li><code class="highlighter-rouge">time_tag</code></li>
+  <li><code class="highlighter-rouge">date_tag</code></li>
+  <li><code class="highlighter-rouge">number_tag</code></li>
+</ul>
+
+<h4 id="formbuilder">FormBuilder</h4>
+
+<p>To build form with automatically generated names and ids of inputs :</p>
+
+<pre><code class="language-slang">- build_form(:some_form, "/posts", :post) do |f|
+    p here could be some other html
+    div
+      - f.text_field :name
+    - f.select_field :tag, [[1, "crystal"], [2, "ruby"]], 1
+    - f.submit "Save"
+</code></pre>
+
+<p><code class="highlighter-rouge">.build_form</code> macro creates <code class="highlighter-rouge">ViewModel::FormBuilder</code> and passes it to the block. Form builder provides a set of methods similar to ones described above. All inputs will get own id and class based on it’s name.</p>
+
+<p>All form builder methods manipulate <code class="highlighter-rouge">__kilt_io__</code> directly and returns <code class="highlighter-rouge">nil</code> so it isn’t important the way to call them: with <code class="highlighter-rouge">-</code>, <code class="highlighter-rouge">=</code> or <code class="highlighter-rouge">==</code>.</p>
+
+<p>If you specify a form method different from <code class="highlighter-rouge">get</code> and <code class="highlighter-rouge">post</code> - form builder will add additional hidden input with name <code class="highlighter-rouge">_method</code> for the given method and set current form method to <code class="highlighter-rouge">post</code>.</p>
+
+<h3 id="link_to">link_to</h3>
+
+<p>Also HTML helper includes <code class="highlighter-rouge">.link_to</code> macro. It allows to generate <code class="highlighter-rouge">&lt;a&gt;</code> tag with all needed data.</p>
+
+<pre><code class="language-slang">== link_to "Show", "/posts/23", { "class" =&gt; "special-link" }
+
+== link_to "/order/12" do
+  span
+    b Open
+</code></pre>
+
+<p>If you want to make a link to do a non-GET request (e.g. delete button), you can specify <code class="highlighter-rouge">method</code> argument and additionally load <code class="highlighter-rouge">libs/view_model/assets/view_model.js</code> file.</p>
+
+<pre><code class="language-slang">== link_to "delete", "/comments/56", :delete
+</code></pre>
+
+<h2 id="development">Development</h2>
+
+<p>There are still a lot of work to do. Tasks for next versions:</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />add spec matchers</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />add more html helpers</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />add array support in name generation</li>
+</ul>
+
+<h2 id="contributing">Contributing</h2>
+
+<ol>
+  <li><a href="https://github.com/imdrasil/view_model.cr/fork">Fork it</a></li>
+  <li>Create your feature branch (git checkout -b my-new-feature)</li>
+  <li>Commit your changes (git commit -am ‘Add some feature’)</li>
+  <li>Push to the branch (git push origin my-new-feature)</li>
+  <li>Create a new Pull Request</li>
+</ol>
+
+<p>Please ask me before starting work on smth.</p>
+
+<p>Also if you want to use it in your application (for now shard is almost ready for use in production) - ping me please, my email you can find in my profile.</p>
+
+<p>To run test use regular <code class="highlighter-rouge">crystal spec</code>.</p>
+
+<h2 id="contributors">Contributors</h2>
+
+<ul>
+  <li><a href="https://github.com/imdrasil">imdrasil</a> Roman Kalnytskyi - creator, maintainer</li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imdrasil Homebrew Stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Imdrasil Homebrew Stuff</li><li><a class="u-email" href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/imdrasil"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">imdrasil</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Personal site</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

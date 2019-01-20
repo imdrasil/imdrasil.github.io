@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
   <meta id="repository-name" content="github.com/imdrasil/crymagick">
-  <link href="../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../js/doc.js"></script>
   <title>CryMagick::Image - github.com/imdrasil/crymagick</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/imdrasil/crymagick/CryMagick" data-name="crymagick">
       <a href="../CryMagick.html">CryMagick</a>
@@ -35,7 +51,7 @@
       
     </li>
   
-  <li class="parent current" data-id="github.com/imdrasil/crymagick/CryMagick/Image" data-name="crymagick::image">
+  <li class="parent open current" data-id="github.com/imdrasil/crymagick/CryMagick/Image" data-name="crymagick::image">
       <a href="../CryMagick/Image.html">Image</a>
       
         <ul>
@@ -142,9 +158,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">class</span> CryMagick::Image
@@ -173,12 +191,16 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/crymagick/blob/0f28bf04e7348149b62ca459bd786b5b7ba2063c/src/crymagick/image.cr#L4" target="_blank">crymagick/image.cr</a>
+      <a href="https://github.com/imdrasil/crymagick/blob/0f28bf04e7348149b62ca459bd786b5b7ba2063c/src/crymagick/image.cr#L4" target="_blank">
+        crymagick/image.cr
+      </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/crymagick/blob/0f28bf04e7348149b62ca459bd786b5b7ba2063c/src/crymagick/image/info.cr#L4" target="_blank">crymagick/image/info.cr</a>
+      <a href="https://github.com/imdrasil/crymagick/blob/0f28bf04e7348149b62ca459bd786b5b7ba2063c/src/crymagick/image/info.cr#L4" target="_blank">
+        crymagick/image/info.cr
+      </a>
     
     <br/>
   
@@ -485,7 +507,7 @@
 
   <h2>Constructor Detail</h2>
   
-    <div class="entry-detail" id="new&#40;path:String,tempfile&#61;nil&#41;-class-method">
+    <div class="entry-detail" id="new(path:String,tempfile=nil)-class-method">
       <div class="signature">
         
         def self.<strong>new</strong>(path : String, tempfile = <span class="n">nil</span>)
@@ -506,7 +528,7 @@
 
   <h2>Class Method Detail</h2>
   
-    <div class="entry-detail" id="create&#40;ext:String?&#61;nil,validate:Bool&#61;Configuration.validate_on_create,&amp;block&#41;-class-method">
+    <div class="entry-detail" id="create(ext:String?=nil,validate:Bool=Configuration.validate_on_create,&amp;block)-class-method">
       <div class="signature">
         
         def self.<strong>create</strong>(ext : String? = <span class="n">nil</span>, validate : Bool = <span class="t">Configuration</span>.validate_on_create, &block)
@@ -524,7 +546,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="open&#40;path:String,ext:String?&#61;nil&#41;-class-method">
+    <div class="entry-detail" id="open(path:String,ext:String?=nil)-class-method">
       <div class="signature">
         
         def self.<strong>open</strong>(path : String, ext : String? = <span class="n">nil</span>)
@@ -542,7 +564,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="read&#40;file:String,ext:String&#61;&amp;quot;&amp;quot;&#41;-class-method">
+    <div class="entry-detail" id="read(file:String,ext:String=&amp;quot;&amp;quot;)-class-method">
       <div class="signature">
         
         def self.<strong>read</strong>(file : String, ext : String = <span class="s">&quot;&quot;</span>)
@@ -560,7 +582,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="read&#40;file:IO,ext:String&#61;&amp;quot;&amp;quot;&#41;-class-method">
+    <div class="entry-detail" id="read(file:IO,ext:String=&amp;quot;&amp;quot;)-class-method">
       <div class="signature">
         
         def self.<strong>read</strong>(file : IO, ext : String = <span class="s">&quot;&quot;</span>)
@@ -581,7 +603,7 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="&#61;&#61;&#40;other:Image&#41;-instance-method">
+    <div class="entry-detail" id="==(other:Image)-instance-method">
       <div class="signature">
         
         def <strong>==</strong>(other : <a href="../CryMagick/Image.html">Image</a>)
@@ -597,7 +619,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="&#91;&#93;&#40;value&#41;-instance-method">
+    <div class="entry-detail" id="[](value)-instance-method">
       <div class="signature">
         
         def <strong>[]</strong>(value)
@@ -613,7 +635,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="collapse&#33;&#40;frame:Int32&#61;0&#41;-instance-method">
+    <div class="entry-detail" id="collapse!(frame:Int32=0)-instance-method">
       <div class="signature">
         
         def <strong>collapse!</strong>(frame : Int32 = <span class="n">0</span>)
@@ -645,7 +667,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="combine_options&#40;&amp;block&#41;-instance-method">
+    <div class="entry-detail" id="combine_options(&amp;block)-instance-method">
       <div class="signature">
         
         def <strong>combine_options</strong>(&block)
@@ -661,7 +683,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="composite&#40;other_image,output_ext&#61;type.downcase,mask:String?&#61;nil,&amp;block&#41;-instance-method">
+    <div class="entry-detail" id="composite(other_image,output_ext=type.downcase,mask:String?=nil,&amp;block)-instance-method">
       <div class="signature">
         
         def <strong>composite</strong>(other_image, output_ext = <span class="k">type</span>.downcase, mask : String? = <span class="n">nil</span>, &block)
@@ -677,7 +699,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="composite&#40;other_image,output_ext&#61;type.downcase,mask:String?&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="composite(other_image,output_ext=type.downcase,mask:String?=nil)-instance-method">
       <div class="signature">
         
         def <strong>composite</strong>(other_image, output_ext = <span class="k">type</span>.downcase, mask : String? = <span class="n">nil</span>)
@@ -709,7 +731,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="destroy&#33;-instance-method">
+    <div class="entry-detail" id="destroy!-instance-method">
       <div class="signature">
         
         def <strong>destroy!</strong>
@@ -773,7 +795,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="format&#40;_format,page:String&#61;&amp;quot;0&amp;quot;,read_options:Hash&#40;String,String&#41;&#61;&#123;&#125;ofString&#61;&gt;String,&amp;block&#41;-instance-method">
+    <div class="entry-detail" id="format(_format,page:String=&amp;quot;0&amp;quot;,read_options:Hash(String,String)={}ofString=&gt;String,&amp;block)-instance-method">
       <div class="signature">
         
         def <strong>format</strong>(_format, page : String = <span class="s">&quot;0&quot;</span>, read_options : Hash(String, String) = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>, &block)
@@ -793,7 +815,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="format&#40;_format,page:String&#61;&amp;quot;0&amp;quot;,read_options:Hash&#40;String,String&#41;&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="format(_format,page:String=&amp;quot;0&amp;quot;,read_options:Hash(String,String)={}ofString=&gt;String)-instance-method">
       <div class="signature">
         
         def <strong>format</strong>(_format, page : String = <span class="s">&quot;0&quot;</span>, read_options : Hash(String, String) = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
@@ -905,7 +927,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="identify&#40;&amp;block&#41;-instance-method">
+    <div class="entry-detail" id="identify(&amp;block)-instance-method">
       <div class="signature">
         
         def <strong>identify</strong>(&block)
@@ -969,7 +991,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="mogrify&#40;page:Int32?&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="mogrify(page:Int32?=nil)-instance-method">
       <div class="signature">
         
         def <strong>mogrify</strong>(page : Int32? = <span class="n">nil</span>)
@@ -985,7 +1007,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="mogrify&#40;page:Int32?&#61;nil,&amp;block&#41;-instance-method">
+    <div class="entry-detail" id="mogrify(page:Int32?=nil,&amp;block)-instance-method">
       <div class="signature">
         
         def <strong>mogrify</strong>(page : Int32? = <span class="n">nil</span>, &block)
@@ -1033,7 +1055,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="resolution&#40;unit:String&#61;&amp;quot;&amp;quot;&#41;-instance-method">
+    <div class="entry-detail" id="resolution(unit:String=&amp;quot;&amp;quot;)-instance-method">
       <div class="signature">
         
         def <strong>resolution</strong>(unit : String = <span class="s">&quot;&quot;</span>)
@@ -1049,7 +1071,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="run_command&#40;tool_name:String,*args&#41;-instance-method">
+    <div class="entry-detail" id="run_command(tool_name:String,*args)-instance-method">
       <div class="signature">
         
         def <strong>run_command</strong>(tool_name : String, *args)
@@ -1113,7 +1135,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="tempfile&#33;-instance-method">
+    <div class="entry-detail" id="tempfile!-instance-method">
       <div class="signature">
         
         def <strong>tempfile!</strong>
@@ -1161,7 +1183,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="validate&#33;-instance-method">
+    <div class="entry-detail" id="validate!-instance-method">
       <div class="signature">
         
         def <strong>validate!</strong>
@@ -1193,7 +1215,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="write&#40;output_to:String&#41;-instance-method">
+    <div class="entry-detail" id="write(output_to:String)-instance-method">
       <div class="signature">
         
         def <strong>write</strong>(output_to : String)
@@ -1209,7 +1231,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="write&#40;output:IO&#41;-instance-method">
+    <div class="entry-detail" id="write(output:IO)-instance-method">
       <div class="signature">
         
         def <strong>write</strong>(output : IO)
@@ -1230,7 +1252,7 @@
 
   <h2>Macro Detail</h2>
   
-    <div class="entry-detail" id="attribute&#40;name,key&#61;nil&#41;-macro">
+    <div class="entry-detail" id="attribute(name,key=nil)-macro">
       <div class="signature">
         
         macro <strong>attribute</strong>(name, key = nil)
@@ -1246,7 +1268,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="method_missing&#40;call&#41;-macro">
+    <div class="entry-detail" id="method_missing(call)-macro">
       <div class="signature">
         
         macro <strong>method_missing</strong>(call)

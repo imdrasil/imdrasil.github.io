@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
   <meta id="repository-name" content="github.com/imdrasil/hermes.cr">
-  <link href="../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../js/doc.js"></script>
   <title>Hermes::Hit(T) - github.com/imdrasil/hermes.cr</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/imdrasil/hermes.cr/Hermes" data-name="hermes">
       <a href="../Hermes.html">Hermes</a>
@@ -197,9 +213,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">struct</span> Hermes::Hit(T)
@@ -232,7 +250,9 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/hermes.cr/blob/7144e11d5c1b2823f891e23e8becc1d7586ea72e/src/hermes/search_response.cr#L3" target="_blank">hermes/search_response.cr</a>
+      <a href="https://github.com/imdrasil/hermes.cr/blob/7144e11d5c1b2823f891e23e8becc1d7586ea72e/src/hermes/search_response.cr#L3" target="_blank">
+        hermes/search_response.cr
+      </a>
     
     <br/>
   
@@ -259,7 +279,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#_id-instance-method" class="signature"><strong>#_id</strong></a>
+        <a href="#_id%3AString-instance-method" class="signature"><strong>#_id</strong> : String</a>
         
       </li>
     
@@ -269,7 +289,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#_index-instance-method" class="signature"><strong>#_index</strong></a>
+        <a href="#_index%3AString-instance-method" class="signature"><strong>#_index</strong> : String</a>
         
       </li>
     
@@ -279,7 +299,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#_source-instance-method" class="signature"><strong>#_source</strong></a>
+        <a href="#_source%3AT-instance-method" class="signature"><strong>#_source</strong> : T</a>
         
       </li>
     
@@ -289,7 +309,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#_type-instance-method" class="signature"><strong>#_type</strong></a>
+        <a href="#_type%3AString-instance-method" class="signature"><strong>#_type</strong> : String</a>
         
       </li>
     
@@ -351,7 +371,7 @@
 
   <h2>Constructor Detail</h2>
   
-    <div class="entry-detail" id="new&#40;pull:JSON::PullParser&#41;-class-method">
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
       <div class="signature">
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
@@ -374,12 +394,12 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="_id-instance-method">
+    <div class="entry-detail" id="_id:String-instance-method">
       <div class="signature">
         
-        def <strong>_id</strong>
+        def <strong>_id</strong> : String
 
-        <a class="method-permalink" href="#_id-instance-method">#</a>
+        <a class="method-permalink" href="#_id%3AString-instance-method">#</a>
       </div>
       
       <br/>
@@ -388,7 +408,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="_id&#61;&#40;__id:String&#41;-instance-method">
+    <div class="entry-detail" id="_id=(__id:String)-instance-method">
       <div class="signature">
         
         def <strong>_id=</strong>(__id : String)
@@ -402,12 +422,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="_index-instance-method">
+    <div class="entry-detail" id="_index:String-instance-method">
       <div class="signature">
         
-        def <strong>_index</strong>
+        def <strong>_index</strong> : String
 
-        <a class="method-permalink" href="#_index-instance-method">#</a>
+        <a class="method-permalink" href="#_index%3AString-instance-method">#</a>
       </div>
       
       <br/>
@@ -416,7 +436,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="_index&#61;&#40;__index:String&#41;-instance-method">
+    <div class="entry-detail" id="_index=(__index:String)-instance-method">
       <div class="signature">
         
         def <strong>_index=</strong>(__index : String)
@@ -430,12 +450,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="_source-instance-method">
+    <div class="entry-detail" id="_source:T-instance-method">
       <div class="signature">
         
-        def <strong>_source</strong>
+        def <strong>_source</strong> : T
 
-        <a class="method-permalink" href="#_source-instance-method">#</a>
+        <a class="method-permalink" href="#_source%3AT-instance-method">#</a>
       </div>
       
       <br/>
@@ -444,7 +464,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="_source&#61;&#40;__source:T&#41;-instance-method">
+    <div class="entry-detail" id="_source=(__source:T)-instance-method">
       <div class="signature">
         
         def <strong>_source=</strong>(__source : T)
@@ -458,12 +478,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="_type-instance-method">
+    <div class="entry-detail" id="_type:String-instance-method">
       <div class="signature">
         
-        def <strong>_type</strong>
+        def <strong>_type</strong> : String
 
-        <a class="method-permalink" href="#_type-instance-method">#</a>
+        <a class="method-permalink" href="#_type%3AString-instance-method">#</a>
       </div>
       
       <br/>
@@ -472,7 +492,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="_type&#61;&#40;__type:String&#41;-instance-method">
+    <div class="entry-detail" id="_type=(__type:String)-instance-method">
       <div class="signature">
         
         def <strong>_type=</strong>(__type : String)
@@ -502,7 +522,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="to_json&#40;json:JSON::Builder&#41;-instance-method">
+    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
       <div class="signature">
         
         def <strong>to_json</strong>(json : JSON::Builder)

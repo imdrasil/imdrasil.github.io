@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>FormObject | Imdrasil Homebrew Stuff</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="FormObject" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal site" />
+<meta property="og:description" content="Personal site" />
+<link rel="canonical" href="https://imdrasil.github.io/form_object/" />
+<meta property="og:url" content="https://imdrasil.github.io/form_object/" />
+<meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<script type="application/ld+json">
+{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/form_object/","headline":"FormObject","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Imdrasil Homebrew Stuff</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/email_opener/">Email Opener</a><a class="page-link" href="/sage/">Sage</a><a class="page-link" href="/flash_container.cr/">flash_container</a><a class="page-link" href="/jennifer.cr/">Jennifer</a><a class="page-link" href="/jennifer_sqlite3_adapter/">Jennifer SQLite3 adapter</a><a class="page-link" href="/http_method_emulator/">http_method_emulator</a><a class="page-link" href="/sam.cr/">Sam</a><a class="page-link" href="/view_model.cr/">ViewModel</a><a class="page-link" href="/form_object/">FormObject</a><a class="page-link" href="/hermes.cr/">Hermes</a><a class="page-link" href="/crymagick/">CryMagick</a><a class="page-link" href="/factory/">Factory</a><a class="page-link" href="/pager/">Pager</a><a class="page-link" href="/ifrit/">Ifrit</a><a class="page-link" href="/email_opener/versions.html">email_opener</a><a class="page-link" href="/sage/versions.html">sage</a><a class="page-link" href="/flash_container.cr/versions.html">flash_container.cr</a><a class="page-link" href="/jennifer.cr/versions.html">jennifer.cr</a><a class="page-link" href="/jennifer_sqlite3_adapter/versions.html">jennifer_sqlite3_adapter</a><a class="page-link" href="/http_method_emulator/versions.html">http_method_emulator</a><a class="page-link" href="/sam.cr/versions.html">sam.cr</a><a class="page-link" href="/view_model.cr/versions.html">view_model.cr</a><a class="page-link" href="/form_object/versions.html">form_object</a><a class="page-link" href="/hermes.cr/versions.html">hermes.cr</a><a class="page-link" href="/crymagick/versions.html">crymagick</a><a class="page-link" href="/factory/versions.html">factory</a><a class="page-link" href="/pager/versions.html">pager</a><a class="page-link" href="/ifrit/versions.html">ifrit</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">FormObject</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="formobject---">FormObject <a href="https://travis-ci.org/imdrasil/form_object"><img src="https://travis-ci.org/imdrasil/form_object.svg" alt="Build Status" /></a> <a href="https://github.com/imdrasil/form_object/releases"><img src="https://img.shields.io/github/release/imdrasil/form_object.svg" alt="Latest Release" /></a> <a href="https://imdrasil.github.io/form_object/versions"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs" /></a></h1>
+
+<p>This shard gives you an opportunity to separate form data from your model. Also you can move ny data-specific validation to form object level and be free from coercing data from the request instance - it will take care of it.</p>
+
+<blockquote>
+  <p>ATM FormObject is designed to be used in air with <a href="https://github.com/imdrasil/jennifer.cr">Jennifer</a> ORM but can be also used as ORM-agnostic tool but with some limitations.</p>
+</blockquote>
+
+<h2 id="installation">Installation</h2>
+
+<p>Add this to your application’s <code class="highlighter-rouge">shard.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
+  <span class="na">form_object</span><span class="pi">:</span>
+    <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/form_object</span>
+</code></pre></div></div>
+
+<h2 id="usage">Usage</h2>
+
+<p>Require FromObject somewhere after Jennifer:</p>
+
+<pre><code class="language-crystal">require "jennifer"
+# ...
+require "form_object"
+require "form_object/coercer/pg" # if you are going to use PG::Numeric
+</code></pre>
+
+<p>Also it is important to notice that <code class="highlighter-rouge">form_object</code> modifies <code class="highlighter-rouge">HTTP::Request</code> core class to store body in private variable <code class="highlighter-rouge">@cached_body : IO::Memory?</code> of maximum size 1 GB. This is done because to allow request body multiple reading.</p>
+
+<h3 id="defining-form">Defining Form</h3>
+
+<p>Forms are defined in the separate classes. Often (but not necessary) these classes are pretty similar to related models:</p>
+
+<pre><code class="language-crystal">class PostForm &lt; FormObject::Base(Post)
+  attr :title, String
+end
+</code></pre>
+
+<p>Use <code class="highlighter-rouge">.attr</code> macro to define a field.</p>
+
+<p>Also you can specify <a href="https://github.com/imdrasil/jennifer.cr/blob/master/docs/validation.md">any validation</a> supported by Jennifer model.</p>
+
+<pre><code class="language-crystal">class PostForm &lt; FormObject::Base(Post)
+  attr :title, String
+
+  validates_length :title, in: 1...255
+end
+
+f = PostForm.new(Post.new)
+f.title = "a" * 255
+f.valid? # false
+f.errors # Jennifer::Model::Errors
+</code></pre>
+
+<p>Resource model translation messages are used for the form.</p>
+
+<h4 id="nesting">Nesting</h4>
+
+<p>To define nested object use <code class="highlighter-rouge">.object</code> macro:</p>
+
+<pre><code class="language-crystal">class AddressForm &lt; FormObject::Base(Address)
+  attr :street, Address
+end
+
+class ContactForm &lt; FormObject::Base(Contact)
+  object :address, Address
+end
+</code></pre>
+
+<p>For collection use <code class="highlighter-rouge">.collection</code> macro.</p>
+
+<h5 id="populators">Populators</h5>
+
+<p>In <code class="highlighter-rouge">#verify</code>, nested hash is passed. Form object by default will try to match nested hashes to the nested forms. But sometimes the incoming hash and the existing object graph are not matching 1-to-1. That’s where populators will help you.</p>
+
+<p>You have to declare a populator when the form has to deserialize nested input. ATM populator may be only a method name.</p>
+
+<p>Populator is called only if an incoming part for particular object is present.</p>
+
+<pre><code class="language-crystal"># request with { addresses: [{ :street =&gt; "Some street" }]} payload
+form.verify(request) # will call populator once
+# request with { addresses: [] of String} payload
+form.verify(request) # will not call populator
+</code></pre>
+
+<p>Populator for collection is executed for every collection part in the incoming hash.</p>
+
+<pre><code class="language-crystal">class ContactForm &lt; FormObject::Base(Contact)
+  collection :addresses, Address, populator: :address_populator
+
+  def address_populator(collection, index, **opts)
+    if item = collection[index]?
+      item
+    else
+      item = AddressForm.new(Address.new({contact_id: resource.id}))
+      collection &lt;&lt; item
+      item
+    end
+  end
+</code></pre>
+
+<p>This populator checks if a nested form is already existing by using <code class="highlighter-rouge">collection[index]?</code>. While the <code class="highlighter-rouge">index</code> argument represents where we are in the incoming array traversal, <code class="highlighter-rouge">collection</code> is identical to <code class="highlighter-rouge">self.addresses</code>.</p>
+
+<p>It is very important that each populator invocation returns the <em>form</em> not the model.</p>
+
+<h5 id="delete">Delete</h5>
+
+<p>Populators can not only create, but also destroy. Let’s say the following input is passed in.</p>
+
+<pre><code class="language-crystal"># request with the { addresses: [{:street =&gt; "Street", :id =&gt; 2, :_delete =&gt; "1" }] } payload
+form.verify(request)
+</code></pre>
+
+<p>You can implement your own deletion:</p>
+
+<pre><code class="language-crystal">class ContactForm &lt; FormObject::Base(Contact)
+  collection :addresses, Address, populator: :address_populator
+
+  property ids_to_destroy : Array(Int32)
+
+  def address_populator(context, **opts)
+    item = addresses.find { |address| address.id == context["id"] }
+
+    if context["_delete"]
+      addresses.delete(item)
+      ids_to_destroy &lt;&lt; item.id
+      skip
+    end
+
+    if item
+      item
+    else
+      item = AddressForm.new(Address.new)
+      collection &lt;&lt; item
+      item
+    end
+  end
+
+  def persist
+    super.tap do |result|
+      next unless result
+      ids = ids_to_destroy
+      Address.where { _id.in(ids) }.destroy
+    end
+  end
+end
+</code></pre>
+
+<h5 id="skip">Skip</h5>
+
+<p>Populators can skip processing of a part by invoking <code class="highlighter-rouge">#skip</code>. This method raises <code class="highlighter-rouge">FormObject::SkipException</code> which makes form object to ignore particular part.</p>
+
+<h4 id="reusability">Reusability</h4>
+
+<p>To reuse common attributes or functionality you can use modules inclusion and inheritance:</p>
+
+<pre><code class="language-crystal">module PostTitle
+  include FormObject::Module
+
+  attr :title, String
+end
+
+module PostText
+  include FormObject::Module
+
+  attr :text, String
+end
+
+module BasePostAttributes
+  include PostTitle
+  include PostText
+end
+
+class PostForm &lt; FormObject::Base(Post)
+  include BasePostAttributes
+
+  attr :release_date, Time
+
+  validates_length :title, in: 1...255
+end
+
+class AdvancedPostForm &lt; PostForm
+  attr :likes, Int32
+end
+</code></pre>
+
+<h3 id="create-form">Create Form</h3>
+
+<pre><code class="language-crystal">class PostsController &lt; ApplicationController
+  def edit
+    @form = PostForm.new(Post.find!(params["id"]))
+    render("edit.slang")
+  end
+end
+</code></pre>
+
+<p>Form will automatically read attributes from the model.</p>
+
+<h3 id="validation">Validation</h3>
+
+<p>To save model you should validate input data:</p>
+
+<pre><code class="language-crystal">class PostsController &lt; ApplicationController
+  def create
+    @form = PostForm.new(Post.new)
+    if @form.verify(request) &amp;&amp; @form.save
+      flash["success"] = "Created Post successfully."
+      redirect_to "/posts"
+    else
+      flash["danger"] = "Could not create Post!"
+      render("new.slang")
+    end
+  end
+end
+</code></pre>
+
+<p>The <code class="highlighter-rouge">#verify</code> method parses data from the given request object and updates form attributes - the underlying model at this step remains unchanged. Next if runs defined validations and returns whether they succeed.</p>
+
+<h3 id="data-synching">Data Synching</h3>
+
+<p>After validation you can call <code class="highlighter-rouge">#save</code> (as in example above) and let FormObject take care of model persistence. Also you can use <code class="highlighter-rouge">#sync</code> to only write attributes from form to the resource and do everything else by your own.</p>
+
+<h4 id="custom-persistence-mechanism">Custom Persistence Mechanism</h4>
+
+<p>You can define your own way of model persistence at the form level implementing own <code class="highlighter-rouge">#persist</code> method:</p>
+
+<pre><code class="language-crystal">class PostForm &lt; FormObject::Base(Post)
+  attr :title, String
+
+  def persist
+    resource.save
+    # some other logic goes here
+  end
+end
+</code></pre>
+
+<h2 id="contributing">Contributing</h2>
+
+<ol>
+  <li>Fork it (<a href="https://github.com/imdrasil/form_object/fork">https://github.com/imdrasil/form_object/fork</a>)</li>
+  <li>Create your feature branch (<code class="highlighter-rouge">git checkout -b my-new-feature</code>)</li>
+  <li>Commit your changes (<code class="highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
+  <li>Push to the branch (<code class="highlighter-rouge">git push origin my-new-feature</code>)</li>
+  <li>Create a new Pull Request</li>
+</ol>
+
+<h2 id="contributors">Contributors</h2>
+
+<blockquote>
+  <p>FormObject is heavily inspired by <a href="https://github.com/trailblazer/reform">reform</a> ruby gem.</p>
+</blockquote>
+
+<ul>
+  <li><a href="https://github.com/imdrasil">imdrasil</a> Roman Kalnytskyi - creator, maintainer</li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imdrasil Homebrew Stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Imdrasil Homebrew Stuff</li><li><a class="u-email" href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/imdrasil"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">imdrasil</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Personal site</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

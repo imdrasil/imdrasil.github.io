@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
   <meta id="repository-name" content="github.com/imdrasil/hermes.cr">
-  <link href="../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../js/doc.js"></script>
   <title>Hermes::Client - github.com/imdrasil/hermes.cr</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/imdrasil/hermes.cr/Hermes" data-name="hermes">
       <a href="../Hermes.html">Hermes</a>
@@ -197,9 +213,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">class</span> Hermes::Client
@@ -228,7 +246,9 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/hermes.cr/blob/7144e11d5c1b2823f891e23e8becc1d7586ea72e/src/hermes/client.cr#L2" target="_blank">hermes/client.cr</a>
+      <a href="https://github.com/imdrasil/hermes.cr/blob/7144e11d5c1b2823f891e23e8becc1d7586ea72e/src/hermes/client.cr#L2" target="_blank">
+        hermes/client.cr
+      </a>
     
     <br/>
   
@@ -360,7 +380,7 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="delete&#40;url,headers&#61;nil,body&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="delete(url,headers=nil,body=nil)-instance-method">
       <div class="signature">
         
         def <strong>delete</strong>(url, headers = <span class="n">nil</span>, body = <span class="n">nil</span>)
@@ -376,7 +396,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="delete&#33;&#40;url,headers&#61;nil,body&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="delete!(url,headers=nil,body=nil)-instance-method">
       <div class="signature">
         
         def <strong>delete!</strong>(url, headers = <span class="n">nil</span>, body = <span class="n">nil</span>)
@@ -392,7 +412,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="get&#40;url,headers&#61;nil,body&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="get(url,headers=nil,body=nil)-instance-method">
       <div class="signature">
         
         def <strong>get</strong>(url, headers = <span class="n">nil</span>, body = <span class="n">nil</span>)
@@ -408,7 +428,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="get&#33;&#40;url,headers&#61;nil,body&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="get!(url,headers=nil,body=nil)-instance-method">
       <div class="signature">
         
         def <strong>get!</strong>(url, headers = <span class="n">nil</span>, body = <span class="n">nil</span>)
@@ -440,7 +460,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="http&#61;&#40;http&#41;-instance-method">
+    <div class="entry-detail" id="http=(http)-instance-method">
       <div class="signature">
         
         def <strong>http=</strong>(http)
@@ -456,7 +476,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="post&#40;url,headers&#61;nil,body&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="post(url,headers=nil,body=nil)-instance-method">
       <div class="signature">
         
         def <strong>post</strong>(url, headers = <span class="n">nil</span>, body = <span class="n">nil</span>)
@@ -472,7 +492,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="post&#33;&#40;url,headers&#61;nil,body&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="post!(url,headers=nil,body=nil)-instance-method">
       <div class="signature">
         
         def <strong>post!</strong>(url, headers = <span class="n">nil</span>, body = <span class="n">nil</span>)
@@ -488,7 +508,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="put&#40;url,headers&#61;nil,body&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="put(url,headers=nil,body=nil)-instance-method">
       <div class="signature">
         
         def <strong>put</strong>(url, headers = <span class="n">nil</span>, body = <span class="n">nil</span>)
@@ -504,7 +524,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="put&#33;&#40;url,headers&#61;nil,body&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="put!(url,headers=nil,body=nil)-instance-method">
       <div class="signature">
         
         def <strong>put!</strong>(url, headers = <span class="n">nil</span>, body = <span class="n">nil</span>)

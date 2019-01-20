@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/pager">
+  <title>README - github.com/imdrasil/pager</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/pager/Array" data-name="array(t)">
+      <a href="Array.html">Array</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/pager/Jennifer" data-name="jennifer">
+      <a href="Jennifer.html">Jennifer</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/pager/Jennifer/QueryBuilder" data-name="jennifer::querybuilder">
+      <a href="Jennifer/QueryBuilder.html">QueryBuilder</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/pager/Jennifer/QueryBuilder/ModelQuery" data-name="jennifer::querybuilder::modelquery(t)">
+      <a href="Jennifer/QueryBuilder/ModelQuery.html">ModelQuery</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/pager/Pager" data-name="pager">
+      <a href="Pager.html">Pager</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/pager/Pager/ArrayCollection" data-name="pager::arraycollection(t)">
+      <a href="Pager/ArrayCollection.html">ArrayCollection</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/pager/Pager/Bootstrap" data-name="pager::bootstrap">
+      <a href="Pager/Bootstrap.html">Bootstrap</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/pager/Pager/Collection" data-name="pager::collection">
+      <a href="Pager/Collection.html">Collection</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/pager/Pager/EmptyCollection" data-name="pager::emptycollection">
+      <a href="Pager/EmptyCollection.html">EmptyCollection</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/pager/Pager/JenniferCollection" data-name="pager::jennifercollection(t)">
+      <a href="Pager/JenniferCollection.html">JenniferCollection</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/pager/Pager/LinkBuilder" data-name="pager::linkbuilder">
+      <a href="Pager/LinkBuilder.html">LinkBuilder</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/pager/Pager/Presenter" data-name="pager::presenter">
+      <a href="Pager/Presenter.html">Presenter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/pager/Pager/ViewHelper" data-name="pager::viewhelper">
+      <a href="Pager/ViewHelper.html">ViewHelper</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1>Pager</h1>
+
+<p>Easy to use paginator for modern crystal web framework.</p>
+
+<h2>Installation</h2>
+
+<ol><li>Add the dependency to your <code>shard.yml</code>:</li></ol>
+
+<pre><code class="language-yaml">dependencies:
+  pager:
+    github: imdrasil/pager</code></pre>
+
+<ol><li>Run <code>shards install</code></li></ol>
+
+<p>Also if you use default bootstrap presenter ensure that you've added appropriate css to your project from the CDN or directly in the code.</p>
+
+<h2>Usage</h2>
+
+<p>Pager provides two basic container: for <code><a href="Array.html">Array</a></code> and <code><a href="Jennifer/QueryBuilder/ModelQuery.html">Jennifer::QueryBuilder::ModelQuery</a></code>. Also it includes basic bootstrap presenter, which is the default presenter.</p>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;pager&quot;</span>
+<span class="k">require</span> <span class="s">&quot;pager/collections/array&quot;</span> <span class="c"># for arrays</span>
+<span class="k">require</span> <span class="s">&quot;pager/collections/jennifer&quot;</span> <span class="c"># for Jennifer collections</span></code></pre>
+
+<p>Collection objects responds to <code>#each</code> method which yield objects in the collection so you can easily iterate over them.</p>
+
+<h3>Array</h3>
+
+<p><code><a href="Pager/ArrayCollection.html">Pager::ArrayCollection</a></code> extends <code><a href="Array.html">Array</a></code> with new <code>#paginate</code> method, which accepts current page and count of elements on each one.</p>
+
+<pre><code class="language-crystal">(<span class="n">1</span>..<span class="n">21</span>).to_a.paginate(<span class="n">1</span>, <span class="n">4</span>) <span class="c"># [5, 6, 7, 8]</span></code></pre>
+
+<h3>Jennifer</h3>
+
+<p><code><a href="Pager/JenniferCollection.html">Pager::JenniferCollection</a></code> extends <code><a href="Jennifer/QueryBuilder/ModelQuery.html">Jennifer::QueryBuilder::ModelQuery</a></code> with <code>#paginate</code> methods which accepts current page number and count of records in a page. This method is executable one so should be the last one in a chain.</p>
+
+<pre><code class="language-crystal"><span class="t">User</span>.all.where { _active }.paginate(<span class="n">1</span>, <span class="n">4</span>)</code></pre>
+
+<h3>Configuration</h3>
+
+<pre><code class="language-crystal"><span class="t">Pager</span>.configure <span class="k">do</span> <span class="o">|</span>config<span class="o">|</span>
+  config.default_presenter <span class="o">=</span> <span class="t">Pager</span><span class="t">::</span><span class="t">Bootstrap</span>
+  config.visible_pages <span class="o">=</span> <span class="n">7</span>
+  config.per_page <span class="o">=</span> <span class="n">20</span>
+<span class="k">end</span></code></pre>
+
+<p>Available configurations:</p>
+
+<ul><li><code>default_presenter</code> - presenter class to be used by <code>ViewHelper#paginate</code></li><li><code>visible_pages</code> - number of page links generated by <code>ViewHelper#paginate</code></li><li><code>per_page</code> - default number of pages for collection</li></ul>
+
+<h3>View</h3>
+
+<p>To render navigation section include <code><a href="Pager/ViewHelper.html">Pager::ViewHelper</a></code> to appropriate context and call <code>#paginate</code> method passing collection, path to be used to generate links and number of visible pages.</p>
+
+<pre><code class="language-erb">&lt;%= paginate((1..100).collection(1, 5), "/", 3) %></code></pre>
+
+<p>Will generate next html:</p>
+
+<pre><code class="language-html">&lt;nav>
+  &lt;ul class='pagination'>
+    &lt;li class="page-item ">
+      &lt;a class="page-link" href="/?page=0" aria-label="Previous">
+        &lt;span class="sr-only">Previous&lt;/span>
+        &lt;span aria-hidden="true">&lsaquo; Previous&lt;/span>
+      &lt;/a>
+    &lt;/li>
+    &lt;li class='page-item '>
+      &lt;a class='page-link' href='/?page=0'>1&lt;/a>
+    &lt;/li>
+    &lt;li class='page-item disabled'>
+      &lt;a class='page-link' href='#'>2&lt;/a>
+    &lt;/li>
+    &lt;li class='page-item '>
+      &lt;a class='page-link' href='/?page=2'>3&lt;/a>
+    &lt;/li>
+    &lt;li class="page-item ">
+      &lt;a class="page-link" href="/?page=2" aria-label="Next">
+        &lt;span class="sr-only">Next&lt;/span>
+        &lt;span aria-hidden="true">Next &rsaquo;&lt;/span>
+      &lt;/a>
+    &lt;/li>
+  &lt;/ul>
+&lt;/nav></code></pre>
+
+<p>As you can see page is added as a GET parameter <code>page</code>. If query already has some GET parameter this will be recognized and <code>page</code> will be added to the end.</p>
+
+<h3>Translation</h3>
+
+<p>The default labels for the "next" and "previous" texts are stored in the i18n yaml. It can be easily override. Here is existing translation file:</p>
+
+<pre><code class="language-yaml">pager:
+  previous_label: "&lsaquo; Previous"
+  next_label: "Next &rsaquo;"</code></pre>
+
+<p>For the translation purpose <code>TechMagister/i18n.cr</code> library is used.</p>
+
+<h2>Development</h2>
+
+<h3>Presenter</h3>
+
+<p>TBA. Take a look at existing <a href="./src/pager/presenters/bootstrap.cr" target="_blank">bootstrap</a> presenter implementation.</p>
+
+<h3>Collection</h3>
+
+<p>TBA. Take a look at existing <a href="./src/pager/collections/array.cr" target="_blank">array</a> presenter implementation.</p>
+
+<h2>Contributing</h2>
+
+<ol><li>Fork it (&lt;https://github.com/imdrasil/pager/fork>)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
+
+<h2>Contributors</h2>
+
+<ul><li><a href="https://github.com/imdrasil" target="_blank">Roman Kalnytskyi</a> - creator and maintainer</li></ul>
+</div>
+</body>
+</html>

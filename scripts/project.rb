@@ -1,9 +1,12 @@
+# Project to be published.
 class Project
   KEEP_COUNT = 5
 
   attr_accessor :site, :new_versions, :name
 
-  def initialize(name: nil, uri: nil, after_deploy: nil, versions_file: true, doc_builder:, scip_versions: [])
+  attr_reader :skip_versions
+
+  def initialize(name: nil, uri: nil, after_deploy: nil, versions_file: true, doc_builder:, skip_versions: [])
     @uri = uri
     @name = name
     @site = nil
@@ -11,7 +14,7 @@ class Project
     @new_versions = []
     @after_deploy = after_deploy
     @versions_file = versions_file
-    @scip_versions = scip_versions
+    @skip_versions = skip_versions
   end
 
   def uri
@@ -32,9 +35,7 @@ class Project
 
   def install_shards
     result = `shards install`
-    if result =~ /Please run shards update instead/
-      `shards update`
-    end
+    `shards update` if result =~ /Please run shards update instead/
   end
 
   def build_docs
@@ -55,10 +56,10 @@ class Project
         current_deep = File.join(deep, "..")
         build(current_deep)
 
-        gv = NaturalSort.sort(Git.versions - @scip_versions).reverse!
+        gv = NaturalSort.sort(Git.versions - skip_versions).reverse!
         @new_versions = gv[0...KEEP_COUNT] - versions
 
-        #binding.pry
+        # binding.pry
 
         new_versions.each do |v|
           build(current_deep, v)
@@ -66,7 +67,8 @@ class Project
 
         # binding.pry
         (versions![KEEP_COUNT..-1] || []).each do |v|
-          FileUtils.rm_r(File.join(current_deep, @name, v))
+          path = File.join(current_deep, @name, v)
+          FileUtils.rm_r(path) if Dir.exists?(path)
         end
       end
     end
@@ -147,30 +149,34 @@ class Project
   end
 
   def add_versions_file
-    versions_file_path = File.join(target_path, "versions.md")
-    b = binding
     File.open(versions_file_path, "w") do |f|
-      f << ERB.new(versions_file_template).result(b)
+      f << ERB.new(versions_file_template).result(binding)
     end
   end
 
-  def versions_file_template
-    template =
-      <<~'MARKDOWN'
-      Available documentation versions:
+  def versions_file_path
+    File.join(target_path, "versions.md")
+  end
 
-      - [latest](./latest)
-      <% versions.each do |v| %>
-      - [<%= v %>](<%= "./#{v}" %>)
-      <% end %>
-      MARKDOWN
+  def versions_file_template
     <<~MARKDOWN
     ---
     layout: default
     ---
     # #{@name}
 
-    #{template}  
+    #{versions_markup}
+    MARKDOWN
+  end
+
+  def versions_markup
+    <<~'MARKDOWN'
+    Available documentation versions:
+
+    - [latest](./latest)
+    <% versions.each do |v| %>
+    - [<%= v %>](<%= "./#{v}" %>)
+    <% end %>
     MARKDOWN
   end
 end

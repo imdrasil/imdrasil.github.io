@@ -1,10 +1,10 @@
 class Jennifer < Project
-  BUILD_COMMAND = "crystal doc ./src/jennifer.cr ./src/jennifer/adapter/mysql.cr ./src/jennifer/adapter/postgres.cr -o ./doc" 
+  BUILD_COMMAND = "crystal doc ./src/jennifer.cr ./src/jennifer/adapter/mysql.cr ./src/jennifer/adapter/postgres.cr -o ./doc"
 
   def initialize
-    # super(name: "jennifer.cr", doc_builder: "sh generate-docs.sh")
+    super(name: "jennifer.cr", doc_builder: "sh generate-docs.sh")
     # TODO: temporary solution
-    super(name: "jennifer.cr", doc_builder: BUILD_COMMAND)
+    # super(name: "jennifer.cr", doc_builder: BUILD_COMMAND)
   end
 
   def process_after_deploy
@@ -61,16 +61,16 @@ class Jennifer < Project
   def versions_file_template
     super +
       <<~MD
-      > All versions up to 0.5.0 represent documentations for PostgreSQL adapter. For MySQL one - please compile 
+      > All versions up to 0.5.0 present documentations for PostgreSQL adapter. For MySQL one - please compile
       it locally as described in the [README](./index#documentation) file.
       MD
   end
 
   def header
-    @common_header ||= 
+    @common_header ||=
       begin
         b = binding
-        template = 
+        template =
           <<~'HTML'
           <header class="site-header" role="banner">
             <div class="wrapper">

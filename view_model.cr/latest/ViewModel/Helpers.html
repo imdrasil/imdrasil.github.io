@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/view_model.cr">
+  <title>ViewModel::Helpers - github.com/imdrasil/view_model.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/view_model.cr/ViewModel" data-name="viewmodel">
+      <a href="../ViewModel.html">ViewModel</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/view_model.cr/ViewModel/Base" data-name="viewmodel::base">
+      <a href="../ViewModel/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/view_model.cr/ViewModel/Config" data-name="viewmodel::config">
+      <a href="../ViewModel/Config.html">Config</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/view_model.cr/ViewModel/FormBuilder" data-name="viewmodel::formbuilder">
+      <a href="../ViewModel/FormBuilder.html">FormBuilder</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/view_model.cr/ViewModel/FormTags" data-name="viewmodel::formtags">
+      <a href="../ViewModel/FormTags.html">FormTags</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/view_model.cr/ViewModel/FormTags/SHash" data-name="viewmodel::formtags::shash">
+      <a href="../ViewModel/FormTags/SHash.html">SHash</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/imdrasil/view_model.cr/ViewModel/Helpers" data-name="viewmodel::helpers">
+      <a href="../ViewModel/Helpers.html">Helpers</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> ViewModel::Helpers
+
+</h1>
+
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Includes all UI helper methods like tag helpers, partial definition and rendering.</p>
+
+<p><span class="flag purple">NOTE</span>  if you would like to make several level of module inclusion you should include this module
+in each module in a hierarchy.</p>
+
+
+
+
+
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../ViewModel/FormTags.html">ViewModel::FormTags</a></li>
+  
+  </ul>
+
+
+
+
+
+
+
+  <h2>Direct including types</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../ViewModel/Base.html">ViewModel::Base</a></li>
+  
+  </ul>
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/helpers.cr#L8" target="_blank">
+        view_model/helpers.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Macro Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#build_form%28name%2Curl%2Chtml_options%3D%7B%7DofString%3D%3EString%2Cmethod%3D%3Apost%2Cio_variable%3D__kilt_io__%29-macro" class="signature"><strong>build_form</strong>(name, url, html_options = {} of String => String, method = :post, io_variable = __kilt_io__)</a>
+        
+          <div class="summary"><p>Creates form builder and yields it to the block.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#def_partial%28name%2C%2Aargs%29-macro" class="signature"><strong>def_partial</strong>(name, *args)</a>
+        
+          <div class="summary"><p>Defines method for rendering partial.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#link_to%28path%2Ctext%3D%22%22%2Chtml_options%3D%7B%7DofString%3D%3EString%2Cmethod%3Dnil%2Cio_variable%3D__kilt_io__%29-macro" class="signature"><strong>link_to</strong>(path, text = "", html_options = {} of String => String, method = nil, io_variable = __kilt_io__)</a>
+        
+          <div class="summary"><p>Creates a link tag of the given <em>text</em> using URL given in the <em>path</em> argument.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render_partial%28name%2C%2Aargs%29-macro" class="signature"><strong>render_partial</strong>(name, *args)</a>
+        
+          <div class="summary"><p>Renders partial with name <em>name</em> and passes <em>args</em> to it.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../ViewModel/FormTags.html">ViewModel::FormTags</a></code></h3>
+  
+  
+    <a href="../ViewModel/FormTags.html#checkbox_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>checkbox_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>checkbox_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    checkbox_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#content_tag%28io%3AString%3A%3ABuilder%2Ctag%2Chtml_options%3DSHash.new%29-instance-method" class="tooltip">
+      <span>content_tag(io : String::Builder, tag, html_options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>content_tag(tag, html_options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)<br/>content_tag(io : String::Builder, tag, html_options = <span class="t">SHash</span>.<span class="k">new</span>, &block)<br/>content_tag(tag, html_options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>, &block)</span>
+    content_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#date_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>date_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>date_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    date_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#email_tag%28io%3AString%3A%3ABuilder%2Cname%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>email_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>email_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    email_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#file_tag%28io%3AString%3A%3ABuilder%2Cname%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>file_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>file_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    file_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#hidden_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>hidden_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>hidden_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    hidden_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#label_tag%28io%3AString%3A%3ABuilder%2Cfor%3ASymbol%7CString%3F%3Dnil%2Chtml_options%3DSHash.new%2C%26block%29-instance-method" class="tooltip">
+      <span>label_tag(io : String::Builder, for : Symbol | String? = <span class="n">nil</span>, html_options = <span class="t">SHash</span>.<span class="k">new</span>, &block)<br/>label_tag(io : String::Builder, text, for : Symbol | String? = <span class="n">nil</span>, html_options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>label_tag(text, for : Symbol | String? = <span class="n">nil</span>, html_options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)<br/>label_tag(for : Symbol | String? = <span class="n">nil</span>, html_options = <span class="t">SHash</span>.<span class="k">new</span>, &block)</span>
+    label_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#number_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>number_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>number_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    number_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#password_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>password_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>password_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    password_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#radio_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>radio_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>radio_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    radio_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#select_tag%28io%3AString%3A%3ABuilder%2Cname%3AString%7CSymbol%2Coptions%3AArray%28Array%29%2Cvalue%3Dnil%2Chtml_options%3DSHash.new%29-instance-method" class="tooltip">
+      <span>select_tag(io : String::Builder, name : String | Symbol, options : Array(Array), value = <span class="n">nil</span>, html_options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>select_tag(name, options : Array(Array), value = <span class="n">nil</span>, html_options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
+    select_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#submit_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>submit_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>submit_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    submit_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#text_area_tag%28io%3AString%3A%3ABuilder%2Cname%2Ctext%3D%26quot%3B%26quot%3B%2Chtml_options%3D%7B%7DofString%3D%3EString%29-instance-method" class="tooltip">
+      <span>text_area_tag(io : String::Builder, name, text = <span class="s">&quot;&quot;</span>, html_options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)<br/>text_area_tag(name, text = <span class="s">&quot;&quot;</span>, html_options = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
+    text_area_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#text_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>text_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>text_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    text_tag</a>, 
+    
+  
+    <a href="../ViewModel/FormTags.html#time_tag%28name%3AString%7CSymbol%2Cvalue%3Dnil%2Coptions%3DSHash.new%29-instance-method" class="tooltip">
+      <span>time_tag(name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)<br/>time_tag(io : String::Builder, name : String | Symbol, value = <span class="n">nil</span>, options = <span class="t">SHash</span>.<span class="k">new</span>)</span>
+    time_tag</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <h2>Macro Detail</h2>
+  
+    <div class="entry-detail" id="build_form(name,url,html_options={}ofString=&gt;String,method=:post,io_variable=__kilt_io__)-macro">
+      <div class="signature">
+        
+        macro <strong>build_form</strong>(name, url, html_options = {} of String => String, method = :post, io_variable = __kilt_io__)
+
+        <a class="method-permalink" href="#build_form%28name%2Curl%2Chtml_options%3D%7B%7DofString%3D%3EString%2Cmethod%3D%3Apost%2Cio_variable%3D__kilt_io__%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates form builder and yields it to the block.</p>
+
+<p>It is important not to print macro invocation to the general builder.</p>
+
+<pre><code class="language-text">- build_form :session, { "class" => "form new-form" } do |f|
+  p
+    - f.label :email, "Email"
+    - f.email_field :email
+  p
+    - f.label :password, "Password"
+    - f.password_field :password</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/helpers.cr#L93" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="def_partial(name,*args)-macro">
+      <div class="signature">
+        
+        macro <strong>def_partial</strong>(name, *args)
+
+        <a class="method-permalink" href="#def_partial%28name%2C%2Aargs%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>Defines method for rendering partial.</p>
+
+<pre><code><span class="k">module</span> <span class="t">Partials</span>
+  <span class="k">include</span> <span class="t">ViewModel</span><span class="t">::</span><span class="t">Helpers</span>
+
+  def_partial <span class="n">:without_argument</span>
+
+  def_partial <span class="n">:with</span>, argument
+<span class="k">end</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/helpers.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="link_to(path,text=&quot;&quot;,html_options={}ofString=&gt;String,method=nil,io_variable=__kilt_io__)-macro">
+      <div class="signature">
+        
+        macro <strong>link_to</strong>(path, text = "", html_options = {} of String => String, method = nil, io_variable = __kilt_io__)
+
+        <a class="method-permalink" href="#link_to%28path%2Ctext%3D%22%22%2Chtml_options%3D%7B%7DofString%3D%3EString%2Cmethod%3Dnil%2Cio_variable%3D__kilt_io__%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a link tag of the given <em>text</em> using URL given in the <em>path</em> argument.</p>
+
+<p>You can pass a block instead of <em>text</em></p>
+
+<pre><code class="language-text">- link_to "/users/2", "First Last Name", { "class" => "btn btn-small" }
+
+- link_to "/users/2", "delete", method: :delete
+
+- link_to "/users/2" do
+  span Open</code></pre>
+
+<p><em>method</em> option allows to make a <code>DELETE</code> request. Also to achieve this you should include js script
+located in the <code>assets</code> directory.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/helpers.cr#L72" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render_partial(name,*args)-macro">
+      <div class="signature">
+        
+        macro <strong>render_partial</strong>(name, *args)
+
+        <a class="method-permalink" href="#render_partial%28name%2C%2Aargs%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>Renders partial with name <em>name</em> and passes <em>args</em> to it.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/view_model.cr/blob/b0e61056aba0996fb210678a3e3dd52ebb3eabda/src/view_model/helpers.cr#L53" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>

@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
   <meta id="repository-name" content="github.com/imdrasil/sam.cr">
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="js/doc.js"></script>
   <title>Sam - github.com/imdrasil/sam.cr</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
-  <li class="parent current" data-id="github.com/imdrasil/sam.cr/Sam" data-name="sam">
+  <li class="parent open current" data-id="github.com/imdrasil/sam.cr/Sam" data-name="sam">
       <a href="Sam.html">Sam</a>
       
         <ul>
@@ -62,9 +78,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">module</span> Sam
@@ -91,27 +109,37 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/sam.cr/blob/7672230d7bf8846cf990496379fe7b124a473d61/src/sam/args.cr#L1" target="_blank">sam/args.cr</a>
+      <a href="https://github.com/imdrasil/sam.cr/blob/7672230d7bf8846cf990496379fe7b124a473d61/src/sam/args.cr#L1" target="_blank">
+        sam/args.cr
+      </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/sam.cr/blob/7672230d7bf8846cf990496379fe7b124a473d61/src/sam/namespace.cr#L1" target="_blank">sam/namespace.cr</a>
+      <a href="https://github.com/imdrasil/sam.cr/blob/7672230d7bf8846cf990496379fe7b124a473d61/src/sam/namespace.cr#L1" target="_blank">
+        sam/namespace.cr
+      </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/sam.cr/blob/7672230d7bf8846cf990496379fe7b124a473d61/src/sam/task.cr#L1" target="_blank">sam/task.cr</a>
+      <a href="https://github.com/imdrasil/sam.cr/blob/7672230d7bf8846cf990496379fe7b124a473d61/src/sam/task.cr#L1" target="_blank">
+        sam/task.cr
+      </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/sam.cr/blob/7672230d7bf8846cf990496379fe7b124a473d61/src/sam/version.cr#L1" target="_blank">sam/version.cr</a>
+      <a href="https://github.com/imdrasil/sam.cr/blob/7672230d7bf8846cf990496379fe7b124a473d61/src/sam/version.cr#L1" target="_blank">
+        sam/version.cr
+      </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/sam.cr/blob/7672230d7bf8846cf990496379fe7b124a473d61/src/sam.cr#L3" target="_blank">sam.cr</a>
+      <a href="https://github.com/imdrasil/sam.cr/blob/7672230d7bf8846cf990496379fe7b124a473d61/src/sam.cr#L3" target="_blank">
+        sam.cr
+      </a>
     
     <br/>
   
@@ -124,7 +152,7 @@
   <dl>
     
       <dt class="entry-const" id="TASK_SEPARATOR">
-        <strong>TASK_SEPARATOR</strong> = <code><span class="s">&quot;&#64;&quot;</span></code>
+        <strong>TASK_SEPARATOR</strong> = <code><span class="s">&quot;@&quot;</span></code>
       </dt>
       
     
@@ -221,7 +249,7 @@
 
   <h2>Class Method Detail</h2>
   
-    <div class="entry-detail" id="desc&#40;description&#41;-class-method">
+    <div class="entry-detail" id="desc(description)-class-method">
       <div class="signature">
         
         def self.<strong>desc</strong>(description)
@@ -237,7 +265,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="find&#40;path&#41;-class-method">
+    <div class="entry-detail" id="find(path)-class-method">
       <div class="signature">
         
         def self.<strong>find</strong>(path)
@@ -253,7 +281,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="find&#33;&#40;path&#41;-class-method">
+    <div class="entry-detail" id="find!(path)-class-method">
       <div class="signature">
         
         def self.<strong>find!</strong>(path)
@@ -269,7 +297,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="generate_makefile&#40;sam_path&#41;-class-method">
+    <div class="entry-detail" id="generate_makefile(sam_path)-class-method">
       <div class="signature">
         
         def self.<strong>generate_makefile</strong>(sam_path)
@@ -301,7 +329,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="invoke&#40;name,args:Args&#41;-class-method">
+    <div class="entry-detail" id="invoke(name,args:Args)-class-method">
       <div class="signature">
         
         def self.<strong>invoke</strong>(name, args : <a href="Sam/Args.html">Args</a>)
@@ -317,7 +345,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="invoke&#40;name,args:Array&#40;String&#41;&#41;-class-method">
+    <div class="entry-detail" id="invoke(name,args:Array(String))-class-method">
       <div class="signature">
         
         def self.<strong>invoke</strong>(name, args : Array(String))
@@ -333,7 +361,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="invoke&#40;name&#41;-class-method">
+    <div class="entry-detail" id="invoke(name)-class-method">
       <div class="signature">
         
         def self.<strong>invoke</strong>(name)
@@ -349,7 +377,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="namespace&#40;name:String,&amp;block&#41;-class-method">
+    <div class="entry-detail" id="namespace(name:String,&amp;block)-class-method">
       <div class="signature">
         
         def self.<strong>namespace</strong>(name : String, &block)
@@ -381,7 +409,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="process_tasks&#40;args&#41;-class-method">
+    <div class="entry-detail" id="process_tasks(args)-class-method">
       <div class="signature">
         
         def self.<strong>process_tasks</strong>(args)
@@ -397,7 +425,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="task&#40;name,dependencies&#61;&#91;&#93;ofString,&amp;block:Task,Args-&gt;Void&#41;-class-method">
+    <div class="entry-detail" id="task(name,dependencies=[]ofString,&amp;block:Task,Args-&gt;Void)-class-method">
       <div class="signature">
         
         def self.<strong>task</strong>(name, dependencies = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>, &block : <a href="Sam/Task.html">Task</a>, <a href="Sam/Args.html">Args</a> -> Void)

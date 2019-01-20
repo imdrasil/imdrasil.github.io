@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/factory">
+  <title>Factory::Jennifer::Base - github.com/imdrasil/factory</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/factory/Factory" data-name="factory">
+      <a href="../../Factory.html">Factory</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/factory/Factory/Base" data-name="factory::base">
+      <a href="../../Factory/Base.html">Base</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/factory/Factory/Jennifer" data-name="factory::jennifer">
+      <a href="../../Factory/Jennifer.html">Jennifer</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/imdrasil/factory/Factory/Jennifer/Base" data-name="factory::jennifer::base">
+      <a href="../../Factory/Jennifer/Base.html">Base</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/factory/Factory/Sequence" data-name="factory::sequence">
+      <a href="../../Factory/Sequence.html">Sequence</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/factory/Factory/Trait" data-name="factory::trait(t)">
+      <a href="../../Factory/Trait.html">Trait</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Factory::Jennifer::Base
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Factory/Jennifer/Base.html">Factory::Jennifer::Base</a></li><li class="superclass"><a href="../../Factory/Base.html">Factory::Base</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/jennifer/base.cr#L28" target="_blank">
+        factory/jennifer/base.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="ARGUMENT_TYPE">
+        <strong>ARGUMENT_TYPE</strong> = <code><span class="o">[]</span> <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ASSIGNS">
+        <strong>ASSIGNS</strong> = <code>{} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ATTRIBUTES">
+        <strong>ATTRIBUTES</strong> = <code>{} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CLASS_NAME">
+        <strong>CLASS_NAME</strong> = <code>[<span class="t">Factory</span><span class="t">::</span><span class="t">Jennifer</span><span class="t">::</span><span class="t">Base</span>] <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="IGNORED_METHODS">
+        <strong>IGNORED_METHODS</strong> = <code><span class="o">[]</span> <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="IS_FACTORY">
+        <strong>IS_FACTORY</strong> = <code>[<span class="s">&quot;true&quot;</span>, <span class="s">&quot;false&quot;</span>]</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SEQUENCES">
+        <strong>SEQUENCES</strong> = <code>{} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="TRAIT_CLASS_DECLARATIONS">
+        <strong>TRAIT_CLASS_DECLARATIONS</strong> = <code><span class="o">[]</span> <span class="k">of</span> <span class="t">String</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="TRAITS">
+        <strong>TRAITS</strong> = <code>{} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#_after_create%28obj%29-class-method" class="signature"><strong>._after_create</strong>(obj)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#_before_create%28obj%29-class-method" class="signature"><strong>._before_create</strong>(obj)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#described_class-class-method" class="signature"><strong>.described_class</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_trait%28name%3AString%2Cgo_deep%3ABool%3Dtrue%29-class-method" class="signature"><strong>.get_trait</strong>(name : String, go_deep : Bool = <span class="n">true</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#process_association%28obj%2Cklasses%2Cassoc%29-class-method" class="signature"><strong>.process_association</strong>(obj, klasses, assoc)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Macro Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#after_create-macro" class="signature"><strong>after_create</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#after_finished_hook-macro" class="signature"><strong>after_finished_hook</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#before_create-macro" class="signature"><strong>before_create</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#factory_creators%28factory_name%29-macro" class="signature"><strong>factory_creators</strong>(factory_name)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#skip_empty_constructor-macro" class="signature"><strong>skip_empty_constructor</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#skip_hash_constructor-macro" class="signature"><strong>skip_hash_constructor</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+  <h3>Class methods inherited from class <code><a href="../../Factory/Base.html">Factory::Base</a></code></h3>
+  
+  
+    <a href="../../Factory/Base.html#_after_initialize%28obj%29-class-method" class="tooltip">
+      <span>_after_initialize(obj)</span>
+    _after_initialize</a>, 
+    
+  
+    <a href="../../Factory/Base.html#assign_attr%28obj%2Cname%2Cvalue%29-class-method" class="tooltip">
+      <span>assign_attr(obj, name, value)</span>
+    assign_attr</a>, 
+    
+  
+    <a href="../../Factory/Base.html#attributes-class-method" class="tooltip">
+      <span>attributes</span>
+    attributes</a>, 
+    
+  
+    <a href="../../Factory/Base.html#build-class-method" class="tooltip">
+      <span>build</span>
+    build</a>, 
+    
+  
+    <a href="../../Factory/Base.html#get_trait%28name%3AString%2Cgo_deep%29-class-method" class="tooltip">
+      <span>get_trait(name : String, go_deep)<br/>get_trait(name : Symbol)</span>
+    get_trait</a>
+    
+  
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="_after_create(obj)-class-method">
+      <div class="signature">
+        
+        def self.<strong>_after_create</strong>(obj)
+
+        <a class="method-permalink" href="#_after_create%28obj%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/jennifer/base.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="_before_create(obj)-class-method">
+      <div class="signature">
+        
+        def self.<strong>_before_create</strong>(obj)
+
+        <a class="method-permalink" href="#_before_create%28obj%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/jennifer/base.cr#L34" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="described_class-class-method">
+      <div class="signature">
+        
+        def self.<strong>described_class</strong>
+
+        <a class="method-permalink" href="#described_class-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/jennifer/base.cr#L28" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_trait(name:String,go_deep:Bool=true)-class-method">
+      <div class="signature">
+        
+        def self.<strong>get_trait</strong>(name : String, go_deep : Bool = <span class="n">true</span>)
+
+        <a class="method-permalink" href="#get_trait%28name%3AString%2Cgo_deep%3ABool%3Dtrue%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="process_association(obj,klasses,assoc)-class-method">
+      <div class="signature">
+        
+        def self.<strong>process_association</strong>(obj, klasses, assoc)
+
+        <a class="method-permalink" href="#process_association%28obj%2Cklasses%2Cassoc%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/jennifer/base.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Macro Detail</h2>
+  
+    <div class="entry-detail" id="after_create-macro">
+      <div class="signature">
+        
+        macro <strong>after_create</strong>
+
+        <a class="method-permalink" href="#after_create-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/jennifer/base.cr#L47" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="after_finished_hook-macro">
+      <div class="signature">
+        
+        macro <strong>after_finished_hook</strong>
+
+        <a class="method-permalink" href="#after_finished_hook-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/jennifer/base.cr#L60" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="before_create-macro">
+      <div class="signature">
+        
+        macro <strong>before_create</strong>
+
+        <a class="method-permalink" href="#before_create-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/jennifer/base.cr#L40" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="factory_creators(factory_name)-macro">
+      <div class="signature">
+        
+        macro <strong>factory_creators</strong>(factory_name)
+
+        <a class="method-permalink" href="#factory_creators%28factory_name%29-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/jennifer/base.cr#L152" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="skip_empty_constructor-macro">
+      <div class="signature">
+        
+        macro <strong>skip_empty_constructor</strong>
+
+        <a class="method-permalink" href="#skip_empty_constructor-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/jennifer/base.cr#L28" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="skip_hash_constructor-macro">
+      <div class="signature">
+        
+        macro <strong>skip_hash_constructor</strong>
+
+        <a class="method-permalink" href="#skip_hash_constructor-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/factory/blob/22dfda91cff6d1a673750ac3ccfc39d77c72aff4/src/factory/jennifer/base.cr#L28" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>

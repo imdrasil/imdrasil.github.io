@@ -1,13 +1,7 @@
-# IO.pipe(["git", "clone", "git@github.com:imdrasil/jennifer.cr.git"]) do |io|
-
-# end
-
-# IO.popen(["git", "clone", "git@github.com:imdrasil/jennifer.cr.git"], "r+") do |io|
-#   io.close_write    
-# end
 require "fileutils"
 require_relative "manifest"
 
+# Presents site in general.
 class Site
   DELIMITER = "=" * 40
 
@@ -22,6 +16,7 @@ class Site
     @manifest = Manifest.new(File.join(@root_dir, data_dir, "manifest.json"))
   end
 
+  # Adds bunch of peojects to the site.
   def add_projects(*projects)
     projects.each { |p| p.site = self }
     @projects.concat(projects)
@@ -30,7 +25,7 @@ class Site
   def prepare
     say "Start preparing deployment"
     Dir.mkdir(data_dir) unless Dir.exists?(data_dir)
-      
+
     @projects.each do |project|
       FileUtils.mkdir_p(project.api_path) unless Dir.exists?(project.api_path)
     end

@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
+<html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>CryMagick | Imdrasil Homebrew Stuff</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="CryMagick" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal site" />
+<meta property="og:description" content="Personal site" />
+<link rel="canonical" href="https://imdrasil.github.io/crymagick/" />
+<meta property="og:url" content="https://imdrasil.github.io/crymagick/" />
+<meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<script type="application/ld+json">
+{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/crymagick/","headline":"CryMagick","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
+<body><header class="site-header" role="banner">
 
-  <title>CryMagick</title>
-  <meta name="description" content="Personal site">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Imdrasil Homebrew Stuff</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
 
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://imdrasil.github.io/crymagick/">
-  <link rel="alternate" type="application/rss+xml" title="Imdrasil Homebrew Stuff" href="/feed.xml">
-  
-  
-</head>
-
-
-  <body>
-
-    <header class="site-header" role="banner">
-  <div class="wrapper">
-    
-    
-    <a class="site-title" href="/">Imdrasil Homebrew Stuff</a>
-  </div>
+        <div class="trigger"><a class="page-link" href="/email_opener/">Email Opener</a><a class="page-link" href="/sage/">Sage</a><a class="page-link" href="/flash_container.cr/">flash_container</a><a class="page-link" href="/jennifer.cr/">Jennifer</a><a class="page-link" href="/jennifer_sqlite3_adapter/">Jennifer SQLite3 adapter</a><a class="page-link" href="/http_method_emulator/">http_method_emulator</a><a class="page-link" href="/sam.cr/">Sam</a><a class="page-link" href="/view_model.cr/">ViewModel</a><a class="page-link" href="/form_object/">FormObject</a><a class="page-link" href="/hermes.cr/">Hermes</a><a class="page-link" href="/crymagick/">CryMagick</a><a class="page-link" href="/factory/">Factory</a><a class="page-link" href="/pager/">Pager</a><a class="page-link" href="/ifrit/">Ifrit</a><a class="page-link" href="/email_opener/versions.html">email_opener</a><a class="page-link" href="/sage/versions.html">sage</a><a class="page-link" href="/flash_container.cr/versions.html">flash_container.cr</a><a class="page-link" href="/jennifer.cr/versions.html">jennifer.cr</a><a class="page-link" href="/jennifer_sqlite3_adapter/versions.html">jennifer_sqlite3_adapter</a><a class="page-link" href="/http_method_emulator/versions.html">http_method_emulator</a><a class="page-link" href="/sam.cr/versions.html">sam.cr</a><a class="page-link" href="/view_model.cr/versions.html">view_model.cr</a><a class="page-link" href="/form_object/versions.html">form_object</a><a class="page-link" href="/hermes.cr/versions.html">hermes.cr</a><a class="page-link" href="/crymagick/versions.html">crymagick</a><a class="page-link" href="/factory/versions.html">factory</a><a class="page-link" href="/pager/versions.html">pager</a><a class="page-link" href="/ifrit/versions.html">ifrit</a></div>
+      </nav></div>
 </header>
-
-    <main class="page-content" aria-label="Content">
+<main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post">
 
@@ -51,24 +55,22 @@
 
 <h2 id="requirements">Requirements</h2>
 
-<p>ImageMagick command-line tool has to be installed. You can check if you have it installed by running</p>
+<p>ImageMagick command-line tool &gt;= 7.0.8  has to be installed. You can check if you have it installed by running</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>convert <span class="nt">-version</span>
-Version: ImageMagick 6.8.9-9 Q16 x86_64 2017-05-26 http://www.imagemagick.org
-Copyright: Copyright <span class="o">(</span>C<span class="o">)</span> 1999-2014 ImageMagick Studio LLC
-Features: DPC Modules OpenMP
+Version: ImageMagick 7.0.8-6 Q16 x86_64 2018-07-10 https://www.imagemagick.org
 </code></pre></div></div>
 
 <h2 id="usage">Usage</h2>
 
 <p>Let’s first see a basic example of resizing an image.</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">image</span> <span class="o">=</span> <span class="no">CryMagick</span><span class="o">::</span><span class="no">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">"input.jpg"</span><span class="p">)</span>
-<span class="n">image</span><span class="p">.</span><span class="nf">path</span> <span class="c1">#=&gt; "/var/folders/k7/6zx6dx6x7ys3rv3srh0nyfj00000gn/T/magick20140921-75881-1yho3zc.jpg"</span>
-<span class="n">image</span><span class="p">.</span><span class="nf">resize</span> <span class="s2">"100x100"</span>
-<span class="n">image</span><span class="p">.</span><span class="nf">format</span> <span class="s2">"png"</span>
-<span class="n">image</span><span class="p">.</span><span class="nf">write</span> <span class="s2">"output.png"</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">image = CryMagick::Image.open("input.jpg")
+image.path #=&gt; "/var/folders/k7/6zx6dx6x7ys3rv3srh0nyfj00000gn/T/magick20140921-75881-1yho3zc.jpg"
+image.resize "100x100"
+image.format "png"
+image.write "output.png"
+</code></pre>
 
 <p><code class="highlighter-rouge">CryMagick::Image.open</code> makes a copy of the image, and further methods modify that copy (the original stays untouched). We then resize the image, and write it to a file. The writing part is necessary because the copy is just temporary, it gets garbage collected when we lose reference to the image.</p>
 
@@ -78,21 +80,21 @@ Features: DPC Modules OpenMP
 
 <p>While using methods like <code class="highlighter-rouge">#resize</code> directly is convenient, if we use more methods in this way, it quickly becomes inefficient, because it calls the command on each methods call. <code class="highlighter-rouge">CryMagick::Image#combine_options</code> takes multiple options and from them builds one single command.</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">image</span><span class="p">.</span><span class="nf">combine_options</span> <span class="k">do</span> <span class="o">|</span><span class="n">b</span><span class="o">|</span>
-  <span class="n">b</span><span class="p">.</span><span class="nf">resize</span> <span class="s2">"250x200&gt;"</span>
-  <span class="n">b</span><span class="p">.</span><span class="nf">rotate</span> <span class="s2">"-90"</span>
-  <span class="n">b</span><span class="p">.</span><span class="nf">flip</span>
-<span class="k">end</span> <span class="c1"># the command gets executed</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">image.combine_options do |b|
+  b.resize "250x200&gt;"
+  b.rotate "-90"
+  b.flip
+end # the command gets executed
+</code></pre>
 
 <p>As a handy shortcut, <code class="highlighter-rouge">CryMagick::Image.build</code> accepts an optional block which is used to combine_options.</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">image</span> <span class="o">=</span> <span class="no">CryMagick</span><span class="o">::</span><span class="no">Image</span><span class="p">.</span><span class="nf">build</span><span class="p">(</span><span class="s2">"input.jpg"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">b</span><span class="o">|</span>
-  <span class="n">b</span><span class="p">.</span><span class="nf">resize</span> <span class="s2">"250x200&gt;"</span>
-  <span class="n">b</span><span class="p">.</span><span class="nf">rotate</span> <span class="s2">"-90"</span>
-  <span class="n">b</span><span class="p">.</span><span class="nf">flip</span>
-<span class="k">end</span> <span class="c1"># the command gets executed</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">image = CryMagick::Image.build("input.jpg") do |b|
+  b.resize "250x200&gt;"
+  b.rotate "-90"
+  b.flip
+end # the command gets executed
+</code></pre>
 
 <p>The yielded builder is an instance of <code class="highlighter-rouge">CryMagick::Tool::Mogrify</code>.</p>
 
@@ -100,7 +102,7 @@ Features: DPC Modules OpenMP
 
 <p>A <code class="highlighter-rouge">CryMagick::Image</code> has various handy attributes.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>image.type        #=&gt; "JPEG"
+<pre><code class="language-crystal">image.type        #=&gt; "JPEG"
 image.mime_type   #=&gt; "image/jpeg"
 image.width       #=&gt; 250
 image.height      #=&gt; 300
@@ -110,99 +112,99 @@ image.colorspace  #=&gt; "DirectClass sRGB"
 image.exif        #=&gt; {"DateTimeOriginal" =&gt; "2013:09:04 08:03:39", ...}
 image.resolution  #=&gt; [75, 75]
 image.signature   #=&gt; "60a7848c4ca6e36b8e2c5dea632ecdc29e9637791d2c59ebf7a54c0c6a74ef7e"
-</code></pre></div></div>
+</code></pre>
 
 <p>If you need more control, you can also access raw image attributes:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">image</span><span class="p">[</span><span class="s2">"%[gamma]"</span><span class="p">]</span> <span class="c1"># "0.9"</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">image["%[gamma]"] # "0.9"
+</code></pre>
 
 <p>To get the all information about the image, CryMagick gives you a handy method which returns the output from <code class="highlighter-rouge">identify -verbose</code> in hash format:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">image</span><span class="p">.</span><span class="nf">data</span> <span class="c1">#=&gt;</span>
-<span class="c1"># {</span>
-<span class="c1">#   "format": "JPEG",</span>
-<span class="c1">#   "mimeType": "image/jpeg",</span>
-<span class="c1">#   "class": "DirectClass",</span>
-<span class="c1">#   "geometry": {</span>
-<span class="c1">#     "width": 200,</span>
-<span class="c1">#     "height": 276,</span>
-<span class="c1">#     "x": 0,</span>
-<span class="c1">#     "y": 0</span>
-<span class="c1">#   },</span>
-<span class="c1">#   "resolution": {</span>
-<span class="c1">#     "x": "300",</span>
-<span class="c1">#     "y": "300"</span>
-<span class="c1">#   },</span>
-<span class="c1">#   "colorspace": "sRGB",</span>
-<span class="c1">#   "channelDepth": {</span>
-<span class="c1">#     "red": 8,</span>
-<span class="c1">#     "green": 8,</span>
-<span class="c1">#     "blue": 8</span>
-<span class="c1">#   },</span>
-<span class="c1">#   "quality": 92,</span>
-<span class="c1">#   "properties": {</span>
-<span class="c1">#     "date:create": "2016-07-11T19:17:53+08:00",</span>
-<span class="c1">#     "date:modify": "2016-07-11T19:17:53+08:00",</span>
-<span class="c1">#     "exif:ColorSpace": "1",</span>
-<span class="c1">#     "exif:ExifImageLength": "276",</span>
-<span class="c1">#     "exif:ExifImageWidth": "200",</span>
-<span class="c1">#     "exif:ExifOffset": "90",</span>
-<span class="c1">#     "exif:Orientation": "1",</span>
-<span class="c1">#     "exif:ResolutionUnit": "2",</span>
-<span class="c1">#     "exif:XResolution": "300/1",</span>
-<span class="c1">#     "exif:YResolution": "300/1",</span>
-<span class="c1">#     "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",</span>
-<span class="c1">#     "icc:description": "sRGB IEC61966-2.1",</span>
-<span class="c1">#     "icc:manufacturer": "IEC http://www.iec.ch",</span>
-<span class="c1">#     "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",</span>
-<span class="c1">#     "jpeg:colorspace": "2",</span>
-<span class="c1">#     "jpeg:sampling-factor": "1x1,1x1,1x1",</span>
-<span class="c1">#     "signature": "1b2336f023e5be4a9f357848df9803527afacd4987ecc18c4295a272403e52c1"</span>
-<span class="c1">#   },</span>
-<span class="c1">#   ...</span>
-<span class="c1"># }</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">image.data #=&gt;
+# {
+#   "format": "JPEG",
+#   "mimeType": "image/jpeg",
+#   "class": "DirectClass",
+#   "geometry": {
+#     "width": 200,
+#     "height": 276,
+#     "x": 0,
+#     "y": 0
+#   },
+#   "resolution": {
+#     "x": "300",
+#     "y": "300"
+#   },
+#   "colorspace": "sRGB",
+#   "channelDepth": {
+#     "red": 8,
+#     "green": 8,
+#     "blue": 8
+#   },
+#   "quality": 92,
+#   "properties": {
+#     "date:create": "2016-07-11T19:17:53+08:00",
+#     "date:modify": "2016-07-11T19:17:53+08:00",
+#     "exif:ColorSpace": "1",
+#     "exif:ExifImageLength": "276",
+#     "exif:ExifImageWidth": "200",
+#     "exif:ExifOffset": "90",
+#     "exif:Orientation": "1",
+#     "exif:ResolutionUnit": "2",
+#     "exif:XResolution": "300/1",
+#     "exif:YResolution": "300/1",
+#     "icc:copyright": "Copyright (c) 1998 Hewlett-Packard Company",
+#     "icc:description": "sRGB IEC61966-2.1",
+#     "icc:manufacturer": "IEC http://www.iec.ch",
+#     "icc:model": "IEC 61966-2.1 Default RGB colour space - sRGB",
+#     "jpeg:colorspace": "2",
+#     "jpeg:sampling-factor": "1x1,1x1,1x1",
+#     "signature": "1b2336f023e5be4a9f357848df9803527afacd4987ecc18c4295a272403e52c1"
+#   },
+#   ...
+# }
+</code></pre>
 
 <h3 id="configuration">Configuration</h3>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">CryMagick</span><span class="o">::</span><span class="no">Configuration</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
-  <span class="n">config</span><span class="p">.</span><span class="nf">cli_path</span> <span class="o">=</span> <span class="s2">"some/path"</span>
-  <span class="n">config</span><span class="p">.</span><span class="nf">whiny</span> <span class="o">=</span> <span class="kp">false</span>
-<span class="k">end</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">CryMagick::Configuration.configure do |config|
+  config.cli_path = "some/path"
+  config.whiny = false
+end
+</code></pre>
 
 <h3 id="composite">Composite</h3>
 
 <p>CryMagick allows to composite images:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">first_image</span>  <span class="o">=</span> <span class="no">CryMagick</span><span class="o">::</span><span class="no">Image</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"first.jpg"</span><span class="p">)</span>
-<span class="n">second_image</span> <span class="o">=</span> <span class="no">CryMagick</span><span class="o">::</span><span class="no">Image</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"second.jpg"</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">first_image</span><span class="p">.</span><span class="nf">composite</span><span class="p">(</span><span class="n">second_image</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span>
-  <span class="n">c</span><span class="p">.</span><span class="nf">compose</span> <span class="s2">"Over"</span>    <span class="c1"># OverCompositeOp</span>
-  <span class="n">c</span><span class="p">.</span><span class="nf">geometry</span> <span class="s2">"+20+20"</span> <span class="c1"># copy second_image onto first_image from (20, 20)</span>
-<span class="k">end</span>
-<span class="n">result</span><span class="p">.</span><span class="nf">write</span> <span class="s2">"output.jpg"</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">first_image  = CryMagick::Image.new("first.jpg")
+second_image = CryMagick::Image.new("second.jpg")
+result = first_image.composite(second_image) do |c|
+  c.compose "Over"    # OverCompositeOp
+  c.geometry "+20+20" # copy second_image onto first_image from (20, 20)
+end
+result.write "output.jpg"
+</code></pre>
 
 <h3 id="metal">Metal</h3>
 
 <p>If you want to be close to the metal, you can use ImageMagick’s command-line tools directly.</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">CryMagick</span><span class="o">::</span><span class="no">Tool</span><span class="o">::</span><span class="no">Mogrify</span><span class="p">.</span><span class="nf">build</span> <span class="k">do</span> <span class="o">|</span><span class="n">mogrify</span><span class="o">|</span>
-  <span class="n">mogrify</span><span class="p">.</span><span class="nf">resize</span><span class="p">(</span><span class="s2">"100x100"</span><span class="p">)</span>
-  <span class="n">mogrify</span><span class="p">.</span><span class="nf">negate</span>
-  <span class="n">mogrify</span> <span class="o">&lt;&lt;</span> <span class="s2">"image.jpg"</span>
-<span class="k">end</span> <span class="c1">#=&gt; `mogrify -resize 100x100 -negate image.jpg`</span>
+<pre><code class="language-crystal">CryMagick::Tool::Mogrify.build do |mogrify|
+  mogrify.resize("100x100")
+  mogrify.negate
+  mogrify &lt;&lt; "image.jpg"
+end #=&gt; `mogrify -resize 100x100 -negate image.jpg`
 
-<span class="c1"># OR</span>
+# OR
 
-<span class="n">mogrify</span> <span class="o">=</span> <span class="no">CryMagick</span><span class="o">::</span><span class="no">Tool</span><span class="o">::</span><span class="no">Mogrify</span><span class="p">.</span><span class="nf">new</span>
-<span class="n">mogrify</span><span class="p">.</span><span class="nf">resize</span><span class="p">(</span><span class="s2">"100x100"</span><span class="p">)</span>
-<span class="n">mogrify</span><span class="p">.</span><span class="nf">negate</span>
-<span class="n">mogrify</span> <span class="o">&lt;&lt;</span> <span class="s2">"image.jpg"</span>
-<span class="n">mogrify</span><span class="p">.</span><span class="nf">call</span> <span class="c1">#=&gt; `mogrify -resize 100x100 -negate image.jpg`</span>
-</code></pre></div></div>
+mogrify = CryMagick::Tool::Mogrify.new
+mogrify.resize("100x100")
+mogrify.negate
+mogrify &lt;&lt; "image.jpg"
+mogrify.call #=&gt; `mogrify -resize 100x100 -negate image.jpg`
+</code></pre>
 
 <p>This way of using CryMagick is highly recommended if you want to maximize performance of your image processing. Here are some of the features.</p>
 
@@ -210,70 +212,69 @@ image.signature   #=&gt; "60a7848c4ca6e36b8e2c5dea632ecdc29e9637791d2c59ebf7a54c
 
 <p>The most basic way of building a command is appending strings:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">CryMagick</span><span class="o">::</span><span class="no">Tool</span><span class="o">::</span><span class="no">Convert</span><span class="p">.</span><span class="nf">build</span> <span class="k">do</span> <span class="o">|</span><span class="n">convert</span><span class="o">|</span>
-  <span class="n">convert</span> <span class="o">&lt;&lt;</span> <span class="s2">"input.jpg"</span>
-  <span class="n">convert</span><span class="p">.</span><span class="nf">merge!</span> <span class="p">[</span><span class="s2">"-resize"</span><span class="p">,</span> <span class="s2">"500x500"</span><span class="p">,</span> <span class="s2">"-negate"</span><span class="p">]</span>
-  <span class="n">convert</span> <span class="o">&lt;&lt;</span> <span class="s2">"output.jpg"</span>
-<span class="k">end</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">CryMagick::Tool::Convert.build do |convert|
+  convert &lt;&lt; "input.jpg"
+  convert.merge! ["-resize", "500x500", "-negate"]
+  convert &lt;&lt; "output.jpg"
+end
+</code></pre>
 
 <h4 id="methods">Methods</h4>
 
 <p>Instead of passing in options directly, you can use pure methods:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">convert</span><span class="p">.</span><span class="nf">resize</span><span class="p">(</span><span class="s2">"500x500"</span><span class="p">)</span>
-<span class="n">convert</span><span class="p">.</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">convert</span><span class="p">.</span><span class="nf">distort</span><span class="p">(</span><span class="s2">"Perspective"</span><span class="p">,</span> <span class="s2">"0,0,0,0 0,45,0,45 69,0,60,10 69,45,60,35"</span><span class="p">)</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">convert.resize("500x500")
+convert.rotate(90)
+convert.distort("Perspective", "0,0,0,0 0,45,0,45 69,0,60,10 69,45,60,35")
+</code></pre>
 
-<h4 id="chainging">Chainging</h4>
+<h4 id="chaining">Chaining</h4>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">CryMagick</span><span class="o">::</span><span class="no">Tool</span><span class="o">::</span><span class="no">Convert</span><span class="p">.</span><span class="nf">build</span> <span class="k">do</span> <span class="o">|</span><span class="n">convert</span><span class="o">|</span>
-  <span class="n">convert</span> <span class="o">&lt;&lt;</span> <span class="s2">"input.jpg"</span>
-  <span class="n">convert</span><span class="p">.</span><span class="nf">clone</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nf">background</span><span class="p">(</span><span class="s1">'gray'</span><span class="p">).</span><span class="nf">shadow</span><span class="p">(</span><span class="s1">'80x5+5+5'</span><span class="p">)</span>
-  <span class="n">convert</span><span class="p">.</span><span class="nf">negate</span>
-  <span class="n">convert</span> <span class="o">&lt;&lt;</span> <span class="s2">"output.jpg"</span>
-<span class="k">end</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">CryMagick::Tool::Convert.build do |convert|
+  convert &lt;&lt; "input.jpg"
+  convert.clone(0).background('gray').shadow('80x5+5+5')
+  convert.negate
+  convert &lt;&lt; "output.jpg"
+end
+</code></pre>
 
 <h4 id="plus">“Plus”</h4>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">CryMagick</span><span class="o">::</span><span class="no">Tool</span><span class="o">::</span><span class="no">Convert</span><span class="p">.</span><span class="nf">build</span> <span class="k">do</span> <span class="o">|</span><span class="n">convert</span><span class="o">|</span>
-  <span class="n">convert</span> <span class="o">&lt;&lt;</span> <span class="s2">"input.jpg"</span>
-  <span class="n">convert</span><span class="p">.</span><span class="nf">repage</span><span class="p">.</span><span class="nf">+</span>
-  <span class="n">convert</span><span class="p">.</span><span class="nf">distort</span><span class="p">.</span><span class="nf">+</span><span class="p">(</span><span class="s2">"Perspective"</span><span class="p">,</span> <span class="s2">"more args"</span><span class="p">)</span>
-<span class="k">end</span>
-<span class="c1"># convert input.jpg +repage +distort Perspective 'more args'</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">CryMagick::Tool::Convert.build do |convert|
+  convert &lt;&lt; "input.jpg"
+  convert.repage.+
+  convert.distort.+("Perspective", "more args")
+end
+# convert input.jpg +repage +distort Perspective 'more args'
+</code></pre>
 
 <h4 id="stack">Stack</h4>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">CryMagick</span><span class="o">::</span><span class="no">Tool</span><span class="o">::</span><span class="no">Convert</span><span class="p">.</span><span class="nf">build</span> <span class="k">do</span> <span class="o">|</span><span class="n">convert</span><span class="o">|</span>
-  <span class="n">convert</span> <span class="o">&lt;&lt;</span> <span class="s2">"wand.gif"</span>
-  <span class="n">convert</span><span class="p">.</span><span class="nf">stack</span> <span class="k">do</span> <span class="o">|</span><span class="n">stack</span><span class="o">|</span>
-    <span class="n">stack</span> <span class="o">&lt;&lt;</span> <span class="s2">"wand.gif"</span>
-    <span class="n">stack</span><span class="p">.</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
-  <span class="k">end</span>
-  <span class="n">convert</span> <span class="o">&lt;&lt;</span> <span class="s2">"images.gif"</span>
-<span class="k">end</span>
-</code></pre></div></div>
+<pre><code class="language-crystal">CryMagick::Tool::Convert.build do |convert|
+  convert &lt;&lt; "wand.gif"
+  convert.stack do |stack|
+    stack &lt;&lt; "wand.gif"
+    stack.rotate(30)
+  end
+  convert &lt;&lt; "images.gif"
+end
+</code></pre>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
-<p><code class="highlighter-rouge">CryMagick::Tool</code> uses <code class="highlighter-rouge">method_missing</code> macro so all method calling with invalid arguments will go there. Fot now all dynamically generated methods are logged into stdout during compilation time.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-## Development
+<p><code class="highlighter-rouge">CryMagick::Tool</code> uses <code class="highlighter-rouge">method_missing</code> macro so all method calling with invalid arguments will go there. For now all dynamically generated methods are logged into stdout during compilation time.</p>
 
-To run test suite
+<h2 id="development">Development</h2>
 
-```shell
-$ make test
+<p>To run test suite</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make <span class="nb">test</span>
 </code></pre></div></div>
 
 <p>Next feature:</p>
-<ul>
-  <li>[ ] add graphicsmagick</li>
-  <li>[ ] add different image converting tools support</li>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />add graphicsmagick</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />add different image converting tools support</li>
 </ul>
 
 <h2 id="contributing">Contributing</h2>
@@ -292,15 +293,13 @@ $ make test
   <li><a href="https://github.com/imdrasil">imdrasil</a> Roman Kalnytskyi - creator, maintainer</li>
 </ul>
 
-
   </div>
 
 </article>
 
       </div>
-    </main>
-
-    <footer class="site-footer">
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
 
   <div class="wrapper">
 
@@ -309,30 +308,11 @@ $ make test
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li>
-            
-              Imdrasil Homebrew Stuff
-            
-            </li>
-            
-            <li><a href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li>
-            
-        </ul>
+          <li class="p-name">Imdrasil Homebrew Stuff</li><li><a class="u-email" href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li></ul>
       </div>
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          
-          <li>
-            <a href="https://github.com/imdrasil"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
-</span><span class="username">imdrasil</span></a>
-
-          </li>
-          
-
-          
-        </ul>
-      </div>
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/imdrasil"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">imdrasil</span></a></li></ul>
+</div>
 
       <div class="footer-col footer-col-3">
         <p>Personal site</p>
@@ -342,8 +322,6 @@ $ make test
   </div>
 
 </footer>
-
-
-  </body>
+</body>
 
 </html>

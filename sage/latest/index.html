@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/sage">
+  <title>README - github.com/imdrasil/sage</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/sage/Sage" data-name="sage">
+      <a href="Sage.html">Sage</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/sage/Sage/Base" data-name="sage::base">
+      <a href="Sage/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/sage/Sage/Behavior" data-name="sage::behavior">
+      <a href="Sage/Behavior.html">Behavior</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/sage/Sage/Policy" data-name="sage::policy">
+      <a href="Sage/Policy.html">Policy</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/sage/Sage/Policy/Definition" data-name="sage::policy::definition">
+      <a href="Sage/Policy/Definition.html">Definition</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/sage/Sage/Policy/Finder" data-name="sage::policy::finder">
+      <a href="Sage/Policy/Finder.html">Finder</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/sage/Sage/UnauthorizedError" data-name="sage::unauthorizederror">
+      <a href="Sage/UnauthorizedError.html">UnauthorizedError</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1>Sage</h1>
+
+<p>Sage - is a lightweight library for defining resource access policy rules.</p>
+
+<h2>Installation</h2>
+
+<p>Add this to your application's <code>shard.yml</code>:</p>
+
+<pre><code class="language-yaml">dependencies:
+  sage:
+    github: imdrasil/sage</code></pre>
+
+<h2>Usage</h2>
+
+<p>The core component of Sage is a <em>policy class</em> - it describes access policies to resource. That's why it is assumed you define a separate policy class for each resource you want to specify access restrictions.</p>
+
+<p>Consider a simple example:</p>
+
+<pre><code class="language-crystal"><span class="c"># It is not necessary to define application base policy class</span>
+<span class="c"># but this allows to put all shared behavior and configs in one place</span>
+<span class="k">abstract</span> <span class="k">class</span> <span class="t">ApplicationPolicy</span> <span class="o">&lt;</span> <span class="t">Sage</span><span class="t">::</span><span class="t">Base</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="t">PostPolicy</span> <span class="o">&lt;</span> <span class="t">ApplicationPolicy</span>
+  constructor(<span class="t">User</span>, <span class="t">Post</span>)
+
+  ability <span class="n">:edit?</span>
+    user.admin? || user.id <span class="o">==</span> resource.id
+  <span class="k">end</span>
+
+  ability <span class="n">:show?</span>
+    <span class="n">true</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>Now you can add authorization to your app:</p>
+
+<pre><code class="language-crystal"><span class="k">abstract</span> <span class="k">class</span> <span class="t">ApplicationController</span>
+  <span class="k">include</span> <span class="t">Sage</span><span class="t">::</span><span class="t">Behavior</span>
+
+  <span class="k">private</span> <span class="k">def</span> <span class="m">current_user</span>
+    <span class="t">User</span>.current_user
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="t">PostsController</span>
+  <span class="k">def</span> <span class="m">update</span>
+    @post <span class="o">=</span> <span class="t">Post</span>.find(params[<span class="s">&quot;id&quot;</span>])
+    authorize! <span class="n">:update?</span>, @post
+
+    <span class="c"># ...</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>In the above example Sage automatically refers policy class from the given <code>@post</code> variable - <code>Post -> PostPolicy</code>. The <code>user</code> is automatically used from calling <code>sage_user</code> method (which by default calls <code>current_user</code>).</p>
+
+<p>When authorization is passed successfully (corresponding ability returned <code>true</code>), nothing happens, but in case of an authorization failure <code><a href="Sage/UnauthorizedError.html">Sage::UnauthorizedError</a></code> error is raised.</p>
+
+<p>There are also an <code>able?</code> nad <code>unable?</code> methods which return <code>true</code> or <code>false</code>:</p>
+
+<pre><code class="language-crystal">able?(<span class="n">:update?</span>, @post)
+unable?(<span class="n">:update?</span>, @post)</code></pre>
+
+<p>Also you may specify exact policy class:</p>
+
+<pre><code class="language-crystal">able?(<span class="n">:update</span>, @post, within: <span class="t">EditorPostPolicy</span>)
+authorize!(<span class="n">:update?</span>, @post, within: <span class="t">EditorPostPolicy</span>)</code></pre>
+
+<h3>Writing Policies</h3>
+
+<p>Policy class contains defined abilities (partially they are just a predicate methods) which are used to authorize activities.</p>
+
+<p>Each policy record is instantiated with the target <code>resource : T</code> object and authorization context <code>user : U</code>. To avoid generics, they should define corresponding attribute types for themselves. As a plugin <code>constructor</code> macro could be used for doing this:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">PostPolicy</span> <span class="o">&lt;</span> <span class="t">Sage</span><span class="t">::</span><span class="t">Base</span>
+  constructor(<span class="t">User</span>, <span class="t">Post</span>)
+
+  <span class="c"># This call is the same as</span>
+
+  getter user : <span class="t">User</span>, resource : <span class="t">Post</span>
+
+  <span class="k">def</span> <span class="m">initialize</span>(@user, @resource)
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<blockquote>NOTE: <code>#user</code> method is abstract so should be defined by subclasses.</blockquote>
+
+<p>To define ability use corresponding macro <code>ability</code>:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">PostPolicy</span> <span class="o">&lt;</span> <span class="t">Sage</span><span class="t">::</span><span class="t">Base</span>
+  <span class="c"># ...</span>
+  ability <span class="n">:update?</span> <span class="k">do</span>
+    user.admin? || user.id <span class="o">==</span> resource.user_id
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<h4>Calling other policies</h4>
+
+<p>It may be useful to call other resource policy from within a current one. For doing this you can use standard <code>#able?</code> and <code>#unable?</code> methods:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">CommentPolicy</span> <span class="o">&lt;</span> <span class="t">Sage</span><span class="t">::</span><span class="t">Policy</span>
+  <span class="c"># ...</span>
+
+  ability <span class="n">:update?</span> <span class="k">do</span>
+    user.admin? || user.id <span class="o">==</span> resource.id || able?(<span class="n">:update?</span>, resource.post)
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<h3>Testing</h3>
+
+<p>Policies can be tested as any other Crystal classes:</p>
+
+<pre><code class="language-crystal">describe <span class="t">PostPolicy</span> <span class="k">do</span>
+  described_class <span class="o">=</span> <span class="t">PostPolicy</span>
+
+  describe <span class="s">&quot;#update?&quot;</span>
+    it <span class="s">&quot;returns false when the user is not admin nor author&quot;</span> <span class="k">do</span>
+      user <span class="o">=</span> <span class="t">User</span>.<span class="k">new</span>
+      post <span class="o">=</span> <span class="t">Post</span>.<span class="k">new</span>
+      policy <span class="o">=</span> described_class.<span class="k">new</span>(user, post)
+      policy.apply(<span class="n">:update?</span>).should be_false
+    <span class="k">end</span>
+
+    it <span class="s">&quot;returns true when the user is admin&quot;</span> <span class="k">do</span>
+      user <span class="o">=</span> <span class="t">User</span>.<span class="k">new</span>(<span class="n">:admin</span>)
+      post <span class="o">=</span> <span class="t">Post</span>.<span class="k">new</span>
+      policy <span class="o">=</span> described_class.<span class="k">new</span>(user, post)
+      policy.apply(<span class="n">:update?</span>).should be_true
+    <span class="k">end</span>
+
+    it <span class="s">&quot;returns true when the user is author&quot;</span> <span class="k">do</span>
+      user <span class="o">=</span> <span class="t">User</span>.<span class="k">new</span>
+      post <span class="o">=</span> <span class="t">Post</span>.<span class="k">new</span>(user_id: user.id)
+      policy <span class="o">=</span> described_class.<span class="k">new</span>(user, post)
+      policy.apply(<span class="n">:update?</span>).should be_true
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<h3>Aliases</h3>
+
+<p>Sage allows you to add ability aliases. It may be useful when you rely on implicit rules in your code:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">PostController</span>
+  <span class="k">def</span> <span class="m">edit</span>
+    <span class="c"># ...</span>
+    authorize! <span class="n">:edit?</span>, @post
+    <span class="c"># ...</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">update</span>
+    <span class="c"># ...</span>
+    authorize! <span class="n">:update?</span>, @post
+    <span class="c"># ...</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">destroy</span>
+    <span class="c"># ...</span>
+    authorize! <span class="n">:destroy?</span>, @post
+    <span class="c"># ...</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>In your policy you can create alias to avoid code duplication:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">PostPolicy</span> <span class="o">&lt;</span> <span class="t">Sage</span><span class="t">::</span><span class="t">Base</span>
+  <span class="c"># ...</span>
+  alias_ability <span class="n">:update?</span>, <span class="n">:edit?</span>, to: <span class="n">:update?</span>
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<blockquote>NOTE: <code>alias_ability</code> doesn't create aliased methods and resolve them only during <code>Sage::Base#apply</code> call (which is under the hood of <code>able?</code> and <code>authorize!</code>).</blockquote>
+
+<h4>Default Ability</h4>
+
+<p>When Sage can't resolve ability name it calls <code>Sage::Base#default_ability</code> method which by default returns <code>false</code>. You may override it to define another behavior.</p>
+
+<h3>Pre-Checks</h3>
+
+<p>Sometimes it happens that some of your abilities (or even all of them) starts with the same conditions. Example:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">PostPolicy</span> <span class="o">&lt;</span> <span class="t">Sage</span><span class="t">::</span><span class="t">Base</span>
+  <span class="c"># ...</span>
+  ability <span class="n">:show?</span> <span class="k">do</span>
+    user.admin? || resource.published?
+  <span class="k">end</span>
+
+  ability <span class="n">:update?</span> <span class="k">do</span>
+    user.admin? || user.id <span class="o">==</span> resource.user_id
+  <span class="k">end</span>
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<p>You can separate the common parts from all abilities to a separate <em>pre-checks</em>:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">PostPolicy</span> <span class="o">&lt;</span> <span class="t">Sage</span><span class="t">::</span><span class="t">Base</span>
+  <span class="c"># ...</span>
+  pre_check <span class="n">:admin?</span>
+
+  ability <span class="n">:show?</span> <span class="k">do</span>
+    resource.published?
+  <span class="k">end</span>
+
+  ability <span class="n">:update?</span> <span class="k">do</span>
+    user.id <span class="o">==</span> resource.user_id
+  <span class="k">end</span>
+
+  <span class="k">private</span> <span class="k">def</span> <span class="m">admin?</span>
+    allow! <span class="k">if</span> user.admin?
+  <span class="k">end</span>
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<p>Pre-checks are executed before ability invocation. They allow to halt the authorization process - just return <code>allow!</code> or <code>disallow!</code> call value. Any other returned value is ignored.</p>
+
+<h2>Contributing</h2>
+
+<ol><li>Fork it ( https://github.com/imdrasil/sage/fork )</li><li>Create your feature branch (git checkout -b my-new-feature)</li><li>Commit your changes (git commit -am 'Add some feature')</li><li>Push to the branch (git push origin my-new-feature)</li><li>Create a new Pull Request</li></ol>
+
+<h2>Contributors</h2>
+
+<ul><li><a href="https://github.com/imdrasil" target="_blank">imdrasil</a> Roman Kalnytskyi - creator, maintainer</li></ul>
+
+<h3>Inspired by</h3>
+
+<ul><li><a href="https://github.com/palkan/action_policy" target="_blank">Action Policy</a></li><li><a href="https://github.com/varvet/pundit" target="_blank">Pundit</a></li><li><a href="https://github.com/CanCanCommunity/cancancan" target="_blank">CancanCan</a></li></ul>
+</div>
+</body>
+</html>

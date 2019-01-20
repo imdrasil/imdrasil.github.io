@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/factory">
+  <title>README - github.com/imdrasil/factory</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/factory/Factory" data-name="factory">
+      <a href="Factory.html">Factory</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/factory/Factory/Base" data-name="factory::base">
+      <a href="Factory/Base.html">Base</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/factory/Factory/Jennifer" data-name="factory::jennifer">
+      <a href="Factory/Jennifer.html">Jennifer</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/factory/Factory/Jennifer/Base" data-name="factory::jennifer::base">
+      <a href="Factory/Jennifer/Base.html">Base</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/factory/Factory/Sequence" data-name="factory::sequence">
+      <a href="Factory/Sequence.html">Sequence</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/factory/Factory/Trait" data-name="factory::trait(t)">
+      <a href="Factory/Trait.html">Trait</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1>Factory <a href="https://travis-ci.org/imdrasil/factory" target="_blank"><img src="https://travis-ci.org/imdrasil/factory.svg" alt="Build Status"/></a> <a href="https://github.com/imdrasil/factory/releases" target="_blank"><img src="https://img.shields.io/github/release/imdrasil/factory.svg" alt="Latest Release"/></a> <a href="https://imdrasil.github.io/factory/latest/" target="_blank"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs"/></a></h1>
+
+<p>Easy to use but flexible factory definition utility. Coul be used for testing purpose and for developing as well.</p>
+
+<h2>Installation</h2>
+
+<p>Add this to your application's <code>shard.yml</code>:</p>
+
+<pre><code class="language-yaml">dependencies:
+  factory:
+    github: imdrasil/factory</code></pre>
+
+<h2>Usage</h2>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;factory&quot;</span></code></pre>
+
+<p>To define new factory</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">HumanFactory</span> <span class="o">&lt;</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Base</span>
+<span class="k">end</span></code></pre>
+
+<p>By convenience this factory will builds <code>Human</code> class but this behavior can be overrided using <code>describe_class</code> macro:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">AdminFactory</span> <span class="o">&lt;</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Base</span>
+  describe_class <span class="t">User</span>
+<span class="k">end</span></code></pre>
+
+<p>Factory will build class passing to constructor hash with string keys, so those class should be ready for this. To define attributes for passing to constructor use <code>attr</code> macro:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">TestFactory</span> <span class="o">&lt;</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Base</span>
+  attr <span class="n">:f1</span>, <span class="s">&quot;Ivan&quot;</span>
+  attr <span class="n">:f2</span>, rand, <span class="t">Float64</span>
+  attr <span class="n">:f3</span>, -> { rand(<span class="n">1</span>..<span class="n">3</span>) }
+<span class="k">end</span></code></pre>
+
+<p>Attributes, passed as <code>Proc</code> will be executed each time. Other ones - only once and cached. If type could be analyzed (as with calling <code>rand</code> upper), you can specify exact type passing it as third parameter.</p>
+
+<p>There is also assign strategy using <code>assign</code> macro. Using it all attributes will be assigned after initializing.</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">TestFactory</span> <span class="o">&lt;</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Base</span>
+  assign <span class="n">:f1</span>, <span class="s">&quot;Ivan&quot;</span>
+  assign <span class="n">:f2</span>, rand, <span class="t">Float64</span>
+  assign <span class="n">:f3</span>, -> { rand(<span class="n">1</span>..<span class="n">3</span> }
+<span class="k">end</span>
+
+<span class="c"># Will be do smth like</span>
+obj <span class="o">=</span> <span class="t">Test</span>.<span class="k">new</span>
+obj.f1 <span class="o">=</span> <span class="t">TestFactory</span>.f1 <span class="c"># &quot;Ivan&quot;</span>
+obj.f2 <span class="o">=</span> <span class="t">TestFactory</span>.f2 <span class="c"># 0.61 - just random value shared across all object</span>
+obj.f3 <span class="o">=</span> -> { rand(<span class="n">1</span>..<span class="n">3</span>) }.call</code></pre>
+
+<p>If you specify no <code>attr</code> - will call construtor without any arguments and you will not be able pass anything to it.</p>
+
+<p>If you need to specify exact type of given hash value use <code>argument_type</code>:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">Test</span>
+  @@static <span class="o">=</span> <span class="n">1</span>
+  @@dynamic <span class="o">=</span> <span class="n">1</span>
+  property f1 : <span class="t">String</span>, f2 : <span class="t">Int32</span>, f3 : <span class="t">Float64</span>,
+    f4 : <span class="t">String</span>?, f5 : <span class="t">Int32</span>?, f6 : <span class="t">Array</span>(<span class="t">Int32</span>)?
+
+  <span class="k">def</span> <span class="m">initialize</span>(hash)
+    @f1 <span class="o">=</span> hash[<span class="s">&quot;f1&quot;</span>].<span class="k">as</span>(<span class="t">String</span>)
+    @f2 <span class="o">=</span> hash[<span class="s">&quot;f2&quot;</span>].<span class="k">as</span>(<span class="t">Int32</span>)
+    @f3 <span class="o">=</span> hash[<span class="s">&quot;f3&quot;</span>].<span class="k">as</span>(<span class="t">Float64</span>)
+    @f6 <span class="o">=</span> hash[<span class="s">&quot;f6&quot;</span>].<span class="k">as</span>(<span class="t">Array</span>(<span class="t">Int32</span>)) <span class="k">if</span> hash.has_key?(<span class="s">&quot;f6&quot;</span>)
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="t">TestFactory</span> <span class="o">&lt;</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Base</span>
+  argument_type <span class="t">String</span> <span class="o">|</span> <span class="t">Int32</span> <span class="o">|</span> <span class="t">Float64</span> <span class="o">|</span> <span class="t">Array</span>(<span class="t">Int32</span>)
+  attr <span class="n">:f1</span>, <span class="s">&quot;some&quot;</span>
+  attr <span class="n">:f2</span>, <span class="n">1</span>
+  attr <span class="n">:f3</span>, rand, <span class="t">Float64</span>
+<span class="k">end</span></code></pre>
+
+<p>Also <code>after_initialize</code> callback could be specified:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">TestFactory</span> <span class="o">&lt;</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Base</span>
+  after_initialize <span class="k">do</span> <span class="o">|</span>t<span class="o">|</span>
+    <span class="k">super</span> <span class="c"># if you want parrent one to be inked as well</span>
+    t.f1.not_nil! += <span class="n">1</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>Builder method could be specified as well:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">TestFactory</span> <span class="o">&lt;</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Base</span>
+  <span class="c"># here is default builder</span>
+  initialize_with <span class="k">do</span> <span class="o">|</span>hash, traits<span class="o">|</span>
+    obj <span class="o">=</span> <span class="t">Test</span>.<span class="k">new</span>(hash)
+    make_assigns(obj, traits) <span class="c"># makes all assignements (traits will be described later)</span>
+    obj
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>To specify sequence of some attributes (only allowed as attr hook) use <code>sequence</code>:</p>
+
+<pre><code class="language-crystal">sequence(<span class="n">:f1</span>) { <span class="o">|</span>i<span class="o">|</span> <span class="s">&quot;user</span><span class="i">#{</span>i<span class="i">}</span><span class="s">@example.com&quot;</span> }</code></pre>
+
+<p>You could inherite from existing factory and override some parameters:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">HumanFactory</span> <span class="o">&lt;</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Base</span>
+  describe_class <span class="t">User</span>
+  attr <span class="n">:f1</span>, <span class="s">&quot;asd&quot;</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="t">AdminFactory</span> <span class="o">&lt;</span> <span class="t">HumanFactory</span>
+  attr <span class="n">:f1</span>, <span class="s">&quot;admin&quot;</span>
+  assign <span class="n">:f2</span>, <span class="n">1</span>
+<span class="k">end</span></code></pre>
+
+<p>Child factory inherits all attrs, assigns, traits, sequences, callbacks, class names, has value type.</p>
+
+<p>To group several attributes or assignments use trait. </p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">HumanFactory</span> <span class="o">&lt;</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Base</span>
+  trait <span class="n">:homo</span> <span class="k">do</span>
+    attr <span class="n">:iq</span>, <span class="n">50</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>Traits can't specify callbacks, described type, hash value type.</p>
+
+<p>To build object direct call could be used</p>
+
+<pre><code class="language-crystal"><span class="t">HumanFactory</span>.build
+<span class="t">HumanFactory</span>.build(some_attr: <span class="s">&quot;asd&quot;</span>)
+<span class="t">HumanFactory</span>.build({<span class="s">&quot;some_attr&quot;</span> => <span class="s">&quot;asd&quot;</span>)
+<span class="t">HumanFactory</span>.build([<span class="s">&quot;some_trait&quot;</span>], some_attr: <span class="s">&quot;asd&quot;</span>)
+<span class="t">HumanFactory</span>.build([<span class="s">&quot;some_trait&quot;</span>], {<span class="s">&quot;some_attr&quot;</span> => <span class="s">&quot;asd&quot;</span>})</code></pre>
+
+<p>Also helper methods are defined as well</p>
+
+<pre><code class="language-crystal"><span class="t">Factory</span>.build_human
+<span class="t">Factory</span>.build_human(some_attr: <span class="s">&quot;asd&quot;</span>)
+<span class="t">Factory</span>.build_human({<span class="s">&quot;some_attr&quot;</span> => <span class="s">&quot;asd&quot;</span>)
+<span class="t">Factory</span>.build_human([<span class="s">&quot;some_trait&quot;</span>], some_attr: <span class="s">&quot;asd&quot;</span>)
+<span class="t">Factory</span>.build_human([<span class="s">&quot;some_trait&quot;</span>], {<span class="s">&quot;some_attr&quot;</span> => <span class="s">&quot;asd&quot;</span>})
+<span class="c"># also you can specify count as first parameter in any of thos methods</span>
+<span class="t">Factory</span>.build_human(<span class="n">3</span>, [<span class="s">&quot;some_trait&quot;</span>], {<span class="s">&quot;some_attr&quot;</span> => <span class="s">&quot;asd&quot;</span>})</code></pre>
+
+<h4>Jennifer Support</h4>
+
+<p>To create factory for (Jennifer)[https://github.com/imdrasil/jennifer.cr] model </p>
+
+<pre><code class="language-crystal"><span class="c"># require all jennifer staff and models</span>
+<span class="k">require</span> <span class="s">&quot;factory&quot;</span>
+<span class="k">require</span> <span class="s">&quot;factory/jennifer&quot;</span>
+
+<span class="k">class</span> <span class="t">FilmFactory</span> <span class="o">&lt;</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Jennifer</span><span class="t">::</span><span class="t">Base</span>
+  attr <span class="n">:rating</span>, <span class="n">5</span>
+  assign <span class="n">:name</span>, <span class="s">&quot;Test Film&quot;</span> 
+
+  trait <span class="n">:bad</span> <span class="k">do</span>
+    assign <span class="n">:rating</span>, <span class="n">0</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>It provides direct creating methods same as for building:</p>
+
+<pre><code class="language-crystal"><span class="t">FilmFactory</span>.create([<span class="n">:bad</span>], {<span class="n">:name</span> => <span class="s">&quot;Atilla&quot;</span>})</code></pre>
+
+<p>Also any association could be described on the factory or trait level:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">FilmFactory</span> <span class="o">&lt;</span> <span class="t">Factory</span><span class="t">::</span><span class="t">Jennifer</span><span class="t">::</span><span class="t">Base</span>
+  association <span class="n">:author</span>
+  association <span class="n">:actor</span>, <span class="t">UserFactory</span>, options: {name: <span class="s">&quot;Artemius Fault&quot;</span>}
+<span class="k">end</span></code></pre>
+
+<p>Allowed arguments:</p>
+
+<ul><li><code>:name</code> - first argument - represent model association name (mandatory)</li><li><code>:factory</code> - represents factory class (optional); is defaulted from association name</li><li><code>:strategy</code> - represents creation strategy; optional; default is "create" (also "build" is allowed)</li><li><code>:options</code> - represents extra arguments to association factory; optional </li></ul>
+
+<h2>Development</h2>
+
+<p>For development postgres is required because of testing integration with Jennifer.</p>
+
+<p>Possible next tasks:</p>
+
+<ul><li>think  about adding assigning via hash or named tuble argument;</li><li>adding <code>%attr</code> to traits.</li></ul>
+
+<h2>Contributing</h2>
+
+<ol><li>Fork it ( https://github.com/imdrasil/factory/fork )</li><li>Create your feature branch (git checkout -b my-new-feature)</li><li>Commit your changes (git commit -am 'Add some feature')</li><li>Push to the branch (git push origin my-new-feature)</li><li>Create a new Pull Request</li></ol>
+
+<h2>Contributors</h2>
+
+<ul><li><a href="https://github.com/imdrasil" target="_blank">imdrasil</a> Roman Kalnytskyi - creator, maintainer</li></ul>
+
+
+</div>
+</body>
+</html>

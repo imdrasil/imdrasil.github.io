@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
   <meta id="repository-name" content="github.com/imdrasil/ifrit">
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="js/doc.js"></script>
   <title>String - github.com/imdrasil/ifrit</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class=" " data-id="github.com/imdrasil/ifrit/Array" data-name="array(t)">
       <a href="Array.html">Array</a>
@@ -107,9 +123,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">class</span> String
@@ -144,11 +162,11 @@ in double quotes:</p>
 
 <p>You can use a backslash followed by an <em>u</em> and four hexadecimal characters to denote a unicode codepoint written:</p>
 
-<pre><code><span class="s">&quot;\u0041&quot;</span> <span class="c"># &#61;&#61; &quot;A&quot;</span></code></pre>
+<pre><code><span class="s">&quot;\u0041&quot;</span> <span class="c"># == &quot;A&quot;</span></code></pre>
 
 <p>Or you can use curly braces and specify up to six hexadecimal numbers (0 to 10FFFF):</p>
 
-<pre><code><span class="s">&quot;\u&#123;41&#125;&quot;</span> <span class="c"># &#61;&#61; &quot;A&quot;</span></code></pre>
+<pre><code><span class="s">&quot;\u{41}&quot;</span> <span class="c"># == &quot;A&quot;</span></code></pre>
 
 <p>A string can span multiple lines:</p>
 
@@ -175,22 +193,22 @@ by joining multiple literals with a backslash:</p>
 characters, you can use alternative literals:</p>
 
 <pre><code><span class="c"># Supports double quotes and nested parentheses</span>
-<span class="s">&#37;&#40;hello &#40;&quot;world&quot;&#41;&#41;</span> <span class="c"># same as &quot;hello &#40;\&quot;world\&quot;&#41;&quot;</span>
+<span class="s">%(hello (&quot;world&quot;))</span> <span class="c"># same as &quot;hello (\&quot;world\&quot;)&quot;</span>
 
 <span class="c"># Supports double quotes and nested brackets</span>
-<span class="s">&#37;&#91;hello &#91;&quot;world&quot;&#93;&#93;</span> <span class="c"># same as &quot;hello &#91;\&quot;world\&quot;&#93;&quot;</span>
+<span class="s">%[hello [&quot;world&quot;]]</span> <span class="c"># same as &quot;hello [\&quot;world\&quot;]&quot;</span>
 
 <span class="c"># Supports double quotes and nested curlies</span>
-<span class="s">&#37;&#123;hello &#123;&quot;world&quot;&#125;&#125;</span> <span class="c"># same as &quot;hello &#123;\&quot;world\&quot;&#125;&quot;</span>
+<span class="s">%{hello {&quot;world&quot;}}</span> <span class="c"># same as &quot;hello {\&quot;world\&quot;}&quot;</span>
 
 <span class="c"># Supports double quotes and nested angles</span>
-<span class="s">&#37;&lt;hello &lt;&quot;world&quot;&gt;&gt;</span> <span class="c"># same as &quot;hello &lt;\&quot;world\&quot;&gt;&quot;</span></code></pre>
+<span class="s">%&lt;hello &lt;&quot;world&quot;&gt;&gt;</span> <span class="c"># same as &quot;hello &lt;\&quot;world\&quot;&gt;&quot;</span></code></pre>
 
 <p>To create a <code><a href="String.html">String</a></code> with embedded expressions, you can use string interpolation:</p>
 
 <pre><code>a <span class="o">=</span> <span class="n">1</span>
 b <span class="o">=</span> <span class="n">2</span>
-<span class="s">&quot;sum &#61; </span><span class="i">#{</span></span>a <span class="o">+</span> b<span class="s"><span class="i">}</span>&quot;</span> <span class="c"># &quot;sum &#61; 3&quot;</span></code></pre>
+<span class="s">&quot;sum = </span><span class="i">#{</span>a <span class="o">+</span> b<span class="i">}</span><span class="s">&quot;</span> <span class="c"># &quot;sum = 3&quot;</span></code></pre>
 
 <p>This ends up invoking <code>Object#to_s(IO)</code> on each expression enclosed by <code>#{...}</code>.</p>
 
@@ -207,22 +225,22 @@ char (value 0xFFFD). For example:</p>
 
 <pre><code><span class="c"># here 255 is not a valid byte value in the UTF-8 encoding</span>
 string <span class="o">=</span> <span class="t">String</span>.<span class="k">new</span>(<span class="t">Bytes</span>[<span class="n">255</span>, <span class="n">97</span>])
-string.valid_encoding? <span class="c"># &#61;&gt; false</span>
+string.valid_encoding? <span class="c"># =&gt; false</span>
 
 <span class="c"># The first char here is the unicode replacement char</span>
-string.chars <span class="c"># &#61;&gt; &#91;&#39;�&#39;, &#39;a&#39;&#93;</span></code></pre>
+string.chars <span class="c"># =&gt; [&#39;�&#39;, &#39;a&#39;]</span></code></pre>
 
 <p>One can also create strings with specific byte value in them by
 using octal and hexadecimal escape sequences:</p>
 
 <pre><code><span class="c"># Octal escape sequences</span>
-<span class="s">&quot;\101&quot;</span> <span class="c"># # &#61;&gt; &quot;A&quot;</span>
-<span class="s">&quot;\12&quot;</span>  <span class="c"># # &#61;&gt; &quot;\n&quot;</span>
+<span class="s">&quot;\101&quot;</span> <span class="c"># # =&gt; &quot;A&quot;</span>
+<span class="s">&quot;\12&quot;</span>  <span class="c"># # =&gt; &quot;\n&quot;</span>
 <span class="s">&quot;\1&quot;</span>   <span class="c"># string with one character with code point 1</span>
 <span class="s">&quot;\377&quot;</span> <span class="c"># string with one byte with value 255</span>
 
 <span class="c"># Hexadecimal escape sequences</span>
-<span class="s">&quot;\x45&quot;</span> <span class="c"># # &#61;&gt; &quot;A&quot;</span>
+<span class="s">&quot;\x41&quot;</span> <span class="c"># # =&gt; &quot;A&quot;</span>
 <span class="s">&quot;\xFF&quot;</span> <span class="c"># string with one byte with value 255</span></code></pre>
 
 <p>The reason for allowing strings that don't have a valid UTF-8 sequence
@@ -238,7 +256,7 @@ show a replacement character when there's an error in incoming data.</p>
   <h2>Included Modules</h2>
   <ul class="other-types-list">
   
-    <li class="other-type">Comparable(self)</li>
+    <li class="other-type">Comparable(<a href="String.html">String</a>)</li>
   
   </ul>
 
@@ -254,12 +272,16 @@ show a replacement character when there's an error in incoming data.</p>
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/imdrasil/ifrit/blob/5eca14c269be59a188dacfc2f2679e8d04618f6c/src/ifrit/core.cr#L84" target="_blank">ifrit/core.cr</a>
+      <a href="https://github.com/imdrasil/ifrit/blob/5eca14c269be59a188dacfc2f2679e8d04618f6c/src/ifrit/core.cr#L84" target="_blank">
+        ifrit/core.cr
+      </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/ifrit/blob/5eca14c269be59a188dacfc2f2679e8d04618f6c/src/ifrit/symbol_table.cr#L29" target="_blank">ifrit/symbol_table.cr</a>
+      <a href="https://github.com/imdrasil/ifrit/blob/5eca14c269be59a188dacfc2f2679e8d04618f6c/src/ifrit/symbol_table.cr#L29" target="_blank">
+        ifrit/symbol_table.cr
+      </a>
     
     <br/>
   

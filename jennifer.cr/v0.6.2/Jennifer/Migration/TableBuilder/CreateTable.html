@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../../";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/jennifer.cr">
+  <title>Jennifer::Migration::TableBuilder::CreateTable - github.com/imdrasil/jennifer.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/jennifer.cr/Jennifer" data-name="jennifer">
+      <a href="../../../Jennifer.html">Jennifer</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/AbstractMethod" data-name="jennifer::abstractmethod">
+      <a href="../../../Jennifer/AbstractMethod.html">AbstractMethod</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter" data-name="jennifer::adapter">
+      <a href="../../../Jennifer/Adapter.html">Adapter</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Base" data-name="jennifer::adapter::base">
+      <a href="../../../Jennifer/Adapter/Base.html">Base</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Base/AbstractClassMethods" data-name="jennifer::adapter::base::abstractclassmethods">
+      <a href="../../../Jennifer/Adapter/Base/AbstractClassMethods.html">AbstractClassMethods</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Base/ArgsType" data-name="jennifer::adapter::base::argstype">
+      <a href="../../../Jennifer/Adapter/Base/ArgsType.html">ArgsType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Base/ArgType" data-name="jennifer::adapter::base::argtype">
+      <a href="../../../Jennifer/Adapter/Base/ArgType.html">ArgType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/BaseSQLGenerator" data-name="jennifer::adapter::basesqlgenerator">
+      <a href="../../../Jennifer/Adapter/BaseSQLGenerator.html">BaseSQLGenerator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/BaseSQLGenerator/ClassMethods" data-name="jennifer::adapter::basesqlgenerator::classmethods">
+      <a href="../../../Jennifer/Adapter/BaseSQLGenerator/ClassMethods.html">ClassMethods</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Bash" data-name="jennifer::adapter::bash">
+      <a href="../../../Jennifer/Adapter/Bash.html">Bash</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/DBCommandInterface" data-name="jennifer::adapter::dbcommandinterface">
+      <a href="../../../Jennifer/Adapter/DBCommandInterface.html">DBCommandInterface</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/DBCommandInterface/Command" data-name="jennifer::adapter::dbcommandinterface::command">
+      <a href="../../../Jennifer/Adapter/DBCommandInterface/Command.html">Command</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/ICommandShell/Command/Failed" data-name="jennifer::adapter::icommandshell::command::failed">
+      <a href="../../../Jennifer/Adapter/ICommandShell/Command/Failed.html">Failed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/ICommandShell/Command/Option" data-name="jennifer::adapter::icommandshell::command::option">
+      <a href="../../../Jennifer/Adapter/ICommandShell/Command/Option.html">Option</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Docker" data-name="jennifer::adapter::docker">
+      <a href="../../../Jennifer/Adapter/Docker.html">Docker</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/ICommandShell" data-name="jennifer::adapter::icommandshell">
+      <a href="../../../Jennifer/Adapter/ICommandShell.html">ICommandShell</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/ICommandShell/Command" data-name="jennifer::adapter::icommandshell::command">
+      <a href="../../../Jennifer/Adapter/ICommandShell/Command.html">Command</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/ICommandShell/Command/Failed" data-name="jennifer::adapter::icommandshell::command::failed">
+      <a href="../../../Jennifer/Adapter/ICommandShell/Command/Failed.html">Failed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/ICommandShell/Command/Option" data-name="jennifer::adapter::icommandshell::command::option">
+      <a href="../../../Jennifer/Adapter/ICommandShell/Command/Option.html">Option</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/RequestMethods" data-name="jennifer::adapter::requestmethods">
+      <a href="../../../Jennifer/Adapter/RequestMethods.html">RequestMethods</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/ResultParsers" data-name="jennifer::adapter::resultparsers">
+      <a href="../../../Jennifer/Adapter/ResultParsers.html">ResultParsers</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/SchemaProcessor" data-name="jennifer::adapter::schemaprocessor">
+      <a href="../../../Jennifer/Adapter/SchemaProcessor.html">SchemaProcessor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/TransactionObserver" data-name="jennifer::adapter::transactionobserver">
+      <a href="../../../Jennifer/Adapter/TransactionObserver.html">TransactionObserver</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Adapter/Transactions" data-name="jennifer::adapter::transactions">
+      <a href="../../../Jennifer/Adapter/Transactions.html">Transactions</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/AlreadyInitialized" data-name="jennifer::alreadyinitialized">
+      <a href="../../../Jennifer/AlreadyInitialized.html">AlreadyInitialized</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/AmbiguousSQL" data-name="jennifer::ambiguoussql">
+      <a href="../../../Jennifer/AmbiguousSQL.html">AmbiguousSQL</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/AnyArgument" data-name="jennifer::anyargument">
+      <a href="../../../Jennifer/AnyArgument.html">AnyArgument</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/AnyResult" data-name="jennifer::anyresult">
+      <a href="../../../Jennifer/AnyResult.html">AnyResult</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/BadQuery" data-name="jennifer::badquery">
+      <a href="../../../Jennifer/BadQuery.html">BadQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/BaseException" data-name="jennifer::baseexception">
+      <a href="../../../Jennifer/BaseException.html">BaseException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Config" data-name="jennifer::config">
+      <a href="../../../Jennifer/Config.html">Config</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/DataTypeCasting" data-name="jennifer::datatypecasting">
+      <a href="../../../Jennifer/DataTypeCasting.html">DataTypeCasting</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/DataTypeMismatch" data-name="jennifer::datatypemismatch">
+      <a href="../../../Jennifer/DataTypeMismatch.html">DataTypeMismatch</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/DBAny" data-name="jennifer::dbany">
+      <a href="../../../Jennifer/DBAny.html">DBAny</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/InvalidConfig" data-name="jennifer::invalidconfig">
+      <a href="../../../Jennifer/InvalidConfig.html">InvalidConfig</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Macros" data-name="jennifer::macros">
+      <a href="../../../Jennifer/Macros.html">Macros</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration" data-name="jennifer::migration">
+      <a href="../../../Jennifer/Migration.html">Migration</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/Base" data-name="jennifer::migration::base">
+      <a href="../../../Jennifer/Migration/Base.html">Base</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/Base/AbstractClassMethods" data-name="jennifer::migration::base::abstractclassmethods">
+      <a href="../../../Jennifer/Migration/Base/AbstractClassMethods.html">AbstractClassMethods</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/Runner" data-name="jennifer::migration::runner">
+      <a href="../../../Jennifer/Migration/Runner.html">Runner</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder" data-name="jennifer::migration::tablebuilder">
+      <a href="../../../Jennifer/Migration/TableBuilder.html">TableBuilder</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base" data-name="jennifer::migration::tablebuilder::base">
+      <a href="../../../Jennifer/Migration/TableBuilder/Base.html">Base</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base/AAllowedTypes" data-name="jennifer::migration::tablebuilder::base::aallowedtypes">
+      <a href="../../../Jennifer/Migration/TableBuilder/Base/AAllowedTypes.html">AAllowedTypes</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base/AllowedTypes" data-name="jennifer::migration::tablebuilder::base::allowedtypes">
+      <a href="../../../Jennifer/Migration/TableBuilder/Base/AllowedTypes.html">AllowedTypes</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base/DB_OPTIONS" data-name="jennifer::migration::tablebuilder::base::db_options">
+      <a href="../../../Jennifer/Migration/TableBuilder/Base/DB_OPTIONS.html">DB_OPTIONS</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Base/EAllowedTypes" data-name="jennifer::migration::tablebuilder::base::eallowedtypes">
+      <a href="../../../Jennifer/Migration/TableBuilder/Base/EAllowedTypes.html">EAllowedTypes</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/ChangeTable" data-name="jennifer::migration::tablebuilder::changetable">
+      <a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html">ChangeTable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateForeignKey" data-name="jennifer::migration::tablebuilder::createforeignkey">
+      <a href="../../../Jennifer/Migration/TableBuilder/CreateForeignKey.html">CreateForeignKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateIndex" data-name="jennifer::migration::tablebuilder::createindex">
+      <a href="../../../Jennifer/Migration/TableBuilder/CreateIndex.html">CreateIndex</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateTable" data-name="jennifer::migration::tablebuilder::createtable">
+      <a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html">CreateTable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/CreateView" data-name="jennifer::migration::tablebuilder::createview">
+      <a href="../../../Jennifer/Migration/TableBuilder/CreateView.html">CreateView</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropForeignKey" data-name="jennifer::migration::tablebuilder::dropforeignkey">
+      <a href="../../../Jennifer/Migration/TableBuilder/DropForeignKey.html">DropForeignKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropIndex" data-name="jennifer::migration::tablebuilder::dropindex">
+      <a href="../../../Jennifer/Migration/TableBuilder/DropIndex.html">DropIndex</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropTable" data-name="jennifer::migration::tablebuilder::droptable">
+      <a href="../../../Jennifer/Migration/TableBuilder/DropTable.html">DropTable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/DropView" data-name="jennifer::migration::tablebuilder::dropview">
+      <a href="../../../Jennifer/Migration/TableBuilder/DropView.html">DropView</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Migration/TableBuilder/Raw" data-name="jennifer::migration::tablebuilder::raw">
+      <a href="../../../Jennifer/Migration/TableBuilder/Raw.html">Raw</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model" data-name="jennifer::model">
+      <a href="../../../Jennifer/Model.html">Model</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Base" data-name="jennifer::model::base">
+      <a href="../../../Jennifer/Model/Base.html">Base</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Base/AbstractClassMethods" data-name="jennifer::model::base::abstractclassmethods">
+      <a href="../../../Jennifer/Model/Base/AbstractClassMethods.html">AbstractClassMethods</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Callback" data-name="jennifer::model::callback">
+      <a href="../../../Jennifer/Model/Callback.html">Callback</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Errors" data-name="jennifer::model::errors">
+      <a href="../../../Jennifer/Model/Errors.html">Errors</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/JSONConverter" data-name="jennifer::model::jsonconverter">
+      <a href="../../../Jennifer/Model/JSONConverter.html">JSONConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Mapping" data-name="jennifer::model::mapping">
+      <a href="../../../Jennifer/Model/Mapping.html">Mapping</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/NumericToFloat64Converter" data-name="jennifer::model::numerictofloat64converter">
+      <a href="../../../Jennifer/Model/NumericToFloat64Converter.html">NumericToFloat64Converter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/ParameterConverter" data-name="jennifer::model::parameterconverter">
+      <a href="../../../Jennifer/Model/ParameterConverter.html">ParameterConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/RelationDefinition" data-name="jennifer::model::relationdefinition">
+      <a href="../../../Jennifer/Model/RelationDefinition.html">RelationDefinition</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Resource" data-name="jennifer::model::resource">
+      <a href="../../../Jennifer/Model/Resource.html">Resource</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Resource/AbstractClassMethods" data-name="jennifer::model::resource::abstractclassmethods">
+      <a href="../../../Jennifer/Model/Resource/AbstractClassMethods.html">AbstractClassMethods</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Resource/Supportable" data-name="jennifer::model::resource::supportable">
+      <a href="../../../Jennifer/Model/Resource/Supportable.html">Supportable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Scoping" data-name="jennifer::model::scoping">
+      <a href="../../../Jennifer/Model/Scoping.html">Scoping</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/STIMapping" data-name="jennifer::model::stimapping">
+      <a href="../../../Jennifer/Model/STIMapping.html">STIMapping</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Translation" data-name="jennifer::model::translation">
+      <a href="../../../Jennifer/Model/Translation.html">Translation</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Translation/LocalizeableTypes" data-name="jennifer::model::translation::localizeabletypes">
+      <a href="../../../Jennifer/Model/Translation/LocalizeableTypes.html">LocalizeableTypes</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Model/Validation" data-name="jennifer::model::validation">
+      <a href="../../../Jennifer/Model/Validation.html">Validation</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Mysql" data-name="jennifer::mysql">
+      <a href="../../../Jennifer/Mysql.html">Mysql</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Mysql/Adapter" data-name="jennifer::mysql::adapter">
+      <a href="../../../Jennifer/Mysql/Adapter.html">Adapter</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Mysql/Adapter/EnumType" data-name="jennifer::mysql::adapter::enumtype">
+      <a href="../../../Jennifer/Mysql/Adapter/EnumType.html">EnumType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Mysql/CommandInterface" data-name="jennifer::mysql::commandinterface">
+      <a href="../../../Jennifer/Mysql/CommandInterface.html">CommandInterface</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Mysql/SQLGenerator" data-name="jennifer::mysql::sqlgenerator">
+      <a href="../../../Jennifer/Mysql/SQLGenerator.html">SQLGenerator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres" data-name="jennifer::postgres">
+      <a href="../../../Jennifer/Postgres.html">Postgres</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/Adapter" data-name="jennifer::postgres::adapter">
+      <a href="../../../Jennifer/Postgres/Adapter.html">Adapter</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/Adapter/EnumType" data-name="jennifer::postgres::adapter::enumtype">
+      <a href="../../../Jennifer/Postgres/Adapter/EnumType.html">EnumType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/CommandInterface" data-name="jennifer::postgres::commandinterface">
+      <a href="../../../Jennifer/Postgres/CommandInterface.html">CommandInterface</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/ExecResult" data-name="jennifer::postgres::execresult">
+      <a href="../../../Jennifer/Postgres/ExecResult.html">ExecResult</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/Migration" data-name="jennifer::postgres::migration">
+      <a href="../../../Jennifer/Postgres/Migration.html">Migration</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/Migration/TableBuilder" data-name="jennifer::postgres::migration::tablebuilder">
+      <a href="../../../Jennifer/Postgres/Migration/TableBuilder.html">TableBuilder</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/Migration/TableBuilder/Base" data-name="jennifer::postgres::migration::tablebuilder::base">
+      <a href="../../../Jennifer/Postgres/Migration/TableBuilder/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/Migration/TableBuilder/ChangeEnum" data-name="jennifer::postgres::migration::tablebuilder::changeenum">
+      <a href="../../../Jennifer/Postgres/Migration/TableBuilder/ChangeEnum.html">ChangeEnum</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/Migration/TableBuilder/CreateEnum" data-name="jennifer::postgres::migration::tablebuilder::createenum">
+      <a href="../../../Jennifer/Postgres/Migration/TableBuilder/CreateEnum.html">CreateEnum</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/Migration/TableBuilder/CreateMaterializedView" data-name="jennifer::postgres::migration::tablebuilder::creatematerializedview">
+      <a href="../../../Jennifer/Postgres/Migration/TableBuilder/CreateMaterializedView.html">CreateMaterializedView</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/Migration/TableBuilder/DropEnum" data-name="jennifer::postgres::migration::tablebuilder::dropenum">
+      <a href="../../../Jennifer/Postgres/Migration/TableBuilder/DropEnum.html">DropEnum</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/Migration/TableBuilder/DropMaterializedView" data-name="jennifer::postgres::migration::tablebuilder::dropmaterializedview">
+      <a href="../../../Jennifer/Postgres/Migration/TableBuilder/DropMaterializedView.html">DropMaterializedView</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/SchemaProcessor" data-name="jennifer::postgres::schemaprocessor">
+      <a href="../../../Jennifer/Postgres/SchemaProcessor.html">SchemaProcessor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Postgres/SQLGenerator" data-name="jennifer::postgres::sqlgenerator">
+      <a href="../../../Jennifer/Postgres/SQLGenerator.html">SQLGenerator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Query" data-name="jennifer::query">
+      <a href="../../../Jennifer/Query.html">Query</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder" data-name="jennifer::querybuilder">
+      <a href="../../../Jennifer/QueryBuilder.html">QueryBuilder</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/AbsFunction" data-name="jennifer::querybuilder::absfunction">
+      <a href="../../../Jennifer/QueryBuilder/AbsFunction.html">AbsFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Aggregations" data-name="jennifer::querybuilder::aggregations">
+      <a href="../../../Jennifer/QueryBuilder/Aggregations.html">Aggregations</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/All" data-name="jennifer::querybuilder::all">
+      <a href="../../../Jennifer/QueryBuilder/All.html">All</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/And" data-name="jennifer::querybuilder::and">
+      <a href="../../../Jennifer/QueryBuilder/And.html">And</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Any" data-name="jennifer::querybuilder::any">
+      <a href="../../../Jennifer/QueryBuilder/Any.html">Any</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/CeilFunction" data-name="jennifer::querybuilder::ceilfunction">
+      <a href="../../../Jennifer/QueryBuilder/CeilFunction.html">CeilFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/ConcatFunction" data-name="jennifer::querybuilder::concatfunction">
+      <a href="../../../Jennifer/QueryBuilder/ConcatFunction.html">ConcatFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Condition" data-name="jennifer::querybuilder::condition">
+      <a href="../../../Jennifer/QueryBuilder/Condition.html">Condition</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Criteria" data-name="jennifer::querybuilder::criteria">
+      <a href="../../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Criteria/Rightable" data-name="jennifer::querybuilder::criteria::rightable">
+      <a href="../../../Jennifer/QueryBuilder/Criteria/Rightable.html">Rightable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/CurrentDateFunction" data-name="jennifer::querybuilder::currentdatefunction">
+      <a href="../../../Jennifer/QueryBuilder/CurrentDateFunction.html">CurrentDateFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/CurrentTimeFunction" data-name="jennifer::querybuilder::currenttimefunction">
+      <a href="../../../Jennifer/QueryBuilder/CurrentTimeFunction.html">CurrentTimeFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/CurrentTimestampFunction" data-name="jennifer::querybuilder::currenttimestampfunction">
+      <a href="../../../Jennifer/QueryBuilder/CurrentTimestampFunction.html">CurrentTimestampFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/EagerLoading" data-name="jennifer::querybuilder::eagerloading">
+      <a href="../../../Jennifer/QueryBuilder/EagerLoading.html">EagerLoading</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Executables" data-name="jennifer::querybuilder::executables">
+      <a href="../../../Jennifer/QueryBuilder/Executables.html">Executables</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/ExpressionBuilder" data-name="jennifer::querybuilder::expressionbuilder">
+      <a href="../../../Jennifer/QueryBuilder/ExpressionBuilder.html">ExpressionBuilder</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/FloorFunction" data-name="jennifer::querybuilder::floorfunction">
+      <a href="../../../Jennifer/QueryBuilder/FloorFunction.html">FloorFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Function" data-name="jennifer::querybuilder::function">
+      <a href="../../../Jennifer/QueryBuilder/Function.html">Function</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Grouping" data-name="jennifer::querybuilder::grouping">
+      <a href="../../../Jennifer/QueryBuilder/Grouping.html">Grouping</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/IModelQuery" data-name="jennifer::querybuilder::imodelquery">
+      <a href="../../../Jennifer/QueryBuilder/IModelQuery.html">IModelQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Join" data-name="jennifer::querybuilder::join">
+      <a href="../../../Jennifer/QueryBuilder/Join.html">Join</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Joining" data-name="jennifer::querybuilder::joining">
+      <a href="../../../Jennifer/QueryBuilder/Joining.html">Joining</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/JSONSelector" data-name="jennifer::querybuilder::jsonselector">
+      <a href="../../../Jennifer/QueryBuilder/JSONSelector.html">JSONSelector</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/LateralJoin" data-name="jennifer::querybuilder::lateraljoin">
+      <a href="../../../Jennifer/QueryBuilder/LateralJoin.html">LateralJoin</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/LogicOperator" data-name="jennifer::querybuilder::logicoperator">
+      <a href="../../../Jennifer/QueryBuilder/LogicOperator.html">LogicOperator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/LogicOperator/Operandable" data-name="jennifer::querybuilder::logicoperator::operandable">
+      <a href="../../../Jennifer/QueryBuilder/LogicOperator/Operandable.html">Operandable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/LogicOperator/Operators" data-name="jennifer::querybuilder::logicoperator::operators">
+      <a href="../../../Jennifer/QueryBuilder/LogicOperator/Operators.html">Operators</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/LowerFunction" data-name="jennifer::querybuilder::lowerfunction">
+      <a href="../../../Jennifer/QueryBuilder/LowerFunction.html">LowerFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/ModelQuery" data-name="jennifer::querybuilder::modelquery(t)">
+      <a href="../../../Jennifer/QueryBuilder/ModelQuery.html">ModelQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/MultiQueryRelationTree" data-name="jennifer::querybuilder::multiqueryrelationtree">
+      <a href="../../../Jennifer/QueryBuilder/MultiQueryRelationTree.html">MultiQueryRelationTree</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/NestedRelationTree" data-name="jennifer::querybuilder::nestedrelationtree">
+      <a href="../../../Jennifer/QueryBuilder/NestedRelationTree.html">NestedRelationTree</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/NowFunction" data-name="jennifer::querybuilder::nowfunction">
+      <a href="../../../Jennifer/QueryBuilder/NowFunction.html">NowFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Or" data-name="jennifer::querybuilder::or">
+      <a href="../../../Jennifer/QueryBuilder/Or.html">Or</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Ordering" data-name="jennifer::querybuilder::ordering">
+      <a href="../../../Jennifer/QueryBuilder/Ordering.html">Ordering</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/OrderItem" data-name="jennifer::querybuilder::orderitem">
+      <a href="../../../Jennifer/QueryBuilder/OrderItem.html">OrderItem</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/OrderItem/Direction" data-name="jennifer::querybuilder::orderitem::direction">
+      <a href="../../../Jennifer/QueryBuilder/OrderItem/Direction.html">Direction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/OrderItem/NullPosition" data-name="jennifer::querybuilder::orderitem::nullposition">
+      <a href="../../../Jennifer/QueryBuilder/OrderItem/NullPosition.html">NullPosition</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Query" data-name="jennifer::querybuilder::query">
+      <a href="../../../Jennifer/QueryBuilder/Query.html">Query</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/QueryObject" data-name="jennifer::querybuilder::queryobject">
+      <a href="../../../Jennifer/QueryBuilder/QueryObject.html">QueryObject</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/RawSql" data-name="jennifer::querybuilder::rawsql">
+      <a href="../../../Jennifer/QueryBuilder/RawSql.html">RawSql</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/RelationTree" data-name="jennifer::querybuilder::relationtree">
+      <a href="../../../Jennifer/QueryBuilder/RelationTree.html">RelationTree</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/RelationTree/Element" data-name="jennifer::querybuilder::relationtree::element">
+      <a href="../../../Jennifer/QueryBuilder/RelationTree/Element.html">Element</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/RoundFunction" data-name="jennifer::querybuilder::roundfunction">
+      <a href="../../../Jennifer/QueryBuilder/RoundFunction.html">RoundFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/SQLNode" data-name="jennifer::querybuilder::sqlnode">
+      <a href="../../../Jennifer/QueryBuilder/SQLNode.html">SQLNode</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Star" data-name="jennifer::querybuilder::star">
+      <a href="../../../Jennifer/QueryBuilder/Star.html">Star</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/UpperFunction" data-name="jennifer::querybuilder::upperfunction">
+      <a href="../../../Jennifer/QueryBuilder/UpperFunction.html">UpperFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/QueryBuilder/Xor" data-name="jennifer::querybuilder::xor">
+      <a href="../../../Jennifer/QueryBuilder/Xor.html">Xor</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Record" data-name="jennifer::record">
+      <a href="../../../Jennifer/Record.html">Record</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/RecordExists" data-name="jennifer::recordexists">
+      <a href="../../../Jennifer/RecordExists.html">RecordExists</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/RecordInvalid" data-name="jennifer::recordinvalid">
+      <a href="../../../Jennifer/RecordInvalid.html">RecordInvalid</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/RecordNotFound" data-name="jennifer::recordnotfound">
+      <a href="../../../Jennifer/RecordNotFound.html">RecordNotFound</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation" data-name="jennifer::relation">
+      <a href="../../../Jennifer/Relation.html">Relation</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/Base" data-name="jennifer::relation::base(t, q)">
+      <a href="../../../Jennifer/Relation/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/BelongsTo" data-name="jennifer::relation::belongsto(t, q)">
+      <a href="../../../Jennifer/Relation/BelongsTo.html">BelongsTo</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/HasMany" data-name="jennifer::relation::hasmany(t, q)">
+      <a href="../../../Jennifer/Relation/HasMany.html">HasMany</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/HasOne" data-name="jennifer::relation::hasone(t, q)">
+      <a href="../../../Jennifer/Relation/HasOne.html">HasOne</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/IRelation" data-name="jennifer::relation::irelation">
+      <a href="../../../Jennifer/Relation/IRelation.html">IRelation</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Relation/ManyToMany" data-name="jennifer::relation::manytomany(t, q)">
+      <a href="../../../Jennifer/Relation/ManyToMany.html">ManyToMany</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Skip" data-name="jennifer::skip">
+      <a href="../../../Jennifer/Skip.html">Skip</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/UnknownRelation" data-name="jennifer::unknownrelation">
+      <a href="../../../Jennifer/UnknownRelation.html">UnknownRelation</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/UnknownSTIType" data-name="jennifer::unknownstitype">
+      <a href="../../../Jennifer/UnknownSTIType.html">UnknownSTIType</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/Validator" data-name="jennifer::validator">
+      <a href="../../../Jennifer/Validator.html">Validator</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/Jennifer/View" data-name="jennifer::view">
+      <a href="../../../Jennifer/View.html">View</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/View/Base" data-name="jennifer::view::base">
+      <a href="../../../Jennifer/View/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/View/ExperimentalMapping" data-name="jennifer::view::experimentalmapping">
+      <a href="../../../Jennifer/View/ExperimentalMapping.html">ExperimentalMapping</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/Jennifer/View/Materialized" data-name="jennifer::view::materialized">
+      <a href="../../../Jennifer/View/Materialized.html">Materialized</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/MySql" data-name="mysql">
+      <a href="../../../MySql.html">MySql</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/MySql/ResultSet" data-name="mysql::resultset">
+      <a href="../../../MySql/ResultSet.html">ResultSet</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/MySql/TextResultSet" data-name="mysql::textresultset">
+      <a href="../../../MySql/TextResultSet.html">TextResultSet</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/jennifer.cr/PG" data-name="pg">
+      <a href="../../../PG.html">PG</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/PG/Geo" data-name="pg::geo">
+      <a href="../../../PG/Geo.html">Geo</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/PG/Numeric" data-name="pg::numeric">
+      <a href="../../../PG/Numeric.html">Numeric</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer.cr/PG/ResultSet" data-name="pg::resultset">
+      <a href="../../../PG/ResultSet.html">ResultSet</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Jennifer::Migration::TableBuilder::CreateTable
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html">Jennifer::Migration::TableBuilder::CreateTable</a></li><li class="superclass"><a href="../../../Jennifer/Migration/TableBuilder/Base.html">Jennifer::Migration::TableBuilder::Base</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L6" target="_blank">
+        jennifer/migration/table_builder/create_table.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#bigint%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#bigint</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blchar%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#blchar</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#blob%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#blob</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bool%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#bool</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#box</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bytea%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#bytea</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#char%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#char</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#circle%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#circle</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#date_time%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#date_time</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#decimal%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#decimal</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#double%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#double</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enum%28name%2Cvalues%3D%5B%5DofString%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#enum</strong>(name, values = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#field%28name%2Ctype%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#field</strong>(name, type, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines field <em>name</em> of type <em>type</em> with with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fields%3AHash%28String%2CHash%28Symbol%2CArray%28Bool%7CFloat32%7CInt32%7CString%7CSymbol%7CNil%29%7CBool%7CFloat32%7CInt32%7CString%7CSymbol%7CNil%29%29-instance-method" class="signature"><strong>#fields</strong> : Hash(String, Hash(Symbol, Array(Bool | Float32 | Int32 | String | Symbol | Nil) | Bool | Float32 | Int32 | String | Symbol | Nil))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#float%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#float</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#foreign_key%28to_table%2Ccolumn%3Dnil%2Cprimary_key%3Dnil%2Cname%3Dnil%29-instance-method" class="signature"><strong>#foreign_key</strong>(to_table, column = <span class="n">nil</span>, primary_key = <span class="n">nil</span>, name = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Creates a foreign key constraint to <code>to_table</code> table.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#index%28name%3AString%2Cfield%3ASymbol%2Ctype%3ASymbol%3F%3Dnil%2Clength%3AInt32%3F%3Dnil%2Corder%3ASymbol%3F%3Dnil%29-instance-method" class="signature"><strong>#index</strong>(name : String, field : Symbol, type : Symbol? = <span class="n">nil</span>, length : Int32? = <span class="n">nil</span>, order : Symbol? = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#index%28name%3AString%2Cfields%3AArray%28Symbol%29%2Ctype%3ASymbol%3F%3Dnil%2Clengths%3AHash%28Symbol%2CInt32%29%3D%7B%7DofSymbol%3D%3EInt32%2Corders%3AHash%28Symbol%2CSymbol%29%3D%7B%7DofSymbol%3D%3ESymbol%29-instance-method" class="signature"><strong>#index</strong>(name : String, fields : Array(Symbol), type : Symbol? = <span class="n">nil</span>, lengths : Hash(Symbol, Int32) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Int32</span>, orders : Hash(Symbol, Symbol) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Symbol</span>)</a>
+        
+          <div class="summary"><p>Adds index.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#integer%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#integer</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#json%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#json</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#jsonb%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#jsonb</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#line%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#line</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#lseg%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#lseg</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#numeric%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#numeric</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#oid%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#oid</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#path%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#path</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#point%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#point</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#polygon%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#polygon</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#process-instance-method" class="signature"><strong>#process</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reference%28name%29-instance-method" class="signature"><strong>#reference</strong>(name)</a>
+        
+          <div class="summary"><p>Adds a reference.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#short%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#short</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#string%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#string</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#text%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#text</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timestamp%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#timestamp</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timestamps%28null%3Dfalse%29-instance-method" class="signature"><strong>#timestamps</strong>(null = <span class="n">false</span>)</a>
+        
+          <div class="summary"><p>Defines <code>created_at</code> and <code>updated_at</code> timestamp fields.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timestamptz%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#timestamptz</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uuid%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#uuid</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#var_string%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#var_string</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#varchar%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#varchar</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#xml%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method" class="signature"><strong>#xml</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../../../Jennifer/Migration/TableBuilder/Base.html">Jennifer::Migration::TableBuilder::Base</a></code></h3>
+  
+  
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#adapter%3AAdapter%3A%3ABase-instance-method" class="tooltip">
+      <span>adapter : Adapter::Base</span>
+    adapter</a>, 
+    
+  
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
+      <span>column_exists?(*args, **options)<br/>column_exists?(*args, **options, &block)</span>
+    column_exists?</a>, 
+    
+  
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#index_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
+      <span>index_exists?(*args, **options)<br/>index_exists?(*args, **options, &block)</span>
+    index_exists?</a>, 
+    
+  
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#name-instance-method" class="tooltip">
+      <span>name</span>
+    name</a>, 
+    
+  
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#process-instance-method" class="tooltip">
+      <span>process</span>
+    process</a>, 
+    
+  
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#process_commands-instance-method" class="tooltip">
+      <span>process_commands</span>
+    process_commands</a>, 
+    
+  
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#schema_processor%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
+      <span>schema_processor(*args, **options)<br/>schema_processor(*args, **options, &block)</span>
+    schema_processor</a>, 
+    
+  
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#table_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
+      <span>table_exists?(*args, **options)<br/>table_exists?(*args, **options, &block)</span>
+    table_exists?</a>, 
+    
+  
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#to_s-instance-method" class="tooltip">
+      <span>to_s</span>
+    to_s</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../../../Jennifer/Migration/TableBuilder/Base.html">Jennifer::Migration::TableBuilder::Base</a></code></h3>
+  
+  
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#new%28adapter%2Cname%3AString%7CSymbol%29-class-method" class="tooltip">
+      <span>new(adapter, name : String | Symbol)</span>
+    new</a>
+    
+  
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="bigint(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>bigint</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#bigint%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blchar(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>blchar</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#blchar%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="blob(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>blob</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#blob%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bool(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>bool</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#bool%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>box</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#box%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bytea(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>bytea</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#bytea%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="char(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>char</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#char%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="circle(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>circle</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#circle%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="date_time(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>date_time</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#date_time%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="decimal(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>decimal</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#decimal%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="double(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>double</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#double%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enum(name,values=[]ofString,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>enum</strong>(name, values = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#enum%28name%2Cvalues%3D%5B%5DofString%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="field(name,type,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>field</strong>(name, type, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#field%28name%2Ctype%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Defines field <em>name</em> of type <em>type</em> with with given <em>options</em>.</p>
+
+<p>Given <em>type</em> is considered as sql type. Available options:</p>
+
+<ul><li>serial</li><li>sql_type</li><li>size</li><li>null</li><li>primary</li><li>default</li><li>auto_increment</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fields:Hash(String,Hash(Symbol,Array(Bool|Float32|Int32|String|Symbol|Nil)|Bool|Float32|Int32|String|Symbol|Nil))-instance-method">
+      <div class="signature">
+        
+        def <strong>fields</strong> : Hash(String, Hash(Symbol, Array(Bool | Float32 | Int32 | String | Symbol | Nil) | Bool | Float32 | Int32 | String | Symbol | Nil))
+
+        <a class="method-permalink" href="#fields%3AHash%28String%2CHash%28Symbol%2CArray%28Bool%7CFloat32%7CInt32%7CString%7CSymbol%7CNil%29%7CBool%7CFloat32%7CInt32%7CString%7CSymbol%7CNil%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="float(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>float</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#float%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="foreign_key(to_table,column=nil,primary_key=nil,name=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>foreign_key</strong>(to_table, column = <span class="n">nil</span>, primary_key = <span class="n">nil</span>, name = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#foreign_key%28to_table%2Ccolumn%3Dnil%2Cprimary_key%3Dnil%2Cname%3Dnil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a foreign key constraint to <code>to_table</code> table.</p>
+
+<p>Arguments:</p>
+
+<ul><li><em>column</em> - the foreign key column name on current_table. Defaults to `Inflector.foreign_key(Inflector.singularize(to_table))</li><li><em>primary_key</em> - the primary key column name on <em>to_table</em>. Defaults to <code>"id"</code></li><li><em>name</em> - the constraint name. Defaults to `"fc_cr_&lt;identifier>"</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L86" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="index(name:String,field:Symbol,type:Symbol?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>index</strong>(name : String, field : Symbol, type : Symbol? = <span class="n">nil</span>, length : Int32? = <span class="n">nil</span>, order : Symbol? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#index%28name%3AString%2Cfield%3ASymbol%2Ctype%3ASymbol%3F%3Dnil%2Clength%3AInt32%3F%3Dnil%2Corder%3ASymbol%3F%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L70" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="index(name:String,fields:Array(Symbol),type:Symbol?=nil,lengths:Hash(Symbol,Int32)={}ofSymbol=&gt;Int32,orders:Hash(Symbol,Symbol)={}ofSymbol=&gt;Symbol)-instance-method">
+      <div class="signature">
+        
+        def <strong>index</strong>(name : String, fields : Array(Symbol), type : Symbol? = <span class="n">nil</span>, lengths : Hash(Symbol, Int32) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Int32</span>, orders : Hash(Symbol, Symbol) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Symbol</span>)
+
+        <a class="method-permalink" href="#index%28name%3AString%2Cfields%3AArray%28Symbol%29%2Ctype%3ASymbol%3F%3Dnil%2Clengths%3AHash%28Symbol%2CInt32%29%3D%7B%7DofSymbol%3D%3EInt32%2Corders%3AHash%28Symbol%2CSymbol%29%3D%7B%7DofSymbol%3D%3ESymbol%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds index.</p>
+
+<pre><code>t.index(<span class="s">&quot;index_name&quot;</span>, [<span class="n">:field1</span>, <span class="n">:field2</span>], length: { <span class="n">:field1</span> => <span class="n">2</span>, <span class="n">:field2</span> => <span class="n">3</span> }, orders: { <span class="n">:field1</span> => <span class="n">:asc</span> }})</code></pre>
+
+<p><span class="flag orange">TODO</span>  add more documentation.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="integer(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>integer</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#integer%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="json(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>json</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#json%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="jsonb(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>jsonb</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#jsonb%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="line(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>line</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#line%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="lseg(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>lseg</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#lseg%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="numeric(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>numeric</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#numeric%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="oid(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>oid</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#oid%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="path(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>path</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#path%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="point(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>point</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#point%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="polygon(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>polygon</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#polygon%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="process-instance-method">
+      <div class="signature">
+        
+        def <strong>process</strong>
+
+        <a class="method-permalink" href="#process-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reference(name)-instance-method">
+      <div class="signature">
+        
+        def <strong>reference</strong>(name)
+
+        <a class="method-permalink" href="#reference%28name%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds a reference.</p>
+
+<p>Defines foreign key field based on given relation name (<em>name</em>). By default it is integer and null value is allowed.</p>
+
+<p><span class="flag orange">TODO</span>  add a foreign key</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L47" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="short(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>short</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#short%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="string(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>string</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#string%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="text(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>text</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#text%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="timestamp(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>timestamp</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#timestamp%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="timestamps(null=false)-instance-method">
+      <div class="signature">
+        
+        def <strong>timestamps</strong>(null = <span class="n">false</span>)
+
+        <a class="method-permalink" href="#timestamps%28null%3Dfalse%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Defines <code>created_at</code> and <code>updated_at</code> timestamp fields.</p>
+
+<p>Argument <em>null</em> sets <code>:null</code> option to both fields.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L54" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="timestamptz(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>timestamptz</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#timestamptz%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uuid(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>uuid</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#uuid%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="var_string(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>var_string</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#var_string%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="varchar(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>varchar</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#varchar%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="xml(name,options=DB_OPTIONS.new)-instance-method">
+      <div class="signature">
+        
+        def <strong>xml</strong>(name, options = <span class="t">DB_OPTIONS</span>.<span class="k">new</span>)
+
+        <a class="method-permalink" href="#xml%28name%2Coptions%3DDB_OPTIONS.new%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/535946643df01731243b989f51d0e2dbf36fb3b4/src/jennifer/migration/table_builder/create_table.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

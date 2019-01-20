@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/sam.cr">
+  <title>Sam - github.com/imdrasil/sam.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/sam.cr/Sam" data-name="sam">
+      <a href="Sam.html">Sam</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/sam.cr/Sam/Args" data-name="sam::args">
+      <a href="Sam/Args.html">Args</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/sam.cr/Sam/Args/ALLOWED_HASH" data-name="sam::args::allowed_hash">
+      <a href="Sam/Args/ALLOWED_HASH.html">ALLOWED_HASH</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/sam.cr/Sam/Args/ALLOWED_TYPES" data-name="sam::args::allowed_types">
+      <a href="Sam/Args/ALLOWED_TYPES.html">ALLOWED_TYPES</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/sam.cr/Sam/Namespace" data-name="sam::namespace">
+      <a href="Sam/Namespace.html">Namespace</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/sam.cr/Sam/Task" data-name="sam::task">
+      <a href="Sam/Task.html">Task</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Sam
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam/args.cr#L1" target="_blank">
+        sam/args.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam/namespace.cr#L1" target="_blank">
+        sam/namespace.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam/task.cr#L1" target="_blank">
+        sam/task.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam/version.cr#L1" target="_blank">
+        sam/version.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam.cr#L3" target="_blank">
+        sam.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="TASK_SEPARATOR">
+        <strong>TASK_SEPARATOR</strong> = <code><span class="s">&quot;@&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VERSION">
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.3.0&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#desc%28description%29-class-method" class="signature"><strong>.desc</strong>(description)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find%28path%29-class-method" class="signature"><strong>.find</strong>(path)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find%21%28path%29-class-method" class="signature"><strong>.find!</strong>(path)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#generate_makefile%28sam_path%29-class-method" class="signature"><strong>.generate_makefile</strong>(sam_path)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#help-class-method" class="signature"><strong>.help</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#invoke%28name%2Cargs%3AArgs%29-class-method" class="signature"><strong>.invoke</strong>(name, args : Args)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#invoke%28name%2Cargs%3AArray%28String%29%29-class-method" class="signature"><strong>.invoke</strong>(name, args : Array(String))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#invoke%28name%29-class-method" class="signature"><strong>.invoke</strong>(name)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#namespace%28name%3AString%2C%26block%29-class-method" class="signature"><strong>.namespace</strong>(name : String, &block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pretty_print-class-method" class="signature"><strong>.pretty_print</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#process_tasks%28args%29-class-method" class="signature"><strong>.process_tasks</strong>(args)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#task%28name%2Cdependencies%3D%5B%5DofString%2C%26block%3ATask%2CArgs-%3EVoid%29-class-method" class="signature"><strong>.task</strong>(name, dependencies = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>, &block : Task, Args -> Void)</a>
+        
+          <div class="summary"><p>delegates call to root namespace</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="desc(description)-class-method">
+      <div class="signature">
+        
+        def self.<strong>desc</strong>(description)
+
+        <a class="method-permalink" href="#desc%28description%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find(path)-class-method">
+      <div class="signature">
+        
+        def self.<strong>find</strong>(path)
+
+        <a class="method-permalink" href="#find%28path%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam.cr#L44" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find!(path)-class-method">
+      <div class="signature">
+        
+        def self.<strong>find!</strong>(path)
+
+        <a class="method-permalink" href="#find%21%28path%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="generate_makefile(sam_path)-class-method">
+      <div class="signature">
+        
+        def self.<strong>generate_makefile</strong>(sam_path)
+
+        <a class="method-permalink" href="#generate_makefile%28sam_path%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam.cr#L91" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="help-class-method">
+      <div class="signature">
+        
+        def self.<strong>help</strong>
+
+        <a class="method-permalink" href="#help-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam.cr#L52" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="invoke(name,args:Args)-class-method">
+      <div class="signature">
+        
+        def self.<strong>invoke</strong>(name, args : <a href="Sam/Args.html">Args</a>)
+
+        <a class="method-permalink" href="#invoke%28name%2Cargs%3AArgs%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam.cr#L26" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="invoke(name,args:Array(String))-class-method">
+      <div class="signature">
+        
+        def self.<strong>invoke</strong>(name, args : Array(String))
+
+        <a class="method-permalink" href="#invoke%28name%2Cargs%3AArray%28String%29%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="invoke(name)-class-method">
+      <div class="signature">
+        
+        def self.<strong>invoke</strong>(name)
+
+        <a class="method-permalink" href="#invoke%28name%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="namespace(name:String,&amp;block)-class-method">
+      <div class="signature">
+        
+        def self.<strong>namespace</strong>(name : String, &block)
+
+        <a class="method-permalink" href="#namespace%28name%3AString%2C%26block%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pretty_print-class-method">
+      <div class="signature">
+        
+        def self.<strong>pretty_print</strong>
+
+        <a class="method-permalink" href="#pretty_print-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam.cr#L79" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="process_tasks(args)-class-method">
+      <div class="signature">
+        
+        def self.<strong>process_tasks</strong>(args)
+
+        <a class="method-permalink" href="#process_tasks%28args%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam.cr#L64" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="task(name,dependencies=[]ofString,&amp;block:Task,Args-&gt;Void)-class-method">
+      <div class="signature">
+        
+        def self.<strong>task</strong>(name, dependencies = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>, &block : <a href="Sam/Task.html">Task</a>, <a href="Sam/Args.html">Args</a> -> Void)
+
+        <a class="method-permalink" href="#task%28name%2Cdependencies%3D%5B%5DofString%2C%26block%3ATask%2CArgs-%3EVoid%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>delegates call to root namespace</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/bf03da47561f31802bb7c92a86cd0153b98c4656/src/sam.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
