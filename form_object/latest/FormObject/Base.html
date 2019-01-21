@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/form_object">
+  <title>FormObject::Base(T) - github.com/imdrasil/form_object</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/form_object/FormObject" data-name="formobject">
+      <a href="../FormObject.html">FormObject</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/form_object/FormObject/AbstractForm" data-name="formobject::abstractform">
+      <a href="../FormObject/AbstractForm.html">AbstractForm</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/AbstractForm/ClassMethods" data-name="formobject::abstractform::classmethods">
+      <a href="../FormObject/AbstractForm/ClassMethods.html">ClassMethods</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/imdrasil/form_object/FormObject/Base" data-name="formobject::base(t)">
+      <a href="../FormObject/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/BaseError" data-name="formobject::baseerror">
+      <a href="../FormObject/BaseError.html">BaseError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/Coercer" data-name="formobject::coercer">
+      <a href="../FormObject/Coercer.html">Coercer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/Context" data-name="formobject::context">
+      <a href="../FormObject/Context.html">Context</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/ContextCollection" data-name="formobject::contextcollection">
+      <a href="../FormObject/ContextCollection.html">ContextCollection</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/form_object/FormObject/IContext" data-name="formobject::icontext">
+      <a href="../FormObject/IContext.html">IContext</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/IContext/Any" data-name="formobject::icontext::any">
+      <a href="../FormObject/IContext/Any.html">Any</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/Mapping" data-name="formobject::mapping">
+      <a href="../FormObject/Mapping.html">Mapping</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/Module" data-name="formobject::module">
+      <a href="../FormObject/Module.html">Module</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/NotAssignedError" data-name="formobject::notassignederror">
+      <a href="../FormObject/NotAssignedError.html">NotAssignedError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/SkipException" data-name="formobject::skipexception">
+      <a href="../FormObject/SkipException.html">SkipException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/TypeCastError" data-name="formobject::typecasterror">
+      <a href="../FormObject/TypeCastError.html">TypeCastError</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">abstract class</span> FormObject::Base(T)
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../FormObject/Base.html">FormObject::Base(T)</a></li><li class="superclass"><a href="../FormObject/AbstractForm.html">FormObject::AbstractForm</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Base class for Jennifer form object.</p>
+
+<p>This class works only with Jennifer ORM.</p>
+
+<pre><code><span class="k">class</span> <span class="t">ContactForm</span> <span class="o">&lt;</span> <span class="t">FormObject</span><span class="t">::</span><span class="t">Base</span>(<span class="t">Contact</span>)
+  attr <span class="n">:name</span>, <span class="t">String</span>
+  attr <span class="n">:sex</span>, <span class="t">String</span>, origin: <span class="n">:gender</span>
+  attr <span class="n">:count</span>, <span class="t">Int32</span>, virtual: <span class="n">true</span>
+  attr <span class="n">:_deleted</span>, <span class="t">Bool</span>?, virtual: <span class="n">true</span>
+<span class="k">end</span></code></pre>
+
+<p>FormObject::Base supports Jennifer validation DSL and API.</p>
+
+<pre><code><span class="k">class</span> <span class="t">ContactForm</span> <span class="o">&lt;</span> <span class="t">FormObject</span><span class="t">::</span><span class="t">Base</span>(<span class="t">Contact</span>)
+  <span class="c"># ...</span>
+  attr <span class="n">:count</span>, <span class="t">Int32</span>, virtual: <span class="n">true</span>
+
+  validates_numericality <span class="n">:count</span>, greater_than: <span class="n">2</span>
+<span class="k">end</span>
+
+c <span class="o">=</span> <span class="t">Contact</span>.<span class="k">new</span>
+f <span class="o">=</span> <span class="t">ContactForm</span>.<span class="k">new</span>(c)
+f.verify(request)
+f.valid?
+f.errors <span class="c"># Jennifer::Model::Errors</span></code></pre>
+
+
+
+
+
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type">Jennifer::Model::Validation</li>
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/base.cr#L33" target="_blank">
+        form_object/base.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28resource%29-class-method" class="signature"><strong>.new</strong>(resource)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#all-class-method" class="signature"><strong>.all</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#human_attribute_name%28attr%29-class-method" class="signature"><strong>.human_attribute_name</strong>(attr)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#changed%3F-instance-method" class="signature"><strong>#changed?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#errors-instance-method" class="signature"><strong>#errors</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new_record%3F-instance-method" class="signature"><strong>#new_record?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#persist-instance-method" class="signature"><strong>#persist</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#persist_nested-instance-method" class="signature"><strong>#persist_nested</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resource%3AT-instance-method" class="signature"><strong>#resource</strong> : T</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../FormObject/AbstractForm.html">FormObject::AbstractForm</a></code></h3>
+  
+  
+    <a href="../FormObject/AbstractForm.html#assign_fields%28context%29-instance-method" class="tooltip">
+      <span>assign_fields(context)</span>
+    assign_fields</a>, 
+    
+  
+    <a href="../FormObject/AbstractForm.html#persist-instance-method" class="tooltip">
+      <span>persist</span>
+    persist</a>, 
+    
+  
+    <a href="../FormObject/AbstractForm.html#save-instance-method" class="tooltip">
+      <span>save</span>
+    save</a>, 
+    
+  
+    <a href="../FormObject/AbstractForm.html#skip-instance-method" class="tooltip">
+      <span>skip</span>
+    skip</a>, 
+    
+  
+    <a href="../FormObject/AbstractForm.html#valid%3F-instance-method" class="tooltip">
+      <span>valid?</span>
+    valid?</a>, 
+    
+  
+    <a href="../FormObject/AbstractForm.html#verify%28request%3AHTTP%3A%3ARequest%29-instance-method" class="tooltip">
+      <span>verify(request : HTTP::Request)</span>
+    verify</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../FormObject/AbstractForm.html">FormObject::AbstractForm</a></code></h3>
+  
+  
+    <a href="../FormObject/AbstractForm.html#new-class-method" class="tooltip">
+      <span>new</span>
+    new</a>
+    
+  
+
+
+    
+
+  <h3>Class methods inherited from class <code><a href="../FormObject/AbstractForm.html">FormObject::AbstractForm</a></code></h3>
+  
+  
+    <a href="../FormObject/AbstractForm.html#coercer-class-method" class="tooltip">
+      <span>coercer</span>
+    coercer</a>, 
+    
+  
+    <a href="../FormObject/AbstractForm.html#go_deep_json%28pull%2Ccontext%2Cdepth%3D-1%29-class-method" class="tooltip">
+      <span>go_deep_json(pull, context, depth = <span class="n">-1</span>)</span>
+    go_deep_json</a>, 
+    
+  
+    <a href="../FormObject/AbstractForm.html#parse%28request%29-class-method" class="tooltip">
+      <span>parse(request)</span>
+    parse</a>, 
+    
+  
+    <a href="../FormObject/AbstractForm.html#parse_json_array%28pull%2Ccontext_collection%29-class-method" class="tooltip">
+      <span>parse_json_array(pull, context_collection)</span>
+    parse_json_array</a>, 
+    
+  
+    <a href="../FormObject/AbstractForm.html#parse_json_object%28pull%2Ccontext%29-class-method" class="tooltip">
+      <span>parse_json_object(pull, context)</span>
+    parse_json_object</a>, 
+    
+  
+    <a href="../FormObject/AbstractForm.html#read_json_form%28request%2Ccontext%29-class-method" class="tooltip">
+      <span>read_json_form(request, context)</span>
+    read_json_form</a>, 
+    
+  
+    <a href="../FormObject/AbstractForm.html#read_multipart_form%28request%2Ccontext%29-class-method" class="tooltip">
+      <span>read_multipart_form(request, context)</span>
+    read_multipart_form</a>, 
+    
+  
+    <a href="../FormObject/AbstractForm.html#read_query_params%28request%2Ccontext%29-class-method" class="tooltip">
+      <span>read_query_params(request, context)</span>
+    read_query_params</a>, 
+    
+  
+    <a href="../FormObject/AbstractForm.html#read_url_encoded_form%28request%2Ccontext%29-class-method" class="tooltip">
+      <span>read_url_encoded_form(request, context)</span>
+    read_url_encoded_form</a>
+    
+  
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(resource)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(resource)
+
+        <a class="method-permalink" href="#new%28resource%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/base.cr#L42" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="all-class-method">
+      <div class="signature">
+        
+        def self.<strong>all</strong>
+
+        <a class="method-permalink" href="#all-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/base.cr#L59" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="human_attribute_name(attr)-class-method">
+      <div class="signature">
+        
+        def self.<strong>human_attribute_name</strong>(attr)
+
+        <a class="method-permalink" href="#human_attribute_name%28attr%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/base.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="changed?-instance-method">
+      <div class="signature">
+        
+        def <strong>changed?</strong>
+
+        <a class="method-permalink" href="#changed%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/base.cr#L67" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="errors-instance-method">
+      <div class="signature">
+        
+        def <strong>errors</strong>
+
+        <a class="method-permalink" href="#errors-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/base.cr#L36" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new_record?-instance-method">
+      <div class="signature">
+        
+        def <strong>new_record?</strong>
+
+        <a class="method-permalink" href="#new_record%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/base.cr#L63" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="persist-instance-method">
+      <div class="signature">
+        
+        def <strong>persist</strong>
+
+        <a class="method-permalink" href="#persist-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/base.cr#L46" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="persist_nested-instance-method">
+      <div class="signature">
+        
+        def <strong>persist_nested</strong>
+
+        <a class="method-permalink" href="#persist_nested-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/base.cr#L53" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resource:T-instance-method">
+      <div class="signature">
+        
+        def <strong>resource</strong> : T
+
+        <a class="method-permalink" href="#resource%3AT-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/base.cr#L40" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

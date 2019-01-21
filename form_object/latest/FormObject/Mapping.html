@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/imdrasil/form_object">
+  <title>FormObject::Mapping - github.com/imdrasil/form_object</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/imdrasil/form_object/FormObject" data-name="formobject">
+      <a href="../FormObject.html">FormObject</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/form_object/FormObject/AbstractForm" data-name="formobject::abstractform">
+      <a href="../FormObject/AbstractForm.html">AbstractForm</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/AbstractForm/ClassMethods" data-name="formobject::abstractform::classmethods">
+      <a href="../FormObject/AbstractForm/ClassMethods.html">ClassMethods</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/Base" data-name="formobject::base(t)">
+      <a href="../FormObject/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/BaseError" data-name="formobject::baseerror">
+      <a href="../FormObject/BaseError.html">BaseError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/Coercer" data-name="formobject::coercer">
+      <a href="../FormObject/Coercer.html">Coercer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/Context" data-name="formobject::context">
+      <a href="../FormObject/Context.html">Context</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/ContextCollection" data-name="formobject::contextcollection">
+      <a href="../FormObject/ContextCollection.html">ContextCollection</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/form_object/FormObject/IContext" data-name="formobject::icontext">
+      <a href="../FormObject/IContext.html">IContext</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/IContext/Any" data-name="formobject::icontext::any">
+      <a href="../FormObject/IContext/Any.html">Any</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/imdrasil/form_object/FormObject/Mapping" data-name="formobject::mapping">
+      <a href="../FormObject/Mapping.html">Mapping</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/Module" data-name="formobject::module">
+      <a href="../FormObject/Module.html">Module</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/NotAssignedError" data-name="formobject::notassignederror">
+      <a href="../FormObject/NotAssignedError.html">NotAssignedError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/SkipException" data-name="formobject::skipexception">
+      <a href="../FormObject/SkipException.html">SkipException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/form_object/FormObject/TypeCastError" data-name="formobject::typecasterror">
+      <a href="../FormObject/TypeCastError.html">TypeCastError</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> FormObject::Mapping
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Direct including types</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../FormObject/AbstractForm.html">FormObject::AbstractForm</a></li>
+  
+    <li class="other-type"><a href="../FormObject/Module.html">FormObject::Module</a></li>
+  
+  </ul>
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/mapping.cr#L4" target="_blank">
+        form_object/mapping.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Macro Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#attr%28name%2Ctype%2Corigin%3Dnil%2Cvirtual%3Dfalse%29-macro" class="signature"><strong>attr</strong>(name, type, origin = nil, virtual = false)</a>
+        
+          <div class="summary"><p>Specifies attribute being parsed from a given request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#collection%28name%2Cklass%2Cform_class%3Dnil%2Corigin%3Dnil%2Csave%3Dtrue%2Cpopulator%3Dnil%29-macro" class="signature"><strong>collection</strong>(name, klass, form_class = nil, origin = nil, save = true, populator = nil)</a>
+        
+          <div class="summary"><p>Specifies relation collection being parsed from a given request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#json_path%28value%29-macro" class="signature"><strong>json_path</strong>(value)</a>
+        
+          <div class="summary"><p>Specifies path to the root of defined object.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#object%28name%2Cklass%2Cform_class%3Dnil%2Corigin%3Dnil%2Csave%3Dtrue%2Cpopulator%3Dnil%29-macro" class="signature"><strong>object</strong>(name, klass, form_class = nil, origin = nil, save = true, populator = nil)</a>
+        
+          <div class="summary"><p>Specifies nested object form being parsed from a given request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#path%28value%29-macro" class="signature"><strong>path</strong>(value)</a>
+        
+          <div class="summary"><p>Specifies the root name for the form data or URL parameters.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+
+
+  <h2>Macro Detail</h2>
+  
+    <div class="entry-detail" id="attr(name,type,origin=nil,virtual=false)-macro">
+      <div class="signature">
+        
+        macro <strong>attr</strong>(name, type, origin = nil, virtual = false)
+
+        <a class="method-permalink" href="#attr%28name%2Ctype%2Corigin%3Dnil%2Cvirtual%3Dfalse%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>Specifies attribute being parsed from a given request.</p>
+
+<p>Options:</p>
+
+<ul><li><em>name</em> - form object attribute name</li><li><em>type</em> - attribute type; to define nilable field use <code>Type?</code> notation</li><li><em>origin</em> - related model attribute name (by default it is <em>name</em>)</li><li><em>virtual</em> - marks attribute as virtual - it will be retrieved and validated but no synchronized with model
+(<code>false</code> by default)</li></ul>
+
+<pre><code><span class="k">class</span> <span class="t">ContactForm</span> <span class="o">&lt;</span> <span class="t">FormObject</span><span class="t">::</span><span class="t">Base</span>(<span class="t">Contact</span>)
+  attr <span class="n">:name</span>, <span class="t">String</span>
+  attr <span class="n">:sex</span>, <span class="t">String</span>, origin: <span class="n">:gender</span>
+  attr <span class="n">:count</span>, <span class="t">Int32</span>, virtual: <span class="n">true</span>
+  attr <span class="n">:_deleted</span>, <span class="t">Bool</span>?, virtual: <span class="n">true</span>
+<span class="k">end</span></code></pre>
+
+<p>Any defined field of form object is defined as nilable. For a non-nil field <code>#attribute</code> method
+performs <code>#not_nil!</code> check.</p>
+
+<p>Defines next methods for field with name <code>attribute</code>:</p>
+
+<ul><li><code>#attribute!</code> - getter with <code>not_nil!</code> check for non-nil field</li><li><code>#attribute</code> - getter without <code>not_nil!</code> check</li><li><code>#append_attribute(String)</code> - coerces given value and adds to attribute (if it is an array)</li><li><code>#attribute=(Type)</code> - setter</li><li><code>#attribute=(String)</code> - coerces given value and sets to attribute</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/mapping.cr#L77" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="collection(name,klass,form_class=nil,origin=nil,save=true,populator=nil)-macro">
+      <div class="signature">
+        
+        macro <strong>collection</strong>(name, klass, form_class = nil, origin = nil, save = true, populator = nil)
+
+        <a class="method-permalink" href="#collection%28name%2Cklass%2Cform_class%3Dnil%2Corigin%3Dnil%2Csave%3Dtrue%2Cpopulator%3Dnil%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>Specifies relation collection being parsed from a given request.</p>
+
+<p>Options:</p>
+
+<ul><li><em>name</em> - nested form object name</li><li><em>klass</em> - nested resource type</li><li><em>form_class</em> - form object class for a resource; (by default is <code>"#{klass.id}Form".id</code>)</li><li><em>origin</em> - related model relation name (by default is <em>name</em>)</li><li><em>save</em> - whether related model should be persisted (by default is <code>true</code>)</li><li><em>populator</em> - method name that will be used for object population.</li></ul>
+
+<pre><code><span class="k">class</span> <span class="t">ContactForm</span> <span class="o">&lt;</span> <span class="t">FormObject</span><span class="t">::</span><span class="t">Base</span>(<span class="t">Contact</span>)
+  collection <span class="n">:addresses</span>, <span class="t">Address</span>, populator: <span class="n">:populate_address</span>
+
+  <span class="k">def</span> <span class="m">populate_address_collection</span>(collection, index, <span class="o">**</span>opts)
+    <span class="k">if</span> collection[index]?
+      collection[index]
+    <span class="k">else</span>
+      form <span class="o">=</span> <span class="t">AddressForm</span>.<span class="k">new</span>(<span class="t">Address</span>.<span class="k">new</span>({contact_id: resource.id}))
+      addresses <span class="o">&lt;&lt;</span> form
+      form
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>Populator method is called for an object with following named tuple: `{collection: Array(ModelForm), context: FormObject::Context, index: Int32}.
+Populator should return <code>ModelForm</code> object - this is required.</p>
+
+<p>Defines next methods for field with name <code>attribute</code>:</p>
+
+<ul><li><code>#collection!</code> - same as <code><a href="../FormObject/Mapping.html#collection%28name%2Cklass%2Cform_class%3Dnil%2Corigin%3Dnil%2Csave%3Dtrue%2Cpopulator%3Dnil%29-macro">#collection</a></code></li><li><code><a href="../FormObject/Mapping.html#collection%28name%2Cklass%2Cform_class%3Dnil%2Corigin%3Dnil%2Csave%3Dtrue%2Cpopulator%3Dnil%29-macro">#collection</a></code> - getter without <code>not_nil!</code> check</li><li><code>#collection=(Array(Model))</code> - wraps given model in <code>Array(ModelForm)</code></li><li><code>#collection=(Array(ModelForm))</code> - setter</li><li><code>#add_collection(Model)</code> - adds given model to collection wrapping it into form object</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/mapping.cr#L237" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="json_path(value)-macro">
+      <div class="signature">
+        
+        macro <strong>json_path</strong>(value)
+
+        <a class="method-permalink" href="#json_path%28value%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>Specifies path to the root of defined object.</p>
+
+<p><em>value</em> - array of exact json keys.</p>
+
+<pre><code><span class="k">class</span> <span class="t">AdditionalInfoForm</span> <span class="o">&lt;</span> <span class="t">FormObject</span><span class="t">::</span><span class="t">Base</span>(<span class="t">AdditionalInfo</span>)
+  json_path <span class="s">%w(additionalInfo data)</span>
+
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/mapping.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="object(name,klass,form_class=nil,origin=nil,save=true,populator=nil)-macro">
+      <div class="signature">
+        
+        macro <strong>object</strong>(name, klass, form_class = nil, origin = nil, save = true, populator = nil)
+
+        <a class="method-permalink" href="#object%28name%2Cklass%2Cform_class%3Dnil%2Corigin%3Dnil%2Csave%3Dtrue%2Cpopulator%3Dnil%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>Specifies nested object form being parsed from a given request.</p>
+
+<p>Options:</p>
+
+<ul><li><em>name</em> - nested form object name</li><li><em>klass</em> - nested resource type</li><li><em>form_class</em> - form object class for a resource; (by default is <code>"#{klass.id}Form".id</code>)</li><li><em>origin</em> - related model relation name (by default is <em>name</em>)</li><li><em>save</em> - whether related model should be persisted (by default is <code>true</code>)</li><li><em>populator</em> - method name that will be used for object population.</li></ul>
+
+<pre><code><span class="k">class</span> <span class="t">ContactForm</span> <span class="o">&lt;</span> <span class="t">FormObject</span><span class="t">::</span><span class="t">Base</span>(<span class="t">Contact</span>)
+  object <span class="n">:address</span>, <span class="t">Address</span>, populator: <span class="n">:populate_address</span>
+
+  <span class="k">def</span> <span class="m">populate_address</span>(model, <span class="o">**</span>opts)
+    model || <span class="t">Address</span>.<span class="k">new</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>Any defined nested object of form object is defined as nilable.</p>
+
+<p>Populator method is called for the object with following named tuple: `{model: ModelForm?, context: FormObject::Context}.
+Populator should return <code>ModelForm</code> object - this is required.</p>
+
+<blockquote>In the code snippet above described default populator that is generated if no populator is given.</blockquote>
+
+<p>Defines next methods for field with name <code>attribute</code>:</p>
+
+<ul><li><code>#object!</code> - getter with <code>not_nil!</code> check</li><li><code><a href="../FormObject/Mapping.html#object%28name%2Cklass%2Cform_class%3Dnil%2Corigin%3Dnil%2Csave%3Dtrue%2Cpopulator%3Dnil%29-macro">#object</a></code> - getter without <code>not_nil!</code> check</li><li><code>#object=(Model)</code> - wraps given model in <code>ModelForm</code></li><li><code>#object=(ModelForm)</code> - setter</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/mapping.cr#L161" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="path(value)-macro">
+      <div class="signature">
+        
+        macro <strong>path</strong>(value)
+
+        <a class="method-permalink" href="#path%28value%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>Specifies the root name for the form data or URL parameters.</p>
+
+<p><em>value</em> - string representation of root name; if it is not specified all fields will
+be retrieved from the root scope.</p>
+
+<pre><code><span class="k">class</span> <span class="t">AdditionalInfoForm</span> <span class="o">&lt;</span> <span class="t">FormObject</span><span class="t">::</span><span class="t">Base</span>(<span class="t">AdditionalInfo</span>)
+  path <span class="s">&quot;additional_info[data]&quot;</span>
+
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/form_object/blob/53707fa4262ad44d72a23459c37a0251c42f7a1b/src/form_object/mapping.cr#L41" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>
