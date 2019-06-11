@@ -43,6 +43,8 @@
         
           <a class="page-link" href="./eager_loading">Eager Loading</a>
         
+          <a class="page-link" href="./getting_started">Getting started</a>
+        
           <a class="page-link" href="./validation">Validation</a>
         
           <a class="page-link" href="./query_dsl">Query DSL</a>
@@ -107,7 +109,7 @@
   has_one :main_address, Address, {where { _main }}
   has_one :passport, Passport
 
-  validates_inclucion :age, 13..75
+  validates_inclusion :age, 13..75
   validates_length :name, minimum: 1, maximum: 15
   validates_with_method :name_check
 
@@ -187,7 +189,11 @@ end
 
 <h2 id="mapping-definition">Mapping definition</h2>
 
-<p><code class="highlighter-rouge">%mapping(options, strict = true)</code> macros stands for defining all model attributes. If field has no extra parameter, you can just specify name and type (type in case of crystal language): <code class="highlighter-rouge">field_name: :Type</code>. Named tuple can be used instead of type. Next keys are supported:</p>
+<p>You should define all fields that you’d like to grep from the particular table, other words - define model’s mapping.</p>
+
+<p><code class="highlighter-rouge">%mapping(options, strict = true)</code> macro stands for defining all model attributes. If field has no extra parameter,
+you can just specify name and type (type in case of crystal language): <code class="highlighter-rouge">field_name: :Type</code>. Named tuple can be used
+instead of type. Next keys are supported:</p>
 
 <table>
   <thead>
@@ -214,6 +220,10 @@ end
       <td>default value which will be set during creating <strong>new</strong> object</td>
     </tr>
     <tr>
+      <td><code class="highlighter-rouge">:column</code></td>
+      <td>database column name associated with this attribute (default is attribute name)</td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">:getter</code></td>
       <td>if getter should be created (default - <code class="highlighter-rouge">true</code>)</td>
     </tr>
@@ -228,6 +238,10 @@ end
     <tr>
       <td><code class="highlighter-rouge">:converter</code></td>
       <td>class be used to serialize/deserialize value</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">:auto</code></td>
+      <td>indicate whether primary field is autoincrementable (by default <code class="highlighter-rouge">true</code> for <code class="highlighter-rouge">Int32</code> and <code class="highlighter-rouge">Int64</code>)</td>
     </tr>
   </tbody>
 </table>
@@ -326,7 +340,7 @@ end
     <tr>
       <td><code class="highlighter-rouge">::primary</code></td>
       <td> </td>
-      <td>returns criterion for primary field (query dsl)</td>
+      <td>returns criterion for primary field (query DSL)</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">::primary_field_name</code></td>

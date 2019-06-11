@@ -43,6 +43,8 @@
         
           <a class="page-link" href="./eager_loading">Eager Loading</a>
         
+          <a class="page-link" href="./getting_started">Getting started</a>
+        
           <a class="page-link" href="./validation">Validation</a>
         
           <a class="page-link" href="./query_dsl">Query DSL</a>
@@ -90,7 +92,7 @@
 
 <p>Generator will create template file for you with next name  pattern “timestamp_your_underscored_migration_name.cr”. Empty file looks like this:</p>
 
-<pre><code class="language-crystal">class YourCamelcasedMigrationName20170119011451314 &lt; Jennifer::Migration::Base
+<pre><code class="language-crystal">class YourCamelCasedMigrationName &lt; Jennifer::Migration::Base
   def up
   end
 
@@ -349,34 +351,34 @@ end
 <p>To alter existing table use next methods:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">#change_column(name, [new_name], options)</code> - to change column definition; postgres has slighly another implementation of this than mysql one - check source code for details;</li>
-  <li><code class="highlighter-rouge">#add_column(name, type, options)</code> - add new column;</li>
-  <li><code class="highlighter-rouge">#drop_column(name)</code> - drops existing column</li>
-  <li><code class="highlighter-rouge">#add_index(name : String, field : Symbol, type : Symbol, order : Symbol?, length : Int32?)</code> - adds new index (postgres doesn’t support length parameter and only support <code class="highlighter-rouge">:unique</code> type);</li>
-  <li><code class="highlighter-rouge">#drop_index(name : String)</code> - drops existing index;</li>
-  <li><code class="highlighter-rouge">#add_foreign_key(from_table, to_table, column = nil, primary_key = nil, name = nil)</code> - adds foreign key constraint;</li>
-  <li><code class="highlighter-rouge">drop_foreign_key(from_table, to_table, name = nil)</code> - drops foreign key constraint;</li>
-  <li><code class="highlighter-rouge">#rename_table(new_name)</code> - renames table.</li>
+  <li><code class="highlighter-rouge">#change_column</code> - to change column definition;</li>
+  <li><code class="highlighter-rouge">#add_column</code> - adds new column;</li>
+  <li><code class="highlighter-rouge">#drop_column</code> - drops existing column;</li>
+  <li><code class="highlighter-rouge">#add_index</code> - adds new index;</li>
+  <li><code class="highlighter-rouge">#drop_index</code> - drops existing index;</li>
+  <li><code class="highlighter-rouge">#add_foreign_key</code> - adds foreign key constraint;</li>
+  <li><code class="highlighter-rouge">drop_foreign_key</code> - drops foreign key constraint;</li>
+  <li><code class="highlighter-rouge">#rename_table</code> - renames table.</li>
 </ul>
 
 <p>Also next support methods are available:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">#table_exists?(name)</code></li>
-  <li><code class="highlighter-rouge">#index_exists?(table, name)</code></li>
-  <li><code class="highlighter-rouge">#column_exists?(table, name)</code></li>
-  <li><code class="highlighter-rouge">#foreign_key_exists?(from_table, to_table)</code></li>
-  <li><code class="highlighter-rouge">#data_type_exists?(name)</code> for postgres ENUM</li>
-  <li><code class="highlighter-rouge">#material_view_exists?(name)</code></li>
+  <li><code class="highlighter-rouge">#table_exists?</code></li>
+  <li><code class="highlighter-rouge">#index_exists?</code></li>
+  <li><code class="highlighter-rouge">#column_exists?</code></li>
+  <li><code class="highlighter-rouge">#foreign_key_exists?</code></li>
+  <li><code class="highlighter-rouge">#enum_exists?</code> (for postgres ENUM only)</li>
+  <li><code class="highlighter-rouge">#material_view_exists?</code></li>
 </ul>
 
-<p>Here is quick example:</p>
+<p>Here is a quick example:</p>
 
 <pre><code class="language-crystal">def up
   change_table(:contacts) do |t|
-    t.change_column(:age, :short, {default: 0})
+    t.change_column(:age, :short, { :default =&gt; 0 })
     t.add_column(:description, :text)
-    t.add_index("contacts_description_index", :description, type: :uniq, order: :asc)
+    t.add_index(:description, type: :uniq, order: :asc)
   end
 
   change_table(:addresses) do |t|
@@ -386,7 +388,7 @@ end
 
 def down
   change_table(:contacts) do |t|
-    t.change_column(:age, :integer, {default: 0})
+    t.change_column(:age, :integer, { :default =&gt; 0 })
     t.drop_column(:description)
   end
 
@@ -401,31 +403,35 @@ end
 <pre><code class="language-crystal">execute("ALTER TABLE addresses CHANGE street st VARCHAR(20)")
 </code></pre>
 
-<p>All changes are executed one by one so you also could add data changes here (in <code class="highlighter-rouge">up</code> method) but if execution of <code class="highlighter-rouge">up</code> method fails - <code class="highlighter-rouge">down</code> method will be called and all process will stop - be ready for such behavior.</p>
+<p>All changes are executed one by one so you also could add data changes here (in <code class="highlighter-rouge">#up</code> and/or <code class="highlighter-rouge">#down</code>).</p>
 
-<p>To be sure that your db is up to date before run tests of your application, add <code class="highlighter-rouge">Jennifer::Migration::Runner.migrate</code>.</p>
+<p>To be sure that your db is up to date, add <code class="highlighter-rouge">Jennifer::Migration::Runner.migrate</code> in <code class="highlighter-rouge">spec_helper.cr</code>.</p>
 
 <h4 id="enum">Enum</h4>
 
-<p>Now enums are supported as well but it has different implementation for adapters. For mysql is enough just write down all values:</p>
+<p>Now enums are supported as well but each adapter has own implementation. For mysql is enough just write down all values:</p>
 
 <pre><code class="language-crystal">create_table(:contacts) do |t|
-  t.enum(:gender, values: ["male", "female"])
+  t.enum(:gender, ["male", "female"])
 end
 </code></pre>
 
-<p>Postgres provide much more flexible and complex behavior. Using it you need to create it firstly:</p>
+<p>Postgres provides much more flexible and complex behavior. Using it you need to create enum firstly:</p>
 
 <pre><code class="language-crystal">create_enum(:gender_enum, ["male", "female"])
+
 create_table(:contacts) do |t|
-  t.string :name, {:size =&gt; 30}
+  t.string :name, { :size =&gt; 30 }
   t.integer :age
   t.field :gender, :gender_enum
   t.timestamps
 end
-change_enum(:gender_enum, {:add_values =&gt; ["unknown"]})
-change_enum(:gender_enum, {:rename_values =&gt; ["unknown", "other"]})
-change_enum(:gender_enum, {:remove_values =&gt; ["other"]})
+
+change_enum(:gender_enum, { :add_values =&gt; ["unknown"] })
+
+change_enum(:gender_enum, { :rename_values =&gt; ["unknown", "other"] })
+
+change_enum(:gender_enum, { :remove_values =&gt; ["other"] })
 </code></pre>
 
 <p>For more details check source code and PostgreSQL docs.</p>

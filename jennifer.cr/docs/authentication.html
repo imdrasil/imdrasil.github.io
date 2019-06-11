@@ -43,6 +43,8 @@
         
           <a class="page-link" href="./eager_loading">Eager Loading</a>
         
+          <a class="page-link" href="./getting_started">Getting started</a>
+        
           <a class="page-link" href="./validation">Validation</a>
         
           <a class="page-link" href="./query_dsl">Query DSL</a>
@@ -114,7 +116,7 @@ end
 }
 </code></pre>
 
-<p>Mapping automatically resolves it to it’s definition. At the moment only top level non generic definition could be used, e.g. <code class="highlighter-rouge">password: { type: Password }</code> and <code class="highlighter-rouge">password: Password?</code> are not supported.</p>
+<p>Mapping automatically resolves it to its definition. At the moment only top level non generic definition could be used, e.g. <code class="highlighter-rouge">password: { type: Password }</code> and <code class="highlighter-rouge">password: Password?</code> are not supported.</p>
 
 <p>For authentication <code class="highlighter-rouge">Crypto::Bcrypt::Password</code> is used. This mechanism requires you to have a <code class="highlighter-rouge">password_digest</code>, <code class="highlighter-rouge">password</code>, <code class="highlighter-rouge">password_confirmation</code> attributes defined in your mapping. This attribute can be customized - <code class="highlighter-rouge">with_authentication</code> macro accepts next arguments:</p>
 
@@ -149,8 +151,8 @@ user.save # =&gt; true
 
 user.authenticate("notright")  # =&gt; false
 user.authenticate("mUc3m00RsqyRe") # =&gt; user
-User.find_by(name: "david").try(&amp;.authenticate("notright")) # nil
-User.find_by(name: "david").try(&amp;.authenticate("mUc3m00RsqyRe")) # =&gt; user
+User.all.where { _name == "david" }.first.try(&amp;.authenticate("notright")) # nil
+User.wll.where { _(_name == "david" }.first.try(&amp;.authenticate("mUc3m00RsqyRe")) # =&gt; User
 </code></pre>
 
   </div>

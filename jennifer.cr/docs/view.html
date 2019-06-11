@@ -43,6 +43,8 @@
         
           <a class="page-link" href="./eager_loading">Eager Loading</a>
         
+          <a class="page-link" href="./getting_started">Getting started</a>
+        
           <a class="page-link" href="./validation">Validation</a>
         
           <a class="page-link" href="./query_dsl">Query DSL</a>
@@ -107,7 +109,7 @@ end
 
 <p>Second argument of <code class="highlighter-rouge">#create_view</code> describes query which will  be used to retrieve data.</p>
 
-<p><strong>Importent restriction</strong>: any prepared argument is not allowed for now - all arguments should be escaped by your own.</p>
+<p><strong>Important restriction</strong>: any prepared argument is not allowed for now - all arguments should be escaped by your own.</p>
 
 <pre><code class="language-crystal"># bad
 create_view(:male_contacts, Jennifer::Query["contacts"].where { _gender == "male" })
@@ -134,7 +136,7 @@ end
 
 <p>All regular model mapping functionality are also available for views (except any functionality for deleting, updating or creating new view objects). Any scoping functionality is allowed as well. Only <code class="highlighter-rouge">after_initialize</code> callback is allowed. STI is not supported.</p>
 
-<p>Also all defined mapping properties are accessible via <code class="highlighter-rouge">COLUMNS_METADA</code> constant and <code class="highlighter-rouge">::columns_tuple</code> method.</p>
+<p>Also all defined mapping properties are accessible via <code class="highlighter-rouge">COLUMNS_METADATA</code> constant and <code class="highlighter-rouge">::columns_tuple</code> method.</p>
 
 <h2 id="materialized">Materialized</h2>
 

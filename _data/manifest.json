@@ -1,5 +1,5 @@
 {
-  "jennifer.cr": "1bf4ce179386e04070691ec38799b265d2247113",
+  "jennifer.cr": "d8b665d287a046fabcec5bf12003e689412db23f",
   "sam.cr": "bf03da47561f31802bb7c92a86cd0153b98c4656",
   "crymagick": "b6450e952a221cf2fec63f99cff6ff2c2970c6b0",
   "hermes.cr": "90bbc37e3bd6e759c4a78d70c3af0e6393c08f87",
@@ -9,8 +9,8 @@
   "http_method_emulator": "2d4e723ca58ed90f0bd4ea22c58840531025c3fb",
   "pager": "10aeea6753c350e2d8e09a2303cb08c2193b10af",
   "sage": "67dbc26a79c3fbf0e643a8a4ca520a00e5efb78c",
-  "ifrit": "3d062527c231b233714bf70c2563988429ff4c9a",
-  "jennifer_sqlite3_adapter": "b3e67418a0d0afdb1aa143f307e32634ba1a28d8",
+  "ifrit": "8e553f11d5b50cbd8bd6ad2172dca1c8f7dcf865",
+  "jennifer_sqlite3_adapter": "fe468e8862f59a64524f8f28eec665c63269fa1e",
   "form_object": "53707fa4262ad44d72a23459c37a0251c42f7a1b",
   "email_opener": "b88f1e588745e4346c22379a2caa3ed1baddb596"
 }

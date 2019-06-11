@@ -43,6 +43,8 @@
         
           <a class="page-link" href="./eager_loading">Eager Loading</a>
         
+          <a class="page-link" href="./getting_started">Getting started</a>
+        
           <a class="page-link" href="./validation">Validation</a>
         
           <a class="page-link" href="./query_dsl">Query DSL</a>
@@ -92,9 +94,9 @@
   <li><code class="highlighter-rouge">Jennifer::QueryBuilder::ModelQuery(T)</code> - specific query for model <code class="highlighter-rouge">T</code>.</li>
 </ul>
 
-<p>First one gets db result set and converts it to the hash which is wraped by <code class="highlighter-rouge">Jennifer::Record</code> structure. This structure allows get field using a method call:</p>
+<p>First one gets db result set and converts it to the hash which is wrapped by <code class="highlighter-rouge">Jennifer::Record</code> structure. This structure allows get field using a method call:</p>
 
-<pre><code class="language-crystal"># Jennifer::QueryBuilder::Query is aliassed as Jennifer::Query
+<pre><code class="language-crystal"># Jennifer::QueryBuilder::Query is aliased as Jennifer::Query
 record = Jennifer::Query["contacts"].where { _name.like("Jho%") }.to_a[0]
 
 record["name"] 						# Jennifer::DBAny
@@ -104,7 +106,7 @@ record.name 					 	# Jennifer::DBAny
 record.name(String) 				# Jennifer::DBAny
 </code></pre>
 
-<p>Be carefull with <code class="highlighter-rouge">#{{attribute_name}}</code> methods are generated using macros.</p>
+<p>Be careful with <code class="highlighter-rouge">#{{attribute_name}}</code> methods are generated using macros.</p>
 
 <p>In major amount of cases you will use second one which will return <code class="highlighter-rouge">Array(T)</code>. But also with custom selects or unions <code class="highlighter-rouge">Jennifer::Record</code> could be retrieved using <code class="highlighter-rouge">#results</code>:</p>
 

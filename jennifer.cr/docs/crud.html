@@ -43,6 +43,8 @@
         
           <a class="page-link" href="./eager_loading">Eager Loading</a>
         
+          <a class="page-link" href="./getting_started">Getting started</a>
+        
           <a class="page-link" href="./validation">Validation</a>
         
           <a class="page-link" href="./query_dsl">Query DSL</a>
@@ -107,7 +109,7 @@ c.save
 </code></pre>
 
 <blockquote>
-  <p>Any <code class="highlighter-rouge">::create</code> and <code class="highlighter-rouge">#save</code> method call by default process under a transation. If transation is already started will not create new one.</p>
+  <p>Any <code class="highlighter-rouge">::create</code> and <code class="highlighter-rouge">#save</code> method call by default process under a transaction. If transaction is already started will not create new one.</p>
 </blockquote>
 
 <p>To insert multiple records at once use <code class="highlighter-rouge">::import</code>:</p>
@@ -123,7 +125,7 @@ Contact.import(objects)
 <pre><code class="language-crystal">Contact.find!(1)
 </code></pre>
 
-<p>Also there is flexible dsl for building queries.</p>
+<p>Also there is flexible DSL for building queries.</p>
 
 <p>To reload all fields from db use <code class="highlighter-rouge">#reload</code></p>
 

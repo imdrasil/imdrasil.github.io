@@ -43,6 +43,8 @@
         
           <a class="page-link" href="./eager_loading">Eager Loading</a>
         
+          <a class="page-link" href="./getting_started">Getting started</a>
+        
           <a class="page-link" href="./validation">Validation</a>
         
           <a class="page-link" href="./query_dsl">Query DSL</a>
@@ -88,7 +90,7 @@
 
 <p>My favorite part. Jennifer allows you to build lazy evaluated queries with chaining syntax. But some of them could be only at the and of a chain (such as <code class="highlighter-rouge">#first</code> or <code class="highlighter-rouge">#pluck</code>).</p>
 
-<h2 id="where">Where</h2>
+<h2 id="where">WHERE</h2>
 
 <p><code class="highlighter-rouge">#all</code> retrieves everything (only at the beginning; creates empty request)</p>
 
@@ -380,23 +382,28 @@ end
 
 <p>They allows pass argument (tuple, named tuple or hash - depending on context) of <code class="highlighter-rouge">String</code>, <code class="highlighter-rouge">Symbol</code> or <code class="highlighter-rouge">Cryteria</code>. <code class="highlighter-rouge">String</code> arguments will be parsed as plain sql (<code class="highlighter-rouge">RawSql</code>) and <code class="highlighter-rouge">Symbol</code> - as <code class="highlighter-rouge">Criteria</code>.</p>
 
-<h2 id="select">Select</h2>
+<h2 id="select">SELECT</h2>
 
 <p>Raw sql for <code class="highlighter-rouge">SELECT</code> clause could be passed into <code class="highlighter-rouge">#select</code> method. This have highest priority during forming this query part.</p>
 
-<pre><code class="language-crystal">Contact.all.select("COUNT(id) as count, contacts.name").group("name")
-       .having { sql("COUNT(id)") &gt; 1 }.pluck(:name)
+<pre><code class="language-crystal">Contact
+  .all
+  .select("COUNT(id) as count, contacts.name")
+  .group("name")
+  .having { sql("COUNT(id)") &gt; 1 }
+  .pluck(:name)
 </code></pre>
 
 <p>Also <code class="highlighter-rouge">#select</code> accepts block where all fields could be specified and aliased:</p>
 
-<pre><code class="language-crystal">Contact.all
+<pre><code class="language-crystal">Contact
+  .all
   .select { [sql("COUNT(id)").alias("count"), _name] }
   .group("name")
   .having { sql("count") &gt; 1 }.pluck(:name)
 </code></pre>
 
-<h2 id="from">From</h2>
+<h2 id="from">FROM</h2>
 
 <p>Also you can provide subquery to specify FROM clause (but be careful with source fields during result retrieving and mapping to objects)</p>
 
@@ -404,7 +411,12 @@ end
 Contacts.all.from(Contact.where { _id &gt; 2 })
 </code></pre>
 
-<h2 id="joins">Joins</h2>
+<p>Also it is possible to avoid <code class="highlighter-rouge">FROM</code> clause setting table name to empty line:</p>
+
+<pre><code class="language-crystal">Jennifer::Query[""].select("1 as column").db_results # [{ "column" =&gt; 1 }]
+</code></pre>
+
+<h2 id="join">JOIN</h2>
 
 <p>To join another table you can use <code class="highlighter-rouge">join</code> method passing model class or table name (<code class="highlighter-rouge">String</code>) and join type (default is <code class="highlighter-rouge">:inner</code>).</p>
 
@@ -450,48 +462,76 @@ Contact.all.right_join("addresses") { _contacts__id == c("contact_id") }
 <pre><code class="language-crystal">Contact.all.includes(:addresses)
 </code></pre>
 
-<h2 id="group">Group</h2>
+<h2 id="group-by">GROUP BY</h2>
 
 <pre><code class="language-crystal">Contact.all.group("name", "id").pluck(:name, :id)
 </code></pre>
 
 <p><code class="highlighter-rouge">#group</code> allows to add columns for <code class="highlighter-rouge">GROUP BY</code> section. If passing arguments are tuple of strings or just one string - all columns will be parsed as current table columns. If there is a need to group on joined table or using fields from several tables use next:</p>
 
-<pre><code class="language-crystal">Contact.all.relation("addresses").group(addresses: ["street"], contacts: ["name"])
-       .pluck("addresses.street", "contacts.name")
+<pre><code class="language-crystal">Contact
+  .all
+  .select { [_addresses__street, _contacts__name] }
+  .relation("addresses")
+  .group(addresses: ["street"], contacts: ["name"])
+  .results
 </code></pre>
 
-<p>Here keys should be <em>table names</em>.</p>
-
-<h2 id="having">Having</h2>
+<h2 id="having">HAVING</h2>
 
 <pre><code class="language-crystal">Contact.all.group("name").having { _age &gt; 15 }
 </code></pre>
 
 <p><code class="highlighter-rouge">#having</code> allows to add <code class="highlighter-rouge">HAVING</code> part of query. It accepts block same way as <code class="highlighter-rouge">#where</code> does.</p>
 
-<h2 id="exists">Exists</h2>
+<h2 id="exists">EXISTS</h2>
 
 <pre><code class="language-crystal">Contact.where { _age &gt; 42 }.exists? # returns true or false
 </code></pre>
 
 <p><code class="highlighter-rouge">#exists?</code> check is there is any record with provided conditions. Can be only at the end of query chain - it hit the db.</p>
 
-<h2 id="distinct">Distinct</h2>
+<h2 id="distinct">DISTINCT</h2>
 
 <p>Adds <code class="highlighter-rouge">DISTINCT</code> keyword of at the very beginning of <code class="highlighter-rouge">SELECT</code> statement</p>
 
 <pre><code class="language-crystal">Contact.all.distinct # Array(Contact) with unique attributes (all)
 </code></pre>
 
-<h2 id="union">Union</h2>
+<h2 id="union">UNION</h2>
 
 <p>To make common SQL <code class="highlighter-rouge">UNION</code> you can use <code class="highlighter-rouge">#union</code> method which accepts other query object. But be careful - all selected fields should have same name and type.</p>
 
-<pre><code class="language-crystal">Address.all.where { _street.like("%St. Paul%") }.union(Profile.all.where { _login.in(["login1", "login2"]) }.select(:contact_id)).select(:contact_id).results
+<pre><code class="language-crystal">Address
+  .all
+  .select(:contact_id)
+  .where { _street.like("%St. Paul%") }
+  .union(
+    Profile
+      .all
+      .select(:contact_id)
+      .where { _login.in(["login1", "login2"]) }
+  )
+  .results
 </code></pre>
 
-<p>In this example you can’t use regular <code class="highlighter-rouge">#to_a</code> because result records will be not an address or profile so it couldn’t be mapped to any of these models. That’s why only <code class="highlighter-rouge">Jennifer::Record</code> could be got.</p>
+<p>In this example you can’t use regular <code class="highlighter-rouge">#to_a</code> because resulted records are not  an address neither profile so they couldn’t be mapped to any model. That’s why only <code class="highlighter-rouge">Jennifer::Record</code> could be obtained (which is done by <code class="highlighter-rouge">#results</code>).</p>
+
+<h2 id="with">WITH</h2>
+
+<p>You can specify common table expression (even recursive):</p>
+
+<pre><code class="language-crystal">Jennifer::Query["cte"].with(
+  "cte",
+  Jennifer::Query[""]
+    .select("1 as n")
+    .union(
+      Jennifer::Query["cte"].select("1 + n AS n").where { _n &lt; 5 },
+      true
+    ),
+  true
+)
+</code></pre>
 
 <h2 id="none">None</h2>
 
