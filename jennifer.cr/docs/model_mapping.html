@@ -254,11 +254,12 @@ instead of type. Next keys are supported:</p>
   <li><code class="highlighter-rouge">.from_hash(Hash(String, Jennifer::DBAny), String)</code> - converts field from the given hash (second argument is a field name).</li>
 </ul>
 
-<p>There are 2 predefined converters:</p>
+<p>There are 3 predefined converters:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Jennifer::Model::JSONConverter</code> - default converter for <code class="highlighter-rouge">JSON::Any</code>;</li>
-  <li><code class="highlighter-rouge">Jennifer::Model::NumericToFloat64Converter</code> - converts Postgres <code class="highlighter-rouge">PG::Numeric</code> to <code class="highlighter-rouge">Float64</code>.</li>
+  <li><code class="highlighter-rouge">Jennifer::Model::JSONConverter</code> - default converter for <code class="highlighter-rouge">JSON::Any</code> (it is applied automatically for <code class="highlighter-rouge">JSON::Any</code> fields);</li>
+  <li><code class="highlighter-rouge">Jennifer::Model::NumericToFloat64Converter</code> - converts Postgre <code class="highlighter-rouge">PG::Numeric</code> to <code class="highlighter-rouge">Float64</code>;</li>
+  <li><code class="highlighter-rouge">Jennifer::Model::EnumConverter</code> - converts Postgre <code class="highlighter-rouge">ENUM</code> value to <code class="highlighter-rouge">String</code>.</li>
 </ul>
 
 <p>To make some field nillable tou can use any of the next options:</p>

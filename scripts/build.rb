@@ -21,7 +21,7 @@ site.add_projects(
   Project.new(name: "crymagick", doc_builder: doc_builder, skip_versions: %w(v0.1.1)),
   Project.new(name: "hermes.cr", doc_builder: doc_builder),
   Project.new(name: "factory", doc_builder: doc_builder, skip_versions: %w(v0.1.2 v0.1.1)),
-  Project.new(name: "jennifer_sqlite3_adapter", doc_builder: "sh generate-docs.sh", skip_versions: %w(v0.1.0)),
+  Project.new(name: "jennifer_sqlite3_adapter", doc_builder: "sh generate-docs.sh", skip_versions: %w(v0.1.0 0.2.0)),
   Project.new(name: "form_object", doc_builder: "sh generate-docs.sh", skip_versions: %w(v0.2.0)),
   Project.new(name: "view_model.cr", doc_builder: doc_builder, skip_versions: %w(v0.1.0)),
   Project.new(name: "flash_container.cr", doc_builder: doc_builder),

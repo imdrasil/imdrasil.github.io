@@ -41,21 +41,27 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.7.1"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.8.3"</span>
 </code></pre></div></div>
 
 <h3 id="requirements">Requirements</h3>
 
 <ul>
-  <li>you need to choose one of existing drivers for your db: <a href="https://github.com/crystal-lang/crystal-mysql">mysql</a> or <a href="https://github.com/will/crystal-pg">postgres</a>; sqlite3 adapter automatically installs required driver for itself;</li>
-  <li>crystal <code class="highlighter-rouge">&gt;= 0.26.1</code>.</li>
+  <li>you need to choose one of the existing drivers for your DB: <a href="https://github.com/crystal-lang/crystal-mysql">mysql</a> or <a href="https://github.com/will/crystal-pg">postgres</a>; sqlite3 adapter automatically installs required driver for it;</li>
+  <li>crystal <code class="highlighter-rouge">&gt;= 0.31.0</code>.</li>
 </ul>
 
 <h2 id="usage">Usage</h2>
 
-<p>Jennifer allows you to maintain everything for your models - from db migrations and field mapping to callbacks and building queries. For detailed information see the <a href="https://imdrasil.github.io/jennifer.cr/docs/">guide</a> and <a href="https://imdrasil.github.io/jennifer.cr/versions">API documentation</a>.</p>
+<p>Jennifer allows you to maintain everything for your models - from DB migrations and field mapping to callbacks and building queries. For detailed information see the <a href="https://imdrasil.github.io/jennifer.cr/docs/">docs</a> and <a href="https://imdrasil.github.io/jennifer.cr/versions">API documentation</a>.</p>
+
+<h3 id="cli">CLI</h3>
+
+<p>For command management Jennifer uses <a href="https://github.com/imdrasil/sam.cr">Sam</a>. Due to this you can easily create/migrate/drop database or invoke generator to bootstrap your models and migrations.</p>
 
 <h3 id="migration">Migration</h3>
+
+<p>Jennifer has built-in database migration management system. Migrations allow you to organize all database changes.</p>
 
 <p>To start using Jennifer you’ll first need to generate a migration:</p>
 
@@ -90,9 +96,6 @@ end
 </code></pre></div></div>
 
 <p>to create the database and run the newly created migration.</p>
-<blockquote>
-  <p>For command management Jennifer uses <a href="https://github.com/imdrasil/sam.cr">Sam</a>.</p>
-</blockquote>
 
 <h3 id="model">Model</h3>
 
@@ -100,15 +103,15 @@ end
 
 <ul>
   <li>flexible model schema definition</li>
-  <li>relationship definition (<code class="highlighter-rouge">belongs_to</code>, <code class="highlighter-rouge">has_many</code>, <code class="highlighter-rouge">has_one</code>, <code class="highlighter-rouge">has_and_belongs_to_many</code>)</li>
-  <li>validation</li>
+  <li>relationship definition (<code class="highlighter-rouge">belongs_to</code>, <code class="highlighter-rouge">has_many</code>, <code class="highlighter-rouge">has_one</code>, <code class="highlighter-rouge">has_and_belongs_to_many</code>) - including polymorphic ones</li>
+  <li>built-in extendable validations</li>
   <li>model-specific query scope definition</li>
   <li>callbacks</li>
-  <li>view support</li>
-  <li>translations</li>
+  <li>database view support</li>
+  <li>SQL translations</li>
 </ul>
 
-<p>Hers is model example:</p>
+<p>Hers is a model example:</p>
 
 <pre><code class="language-crystal">class Contact &lt; Jennifer::Model::Base
   with_timestamps
@@ -141,39 +144,68 @@ end
 end
 </code></pre>
 
-<p>More details you can find in the documentation.</p>
-
 <h3 id="query-dsl">Query DSL</h3>
 
-<p>Jennifer allows you to query the db using a flexible DSL:</p>
+<p>Jennifer allows you to query the DB using a flexible DSL:</p>
 
-<pre><code class="language-crystal">Contact.all.left_join(Passport) { _contact_id == _contact__id }
-            .order(id: :asc).order(Contact._name.asc.nulls_last)
-            .with(:passport).to_a
+<pre><code class="language-crystal">Contact
+  .all
+  .left_join(Passport) { _contact_id == _contact__id }
+  .order(id: :asc).order(Contact._name.asc.nulls_last)
+  .with_relation(:passport)
+  .to_a
 Contact.all.eager_load(:countries).where { __countries { _name.like("%tan%") } }
 Contact.all.group(:gender).group_avg(:age, PG::Numeric)
 </code></pre>
 
-<p>Much more about the query DSL can be found on the wiki <a href="/jennifer.cr/docs/query_dsl.html">page</a>.</p>
-
-<h3 id="versioning">Versioning</h3>
-
-<p>Now that Jennifer is under heavy development, there could be many breaking changes. So please check the release notes to check if any of the changes may prevent you from using it. Also, until this library reaches a beta version, the next version rules will be followed:</p>
+<p>Supported features:</p>
 
 <ul>
-  <li>
-    <p>all bugfixes, new minor features or (sometimes) ones that don’t break the existing API will be added as a patch number (e.g. 0.3.<strong>4</strong>);</p>
-  </li>
-  <li>
-    <p>all breaking changes and new important features (as well as reaching a milestone) will be added by bumping the minor digit (0.<strong>4</strong>.0);</p>
-  </li>
+  <li>fetching model objects from the database</li>
+  <li>fetching records from a specific table</li>
+  <li><em>magic</em> underscore  table column notation which allows effectively reference any table column or alias</li>
+  <li>eager loading of model associations any levels deep</li>
+  <li>support of common SQL functions (including aggregations) and mechanism to register own ones</li>
+  <li>flexible DSL of all SQL clauses (<code class="highlighter-rouge">SELECT</code>, <code class="highlighter-rouge">FROM</code>, <code class="highlighter-rouge">WHERE</code>, <code class="highlighter-rouge">JOIN</code>, <code class="highlighter-rouge">GROUP BY</code>, etc.)</li>
+  <li><code class="highlighter-rouge">CTE</code> support</li>
+  <li><code class="highlighter-rouge">JSON</code> operators</li>
+  <li>table and column aliasing</li>
 </ul>
 
-<p>So even a patch version change could bring a lot of new stuff.</p>
+<p>Much more about the query DSL can be found in the wiki <a href="/jennifer.cr/docs/query_dsl.html">page</a>.</p>
 
-<p>If there is a branch for the next release - it will be removed 1 month after the release. So please use them only as a hotfix or for experiments or contribution.</p>
+<h3 id="internationalization">Internationalization</h3>
 
-<h3 id="test-tips">Test tips</h3>
+<p>You can easily configure error message generated for certain validation violation for a specific model or globally. Model and attribute names can be easily configured as well. For internationalization purpose <a href="https://github.com/TechMagister/i18n.cr">i18n</a> is used. For more details how does it work see <a href="./docs/internationalization_dsl.md">wiki</a>.</p>
+
+<h3 id="logging--debugging">Logging &amp; Debugging</h3>
+
+<p>Jennifer uses a regular Crystal logging mechanism so you could specify your own logger or formatter:</p>
+
+<pre><code class="language-crystal"># Here is default logger configuration
+Jennifer::Config.configure do |conf|
+  conf.logger = Logger.new(STDOUT).tap do |logger|
+    logger.formatter = Logger::Formatter.new do |_severity, datetime, _progname, message, io|
+      io &lt;&lt; datetime &lt;&lt; ": " &lt;&lt; message
+    end
+
+    logger.level = Logger::DEBUG
+  end
+end
+</code></pre>
+
+<p>All errors occurred during executing query includes query itself with arguments along side description. <code class="highlighter-rouge">Jennifer::Model::Base#inspect</code> returns model debug information filtered out all unnecessary information.</p>
+
+<pre><code class="language-crystal">Address.first!.inspect
+# #&lt;Address:0x7efde96ac0d0 id: 1, street: "Ant st. 69", contact_id: nil, created_at: 2019-06-10 11:11:11.665032000 +03:00 Local&gt;
+</code></pre>
+
+<p>Also, you can get a query execution plan explanation right from your code - just execute <code class="highlighter-rouge">#explain</code> on query to get appropriate information (output is database specific):</p>
+
+<pre><code class="language-crystal">Contact.all.explain # =&gt; Seq Scan on contacts  (cost=0.00..14.30 rows=100.0 width=320)
+</code></pre>
+
+<h3 id="testing-tips">Testing tips</h3>
 
 <p>The fastest way to rollback all changes in the DB after test case is by using a transaction. So add:</p>
 
@@ -189,8 +221,25 @@ end
 <p>to your <code class="highlighter-rouge">spec_helper.cr</code>. NB. you could simply use regular deleting or truncation, but a transaction will provide a 15x speed up (at least for postgres; mysql gets less impact).</p>
 
 <blockquote>
-  <p>This functions can be safely used only under test environment.</p>
+  <p>These functions can be safely used only under test environment.</p>
 </blockquote>
+
+<h2 id="versioning">Versioning</h2>
+
+<p>Now that Jennifer is under heavy development, there could be many breaking changes. So please check the release notes to check if any of the changes may prevent you from using it. Also, until this library reaches a beta version, the next version rules will be followed:</p>
+
+<ul>
+  <li>
+    <p>all bug fixes, new minor features or (sometimes) ones that don’t break the existing API will be added as a patch number (e.g. 0.3.<strong>4</strong>);</p>
+  </li>
+  <li>
+    <p>all breaking changes and new important features (as well as reaching a milestone) will be added by bumping the minor digit (0.<strong>4</strong>.0);</p>
+  </li>
+</ul>
+
+<p>So even a patch version change could bring a lot of new stuff.</p>
+
+<p>If there is a branch for the next release - it will be removed 1 month after the release. So please use them only as a hotfix or for experiments or contribution.</p>
 
 <h2 id="development">Development</h2>
 
@@ -206,7 +255,7 @@ end
 <span class="nv">$ </span>make sam db:setup
 
 <span class="c"># Mysql</span>
-<span class="nv">$ DB</span><span class="o">=</span>mysql make same db:setup
+<span class="nv">$ DB</span><span class="o">=</span>mysql make sam db:setup
 </code></pre></div></div>
 
 <h3 id="running-tests">Running tests</h3>

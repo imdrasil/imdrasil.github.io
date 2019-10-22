@@ -95,7 +95,7 @@
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.8.0"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.8.3"</span>
 </code></pre></div></div>
 
 <p>For MySQL and PostgreSQL you need to add related driver shard - <a href="https://github.com/crystal-lang/crystal-mysql">crystal-mysql</a> or <a href="https://github.com/will/crystal-pg">crystal-pg</a>:</p>
@@ -103,7 +103,7 @@
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.8.0"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.8.3"</span>
   <span class="na">pg</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">will/crystal-pg</span>
   <span class="c1"># or for mysql</span>
@@ -116,7 +116,7 @@
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.8.0"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.8.3"</span>
   <span class="na">jennifer_sqlite3_adapter</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer_sqlite3_adapter</span>
 </code></pre></div></div>
@@ -187,14 +187,14 @@ I18n.init
 
 <h3 id="cli">CLI</h3>
 
-<p>Now to be able to use <a href="https://github.com/imdrasil/sam.cr">sam</a> task manager create file <code class="highlighter-rouge">sam.cr</code> in you application root folder with following content:</p>
+<p>To be able to use CLI install <a href="https://github.com/imdrasil/sam.cr">sam</a> task manager and modify <code class="highlighter-rouge">sam.cr</code> file in you application root folder with following content:</p>
 
-<pre><code class="language-crystal">require "./your_configuration_folder/*" # with requiring jennifer and her adapter
-require "./migrations/*"
+<pre><code class="language-crystal"># here load jennifer and all required configurations
+require "./db/migrations/*"
 require "sam"
 load_dependencies "jennifer"
 
-# your custom tasks here
+# ...
 
 Sam.help
 </code></pre>

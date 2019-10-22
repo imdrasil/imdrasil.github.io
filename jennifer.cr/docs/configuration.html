@@ -147,120 +147,7 @@ end
 Jennifer::Config.from_uri(db)
 </code></pre>
 
-<h2 id="supported-configuration-parameters">Supported configuration parameters</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Config</th>
-      <th>Default value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">host</code></td>
-      <td><code class="highlighter-rouge">"localhost"</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">port</code></td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">logger</code></td>
-      <td><code class="highlighter-rouge">Logger.new(STDOUT)</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">schema</code></td>
-      <td><code class="highlighter-rouge">"public"</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">user</code></td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">password</code></td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">db</code></td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">adapter</code></td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">pool_size</code></td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">retry_attempts</code></td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">checkout_timeout</code></td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">retry_delay</code></td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">local_time_zone_name</code></td>
-      <td>default time zone name</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">skip_dumping_schema_sql</code></td>
-      <td><code class="highlighter-rouge">false</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">command_shell</code></td>
-      <td><code class="highlighter-rouge">"bash"</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">docker_container</code></td>
-      <td><code class="highlighter-rouge">""</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">docker_source_location</code></td>
-      <td><code class="highlighter-rouge">""</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">command_shell_sudo</code></td>
-      <td><code class="highlighter-rouge">false</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">migration_failure_handler_method</code></td>
-      <td><code class="highlighter-rouge">"none"</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">migration_files_path</code></td>
-      <td><code class="highlighter-rouge">"./db/migrations"</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">verbose_migrations</code></td>
-      <td><code class="highlighter-rouge">true</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">model_files_path</code></td>
-      <td><code class="highlighter-rouge">"./src/models"</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">structure_folder</code></td>
-      <td>parent folder of <code class="highlighter-rouge">migration_files_path</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>To avoid port usage set it to <code class="highlighter-rouge">-1</code>. For doing same with the password - assign to it blank value (<code class="highlighter-rouge">""</code>). Empty string also turns off <code class="highlighter-rouge">structure_folder</code> config.</p>
-
-<p>Also configuration can be parsed directly from URI:</p>
-
-<pre><code class="language-crystal">db_uri = "mysql://root@somehost/some_database?max_pool_size=111&amp;initial_pool_size=222&amp;max_idle_pool_size=333&amp;retry_attempts=444&amp;checkout_timeout=555&amp;retry_delay=666"
-Jennifer::Config.from_uri(db)
-</code></pre>
-
-<p>Also take into account - some configs can’t be initialized using URI string or yaml file but all of them always can be initialized using <code class="highlighter-rouge">Jennifer::Config.configure</code>. Here is the list of such configs:</p>
+<p>Take into account - some configs can’t be initialized using URI string or yaml file but all of them always can be initialized using <code class="highlighter-rouge">Jennifer::Config.configure</code>. Here is the list of such configs:</p>
 
 <table>
   <thead>
@@ -331,8 +218,48 @@ Jennifer::Config.from_uri(db)
       <td>✔</td>
       <td>❌</td>
     </tr>
+    <tr>
+      <td><code class="highlighter-rouge">allow_outdated_pending_migration</code></td>
+      <td>✔</td>
+      <td>❌</td>
+    </tr>
   </tbody>
 </table>
+
+<h2 id="supported-configuration-options">Supported configuration options</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">host</code> - database host; default: <code class="highlighter-rouge">"localhost"</code></li>
+  <li><code class="highlighter-rouge">port</code> - database port; default: <code class="highlighter-rouge">-1</code> (<code class="highlighter-rouge">-1</code> value makes adapter to skip port in building connection URL, specify required port number)</li>
+  <li><code class="highlighter-rouge">logger</code> - logger instance; default: <code class="highlighter-rouge">Logger.new(STDOUT)</code></li>
+  <li><code class="highlighter-rouge">schema</code> - PostgreSQL database schema name; default: <code class="highlighter-rouge">"public"</code></li>
+  <li><code class="highlighter-rouge">user</code> - database user name used to connect to the database</li>
+  <li><code class="highlighter-rouge">password</code> - database user password used to connect to the database (if not specified - connection URL will specify only user name)</li>
+  <li><code class="highlighter-rouge">db</code> - database name</li>
+  <li><code class="highlighter-rouge">adapter</code> - adapter name to be used to connect to the database (e.g. <code class="highlighter-rouge">"postgres"</code>)</li>
+  <li><code class="highlighter-rouge">pool_size</code> - count of simultaneously alive database connection; default: <code class="highlighter-rouge">1</code></li>
+  <li><code class="highlighter-rouge">retry_attempts</code> - count of attempts to connect to the database before raising an exception; default: <code class="highlighter-rouge">1</code></li>
+  <li><code class="highlighter-rouge">retry_delay</code> - amount of seconds to wait between connection retries; default: <code class="highlighter-rouge">1.0</code></li>
+  <li><code class="highlighter-rouge">checkout_timeout</code> - amount of seconds to be wait for connection; default: <code class="highlighter-rouge">5.0</code></li>
+  <li><code class="highlighter-rouge">local_time_zone_name</code> - local time zone name; automatically taken from <code class="highlighter-rouge">Time::Location.local.name</code></li>
+  <li><code class="highlighter-rouge">skip_dumping_schema_sql</code> - skip dumping database structure if set to <code class="highlighter-rouge">true</code>; default: <code class="highlighter-rouge">false</code></li>
+  <li><code class="highlighter-rouge">allow_outdated_pending_migration</code> - allows outdated pending migrations (which version is below the latest run migration) to be invoked without exception; default: <code class="highlighter-rouge">false</code></li>
+  <li><code class="highlighter-rouge">command_shell</code> - the name of system command interface to be used for some operations that require system calls; default: <code class="highlighter-rouge">"bash"</code>; <code class="highlighter-rouge">"docker"</code> value makes commands to be invoked inside of specified docker container</li>
+  <li><code class="highlighter-rouge">docker_container</code> - container name with database instance (is used when <code class="highlighter-rouge">command_shell</code> set to <code class="highlighter-rouge">"docker"</code>); default: <code class="highlighter-rouge">""</code></li>
+  <li><code class="highlighter-rouge">docker_source_location</code> - default source location prefix for the executables inside of docker container (is used when <code class="highlighter-rouge">command_shell</code> set to <code class="highlighter-rouge">"docker"</code>); default: <code class="highlighter-rouge">""</code></li>
+  <li><code class="highlighter-rouge">command_shell_sudo</code> - marks whether system commands should be invoked with <code class="highlighter-rouge">sudo</code>; default: <code class="highlighter-rouge">false</code></li>
+  <li><code class="highlighter-rouge">migration_failure_handler_method</code> - strategy used on migration file failure; default: <code class="highlighter-rouge">"none"</code>; supported:
+    <ul>
+      <li><code class="highlighter-rouge">"none"</code> - do nothing</li>
+      <li><code class="highlighter-rouge">"reverse_direction"</code> - invokes an opposite method to migration direction (<code class="highlighter-rouge">#down</code> for an up-migration)</li>
+      <li><code class="highlighter-rouge">"callback"</code> - invokes <code class="highlighter-rouge">#after_up_failure</code> on a failed up-migration and <code class="highlighter-rouge">#after_down_failure</code> on a failed down-migration</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">migration_files_path</code> - path to the location with migration files; default: <code class="highlighter-rouge">"./db/migrations"</code></li>
+  <li><code class="highlighter-rouge">verbose_migrations</code> - outputs basic invoked migration information if set to <code class="highlighter-rouge">true</code>; default: <code class="highlighter-rouge">true</code></li>
+  <li><code class="highlighter-rouge">model_files_path</code> - path to the models locations; is used by model and migration generators; default: <code class="highlighter-rouge">"./src/models"</code></li>
+  <li><code class="highlighter-rouge">structure_folder</code> - path to the database structure file location; if set to empty string - parent folder of <code class="highlighter-rouge">migration_files_path</code> is used; default: <code class="highlighter-rouge">""</code></li>
+</ul>
 
 <p>From <code class="highlighter-rouge">0.5.1</code> <code class="highlighter-rouge">Jennifer::Config</code> has started working under singleton pattern instead of using class as a container for all configuration properties.</p>
 
@@ -374,8 +301,6 @@ end
 
 Jennifer::Adapter::DBCommandInterface.register_shell("my_docker", MySimpleDocker)
 </code></pre>
-
-<p><code class="highlighter-rouge">command_shell_sudo</code> enables using <code class="highlighter-rouge">sudo</code> in command line. This will force you to enter a password for your admin user.</p>
 
   </div>
 
