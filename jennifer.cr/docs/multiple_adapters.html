@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Imdrasil Homebrew Stuff | Personal site</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Imdrasil Homebrew Stuff" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal site" />
+<meta property="og:description" content="Personal site" />
+<link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/multiple_adapters.html" />
+<meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/multiple_adapters.html" />
+<meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<script type="application/ld+json">
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/multiple_adapters.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
+<body><header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Imdrasil Homebrew Stuff</a>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    <header class="site-header" role="banner">
+  <div class="wrapper">
+    <nav class="site-nav">
+      <div class="trigger">
+        
+          <a class="page-link" href="./callbacks">Callbacks</a>
+        
+          <a class="page-link" href="./model_sti">STI</a>
+        
+          <a class="page-link" href="./timestamps">Timestamps</a>
+        
+          <a class="page-link" href="./eager_loading">Eager Loading</a>
+        
+          <a class="page-link" href="./getting_started">Getting started</a>
+        
+          <a class="page-link" href="./validation">Validation</a>
+        
+          <a class="page-link" href="./query_dsl">Query DSL</a>
+        
+          <a class="page-link" href="./configuration">Configuration</a>
+        
+          <a class="page-link" href="./index">Jennifer Documentation</a>
+        
+          <a class="page-link" href="./model_mapping">Mapping</a>
+        
+          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
+        
+          <a class="page-link" href="./view">Views</a>
+        
+          <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
+        
+          <a class="page-link" href="./time">Time</a>
+        
+          <a class="page-link" href="./serialization">Serialization</a>
+        
+          <a class="page-link" href="./internationalization">Internationalization</a>
+        
+          <a class="page-link" href="./record">Record</a>
+        
+          <a class="page-link" href="./migration">Migration</a>
+        
+          <a class="page-link" href="./pagination_and_ordering">Pagination &amp; Ordering</a>
+        
+          <a class="page-link" href="./relations">Relations</a>
+        
+          <a class="page-link" href="./crud">CRUD</a>
+        
+          <a class="page-link" href="./aggregation">Aggregations</a>
+        
+          <a class="page-link" href="./authentication">Authentication</a>
+        
+          <a class="page-link" href="./command_line">Command Line</a>
+        
+          <a class="page-link" href="./model_scopes">Scopes</a>
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+<h1 id="multiple-adapters">Multiple adapters</h1>
+
+<p>If you have multiple data sources (databases) it is possible to connect to all of them. For this just create a separate <code class="highlighter-rouge">Jennifer::Config</code> instance apart of the main one and initialize new adapter:</p>
+
+<pre><code class="language-crystal">separate_config = Jennifer::Config.new.tap do |config|
+  config.db = "db_2"
+  config.host = "&lt;some host&gt;"
+  # ...
+  # db.adapter = "mysql" - it is not required to set up any adapter name as we
+  # gonna initialize it by our own
+end
+
+SEPARATE_ADAPTER = Jennifer::Mysql::Adapter.new(separate_config)
+</code></pre>
+
+<p>Now created above adapter can be used to connect to specified database. It should be used at least in two places: for model connection and for migration one.</p>
+
+<h2 id="model">Model</h2>
+
+<p>To override model adapter (in other words specify connection) - override <code class="highlighter-rouge">.adapter</code> method:</p>
+
+<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
+  # ...
+
+  def self.adapter
+    SEPARATE_ADAPTER
+  end
+end
+</code></pre>
+
+<p>In this case <code class="highlighter-rouge">SEPARATE_ADAPTER</code> is used for <strong>both</strong> read and write operations. If you need to connect to the specified database only for read or write operation you can override <code class="highlighter-rouge">.read_adapter</code> or <code class="highlighter-rouge">.write_adapter</code>.</p>
+
+<p>It is possible to define associations between models that are in different databases but be careful with <code class="highlighter-rouge">JOIN</code>s - obviously it isn’t possible. But you can preload them (as it does separate requests per association).</p>
+
+<h2 id="migration">Migration</h2>
+
+<p>To specify using which adapter you are going to execute a database migration you should define <code class="highlighter-rouge">#adapter</code> method:</p>
+
+<pre><code class="language-crystal">class SomeMigration &lt; Jennifer::Migration::Base
+  def adapter
+    SEPARATE_ADAPTER
+  end
+
+  def up
+    # ...
+  end
+
+  def down
+    # ...
+  end
+end
+</code></pre>
+
+<p>As a result all operations in <code class="highlighter-rouge">#up</code> and <code class="highlighter-rouge">#down</code> will be executed using <code class="highlighter-rouge">SEPARATE_ADAPTER</code>.</p>
+
+<blockquote>
+  <p>Migration instance can operate only in a scope of one adapter. If you want to apply changes to tables in multiple databases - use multiple migrations.</p>
+</blockquote>
+
+<p>If you need to create/drop a database for extra connection you have to define own Sam task (or handle it somehow). You can redefine <code class="highlighter-rouge">db:create</code> and <code class="highlighter-rouge">db:drop</code> task as follows:</p>
+
+<pre><code class="language-crystal">Sam.namespace "db" do
+  task "create" do
+    Jennifer::Migration::Runner.create
+    Jennifer::Migration::Runner.create(SEPARATE_ADAPTER)
+  end
+
+  task "drop" do
+    Jennifer::Migration::Runner.drop
+    Jennifer::Migration::Runner.drop(SEPARATE_ADAPTER)
+  end
+end
+</code></pre>
+
+<p>Now when you execute those commands you will affect both connections.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imdrasil Homebrew Stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Imdrasil Homebrew Stuff</li><li><a class="u-email" href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/imdrasil"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">imdrasil</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Personal site</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

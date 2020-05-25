@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Serializer | Imdrasil Homebrew Stuff</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Serializer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal site" />
+<meta property="og:description" content="Personal site" />
+<link rel="canonical" href="https://imdrasil.github.io/serializer/" />
+<meta property="og:url" content="https://imdrasil.github.io/serializer/" />
+<meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<script type="application/ld+json">
+{"headline":"Serializer","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/serializer/","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
+<body><header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Imdrasil Homebrew Stuff</a>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Serializer</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="serializer">Serializer</h1>
+
+<p>Serializer is simple JSON serialization library for your object structure. Unlike core <code class="highlighter-rouge">JSON</code> module’s functionality this library only converts to JSON string (one direction) but at the same time provides some free space for maneuvers, precise and flexible configuration.</p>
+
+<p><code class="highlighter-rouge">Serializer::Base</code> only ~11% slower than <code class="highlighter-rouge">JSON::Serializable</code></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        Serializer 646.00k (  1.55µs) (± 2.52%)  2.77kB/op   1.11× slower
+JSON::Serializable 719.74k (  1.39µs) (± 2.39%)   1.3kB/op        fastest
+</code></pre></div></div>
+
+<p>and at the same time provides next functionality:</p>
+
+<ul>
+  <li>conditional rendering at schema definition stage</li>
+  <li>excluding specific fields at invocation stage</li>
+  <li>separation fields from relations</li>
+  <li>deep relation specification (to be rendered) at invocation stage</li>
+  <li>inheritance</li>
+  <li>optional meta data (can be specified at both definition and invocation stages).</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<ol>
+  <li>
+    <p>Add the dependency to your <code class="highlighter-rouge">shard.yml</code>:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
+  <span class="na">serializer</span><span class="pi">:</span>
+    <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/serializer</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Run <code class="highlighter-rouge">shards install</code></p>
+  </li>
+</ol>
+
+<h2 id="usage">Usage</h2>
+
+<p>Let’s assume we have next classes relationship</p>
+
+<pre><code class="language-crystal">class Parent
+  property name, title,
+    children : Array(Child),
+    friends : Array(Child)
+
+  def initialize(@name = "test", @title = "asd", @children = [] of Child, @friends = [] of Child)
+  end
+end
+
+class Child
+  property age : Int32, dipper : Child?, address : Address?
+
+  def initialize(@age, @dipper = nil, @address = nil)
+  end
+
+  def some_sub_relation; end
+end
+
+class Address
+  property street
+
+  def initialize(@street = "some street")
+  end
+end
+</code></pre>
+
+<p>We can define serializers next way:</p>
+
+<pre><code class="language-crystal">class AddressSerializer &lt; Serializer::Base(Address)
+  attributes :street
+end
+
+class ChildSerializer &lt; Serializer::Base(Child)
+  attribute :age
+
+  has_one :some_sub_relation, ChildSerializer
+  has_one :address, AddressSerializer
+  has_one :dipper, ChildSerializer
+end
+
+class ModelSerializer &lt; Serializer::Base(Model)
+  attribute :name
+  attribute :title, :Title, if: :test_title
+  attribute :own_field
+
+  has_many :children, ChildSerializer
+  has_many :friends, ChildSerializer
+
+  def test_title(object, options)
+    options.nil? || !options[:test]?
+  end
+
+  def own_field
+    12
+  end
+end
+</code></pre>
+
+<p>To invoke serialization:</p>
+
+<pre><code class="language-crystal">model = Model.new(
+  friends: [
+    Child.new(
+      60,
+      Child.new(20, address: Address.new)
+    )
+  ],
+  parents: [] of Child
+)
+
+ModelSerializer.new(model).serialize(
+  except: [:own_field],
+  includes: {
+    :children =&gt; [:some_sub_relation],
+    :friends =&gt; { :address =&gt; nil, :dipper =&gt; [:some_sub_relation] }
+  },
+  meta: { :page =&gt; 0 }
+)
+</code></pre>
+
+<p>Which results in:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Title"</span><span class="p">:</span><span class="s2">"asd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"children"</span><span class="p">:[],</span><span class="w">
+    </span><span class="s2">"friends"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"age"</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:{</span><span class="w">
+          </span><span class="s2">"street"</span><span class="p">:</span><span class="s2">"some street"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"dipper"</span><span class="p">:{</span><span class="w">
+          </span><span class="s2">"age"</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"some_sub_relation"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"page"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>This is pretty JSON version - actual result contains no spaces and newlines.</p>
+</blockquote>
+
+<p>For API details see <a href="https://imdrasil.github.io/serializer/latest/Serializer">documentation</a>.</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<ol>
+  <li>Fork it (<a href="https://github.com/imdrasil/serializer/fork">https://github.com/imdrasil/serializer/fork</a>)</li>
+  <li>Create your feature branch (<code class="highlighter-rouge">git checkout -b my-new-feature</code>)</li>
+  <li>Commit your changes (<code class="highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
+  <li>Push to the branch (<code class="highlighter-rouge">git push origin my-new-feature</code>)</li>
+  <li>Create a new Pull Request</li>
+</ol>
+
+<h2 id="contributors">Contributors</h2>
+
+<ul>
+  <li><a href="https://github.com/imdrasil">Roman Kalnytskyi</a> - creator and maintainer</li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imdrasil Homebrew Stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Imdrasil Homebrew Stuff</li><li><a class="u-email" href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/imdrasil"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">imdrasil</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Personal site</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

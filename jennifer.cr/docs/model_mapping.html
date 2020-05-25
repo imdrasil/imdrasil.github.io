@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/model_mapping.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/model_mapping.html","headline":"Imdrasil Homebrew Stuff","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/model_mapping.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -55,11 +55,15 @@
         
           <a class="page-link" href="./model_mapping">Mapping</a>
         
+          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
+        
           <a class="page-link" href="./view">Views</a>
         
           <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
         
           <a class="page-link" href="./time">Time</a>
+        
+          <a class="page-link" href="./serialization">Serialization</a>
         
           <a class="page-link" href="./internationalization">Internationalization</a>
         
@@ -349,11 +353,6 @@ instead of type. Next keys are supported:</p>
       <td>name of primary field</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">::primary_field_type</code></td>
-      <td> </td>
-      <td>type of primary key</td>
-    </tr>
-    <tr>
       <td><code class="highlighter-rouge">#new_record?</code></td>
       <td> </td>
       <td>returns <code class="highlighter-rouge">true</code> if record has <code class="highlighter-rouge">nil</code> primary key (is not stored to db)</td>
@@ -522,17 +521,18 @@ end
 
 <h2 id="table-name">Table name</h2>
 
-<p>Automatically model is associated with table with underscored pluralized name of it’s class, but custom one can be specified defining <code class="highlighter-rouge">::table_name</code>. This means no modules will affect name generating.</p>
+<p>By default model determines related table name by underscoring and pluralizing own class name. In the case when model is define under some namespace, it’s underscored name is considered as table name prefix.</p>
 
-<pre><code class="language-crystal">Admin::User.table_name # "users"
+<pre><code class="language-crystal">User.table_name # "users"
+API::Admin::User.table_name # "api_admin_users"
 </code></pre>
 
-<p>To provide special table prefix per module basis use super class with defined <code class="highlighter-rouge">::table_prefix</code> method:</p>
+<p>To override table name prefix define own <code class="highlighter-rouge">.table_prefix</code></p>
 
 <pre><code class="language-crystal">module Admin
   class Base &lt; Jennifer::Model::Base
     def self.table_prefix
-      "admin_"
+      "private_"
     end
   end
 
@@ -541,8 +541,35 @@ end
   end
 end
 
-Admin::User.table_name # "admin_users"
+Admin::User.table_name # "private_users"
 </code></pre>
+
+<blockquote>
+  <p>As you see <code class="highlighter-rouge">.table_prefix</code> should return <code class="highlighter-rouge">"_"</code> at the end to keep naming across application consistent.</p>
+</blockquote>
+
+<blockquote>
+  <p>Also to prevent adding table prefix at all - return <code class="highlighter-rouge">nil</code>.</p>
+</blockquote>
+
+<p>To override table name just call <code class="highlighter-rouge">.table_name</code>:</p>
+
+<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
+  table_name :posts
+  # ...
+end
+
+class Admin::User &lt; Jennifer::Model::Base
+  table_name "users"
+end
+
+User.table_name # "posts"
+Admin::User.table_name # "users"
+</code></pre>
+
+<blockquote>
+  <p><code class="highlighter-rouge">.table_name</code> accepts table name that already includes prefix.</p>
+</blockquote>
 
 <h2 id="virtual-attributes">Virtual attributes</h2>
 

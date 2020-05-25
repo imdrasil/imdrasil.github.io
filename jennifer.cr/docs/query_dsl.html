@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/query_dsl.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/query_dsl.html","headline":"Imdrasil Homebrew Stuff","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/query_dsl.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -55,11 +55,15 @@
         
           <a class="page-link" href="./model_mapping">Mapping</a>
         
+          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
+        
           <a class="page-link" href="./view">Views</a>
         
           <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
         
           <a class="page-link" href="./time">Time</a>
+        
+          <a class="page-link" href="./serialization">Serialization</a>
         
           <a class="page-link" href="./internationalization">Internationalization</a>
         
@@ -337,7 +341,7 @@ end
 
 <h4 id="functions">Functions</h4>
 
-<p>There is special mechanism to define sql functions like <code class="highlighter-rouge">CURRENT_DATE</code>, <code class="highlighter-rouge">ABS</code> or <code class="highlighter-rouge">CONCAT</code>. There is already a predefined list of such functions so you can use them in the expression builder context:</p>
+<p>There is special mechanism to define SQL functions like <code class="highlighter-rouge">CURRENT_DATE</code>, <code class="highlighter-rouge">ABS</code> or <code class="highlighter-rouge">CONCAT</code>. There is already a predefined list of such functions so you can use them in the expression builder context:</p>
 
 <pre><code class="language-crystal">Contact.all.where { ceil(_balance) &gt; 10 }
 </code></pre>
@@ -367,7 +371,7 @@ end
 end
 </code></pre>
 
-<p>It is necessary to define <code class="highlighter-rouge">#as_sql</code> method, which returns function sql. <code class="highlighter-rouge">#operands</code> is an array of given function arguments. <code class="highlighter-rouge">#operand_sql</code> is a helper method to automatically parse how a given argument should be inserted to the sql.</p>
+<p>It is necessary to define <code class="highlighter-rouge">#as_sql</code> method, which returns function SQL. <code class="highlighter-rouge">#operands</code> is an array of given function arguments. <code class="highlighter-rouge">#operand_sql</code> is a helper method to automatically parse how a given argument should be inserted to the SQL.</p>
 
 <h4 id="smart-arguments-parsing">Smart arguments parsing</h4>
 
@@ -380,11 +384,11 @@ end
   <li><code class="highlighter-rouge">#select</code></li>
 </ul>
 
-<p>They allows pass argument (tuple, named tuple or hash - depending on context) of <code class="highlighter-rouge">String</code>, <code class="highlighter-rouge">Symbol</code> or <code class="highlighter-rouge">Cryteria</code>. <code class="highlighter-rouge">String</code> arguments will be parsed as plain sql (<code class="highlighter-rouge">RawSql</code>) and <code class="highlighter-rouge">Symbol</code> - as <code class="highlighter-rouge">Criteria</code>.</p>
+<p>They allows pass argument (tuple, named tuple or hash - depending on context) of <code class="highlighter-rouge">String</code>, <code class="highlighter-rouge">Symbol</code> or <code class="highlighter-rouge">Cryteria</code>. <code class="highlighter-rouge">String</code> arguments will be parsed as plain SQL (<code class="highlighter-rouge">RawSql</code>) and <code class="highlighter-rouge">Symbol</code> - as <code class="highlighter-rouge">Criteria</code>.</p>
 
 <h2 id="select">SELECT</h2>
 
-<p>Raw sql for <code class="highlighter-rouge">SELECT</code> clause could be passed into <code class="highlighter-rouge">#select</code> method. This have highest priority during forming this query part.</p>
+<p>Raw SQL for <code class="highlighter-rouge">SELECT</code> clause could be passed into <code class="highlighter-rouge">#select</code> method. This have highest priority during forming this query part.</p>
 
 <pre><code class="language-crystal">Contact
   .all

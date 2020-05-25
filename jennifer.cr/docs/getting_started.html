@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/getting_started.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/getting_started.html","headline":"Imdrasil Homebrew Stuff","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/getting_started.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -55,11 +55,15 @@
         
           <a class="page-link" href="./model_mapping">Mapping</a>
         
+          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
+        
           <a class="page-link" href="./view">Views</a>
         
           <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
         
           <a class="page-link" href="./time">Time</a>
+        
+          <a class="page-link" href="./serialization">Serialization</a>
         
           <a class="page-link" href="./internationalization">Internationalization</a>
         
@@ -95,7 +99,7 @@
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.8.3"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.9.0"</span>
 </code></pre></div></div>
 
 <p>For MySQL and PostgreSQL you need to add related driver shard - <a href="https://github.com/crystal-lang/crystal-mysql">crystal-mysql</a> or <a href="https://github.com/will/crystal-pg">crystal-pg</a>:</p>
@@ -103,12 +107,14 @@
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.8.3"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.9.0"</span>
   <span class="na">pg</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">will/crystal-pg</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.21.0"</span>
   <span class="c1"># or for mysql</span>
   <span class="na">crystal-mysql</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">crystal-lang/crystal-mysql</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.11.0"</span>
 </code></pre></div></div>
 
 <p>If you want to use SQLite3 - add <a href="https://github.com/imdrasil/jennifer_sqlite3_adapter">Jennifer SQLite3 adapter</a>:</p>
@@ -116,9 +122,10 @@
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.8.3"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.9.0"</span>
   <span class="na">jennifer_sqlite3_adapter</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer_sqlite3_adapter</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.3.0"</span>
 </code></pre></div></div>
 
 <p>It is shipped with SQLite driver so you don’t need add it explicitly.</p>
@@ -130,14 +137,15 @@
 <p>Create <code class="highlighter-rouge">./config</code> folder - it will contain all your configurations. Also create <code class="highlighter-rouge">./config/initializers/database.cr</code> with following content:</p>
 
 <pre><code class="language-crystal">require "jennifer"
-require "jennifer/adapter/postgres"
-# require "jennifer/adapter/mysql" for mysql
+require "jennifer/adapter/postgres" # for PostgreSQL
+# require "jennifer/adapter/mysql" for MySQL
 
-Jennifer::Config.read("config/database.yml", ENV["APP_ENV"]? || "development")
+APP_ENV = ENV["APP_ENV"]? || "development"
+Jennifer::Config.read("config/database.yml", APP_ENV)
 jennifer::Config.from_uri(ENV["DATABASE_URI"]) if ENV.has_key?("DATABASE_URI")
 
 Jennifer::Config.configure do |conf|
-  conf.logger.level = Logger::DEBUG
+  conf.logger.level = APP_ENV == "development" ? :debug : :error
 end
 </code></pre>
 
@@ -171,9 +179,6 @@ production:
 <p>Now create <code class="highlighter-rouge">./config/config.cr</code> which is responsible for loading all dependency’s configurations:</p>
 
 <pre><code class="language-crystal">require "./initializers/**"
-
-# This is optional; it depends how you would like to load your models - centralized or by demand.
-require "../src/models/*"
 </code></pre>
 
 <h3 id="translations">Translations</h3>
@@ -189,8 +194,7 @@ I18n.init
 
 <p>To be able to use CLI install <a href="https://github.com/imdrasil/sam.cr">sam</a> task manager and modify <code class="highlighter-rouge">sam.cr</code> file in you application root folder with following content:</p>
 
-<pre><code class="language-crystal"># here load jennifer and all required configurations
-require "./db/migrations/*"
+<pre><code class="language-crystal">require "./your_configuration_folder/*" # here load jennifer and all required configurations
 require "sam"
 load_dependencies "jennifer"
 
@@ -247,6 +251,25 @@ end
 </code></pre>
   </li>
 </ul>
+
+<p>Now you could add next lines at the bottom of your <code class="highlighter-rouge">./config/config.cr</code></p>
+
+<pre><code class="language-crystal">require "../src/models/*"
+</code></pre>
+
+<p>This is optional; it depends how you would like to load your models - centralized or on demand.</p>
+
+<p>Also you need to extend <code class="highlighter-rouge">sam.cr</code> file:</p>
+
+<pre><code class="language-crystal">require "./your_configuration_folder/*" # here load jennifer and all required configurations
+require "sam"
+require "./db/migrations/*"
+load_dependencies "jennifer"
+
+# ...
+
+Sam.help
+</code></pre>
 
 <p>To be able to use our new model we need to populate schema changes to the database. For this invoke next commands:</p>
 

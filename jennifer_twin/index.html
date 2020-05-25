@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>JenniferTwin | Imdrasil Homebrew Stuff</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="JenniferTwin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal site" />
+<meta property="og:description" content="Personal site" />
+<link rel="canonical" href="https://imdrasil.github.io/jennifer_twin/" />
+<meta property="og:url" content="https://imdrasil.github.io/jennifer_twin/" />
+<meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<script type="application/ld+json">
+{"headline":"JenniferTwin","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer_twin/","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
+<body><header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Imdrasil Homebrew Stuff</a>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">JenniferTwin</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="jennifertwin-">JenniferTwin <a href="https://github.com/imdrasil/jennifer.cr/releases"><img src="https://img.shields.io/github/release/imdrasil/jennifer_twin.svg" alt="Latest Release" /></a></h1>
+
+<p>Super simple library to dump/load <a href="https://github.com/imdrasil/jennifer.cr">Jennifer</a> model attributes to plain class instance to be able to integrate it with any kind of hidden attributes.</p>
+
+<h2 id="installation">Installation</h2>
+
+<ol>
+  <li>Add the dependency to your <code class="highlighter-rouge">shard.yml</code>:</li>
+</ol>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
+  <span class="na">jennifer_twin</span><span class="pi">:</span>
+    <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer_twin</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s">0.1.0</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Run <code class="highlighter-rouge">shards install</code></li>
+</ol>
+
+<h2 id="usage">Usage</h2>
+
+<p>Jennifer generates some amount of hidden attributes for a mode to be able to track whether attribute has been changed, relation load state or just a collection, etc. For some tasks you would like to have an instance containing only model attributes or it’s subset. One of the most popular example - <code class="highlighter-rouge">JSON::Serializable</code>. Therefor JenniferTwin copies all data from original instance and store them.</p>
+
+<blockquote>
+  <p>If you trying to solve issue of model serialization to JSON - take a look at <a href="https://github.com/imdrasil/serializer">Serializer</a>.</p>
+</blockquote>
+
+<p>To create a <strong>twin</strong> include <code class="highlighter-rouge">JenniferTwin</code> and call <code class="highlighter-rouge">.map_fields</code> macro:</p>
+
+<pre><code class="language-crystal">require "jennifer_twin"
+
+class UserTwin
+  map_fields User
+end
+</code></pre>
+
+<h3 id="mapping">Mapping</h3>
+
+<p><code class="highlighter-rouge">.map_fields</code> macro generates only 3 things:</p>
+
+<ul>
+  <li>getters for fields named after model’s ones (unless other name is specified)</li>
+  <li>initializer accepting model instance to copy</li>
+  <li><code class="highlighter-rouge">#to_model</code> method to create a model instance from it’s fields</li>
+</ul>
+
+<pre><code class="language-crystal">user = User.all.first
+user_twin = UserTwin.new(user)
+user_twin.to_model # =&gt; User
+</code></pre>
+
+<p>As a 2nd argument macro accepts named tuple or symbol-based hash of field options. Supported options are:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">:ignore</code> - if set to <code class="highlighter-rouge">true</code> ignores specified field</li>
+  <li><code class="highlighter-rouge">:key</code> - defines attribute with the specified value</li>
+</ul>
+
+<p>Let’s take a look at more descriptive example:</p>
+
+<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
+  mapping(
+    id: Primary32,
+    name: String?,
+    age: Int32?,
+    password_hash: String?
+  )
+end
+
+class UserTwin
+  include JenniferTwin
+  include JSON::Serializable
+
+  map_fields(User, {
+    name: { key: :full_name },
+    password_hash: { ignore: true }
+  })
+
+  setter full_name
+
+  @[JSON::Field(emit_null: true)]
+  @age : Int32?
+end
+
+user = User.all.first # &lt;User:0x000000000010 id: 1, name: "User 8", age: nil, password_hash: "&lt;hash&gt;"&gt;
+user_twin = UserTwin.new(user) # &lt;UserTwin:0x000000000020 @id=1, @full_name="User 8", @age=nil&gt;
+user_twin.to_json # =&gt; %({"id":1,"full_name":"User 8","age":null})
+
+user_twin.full_name = "New Name"
+user_twin.to_modal # &lt;User:0x000000000030 id: nil, name: "New Name", age: nil, password_hash: nil&gt;
+</code></pre>
+
+<p>As you see to define any custom annotation you need to redefine field.</p>
+
+<p>Also you can add additional custom logic to generated initializer passing a block to the macro call. To access model instance use <code class="highlighter-rouge">record</code> variable name.</p>
+
+<pre><code class="language-crystal">class UserTwin
+  include JenniferTwin
+
+  getter full_name : String
+
+  map_fields(User) do
+    @full_name = "#{record.name} Snow"
+  end
+end
+</code></pre>
+
+<h2 id="contributing">Contributing</h2>
+
+<ol>
+  <li>Fork it (<a href="https://github.com/imdrasil/jennifer_twin/fork">https://github.com/imdrasil/jennifer_twin/fork</a>)</li>
+  <li>Create your feature branch (<code class="highlighter-rouge">git checkout -b my-new-feature</code>)</li>
+  <li>Commit your changes (<code class="highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
+  <li>Push to the branch (<code class="highlighter-rouge">git push origin my-new-feature</code>)</li>
+  <li>Create a new Pull Request</li>
+</ol>
+
+<h2 id="contributors">Contributors</h2>
+
+<ul>
+  <li><a href="https://github.com/imdrasil">Roman Kalnytskyi</a> - creator and maintainer</li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imdrasil Homebrew Stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Imdrasil Homebrew Stuff</li><li><a class="u-email" href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/imdrasil"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">imdrasil</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Personal site</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/","headline":"Jennifer","@context":"http://schema.org"}</script>
+{"headline":"Jennifer","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -41,14 +41,14 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.8.3"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.9.0"</span>
 </code></pre></div></div>
 
 <h3 id="requirements">Requirements</h3>
 
 <ul>
   <li>you need to choose one of the existing drivers for your DB: <a href="https://github.com/crystal-lang/crystal-mysql">mysql</a> or <a href="https://github.com/will/crystal-pg">postgres</a>; sqlite3 adapter automatically installs required driver for it;</li>
-  <li>crystal <code class="highlighter-rouge">&gt;= 0.31.0</code>.</li>
+  <li>crystal <code class="highlighter-rouge">&gt;= 0.34.0</code>.</li>
 </ul>
 
 <h2 id="usage">Usage</h2>
@@ -180,17 +180,11 @@ Contact.all.group(:gender).group_avg(:age, PG::Numeric)
 
 <h3 id="logging--debugging">Logging &amp; Debugging</h3>
 
-<p>Jennifer uses a regular Crystal logging mechanism so you could specify your own logger or formatter:</p>
+<p>Jennifer uses a <a href="https://crystal-lang.org/api/0.34.0/Log.html">standard</a> Crystal logging mechanism so you could specify your own logger or formatter:</p>
 
-<pre><code class="language-crystal"># Here is default logger configuration
+<pre><code class="language-crystal"># This is the default logger configuration
 Jennifer::Config.configure do |conf|
-  conf.logger = Logger.new(STDOUT).tap do |logger|
-    logger.formatter = Logger::Formatter.new do |_severity, datetime, _progname, message, io|
-      io &lt;&lt; datetime &lt;&lt; ": " &lt;&lt; message
-    end
-
-    logger.level = Logger::DEBUG
-  end
+  conf.logger = Log.for("db", :debug)
 end
 </code></pre>
 
@@ -210,11 +204,11 @@ end
 <p>The fastest way to rollback all changes in the DB after test case is by using a transaction. So add:</p>
 
 <pre><code class="language-crystal">Spec.before_each do
-  Jennifer::Adapter.adapter.begin_transaction
+  Jennifer::Adapter.default_adapter.begin_transaction
 end
 
 Spec.after_each do
-  Jennifer::Adapter.adapter.rollback_transaction
+  Jennifer::Adapter.default_adapter.rollback_transaction
 end
 </code></pre>
 
@@ -247,7 +241,7 @@ end
   <p>Before developing any feature please create an issue where you describe your idea.</p>
 </blockquote>
 
-<p>To setup dev environment run <code class="highlighter-rouge">./examples/setup.sh</code> - it creates <code class="highlighter-rouge">./examples/database.yml</code> configuration file. You can override there any values specific to your environment (like db user of password).</p>
+<p>To setup dev environment run <code class="highlighter-rouge">./scripts/setup.sh</code> - it creates <code class="highlighter-rouge">./scripts/database.yml</code> configuration file. You can override there any values specific to your environment (like DB user &amp; password).</p>
 
 <p>To create the databases:</p>
 
@@ -260,23 +254,29 @@ end
 
 <h3 id="running-tests">Running tests</h3>
 
-<p>All unit tests are written using core <code class="highlighter-rouge">spec</code>. Also in <code class="highlighter-rouge">spec/spec_helper.cr</code> some custom unit test matchers are defined. All migrations are under the <code class="highlighter-rouge">./examples/migrations</code> directory.</p>
+<p>All unit tests are written using core <code class="highlighter-rouge">spec</code>. Also in <code class="highlighter-rouge">spec/spec_helper.cr</code> some custom unit test matchers are defined. All migrations are under the <code class="highlighter-rouge">./scripts/migrations</code> directory.</p>
 
 <p>The common way to run tests is just use using regular crystal spec tool:</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal spec
 </code></pre></div></div>
 
-<p>PostgreSQL is used by default, but MySql is also supported while running tests by specifying environment variable <code class="highlighter-rouge">DB=mysql</code>:</p>
+<p>By default <code class="highlighter-rouge">postgres</code> adapter is used. To run tests against <code class="highlighter-rouge">mysql</code> add <code class="highlighter-rouge">DB=mysql</code> before command. Also custom database user and password could be specified:</p>
 
 <p>In case you need to set the database user or password, use:</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ DB_USER</span><span class="o">=</span>user <span class="nv">DB_PASSWORD</span><span class="o">=</span>pass crystal spec
 </code></pre></div></div>
 
+<h4 id="testing-multiadapter-support">Testing multiadapter support</h4>
+
+<p>To run tests with multiple adapter involved you should create and migrate database with <code class="highlighter-rouge">PAIR=1</code> environment variable defined. For testing purpose <code class="highlighter-rouge">mysql</code> adapter will be created when <code class="highlighter-rouge">postgres</code> one is used as a main one and vice verse. Therefore both databases should be available to receive connections.</p>
+
+<p>Also <code class="highlighter-rouge">PAIR</code> variable should be defined when running tests.</p>
+
 <h4 id="integration-tests">Integration tests</h4>
 
-<p>Except unit tests there are also several <em>integration</em> tests. These tests checks possibility to compile and invoke jennifer functionality in some special edge cases (e.g. without defined models, migrations, etc.).</p>
+<p>Except unit tests there are also several <em>integration</em> tests. These tests checks opportunity to compile and invoke Jennifer functionality in some special edge cases (e.g. without defined models, migrations, etc.).</p>
 
 <p>To run integration test just use standard spec runner:</p>
 
@@ -285,9 +285,7 @@ end
 
 <p>Each test file is required to be invoked separately as it may have own configuration.</p>
 
-<p>To run docker-related tests (by the way, all of them run only with mysql) firstly you should run docker container and specify environment variable <code class="highlighter-rouge">DOCKER=1</code>. For more details take a look at <code class="highlighter-rouge">spec/integration/sam/*</code> application files and <code class="highlighter-rouge">examples/run_docker_mysql.sh</code> docker boot script.</p>
-
-<h2 id="documentation">Documentation</h2>
+<h3 id="documentation-generation">Documentation generation</h3>
 
 <p>Self documentation is not fully support yet but docs can be compiled using this shell script:</p>
 
@@ -301,7 +299,6 @@ end
 <ul>
   <li><a href="https://github.com/Crecto/crecto">crecto</a> - based on Phoenix’s Ecto lib and follows the repository pattern</li>
   <li><a href="https://github.com/amberframework/granite">granite-orm</a> - lightweight ORM focusing on mapping fields from request to your objects</li>
-  <li><a href="https://github.com/topaz-crystal/topaz">topaz</a> - inspired by AR ORM with migration mechanism</li>
   <li><a href="https://github.com/juanedi/micrate">micrate</a> - standalone database migration tool for crystal</li>
 </ul>
 
@@ -315,7 +312,7 @@ end
   <li>Create a new Pull Request</li>
 </ol>
 
-<p>Please ask me before starting work on smth.</p>
+<p>Please ask me before starting work on smth. Also often there is a separate branch for the future minor release that includes all breaking changes.</p>
 
 <h2 id="contributors">Contributors</h2>
 

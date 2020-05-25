@@ -13,13 +13,14 @@ require_relative "jennifer"
 site = Site.new(user: "imdrasil", target_dir: "src")
 
 doc_builder = "crystal doc"
-sh_builder =
 
 site.add_projects(
   Jennifer.new,
   Project.new(name: "sam.cr", doc_builder: doc_builder),
   Project.new(name: "crymagick", doc_builder: doc_builder, skip_versions: %w(v0.1.1)),
   Project.new(name: "hermes.cr", doc_builder: doc_builder),
+  Project.new(name: "serializer", doc_builder: doc_builder),
+  Project.new(name: "jennifer_twin", doc_builder: doc_builder),
   Project.new(name: "factory", doc_builder: doc_builder, skip_versions: %w(v0.1.2 v0.1.1)),
   Project.new(name: "jennifer_sqlite3_adapter", doc_builder: "sh generate-docs.sh", skip_versions: %w(v0.1.0 0.2.0)),
   Project.new(name: "form_object", doc_builder: "sh generate-docs.sh", skip_versions: %w(v0.2.0)),

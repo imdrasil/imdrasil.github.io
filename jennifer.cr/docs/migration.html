@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/migration.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/migration.html","headline":"Imdrasil Homebrew Stuff","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/migration.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -55,11 +55,15 @@
         
           <a class="page-link" href="./model_mapping">Mapping</a>
         
+          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
+        
           <a class="page-link" href="./view">Views</a>
         
           <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
         
           <a class="page-link" href="./time">Time</a>
+        
+          <a class="page-link" href="./serialization">Serialization</a>
         
           <a class="page-link" href="./internationalization">Internationalization</a>
         
@@ -331,7 +335,17 @@ end
   <li><code class="highlighter-rouge">:array</code> - mark field to be array type (postgres only)</li>
 </ul>
 
-<p>Also there is <code class="highlighter-rouge">#field</code> method which allows to directly define sql type.</p>
+<p>Also there is <code class="highlighter-rouge">#field</code> method which allows to directly define SQL type.</p>
+
+<p>To define reference to other table you can use <code class="highlighter-rouge">#reference</code>:</p>
+
+<pre><code class="language-crystal">create_table :pictures do |t|
+  t.reference :user
+  t.reference :attachable, { :polymorphic =&gt; true } # for polymorphic relation
+end
+</code></pre>
+
+<p>For more details about this and other methods see <a href="https://imdrasil.github.io/jennifer.cr/latest/Jennifer/Migration/TableBuilder/CreateTable.html"><code class="highlighter-rouge">Jennifer::Migration::TableBuilder::CreateTable</code></a></p>
 
 <p>To drop table just write:</p>
 
@@ -360,6 +374,8 @@ end
   <li><code class="highlighter-rouge">drop_foreign_key</code> - drops foreign key constraint;</li>
   <li><code class="highlighter-rouge">#rename_table</code> - renames table.</li>
 </ul>
+
+<p>For more details about this and other methods see <a href="https://imdrasil.github.io/jennifer.cr/latest/Jennifer/Migration/TableBuilder/ChangeTable.html"><code class="highlighter-rouge">Jennifer::Migration::TableBuilder::CreateTable</code></a></p>
 
 <p>Also next support methods are available:</p>
 
@@ -400,7 +416,7 @@ end
 
 <p>Also plain SQL could be executed as well:</p>
 
-<pre><code class="language-crystal">execute("ALTER TABLE addresses CHANGE street st VARCHAR(20)")
+<pre><code class="language-crystal">exec("ALTER TABLE addresses CHANGE street st VARCHAR(20)")
 </code></pre>
 
 <p>All changes are executed one by one so you also could add data changes here (in <code class="highlighter-rouge">#up</code> and/or <code class="highlighter-rouge">#down</code>).</p>
@@ -435,6 +451,42 @@ change_enum(:gender_enum, { :remove_values =&gt; ["other"] })
 </code></pre>
 
 <p>For more details check source code and PostgreSQL docs.</p>
+
+<h2 id="micrate">Micrate</h2>
+
+<p>It it is more convenient to you to store migrations in a plain SQL it is possible to use <a href="">micrate</a> together with Jennifer. To do so you need to add it to you dependencies and add <code class="highlighter-rouge">micrate.cr</code> file at the root (or any other convenient place) of your project with the following content:</p>
+
+<pre><code class="language-crystal">require "micrate"
+# Load here the part your your app responsible for Jennifer initialization
+# require "./config/db.cr"
+
+# These overrides are required to specify custom `db_dir`
+module Micrate
+  # Add here the path from your app root to the directory with `migration` folder
+  # inside
+  def self.db_dir
+    "db"
+  end
+
+  private def self.migrations_by_version
+    Dir.entries(migrations_dir)
+       .select { |name| File.file?(File.join(migrations_dir, name)) }
+       .select { |name| /^\d+_.+\.sql$/ =~ name }
+       .map { |name| Migration.from_file(name) }
+       .index_by { |migration| migration.version }
+  end
+end
+
+Micrate::DB.connection_url = Jennifer::Adapter.default_adapter.connection_string(:db)
+puts Dir.
+Micrate::Cli.run
+
+</code></pre>
+
+<p>After this all migration files located in the specified directory is accessible for Micrate and you can use commands like</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal /micrate.cr <span class="nt">--</span> up
+</code></pre></div></div>
 
   </div>
 

@@ -1,6 +1,6 @@
 {
-  "jennifer.cr": "219318ec8e24b819a85cbb9eb65149a44b55169c",
-  "sam.cr": "4258f9c380b417ef603417fe086082b6cb29a257",
+  "jennifer.cr": "db9d285af5304d090349c79c98b387e93e149780",
+  "sam.cr": "4d920cfbfa8f91faf25b8da791dd8e7c27b9c52f",
   "crymagick": "b6450e952a221cf2fec63f99cff6ff2c2970c6b0",
   "hermes.cr": "e7b8a22595525b39c98cc815e03c2966d5cd568a",
   "factory": "210b6e1a4564bdf23d9bca165afe5b36be616674",
@@ -10,7 +10,9 @@
   "pager": "10aeea6753c350e2d8e09a2303cb08c2193b10af",
   "sage": "67dbc26a79c3fbf0e643a8a4ca520a00e5efb78c",
   "ifrit": "8e553f11d5b50cbd8bd6ad2172dca1c8f7dcf865",
-  "jennifer_sqlite3_adapter": "bfe4deda12c288642ac3d6415d65bcc2b79a3fe9",
+  "jennifer_sqlite3_adapter": "f1e9b6c099cb35d129c36c116bac36c8121d5f0d",
   "form_object": "53707fa4262ad44d72a23459c37a0251c42f7a1b",
-  "email_opener": "b88f1e588745e4346c22379a2caa3ed1baddb596"
+  "email_opener": "b88f1e588745e4346c22379a2caa3ed1baddb596",
+  "serializer": "74cffb06d74eb2c4693a0f24f63c533911c646b5",
+  "jennifer_twin": "424f616ba61f7a5ca1908b60dd4b33a36cfe5710"
 }

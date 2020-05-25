@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer_sqlite3_adapter/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer_sqlite3_adapter/","headline":"Jennifer SQLite3 adapter","@context":"http://schema.org"}</script>
+{"headline":"Jennifer SQLite3 adapter","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer_sqlite3_adapter/","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -41,6 +41,7 @@
     <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer_sqlite3_adapter</span><span class="pi">:</span>
 <span class="err"> </span><span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer_sqlite3_adapter</span>
+ <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.3.0"</span>
 </code></pre></div>    </div>
   </li>
   <li>Run <code class="highlighter-rouge">shards install</code></li>
@@ -48,7 +49,7 @@
 
 <h2 id="usage">Usage</h2>
 
-<p>This shard requires Jennifer <code class="highlighter-rouge">0.8.3</code>. It is tested with SQLite 3.22.0 version.</p>
+<p>This shard supports Jennifer <code class="highlighter-rouge">0.9.0</code> and above. It is tested with SQLite <code class="highlighter-rouge">3.22.0</code> version.</p>
 
 <pre><code class="language-crystal">require "jennifer"
 require "jennifer_sqlite3_adapter"

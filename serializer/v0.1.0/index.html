@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.33.0">
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="github.com/imdrasil/serializer">
+  <title>README - github.com/imdrasil/serializer</title>
+  <script type="text/javascript">
+  CrystalDoc.base_path = "";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="github.com/imdrasil/serializer/Serializer" data-name="serializer">
+      <a href="Serializer.html">Serializer</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/serializer/Serializer/Base" data-name="serializer::base(t)">
+      <a href="Serializer/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/serializer/Serializer/DSL" data-name="serializer::dsl">
+      <a href="Serializer/DSL.html">DSL</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/imdrasil/serializer/Serializer/MetaAny" data-name="serializer::metaany">
+      <a href="Serializer/MetaAny.html">MetaAny</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/imdrasil/serializer/Serializer/Serializable" data-name="serializer::serializable">
+      <a href="Serializer/Serializable.html">Serializable</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/serializer/Serializer/Serializable/AbstractClassMethods" data-name="serializer::serializable::abstractclassmethods">
+      <a href="Serializer/Serializable/AbstractClassMethods.html">AbstractClassMethods</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="serializer" class="anchor" href="#serializer">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Serializer</h1>
+
+<p>Serializer is simple JSON serialization library for your object structure. Unlike core <code>JSON</code> module's functionality this library only converts to JSON string (one direction) but at the same time provides some free space for maneuvers, precise and flexible configuration.</p>
+
+<p><code><a href="Serializer/Base.html">Serializer::Base</a></code> only ~11% slower than <code>JSON::Serializable</code></p>
+
+<pre><code class="language-text">        Serializer 646.00k (  1.55µs) (± 2.52%)  2.77kB/op   1.11× slower
+JSON::Serializable 719.74k (  1.39µs) (± 2.39%)   1.3kB/op        fastest</code></pre>
+
+<p>and at the same time provides next functionality:</p>
+
+<ul><li>conditional rendering at schema definition stage</li><li>excluding specific fields at invocation stage</li><li>separation fields from relations</li><li>deep relation specification (to be rendered) at invocation stage</li><li>inheritance</li><li>optional meta data (can be specified at both definition and invocation stages).</li></ul>
+
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
+
+<ol><li>Add the dependency to your <code>shard.yml</code>:</li></ol>
+
+<p><code></code>`yaml
+   dependencies:</p>
+
+<pre><code> serializer:
+   github: imdrasil<span class="s">/serializer</code></pre>
+
+<p><code></code>`</p>
+
+<ol><li>Run <code>shards install</code></li></ol>
+
+<h2><a id="usage" class="anchor" href="#usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Usage</h2>
+
+<p>Let's assume we have next classes relationship</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">Parent</span>
+  property name, title,
+    children : <span class="t">Array</span>(<span class="t">Child</span>),
+    friends : <span class="t">Array</span>(<span class="t">Child</span>)
+
+  <span class="k">def</span> <span class="m">initialize</span>(@name <span class="o">=</span> <span class="s">&quot;test&quot;</span>, @title <span class="o">=</span> <span class="s">&quot;asd&quot;</span>, @children <span class="o">=</span> <span class="o">[]</span> <span class="k">of</span> <span class="t">Child</span>, @friends <span class="o">=</span> <span class="o">[]</span> <span class="k">of</span> <span class="t">Child</span>)
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="t">Child</span>
+  property age : <span class="t">Int32</span>, dipper : <span class="t">Child</span>?, address : <span class="t">Address</span>?
+
+  <span class="k">def</span> <span class="m">initialize</span>(@age, @dipper <span class="o">=</span> <span class="n">nil</span>, @address <span class="o">=</span> <span class="n">nil</span>)
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">some_sub_relation</span>; <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="t">Address</span>
+  property street
+
+  <span class="k">def</span> <span class="m">initialize</span>(@street <span class="o">=</span> <span class="s">&quot;some street&quot;</span>)
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>We can define serializers next way:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">AddressSerializer</span> <span class="o">&lt;</span> <span class="t">Serializer</span><span class="t">::</span><span class="t">Base</span>(<span class="t">Address</span>)
+  attributes <span class="n">:street</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="t">ChildSerializer</span> <span class="o">&lt;</span> <span class="t">Serializer</span><span class="t">::</span><span class="t">Base</span>(<span class="t">Child</span>)
+  attribute <span class="n">:age</span>
+
+  has_one <span class="n">:some_sub_relation</span>, <span class="t">ChildSerializer</span>
+  has_one <span class="n">:address</span>, <span class="t">AddressSerializer</span>
+  has_one <span class="n">:dipper</span>, <span class="t">ChildSerializer</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="t">ModelSerializer</span> <span class="o">&lt;</span> <span class="t">Serializer</span><span class="t">::</span><span class="t">Base</span>(<span class="t">Model</span>)
+  attribute <span class="n">:name</span>
+  attribute <span class="n">:title</span>, <span class="n">:Title</span>, <span class="k">if</span>: <span class="n">:test_title</span>
+  attribute <span class="n">:own_field</span>
+
+  has_many <span class="n">:children</span>, <span class="t">ChildSerializer</span>
+  has_many <span class="n">:friends</span>, <span class="t">ChildSerializer</span>
+
+  <span class="k">def</span> <span class="m">test_title</span>(object, options)
+    options.<span class="k">nil?</span> || <span class="o">!</span>options[<span class="n">:test</span>]?
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">own_field</span>
+    <span class="n">12</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>To invoke serialization:</p>
+
+<pre><code class="language-crystal">model <span class="o">=</span> <span class="t">Model</span>.<span class="k">new</span>(
+  friends: [
+    <span class="t">Child</span>.<span class="k">new</span>(
+      <span class="n">60</span>,
+      <span class="t">Child</span>.<span class="k">new</span>(<span class="n">20</span>, address: <span class="t">Address</span>.<span class="k">new</span>)
+    )
+  ],
+  parents: <span class="o">[]</span> <span class="k">of</span> <span class="t">Child</span>
+)
+
+<span class="t">ModelSerializer</span>.<span class="k">new</span>(model).serialize(
+  except: [<span class="n">:own_field</span>],
+  includes: {
+    <span class="n">:children</span> => [<span class="n">:some_sub_relation</span>],
+    <span class="n">:friends</span> => { <span class="n">:address</span> => <span class="n">nil</span>, <span class="n">:dipper</span> => [<span class="n">:some_sub_relation</span>] }
+  },
+  meta: { <span class="n">:page</span> => <span class="n">0</span> }
+)</code></pre>
+
+<p>Which results in:</p>
+
+<pre><code class="language-json">{
+  "data":{
+    "name":"test",
+    "Title":"asd",
+    "children":[],
+    "friends":[
+      {
+        "age":60,
+        "address":{
+          "street":"some street"
+        },
+        "dipper":{
+          "age":20,
+          "some_sub_relation":null
+        }
+      }
+    ]
+  },
+  "meta":{
+    "page":0
+  }
+}</code></pre>
+
+<blockquote>This is pretty JSON version - actual result contains no spaces and newlines.</blockquote>
+
+<p>For API details see <a href="https://imdrasil.github.io/serializer/latest/Serializer" target="_blank">documentation</a>.</p>
+
+<h2><a id="contributing" class="anchor" href="#contributing">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributing</h2>
+
+<ol><li>Fork it (&lt;https://github.com/imdrasil/serializer/fork>)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
+
+<h2><a id="contributors" class="anchor" href="#contributors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributors</h2>
+
+<ul><li><a href="https://github.com/imdrasil" target="_blank">Roman Kalnytskyi</a> - creator and maintainer</li></ul>
+</div>
+</body>
+</html>

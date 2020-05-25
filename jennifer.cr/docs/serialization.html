@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Imdrasil Homebrew Stuff | Personal site</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Imdrasil Homebrew Stuff" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal site" />
+<meta property="og:description" content="Personal site" />
+<link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/serialization.html" />
+<meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/serialization.html" />
+<meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<script type="application/ld+json">
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/serialization.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
+<body><header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Imdrasil Homebrew Stuff</a>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    <header class="site-header" role="banner">
+  <div class="wrapper">
+    <nav class="site-nav">
+      <div class="trigger">
+        
+          <a class="page-link" href="./callbacks">Callbacks</a>
+        
+          <a class="page-link" href="./model_sti">STI</a>
+        
+          <a class="page-link" href="./timestamps">Timestamps</a>
+        
+          <a class="page-link" href="./eager_loading">Eager Loading</a>
+        
+          <a class="page-link" href="./getting_started">Getting started</a>
+        
+          <a class="page-link" href="./validation">Validation</a>
+        
+          <a class="page-link" href="./query_dsl">Query DSL</a>
+        
+          <a class="page-link" href="./configuration">Configuration</a>
+        
+          <a class="page-link" href="./index">Jennifer Documentation</a>
+        
+          <a class="page-link" href="./model_mapping">Mapping</a>
+        
+          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
+        
+          <a class="page-link" href="./view">Views</a>
+        
+          <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
+        
+          <a class="page-link" href="./time">Time</a>
+        
+          <a class="page-link" href="./serialization">Serialization</a>
+        
+          <a class="page-link" href="./internationalization">Internationalization</a>
+        
+          <a class="page-link" href="./record">Record</a>
+        
+          <a class="page-link" href="./migration">Migration</a>
+        
+          <a class="page-link" href="./pagination_and_ordering">Pagination &amp; Ordering</a>
+        
+          <a class="page-link" href="./relations">Relations</a>
+        
+          <a class="page-link" href="./crud">CRUD</a>
+        
+          <a class="page-link" href="./aggregation">Aggregations</a>
+        
+          <a class="page-link" href="./authentication">Authentication</a>
+        
+          <a class="page-link" href="./command_line">Command Line</a>
+        
+          <a class="page-link" href="./model_scopes">Scopes</a>
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+<h1 id="serialization">Serialization</h1>
+
+<p>There are multiple approaches to implement model serialization to a required format.</p>
+
+<h2 id="general">General</h2>
+
+<p>Jennifer defines some hidden instance attributes in defined models for own use. Sometimes we would like to operate with a class where we have full access to all defined attributes/methods. For this case the easiest way is to use <a href="https://github.com/imdrasil/jennifer_twin">JenniferTwin</a>. Using it you can dump Jennifer model instance to a one that is totally under your control. One of the cases when this approach may come in handy when we would like to use attribute annotations, like <a href="https://github.com/crystal-community/msgpack-crystal">MessagePack::Serializable</a> or <a href="https://crystal-lang.org/api/0.31.1/JSON/Serializable.html">JSON::Serializable</a>.</p>
+
+<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
+  mapping(
+    id: Primary32,
+    name: String?,
+    age: Int32?,
+    password_hash: String?
+  )
+end
+
+class UserTwin
+  include JenniferTwin
+  include JSON::Serializable
+
+  map_fields(User, {
+    name: { key: :full_name },
+    password_hash: { ignore: true }
+  })
+
+  setter full_name
+
+  @[JSON::Field(emit_null: false)]
+  @age : Int32?
+end
+
+user = User.all.first # &lt;User:0x000000000010 id: 1, name: "User 8", age: nil, password_hash: "&lt;hash&gt;"&gt;
+user_twin = UserTwin.new(user) # &lt;UserTwin:0x000000000020 @id=1, @full_name="User 8", @age=nil&gt;
+user_twin.to_json # =&gt; %({"id":1,"full_name":"User 8","age":null})
+</code></pre>
+
+<p>Also you can easily convert such twin back to model</p>
+
+<pre><code class="language-crystal">user_twin.full_name = "New Name"
+user_twin.to_modal # &lt;User:0x000000000030 id: nil, name: "New Name", age: nil, password_hash: nil&gt;
+</code></pre>
+
+<h2 id="json">JSON</h2>
+
+<p>For JSON serialization there are 2 options (apart from described above).</p>
+
+<h3 id="modelbaseto_h"><code class="highlighter-rouge">Model::Base#to_h</code></h3>
+
+<p>If you need just to dump all non virtual fields to a JSON string - use <code class="highlighter-rouge">Jennifer::Model::Base#to_h</code> to get <code class="highlighter-rouge">Hash(Symbol, Jennifer::DBAny)</code> (or <code class="highlighter-rouge">#to_str_h</code> to get <code class="highlighter-rouge">Hash(String, Jennifer::DBAny)</code>) and then <code class="highlighter-rouge">#to_json</code> to get a JSON string. The disadvantages of this approach are obvious - <strong>all</strong> non virtual fields are serialized. This can be partially resolved by manual deleting/adding entries by keys (as before final serialization we get hash).</p>
+
+<pre><code class="language-crystal">user = User.all.first # &lt;User:0x000000000010 id: 1, name: "User 8", age: nil, password_hash: "&lt;hash&gt;"&gt;
+hash = user.to_h # =&gt; {:id =&gt; 1, :full_name =&gt; "User 8", :age =&gt; null}
+hash.delete(:age) if hash[:age].nil?
+hash.to_json # =&gt; %({"id":1,"full_name":"User 8"})
+</code></pre>
+
+<h3 id="serializer">Serializer</h3>
+
+<p>As an alternate you can use <a href="https://github.com/imdrasil/serializer">Serializer</a> library dedicated to this purpose - serialize Jennifer object relations. Apart from simple attribute mapping/renaming you can also specify all relationships (<code class="highlighter-rouge">has_many</code>/<code class="highlighter-rouge">belongs_to</code>/<code class="highlighter-rouge">has_one</code>), override methods, dynamically specify which attributes/relations should be serialized.</p>
+
+<pre><code class="language-crystal">class CommentSerializer &lt; Serializer::Base(Comment)
+  attribute :text
+
+  belongs_to :post, PostSerializer
+end
+
+class PostSerializer &lt; Serializer::Base(Post)
+  attribute :title, :Title, if: :test_title
+  attribute :body
+  attribute :category
+
+  has_many :comments, CommentSerializer
+
+  def test_title(object, options)
+    options.nil? || !options[:test]?
+  end
+
+  def category
+    12
+  end
+end
+
+ModelSerializer.new(Post.last).serialize(
+  except: [:category],
+  includes: {
+    :comments =&gt; [:post], # you can specify relations any level deep
+  },
+  meta: { :page =&gt; 0 } # and add meta data
+)
+</code></pre>
+
+<p>More descriptions you can find on it’s github page.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imdrasil Homebrew Stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Imdrasil Homebrew Stuff</li><li><a class="u-email" href="mailto:moranibaca@gmail.com">moranibaca@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/imdrasil"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">imdrasil</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Personal site</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

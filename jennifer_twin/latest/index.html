@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.33.0">
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="github.com/imdrasil/jennifer_twin">
+  <title>README - github.com/imdrasil/jennifer_twin</title>
+  <script type="text/javascript">
+  CrystalDoc.base_path = "";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="github.com/imdrasil/jennifer_twin/JenniferTwin" data-name="jennifertwin">
+      <a href="JenniferTwin.html">JenniferTwin</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="jennifer-twin-latest-releasehttpsimg.shields.iogithubreleaseimdrasiljennifer-twin.svghttpsgithub.comimdrasiljennifer-twinreleases" class="anchor" href="#jennifer-twin-latest-releasehttpsimg.shields.iogithubreleaseimdrasiljennifer-twin.svghttpsgithub.comimdrasiljennifer-twinreleases">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>JenniferTwin <a href="https://github.com/imdrasil/jennifer_twin/releases" target="_blank"><img src="https://img.shields.io/github/release/imdrasil/jennifer_twin.svg" alt="Latest Release"/></a></h1>
+
+<p>Super simple library to dump/load <a href="https://github.com/imdrasil/jennifer.cr" target="_blank">Jennifer</a> model attributes to plain class instance to be able to integrate it with any kind of hidden attributes.</p>
+
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
+
+<ol><li>Add the dependency to your <code>shard.yml</code>:</li></ol>
+
+<pre><code class="language-yaml">dependencies:
+  jennifer_twin:
+    github: imdrasil/jennifer_twin
+    version: 0.1.0</code></pre>
+
+<ol><li>Run <code>shards install</code></li></ol>
+
+<h2><a id="usage" class="anchor" href="#usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Usage</h2>
+
+<p>Jennifer generates some amount of hidden attributes for a mode to be able to track whether attribute has been changed, relation load state or just a collection, etc. For some tasks you would like to have an instance containing only model attributes or it's subset. One of the most popular example - <code>JSON::Serializable</code>. Therefor JenniferTwin copies all data from original instance and store them.</p>
+
+<blockquote>If you trying to solve issue of model serialization to JSON - take a look at <a href="https://github.com/imdrasil/serializer" target="_blank">Serializer</a>.</blockquote>
+
+<p>To create a <strong>twin</strong> include <code><a href="JenniferTwin.html">JenniferTwin</a></code> and call <code>.map_fields</code> macro:</p>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;jennifer_twin&quot;</span>
+
+<span class="k">class</span> <span class="t">UserTwin</span>
+  map_fields <span class="t">User</span>
+<span class="k">end</span></code></pre>
+
+<h3><a id="mapping" class="anchor" href="#mapping">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Mapping</h3>
+
+<p><code>.map_fields</code> macro generates only 3 things:</p>
+
+<ul><li>getters for fields named after model's ones (unless other name is specified)</li><li>initializer accepting model instance to copy</li><li><code>#to_model</code> method to create a model instance from it's fields</li></ul>
+
+<pre><code class="language-crystal">user <span class="o">=</span> <span class="t">User</span>.all.first
+user_twin <span class="o">=</span> <span class="t">UserTwin</span>.<span class="k">new</span>(user)
+user_twin.to_model <span class="c"># =&gt; User</span></code></pre>
+
+<p>As a 2nd argument macro accepts named tuple or symbol-based hash of field options. Supported options are:</p>
+
+<ul><li><code>:ignore</code> - if set to <code>true</code> ignores specified field</li><li><code>:key</code> - defines attribute with the specified value</li></ul>
+
+<p>Let's take a look at more descriptive example:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">User</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
+  mapping(
+    id: <span class="t">Primary32</span>,
+    name: <span class="t">String</span>?,
+    age: <span class="t">Int32</span>?,
+    password_hash: <span class="t">String</span>?
+  )
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="t">UserTwin</span>
+  <span class="k">include</span> <span class="t">JenniferTwin</span>
+  <span class="k">include</span> <span class="t">JSON</span><span class="t">::</span><span class="t">Serializable</span>
+
+  map_fields(<span class="t">User</span>, {
+    name: { key: <span class="n">:full_name</span> },
+    password_hash: { ignore: <span class="n">true</span> }
+  })
+
+  setter full_name
+
+  @[<span class="t">JSON</span><span class="t">::</span><span class="t">Field</span>(emit_null: <span class="n">true</span>)]
+  @age : <span class="t">Int32</span>?
+<span class="k">end</span>
+
+user <span class="o">=</span> <span class="t">User</span>.all.first <span class="c"># &lt;User:0x000000000010 id: 1, name: &quot;User 8&quot;, age: nil, password_hash: &quot;&lt;hash&gt;&quot;&gt;</span>
+user_twin <span class="o">=</span> <span class="t">UserTwin</span>.<span class="k">new</span>(user) <span class="c"># &lt;UserTwin:0x000000000020 @id=1, @full_name=&quot;User 8&quot;, @age=nil&gt;</span>
+user_twin.to_json <span class="c"># =&gt; %({&quot;id&quot;:1,&quot;full_name&quot;:&quot;User 8&quot;,&quot;age&quot;:null})</span>
+
+user_twin.full_name <span class="o">=</span> <span class="s">&quot;New Name&quot;</span>
+user_twin.to_modal <span class="c"># &lt;User:0x000000000030 id: nil, name: &quot;New Name&quot;, age: nil, password_hash: nil&gt;</span></code></pre>
+
+<p>As you see to define any custom annotation you need to redefine field.</p>
+
+<p>Also you can add additional custom logic to generated initializer passing a block to the macro call. To access model instance use <code>record</code> variable name.</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">UserTwin</span>
+  <span class="k">include</span> <span class="t">JenniferTwin</span>
+
+  getter full_name : <span class="t">String</span>
+
+  map_fields(<span class="t">User</span>) <span class="k">do</span>
+    @full_name <span class="o">=</span> <span class="s">&quot;</span><span class="i">#{</span>record.name<span class="i">}</span><span class="s"> Snow&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<h2><a id="contributing" class="anchor" href="#contributing">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributing</h2>
+
+<ol><li>Fork it (&lt;https://github.com/imdrasil/jennifer_twin/fork>)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
+
+<h2><a id="contributors" class="anchor" href="#contributors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributors</h2>
+
+<ul><li><a href="https://github.com/imdrasil" target="_blank">Roman Kalnytskyi</a> - creator and maintainer</li></ul>
+</div>
+</body>
+</html>
