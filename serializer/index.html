@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/serializer/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Serializer","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/serializer/","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Serializer","url":"https://imdrasil.github.io/serializer/","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -32,7 +32,7 @@
   <div class="post-content">
     <h1 id="serializer">Serializer</h1>
 
-<p>Serializer is simple JSON serialization library for your object structure. Unlike core <code class="highlighter-rouge">JSON</code> module’s functionality this library only converts to JSON string (one direction) but at the same time provides some free space for maneuvers, precise and flexible configuration.</p>
+<p><strong>Serializer</strong> is a simple JSON serialization library for your object structure. Unlike core <code class="highlighter-rouge">JSON</code> module’s functionality this library only covers serializing objects to JSON without parsing data back. At the same time it provides some free space for maneuvers, precise and flexible configuration WHAT, HOW and WHEN should be rendered.</p>
 
 <p><code class="highlighter-rouge">Serializer::Base</code> only ~11% slower than <code class="highlighter-rouge">JSON::Serializable</code></p>
 
@@ -69,7 +69,7 @@ JSON::Serializable 719.74k (  1.39µs) (± 2.39%)   1.3kB/op        fastest
 
 <h2 id="usage">Usage</h2>
 
-<p>Let’s assume we have next classes relationship</p>
+<p>Let’s assume we have next resources relationship</p>
 
 <pre><code class="language-crystal">class Parent
   property name, title,
@@ -97,7 +97,7 @@ class Address
 end
 </code></pre>
 
-<p>We can define serializers next way:</p>
+<p>To be able to serialize data we need to define serializers for each resource:</p>
 
 <pre><code class="language-crystal">class AddressSerializer &lt; Serializer::Base(Address)
   attributes :street
@@ -129,19 +129,99 @@ class ModelSerializer &lt; Serializer::Base(Model)
 end
 </code></pre>
 
-<p>To invoke serialization:</p>
+<h3 id="attributes">Attributes</h3>
 
-<pre><code class="language-crystal">model = Model.new(
-  friends: [
-    Child.new(
-      60,
-      Child.new(20, address: Address.new)
-    )
-  ],
-  parents: [] of Child
-)
+<p>To specify what should be serialized <code class="highlighter-rouge">attributes</code> and <code class="highlighter-rouge">attribute</code> macros are used. <code class="highlighter-rouge">attributes</code> allows to pass a list of attribute names which maps one-to-one with JSON keys</p>
 
-ModelSerializer.new(model).serialize(
+<pre><code class="language-crystal">class PostSerializer
+  attributes :title, body
+end
+</code></pre>
+
+<p>Above serializer will produce next output <code class="highlighter-rouge">{"title": "Some title", "body": "Post body"}</code>. You can precisely configure every field using <code class="highlighter-rouge">attribute</code> macro. It allows to specify <code class="highlighter-rouge">key</code> name to be used in JSON and <code class="highlighter-rouge">if</code> predicate method name to be used to check whether field should be serialized.</p>
+
+<pre><code class="language-crystal">class ModelSerializer &lt; Serializer::Base(Model)
+  attribute :title, :Title, if: :test_title
+
+  def test_title(object, options)
+    options.nil? || !options[:test]?
+  end
+end
+</code></pre>
+
+<p>Above serializer will produce next output <code class="highlighter-rouge">{"Title": "Some title"}</code> if serializer has got options without <code class="highlighter-rouge">test</code> set to <code class="highlighter-rouge">true</code>.</p>
+
+<p>If serializer has a method with the same name as specified field - it is used.</p>
+
+<pre><code class="language-crystal">class ModelSerializer &lt; Serializer::Base(Model)
+  attribute :name
+
+  def name
+    "StaticName"
+  end
+end
+</code></pre>
+
+<h3 id="relations">Relations</h3>
+
+<p>If resource has underlying resources to serialize they can be specified with <code class="highlighter-rouge">has_one</code>, <code class="highlighter-rouge">belongs_to</code> and <code class="highlighter-rouge">has_many</code> macro methods that describes relation type between them (one-to-one, one-to-any and one-to-many).</p>
+
+<pre><code class="language-crystal">class ModelSerializer &lt; Serializer::Base(Model)
+  has_many :friends, ChildSerializer
+end
+</code></pre>
+
+<p>They also accepts <code class="highlighter-rouge">key</code> option. There is no <code class="highlighter-rouge">if</code> support because associations by default isn’t rendered.</p>
+
+<h3 id="meta">Meta</h3>
+
+<p>Resource meta data can be defined at it’s level - overriding <code class="highlighter-rouge">.meta</code> method.</p>
+
+<pre><code class="language-crystal">class ModelSerializer &lt; Serializer::Base(Model)
+  def self.meta(options)
+    {
+      :page =&gt; options[:page]
+    }
+  end
+end
+</code></pre>
+
+<p>Method return value should be <code class="highlighter-rouge">Hash(Symbol, JSON::Any::Type | Int32)</code>. Also any additional meta attributes may be defined at serialization moment (calling <code class="highlighter-rouge">#serialize</code> method).</p>
+
+<h3 id="inheritance">Inheritance</h3>
+
+<p>If you have complicated domain object relation structure - you can easily present serialization logic using inheritance:</p>
+
+<pre><code class="language-crystal">class ModelSerializer &lt; Serializer::Base(Model)
+  attribute :name
+end
+
+class InheritedSerializer &lt; ModelSerializer
+  attribute :inherited_field
+
+  def inherited_field
+    1.23
+  end
+end
+</code></pre>
+
+<h3 id="rendering">Rendering</h3>
+
+<p>To render resource create an instance of required serializer and call <code class="highlighter-rouge">#serialize</code>:</p>
+
+<pre><code class="language-crystal">ModelSerializer.new(model).serialize
+</code></pre>
+
+<p>It accepts several optional arguments:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">except</code> - array of fields that should not be serialized;</li>
+  <li><code class="highlighter-rouge">includes</code> - relations that should be included into serialized string;</li>
+  <li><code class="highlighter-rouge">opts</code> - options that will be passed to <em>if</em> predicate methods and <code class="highlighter-rouge">.meta</code>;</li>
+  <li><code class="highlighter-rouge">meta</code> - meta attributes to be added under <code class="highlighter-rouge">"meta"</code> key at root level; it is merged into default meta attributes returned by <code class="highlighter-rouge">.meta</code>.</li>
+</ul>
+
+<pre><code class="language-crystal">ModelSerializer.new(model).serialize(
   except: [:own_field],
   includes: {
     :children =&gt; [:some_sub_relation],
@@ -151,7 +231,9 @@ ModelSerializer.new(model).serialize(
 )
 </code></pre>
 
-<p>Which results in:</p>
+<p><code class="highlighter-rouge">includes</code> should be array or hash (any levels deep) which elements presents relation names to be serialized. <code class="highlighter-rouge">nil</code> value may be used in hashes as a value to define that nothing additional should be serialized for a relation named by corresponding key.</p>
+
+<p>Example above results in:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
@@ -181,7 +263,20 @@ ModelSerializer.new(model).serialize(
   <p>This is pretty JSON version - actual result contains no spaces and newlines.</p>
 </blockquote>
 
-<p>For API details see <a href="https://imdrasil.github.io/serializer/latest/Serializer">documentation</a>.</p>
+<h4 id="root-key">Root key</h4>
+
+<p>Serialized JSON root level includes <code class="highlighter-rouge">data</code> key (and optional <code class="highlighter-rouge">meta</code> key). It can be renamed to anything by defining <code class="highlighter-rouge">.root_key</code></p>
+
+<pre><code class="language-crystal">class ModelSerializer &lt; Serializer::Base(Model)
+  def self.root_key
+    "model"
+  end
+
+  attribute :name
+end
+</code></pre>
+
+<p>For API details see <a href="https://imdrasil.github.io/serializer/latest/serializer">documentation</a>.</p>
 
 <h2 id="contributing">Contributing</h2>
 

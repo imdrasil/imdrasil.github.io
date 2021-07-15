@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/time.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/time.html","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/time.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -92,15 +92,41 @@
 
 <h1 id="time">Time</h1>
 
-<p>Any model or view <code class="highlighter-rouge">Time</code> attribute will be automatically converted from local time zone (which could be set using <code class="highlighter-rouge">Jennifer::Config.local_time_zone_name=</code>) to UTC and converted back during reading from the DB. Also during querying the db all <code class="highlighter-rouge">Time</code> arguments will be converted same way as well. Only <code class="highlighter-rouge">Jennifer::Record</code> time attributes is not automatically converted from UTC to local time during loading from the result set.</p>
+<p>Any <code class="highlighter-rouge">Time</code> value is automatically converted from it’s time zone to UTC when is passed to database. This includes both model fields downstreaming to a database and any query parameter of <code class="highlighter-rouge">Time</code> class. This means when record is saved it’s <code class="highlighter-rouge">created_at</code> field is converted from it’s time zone (for instance <code class="highlighter-rouge">Europe/Kyiv</code>) to UTC. This also works when you use time parameters in your queries:</p>
+
+<pre><code class="language-crystal">Book.where { _publication_date &lt; Time.local(2021, 10, 10, 20, location: Jennifer::Config.local_time_zone) }
+# SELECT books.* FROM books where books.publication_date &lt; '2021-10-10 17:00:00'
+</code></pre>
+
+<p>To pass time value into database request <em>as-is</em> - use UTC:</p>
+
+<pre><code class="language-crystal">Book.where { _publication_date &lt; Time.utc(2021, 10, 10, 20) }
+</code></pre>
+
+<p>It is important to notice that column values are converted back to application time zone (set by <code class="highlighter-rouge">Jennifer::Config.local_time_zone_name=</code>) when are read from a database. So in both cases <code class="highlighter-rouge">User.all.pluck(:created_at)</code> and <code class="highlighter-rouge">User.first.created_at</code> time object will be converted from UTC to configured time zone.</p>
 
 <p>Local time could be set using:</p>
 
 <pre><code class="language-crystal">Jennifer::Config.config do |conf|
-  # default is one stored in TZ env variable or UTC if absent
   conf.local_time_zone_name = "Etc/GMT+1"
 end
 </code></pre>
+
+<p>By default is used local time zone.</p>
+
+<p>It is possible to turn off time zone converting logic entirely by setting <code class="highlighter-rouge">Jennifer::Config.time_zone_aware_attributes</code> to <code class="highlighter-rouge">false</code>. In this case all time objects will be passed to database without converting to UTC (as “wall clock” time). When time is read from a database <code class="highlighter-rouge">Jennifer::Config.local_time_zone</code> as time zone.</p>
+
+<p>If only specific column should ignore time converting logic you can specify <code class="highlighter-rouge">time_zone_aware: false</code> option for it in model mapping.</p>
+
+<pre><code class="language-crystal">class Book &lt; Jennifer::Model::Base
+  mapping(
+    # ...
+    publishing_date: { type: Time, time_zone_aware: false }
+  )
+end
+</code></pre>
+
+<p>It is important to notice that in this case time zone converting will be omitted only when model instance is read from a database or is written to it. In other words <code class="highlighter-rouge">Book.all.pluck(:publishing_date)</code> in this case will perform time zone converting.</p>
 
   </div>
 

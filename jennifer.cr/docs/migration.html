@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/migration.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/migration.html","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/migration.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -277,7 +277,7 @@ end
     <tr>
       <td><code class="highlighter-rouge">#uuid</code></td>
       <td><code class="highlighter-rouge">UUID</code></td>
-      <td><code class="highlighter-rouge">String</code></td>
+      <td><code class="highlighter-rouge">UUID</code></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">#timestampz</code></td>
@@ -392,7 +392,7 @@ end
 
 <pre><code class="language-crystal">def up
   change_table(:contacts) do |t|
-    t.change_column(:age, :short, { :default =&gt; 0 })
+    t.change_column(:age, :short, {:default =&gt; 0})
     t.add_column(:description, :text)
     t.add_index(:description, type: :uniq, order: :asc)
   end
@@ -404,7 +404,7 @@ end
 
 def down
   change_table(:contacts) do |t|
-    t.change_column(:age, :integer, { :default =&gt; 0 })
+    t.change_column(:age, :integer, {:default =&gt; 0})
     t.drop_column(:description)
   end
 
@@ -437,17 +437,15 @@ end
 <pre><code class="language-crystal">create_enum(:gender_enum, ["male", "female"])
 
 create_table(:contacts) do |t|
-  t.string :name, { :size =&gt; 30 }
+  t.string :name, {:size =&gt; 30}
   t.integer :age
   t.field :gender, :gender_enum
   t.timestamps
 end
 
-change_enum(:gender_enum, { :add_values =&gt; ["unknown"] })
-
-change_enum(:gender_enum, { :rename_values =&gt; ["unknown", "other"] })
-
-change_enum(:gender_enum, { :remove_values =&gt; ["other"] })
+change_enum(:gender_enum, {:add_values =&gt; ["unknown"]})
+change_enum(:gender_enum, {:rename_values =&gt; ["unknown", "other"]})
+change_enum(:gender_enum, {:remove_values =&gt; ["other"]})
 </code></pre>
 
 <p>For more details check source code and PostgreSQL docs.</p>
@@ -470,10 +468,10 @@ module Micrate
 
   private def self.migrations_by_version
     Dir.entries(migrations_dir)
-       .select { |name| File.file?(File.join(migrations_dir, name)) }
-       .select { |name| /^\d+_.+\.sql$/ =~ name }
-       .map { |name| Migration.from_file(name) }
-       .index_by { |migration| migration.version }
+      .select { |name| File.file?(File.join(migrations_dir, name)) }
+      .select { |name| /^\d+_.+\.sql$/ =~ name }
+      .map { |name| Migration.from_file(name) }
+      .index_by { |migration| migration.version }
   end
 end
 

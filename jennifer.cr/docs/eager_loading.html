@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/eager_loading.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/eager_loading.html","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/eager_loading.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -120,8 +120,11 @@
 
 <p><code class="highlighter-rouge">#pluck</code> returns array of values if only one field was given and array of arrays otherwise. By default it uses scope of current table (e.g. in previous example select clause included <code class="highlighter-rouge">contacts.id</code>). To allow grepping custom fields or any statement you need to specify custom select clause:</p>
 
-<pre><code class="language-crystal">Contact.all.select("COUNT(id) as count, contacts.name").group("name")
-       .having { sql("COUNT(id)") &gt; 1 }.pluck(:count)
+<pre><code class="language-crystal">Contact.all
+  .select("COUNT(id) as count, contacts.name")
+  .group("name")
+  .having { sql("COUNT(id)") &gt; 1 }
+  .pluck(:count)
 </code></pre>
 
 <h2 id="relation-eager-loading">Relation Eager Loading</h2>

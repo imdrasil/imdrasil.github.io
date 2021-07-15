@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer_twin/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"JenniferTwin","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer_twin/","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"JenniferTwin","url":"https://imdrasil.github.io/jennifer_twin/","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -30,7 +30,7 @@
   </header>
 
   <div class="post-content">
-    <h1 id="jennifertwin-">JenniferTwin <a href="https://github.com/imdrasil/jennifer.cr/releases"><img src="https://img.shields.io/github/release/imdrasil/jennifer_twin.svg" alt="Latest Release" /></a></h1>
+    <h1 id="jennifertwin-">JenniferTwin <a href="https://github.com/imdrasil/jennifer_twin/releases"><img src="https://img.shields.io/github/release/imdrasil/jennifer_twin.svg" alt="Latest Release" /></a></h1>
 
 <p>Super simple library to dump/load <a href="https://github.com/imdrasil/jennifer.cr">Jennifer</a> model attributes to plain class instance to be able to integrate it with any kind of hidden attributes.</p>
 
@@ -43,7 +43,7 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer_twin</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer_twin</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s">0.1.0</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s">0.1.1</span>
 </code></pre></div></div>
 
 <ol>
@@ -63,6 +63,8 @@
 <pre><code class="language-crystal">require "jennifer_twin"
 
 class UserTwin
+  include JenniferTwin
+
   map_fields User
 end
 </code></pre>
@@ -72,7 +74,7 @@ end
 <p><code class="highlighter-rouge">.map_fields</code> macro generates only 3 things:</p>
 
 <ul>
-  <li>getters for fields named after model’s ones (unless other name is specified)</li>
+  <li>getters for all fields named after model’s ones (unless other name is specified)</li>
   <li>initializer accepting model instance to copy</li>
   <li><code class="highlighter-rouge">#to_model</code> method to create a model instance from it’s fields</li>
 </ul>
@@ -87,6 +89,7 @@ user_twin.to_model # =&gt; User
 <ul>
   <li><code class="highlighter-rouge">:ignore</code> - if set to <code class="highlighter-rouge">true</code> ignores specified field</li>
   <li><code class="highlighter-rouge">:key</code> - defines attribute with the specified value</li>
+  <li><code class="highlighter-rouge">:annotations</code> - adds annotations above field setter</li>
 </ul>
 
 <p>Let’s take a look at more descriptive example:</p>
@@ -105,14 +108,12 @@ class UserTwin
   include JSON::Serializable
 
   map_fields(User, {
+    age: { annotations: [@[JSON::Field(emit_null: true)]] }
     name: { key: :full_name },
     password_hash: { ignore: true }
   })
 
   setter full_name
-
-  @[JSON::Field(emit_null: true)]
-  @age : Int32?
 end
 
 user = User.all.first # &lt;User:0x000000000010 id: 1, name: "User 8", age: nil, password_hash: "&lt;hash&gt;"&gt;
@@ -122,8 +123,6 @@ user_twin.to_json # =&gt; %({"id":1,"full_name":"User 8","age":null})
 user_twin.full_name = "New Name"
 user_twin.to_modal # &lt;User:0x000000000030 id: nil, name: "New Name", age: nil, password_hash: nil&gt;
 </code></pre>
-
-<p>As you see to define any custom annotation you need to redefine field.</p>
 
 <p>Also you can add additional custom logic to generated initializer passing a block to the macro call. To access model instance use <code class="highlighter-rouge">record</code> variable name.</p>
 

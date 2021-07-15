@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/serialization.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/serialization.html","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/serialization.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -96,7 +96,7 @@
 
 <h2 id="general">General</h2>
 
-<p>Jennifer defines some hidden instance attributes in defined models for own use. Sometimes we would like to operate with a class where we have full access to all defined attributes/methods. For this case the easiest way is to use <a href="https://github.com/imdrasil/jennifer_twin">JenniferTwin</a>. Using it you can dump Jennifer model instance to a one that is totally under your control. One of the cases when this approach may come in handy when we would like to use attribute annotations, like <a href="https://github.com/crystal-community/msgpack-crystal">MessagePack::Serializable</a> or <a href="https://crystal-lang.org/api/0.31.1/JSON/Serializable.html">JSON::Serializable</a>.</p>
+<p>Jennifer defines some hidden instance attributes in defined models for own use. Sometimes we would like to operate with a class where we have full access to all defined attributes/methods. For this case the easiest way is to use <a href="https://github.com/imdrasil/jennifer_twin">JenniferTwin</a> lib. Using it you can dump Jennifer model instance to a separate object that is totally under your control. One of the cases when this approach may come in handy when ther is a need to use attribute annotations, like <a href="https://github.com/crystal-community/msgpack-crystal">MessagePack::Serializable</a> or <a href="https://crystal-lang.org/api/0.31.1/JSON/Serializable.html">JSON::Serializable</a>.</p>
 
 <pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
   mapping(
@@ -112,8 +112,8 @@ class UserTwin
   include JSON::Serializable
 
   map_fields(User, {
-    name: { key: :full_name },
-    password_hash: { ignore: true }
+    name: {key: :full_name},
+    password_hash: {ignore: true}
   })
 
   setter full_name
@@ -135,16 +135,40 @@ user_twin.to_modal # &lt;User:0x000000000030 id: nil, name: "New Name", age: nil
 
 <h2 id="json">JSON</h2>
 
-<p>For JSON serialization there are 2 options (apart from described above).</p>
+<p>For JSON serialization there are 3 options (one of which is described above).</p>
 
-<h3 id="modelbaseto_h"><code class="highlighter-rouge">Model::Base#to_h</code></h3>
+<h3 id="to_json"><code class="highlighter-rouge">#to_json</code></h3>
 
-<p>If you need just to dump all non virtual fields to a JSON string - use <code class="highlighter-rouge">Jennifer::Model::Base#to_h</code> to get <code class="highlighter-rouge">Hash(Symbol, Jennifer::DBAny)</code> (or <code class="highlighter-rouge">#to_str_h</code> to get <code class="highlighter-rouge">Hash(String, Jennifer::DBAny)</code>) and then <code class="highlighter-rouge">#to_json</code> to get a JSON string. The disadvantages of this approach are obvious - <strong>all</strong> non virtual fields are serialized. This can be partially resolved by manual deleting/adding entries by keys (as before final serialization we get hash).</p>
+<p>Out of the box Jennifer provides <code class="highlighter-rouge">#to_json</code> method at model and query levels. They allows you to serialize specific records all together with any additional custom properties.</p>
 
 <pre><code class="language-crystal">user = User.all.first # &lt;User:0x000000000010 id: 1, name: "User 8", age: nil, password_hash: "&lt;hash&gt;"&gt;
-hash = user.to_h # =&gt; {:id =&gt; 1, :full_name =&gt; "User 8", :age =&gt; null}
-hash.delete(:age) if hash[:age].nil?
-hash.to_json # =&gt; %({"id":1,"full_name":"User 8"})
+user.to_json # =&gt; {"id":1,"name":"User 8","age":null}
+</code></pre>
+
+<p>To specify exact subset of fields that should be serialized use <code class="highlighter-rouge">only</code> argument</p>
+
+<pre><code class="language-crystal">user.to_json(only: %w[id name]) # =&gt; {"id":1,"name":"User 8"}
+# or just
+user.to_json(%w[id name])
+</code></pre>
+
+<p>It is possible to specify exception list of fields by <code class="highlighter-rouge">except</code> argument:</p>
+
+<pre><code class="language-crystal">user.to_json(except: %w[id]) # =&gt; {"name":"User 8","age":null}
+</code></pre>
+
+<p>To extend serialized object you can pass a block:</p>
+
+<pre><code class="language-crystal">user.to_json(only: %w[id name]) do |json|
+  json.field "custom", "value"
+end # =&gt; {"id":1,"name":"User 8","custom":"value}
+</code></pre>
+
+<p>To serialize collection retrieved from the database call <code class="highlighter-rouge">#to_json</code> method of <code class="highlighter-rouge">Jennifer::Query</code> directly. It accepts the same arguments as described above.</p>
+
+<pre><code class="language-crystal">User.all.where { _name.like("%ohn%) }.to_json(except: %w[age]) do |json, record|
+  json.field "custom", record.age
+end # =&gt; [{"id":1,"name":"John","custom":23}]
 </code></pre>
 
 <h3 id="serializer">Serializer</h3>

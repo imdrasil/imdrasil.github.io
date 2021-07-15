@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/crud.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/crud.html","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/crud.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -160,7 +160,7 @@ puts c1.age # 30
 <pre><code class="language-crystal"># UPDATE contacts SET age = contacts.age + 2 WHERE contacts.id = 12
 Contact.where { _id == 12 }.increment(age: 2)
 # or
-Contact.where { _id == 12 }.update { { :age =&gt; _age + 12 } }
+Contact.where { _id == 12 }.update { {:age =&gt; _age + 12} }
 </code></pre>
 
 <h4 id="destroy">Destroy</h4>
@@ -176,9 +176,8 @@ Country.delete(1,2,3)
 <p>To stop deleting from a callback just add some error:</p>
 
 <pre><code class="language-crystal">class MyModel &lt; Jennifer::Model::Base
-  mapping(
-  # ...
-  )
+  # mapping
+
   before_destroy :check
 
   def check

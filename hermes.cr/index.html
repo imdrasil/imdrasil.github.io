@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/hermes.cr/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Hermes","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/hermes.cr/","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Hermes","url":"https://imdrasil.github.io/hermes.cr/","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -271,11 +271,11 @@ end
 
 <p>New object can be created from Hash (with string keys), NamedTuple or new Persistent object.</p>
 
-<pre><code class="language-crystal">PostRepository.create({"user" =&gt; "kim", "message" =&gt; "some message", "tag" =&gt; "es", "time" =&gt; Time.now })
+<pre><code class="language-crystal">PostRepository.create({"user" =&gt; "kim", "message" =&gt; "some message", "tag" =&gt; "es", "time" =&gt; Time.local })
 
-PostRepository.create(user: "eddy", message: "some message", tag: "es", time: Time.now )
+PostRepository.create(user: "eddy", message: "some message", tag: "es", time: Time.local )
 
-obj = Post.new({"user" =&gt; "kim", "message" =&gt; "some message", "tag" =&gt; "es", "time" =&gt; Time.now })
+obj = Post.new({"user" =&gt; "kim", "message" =&gt; "some message", "tag" =&gt; "es", "time" =&gt; Time.local })
 PostRepository.save(obj)
 </code></pre>
 

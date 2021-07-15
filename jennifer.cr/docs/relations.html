@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/relations.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/relations.html","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/relations.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -120,7 +120,7 @@
   <li><code class="highlighter-rouge">#{{relation_name}}_reload</code> - reload relation and returns it;</li>
   <li><code class="highlighter-rouge">#{{relation_name}}_query</code> - returns query which is used to get objects of this object relation entities form db.</li>
   <li><code class="highlighter-rouge">#remove_{{relation_name}}</code> - removes given object from relation</li>
-  <li><code class="highlighter-rouge">#add_{{relation_name}}</code> - adds given object to relation or builds it from has and adds</li>
+  <li><code class="highlighter-rouge">#add_{{relation_name}}</code> - adds given object to relation or builds it from hash and then adds</li>
 </ul>
 
 <p>This allows dynamically adds objects to relations with automatically setting foreign id:</p>
@@ -144,7 +144,7 @@ contact.remove_addresses(address)
 
 <p>As you can see primary field of related model can’t be specified - defined primary key (in the mapping) will be got.</p>
 
-<p>Also <code class="highlighter-rouge">mas_many</code>, <code class="highlighter-rouge">belongs_to</code> and <code class="highlighter-rouge">has_one</code> relations have <code class="highlighter-rouge">dependent</code> parameter - defines extra callback for cleaning up related data after destroying parent one. Allowed types are:</p>
+<p>Also <code class="highlighter-rouge">has_many</code>, <code class="highlighter-rouge">belongs_to</code> and <code class="highlighter-rouge">has_one</code> relations have <code class="highlighter-rouge">dependent</code> parameter - defines extra callback for cleaning up related data after destroying parent one. Allowed types are:</p>
 
 <ul>
   <li><code class="highlighter-rouge">nullify</code> - sets foreign key to <code class="highlighter-rouge">null</code> (<code class="highlighter-rouge">belongs_to</code> doesn’t support it) - default for <code class="highlighter-rouge">has_many</code> and <code class="highlighter-rouge">has_one</code></li>

@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/query_dsl.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/query_dsl.html","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/query_dsl.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -92,11 +92,11 @@
 
 <h1 id="query-dsl">Query DSL</h1>
 
-<p>My favorite part. Jennifer allows you to build lazy evaluated queries with chaining syntax. But some of them could be only at the and of a chain (such as <code class="highlighter-rouge">#first</code> or <code class="highlighter-rouge">#pluck</code>).</p>
+<p>My favorite part. Jennifer allows you to build lazy evaluated queries with chaining syntax. But some of them could be only at the and of a chain (such as <code class="highlighter-rouge">#first</code>, <code class="highlighter-rouge">#find</code> or <code class="highlighter-rouge">#pluck</code>).</p>
 
 <h2 id="where">WHERE</h2>
 
-<p><code class="highlighter-rouge">#all</code> retrieves everything (only at the beginning; creates empty request)</p>
+<p><code class="highlighter-rouge">.all</code> creates empty request for model it is invoked on.</p>
 
 <pre><code class="language-crystal">Contact.all
 </code></pre>
@@ -405,19 +405,6 @@ end
   .select { [sql("COUNT(id)").alias("count"), _name] }
   .group("name")
   .having { sql("count") &gt; 1 }.pluck(:name)
-</code></pre>
-
-<h2 id="from">FROM</h2>
-
-<p>Also you can provide subquery to specify FROM clause (but be careful with source fields during result retrieving and mapping to objects)</p>
-
-<pre><code class="language-crystal">Contact.all.from("select * from contacts where id &gt; 2")
-Contacts.all.from(Contact.where { _id &gt; 2 })
-</code></pre>
-
-<p>Also it is possible to avoid <code class="highlighter-rouge">FROM</code> clause setting table name to empty line:</p>
-
-<pre><code class="language-crystal">Jennifer::Query[""].select("1 as column").db_results # [{ "column" =&gt; 1 }]
 </code></pre>
 
 <h2 id="join">JOIN</h2>

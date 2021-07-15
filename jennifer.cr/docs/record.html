@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/record.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/record.html","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/record.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -103,18 +103,18 @@
 <pre><code class="language-crystal"># Jennifer::QueryBuilder::Query is aliased as Jennifer::Query
 record = Jennifer::Query["contacts"].where { _name.like("Jho%") }.to_a[0]
 
-record["name"] 						# Jennifer::DBAny
-record.attribute("name") 		 	# Jennifer::DBAny
-record.attribute("name", String) 	# String or raises Jennifer::BaseException
-record.name 					 	# Jennifer::DBAny
-record.name(String) 				# Jennifer::DBAny
+record["name"]                    # Jennifer::DBAny
+record.attribute("name")          # Jennifer::DBAny
+record.attribute("name", String)  # String or raises Jennifer::BaseException
+record.name                       # Jennifer::DBAny
+record.name(String)               # Jennifer::DBAny
 </code></pre>
 
-<p>Be careful with <code class="highlighter-rouge">#{{attribute_name}}</code> methods are generated using macros.</p>
+<p><code class="highlighter-rouge">#{{attribute_name}}</code> methods are generated using macros.</p>
 
 <p>In major amount of cases you will use second one which will return <code class="highlighter-rouge">Array(T)</code>. But also with custom selects or unions <code class="highlighter-rouge">Jennifer::Record</code> could be retrieved using <code class="highlighter-rouge">#results</code>:</p>
 
-<pre><code class="language-crystal">Contact.all.select { [_name, _id] }.results # Jennifer::DBAny
+<pre><code class="language-crystal">Contact.all.select { [_name, _id] }.results # Array(Jennifer::Record)
 </code></pre>
 
   </div>

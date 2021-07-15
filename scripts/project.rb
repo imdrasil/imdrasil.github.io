@@ -1,6 +1,7 @@
 # Project to be published.
 class Project
   KEEP_COUNT = 5
+  DROP_OUTDATED_VERSIONS = false
 
   attr_accessor :site, :new_versions, :name
 
@@ -59,16 +60,16 @@ class Project
         gv = NaturalSort.sort(Git.versions - skip_versions).reverse!
         @new_versions = gv[0...KEEP_COUNT] - versions
 
-        # binding.pry
 
         new_versions.each do |v|
           build(current_deep, v)
         end
 
-        # binding.pry
-        (versions![KEEP_COUNT..-1] || []).each do |v|
-          path = File.join(current_deep, @name, v)
-          FileUtils.rm_r(path) if Dir.exists?(path)
+        if DROP_OUTDATED_VERSIONS
+          (versions![KEEP_COUNT..-1] || []).each do |v|
+            path = File.join(current_deep, @name, v)
+            FileUtils.rm_r(path) if Dir.exists?(path)
+          end
         end
       end
     end
@@ -97,7 +98,11 @@ class Project
     FileUtils.cp_r(Dir[doc_folder + "/*"], version_path)
     FileUtils.rm_r(doc_folder)
   rescue => e
-    binding.pry
+    if ENV['CI']
+      raise
+    else
+      binding.pry
+    end
   end
 
   def repo_dir

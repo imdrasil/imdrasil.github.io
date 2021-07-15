@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/model_scopes.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/model_scopes.html","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/model_scopes.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -112,6 +112,17 @@ scope :query_with_arguments { |a, b| where { (c("f1") == a) &amp;&amp; (c("f2").
   .query_with_arguments("done", [1,2])
   .order(f1: :asc)
   .no_argument_query
+</code></pre>
+
+<h2 id="default-model-scope">Default model scope</h2>
+
+<p>To define a default model scope override <code class="highlighter-rouge">.all</code> method:</p>
+
+<pre><code class="language-crystal">class Model &lt; Jennifer::Mode::Base
+  def self.all
+    super.where { _deleted == false }
+  end
+end
 </code></pre>
 
   </div>

@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/configuration.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/configuration.html","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/configuration.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -151,7 +151,7 @@ end
 Jennifer::Config.from_uri(db)
 </code></pre>
 
-<p>Take into account - some configs can’t be initialized using URI string or yaml file but all of them always can be initialized using <code class="highlighter-rouge">Jennifer::Config.configure</code>. Here is the list of such configs:</p>
+<p>Take into account - some configs can’t be initialized using URI or yaml file but all of them always can be initialized using <code class="highlighter-rouge">Jennifer::Config.configure</code>. Here is the list of such configs:</p>
 
 <table>
   <thead>
@@ -232,6 +232,11 @@ Jennifer::Config.from_uri(db)
       <td>✔</td>
       <td>❌</td>
     </tr>
+    <tr>
+      <td><code class="highlighter-rouge">time_zone_aware_attributes</code></td>
+      <td>✔</td>
+      <td>❌</td>
+    </tr>
   </tbody>
 </table>
 
@@ -269,17 +274,25 @@ Jennifer::Config.from_uri(db)
   <li><code class="highlighter-rouge">model_files_path</code> - path to the models locations; is used by model and migration generators; default: <code class="highlighter-rouge">"./src/models"</code></li>
   <li><code class="highlighter-rouge">structure_folder</code> - path to the database structure file location; if set to empty string - parent folder of <code class="highlighter-rouge">migration_files_path</code> is used; default: <code class="highlighter-rouge">""</code></li>
   <li><code class="highlighter-rouge">max_bind_vars_count</code> - maximum allowed count of bind variables; if nothing specified - used adapter’s default value; default: <code class="highlighter-rouge">nil</code></li>
+  <li><code class="highlighter-rouge">time_zone_aware_attributes</code> - whether Jennifer should convert time objects to UTC and back to application time zone when store/load them from a database; default: <code class="highlighter-rouge">true</code></li>
 </ul>
 
 <h2 id="logging">Logging</h2>
 
-<p>Jennifer uses <a href="https://crystal-lang.org/api/0.34.0/Log.html">standard</a> Crystal logging mechanism so you could specify your own logger or formatter:</p>
+<p>Jennifer uses <a href="https://crystal-lang.org/api/latest/Log.html">standard</a> Crystal logging mechanism so you could specify your own logger:</p>
 
 <pre><code class="language-crystal"># This is default logger configuration
 Jennifer::Config.configure do |conf|
   conf.logger = Log.for("db", :debug)
 end
 </code></pre>
+
+<p>As a default formatter <code class="highlighter-rouge">Jennifer::Adapter::DBFormatter</code> could be used:</p>
+
+<pre><code class="language-crystal">Log.setup "db", :debug, Log::IOBackend.new(formatter: Jennifer::Adapter::DBFormatter)
+</code></pre>
+
+<p>More about logging could be found <a href="https://crystal-lang.org/api/latest/Log.html">in the crystal doc</a>.</p>
 
 <h2 id="command-shell">Command Shell</h2>
 

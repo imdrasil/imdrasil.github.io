@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/validation.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/validation.html","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/validation.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -401,7 +401,7 @@ end
 <p>This passes the record to a new instance of given validator class to be validated.</p>
 
 <pre><code class="language-crystal">class EnnValidator &lt; Jennifer::Validations::Validator
-  def validate(record : Passport)
+  def validate(record, **opts)
     if record.enn!.size &lt; 4 &amp;&amp; record.enn![0].downcase == 'a'
       record.errors.add(:enn, "Invalid enn")
     end
@@ -461,7 +461,7 @@ end
   mapping(
     # ...
     health: Float64,
-    live_creature: { type: Bool, default: true, virtual: true }
+    live_creature: {type: Bool, default: true, virtual: true}
   )
 
   validates_numericality :health, greater_than: 0, if: :live_creature
@@ -474,7 +474,7 @@ end
   mapping(
     # ...
     health: Float64,
-    undead: { type: Bool, default: false, virtual: true }
+    undead: {type: Bool, default: false, virtual: true}
   )
 
   validates_numericality :health, greater_than: 0, if: !undead

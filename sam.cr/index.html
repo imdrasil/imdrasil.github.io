@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/sam.cr/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Sam","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/sam.cr/","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Sam","url":"https://imdrasil.github.io/sam.cr/","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -41,7 +41,7 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">sam</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/sam.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s">0.3.2</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s">0.4.1</span>
 </code></pre></div></div>
 
 <p>After executing <code class="highlighter-rouge">shards install</code> Sam-file will be added to the root of your project (unless you already have one).</p>
@@ -68,39 +68,31 @@ end
 
 <p>Sam does no magic with your <code class="highlighter-rouge">sam.cr</code> file - it is just a common <code class="highlighter-rouge">.cr</code> source file which allows you to recompile it with any possible code you want such amount of times you need. Therefore the most obvious way to execute any task is:</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> name
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr name
 </code></pre></div></div>
-
-<blockquote>
-  <p><code class="highlighter-rouge">--</code> here means that <code class="highlighter-rouge">name</code> is passed as an argument to executed file not <code class="highlighter-rouge">crystal</code> utility.</p>
-</blockquote>
 
 <p>In addition to this you are able to configure your makefile to invoke sam tasks. This allows you to use shorten variant</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make sam name
 </code></pre></div></div>
 
-<blockquote>
-  <p>This solution still requires <code class="highlighter-rouge">--</code> in some cases - see the following section.</p>
-</blockquote>
+<p>To automatically modify your Makefile run</p>
 
-<p>To automatically preconfigure makefile run</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> generate:makefile
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr generate:makefile
 </code></pre></div></div>
 
 <p>This will modify existing Makefile or create new one. Be careful - this will silent all nonexisting makefile tasks on invocation.</p>
 
 <p>To see a list of all available tasks with their descriptions:</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> <span class="nb">help</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nb">help</span>
 </code></pre></div></div>
 
 <h4 id="tasks-with-arguments">Tasks with arguments</h4>
 
 <p>To pass arguments to your task just list them after it’s name:</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> crystal sam.cr <span class="nt">--</span> name john rob ned
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr name john rob ned
 </code></pre></div></div>
 
 <p>They are passed to a task as a 2nd block argument.</p>
@@ -116,7 +108,7 @@ end
   <p>Each task has own collection of arguments; only prerequisites shares with target task same <code class="highlighter-rouge">Args</code> instance.</p>
 </blockquote>
 
-<p>As was mentioned named argument also can be specified by the following ways:</p>
+<p>Named argument also can be specified by the following ways:</p>
 
 <ul>
   <li><code class="highlighter-rouge">-argument value</code></li>
@@ -125,16 +117,24 @@ end
   <li><code class="highlighter-rouge">argument="value with spaces"</code></li>
 </ul>
 
-<p>One important restriction with named arguments usage and makefile-style task invocation: <code class="highlighter-rouge">--</code> should be placed to explicitly specify that specified arguments belongs to compiled program not crystal compiler:</p>
+<p>Two important restriction with named arguments usage and makefile-style task invocation:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">--</code> should be placed to explicitly specify that specified named arguments belongs to task not to Makefile:</li>
+</ul>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make sam name john
 <span class="nv">$ </span><span class="c"># but</span>
 <span class="nv">$ </span>make same name <span class="nt">--</span> <span class="nv">argument</span><span class="o">=</span>john
 </code></pre></div></div>
 
-<p>More than one task can be specified (even with own arguments) - just separate them by <code class="highlighter-rouge">@</code> symbol:</p>
+<ul>
+  <li>makefile doesn’t support named arguments with <code class="highlighter-rouge">=</code> sign</li>
+</ul>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> name john @ surname <span class="nv">argument</span><span class="o">=</span>snow
+<p>To invoke More than one task list them one by one (including their arguments) separating them with <code class="highlighter-rouge">@</code> symbol:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr name john @ surname <span class="nv">argument</span><span class="o">=</span>snow
 </code></pre></div></div>
 
 <h4 id="accessing-tasks-programmatically">Accessing tasks programmatically</h4>
@@ -214,7 +214,7 @@ end
 
 <p>Before running tests call</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal examples/sam.cr <span class="nt">--</span> setup
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal examples/sam.cr setup
 </code></pre></div></div>
 
 <h2 id="contributing">Contributing</h2>

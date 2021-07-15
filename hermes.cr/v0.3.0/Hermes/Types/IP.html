@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="0.3.0">
+<meta name="crystal_docs.project_name" content="hermes">
+
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
+
+  <meta name="repository-name" content="hermes">
+  <title>Hermes::Types::IP - hermes 0.3.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../../index.html">
+          hermes
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.3.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="hermes/Hermes" data-name="hermes">
+      <a href="../../Hermes.html">Hermes</a>
+      
+        <ul>
+  
+  <li class=" " data-id="hermes/Hermes/AggregationResponse" data-name="hermes::aggregationresponse">
+      <a href="../../Hermes/AggregationResponse.html">AggregationResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Client" data-name="hermes::client">
+      <a href="../../Hermes/Client.html">Client</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Cluster" data-name="hermes::cluster">
+      <a href="../../Hermes/Cluster.html">Cluster</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Config" data-name="hermes::config">
+      <a href="../../Hermes/Config.html">Config</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Hit" data-name="hermes::hit(t)">
+      <a href="../../Hermes/Hit.html">Hit</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Hits" data-name="hermes::hits(t)">
+      <a href="../../Hermes/Hits.html">Hits</a>
+      
+    </li>
+  
+  <li class="parent " data-id="hermes/Hermes/Index" data-name="hermes::index">
+      <a href="../../Hermes/Index.html">Index</a>
+      
+        <ul>
+  
+  <li class=" " data-id="hermes/Hermes/Index/OptionValue" data-name="hermes::index::optionvalue">
+      <a href="../../Hermes/Index/OptionValue.html">OptionValue</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/MultiGetResponse" data-name="hermes::multigetresponse(t)">
+      <a href="../../Hermes/MultiGetResponse.html">MultiGetResponse</a>
+      
+    </li>
+  
+  <li class="parent " data-id="hermes/Hermes/Persistent" data-name="hermes::persistent">
+      <a href="../../Hermes/Persistent.html">Persistent</a>
+      
+        <ul>
+  
+  <li class=" " data-id="hermes/Hermes/Persistent/Any" data-name="hermes::persistent::any">
+      <a href="../../Hermes/Persistent/Any.html">Any</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Repository" data-name="hermes::repository(i, t)">
+      <a href="../../Hermes/Repository.html">Repository</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Response" data-name="hermes::response">
+      <a href="../../Hermes/Response.html">Response</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/SearchResponse" data-name="hermes::searchresponse(t)">
+      <a href="../../Hermes/SearchResponse.html">SearchResponse</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="hermes/Hermes/Types" data-name="hermes::types">
+      <a href="../../Hermes/Types.html">Types</a>
+      
+        <ul>
+  
+  <li class=" " data-id="hermes/Hermes/Types/Binary" data-name="hermes::types::binary">
+      <a href="../../Hermes/Types/Binary.html">Binary</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Types/Circle" data-name="hermes::types::circle">
+      <a href="../../Hermes/Types/Circle.html">Circle</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Types/Envelope" data-name="hermes::types::envelope">
+      <a href="../../Hermes/Types/Envelope.html">Envelope</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Types/GeometryCollection" data-name="hermes::types::geometrycollection">
+      <a href="../../Hermes/Types/GeometryCollection.html">GeometryCollection</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Types/GeoPoint" data-name="hermes::types::geopoint">
+      <a href="../../Hermes/Types/GeoPoint.html">GeoPoint</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Types/GeoShape" data-name="hermes::types::geoshape">
+      <a href="../../Hermes/Types/GeoShape.html">GeoShape</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Types/IGeoShape" data-name="hermes::types::igeoshape">
+      <a href="../../Hermes/Types/IGeoShape.html">IGeoShape</a>
+      
+    </li>
+  
+  <li class=" current" data-id="hermes/Hermes/Types/IP" data-name="hermes::types::ip">
+      <a href="../../Hermes/Types/IP.html">IP</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Types/LineString" data-name="hermes::types::linestring">
+      <a href="../../Hermes/Types/LineString.html">LineString</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Types/MultiLineString" data-name="hermes::types::multilinestring">
+      <a href="../../Hermes/Types/MultiLineString.html">MultiLineString</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Types/MultiPoint" data-name="hermes::types::multipoint">
+      <a href="../../Hermes/Types/MultiPoint.html">MultiPoint</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Types/MultiPolygon" data-name="hermes::types::multipolygon">
+      <a href="../../Hermes/Types/MultiPolygon.html">MultiPolygon</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Types/Point" data-name="hermes::types::point">
+      <a href="../../Hermes/Types/Point.html">Point</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Types/Polygon" data-name="hermes::types::polygon">
+      <a href="../../Hermes/Types/Polygon.html">Polygon</a>
+      
+    </li>
+  
+  <li class=" " data-id="hermes/Hermes/Types/Range" data-name="hermes::types::range(t)">
+      <a href="../../Hermes/Types/Range.html">Range</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> Hermes::Types::IP
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hermes/Types/IP.html">Hermes::Types::IP</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/imdrasil/hermes.cr/blob/v0.3.0/src/hermes/types/ip.cr#L3" target="_blank">
+        hermes/types/ip.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new(raw)-class-method" class="signature"><strong>.new</strong>(raw)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#raw-instance-method" class="signature"><strong>#raw</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_json(json:JSON::Builder)-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/hermes.cr/blob/v0.3.0/src/hermes/types/ip.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(raw)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(raw)
+
+        <a class="method-permalink" href="#new(raw)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/hermes.cr/blob/v0.3.0/src/hermes/types/ip.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="raw-instance-method">
+      <div class="signature">
+        
+        def <strong>raw</strong>
+
+        <a class="method-permalink" href="#raw-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/hermes.cr/blob/v0.3.0/src/hermes/types/ip.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_json</strong>(json : JSON::Builder)
+
+        <a class="method-permalink" href="#to_json(json:JSON::Builder)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/hermes.cr/blob/v0.3.0/src/hermes/types/ip.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

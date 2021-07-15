@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/authentication.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/authentication.html","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/authentication.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -114,9 +114,9 @@ end
 <p><code class="highlighter-rouge">Password</code> in the <code class="highlighter-rouge">password</code> field definition is actually <code class="highlighter-rouge">Jennifer::Model::Authentication::Password</code> constant which includes definition for virtual password attribute. It looks like:</p>
 
 <pre><code class="language-crystal">Password = {
-  type: String?,
+  type:    String?,
   virtual: true,
-  setter: false
+  setter:  false,
 }
 </code></pre>
 
@@ -156,7 +156,7 @@ user.save # =&gt; true
 user.authenticate("notright")  # =&gt; false
 user.authenticate("mUc3m00RsqyRe") # =&gt; user
 User.all.where { _name == "david" }.first.try(&amp;.authenticate("notright")) # nil
-User.wll.where { _(_name == "david" }.first.try(&amp;.authenticate("mUc3m00RsqyRe")) # =&gt; User
+User.all.where { _name == "david" }.first.try(&amp;.authenticate("mUc3m00RsqyRe")) # =&gt; User
 </code></pre>
 
   </div>

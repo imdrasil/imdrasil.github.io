@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/getting_started.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/getting_started.html","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/getting_started.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -94,12 +94,12 @@
 
 <h2 id="installation">Installation</h2>
 
-<p>Add the shard to your <code class="highlighter-rouge">shards.yml</code>. Also</p>
+<p>Add the shard to your <code class="highlighter-rouge">shard.yml</code>. Also</p>
 
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.9.0"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.10.0"</span>
 </code></pre></div></div>
 
 <p>For MySQL and PostgreSQL you need to add related driver shard - <a href="https://github.com/crystal-lang/crystal-mysql">crystal-mysql</a> or <a href="https://github.com/will/crystal-pg">crystal-pg</a>:</p>
@@ -107,7 +107,7 @@
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.9.0"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.10.0"</span>
   <span class="na">pg</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">will/crystal-pg</span>
     <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.21.0"</span>
@@ -117,18 +117,18 @@
     <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.11.0"</span>
 </code></pre></div></div>
 
-<p>If you want to use SQLite3 - add <a href="https://github.com/imdrasil/jennifer_sqlite3_adapter">Jennifer SQLite3 adapter</a>:</p>
+<p>If you want to use SQLite3 - add <a href="https://github.com/imdrasil/jennifer_sqlite3_adapter">Jennifer SQLite3 <strong>adapter</strong></a>:</p>
 
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.9.0"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.10.0"</span>
   <span class="na">jennifer_sqlite3_adapter</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer_sqlite3_adapter</span>
     <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.3.0"</span>
 </code></pre></div></div>
 
-<p>It is shipped with SQLite driver so you don’t need add it explicitly.</p>
+<p>It is shipped with SQLite driver.</p>
 
 <p>In this tutorial we will be using PostgreSQL adapter.</p>
 
@@ -141,12 +141,14 @@ require "jennifer/adapter/postgres" # for PostgreSQL
 # require "jennifer/adapter/mysql" for MySQL
 
 APP_ENV = ENV["APP_ENV"]? || "development"
-Jennifer::Config.read("config/database.yml", APP_ENV)
-jennifer::Config.from_uri(ENV["DATABASE_URI"]) if ENV.has_key?("DATABASE_URI")
 
 Jennifer::Config.configure do |conf|
+  conf.read("config/database.yml", APP_ENV)
+  conf.from_uri(ENV["DATABASE_URI"]) if ENV.has_key?("DATABASE_URI")
   conf.logger.level = APP_ENV == "development" ? :debug : :error
 end
+
+Log.setup "db", :debug, Log::IOBackend.new(formatter: Jennifer::Adapter::DBFormatter)
 </code></pre>
 
 <p>This allows you to put all database related configuration to structured yml file and override it with custom database connection URI passing it in <code class="highlighter-rouge">DATABASE_URI</code>.</p>
@@ -237,8 +239,8 @@ end
     <pre><code class="language-crystal">class CreateUsers &lt; Jennifer::Migration::Base
   def up
     create_table :users do |t|
-      t.string :title, { :null =&gt; false }
-      t.integer :age, { :null =&gt; false }
+      t.string :title, {:null =&gt; false}
+      t.integer :age, {:null =&gt; false}
 
       t.timestamps
     end
@@ -280,7 +282,7 @@ Sam.help
 
 <p>Now we are able to use our model:</p>
 
-<pre><code class="language-crystal">user = User.create({ name: "New User", age: 100 })
+<pre><code class="language-crystal">user = User.create({name: "New User", age: 100})
 puts user.inspect
 </code></pre>
 

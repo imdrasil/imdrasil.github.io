@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="0.4.0">
+<meta name="crystal_docs.project_name" content="sam">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="sam">
+  <title>sam 0.4.0</title>
+  <script type="text/javascript">
+  CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          sam
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.4.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="sam/Sam" data-name="sam">
+      <a href="Sam.html">Sam</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="sam/Sam/Args" data-name="sam::args">
+      <a href="Sam/Args.html">Args</a>
+      
+        <ul>
+  
+  <li class=" " data-id="sam/Sam/Args/AllowedTypes" data-name="sam::args::allowedtypes">
+      <a href="Sam/Args/AllowedTypes.html">AllowedTypes</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="sam/Sam/DSL" data-name="sam::dsl">
+      <a href="Sam/DSL.html">DSL</a>
+      
+    </li>
+  
+  <li class=" " data-id="sam/Sam/Execution" data-name="sam::execution">
+      <a href="Sam/Execution.html">Execution</a>
+      
+    </li>
+  
+  <li class=" " data-id="sam/Sam/Namespace" data-name="sam::namespace">
+      <a href="Sam/Namespace.html">Namespace</a>
+      
+    </li>
+  
+  <li class=" " data-id="sam/Sam/NotFound" data-name="sam::notfound">
+      <a href="Sam/NotFound.html">NotFound</a>
+      
+    </li>
+  
+  <li class=" " data-id="sam/Sam/Task" data-name="sam::task">
+      <a href="Sam/Task.html">Task</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="sam-build-statushttpstravis-ci.orgimdrasilsam.cr.svghttpstravis-ci.orgimdrasilsam.cr-latest-releasehttpsimg.shields.iogithubreleaseimdrasilsam.cr.svghttpsgithub.comimdrasilsam.crreleases" class="anchor" href="#sam-build-statushttpstravis-ci.orgimdrasilsam.cr.svghttpstravis-ci.orgimdrasilsam.cr-latest-releasehttpsimg.shields.iogithubreleaseimdrasilsam.cr.svghttpsgithub.comimdrasilsam.crreleases">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Sam <a href="https://travis-ci.org/imdrasil/sam.cr"><img src="https://travis-ci.org/imdrasil/sam.cr.svg" alt="Build Status"/></a> <a href="https://github.com/imdrasil/sam.cr/releases"><img src="https://img.shields.io/github/release/imdrasil/sam.cr.svg" alt="Latest Release"/></a></h1>
+
+<p>Sam is a Make-like utility which allows to specify tasks like Ruby's Rake do using plain Crystal code. This allows you to reuse existing application code base and/or include tasks from your dependencies.</p>
+
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
+
+<p>Add this to your application's <code>shard.yml</code>:</p>
+
+<pre><code class="language-yaml">dependencies:
+  sam:
+    github: imdrasil/sam.cr
+    version: 0.4.0</code></pre>
+
+<p>After executing <code>shards install</code> Sam-file will be added to the root of your project (unless you already have one).</p>
+
+<h2><a id="usage" class="anchor" href="#usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Usage</h2>
+
+<h3><a id="task" class="anchor" href="#task">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Task</h3>
+
+<p>Tasks are the main unit in <code>sam.cr</code>. Task has a name, a list of prerequisites and a list of actions (block of a code).</p>
+
+<p>Sam extends the global context with own DSL. To define a task use <code>task</code> method which accepts the task name as the 1st argument.</p>
+
+<pre><code class="language-crystal">task <span class="s">&quot;name&quot;</span> <span class="k">do</span>
+<span class="k">end</span></code></pre>
+
+<p>If you want to define prerequisites, add the array with their names as the 2nd argument:</p>
+
+<pre><code class="language-crystal">task <span class="s">&quot;name&quot;</span>, [<span class="s">&quot;prereq1&quot;</span>, <span class="s">&quot;prereq2&quot;</span>] <span class="k">do</span>
+<span class="k">end</span></code></pre>
+
+<h4><a id="executing-a-task" class="anchor" href="#executing-a-task">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Executing a task</h4>
+
+<p>Sam does no magic with your <code>sam.cr</code> file - it is just a common <code>.cr</code> source file which allows you to recompile it with any possible code you want such amount of times you need. Therefore the most obvious way to execute any task is:</p>
+
+<pre><code class="language-shell">$ crystal sam.cr name</code></pre>
+
+<p>In addition to this you are able to configure your makefile to invoke sam tasks. This allows you to use shorten variant</p>
+
+<pre><code class="language-shell">$ make sam name</code></pre>
+
+<p>To automatically modify your Makefile run</p>
+
+<pre><code class="language-shell">$ crystal sam.cr generate:makefile</code></pre>
+
+<p>This will modify existing Makefile or create new one. Be careful - this will silent all nonexisting makefile tasks on invocation.</p>
+
+<p>To see a list of all available tasks with their descriptions:</p>
+
+<pre><code class="language-shell">$ crystal sam.cr help</code></pre>
+
+<h4><a id="tasks-with-arguments" class="anchor" href="#tasks-with-arguments">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Tasks with arguments</h4>
+
+<p>To pass arguments to your task just list them after it's name:</p>
+
+<pre><code class="language-shell">$ crystal sam.cr name john rob ned</code></pre>
+
+<p>They are passed to a task as a 2nd block argument.</p>
+
+<pre><code class="language-crystal">task <span class="s">&quot;name&quot;</span> <span class="k">do</span> <span class="o">|</span>_, args<span class="o">|</span>
+  puts args[<span class="n">0</span>].<span class="k">as</span>(<span class="t">String</span>)
+<span class="k">end</span></code></pre>
+
+<p><code>args</code> here is an instance of <code><a href="Sam/Args.html">Sam::Args</a></code> class that contains arguments and named arguments passed to each task. Any argument passed from a console is treated as a <code>String</code> but <code>Int32</code> and <code>Float64</code> values also can be specified during task invocation from inside of another one.</p>
+
+<blockquote>Each task has own collection of arguments; only prerequisites shares with target task same <code>Args</code> instance.</blockquote>
+
+<p>Named argument also can be specified by the following ways:</p>
+
+<ul><li><code>-argument value</code></li><li><code>-argument "value with spaces"</code></li><li><code>argument=value</code></li><li><code>argument="value with spaces"</code></li></ul>
+
+<p>Two important restriction with named arguments usage and makefile-style task invocation:</p>
+
+<ul><li><code>--</code> should be placed to explicitly specify that specified named arguments belongs to task not to Makefile:</li></ul>
+
+<pre><code class="language-shell">$ make sam name john
+$ # but
+$ make same name -- argument=john</code></pre>
+
+<ul><li>makefile doesn't support named arguments with <code>=</code> sign</li></ul>
+
+<p>To invoke More than one task list them one by one (including their arguments) separating them with <code>@</code> symbol:</p>
+
+<pre><code class="language-shell">$ crystal sam.cr name john @ surname argument=snow</code></pre>
+
+<h4><a id="accessing-tasks-programmatically" class="anchor" href="#accessing-tasks-programmatically">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Accessing tasks programmatically</h4>
+
+<p>Sam allow you to invoke tasks within another ones and even passing own args object. To do this just call <code>#invoke</code> method with task name (and arguments if needed) on task object passed as 1st argument:</p>
+
+<pre><code class="language-crystal">task <span class="s">&quot;name&quot;</span> <span class="k">do</span> <span class="o">|</span>t<span class="o">|</span>
+  t.invoke(<span class="s">&quot;surname&quot;</span>)
+<span class="k">end</span>
+
+task <span class="s">&quot;surname&quot;</span> <span class="k">do</span>
+  puts <span class="s">&quot;Snow&quot;</span>
+<span class="k">end</span></code></pre>
+
+<p>If specified task was already invoked before - it will be ignored. To force task invocation - use <code>#execute</code>.</p>
+
+<p>Another task could be invoked from current using <code>invoke</code> method. It has next signatures:</p>
+
+<h3><a id="namespaces" class="anchor" href="#namespaces">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Namespaces</h3>
+
+<p>as projects grow amount of defined tasks grow as well. To simplify navigation and increase readability tasks can be grouped in namespaces:</p>
+
+<pre><code class="language-crystal">namespace <span class="s">&quot;main&quot;</span> <span class="k">do</span>
+  task <span class="s">&quot;build&quot;</span> <span class="k">do</span>
+    <span class="c"># Build the main program</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+namespace <span class="s">&quot;samples&quot;</span> <span class="k">do</span>
+  task <span class="s">&quot;build&quot;</span> <span class="k">do</span>
+    <span class="c"># Build the sample programs</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+task <span class="s">&quot;build&quot;</span>, <span class="s">%w[main:build samples:build]</span> <span class="k">do</span>
+<span class="k">end</span></code></pre>
+
+<h4><a id="name-resolution" class="anchor" href="#name-resolution">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Name resolution</h4>
+
+<p>When task is invoked from other one, provided path will float up through current task namespace and search given task path on each level until top level. Task could have same name as any existing namespace.</p>
+
+<pre><code class="language-crystal">task <span class="s">&quot;one&quot;</span> <span class="k">do</span>
+<span class="k">end</span>
+
+namespace <span class="s">&quot;one&quot;</span> <span class="k">do</span>
+  namespace <span class="s">&quot;two&quot;</span>
+    task <span class="s">&quot;test&quot;</span> <span class="k">do</span> <span class="o">|</span>t<span class="o">|</span>
+      t.invoke(<span class="s">&quot;one&quot;</span>)
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>In the example above next paths are checked (in given order):</p>
+
+<ul><li><code>one:two:one</code></li><li><code>one:one</code></li><li><code>one</code> (as task not namespace)</li></ul>
+
+<h3><a id="share-tasks" class="anchor" href="#share-tasks">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Share tasks</h3>
+
+<p>Sam tasks can be loaded from installed dependencies. To do this helper macro <code>load_dependencies</code> can be used:</p>
+
+<pre><code class="language-crystal">load_dependencies <span class="s">&quot;lib1&quot;</span>, <span class="s">&quot;lib2&quot;</span></code></pre>
+
+<p>This is translated to</p>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;./lib/lib1/tasks/sam.cr&quot;</span></code></pre>
+
+<h2><a id="development" class="anchor" href="#development">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Development</h2>
+
+<p>Before running tests call</p>
+
+<pre><code class="language-shell">$ crystal examples/sam.cr setup</code></pre>
+
+<h2><a id="contributing" class="anchor" href="#contributing">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributing</h2>
+
+<ol><li><a href=" https://github.com/imdrasil/sam.cr/fork ">Fork it</a></li><li>Create your feature branch (git checkout -b my-new-feature)</li><li>Commit your changes (git commit -am 'Add some feature')</li><li>Push to the branch (git push origin my-new-feature)</li><li>Create a new Pull Request</li></ol>
+
+<h2><a id="contributors" class="anchor" href="#contributors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributors</h2>
+
+<ul><li><a href="https://github.com/imdrasil/sam.cr">imdrasil</a> Roman Kalnytskyi - creator, maintainer</li></ul>
+</div>
+</body>
+</html>

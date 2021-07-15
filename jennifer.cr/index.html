@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"Jennifer","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"Jennifer","url":"https://imdrasil.github.io/jennifer.cr/","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -30,7 +30,7 @@
   </header>
 
   <div class="post-content">
-    <h1 id="jennifer---">Jennifer <a href="https://travis-ci.org/imdrasil/jennifer.cr"><img src="https://travis-ci.org/imdrasil/jennifer.cr.svg" alt="Build Status" /></a> <a href="https://github.com/imdrasil/jennifer.cr/releases"><img src="https://img.shields.io/github/release/imdrasil/jennifer.cr.svg" alt="Latest Release" /></a> <a href="https://imdrasil.github.io/jennifer.cr/docs/"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs" /></a></h1>
+    <h1 id="jennifer--">Jennifer <a href="https://github.com/imdrasil/jennifer.cr/releases"><img src="https://img.shields.io/github/release/imdrasil/jennifer.cr.svg" alt="Latest Release" /></a> <a href="https://imdrasil.github.io/jennifer.cr/docs/"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs" /></a></h1>
 
 <p>ActiveRecord pattern implementation for Crystal with a powerful query DSL, validation, relationship definition, translation and migration mechanism.</p>
 
@@ -41,14 +41,14 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.9.0"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.10.0"</span>
 </code></pre></div></div>
 
 <h3 id="requirements">Requirements</h3>
 
 <ul>
   <li>you need to choose one of the existing drivers for your DB: <a href="https://github.com/crystal-lang/crystal-mysql">mysql</a> or <a href="https://github.com/will/crystal-pg">postgres</a>; sqlite3 adapter automatically installs required driver for it;</li>
-  <li>crystal <code class="highlighter-rouge">&gt;= 0.34.0</code>.</li>
+  <li>crystal <code class="highlighter-rouge">&gt;= 0.36.0</code>.</li>
 </ul>
 
 <h2 id="usage">Usage</h2>
@@ -180,15 +180,16 @@ Contact.all.group(:gender).group_avg(:age, PG::Numeric)
 
 <h3 id="logging--debugging">Logging &amp; Debugging</h3>
 
-<p>Jennifer uses a <a href="https://crystal-lang.org/api/0.34.0/Log.html">standard</a> Crystal logging mechanism so you could specify your own logger or formatter:</p>
+<p>Jennifer uses a <a href="https://crystal-lang.org/api/latest/Log.html">standard</a> Crystal logging mechanism so you could specify your own logger, backend and formatter:</p>
 
 <pre><code class="language-crystal"># This is the default logger configuration
 Jennifer::Config.configure do |conf|
   conf.logger = Log.for("db", :debug)
 end
+Log.setup "db", :debug, Log::IOBackend.new(formatter: Jennifer::Adapter::DBFormatter)
 </code></pre>
 
-<p>All errors occurred during executing query includes query itself with arguments along side description. <code class="highlighter-rouge">Jennifer::Model::Base#inspect</code> returns model debug information filtered out all unnecessary information.</p>
+<p><code class="highlighter-rouge">Jennifer::Model::Base#inspect</code> returns formatted information about model attributes filtering out all unnecessary information.</p>
 
 <pre><code class="language-crystal">Address.first!.inspect
 # #&lt;Address:0x7efde96ac0d0 id: 1, street: "Ant st. 69", contact_id: nil, created_at: 2019-06-10 11:11:11.665032000 +03:00 Local&gt;
@@ -293,14 +294,6 @@ end
 </code></pre></div></div>
 
 <p>NB. It also depends on then chosen adapter (postgres by default).</p>
-
-<h2 id="similar-shards">Similar shards</h2>
-
-<ul>
-  <li><a href="https://github.com/Crecto/crecto">crecto</a> - based on Phoenix’s Ecto lib and follows the repository pattern</li>
-  <li><a href="https://github.com/amberframework/granite">granite-orm</a> - lightweight ORM focusing on mapping fields from request to your objects</li>
-  <li><a href="https://github.com/juanedi/micrate">micrate</a> - standalone database migration tool for crystal</li>
-</ul>
 
 <h2 id="contributing">Contributing</h2>
 

@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/crymagick/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"headline":"CryMagick","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/crymagick/","@context":"http://schema.org"}</script>
+{"description":"Personal site","@type":"WebPage","headline":"CryMagick","url":"https://imdrasil.github.io/crymagick/","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -41,6 +41,7 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">crymagick</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/crymagick</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s">0.2.2</span>
 </code></pre></div></div>
 
 <h2 id="requirements">Requirements</h2>
@@ -252,7 +253,13 @@ end
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
-<p><code class="highlighter-rouge">CryMagick::Tool</code> uses <code class="highlighter-rouge">method_missing</code> macro so all method calling with invalid arguments will go there. For now all dynamically generated methods are logged into stdout during compilation time.</p>
+<p><code class="highlighter-rouge">CryMagick::Tool</code> uses <code class="highlighter-rouge">method_missing</code> macro so any method invocation with the invalid arguments will create a new method. To get a list of generated methods add <code class="highlighter-rouge">crymagick_debug</code> flag:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal run ./src/target.cr <span class="nt">-Dcrymagic_debug</span>
+CryMagick::Tool::Mogrify#resize<span class="o">(</span>_arg0<span class="o">)</span> is generated
+CryMagick::Tool::Mogrify#colorspace<span class="o">(</span>_arg0<span class="o">)</span> is generated
+CryMagick::Tool::Mogrify#crop<span class="o">(</span>_arg0<span class="o">)</span> is generated
+</code></pre></div></div>
 
 <h2 id="development">Development</h2>
 

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="0.4.0">
+<meta name="crystal_docs.project_name" content="sam">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="sam">
+  <title>Sam::Namespace - sam 0.4.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          sam
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.4.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="sam/Sam" data-name="sam">
+      <a href="../Sam.html">Sam</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="sam/Sam/Args" data-name="sam::args">
+      <a href="../Sam/Args.html">Args</a>
+      
+        <ul>
+  
+  <li class=" " data-id="sam/Sam/Args/AllowedTypes" data-name="sam::args::allowedtypes">
+      <a href="../Sam/Args/AllowedTypes.html">AllowedTypes</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="sam/Sam/DSL" data-name="sam::dsl">
+      <a href="../Sam/DSL.html">DSL</a>
+      
+    </li>
+  
+  <li class=" " data-id="sam/Sam/Execution" data-name="sam::execution">
+      <a href="../Sam/Execution.html">Execution</a>
+      
+    </li>
+  
+  <li class=" current" data-id="sam/Sam/Namespace" data-name="sam::namespace">
+      <a href="../Sam/Namespace.html">Namespace</a>
+      
+    </li>
+  
+  <li class=" " data-id="sam/Sam/NotFound" data-name="sam::notfound">
+      <a href="../Sam/NotFound.html">NotFound</a>
+      
+    </li>
+  
+  <li class=" " data-id="sam/Sam/Task" data-name="sam::task">
+      <a href="../Sam/Task.html">Task</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Sam::Namespace
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Sam/Namespace.html">Sam::Namespace</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/imdrasil/sam.cr/blob/v0.4.0/src/sam/namespace.cr#L2" target="_blank">
+        sam/namespace.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(name,parent)-class-method" class="signature"><strong>.new</strong>(name, parent)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#all_tasks-instance-method" class="signature"><strong>#all_tasks</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#desc(description:String)-instance-method" class="signature"><strong>#desc</strong>(description : String)</a>
+        
+          <div class="summary"><p>Sets description to the next defined task.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find(path:String)-instance-method" class="signature"><strong>#find</strong>(path : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name:String-instance-method" class="signature"><strong>#name</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#namespace(name,&)-instance-method" class="signature"><strong>#namespace</strong>(name, &)</a>
+        
+          <div class="summary"><p>Defines nested namespace.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#namespaces(name)-instance-method" class="signature"><strong>#namespaces</strong>(name)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#path-instance-method" class="signature"><strong>#path</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#task(name,dependencies=[]ofString,&block:Task,Args-%3EVoid)-instance-method" class="signature"><strong>#task</strong>(name, dependencies = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>, &block : Task, Args -> Void)</a>
+        
+          <div class="summary"><p>Defines new task.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tasks(name)-instance-method" class="signature"><strong>#tasks</strong>(name)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#touch_namespace(name)-instance-method" class="signature"><strong>#touch_namespace</strong>(name)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(name,parent)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(name, parent)
+
+        <a class="method-permalink" href="#new(name,parent)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/v0.4.0/src/sam/namespace.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="all_tasks-instance-method">
+      <div class="signature">
+        
+        def <strong>all_tasks</strong>
+
+        <a class="method-permalink" href="#all_tasks-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/v0.4.0/src/sam/namespace.cr#L51" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="desc(description:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>desc</strong>(description : String)
+
+        <a class="method-permalink" href="#desc(description:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sets description to the next defined task.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/v0.4.0/src/sam/namespace.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find(path:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>find</strong>(path : String)
+
+        <a class="method-permalink" href="#find(path:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/v0.4.0/src/sam/namespace.cr#L57" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong> : String
+
+        <a class="method-permalink" href="#name:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/v0.4.0/src/sam/namespace.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="namespace(name,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>namespace</strong>(name, &)
+
+        <a class="method-permalink" href="#namespace(name,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Defines nested namespace.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/v0.4.0/src/sam/namespace.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="namespaces(name)-instance-method">
+      <div class="signature">
+        
+        def <strong>namespaces</strong>(name)
+
+        <a class="method-permalink" href="#namespaces(name)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/v0.4.0/src/sam/namespace.cr#L43" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="path-instance-method">
+      <div class="signature">
+        
+        def <strong>path</strong>
+
+        <a class="method-permalink" href="#path-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/v0.4.0/src/sam/namespace.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="task(name,dependencies=[]ofString,&block:Task,Args->Void)-instance-method">
+      <div class="signature">
+        
+        def <strong>task</strong>(name, dependencies = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>, &block : <a href="../Sam/Task.html">Task</a>, <a href="../Sam/Args.html">Args</a> -> Void)
+
+        <a class="method-permalink" href="#task(name,dependencies=[]ofString,&block:Task,Args-%3EVoid)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Defines new task.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/v0.4.0/src/sam/namespace.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tasks(name)-instance-method">
+      <div class="signature">
+        
+        def <strong>tasks</strong>(name)
+
+        <a class="method-permalink" href="#tasks(name)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/v0.4.0/src/sam/namespace.cr#L47" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="touch_namespace(name)-instance-method">
+      <div class="signature">
+        
+        def <strong>touch_namespace</strong>(name)
+
+        <a class="method-permalink" href="#touch_namespace(name)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/sam.cr/blob/v0.4.0/src/sam/namespace.cr#L32" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
