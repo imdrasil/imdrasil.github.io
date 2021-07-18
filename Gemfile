@@ -12,12 +12,14 @@ gem "pry"
 gem "activesupport", "~>4.2.6"
 gem "faraday", "= 1.0.1"
 gem "listen", "= 3.5.0"
+gem "nokogiri", "= 1.10.10"
+gem "rubyzip", "= 1.3.0"
 
 group :jekyll_plugins do
   # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
   # uncomment the line below. To upgrade, run `bundle update github-pages`.
-  gem "github-pages", "= 210"
-  gem "jekyll-feed", "~> 0.6"
+  gem "github-pages", "= 207"
+  gem "jekyll-feed", "= 0.13"
 end
 
 require_relative "_lib/crystal_lexer" if defined?(Rouge)

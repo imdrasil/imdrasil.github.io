@@ -63,5 +63,5 @@ entries.each do |e|
   path = File.join(".", e)
   FileUtils.rm_r(path) if Dir.exists?(path)
 end
-binding.pry
+
 FileUtils.cp_r("./_src/.", "./")
