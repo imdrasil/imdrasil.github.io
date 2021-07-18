@@ -59,9 +59,22 @@ FileUtils.rm_r("./_src/.", force: true)
 puts `./scripts/compile.sh`
 
 entries = Dir["./_src/**"].map { |name| name.split("/")[-1] }
-entries.each do |e|
-  path = File.join(".", e)
-  FileUtils.rm_r(path) if Dir.exists?(path)
-end
+if repo == 'all' # TODO: fix this
+  entries.each do |e|
+    path = File.join(".", e)
+    FileUtils.rm_r(path) if Dir.exists?(path)
+  end
+  FileUtils.cp_r("./_src/.", "./")
+else
+  %w[index.html versions.html].each do |name|
+    path = File.join('.', repo, name)
+    FileUtils.rm_r(path) if File.exists?(path)
+  end
+  Dir[File.join("./_src", repo, '*')].each do |path|
+    name = path.split('/')[-1]
+    target_path = File.join(repo, name)
+    FileUtils.rm_r(target_path) if Dir.exists?(path) && Dir.exists?(target_path)
 
-FileUtils.cp_r("./_src/.", "./")
+    FileUtils.cp_r(path, target_path)
+  end
+end
