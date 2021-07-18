@@ -12,14 +12,10 @@ require_relative "jennifer"
 
 repo = ARGV[0]
 opts = ARGV.getopts('doc:', 'exclude:')
-doc_build_command = opts[:doc] || "crystal doc"
-skip_versions = opts[:exclude] || ""
-
-options = {}
-OptionParser.new do |opt|
-  opt.on('--first_name FIRSTNAME') { |o| options[:first_name] = o }
-  opt.on('--last_name LASTNAME') { |o| options[:last_name] = o }
-end.parse!
+doc_build_command = opts[:doc]
+doc_build_command = "crystal doc" if doc_build_command.nil? || doc_build_command.empty?
+skip_versions = opts[:exclude]
+skip_versions = ""  if skip_versions.nil?
 
 site = Site.new(user: "imdrasil", target_dir: "src")
 
