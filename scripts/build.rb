@@ -12,9 +12,11 @@ require_relative "jennifer"
 
 repo = ARGV[-1]
 opts = ARGV.getopts('', 'doc:', 'exclude:')
-doc_build_command = opts[:doc]
+# puts ARGV
+# puts opts
+doc_build_command = opts['doc']
 doc_build_command = "crystal doc" if doc_build_command.nil? || doc_build_command.empty?
-skip_versions = opts[:exclude]
+skip_versions = opts['exclude']
 skip_versions = ""  if skip_versions.nil?
 
 site = Site.new(user: "imdrasil", target_dir: "src")
@@ -61,5 +63,5 @@ entries.each do |e|
   path = File.join(".", e)
   FileUtils.rm_r(path) if Dir.exists?(path)
 end
-
+binding.pry
 FileUtils.cp_r("./_src/.", "./")

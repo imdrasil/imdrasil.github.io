@@ -147,7 +147,7 @@ class Project
 
   def parse_versions
     NaturalSort.sort(
-      Dir.chdir(target_path) do
+      Dir.chdir(File.join(site.root_dir, name)) do
         Dir["v*"] - ["versions.md"]
       end
     ).reverse!

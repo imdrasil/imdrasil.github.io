@@ -62,7 +62,7 @@ class Site
   end
 
   def target_path
-    File.join(@root_dir, target_dir)
+    File.join(root_dir, target_dir)
   end
 
   class << self
