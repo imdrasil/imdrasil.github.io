@@ -1,10 +1,6 @@
 class Jennifer < Project
-  BUILD_COMMAND = "crystal doc ./src/jennifer.cr ./src/jennifer/adapter/mysql.cr ./src/jennifer/adapter/postgres.cr -o ./doc"
-
   def initialize
     super(name: "jennifer.cr", doc_builder: "sh generate-docs.sh")
-    # TODO: temporary solution
-    # super(name: "jennifer.cr", doc_builder: BUILD_COMMAND)
   end
 
   def process_after_deploy

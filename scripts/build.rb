@@ -10,8 +10,8 @@ require_relative "site"
 require_relative "project"
 require_relative "jennifer"
 
-repo = ARGV[0]
-opts = ARGV.getopts('doc:', 'exclude:')
+repo = ARGV[-1]
+opts = ARGV.getopts('', 'doc:', 'exclude:')
 doc_build_command = opts[:doc]
 doc_build_command = "crystal doc" if doc_build_command.nil? || doc_build_command.empty?
 skip_versions = opts[:exclude]
