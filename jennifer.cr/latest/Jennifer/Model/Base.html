@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1385,7 +1385,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#create!(**values)-class-method" class="signature"><strong>.create!</strong>(**values)</a>
+        <a href="#create!(values:Hash%7CNamedTuple)-class-method" class="signature"><strong>.create!</strong>(values : Hash | NamedTuple)</a>
         
           <div class="summary"><p>Creates an object based on <code>values</code> and saves it to the database, if validation pass.</p></div>
         
@@ -1399,9 +1399,16 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#create!(values:Hash%7CNamedTuple)-class-method" class="signature"><strong>.create!</strong>(values : Hash | NamedTuple)</a>
+        <a href="#create!(**values)-class-method" class="signature"><strong>.create!</strong>(**values)</a>
         
           <div class="summary"><p>Creates an object based on <code>values</code> and saves it to the database, if validation pass.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete(ids:Array)-class-method" class="signature"><strong>.delete</strong>(ids : Array)</a>
+        
+          <div class="summary"><p>ditto</p></div>
         
       </li>
     
@@ -1413,21 +1420,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#delete(ids:Array)-class-method" class="signature"><strong>.delete</strong>(ids : Array)</a>
+        <a href="#destroy(ids:Array)-class-method" class="signature"><strong>.destroy</strong>(ids : Array)</a>
         
-          <div class="summary"><p>Deletes records by given ids.</p></div>
+          <div class="summary"><p>ditto</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#destroy(*ids)-class-method" class="signature"><strong>.destroy</strong>(*ids)</a>
-        
-          <div class="summary"><p>Destroys records by given ids.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#destroy(ids:Array)-class-method" class="signature"><strong>.destroy</strong>(ids : Array)</a>
         
           <div class="summary"><p>Destroys records by given ids.</p></div>
         
@@ -1448,16 +1448,16 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#foreign_key_name-class-method" class="signature"><strong>.foreign_key_name</strong></a>
+        <a href="#foreign_key_name(value:String%7CSymbol)-class-method" class="signature"><strong>.foreign_key_name</strong>(value : String | Symbol)</a>
         
-          <div class="summary"><p>Returns model foreign key name.</p></div>
+          <div class="summary"><p>Sets custom model foreign key name.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#foreign_key_name(value:String%7CSymbol)-class-method" class="signature"><strong>.foreign_key_name</strong>(value : String | Symbol)</a>
+        <a href="#foreign_key_name-class-method" class="signature"><strong>.foreign_key_name</strong></a>
         
-          <div class="summary"><p>Sets custom model foreign key name.</p></div>
+          <div class="summary"><p>Returns model foreign key name.</p></div>
         
       </li>
     
@@ -1618,19 +1618,19 @@
       <li class="entry-summary">
         <a href="#set_attributes(**values)-instance-method" class="signature"><strong>#set_attributes</strong>(**values)</a>
         
-          <div class="summary"><p>Sets attributes based on <code>values</code> where keys are attribute names.</p></div>
+          <div class="summary"><p>ditto</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update(**values)-instance-method" class="signature"><strong>#update</strong>(**values)</a>
+        <a href="#update(values:Hash%7CNamedTuple):Bool-instance-method" class="signature"><strong>#update</strong>(values : Hash | NamedTuple) : Bool</a>
         
           <div class="summary"><p>Sets attributes based on given <em>values</em> using <code><a href="../../Jennifer/Model/Base.html#set_attribute(name:String%7CSymbol,value:AttrType)-instance-method">#set_attribute</a></code> and saves it to the database, if validation pass.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update(values:Hash%7CNamedTuple):Bool-instance-method" class="signature"><strong>#update</strong>(values : Hash | NamedTuple) : Bool</a>
+        <a href="#update(**values)-instance-method" class="signature"><strong>#update</strong>(**values)</a>
         
           <div class="summary"><p>Sets attributes based on given <em>values</em> using <code><a href="../../Jennifer/Model/Base.html#set_attribute(name:String%7CSymbol,value:AttrType)-instance-method">#set_attribute</a></code> and saves it to the database, if validation pass.</p></div>
         
@@ -2222,12 +2222,12 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       </div>
     </div>
   
-    <div class="entry-detail" id="create!(**values)-class-method">
+    <div class="entry-detail" id="create!(values:Hash|NamedTuple)-class-method">
       <div class="signature">
         
-        def self.<strong>create!</strong>(**values)
+        def self.<strong>create!</strong>(values : Hash | NamedTuple)
 
-        <a class="method-permalink" href="#create!(**values)-class-method">#</a>
+        <a class="method-permalink" href="#create!(values:Hash%7CNamedTuple)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2236,13 +2236,14 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
 
 <p>Raises an <code><a href="../../Jennifer/RecordInvalid.html">RecordInvalid</a></code> error if validation fail, unlike <code><a href="../../Jennifer/Model/Base.html#create-class-method">.create</a></code>.</p>
 
-<pre><code class="language-crystal"><span class="t">Contact</span>.create!(name: <span class="s">&quot;Jennifer&quot;</span>)</code></pre>
+<pre><code class="language-crystal"><span class="t">Contact</span>.create!({<span class="n">:name</span> => <span class="s">&quot;Jennifer&quot;</span>})
+<span class="t">Contact</span>.create!({name: <span class="s">&quot;Jennifer&quot;</span>})</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L204" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L178" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2272,12 +2273,12 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       </div>
     </div>
   
-    <div class="entry-detail" id="create!(values:Hash|NamedTuple)-class-method">
+    <div class="entry-detail" id="create!(**values)-class-method">
       <div class="signature">
         
-        def self.<strong>create!</strong>(values : Hash | NamedTuple)
+        def self.<strong>create!</strong>(**values)
 
-        <a class="method-permalink" href="#create!(values:Hash%7CNamedTuple)-class-method">#</a>
+        <a class="method-permalink" href="#create!(**values)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2286,14 +2287,34 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
 
 <p>Raises an <code><a href="../../Jennifer/RecordInvalid.html">RecordInvalid</a></code> error if validation fail, unlike <code><a href="../../Jennifer/Model/Base.html#create-class-method">.create</a></code>.</p>
 
-<pre><code class="language-crystal"><span class="t">Contact</span>.create!({<span class="n">:name</span> => <span class="s">&quot;Jennifer&quot;</span>})
-<span class="t">Contact</span>.create!({name: <span class="s">&quot;Jennifer&quot;</span>})</code></pre>
+<pre><code class="language-crystal"><span class="t">Contact</span>.create!(name: <span class="s">&quot;Jennifer&quot;</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L178" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L204" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete(ids:Array)-class-method">
+      <div class="signature">
+        
+        def self.<strong>delete</strong>(ids : Array)
+
+        <a class="method-permalink" href="#delete(ids:Array)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>ditto</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L551" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2319,23 +2340,23 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       </div>
     </div>
   
-    <div class="entry-detail" id="delete(ids:Array)-class-method">
+    <div class="entry-detail" id="destroy(ids:Array)-class-method">
       <div class="signature">
         
-        def self.<strong>delete</strong>(ids : Array)
+        def self.<strong>destroy</strong>(ids : Array)
 
-        <a class="method-permalink" href="#delete(ids:Array)-class-method">#</a>
+        <a class="method-permalink" href="#destroy(ids:Array)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Deletes records by given ids.</p>
+          <p>ditto</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L551" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L534" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2362,32 +2383,6 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L529" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="destroy(ids:Array)-class-method">
-      <div class="signature">
-        
-        def self.<strong>destroy</strong>(ids : Array)
-
-        <a class="method-permalink" href="#destroy(ids:Array)-class-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Destroys records by given ids.</p>
-
-<p>All <code><a href="../../Jennifer/Model/Base.html#destroy:Bool-instance-method">#destroy</a></code> callbacks will be invoked for each record. All records are loaded in batches.</p>
-
-<pre><code class="language-crystal"><span class="t">Contact</span>.destroy(<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>)
-<span class="t">Contact</span>.destroy([<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>])</code></pre>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L534" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2438,27 +2433,6 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       </div>
     </div>
   
-    <div class="entry-detail" id="foreign_key_name-class-method">
-      <div class="signature">
-        
-        def self.<strong>foreign_key_name</strong>
-
-        <a class="method-permalink" href="#foreign_key_name-class-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Returns model foreign key name.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L102" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="foreign_key_name(value:String|Symbol)-class-method">
       <div class="signature">
         
@@ -2480,6 +2454,27 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L96" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="foreign_key_name-class-method">
+      <div class="signature">
+        
+        def self.<strong>foreign_key_name</strong>
+
+        <a class="method-permalink" href="#foreign_key_name-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns model foreign key name.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L102" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2558,7 +2553,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       </div>
     </div>
   
-    <div class="entry-detail" id="with_table_lock(type:String|Symbol,&)-class-method">
+    <div class="entry-detail" id="with_table_lock(type:String|Symbol,&amp;)-class-method">
       <div class="signature">
         
         def self.<strong>with_table_lock</strong>(type : String | Symbol, &)
@@ -2989,43 +2984,13 @@ post.set_attributes(title: <span class="s">&quot;New Title&quot;</span>, created
       
         <div class="doc">
           
-          <p>Sets attributes based on <code>values</code> where keys are attribute names.</p>
-
-<pre><code class="language-crystal">post.set_attributes({<span class="n">:title</span> => <span class="s">&quot;New Title&quot;</span>, <span class="n">:created_at</span> => <span class="t">Time</span>.local})
-post.set_attributes({title: <span class="s">&quot;New Title&quot;</span>, created_at: <span class="t">Time</span>.local})
-post.set_attributes(title: <span class="s">&quot;New Title&quot;</span>, created_at: <span class="t">Time</span>.local)</code></pre>
+          <p>ditto</p>
         </div>
       
       <br/>
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L358" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="update(**values)-instance-method">
-      <div class="signature">
-        
-        def <strong>update</strong>(**values)
-
-        <a class="method-permalink" href="#update(**values)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Sets attributes based on given <em>values</em> using <code><a href="../../Jennifer/Model/Base.html#set_attribute(name:String%7CSymbol,value:AttrType)-instance-method">#set_attribute</a></code>
-and saves it to the database, if validation pass.</p>
-
-<p>Returns whether object is successfully saved.</p>
-
-<pre><code class="language-crystal">contact.update(name: <span class="s">&quot;Jennifer&quot;</span>)</code></pre>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L318" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3053,6 +3018,32 @@ contact.update({name: <span class="s">&quot;Jennifer&quot;</span>})</code></pre>
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="update(**values)-instance-method">
+      <div class="signature">
+        
+        def <strong>update</strong>(**values)
+
+        <a class="method-permalink" href="#update(**values)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sets attributes based on given <em>values</em> using <code><a href="../../Jennifer/Model/Base.html#set_attribute(name:String%7CSymbol,value:AttrType)-instance-method">#set_attribute</a></code>
+and saves it to the database, if validation pass.</p>
+
+<p>Returns whether object is successfully saved.</p>
+
+<pre><code class="language-crystal">contact.update(name: <span class="s">&quot;Jennifer&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/base.cr#L318" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3162,7 +3153,7 @@ without running validations and callbacks.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="with_lock(type:String|Bool=true,&)-instance-method">
+    <div class="entry-detail" id="with_lock(type:String|Bool=true,&amp;)-instance-method">
       <div class="signature">
         
         def <strong>with_lock</strong>(type : String | Bool = <span class="n">true</span>, &)

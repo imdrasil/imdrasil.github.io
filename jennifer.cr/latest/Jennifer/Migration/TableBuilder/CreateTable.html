@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1455,14 +1455,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#index(field:Symbol,type:Symbol?=nil,name:String?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method" class="signature"><strong>#index</strong>(field : Symbol, type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, length : Int32? = <span class="n">nil</span>, order : Symbol? = <span class="n">nil</span>)</a>
+        <a href="#index(fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)=%7B%7DofSymbol=%3EInt32,orders:Hash(Symbol,Symbol)=%7B%7DofSymbol=%3ESymbol)-instance-method" class="signature"><strong>#index</strong>(fields : Array(Symbol), type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, lengths : Hash(Symbol, Int32) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Int32</span>, orders : Hash(Symbol, Symbol) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Symbol</span>)</a>
         
           <div class="summary"><p>Adds index.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#index(fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)=%7B%7DofSymbol=%3EInt32,orders:Hash(Symbol,Symbol)=%7B%7DofSymbol=%3ESymbol)-instance-method" class="signature"><strong>#index</strong>(fields : Array(Symbol), type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, lengths : Hash(Symbol, Int32) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Int32</span>, orders : Hash(Symbol, Symbol) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Symbol</span>)</a>
+        <a href="#index(field:Symbol,type:Symbol?=nil,name:String?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method" class="signature"><strong>#index</strong>(field : Symbol, type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, length : Int32? = <span class="n">nil</span>, order : Symbol? = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Adds index.</p></div>
         
@@ -2175,6 +2175,29 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
       </div>
     </div>
   
+    <div class="entry-detail" id="index(fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)={}ofSymbol=&gt;Int32,orders:Hash(Symbol,Symbol)={}ofSymbol=&gt;Symbol)-instance-method">
+      <div class="signature">
+        
+        def <strong>index</strong>(fields : Array(Symbol), type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, lengths : Hash(Symbol, Int32) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Int32</span>, orders : Hash(Symbol, Symbol) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Symbol</span>)
+
+        <a class="method-permalink" href="#index(fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)=%7B%7DofSymbol=%3EInt32,orders:Hash(Symbol,Symbol)=%7B%7DofSymbol=%3ESymbol)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Adds index.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/Base.html#add_index(table_name:String%7CSymbol,fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)=%7B%7DofSymbol=%3EInt32,orders:Hash(Symbol,Symbol)=%7B%7DofSymbol=%3ESymbol)-instance-method">Migration::Base#add_index</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/migration/table_builder/create_table.cr#L127" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="index(field:Symbol,type:Symbol?=nil,name:String?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method">
       <div class="signature">
         
@@ -2187,36 +2210,13 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
           
           <p>Adds index.</p>
 
-<p>For more details see <code><a href="../../../Jennifer/Migration/Base.html#add_index(table_name:String%7CSymbol,field:Symbol,type:Symbol?=nil,name:String?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method">Migration::Base#add_index</a></code>.</p>
+<p>For more details see <code><a href="../../../Jennifer/Migration/Base.html#add_index(table_name:String%7CSymbol,fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)=%7B%7DofSymbol=%3EInt32,orders:Hash(Symbol,Symbol)=%7B%7DofSymbol=%3ESymbol)-instance-method">Migration::Base#add_index</a></code>.</p>
         </div>
       
       <br/>
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/migration/table_builder/create_table.cr#L137" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="index(fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)={}ofSymbol=>Int32,orders:Hash(Symbol,Symbol)={}ofSymbol=>Symbol)-instance-method">
-      <div class="signature">
-        
-        def <strong>index</strong>(fields : Array(Symbol), type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, lengths : Hash(Symbol, Int32) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Int32</span>, orders : Hash(Symbol, Symbol) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Symbol</span>)
-
-        <a class="method-permalink" href="#index(fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)=%7B%7DofSymbol=%3EInt32,orders:Hash(Symbol,Symbol)=%7B%7DofSymbol=%3ESymbol)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Adds index.</p>
-
-<p>For more details see <code><a href="../../../Jennifer/Migration/Base.html#add_index(table_name:String%7CSymbol,field:Symbol,type:Symbol?=nil,name:String?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method">Migration::Base#add_index</a></code>.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/migration/table_builder/create_table.cr#L127" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,6 +3,7 @@
 require "erb"
 require "natural_sort"
 require "pry"
+require 'optparse'
 
 require_relative "git"
 require_relative "site"
@@ -10,7 +11,15 @@ require_relative "project"
 require_relative "jennifer"
 
 repo = ARGV[0]
-doc_build_command = ARGV[1] || "crystal doc"
+opts = ARGV.getopts('doc:', 'exclude:')
+doc_build_command = opts[:doc] || "crystal doc"
+skip_versions = opts[:exclude] || ""
+
+options = {}
+OptionParser.new do |opt|
+  opt.on('--first_name FIRSTNAME') { |o| options[:first_name] = o }
+  opt.on('--last_name LASTNAME') { |o| options[:last_name] = o }
+end.parse!
 
 site = Site.new(user: "imdrasil", target_dir: "src")
 
@@ -37,7 +46,9 @@ projects =
   if repo == 'all' || repo.nil?
     supported_projects
   else
-    [supported_projects.find { |project| project.name == repo }]
+    project = supported_projects.find { |project| project.name == repo }
+    project.skip_versions.concat(skip_versions.split(','))
+    [project]
   end
 
 site.add_projects(*projects)

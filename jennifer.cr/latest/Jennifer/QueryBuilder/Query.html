@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1374,7 +1374,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#null(table=&quot;&quot;)-class-method" class="signature"><strong>.null</strong>(table = <span class="s">&quot;&quot;</span>)</a>
+        <a href="#null(table=%22%22)-class-method" class="signature"><strong>.null</strong>(table = <span class="s">&quot;&quot;</span>)</a>
         
           <div class="summary"><p>Alias for <code>new(table)<a href="../../Jennifer/QueryBuilder/Query.html#none-instance-method">.none</a></code>.</p></div>
         
@@ -1407,14 +1407,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#as_sql-instance-method" class="signature"><strong>#as_sql</strong></a>
+        <a href="#as_sql(generator)-instance-method" class="signature"><strong>#as_sql</strong>(generator)</a>
+        
+          <div class="summary"><p>Converts node to SQL using <em>sql_generator</em> SQLGenerator.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#as_sql(generator)-instance-method" class="signature"><strong>#as_sql</strong>(generator)</a>
-        
-          <div class="summary"><p>Converts node to SQL using <em>sql_generator</em> SQLGenerator.</p></div>
+        <a href="#as_sql-instance-method" class="signature"><strong>#as_sql</strong></a>
         
       </li>
     
@@ -1506,14 +1506,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#group(&)-instance-method" class="signature"><strong>#group</strong>(&)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#group(*columns:Symbol)-instance-method" class="signature"><strong>#group</strong>(*columns : Symbol)</a>
-        
-          <div class="summary"><p>Groups by given columns realizes them as current table's ones</p></div>
+        <a href="#group(column:Criteria)-instance-method" class="signature"><strong>#group</strong>(column : Criteria)</a>
         
       </li>
     
@@ -1525,7 +1518,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#group(column:Criteria)-instance-method" class="signature"><strong>#group</strong>(column : Criteria)</a>
+        <a href="#group(*columns:Symbol)-instance-method" class="signature"><strong>#group</strong>(*columns : Symbol)</a>
+        
+          <div class="summary"><p>Groups by given columns realizes them as current table's ones</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group(&)-instance-method" class="signature"><strong>#group</strong>(&)</a>
         
       </li>
     
@@ -1572,23 +1572,6 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#select(&)-instance-method" class="signature"><strong>#select</strong>(&)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#select(*fields:Symbol)-instance-method" class="signature"><strong>#select</strong>(*fields : Symbol)</a>
-        
-          <div class="summary"><p>Specifies column names to be used in SELECT clause.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#select(fields:Array(Criteria))-instance-method" class="signature"><strong>#select</strong>(fields : Array(Criteria))</a>
-        
-      </li>
-    
-      <li class="entry-summary">
         <a href="#select(raw_sql:String)-instance-method" class="signature"><strong>#select</strong>(raw_sql : String)</a>
         
           <div class="summary"><p>Specifies raw SELECT clause value.</p></div>
@@ -1603,6 +1586,23 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#select(fields:Array(Criteria))-instance-method" class="signature"><strong>#select</strong>(fields : Array(Criteria))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select(*fields:Symbol)-instance-method" class="signature"><strong>#select</strong>(*fields : Symbol)</a>
+        
+          <div class="summary"><p>Specifies column names to be used in SELECT clause.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select(&)-instance-method" class="signature"><strong>#select</strong>(&)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#set_tree(other:LogicOperator%7CCondition)-instance-method" class="signature"><strong>#set_tree</strong>(other : LogicOperator | Condition)</a>
         
           <div class="summary"><p>Joins given <em>other</em> condition statement to the main condition tree.</p></div>
@@ -1612,21 +1612,21 @@
       <li class="entry-summary">
         <a href="#set_tree(other:Query)-instance-method" class="signature"><strong>#set_tree</strong>(other : Query)</a>
         
-          <div class="summary"><p>Joins given <em>other</em> condition statement to the main condition tree.</p></div>
+          <div class="summary"><p>ditto</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#set_tree(other:SQLNode)-instance-method" class="signature"><strong>#set_tree</strong>(other : SQLNode)</a>
         
-          <div class="summary"><p>Joins given <em>other</em> condition statement to the main condition tree.</p></div>
+          <div class="summary"><p>ditto</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#set_tree(other:Nil)-instance-method" class="signature"><strong>#set_tree</strong>(other : Nil)</a>
         
-          <div class="summary"><p>Joins given <em>other</em> condition statement to the main condition tree.</p></div>
+          <div class="summary"><p>ditto</p></div>
         
       </li>
     
@@ -1756,13 +1756,13 @@
     explain</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#find_each(batch_size:Int32=1000,start:Int32=0,direction:String%7CSymbol=&quot;asc&quot;,&)-instance-method" class="tooltip">
-      <span>find_each(batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(primary_key : Nil, batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(primary_key : Criteria, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(primary_key : String, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)</span>
+    <a href="../../Jennifer/QueryBuilder/Executables.html#find_each(primary_key:String,batch_size:Int32=1000,start=nil,direction:String%7CSymbol=%22asc%22,&)-instance-method" class="tooltip">
+      <span>find_each(primary_key : String, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(primary_key : Criteria, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(primary_key : Nil, batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)</span>
     find_each</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#find_in_batches(primary_key:Nil,batch_size:Int32=1000,start:Int32=0,&)-instance-method" class="tooltip">
-      <span>find_in_batches(primary_key : Nil, batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, &)<br/>find_in_batches(primary_key : Criteria, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_in_batches(batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, &)<br/>find_in_batches(primary_key : String, batch_size : Int32 = <span class="n">1000</span>, start : Int32? = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)</span>
+    <a href="../../Jennifer/QueryBuilder/Executables.html#find_in_batches(primary_key:String,batch_size:Int32=1000,start:Int32?=nil,direction:String%7CSymbol=%22asc%22,&)-instance-method" class="tooltip">
+      <span>find_in_batches(primary_key : String, batch_size : Int32 = <span class="n">1000</span>, start : Int32? = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_in_batches(batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, &)<br/>find_in_batches(primary_key : Criteria, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_in_batches(primary_key : Nil, batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, &)</span>
     find_in_batches</a>, 
     
   
@@ -1786,8 +1786,8 @@
     ids</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#increment(**fields)-instance-method" class="tooltip">
-      <span>increment(**fields)<br/>increment(fields : Hash(Symbol, _))</span>
+    <a href="../../Jennifer/QueryBuilder/Executables.html#increment(fields:Hash(Symbol,_))-instance-method" class="tooltip">
+      <span>increment(fields : Hash(Symbol, _))<br/>increment(**fields)</span>
     increment</a>, 
     
   
@@ -1806,8 +1806,8 @@
     last!</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#pluck(*fields:String%7CSymbol):Array(Array(DBAny))-instance-method" class="tooltip">
-      <span>pluck(*fields : String | Symbol) : Array(Array(DBAny))<br/>pluck(fields : Array) : Array(Array(DBAny))<br/>pluck(field : String | Symbol) : Array(DBAny)</span>
+    <a href="../../Jennifer/QueryBuilder/Executables.html#pluck(fields:Array):Array(Array(DBAny))-instance-method" class="tooltip">
+      <span>pluck(fields : Array) : Array(Array(DBAny))<br/>pluck(field : String | Symbol) : Array(DBAny)<br/>pluck(*fields : String | Symbol) : Array(Array(DBAny))</span>
     pluck</a>, 
     
   
@@ -1821,13 +1821,13 @@
     to_a</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#update(**options)-instance-method" class="tooltip">
-      <span>update(**options)<br/>update(options : Hash)<br/>update(&)</span>
+    <a href="../../Jennifer/QueryBuilder/Executables.html#update(&)-instance-method" class="tooltip">
+      <span>update(&)<br/>update(options : Hash)<br/>update(**options)</span>
     update</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#upsert(fields:Array(String),values:Array(Array(DBAny)),unique_fields:Array,&)-instance-method" class="tooltip">
-      <span>upsert(fields : Array(String), values : Array(Array(DBAny)), unique_fields : Array, &)<br/>upsert(fields : Array(String), values : Array(Array(DBAny)), unique_fields : Array = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)</span>
+    <a href="../../Jennifer/QueryBuilder/Executables.html#upsert(fields:Array(String),values:Array(Array(DBAny)),unique_fields:Array=[]ofString)-instance-method" class="tooltip">
+      <span>upsert(fields : Array(String), values : Array(Array(DBAny)), unique_fields : Array = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)<br/>upsert(fields : Array(String), values : Array(Array(DBAny)), unique_fields : Array, &)</span>
     upsert</a>
     
   
@@ -2125,7 +2125,7 @@
         
         def self.<strong>null</strong>(table = <span class="s">&quot;&quot;</span>)
 
-        <a class="method-permalink" href="#null(table=&quot;&quot;)-class-method">#</a>
+        <a class="method-permalink" href="#null(table=%22%22)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2190,22 +2190,6 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="as_sql-instance-method">
-      <div class="signature">
-        
-        def <strong>as_sql</strong>
-
-        <a class="method-permalink" href="#as_sql-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L259" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="as_sql(generator)-instance-method">
       <div class="signature">
         
@@ -2227,6 +2211,22 @@
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L263" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_sql-instance-method">
+      <div class="signature">
+        
+        def <strong>as_sql</strong>
+
+        <a class="method-permalink" href="#as_sql-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L259" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2382,7 +2382,7 @@ query.clone.where { _name.like(<span class="s">&quot;Peter%&quot;</span>) }</cod
       </div>
     </div>
   
-    <div class="entry-detail" id="exec(&)-instance-method">
+    <div class="entry-detail" id="exec(&amp;)-instance-method">
       <div class="signature">
         
         def <strong>exec</strong>(&)
@@ -2525,39 +2525,18 @@ query.clone.where { _name.like(<span class="s">&quot;Peter%&quot;</span>) }</cod
       </div>
     </div>
   
-    <div class="entry-detail" id="group(&)-instance-method">
+    <div class="entry-detail" id="group(column:Criteria)-instance-method">
       <div class="signature">
         
-        def <strong>group</strong>(&)
+        def <strong>group</strong>(column : <a href="../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>)
 
-        <a class="method-permalink" href="#group(&)-instance-method">#</a>
+        <a class="method-permalink" href="#group(column:Criteria)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L453" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="group(*columns:Symbol)-instance-method">
-      <div class="signature">
-        
-        def <strong>group</strong>(*columns : Symbol)
-
-        <a class="method-permalink" href="#group(*columns:Symbol)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Groups by given columns realizes them as current table's ones</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L442" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L447" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2583,23 +2562,44 @@ query.clone.where { _name.like(<span class="s">&quot;Peter%&quot;</span>) }</cod
       </div>
     </div>
   
-    <div class="entry-detail" id="group(column:Criteria)-instance-method">
+    <div class="entry-detail" id="group(*columns:Symbol)-instance-method">
       <div class="signature">
         
-        def <strong>group</strong>(column : <a href="../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>)
+        def <strong>group</strong>(*columns : Symbol)
 
-        <a class="method-permalink" href="#group(column:Criteria)-instance-method">#</a>
+        <a class="method-permalink" href="#group(*columns:Symbol)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Groups by given columns realizes them as current table's ones</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L442" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group(&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>group</strong>(&)
+
+        <a class="method-permalink" href="#group(&)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L447" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L453" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="having(&)-instance-method">
+    <div class="entry-detail" id="having(&amp;)-instance-method">
       <div class="signature">
         
         def <strong>having</strong>(&)
@@ -2755,59 +2755,6 @@ It makes real sense when is used in the scope of <code><a href="../../Jennifer/Q
       </div>
     </div>
   
-    <div class="entry-detail" id="select(&)-instance-method">
-      <div class="signature">
-        
-        def <strong>select</strong>(&)
-
-        <a class="method-permalink" href="#select(&)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L349" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="select(*fields:Symbol)-instance-method">
-      <div class="signature">
-        
-        def <strong>select</strong>(*fields : Symbol)
-
-        <a class="method-permalink" href="#select(*fields:Symbol)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Specifies column names to be used in SELECT clause.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L339" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="select(fields:Array(Criteria))-instance-method">
-      <div class="signature">
-        
-        def <strong>select</strong>(fields : Array(<a href="../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>))
-
-        <a class="method-permalink" href="#select(fields:Array(Criteria))-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L344" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="select(raw_sql:String)-instance-method">
       <div class="signature">
         
@@ -2854,6 +2801,59 @@ It makes real sense when is used in the scope of <code><a href="../../Jennifer/Q
       </div>
     </div>
   
+    <div class="entry-detail" id="select(fields:Array(Criteria))-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(fields : Array(<a href="../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>))
+
+        <a class="method-permalink" href="#select(fields:Array(Criteria))-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L344" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select(*fields:Symbol)-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(*fields : Symbol)
+
+        <a class="method-permalink" href="#select(*fields:Symbol)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Specifies column names to be used in SELECT clause.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L339" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select(&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(&)
+
+        <a class="method-permalink" href="#select(&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/query.cr#L349" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="set_tree(other:LogicOperator|Condition)-instance-method">
       <div class="signature">
         
@@ -2885,7 +2885,7 @@ It makes real sense when is used in the scope of <code><a href="../../Jennifer/Q
       
         <div class="doc">
           
-          <p>Joins given <em>other</em> condition statement to the main condition tree.</p>
+          <p>ditto</p>
         </div>
       
       <br/>
@@ -2906,7 +2906,7 @@ It makes real sense when is used in the scope of <code><a href="../../Jennifer/Q
       
         <div class="doc">
           
-          <p>Joins given <em>other</em> condition statement to the main condition tree.</p>
+          <p>ditto</p>
         </div>
       
       <br/>
@@ -2927,7 +2927,7 @@ It makes real sense when is used in the scope of <code><a href="../../Jennifer/Q
       
         <div class="doc">
           
-          <p>Joins given <em>other</em> condition statement to the main condition tree.</p>
+          <p>ditto</p>
         </div>
       
       <br/>
@@ -2984,7 +2984,7 @@ It makes real sense when is used in the scope of <code><a href="../../Jennifer/Q
       </div>
     </div>
   
-    <div class="entry-detail" id="to_json(only:Array(String)?=nil,except:Array(String)?=nil,&)-instance-method">
+    <div class="entry-detail" id="to_json(only:Array(String)?=nil,except:Array(String)?=nil,&amp;)-instance-method">
       <div class="signature">
         
         def <strong>to_json</strong>(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)
@@ -3026,7 +3026,7 @@ It makes real sense when is used in the scope of <code><a href="../../Jennifer/Q
       </div>
     </div>
   
-    <div class="entry-detail" id="to_json(json:JSON::Builder,only:Array(String)?=nil,except:Array(String)?=nil,&)-instance-method">
+    <div class="entry-detail" id="to_json(json:JSON::Builder,only:Array(String)?=nil,except:Array(String)?=nil,&amp;)-instance-method">
       <div class="signature">
         
         def <strong>to_json</strong>(json : JSON::Builder, only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)
@@ -3159,7 +3159,7 @@ which includes its class name and its object address.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="where(&)-instance-method">
+    <div class="entry-detail" id="where(&amp;)-instance-method">
       <div class="signature">
         
         def <strong>where</strong>(&)

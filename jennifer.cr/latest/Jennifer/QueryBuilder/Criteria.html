@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1371,12 +1371,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#!=(value:Rightable)-instance-method" class="signature"><strong>#!=</strong>(value : Rightable)</a>
+        <a href="#!=(value:Nil)-instance-method" class="signature"><strong>#!=</strong>(value : Nil)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#!=(value:Nil)-instance-method" class="signature"><strong>#!=</strong>(value : Nil)</a>
+        <a href="#!=(value:Rightable)-instance-method" class="signature"><strong>#!=</strong>(value : Rightable)</a>
         
       </li>
     
@@ -1446,12 +1446,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#alias:String?-instance-method" class="signature"><strong>#alias</strong> : String?</a>
+        <a href="#alias(name:String?)-instance-method" class="signature"><strong>#alias</strong>(name : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#alias(name:String?)-instance-method" class="signature"><strong>#alias</strong>(name : String?)</a>
+        <a href="#alias:String?-instance-method" class="signature"><strong>#alias</strong> : String?</a>
         
       </li>
     
@@ -1504,12 +1504,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#definition-instance-method" class="signature"><strong>#definition</strong></a>
+        <a href="#definition(_sql_generator)-instance-method" class="signature"><strong>#definition</strong>(_sql_generator)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#definition(_sql_generator)-instance-method" class="signature"><strong>#definition</strong>(_sql_generator)</a>
+        <a href="#definition-instance-method" class="signature"><strong>#definition</strong></a>
         
       </li>
     
@@ -1817,22 +1817,6 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="!=(value:Rightable)-instance-method">
-      <div class="signature">
-        
-        def <strong>!=</strong>(value : <a href="../../Jennifer/QueryBuilder/Criteria/Rightable.html">Rightable</a>)
-
-        <a class="method-permalink" href="#!=(value:Rightable)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/criteria.cr#L90" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="!=(value:Nil)-instance-method">
       <div class="signature">
         
@@ -1849,7 +1833,23 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="&(other:LogicOperator::Operandable)-instance-method">
+    <div class="entry-detail" id="!=(value:Rightable)-instance-method">
+      <div class="signature">
+        
+        def <strong>!=</strong>(value : <a href="../../Jennifer/QueryBuilder/Criteria/Rightable.html">Rightable</a>)
+
+        <a class="method-permalink" href="#!=(value:Rightable)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/criteria.cr#L90" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&amp;(other:LogicOperator::Operandable)-instance-method">
       <div class="signature">
         
         def <strong>&</strong>(other : <a href="../../Jennifer/QueryBuilder/LogicOperator/Operandable.html">LogicOperator::Operandable</a>)
@@ -1929,7 +1929,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="<(value:Rightable)-instance-method">
+    <div class="entry-detail" id="&lt;(value:Rightable)-instance-method">
       <div class="signature">
         
         def <strong><</strong>(value : <a href="../../Jennifer/QueryBuilder/Criteria/Rightable.html">Rightable</a>)
@@ -1945,7 +1945,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="<=(value:Rightable)-instance-method">
+    <div class="entry-detail" id="&lt;=(value:Rightable)-instance-method">
       <div class="signature">
         
         def <strong><=</strong>(value : <a href="../../Jennifer/QueryBuilder/Criteria/Rightable.html">Rightable</a>)
@@ -2009,7 +2009,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id=">(value:Rightable)-instance-method">
+    <div class="entry-detail" id="&gt;(value:Rightable)-instance-method">
       <div class="signature">
         
         def <strong>></strong>(value : <a href="../../Jennifer/QueryBuilder/Criteria/Rightable.html">Rightable</a>)
@@ -2025,7 +2025,7 @@
       </div>
     </div>
   
-    <div class="entry-detail" id=">=(value:Rightable)-instance-method">
+    <div class="entry-detail" id="&gt;=(value:Rightable)-instance-method">
       <div class="signature">
         
         def <strong>>=</strong>(value : <a href="../../Jennifer/QueryBuilder/Criteria/Rightable.html">Rightable</a>)
@@ -2057,22 +2057,6 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="alias:String?-instance-method">
-      <div class="signature">
-        
-        def <strong>alias</strong> : String?
-
-        <a class="method-permalink" href="#alias:String?-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/criteria.cr#L12" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="alias(name:String?)-instance-method">
       <div class="signature">
         
@@ -2085,6 +2069,22 @@
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/criteria.cr#L42" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="alias:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>alias</strong> : String?
+
+        <a class="method-permalink" href="#alias:String?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/criteria.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2245,22 +2245,6 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="definition-instance-method">
-      <div class="signature">
-        
-        def <strong>definition</strong>
-
-        <a class="method-permalink" href="#definition-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/criteria.cr#L147" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="definition(_sql_generator)-instance-method">
       <div class="signature">
         
@@ -2273,6 +2257,22 @@
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/criteria.cr#L151" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="definition-instance-method">
+      <div class="signature">
+        
+        def <strong>definition</strong>
+
+        <a class="method-permalink" href="#definition-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/criteria.cr#L147" target="_blank">View source</a>]
         
       </div>
     </div>

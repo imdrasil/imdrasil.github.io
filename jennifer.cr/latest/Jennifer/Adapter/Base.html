@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1412,12 +1412,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#bulk_insert(collection:Array(Model::Base))-instance-method" class="signature"><strong>#bulk_insert</strong>(collection : Array(Model::Base))</a>
+        <a href="#bulk_insert(table:String,fields:Array(String),values:Array(ArgsType))-instance-method" class="signature"><strong>#bulk_insert</strong>(table : String, fields : Array(String), values : Array(ArgsType))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#bulk_insert(table:String,fields:Array(String),values:Array(ArgsType))-instance-method" class="signature"><strong>#bulk_insert</strong>(table : String, fields : Array(String), values : Array(ArgsType))</a>
+        <a href="#bulk_insert(collection:Array(Model::Base))-instance-method" class="signature"><strong>#bulk_insert</strong>(collection : Array(Model::Base))</a>
         
       </li>
     
@@ -1513,14 +1513,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#index_exists?(table,name:String)-instance-method" class="signature"><strong>#index_exists?</strong>(table, name : String)</a>
+        <a href="#index_exists?(table,fields:Array)-instance-method" class="signature"><strong>#index_exists?</strong>(table, fields : Array)</a>
+        
+          <div class="summary"><p>Returns whether index for the *table` with <em>name</em> or <em>fields</em> exists.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#index_exists?(table,fields:Array)-instance-method" class="signature"><strong>#index_exists?</strong>(table, fields : Array)</a>
-        
-          <div class="summary"><p>Returns whether index for the *table` with <em>name</em> or <em>fields</em> exists.</p></div>
+        <a href="#index_exists?(table,name:String)-instance-method" class="signature"><strong>#index_exists?</strong>(table, name : String)</a>
         
       </li>
     
@@ -1535,12 +1535,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#log_query(query:String,&)-instance-method" class="signature"><strong>#log_query</strong>(query : String, &)</a>
+        <a href="#log_query(query:String,args:Enumerable,&)-instance-method" class="signature"><strong>#log_query</strong>(query : String, args : Enumerable, &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#log_query(query:String,args:Enumerable,&)-instance-method" class="signature"><strong>#log_query</strong>(query : String, args : Enumerable, &)</a>
+        <a href="#log_query(query:String,&)-instance-method" class="signature"><strong>#log_query</strong>(query : String, &)</a>
         
       </li>
     
@@ -1550,12 +1550,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#parse_query(q:String)-instance-method" class="signature"><strong>#parse_query</strong>(q : String)</a>
+        <a href="#parse_query(q:String,args:ArgsType)-instance-method" class="signature"><strong>#parse_query</strong>(q : String, args : ArgsType)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#parse_query(q:String,args:ArgsType)-instance-method" class="signature"><strong>#parse_query</strong>(q : String, args : ArgsType)</a>
+        <a href="#parse_query(q:String)-instance-method" class="signature"><strong>#parse_query</strong>(q : String)</a>
         
       </li>
     
@@ -1646,7 +1646,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#with_table_lock(table:String,type:String=&quot;default&quot;,&block:DB::Transaction-%3EVoid)-instance-method" class="signature"><strong>#with_table_lock</strong>(table : String, type : String = <span class="s">&quot;default&quot;</span>, &block : DB::Transaction -> Void)</a>
+        <a href="#with_table_lock(table:String,type:String=%22default%22,&block:DB::Transaction-%3EVoid)-instance-method" class="signature"><strong>#with_table_lock</strong>(table : String, type : String = <span class="s">&quot;default&quot;</span>, &block : DB::Transaction -> Void)</a>
         
       </li>
     
@@ -1952,22 +1952,6 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="bulk_insert(collection:Array(Model::Base))-instance-method">
-      <div class="signature">
-        
-        def <strong>bulk_insert</strong>(collection : Array(<a href="../../Jennifer/Model/Base.html">Model::Base</a>))
-
-        <a class="method-permalink" href="#bulk_insert(collection:Array(Model::Base))-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base.cr#L118" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="bulk_insert(table:String,fields:Array(String),values:Array(ArgsType))-instance-method">
       <div class="signature">
         
@@ -1980,6 +1964,22 @@
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base.cr#L132" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bulk_insert(collection:Array(Model::Base))-instance-method">
+      <div class="signature">
+        
+        def <strong>bulk_insert</strong>(collection : Array(<a href="../../Jennifer/Model/Base.html">Model::Base</a>))
+
+        <a class="method-permalink" href="#bulk_insert(collection:Array(Model::Base))-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base.cr#L118" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2120,7 +2120,7 @@ column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)<
       </div>
     </div>
   
-    <div class="entry-detail" id="db_connection(&)-instance-method">
+    <div class="entry-detail" id="db_connection(&amp;)-instance-method">
       <div class="signature">
         
         def <strong>db_connection</strong>(&)
@@ -2283,22 +2283,6 @@ adapter.foreign_key_exists?(<span class="n">:accounts</span>, name: <span class=
       </div>
     </div>
   
-    <div class="entry-detail" id="index_exists?(table,name:String)-instance-method">
-      <div class="signature">
-        abstract 
-        def <strong>index_exists?</strong>(table, name : String)
-
-        <a class="method-permalink" href="#index_exists?(table,name:String)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base.cr#L329" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="index_exists?(table,fields:Array)-instance-method">
       <div class="signature">
         
@@ -2325,6 +2309,22 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base.cr#L187" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="index_exists?(table,name:String)-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>index_exists?</strong>(table, name : String)
+
+        <a class="method-permalink" href="#index_exists?(table,name:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base.cr#L329" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2361,23 +2361,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
       </div>
     </div>
   
-    <div class="entry-detail" id="log_query(query:String,&)-instance-method">
-      <div class="signature">
-        
-        def <strong>log_query</strong>(query : String, &)
-
-        <a class="method-permalink" href="#log_query(query:String,&)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base.cr#L167" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="log_query(query:String,args:Enumerable,&)-instance-method">
+    <div class="entry-detail" id="log_query(query:String,args:Enumerable,&amp;)-instance-method">
       <div class="signature">
         
         def <strong>log_query</strong>(query : String, args : Enumerable, &)
@@ -2389,6 +2373,22 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base.cr#L155" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="log_query(query:String,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>log_query</strong>(query : String, &)
+
+        <a class="method-permalink" href="#log_query(query:String,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base.cr#L167" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2409,22 +2409,6 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
       </div>
     </div>
   
-    <div class="entry-detail" id="parse_query(q:String)-instance-method">
-      <div class="signature">
-        
-        def <strong>parse_query</strong>(q : String)
-
-        <a class="method-permalink" href="#parse_query(q:String)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base.cr#L196" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="parse_query(q:String,args:ArgsType)-instance-method">
       <div class="signature">
         
@@ -2437,6 +2421,22 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base.cr#L192" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse_query(q:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>parse_query</strong>(q : String)
+
+        <a class="method-permalink" href="#parse_query(q:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base.cr#L196" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2457,7 +2457,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
       </div>
     </div>
   
-    <div class="entry-detail" id="query(query:String,args:ArgsType=[]ofDBAny,&)-instance-method">
+    <div class="entry-detail" id="query(query:String,args:ArgsType=[]ofDBAny,&amp;)-instance-method">
       <div class="signature">
         
         def <strong>query</strong>(query : String, args : <a href="../../Jennifer/Adapter/Base/ArgsType.html">ArgsType</a> = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>, &)
@@ -2716,12 +2716,12 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
       </div>
     </div>
   
-    <div class="entry-detail" id="with_table_lock(table:String,type:String=&quot;default&quot;,&block:DB::Transaction->Void)-instance-method">
+    <div class="entry-detail" id="with_table_lock(table:String,type:String=&quot;default&quot;,&amp;block:DB::Transaction-&gt;Void)-instance-method">
       <div class="signature">
         abstract 
         def <strong>with_table_lock</strong>(table : String, type : String = <span class="s">&quot;default&quot;</span>, &block : DB::Transaction -> Void)
 
-        <a class="method-permalink" href="#with_table_lock(table:String,type:String=&quot;default&quot;,&block:DB::Transaction-%3EVoid)-instance-method">#</a>
+        <a class="method-permalink" href="#with_table_lock(table:String,type:String=%22default%22,&block:DB::Transaction-%3EVoid)-instance-method">#</a>
       </div>
       
       <br/>

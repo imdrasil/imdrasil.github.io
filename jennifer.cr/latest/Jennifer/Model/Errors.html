@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1368,14 +1368,14 @@ correctly work with class translation lookup. <code>nil</code> return value pres
       </li>
     
       <li class="entry-summary">
-        <a href="#add(attribute:Symbol,message:String%7CSymbol=:invalid,options:Hash=%7B%7DofString=%3EString)-instance-method" class="signature"><strong>#add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#add(attribute:Symbol,message:String%7CSymbol=:invalid,count:Int?=nil,options:Hash=%7B%7DofString=%3EString)-instance-method" class="signature"><strong>#add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, count : Int? = <span class="n">nil</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+          <div class="summary"><p>Adds <code>message</code> to the error messages and used validator type to <code>details</code> on <code>attribute</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#add(attribute:Symbol,message:String%7CSymbol=:invalid,count:Int?=nil,options:Hash=%7B%7DofString=%3EString)-instance-method" class="signature"><strong>#add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, count : Int? = <span class="n">nil</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
-        
-          <div class="summary"><p>Adds <code>message</code> to the error messages and used validator type to <code>details</code> on <code>attribute</code>.</p></div>
+        <a href="#add(attribute:Symbol,message:String%7CSymbol=:invalid,options:Hash=%7B%7DofString=%3EString)-instance-method" class="signature"><strong>#add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
         
       </li>
     
@@ -1605,23 +1605,7 @@ for the method.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="add(attribute:Symbol,message:String|Symbol=:invalid,options:Hash={}ofString=>String)-instance-method">
-      <div class="signature">
-        
-        def <strong>add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
-
-        <a class="method-permalink" href="#add(attribute:Symbol,message:String%7CSymbol=:invalid,options:Hash=%7B%7DofString=%3EString)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/errors.cr#L127" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="add(attribute:Symbol,message:String|Symbol=:invalid,count:Int?=nil,options:Hash={}ofString=>String)-instance-method">
+    <div class="entry-detail" id="add(attribute:Symbol,message:String|Symbol=:invalid,count:Int?=nil,options:Hash={}ofString=&gt;String)-instance-method">
       <div class="signature">
         
         def <strong>add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, count : Int? = <span class="n">nil</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
@@ -1641,6 +1625,22 @@ If no <code>message</code> is supplied, <code>:invalid</code> is assumed.</p>
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/errors.cr#L123" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="add(attribute:Symbol,message:String|Symbol=:invalid,options:Hash={}ofString=&gt;String)-instance-method">
+      <div class="signature">
+        
+        def <strong>add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#add(attribute:Symbol,message:String%7CSymbol=:invalid,options:Hash=%7B%7DofString=%3EString)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/model/errors.cr#L127" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1749,7 +1749,7 @@ If no <code>message</code> is supplied, <code>:invalid</code> is assumed.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="each(&)-instance-method">
+    <div class="entry-detail" id="each(&amp;)-instance-method">
       <div class="signature">
         
         def <strong>each</strong>(&)

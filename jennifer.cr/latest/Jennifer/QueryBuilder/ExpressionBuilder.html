@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1683,16 +1683,16 @@ and field name as well.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#sql(query:String,use_brackets:Bool=true)-instance-method" class="signature"><strong>#sql</strong>(query : String, use_brackets : Bool = <span class="n">true</span>)</a>
+        <a href="#sql(query:String,args:Array(DBAny)=[]ofDBAny,use_brackets:Bool=true)-instance-method" class="signature"><strong>#sql</strong>(query : String, args : Array(DBAny) = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>, use_brackets : Bool = <span class="n">true</span>)</a>
         
           <div class="summary"><p>Adds plain query <em>query</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#sql(query:String,args:Array(DBAny)=[]ofDBAny,use_brackets:Bool=true)-instance-method" class="signature"><strong>#sql</strong>(query : String, args : Array(DBAny) = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>, use_brackets : Bool = <span class="n">true</span>)</a>
+        <a href="#sql(query:String,use_brackets:Bool=true)-instance-method" class="signature"><strong>#sql</strong>(query : String, use_brackets : Bool = <span class="n">true</span>)</a>
         
-          <div class="summary"><p>Adds plain query <em>query</em>.</p></div>
+          <div class="summary"><p>ditto</p></div>
         
       </li>
     
@@ -2465,34 +2465,6 @@ and field name as well.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="sql(query:String,use_brackets:Bool=true)-instance-method">
-      <div class="signature">
-        
-        def <strong>sql</strong>(query : String, use_brackets : Bool = <span class="n">true</span>)
-
-        <a class="method-permalink" href="#sql(query:String,use_brackets:Bool=true)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Adds plain query <em>query</em>.</p>
-
-<p>If you need to wrap query set <em>use_brackets</em> to <code>true</code>.</p>
-
-<pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;&quot;</span>].<span class="k">select</span> { [sql(<span class="s">&quot;1&quot;</span>, <span class="n">false</span>)] } <span class="c"># =&gt; SELECT 1</span>
-<span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;&quot;</span>].<span class="k">select</span> { [sql(<span class="s">&quot;1&quot;</span>)] }        <span class="c"># =&gt; SELECT (1)</span>
-<span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;&quot;</span>].<span class="k">select</span> { [sql(<span class="s">&quot;TIMESTAMP %s AT TIME ZONE %s&quot;</span>, [<span class="s">&quot;2001-02-16 20:38:40&quot;</span>, <span class="s">&quot;MST&quot;</span>], <span class="n">false</span>)] }
-<span class="c"># =&gt; SELECT TIMESTAMP &#39;2001-02-16 20:38:40&#39; AT TIME ZONE &#39;MST&#39;;</span></code></pre>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/expression_builder.cr#L72" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="sql(query:String,args:Array(DBAny)=[]ofDBAny,use_brackets:Bool=true)-instance-method">
       <div class="signature">
         
@@ -2517,6 +2489,27 @@ and field name as well.</p>
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/expression_builder.cr#L67" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sql(query:String,use_brackets:Bool=true)-instance-method">
+      <div class="signature">
+        
+        def <strong>sql</strong>(query : String, use_brackets : Bool = <span class="n">true</span>)
+
+        <a class="method-permalink" href="#sql(query:String,use_brackets:Bool=true)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>ditto</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/query_builder/expression_builder.cr#L72" target="_blank">View source</a>]
         
       </div>
     </div>

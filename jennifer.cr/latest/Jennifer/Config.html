@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1354,7 +1354,7 @@ object.</p>
       <li class="entry-summary">
         <a href="#config:self-class-method" class="signature"><strong>.config</strong> : <span class="k">self</span></a>
         
-          <div class="summary"><p>Returns default configuration object.</p></div>
+          <div class="summary"><p>ditto</p></div>
         
       </li>
     
@@ -1569,7 +1569,7 @@ object.</p>
       <li class="entry-summary">
         <a href="#local_time_zone_name=(value)-class-method" class="signature"><strong>.local_time_zone_name=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#local_time_zone_name=(local_time_zone_name)-instance-method">#local_time_zone_name=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#local_time_zone_name=(value:String)-instance-method">#local_time_zone_name=</a></code>.</p></div>
         
       </li>
     
@@ -1964,12 +1964,12 @@ object.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#local_time_zone_name=(local_time_zone_name)-instance-method" class="signature"><strong>#local_time_zone_name=</strong>(local_time_zone_name)</a>
+        <a href="#local_time_zone_name=(value:String)-instance-method" class="signature"><strong>#local_time_zone_name=</strong>(value : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#local_time_zone_name=(value:String)-instance-method" class="signature"><strong>#local_time_zone_name=</strong>(value : String)</a>
+        <a href="#local_time_zone_name=(local_time_zone_name)-instance-method" class="signature"><strong>#local_time_zone_name=</strong>(local_time_zone_name)</a>
         
       </li>
     
@@ -2097,7 +2097,7 @@ object.</p>
       <li class="entry-summary">
         <a href="#read(path:String,env:String)-instance-method" class="signature"><strong>#read</strong>(path : String, env : String)</a>
         
-          <div class="summary"><p>Reads configurations from the file with given <em>path</em> for given <em>env</em>.</p></div>
+          <div class="summary"><p>ditto</p></div>
         
       </li>
     
@@ -2253,7 +2253,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Returns default configuration object.</p>
+          <p>ditto</p>
         </div>
       
       <br/>
@@ -2545,7 +2545,7 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="configure(&)-class-method">
+    <div class="entry-detail" id="configure(&amp;)-class-method">
       <div class="signature">
         
         def self.<strong>configure</strong>(&)
@@ -2827,7 +2827,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#local_time_zone_name=(local_time_zone_name)-instance-method">#local_time_zone_name=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#local_time_zone_name=(value:String)-instance-method">#local_time_zone_name=</a></code>.</p>
         </div>
       
       <br/>
@@ -3169,7 +3169,7 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="read(*args,**opts,&)-class-method">
+    <div class="entry-detail" id="read(*args,**opts,&amp;)-class-method">
       <div class="signature">
         
         def self.<strong>read</strong>(*args, **opts, &)
@@ -3902,20 +3902,6 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="local_time_zone_name=(local_time_zone_name)-instance-method">
-      <div class="signature">
-        
-        def <strong>local_time_zone_name=</strong>(local_time_zone_name)
-
-        <a class="method-permalink" href="#local_time_zone_name=(local_time_zone_name)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="local_time_zone_name=(value:String)-instance-method">
       <div class="signature">
         
@@ -3928,6 +3914,20 @@ object.</p>
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/config.cr#L248" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="local_time_zone_name=(local_time_zone_name)-instance-method">
+      <div class="signature">
+        
+        def <strong>local_time_zone_name=</strong>(local_time_zone_name)
+
+        <a class="method-permalink" href="#local_time_zone_name=(local_time_zone_name)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
         
       </div>
     </div>
@@ -4306,11 +4306,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Reads configurations from the file with given <em>path</em> for given <em>env</em>.</p>
-
-<p>All configuration properties will be read from the <em>env</em> key.</p>
-
-<pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Config</span>.read(<span class="s">&quot;./db/database.yml&quot;</span>, <span class="n">:production</span>)</code></pre>
+          <p>ditto</p>
         </div>
       
       <br/>
@@ -4321,7 +4317,7 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="read(path:String,&)-instance-method">
+    <div class="entry-detail" id="read(path:String,&amp;)-instance-method">
       <div class="signature">
         
         def <strong>read</strong>(path : String, &)

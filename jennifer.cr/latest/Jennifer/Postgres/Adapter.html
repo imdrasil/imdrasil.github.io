@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1460,7 +1460,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#with_table_lock(table:String,type:String=&quot;default&quot;,&block:DB::Transaction-%3EVoid)-instance-method" class="signature"><strong>#with_table_lock</strong>(table : String, type : String = <span class="s">&quot;default&quot;</span>, &block : DB::Transaction -> Void)</a>
+        <a href="#with_table_lock(table:String,type:String=%22default%22,&block:DB::Transaction-%3EVoid)-instance-method" class="signature"><strong>#with_table_lock</strong>(table : String, type : String = <span class="s">&quot;default&quot;</span>, &block : DB::Transaction -> Void)</a>
         
       </li>
     
@@ -1477,8 +1477,8 @@
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/Adapter/Base.html">Jennifer::Adapter::Base</a></code></h3>
   
   
-    <a href="../../Jennifer/Adapter/Base.html#bulk_insert(collection:Array(Model::Base))-instance-method" class="tooltip">
-      <span>bulk_insert(collection : Array(Model::Base))<br/>bulk_insert(table : String, fields : Array(String), values : Array(ArgsType))</span>
+    <a href="../../Jennifer/Adapter/Base.html#bulk_insert(table:String,fields:Array(String),values:Array(ArgsType))-instance-method" class="tooltip">
+      <span>bulk_insert(table : String, fields : Array(String), values : Array(ArgsType))<br/>bulk_insert(collection : Array(Model::Base))</span>
     bulk_insert</a>, 
     
   
@@ -1567,8 +1567,8 @@
     generate_schema</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#index_exists?(table,name:String)-instance-method" class="tooltip">
-      <span>index_exists?(table, name : String)<br/>index_exists?(table, fields : Array)</span>
+    <a href="../../Jennifer/Adapter/Base.html#index_exists?(table,fields:Array)-instance-method" class="tooltip">
+      <span>index_exists?(table, fields : Array)<br/>index_exists?(table, name : String)</span>
     index_exists?</a>, 
     
   
@@ -1582,8 +1582,8 @@
     load_schema</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#log_query(query:String,&)-instance-method" class="tooltip">
-      <span>log_query(query : String, &)<br/>log_query(query : String, args : Enumerable, &)</span>
+    <a href="../../Jennifer/Adapter/Base.html#log_query(query:String,args:Enumerable,&)-instance-method" class="tooltip">
+      <span>log_query(query : String, args : Enumerable, &)<br/>log_query(query : String, &)</span>
     log_query</a>, 
     
   
@@ -1592,8 +1592,8 @@
     max_bind_vars_count</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#parse_query(q:String)-instance-method" class="tooltip">
-      <span>parse_query(q : String)<br/>parse_query(q : String, args : ArgsType)</span>
+    <a href="../../Jennifer/Adapter/Base.html#parse_query(q:String,args:ArgsType)-instance-method" class="tooltip">
+      <span>parse_query(q : String, args : ArgsType)<br/>parse_query(q : String)</span>
     parse_query</a>, 
     
   
@@ -1672,7 +1672,7 @@
     view_exists?</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Base.html#with_table_lock(table:String,type:String=&quot;default&quot;,&block:DB::Transaction-%3EVoid)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/Base.html#with_table_lock(table:String,type:String=%22default%22,&block:DB::Transaction-%3EVoid)-instance-method" class="tooltip">
       <span>with_table_lock(table : String, type : String = <span class="s">&quot;default&quot;</span>, &block : DB::Transaction -> Void)</span>
     with_table_lock</a>
     
@@ -2284,12 +2284,12 @@ adapter.foreign_key_exists?(<span class="n">:accounts</span>, name: <span class=
       </div>
     </div>
   
-    <div class="entry-detail" id="with_table_lock(table:String,type:String=&quot;default&quot;,&block:DB::Transaction->Void)-instance-method">
+    <div class="entry-detail" id="with_table_lock(table:String,type:String=&quot;default&quot;,&amp;block:DB::Transaction-&gt;Void)-instance-method">
       <div class="signature">
         
         def <strong>with_table_lock</strong>(table : String, type : String = <span class="s">&quot;default&quot;</span>, &block : DB::Transaction -> Void)
 
-        <a class="method-permalink" href="#with_table_lock(table:String,type:String=&quot;default&quot;,&block:DB::Transaction-%3EVoid)-instance-method">#</a>
+        <a class="method-permalink" href="#with_table_lock(table:String,type:String=%22default%22,&block:DB::Transaction-%3EVoid)-instance-method">#</a>
       </div>
       
       <br/>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1396,12 +1396,12 @@
     find!</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/IModelQuery.html#find_each(batch_size:Int32=1000,start=nil,direction:String%7CSymbol=&quot;asc&quot;,&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/IModelQuery.html#find_each(batch_size:Int32=1000,start=nil,direction:String%7CSymbol=%22asc%22,&)-instance-method" class="tooltip">
       <span>find_each(batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)</span>
     find_each</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/IModelQuery.html#find_in_batches(batch_size:Int32=1000,start=nil,direction:String%7CSymbol=&quot;asc&quot;,&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/IModelQuery.html#find_in_batches(batch_size:Int32=1000,start=nil,direction:String%7CSymbol=%22asc%22,&)-instance-method" class="tooltip">
       <span>find_in_batches(batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)</span>
     find_in_batches</a>, 
     
@@ -1504,8 +1504,8 @@
     adapter</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#as_sql-instance-method" class="tooltip">
-      <span>as_sql<br/>as_sql(generator)</span>
+    <a href="../../Jennifer/QueryBuilder/Query.html#as_sql(generator)-instance-method" class="tooltip">
+      <span>as_sql(generator)<br/>as_sql</span>
     as_sql</a>, 
     
   
@@ -1560,7 +1560,7 @@
     
   
     <a href="../../Jennifer/QueryBuilder/Query.html#group(column:String)-instance-method" class="tooltip">
-      <span>group(column : String)<br/>group(column : Symbol)<br/>group(&)<br/>group(*columns : Symbol)<br/>group(*columns : String)<br/>group(column : Criteria)</span>
+      <span>group(column : String)<br/>group(column : Symbol)<br/>group(column : Criteria)<br/>group(*columns : String)<br/>group(*columns : Symbol)<br/>group(&)</span>
     group</a>, 
     
   
@@ -1594,8 +1594,8 @@
     offset</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#select(&)-instance-method" class="tooltip">
-      <span>select(&)<br/>select(*fields : Symbol)<br/>select(fields : Array(Criteria))<br/>select(raw_sql : String)<br/>select(field : Criteria)</span>
+    <a href="../../Jennifer/QueryBuilder/Query.html#select(raw_sql:String)-instance-method" class="tooltip">
+      <span>select(raw_sql : String)<br/>select(field : Criteria)<br/>select(fields : Array(Criteria))<br/>select(*fields : Symbol)<br/>select(&)</span>
     select</a>, 
     
   
@@ -1678,7 +1678,7 @@
     build</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#null(table=&quot;&quot;)-class-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#null(table=%22%22)-class-method" class="tooltip">
       <span>null(table = <span class="s">&quot;&quot;</span>)</span>
     null</a>
     
@@ -1726,13 +1726,13 @@
     explain</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#find_each(batch_size:Int32=1000,start:Int32=0,direction:String%7CSymbol=&quot;asc&quot;,&)-instance-method" class="tooltip">
-      <span>find_each(batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(primary_key : Nil, batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(primary_key : Criteria, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(primary_key : String, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)</span>
+    <a href="../../Jennifer/QueryBuilder/Executables.html#find_each(primary_key:String,batch_size:Int32=1000,start=nil,direction:String%7CSymbol=%22asc%22,&)-instance-method" class="tooltip">
+      <span>find_each(primary_key : String, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(primary_key : Criteria, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(primary_key : Nil, batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)</span>
     find_each</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#find_in_batches(primary_key:Nil,batch_size:Int32=1000,start:Int32=0,&)-instance-method" class="tooltip">
-      <span>find_in_batches(primary_key : Nil, batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, &)<br/>find_in_batches(primary_key : Criteria, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_in_batches(batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, &)<br/>find_in_batches(primary_key : String, batch_size : Int32 = <span class="n">1000</span>, start : Int32? = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)</span>
+    <a href="../../Jennifer/QueryBuilder/Executables.html#find_in_batches(primary_key:String,batch_size:Int32=1000,start:Int32?=nil,direction:String%7CSymbol=%22asc%22,&)-instance-method" class="tooltip">
+      <span>find_in_batches(primary_key : String, batch_size : Int32 = <span class="n">1000</span>, start : Int32? = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_in_batches(batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, &)<br/>find_in_batches(primary_key : Criteria, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_in_batches(primary_key : Nil, batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, &)</span>
     find_in_batches</a>, 
     
   
@@ -1756,8 +1756,8 @@
     ids</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#increment(**fields)-instance-method" class="tooltip">
-      <span>increment(**fields)<br/>increment(fields : Hash(Symbol, _))</span>
+    <a href="../../Jennifer/QueryBuilder/Executables.html#increment(fields:Hash(Symbol,_))-instance-method" class="tooltip">
+      <span>increment(fields : Hash(Symbol, _))<br/>increment(**fields)</span>
     increment</a>, 
     
   
@@ -1776,8 +1776,8 @@
     last!</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#pluck(*fields:String%7CSymbol):Array(Array(DBAny))-instance-method" class="tooltip">
-      <span>pluck(*fields : String | Symbol) : Array(Array(DBAny))<br/>pluck(fields : Array) : Array(Array(DBAny))<br/>pluck(field : String | Symbol) : Array(DBAny)</span>
+    <a href="../../Jennifer/QueryBuilder/Executables.html#pluck(fields:Array):Array(Array(DBAny))-instance-method" class="tooltip">
+      <span>pluck(fields : Array) : Array(Array(DBAny))<br/>pluck(field : String | Symbol) : Array(DBAny)<br/>pluck(*fields : String | Symbol) : Array(Array(DBAny))</span>
     pluck</a>, 
     
   
@@ -1791,13 +1791,13 @@
     to_a</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#update(**options)-instance-method" class="tooltip">
-      <span>update(**options)<br/>update(options : Hash)<br/>update(&)</span>
+    <a href="../../Jennifer/QueryBuilder/Executables.html#update(&)-instance-method" class="tooltip">
+      <span>update(&)<br/>update(options : Hash)<br/>update(**options)</span>
     update</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#upsert(fields:Array(String),values:Array(Array(DBAny)),unique_fields:Array,&)-instance-method" class="tooltip">
-      <span>upsert(fields : Array(String), values : Array(Array(DBAny)), unique_fields : Array, &)<br/>upsert(fields : Array(String), values : Array(Array(DBAny)), unique_fields : Array = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)</span>
+    <a href="../../Jennifer/QueryBuilder/Executables.html#upsert(fields:Array(String),values:Array(Array(DBAny)),unique_fields:Array=[]ofString)-instance-method" class="tooltip">
+      <span>upsert(fields : Array(String), values : Array(Array(DBAny)), unique_fields : Array = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)<br/>upsert(fields : Array(String), values : Array(Array(DBAny)), unique_fields : Array, &)</span>
     upsert</a>
     
   

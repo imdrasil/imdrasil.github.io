@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1376,14 +1376,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#from_clause(io:String::Builder,query)-class-method" class="signature"><strong>.from_clause</strong>(io : String::Builder, query)</a>
-        
-          <div class="summary"><p>Generates <code>FROM</code> query clause.</p></div>
+        <a href="#from_clause(io:String::Builder,from:String)-class-method" class="signature"><strong>.from_clause</strong>(io : String::Builder, from : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#from_clause(io:String::Builder,from:String)-class-method" class="signature"><strong>.from_clause</strong>(io : String::Builder, from : String)</a>
+        <a href="#from_clause(io:String::Builder,query)-class-method" class="signature"><strong>.from_clause</strong>(io : String::Builder, query)</a>
+        
+          <div class="summary"><p>Generates <code>FROM</code> query clause.</p></div>
         
       </li>
     
@@ -1481,12 +1481,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#update(obj:Model::Base)-class-method" class="signature"><strong>.update</strong>(obj : Model::Base)</a>
+        <a href="#update(query,options:Hash)-class-method" class="signature"><strong>.update</strong>(query, options : Hash)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update(query,options:Hash)-class-method" class="signature"><strong>.update</strong>(query, options : Hash)</a>
+        <a href="#update(obj:Model::Base)-class-method" class="signature"><strong>.update</strong>(obj : Model::Base)</a>
         
       </li>
     
@@ -1500,7 +1500,7 @@
       <li class="entry-summary">
         <a href="#where_clause(io:String::Builder,tree)-class-method" class="signature"><strong>.where_clause</strong>(io : String::Builder, tree)</a>
         
-          <div class="summary"><p>Generates <code>WHERE</code> query clause.</p></div>
+          <div class="summary"><p>ditto</p></div>
         
       </li>
     
@@ -1688,6 +1688,22 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="from_clause(io:String::Builder,from:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>from_clause</strong>(io : String::Builder, from : String)
+
+        <a class="method-permalink" href="#from_clause(io:String::Builder,from:String)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base_sql_generator.cr#L181" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="from_clause(io:String::Builder,query)-class-method">
       <div class="signature">
         
@@ -1705,22 +1721,6 @@
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base_sql_generator.cr#L186" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="from_clause(io:String::Builder,from:String)-class-method">
-      <div class="signature">
-        
-        def self.<strong>from_clause</strong>(io : String::Builder, from : String)
-
-        <a class="method-permalink" href="#from_clause(io:String::Builder,from:String)-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base_sql_generator.cr#L181" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2010,22 +2010,6 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="update(obj:Model::Base)-class-method">
-      <div class="signature">
-        
-        def self.<strong>update</strong>(obj : <a href="../../Jennifer/Model/Base.html">Model::Base</a>)
-
-        <a class="method-permalink" href="#update(obj:Model::Base)-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base_sql_generator.cr#L102" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="update(query,options:Hash)-class-method">
       <div class="signature">
         
@@ -2038,6 +2022,22 @@
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base_sql_generator.cr#L111" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="update(obj:Model::Base)-class-method">
+      <div class="signature">
+        
+        def self.<strong>update</strong>(obj : <a href="../../Jennifer/Model/Base.html">Model::Base</a>)
+
+        <a class="method-permalink" href="#update(obj:Model::Base)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/adapter/base_sql_generator.cr#L102" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2073,7 +2073,7 @@
       
         <div class="doc">
           
-          <p>Generates <code>WHERE</code> query clause.</p>
+          <p>ditto</p>
         </div>
       
       <br/>

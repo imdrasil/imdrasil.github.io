@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1492,14 +1492,14 @@ changes.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#add_index(table_name:String%7CSymbol,field:Symbol,type:Symbol?=nil,name:String?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method" class="signature"><strong>#add_index</strong>(table_name : String | Symbol, field : Symbol, type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, length : Int32? = <span class="n">nil</span>, order : Symbol? = <span class="n">nil</span>)</a>
+        <a href="#add_index(table_name:String%7CSymbol,fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)=%7B%7DofSymbol=%3EInt32,orders:Hash(Symbol,Symbol)=%7B%7DofSymbol=%3ESymbol)-instance-method" class="signature"><strong>#add_index</strong>(table_name : String | Symbol, fields : Array(Symbol), type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, lengths : Hash(Symbol, Int32) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Int32</span>, orders : Hash(Symbol, Symbol) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Symbol</span>)</a>
+        
+          <div class="summary"><p>Adds a new index to the <em>table_name</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#add_index(table_name:String%7CSymbol,fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)=%7B%7DofSymbol=%3EInt32,orders:Hash(Symbol,Symbol)=%7B%7DofSymbol=%3ESymbol)-instance-method" class="signature"><strong>#add_index</strong>(table_name : String | Symbol, fields : Array(Symbol), type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, lengths : Hash(Symbol, Int32) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Int32</span>, orders : Hash(Symbol, Symbol) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Symbol</span>)</a>
-        
-          <div class="summary"><p>Adds a new index to the <em>table_name</em>.</p></div>
+        <a href="#add_index(table_name:String%7CSymbol,field:Symbol,type:Symbol?=nil,name:String?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method" class="signature"><strong>#add_index</strong>(table_name : String | Symbol, field : Symbol, type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, length : Int32? = <span class="n">nil</span>, order : Symbol? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -1600,14 +1600,14 @@ changes.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#drop_index(table:String%7CSymbol,field:Symbol?,name:String?=nil)-instance-method" class="signature"><strong>#drop_index</strong>(table : String | Symbol, field : Symbol?, name : String? = <span class="n">nil</span>)</a>
+        <a href="#drop_index(table:String%7CSymbol,fields:Array(Symbol)=[]ofSymbol,name:String?=nil)-instance-method" class="signature"><strong>#drop_index</strong>(table : String | Symbol, fields : Array(Symbol) = <span class="o">[]</span> <span class="k">of</span> <span class="t">Symbol</span>, name : String? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Removes the given index from the table.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#drop_index(table:String%7CSymbol,fields:Array(Symbol)=[]ofSymbol,name:String?=nil)-instance-method" class="signature"><strong>#drop_index</strong>(table : String | Symbol, fields : Array(Symbol) = <span class="o">[]</span> <span class="k">of</span> <span class="t">Symbol</span>, name : String? = <span class="n">nil</span>)</a>
-        
-          <div class="summary"><p>Removes the given index from the table.</p></div>
+        <a href="#drop_index(table:String%7CSymbol,field:Symbol?,name:String?=nil)-instance-method" class="signature"><strong>#drop_index</strong>(table : String | Symbol, field : Symbol?, name : String? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -1915,23 +1915,7 @@ can be specified with the <em>name</em> argument.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="add_index(table_name:String|Symbol,field:Symbol,type:Symbol?=nil,name:String?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>add_index</strong>(table_name : String | Symbol, field : Symbol, type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, length : Int32? = <span class="n">nil</span>, order : Symbol? = <span class="n">nil</span>)
-
-        <a class="method-permalink" href="#add_index(table_name:String%7CSymbol,field:Symbol,type:Symbol?=nil,name:String?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/migration/base.cr#L436" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="add_index(table_name:String|Symbol,fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)={}ofSymbol=>Int32,orders:Hash(Symbol,Symbol)={}ofSymbol=>Symbol)-instance-method">
+    <div class="entry-detail" id="add_index(table_name:String|Symbol,fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)={}ofSymbol=&gt;Int32,orders:Hash(Symbol,Symbol)={}ofSymbol=&gt;Symbol)-instance-method">
       <div class="signature">
         
         def <strong>add_index</strong>(table_name : String | Symbol, fields : Array(Symbol), type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, lengths : Hash(Symbol, Int32) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Int32</span>, orders : Hash(Symbol, Symbol) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Symbol</span>)
@@ -1985,6 +1969,22 @@ add_index(:accounts, &i(name surname), name: 'by_name_surname', lengths: { :name
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/migration/base.cr#L430" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="add_index(table_name:String|Symbol,field:Symbol,type:Symbol?=nil,name:String?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>add_index</strong>(table_name : String | Symbol, field : Symbol, type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, length : Int32? = <span class="n">nil</span>, order : Symbol? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#add_index(table_name:String%7CSymbol,field:Symbol,type:Symbol?=nil,name:String?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/migration/base.cr#L436" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2071,7 +2071,7 @@ change_enum(<span class="n">:gender_enum</span>, {<span class="n">:remove_values
       </div>
     </div>
   
-    <div class="entry-detail" id="change_table(table:String|Symbol,&)-instance-method">
+    <div class="entry-detail" id="change_table(table:String|Symbol,&amp;)-instance-method">
       <div class="signature">
         
         def <strong>change_table</strong>(table : String | Symbol, &)
@@ -2148,7 +2148,7 @@ change_enum(<span class="n">:gender_enum</span>, {<span class="n">:remove_values
       </div>
     </div>
   
-    <div class="entry-detail" id="create_join_table(table1:String|Symbol,table2:String|Symbol,table_name:String?=nil,&)-instance-method">
+    <div class="entry-detail" id="create_join_table(table1:String|Symbol,table2:String|Symbol,table_name:String?=nil,&amp;)-instance-method">
       <div class="signature">
         
         def <strong>create_join_table</strong>(table1 : String | Symbol, table2 : String | Symbol, table_name : String? = <span class="n">nil</span>, &)
@@ -2223,7 +2223,7 @@ create_join_table(<span class="n">:contacts</span>, <span class="n">:addresses</
       </div>
     </div>
   
-    <div class="entry-detail" id="create_table(name:String|Symbol,id:Bool=true,&)-instance-method">
+    <div class="entry-detail" id="create_table(name:String|Symbol,id:Bool=true,&amp;)-instance-method">
       <div class="signature">
         
         def <strong>create_table</strong>(name : String | Symbol, id : Bool = <span class="n">true</span>, &)
@@ -2372,22 +2372,6 @@ To prevent such behavior - set <em>id</em> argument to <code>false</code>.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="drop_index(table:String|Symbol,field:Symbol?,name:String?=nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>drop_index</strong>(table : String | Symbol, field : Symbol?, name : String? = <span class="n">nil</span>)
-
-        <a class="method-permalink" href="#drop_index(table:String%7CSymbol,field:Symbol?,name:String?=nil)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/migration/base.cr#L468" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="drop_index(table:String|Symbol,fields:Array(Symbol)=[]ofSymbol,name:String?=nil)-instance-method">
       <div class="signature">
         
@@ -2415,6 +2399,22 @@ To prevent such behavior - set <em>id</em> argument to <code>false</code>.</p>
       <div>
         
           [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/migration/base.cr#L464" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="drop_index(table:String|Symbol,field:Symbol?,name:String?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>drop_index</strong>(table : String | Symbol, field : Symbol?, name : String? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#drop_index(table:String%7CSymbol,field:Symbol?,name:String?=nil)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7db32c095dbad2a80d55df35b015aa287d05a8fc/src/jennifer/migration/base.cr#L468" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2598,7 +2598,7 @@ SQL</span></code></pre>
           
           <p>Returns whether index for the *table` with <em>name</em> or <em>fields</em> exists.</p>
 
-<p>Delegate to <code><a href="../../Jennifer/Adapter/Base.html#index_exists?(table,name:String)-instance-method">Adapter::Base#index_exists?</a></code>.</p>
+<p>Delegate to <code><a href="../../Jennifer/Adapter/Base.html#index_exists?(table,fields:Array)-instance-method">Adapter::Base#index_exists?</a></code>.</p>
         </div>
       
       <br/>
