@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Serializer | Imdrasil Homebrew Stuff</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Serializer" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/serializer/" />
 <meta property="og:url" content="https://imdrasil.github.io/serializer/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Serializer" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Serializer","url":"https://imdrasil.github.io/serializer/","@context":"http://schema.org"}</script>
+{"headline":"Serializer","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/serializer/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -32,9 +34,9 @@
   <div class="post-content">
     <h1 id="serializer">Serializer</h1>
 
-<p><strong>Serializer</strong> is a simple JSON serialization library for your object structure. Unlike core <code class="highlighter-rouge">JSON</code> module’s functionality this library only covers serializing objects to JSON without parsing data back. At the same time it provides some free space for maneuvers, precise and flexible configuration WHAT, HOW and WHEN should be rendered.</p>
+<p><strong>Serializer</strong> is a simple JSON serialization library for your object structure. Unlike core <code class="language-plaintext highlighter-rouge">JSON</code> module’s functionality this library only covers serializing objects to JSON without parsing data back. At the same time it provides some free space for maneuvers, precise and flexible configuration WHAT, HOW and WHEN should be rendered.</p>
 
-<p><code class="highlighter-rouge">Serializer::Base</code> only ~11% slower than <code class="highlighter-rouge">JSON::Serializable</code></p>
+<p><code class="language-plaintext highlighter-rouge">Serializer::Base</code> only ~11% slower than <code class="language-plaintext highlighter-rouge">JSON::Serializable</code></p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        Serializer 646.00k (  1.55µs) (± 2.52%)  2.77kB/op   1.11× slower
 JSON::Serializable 719.74k (  1.39µs) (± 2.39%)   1.3kB/op        fastest
@@ -55,7 +57,7 @@ JSON::Serializable 719.74k (  1.39µs) (± 2.39%)   1.3kB/op        fastest
 
 <ol>
   <li>
-    <p>Add the dependency to your <code class="highlighter-rouge">shard.yml</code>:</p>
+    <p>Add the dependency to your <code class="language-plaintext highlighter-rouge">shard.yml</code>:</p>
 
     <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">serializer</span><span class="pi">:</span>
@@ -63,7 +65,7 @@ JSON::Serializable 719.74k (  1.39µs) (± 2.39%)   1.3kB/op        fastest
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Run <code class="highlighter-rouge">shards install</code></p>
+    <p>Run <code class="language-plaintext highlighter-rouge">shards install</code></p>
   </li>
 </ol>
 
@@ -71,190 +73,190 @@ JSON::Serializable 719.74k (  1.39µs) (± 2.39%)   1.3kB/op        fastest
 
 <p>Let’s assume we have next resources relationship</p>
 
-<pre><code class="language-crystal">class Parent
-  property name, title,
-    children : Array(Child),
-    friends : Array(Child)
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Parent</span>
+  <span class="kp">property</span> <span class="nb">name</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span>
+    <span class="n">children</span> <span class="p">:</span> <span class="no">Array</span><span class="p">(</span><span class="no">Child</span><span class="p">),</span>
+    <span class="n">friends</span> <span class="p">:</span> <span class="no">Array</span><span class="p">(</span><span class="no">Child</span><span class="p">)</span>
 
-  def initialize(@name = "test", @title = "asd", @children = [] of Child, @friends = [] of Child)
-  end
-end
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="vi">@name</span> <span class="o">=</span> <span class="s2">"test"</span><span class="p">,</span> <span class="vi">@title</span> <span class="o">=</span> <span class="s2">"asd"</span><span class="p">,</span> <span class="vi">@children</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">of</span> <span class="no">Child</span><span class="p">,</span> <span class="vi">@friends</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">of</span> <span class="no">Child</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-class Child
-  property age : Int32, dipper : Child?, address : Address?
+<span class="k">class</span> <span class="nc">Child</span>
+  <span class="kp">property</span> <span class="n">age</span> <span class="p">:</span> <span class="no">Int32</span><span class="p">,</span> <span class="n">dipper</span> <span class="p">:</span> <span class="no">Child</span><span class="p">?,</span> <span class="n">address</span> <span class="p">:</span> <span class="no">Address</span><span class="p">?</span>
 
-  def initialize(@age, @dipper = nil, @address = nil)
-  end
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="vi">@age</span><span class="p">,</span> <span class="vi">@dipper</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">,</span> <span class="vi">@address</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+  <span class="k">end</span>
 
-  def some_sub_relation; end
-end
+  <span class="k">def</span> <span class="nf">some_sub_relation</span><span class="p">;</span> <span class="k">end</span>
+<span class="k">end</span>
 
-class Address
-  property street
+<span class="k">class</span> <span class="nc">Address</span>
+  <span class="kp">property</span> <span class="n">street</span>
 
-  def initialize(@street = "some street")
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="vi">@street</span> <span class="o">=</span> <span class="s2">"some street"</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>To be able to serialize data we need to define serializers for each resource:</p>
 
-<pre><code class="language-crystal">class AddressSerializer &lt; Serializer::Base(Address)
-  attributes :street
-end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AddressSerializer</span> <span class="o">&lt;</span> <span class="no">Serializer</span><span class="o">::</span><span class="no">Base</span><span class="p">(</span><span class="no">Address</span><span class="p">)</span>
+  <span class="n">attributes</span> <span class="ss">:street</span>
+<span class="k">end</span>
 
-class ChildSerializer &lt; Serializer::Base(Child)
-  attribute :age
+<span class="k">class</span> <span class="nc">ChildSerializer</span> <span class="o">&lt;</span> <span class="no">Serializer</span><span class="o">::</span><span class="no">Base</span><span class="p">(</span><span class="no">Child</span><span class="p">)</span>
+  <span class="n">attribute</span> <span class="ss">:age</span>
 
-  has_one :some_sub_relation, ChildSerializer
-  has_one :address, AddressSerializer
-  has_one :dipper, ChildSerializer
-end
+  <span class="n">has_one</span> <span class="ss">:some_sub_relation</span><span class="p">,</span> <span class="no">ChildSerializer</span>
+  <span class="n">has_one</span> <span class="ss">:address</span><span class="p">,</span> <span class="no">AddressSerializer</span>
+  <span class="n">has_one</span> <span class="ss">:dipper</span><span class="p">,</span> <span class="no">ChildSerializer</span>
+<span class="k">end</span>
 
-class ModelSerializer &lt; Serializer::Base(Model)
-  attribute :name
-  attribute :title, :Title, if: :test_title
-  attribute :own_field
+<span class="k">class</span> <span class="nc">ModelSerializer</span> <span class="o">&lt;</span> <span class="no">Serializer</span><span class="o">::</span><span class="no">Base</span><span class="p">(</span><span class="no">Model</span><span class="p">)</span>
+  <span class="n">attribute</span> <span class="ss">:name</span>
+  <span class="n">attribute</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">:Title</span><span class="p">,</span> <span class="ss">if: :test_title</span>
+  <span class="n">attribute</span> <span class="ss">:own_field</span>
 
-  has_many :children, ChildSerializer
-  has_many :friends, ChildSerializer
+  <span class="n">has_many</span> <span class="ss">:children</span><span class="p">,</span> <span class="no">ChildSerializer</span>
+  <span class="n">has_many</span> <span class="ss">:friends</span><span class="p">,</span> <span class="no">ChildSerializer</span>
 
-  def test_title(object, options)
-    options.nil? || !options[:test]?
-  end
+  <span class="k">def</span> <span class="nf">test_title</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+    <span class="n">options</span><span class="p">.</span><span class="nf">nil?</span> <span class="o">||</span> <span class="o">!</span><span class="n">options</span><span class="p">[</span><span class="ss">:test</span><span class="p">]?</span>
+  <span class="k">end</span>
 
-  def own_field
-    12
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">own_field</span>
+    <span class="mi">12</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <h3 id="attributes">Attributes</h3>
 
-<p>To specify what should be serialized <code class="highlighter-rouge">attributes</code> and <code class="highlighter-rouge">attribute</code> macros are used. <code class="highlighter-rouge">attributes</code> allows to pass a list of attribute names which maps one-to-one with JSON keys</p>
+<p>To specify what should be serialized <code class="language-plaintext highlighter-rouge">attributes</code> and <code class="language-plaintext highlighter-rouge">attribute</code> macros are used. <code class="language-plaintext highlighter-rouge">attributes</code> allows to pass a list of attribute names which maps one-to-one with JSON keys</p>
 
-<pre><code class="language-crystal">class PostSerializer
-  attributes :title, body
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PostSerializer</span>
+  <span class="n">attributes</span> <span class="ss">:title</span><span class="p">,</span> <span class="n">body</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>Above serializer will produce next output <code class="highlighter-rouge">{"title": "Some title", "body": "Post body"}</code>. You can precisely configure every field using <code class="highlighter-rouge">attribute</code> macro. It allows to specify <code class="highlighter-rouge">key</code> name to be used in JSON and <code class="highlighter-rouge">if</code> predicate method name to be used to check whether field should be serialized.</p>
+<p>Above serializer will produce next output <code class="language-plaintext highlighter-rouge">{"title": "Some title", "body": "Post body"}</code>. You can precisely configure every field using <code class="language-plaintext highlighter-rouge">attribute</code> macro. It allows to specify <code class="language-plaintext highlighter-rouge">key</code> name to be used in JSON and <code class="language-plaintext highlighter-rouge">if</code> predicate method name to be used to check whether field should be serialized.</p>
 
-<pre><code class="language-crystal">class ModelSerializer &lt; Serializer::Base(Model)
-  attribute :title, :Title, if: :test_title
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ModelSerializer</span> <span class="o">&lt;</span> <span class="no">Serializer</span><span class="o">::</span><span class="no">Base</span><span class="p">(</span><span class="no">Model</span><span class="p">)</span>
+  <span class="n">attribute</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">:Title</span><span class="p">,</span> <span class="ss">if: :test_title</span>
 
-  def test_title(object, options)
-    options.nil? || !options[:test]?
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">test_title</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+    <span class="n">options</span><span class="p">.</span><span class="nf">nil?</span> <span class="o">||</span> <span class="o">!</span><span class="n">options</span><span class="p">[</span><span class="ss">:test</span><span class="p">]?</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>Above serializer will produce next output <code class="highlighter-rouge">{"Title": "Some title"}</code> if serializer has got options without <code class="highlighter-rouge">test</code> set to <code class="highlighter-rouge">true</code>.</p>
+<p>Above serializer will produce next output <code class="language-plaintext highlighter-rouge">{"Title": "Some title"}</code> if serializer has got options without <code class="language-plaintext highlighter-rouge">test</code> set to <code class="language-plaintext highlighter-rouge">true</code>.</p>
 
 <p>If serializer has a method with the same name as specified field - it is used.</p>
 
-<pre><code class="language-crystal">class ModelSerializer &lt; Serializer::Base(Model)
-  attribute :name
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ModelSerializer</span> <span class="o">&lt;</span> <span class="no">Serializer</span><span class="o">::</span><span class="no">Base</span><span class="p">(</span><span class="no">Model</span><span class="p">)</span>
+  <span class="n">attribute</span> <span class="ss">:name</span>
 
-  def name
-    "StaticName"
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">name</span>
+    <span class="s2">"StaticName"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <h3 id="relations">Relations</h3>
 
-<p>If resource has underlying resources to serialize they can be specified with <code class="highlighter-rouge">has_one</code>, <code class="highlighter-rouge">belongs_to</code> and <code class="highlighter-rouge">has_many</code> macro methods that describes relation type between them (one-to-one, one-to-any and one-to-many).</p>
+<p>If resource has underlying resources to serialize they can be specified with <code class="language-plaintext highlighter-rouge">has_one</code>, <code class="language-plaintext highlighter-rouge">belongs_to</code> and <code class="language-plaintext highlighter-rouge">has_many</code> macro methods that describes relation type between them (one-to-one, one-to-any and one-to-many).</p>
 
-<pre><code class="language-crystal">class ModelSerializer &lt; Serializer::Base(Model)
-  has_many :friends, ChildSerializer
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ModelSerializer</span> <span class="o">&lt;</span> <span class="no">Serializer</span><span class="o">::</span><span class="no">Base</span><span class="p">(</span><span class="no">Model</span><span class="p">)</span>
+  <span class="n">has_many</span> <span class="ss">:friends</span><span class="p">,</span> <span class="no">ChildSerializer</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>They also accepts <code class="highlighter-rouge">key</code> option. There is no <code class="highlighter-rouge">if</code> support because associations by default isn’t rendered.</p>
+<p>They also accepts <code class="language-plaintext highlighter-rouge">key</code> option. There is no <code class="language-plaintext highlighter-rouge">if</code> support because associations by default isn’t rendered.</p>
 
 <h3 id="meta">Meta</h3>
 
-<p>Resource meta data can be defined at it’s level - overriding <code class="highlighter-rouge">.meta</code> method.</p>
+<p>Resource meta data can be defined at it’s level - overriding <code class="language-plaintext highlighter-rouge">.meta</code> method.</p>
 
-<pre><code class="language-crystal">class ModelSerializer &lt; Serializer::Base(Model)
-  def self.meta(options)
-    {
-      :page =&gt; options[:page]
-    }
-  end
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ModelSerializer</span> <span class="o">&lt;</span> <span class="no">Serializer</span><span class="o">::</span><span class="no">Base</span><span class="p">(</span><span class="no">Model</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">meta</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="ss">:page</span> <span class="o">=&gt;</span> <span class="n">options</span><span class="p">[</span><span class="ss">:page</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>Method return value should be <code class="highlighter-rouge">Hash(Symbol, JSON::Any::Type | Int32)</code>. Also any additional meta attributes may be defined at serialization moment (calling <code class="highlighter-rouge">#serialize</code> method).</p>
+<p>Method return value should be <code class="language-plaintext highlighter-rouge">Hash(Symbol, JSON::Any::Type | Int32)</code>. Also any additional meta attributes may be defined at serialization moment (calling <code class="language-plaintext highlighter-rouge">#serialize</code> method).</p>
 
 <h3 id="inheritance">Inheritance</h3>
 
 <p>If you have complicated domain object relation structure - you can easily present serialization logic using inheritance:</p>
 
-<pre><code class="language-crystal">class ModelSerializer &lt; Serializer::Base(Model)
-  attribute :name
-end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ModelSerializer</span> <span class="o">&lt;</span> <span class="no">Serializer</span><span class="o">::</span><span class="no">Base</span><span class="p">(</span><span class="no">Model</span><span class="p">)</span>
+  <span class="n">attribute</span> <span class="ss">:name</span>
+<span class="k">end</span>
 
-class InheritedSerializer &lt; ModelSerializer
-  attribute :inherited_field
+<span class="k">class</span> <span class="nc">InheritedSerializer</span> <span class="o">&lt;</span> <span class="no">ModelSerializer</span>
+  <span class="n">attribute</span> <span class="ss">:inherited_field</span>
 
-  def inherited_field
-    1.23
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">inherited_field</span>
+    <span class="mf">1.23</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <h3 id="rendering">Rendering</h3>
 
-<p>To render resource create an instance of required serializer and call <code class="highlighter-rouge">#serialize</code>:</p>
+<p>To render resource create an instance of required serializer and call <code class="language-plaintext highlighter-rouge">#serialize</code>:</p>
 
-<pre><code class="language-crystal">ModelSerializer.new(model).serialize
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">ModelSerializer</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">model</span><span class="p">).</span><span class="nf">serialize</span>
+</code></pre></div></div>
 
 <p>It accepts several optional arguments:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">except</code> - array of fields that should not be serialized;</li>
-  <li><code class="highlighter-rouge">includes</code> - relations that should be included into serialized string;</li>
-  <li><code class="highlighter-rouge">opts</code> - options that will be passed to <em>if</em> predicate methods and <code class="highlighter-rouge">.meta</code>;</li>
-  <li><code class="highlighter-rouge">meta</code> - meta attributes to be added under <code class="highlighter-rouge">"meta"</code> key at root level; it is merged into default meta attributes returned by <code class="highlighter-rouge">.meta</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">except</code> - array of fields that should not be serialized;</li>
+  <li><code class="language-plaintext highlighter-rouge">includes</code> - relations that should be included into serialized string;</li>
+  <li><code class="language-plaintext highlighter-rouge">opts</code> - options that will be passed to <em>if</em> predicate methods and <code class="language-plaintext highlighter-rouge">.meta</code>;</li>
+  <li><code class="language-plaintext highlighter-rouge">meta</code> - meta attributes to be added under <code class="language-plaintext highlighter-rouge">"meta"</code> key at root level; it is merged into default meta attributes returned by <code class="language-plaintext highlighter-rouge">.meta</code>.</li>
 </ul>
 
-<pre><code class="language-crystal">ModelSerializer.new(model).serialize(
-  except: [:own_field],
-  includes: {
-    :children =&gt; [:some_sub_relation],
-    :friends =&gt; { :address =&gt; nil, :dipper =&gt; [:some_sub_relation] }
-  },
-  meta: { :page =&gt; 0 }
-)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">ModelSerializer</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">model</span><span class="p">).</span><span class="nf">serialize</span><span class="p">(</span>
+  <span class="ss">except: </span><span class="p">[</span><span class="ss">:own_field</span><span class="p">],</span>
+  <span class="ss">includes: </span><span class="p">{</span>
+    <span class="ss">:children</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:some_sub_relation</span><span class="p">],</span>
+    <span class="ss">:friends</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:address</span> <span class="o">=&gt;</span> <span class="kp">nil</span><span class="p">,</span> <span class="ss">:dipper</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:some_sub_relation</span><span class="p">]</span> <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="ss">meta: </span><span class="p">{</span> <span class="ss">:page</span> <span class="o">=&gt;</span> <span class="mi">0</span> <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div></div>
 
-<p><code class="highlighter-rouge">includes</code> should be array or hash (any levels deep) which elements presents relation names to be serialized. <code class="highlighter-rouge">nil</code> value may be used in hashes as a value to define that nothing additional should be serialized for a relation named by corresponding key.</p>
+<p><code class="language-plaintext highlighter-rouge">includes</code> should be array or hash (any levels deep) which elements presents relation names to be serialized. <code class="language-plaintext highlighter-rouge">nil</code> value may be used in hashes as a value to define that nothing additional should be serialized for a relation named by corresponding key.</p>
 
 <p>Example above results in:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Title"</span><span class="p">:</span><span class="s2">"asd"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"children"</span><span class="p">:[],</span><span class="w">
-    </span><span class="s2">"friends"</span><span class="p">:[</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Title"</span><span class="p">:</span><span class="s2">"asd"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"children"</span><span class="p">:[],</span><span class="w">
+    </span><span class="nl">"friends"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"age"</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"address"</span><span class="p">:{</span><span class="w">
-          </span><span class="s2">"street"</span><span class="p">:</span><span class="s2">"some street"</span><span class="w">
+        </span><span class="nl">"age"</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:{</span><span class="w">
+          </span><span class="nl">"street"</span><span class="p">:</span><span class="s2">"some street"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"dipper"</span><span class="p">:{</span><span class="w">
-          </span><span class="s2">"age"</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"some_sub_relation"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+        </span><span class="nl">"dipper"</span><span class="p">:{</span><span class="w">
+          </span><span class="nl">"age"</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"some_sub_relation"</span><span class="p">:</span><span class="kc">null</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"meta"</span><span class="p">:{</span><span class="w">
-    </span><span class="s2">"page"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"page"</span><span class="p">:</span><span class="mi">0</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -265,16 +267,16 @@ end
 
 <h4 id="root-key">Root key</h4>
 
-<p>Serialized JSON root level includes <code class="highlighter-rouge">data</code> key (and optional <code class="highlighter-rouge">meta</code> key). It can be renamed to anything by defining <code class="highlighter-rouge">.root_key</code></p>
+<p>Serialized JSON root level includes <code class="language-plaintext highlighter-rouge">data</code> key (and optional <code class="language-plaintext highlighter-rouge">meta</code> key). It can be renamed to anything by defining <code class="language-plaintext highlighter-rouge">.root_key</code></p>
 
-<pre><code class="language-crystal">class ModelSerializer &lt; Serializer::Base(Model)
-  def self.root_key
-    "model"
-  end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ModelSerializer</span> <span class="o">&lt;</span> <span class="no">Serializer</span><span class="o">::</span><span class="no">Base</span><span class="p">(</span><span class="no">Model</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">root_key</span>
+    <span class="s2">"model"</span>
+  <span class="k">end</span>
 
-  attribute :name
-end
-</code></pre>
+  <span class="n">attribute</span> <span class="ss">:name</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>For API details see <a href="https://imdrasil.github.io/serializer/latest/serializer">documentation</a>.</p>
 
@@ -282,9 +284,9 @@ end
 
 <ol>
   <li>Fork it (<a href="https://github.com/imdrasil/serializer/fork">https://github.com/imdrasil/serializer/fork</a>)</li>
-  <li>Create your feature branch (<code class="highlighter-rouge">git checkout -b my-new-feature</code>)</li>
-  <li>Commit your changes (<code class="highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
-  <li>Push to the branch (<code class="highlighter-rouge">git push origin my-new-feature</code>)</li>
+  <li>Create your feature branch (<code class="language-plaintext highlighter-rouge">git checkout -b my-new-feature</code>)</li>
+  <li>Commit your changes (<code class="language-plaintext highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
+  <li>Push to the branch (<code class="language-plaintext highlighter-rouge">git push origin my-new-feature</code>)</li>
   <li>Create a new Pull Request</li>
 </ol>
 

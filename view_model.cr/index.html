@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>ViewModel | Imdrasil Homebrew Stuff</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="ViewModel" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/view_model.cr/" />
 <meta property="og:url" content="https://imdrasil.github.io/view_model.cr/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ViewModel" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"ViewModel","url":"https://imdrasil.github.io/view_model.cr/","@context":"http://schema.org"}</script>
+{"headline":"ViewModel","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/view_model.cr/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -36,14 +38,14 @@
 
 <h2 id="installation">Installation</h2>
 
-<p>Add this to your application’s <code class="highlighter-rouge">shard.yml</code>:</p>
+<p>Add this to your application’s <code class="language-plaintext highlighter-rouge">shard.yml</code>:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">view_object</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/view_model.cr</span>
 </code></pre></div></div>
 
-<p>It uses <code class="highlighter-rouge">kilt</code> for template rendering so you also need to add template engine you want to use and require it as well.</p>
+<p>It uses <code class="language-plaintext highlighter-rouge">kilt</code> for template rendering so you also need to add template engine you want to use and require it as well.</p>
 
 <h2 id="usage">Usage</h2>
 
@@ -53,28 +55,28 @@
 
 <p>To do that load ViewModel</p>
 
-<pre><code class="language-crystal">require "view_model"
-require "kilt/slang" # or any other template engine supported by kilt
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"view_model"</span>
+<span class="nb">require</span> <span class="s2">"kilt/slang"</span> <span class="c1"># or any other template engine supported by kilt</span>
+</code></pre></div></div>
 
 <p>Create a base view class:</p>
 
-<pre><code class="language-crystal">class ApplicationView &lt; ViewModel::Base
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ApplicationView</span> <span class="o">&lt;</span> <span class="no">ViewModel</span><span class="o">::</span><span class="no">Base</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>By default layout path is <code class="highlighter-rouge">"src/views/layouts/layout.slang"</code> but this can be easily redefined by <code class="highlighter-rouge">.layout</code> macro:</p>
+<p>By default layout path is <code class="language-plaintext highlighter-rouge">"src/views/layouts/layout.slang"</code> but this can be easily redefined by <code class="language-plaintext highlighter-rouge">.layout</code> macro:</p>
 
-<pre><code class="language-crystal">class ApplicationView &lt; ViewModel::Base
-  layout "app/views/layouts/layout"
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ApplicationView</span> <span class="o">&lt;</span> <span class="no">ViewModel</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">layout</span> <span class="s2">"app/views/layouts/layout"</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <blockquote>
   <p>Pay special attention - layout path doesn’t include file extension.</p>
 </blockquote>
 
-<p>If you’d like to render your view without a layout - pass <code class="highlighter-rouge">false</code> as an argument.</p>
+<p>If you’d like to render your view without a layout - pass <code class="language-plaintext highlighter-rouge">false</code> as an argument.</p>
 
 <p>Next define specified layout:</p>
 
@@ -85,21 +87,21 @@ end
     - yield_content
 </code></pre>
 
-<p><code class="highlighter-rouge">yield_content</code> macro is just a alias for <code class="highlighter-rouge">yield(__kilt_io__)</code> - it yields <code class="highlighter-rouge">IO</code> to view <code class="highlighter-rouge">#content</code> method which renders content.</p>
+<p><code class="language-plaintext highlighter-rouge">yield_content</code> macro is just a alias for <code class="language-plaintext highlighter-rouge">yield(__kilt_io__)</code> - it yields <code class="language-plaintext highlighter-rouge">IO</code> to view <code class="language-plaintext highlighter-rouge">#content</code> method which renders content.</p>
 
 <p>Now we can specify a view class.</p>
 
-<pre><code class="language-crystal"># src/views/posts/show_view.cr
-module Posts
-  class ShowView &lt; ViewModel::Base
-    model post : Post
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># src/views/posts/show_view.cr</span>
+<span class="k">module</span> <span class="nn">Posts</span>
+  <span class="k">class</span> <span class="nc">ShowView</span> <span class="o">&lt;</span> <span class="no">ViewModel</span><span class="o">::</span><span class="no">Base</span>
+    <span class="n">model</span> <span class="n">post</span> <span class="p">:</span> <span class="no">Post</span>
 
-    delegate :title, :content, to: post
-  end
-end
-</code></pre>
+    <span class="n">delegate</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">:content</span><span class="p">,</span> <span class="ss">to: </span><span class="n">post</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p><code class="highlighter-rouge">.model</code> macro creates getter for given attributes and generates constructor accepting them.</p>
+<p><code class="language-plaintext highlighter-rouge">.model</code> macro creates getter for given attributes and generates constructor accepting them.</p>
 
 <p>Content for a post object:</p>
 
@@ -109,37 +111,37 @@ end
   = content
 </code></pre>
 
-<p>By a convention this template file should be located in <code class="highlighter-rouge">&lt;view_class_folder&gt;/&lt;view_class_name_without_view/content.slang&gt;</code>, in our case it will be <code class="highlighter-rouge">src/views/posts/show/content.slang</code>.</p>
+<p>By a convention this template file should be located in <code class="language-plaintext highlighter-rouge">&lt;view_class_folder&gt;/&lt;view_class_name_without_view/content.slang&gt;</code>, in our case it will be <code class="language-plaintext highlighter-rouge">src/views/posts/show/content.slang</code>.</p>
 
-<p>For a view rendering <code class="highlighter-rouge">.view</code> macro can be used - just pass view name and required arguments:</p>
+<p>For a view rendering <code class="language-plaintext highlighter-rouge">.view</code> macro can be used - just pass view name and required arguments:</p>
 
-<pre><code class="language-crystal">view("posts/show", post)
-# or for a collection
-collection_view("posts/show", posts)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">view</span><span class="p">(</span><span class="s2">"posts/show"</span><span class="p">,</span> <span class="n">post</span><span class="p">)</span>
+<span class="c1"># or for a collection</span>
+<span class="n">collection_view</span><span class="p">(</span><span class="s2">"posts/show"</span><span class="p">,</span> <span class="n">posts</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h3 id="partials">Partials</h3>
 
-<p>If you would like to define some shared templates or separate your view into several partials use <code class="highlighter-rouge">.def_partial</code> macro:</p>
+<p>If you would like to define some shared templates or separate your view into several partials use <code class="language-plaintext highlighter-rouge">.def_partial</code> macro:</p>
 
-<pre><code class="language-crystal">module SharedPartials
-  include ViewModel::Helpers
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">SharedPartials</span>
+  <span class="kp">include</span> <span class="no">ViewModel</span><span class="o">::</span><span class="no">Helpers</span>
 
-  def_partial button, color
-end
+  <span class="k">def</span><span class="nf">_partial</span> <span class="n">button</span><span class="p">,</span> <span class="n">color</span>
+<span class="k">end</span>
 
-module Posts
-  class ShowView &lt; ApplicationView
-    include SharedPartials
+<span class="k">module</span> <span class="nn">Posts</span>
+  <span class="k">class</span> <span class="nc">ShowView</span> <span class="o">&lt;</span> <span class="no">ApplicationView</span>
+    <span class="kp">include</span> <span class="no">SharedPartials</span>
 
-    def_partial body
-  end
-end
-</code></pre>
+    <span class="k">def</span><span class="nf">_partial</span> <span class="n">body</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>If you need to define a module with partials - include <code class="highlighter-rouge">ViewModel::Helpers</code> module into it. <code class="highlighter-rouge">.def_partial</code> accepts partial name as a first argument and partial arguments as all others. All partial template paths are calculated same was as for content files of view objects. The only difference is that partial files name has a <code class="highlighter-rouge">_</code> symbol prefix: <code class="highlighter-rouge">src/views/shared_partials/_button.slang</code>.</p>
+<p>If you need to define a module with partials - include <code class="language-plaintext highlighter-rouge">ViewModel::Helpers</code> module into it. <code class="language-plaintext highlighter-rouge">.def_partial</code> accepts partial name as a first argument and partial arguments as all others. All partial template paths are calculated same was as for content files of view objects. The only difference is that partial files name has a <code class="language-plaintext highlighter-rouge">_</code> symbol prefix: <code class="language-plaintext highlighter-rouge">src/views/shared_partials/_button.slang</code>.</p>
 
-<p>To render a partial use <code class="highlighter-rouge">.render_partial</code> macro:</p>
+<p>To render a partial use <code class="language-plaintext highlighter-rouge">.render_partial</code> macro:</p>
 
 <pre><code class="language-slang">.buttons
   - render_partial :button, :read
@@ -147,27 +149,27 @@ end
 
 <h3 id="html-helpers">Html helpers</h3>
 
-<p>Also this shard provides HTML helper methods. All methods are automatically included in <code class="highlighter-rouge">ViewModel::Base</code>.</p>
+<p>Also this shard provides HTML helper methods. All methods are automatically included in <code class="language-plaintext highlighter-rouge">ViewModel::Base</code>.</p>
 
 <p>Methods description:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">content_tag</code> - builds given tag with given options; could accept block for nested content</li>
-  <li><code class="highlighter-rouge">link_to</code> - builds link</li>
-  <li><code class="highlighter-rouge">label_tag</code> - builds <code class="highlighter-rouge">label</code></li>
-  <li><code class="highlighter-rouge">select_tag</code> - builds <code class="highlighter-rouge">select</code> tag; automatically generates <code class="highlighter-rouge">option</code> tags for given array</li>
-  <li><code class="highlighter-rouge">text_area_tag</code></li>
-  <li><code class="highlighter-rouge">hidden_tag</code></li>
-  <li><code class="highlighter-rouge">text_tag</code></li>
-  <li><code class="highlighter-rouge">submit_tag</code></li>
-  <li><code class="highlighter-rouge">file_tag</code></li>
-  <li><code class="highlighter-rouge">password_tag</code></li>
-  <li><code class="highlighter-rouge">email_tag</code></li>
-  <li><code class="highlighter-rouge">checkbox_tag</code></li>
-  <li><code class="highlighter-rouge">radio_tag</code></li>
-  <li><code class="highlighter-rouge">time_tag</code></li>
-  <li><code class="highlighter-rouge">date_tag</code></li>
-  <li><code class="highlighter-rouge">number_tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">content_tag</code> - builds given tag with given options; could accept block for nested content</li>
+  <li><code class="language-plaintext highlighter-rouge">link_to</code> - builds link</li>
+  <li><code class="language-plaintext highlighter-rouge">label_tag</code> - builds <code class="language-plaintext highlighter-rouge">label</code></li>
+  <li><code class="language-plaintext highlighter-rouge">select_tag</code> - builds <code class="language-plaintext highlighter-rouge">select</code> tag; automatically generates <code class="language-plaintext highlighter-rouge">option</code> tags for given array</li>
+  <li><code class="language-plaintext highlighter-rouge">text_area_tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">hidden_tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">text_tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">submit_tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">file_tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">password_tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">email_tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">checkbox_tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">radio_tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">time_tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">date_tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">number_tag</code></li>
 </ul>
 
 <h4 id="formbuilder">FormBuilder</h4>
@@ -182,15 +184,15 @@ end
     - f.submit "Save"
 </code></pre>
 
-<p><code class="highlighter-rouge">.build_form</code> macro creates <code class="highlighter-rouge">ViewModel::FormBuilder</code> and passes it to the block. Form builder provides a set of methods similar to ones described above. All inputs will get own id and class based on it’s name.</p>
+<p><code class="language-plaintext highlighter-rouge">.build_form</code> macro creates <code class="language-plaintext highlighter-rouge">ViewModel::FormBuilder</code> and passes it to the block. Form builder provides a set of methods similar to ones described above. All inputs will get own id and class based on it’s name.</p>
 
-<p>All form builder methods manipulate <code class="highlighter-rouge">__kilt_io__</code> directly and returns <code class="highlighter-rouge">nil</code> so it isn’t important the way to call them: with <code class="highlighter-rouge">-</code>, <code class="highlighter-rouge">=</code> or <code class="highlighter-rouge">==</code>.</p>
+<p>All form builder methods manipulate <code class="language-plaintext highlighter-rouge">__kilt_io__</code> directly and returns <code class="language-plaintext highlighter-rouge">nil</code> so it isn’t important the way to call them: with <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">=</code> or <code class="language-plaintext highlighter-rouge">==</code>.</p>
 
-<p>If you specify a form method different from <code class="highlighter-rouge">get</code> and <code class="highlighter-rouge">post</code> - form builder will add additional hidden input with name <code class="highlighter-rouge">_method</code> for the given method and set current form method to <code class="highlighter-rouge">post</code>.</p>
+<p>If you specify a form method different from <code class="language-plaintext highlighter-rouge">get</code> and <code class="language-plaintext highlighter-rouge">post</code> - form builder will add additional hidden input with name <code class="language-plaintext highlighter-rouge">_method</code> for the given method and set current form method to <code class="language-plaintext highlighter-rouge">post</code>.</p>
 
 <h3 id="link_to">link_to</h3>
 
-<p>Also HTML helper includes <code class="highlighter-rouge">.link_to</code> macro. It allows to generate <code class="highlighter-rouge">&lt;a&gt;</code> tag with all needed data.</p>
+<p>Also HTML helper includes <code class="language-plaintext highlighter-rouge">.link_to</code> macro. It allows to generate <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> tag with all needed data.</p>
 
 <pre><code class="language-slang">== link_to "Show", "/posts/23", { "class" =&gt; "special-link" }
 
@@ -199,7 +201,7 @@ end
     b Open
 </code></pre>
 
-<p>If you want to make a link to do a non-GET request (e.g. delete button), you can specify <code class="highlighter-rouge">method</code> argument and additionally load <code class="highlighter-rouge">libs/view_model/assets/view_model.js</code> file.</p>
+<p>If you want to make a link to do a non-GET request (e.g. delete button), you can specify <code class="language-plaintext highlighter-rouge">method</code> argument and additionally load <code class="language-plaintext highlighter-rouge">libs/view_model/assets/view_model.js</code> file.</p>
 
 <pre><code class="language-slang">== link_to "delete", "/comments/56", :delete
 </code></pre>
@@ -228,7 +230,7 @@ end
 
 <p>Also if you want to use it in your application (for now shard is almost ready for use in production) - ping me please, my email you can find in my profile.</p>
 
-<p>To run test use regular <code class="highlighter-rouge">crystal spec</code>.</p>
+<p>To run test use regular <code class="language-plaintext highlighter-rouge">crystal spec</code>.</p>
 
 <h2 id="contributors">Contributors</h2>
 

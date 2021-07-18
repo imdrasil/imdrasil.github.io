@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/migration.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/migration.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/migration.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/migration.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -96,27 +98,27 @@
 
 <p>Generator will create template file for you with next name  pattern “timestamp_your_underscored_migration_name.cr”. Empty file looks like this:</p>
 
-<pre><code class="language-crystal">class YourCamelCasedMigrationName &lt; Jennifer::Migration::Base
-  def up
-  end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">YourCamelCasedMigrationName</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Migration</span><span class="o">::</span><span class="no">Base</span>
+  <span class="k">def</span> <span class="nf">up</span>
+  <span class="k">end</span>
 
-  def down
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">down</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p><code class="highlighter-rouge">up</code> method is needed for placing your db changes there, <code class="highlighter-rouge">down</code> - for reverting your changes back.</p>
+<p><code class="language-plaintext highlighter-rouge">up</code> method is needed for placing your db changes there, <code class="language-plaintext highlighter-rouge">down</code> - for reverting your changes back.</p>
 
 <p>Regular example for creating table:</p>
 
-<pre><code class="language-crystal">create_table(:addresses) do |t|
-  # creates field contact_id with Int type, allows null values and creates foreign key
-  t.reference :contact
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_table</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+  <span class="c1"># creates field contact_id with Int type, allows null values and creates foreign key</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">reference</span> <span class="ss">:contact</span>
 
-  t.string :street, {:size =&gt; 20, :sql_type =&gt; "char"} # creates string field with CHAR(20) db type
-  t.bool :main, {:default =&gt; false} # sets false as default value
-end
-</code></pre>
+  <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:street</span><span class="p">,</span> <span class="p">{</span><span class="ss">:size</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">:sql_type</span> <span class="o">=&gt;</span> <span class="s2">"char"</span><span class="p">}</span> <span class="c1"># creates string field with CHAR(20) db type</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">bool</span> <span class="ss">:main</span><span class="p">,</span> <span class="p">{</span><span class="ss">:default</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">}</span> <span class="c1"># sets false as default value</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>There are next methods which presents corresponding types:</p>
 
@@ -131,117 +133,117 @@ end
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">#integer</code></td>
-      <td><code class="highlighter-rouge">int</code></td>
-      <td><code class="highlighter-rouge">int</code></td>
-      <td><code class="highlighter-rouge">Int32</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#integer</code></td>
+      <td><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Int32</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#short</code></td>
-      <td><code class="highlighter-rouge">SMALLINT</code></td>
-      <td><code class="highlighter-rouge">SMALLINT</code></td>
-      <td><code class="highlighter-rouge">Int16</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#short</code></td>
+      <td><code class="language-plaintext highlighter-rouge">SMALLINT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">SMALLINT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Int16</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#bigint</code></td>
-      <td><code class="highlighter-rouge">BIGINT</code></td>
-      <td><code class="highlighter-rouge">BIGINT</code></td>
-      <td><code class="highlighter-rouge">Int64</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#bigint</code></td>
+      <td><code class="language-plaintext highlighter-rouge">BIGINT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">BIGINT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Int64</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#tinyint</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#tinyint</code></td>
       <td>-</td>
-      <td><code class="highlighter-rouge">TINYINT</code></td>
-      <td><code class="highlighter-rouge">Int8</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TINYINT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Int8</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#float</code></td>
-      <td><code class="highlighter-rouge">real</code></td>
-      <td><code class="highlighter-rouge">float</code></td>
-      <td><code class="highlighter-rouge">Float32</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#float</code></td>
+      <td><code class="language-plaintext highlighter-rouge">real</code></td>
+      <td><code class="language-plaintext highlighter-rouge">float</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Float32</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#double</code></td>
-      <td><code class="highlighter-rouge">double precision</code></td>
-      <td><code class="highlighter-rouge">double</code></td>
-      <td><code class="highlighter-rouge">Float64</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#double</code></td>
+      <td><code class="language-plaintext highlighter-rouge">double precision</code></td>
+      <td><code class="language-plaintext highlighter-rouge">double</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Float64</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#numeric</code></td>
-      <td><code class="highlighter-rouge">NUMERIC</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#numeric</code></td>
+      <td><code class="language-plaintext highlighter-rouge">NUMERIC</code></td>
       <td>-</td>
-      <td><code class="highlighter-rouge">PG::Numeric</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PG::Numeric</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#decimal</code></td>
-      <td><code class="highlighter-rouge">DECIMAL</code></td>
-      <td><code class="highlighter-rouge">DECIMAL</code></td>
-      <td><code class="highlighter-rouge">PG::Numeric</code> (pg); <code class="highlighter-rouge">Float64</code> (mysql)</td>
+      <td><code class="language-plaintext highlighter-rouge">#decimal</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DECIMAL</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DECIMAL</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PG::Numeric</code> (pg); <code class="language-plaintext highlighter-rouge">Float64</code> (mysql)</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#string</code></td>
-      <td><code class="highlighter-rouge">varchar(254)</code></td>
-      <td><code class="highlighter-rouge">varchar(254)</code></td>
-      <td><code class="highlighter-rouge">String</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#string</code></td>
+      <td><code class="language-plaintext highlighter-rouge">varchar(254)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">varchar(254)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">String</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#char</code></td>
-      <td><code class="highlighter-rouge">char</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#char</code></td>
+      <td><code class="language-plaintext highlighter-rouge">char</code></td>
       <td>-</td>
-      <td><code class="highlighter-rouge">String</code></td>
+      <td><code class="language-plaintext highlighter-rouge">String</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#text</code></td>
-      <td><code class="highlighter-rouge">TEXT</code></td>
-      <td><code class="highlighter-rouge">TEXT</code></td>
-      <td><code class="highlighter-rouge">String</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#text</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TEXT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TEXT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">String</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#bool</code></td>
-      <td><code class="highlighter-rouge">boolean</code></td>
-      <td><code class="highlighter-rouge">bool</code></td>
-      <td><code class="highlighter-rouge">Bool</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#bool</code></td>
+      <td><code class="language-plaintext highlighter-rouge">boolean</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bool</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Bool</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#timestamp</code></td>
-      <td><code class="highlighter-rouge">timestamp</code></td>
-      <td><code class="highlighter-rouge">datetime</code></td>
-      <td><code class="highlighter-rouge">Time</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#timestamp</code></td>
+      <td><code class="language-plaintext highlighter-rouge">timestamp</code></td>
+      <td><code class="language-plaintext highlighter-rouge">datetime</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Time</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#date_time</code></td>
-      <td><code class="highlighter-rouge">timestamp</code></td>
-      <td><code class="highlighter-rouge">datetime</code></td>
-      <td><code class="highlighter-rouge">Time</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#date_time</code></td>
+      <td><code class="language-plaintext highlighter-rouge">timestamp</code></td>
+      <td><code class="language-plaintext highlighter-rouge">datetime</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Time</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#date</code></td>
-      <td><code class="highlighter-rouge">date</code></td>
-      <td><code class="highlighter-rouge">date</code></td>
-      <td><code class="highlighter-rouge">Time</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#date</code></td>
+      <td><code class="language-plaintext highlighter-rouge">date</code></td>
+      <td><code class="language-plaintext highlighter-rouge">date</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Time</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#blob</code></td>
-      <td><code class="highlighter-rouge">blob</code></td>
-      <td><code class="highlighter-rouge">blob</code></td>
-      <td><code class="highlighter-rouge">Bytes</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#blob</code></td>
+      <td><code class="language-plaintext highlighter-rouge">blob</code></td>
+      <td><code class="language-plaintext highlighter-rouge">blob</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Bytes</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#json</code></td>
-      <td><code class="highlighter-rouge">json</code></td>
-      <td><code class="highlighter-rouge">json</code></td>
-      <td><code class="highlighter-rouge">JSON::Any</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#json</code></td>
+      <td><code class="language-plaintext highlighter-rouge">json</code></td>
+      <td><code class="language-plaintext highlighter-rouge">json</code></td>
+      <td><code class="language-plaintext highlighter-rouge">JSON::Any</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#enum</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#enum</code></td>
       <td>-</td>
-      <td><code class="highlighter-rouge">ENUM</code></td>
-      <td><code class="highlighter-rouge">String</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ENUM</code></td>
+      <td><code class="language-plaintext highlighter-rouge">String</code></td>
     </tr>
   </tbody>
 </table>
 
-<p>In Postgres enum type is defined using custom user datatype which also is mapped to the <code class="highlighter-rouge">String</code>.</p>
+<p>In Postgres enum type is defined using custom user datatype which also is mapped to the <code class="language-plaintext highlighter-rouge">String</code>.</p>
 
 <p>PostgreSQL specific datatypes:</p>
 
@@ -255,231 +257,231 @@ end
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">#oid</code></td>
-      <td><code class="highlighter-rouge">OID</code></td>
-      <td><code class="highlighter-rouge">UInt32</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#oid</code></td>
+      <td><code class="language-plaintext highlighter-rouge">OID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">UInt32</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#jsonb</code></td>
-      <td><code class="highlighter-rouge">JSONB</code></td>
-      <td><code class="highlighter-rouge">JSON::Any</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#jsonb</code></td>
+      <td><code class="language-plaintext highlighter-rouge">JSONB</code></td>
+      <td><code class="language-plaintext highlighter-rouge">JSON::Any</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#xml</code></td>
-      <td><code class="highlighter-rouge">XML</code></td>
-      <td><code class="highlighter-rouge">String</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#xml</code></td>
+      <td><code class="language-plaintext highlighter-rouge">XML</code></td>
+      <td><code class="language-plaintext highlighter-rouge">String</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#blchar</code></td>
-      <td><code class="highlighter-rouge">BLCHAR</code></td>
-      <td><code class="highlighter-rouge">String</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#blchar</code></td>
+      <td><code class="language-plaintext highlighter-rouge">BLCHAR</code></td>
+      <td><code class="language-plaintext highlighter-rouge">String</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#uuid</code></td>
-      <td><code class="highlighter-rouge">UUID</code></td>
-      <td><code class="highlighter-rouge">UUID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#uuid</code></td>
+      <td><code class="language-plaintext highlighter-rouge">UUID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">UUID</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#timestampz</code></td>
-      <td><code class="highlighter-rouge">TIMESTAMPZ</code></td>
-      <td><code class="highlighter-rouge">Time</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#timestampz</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TIMESTAMPZ</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Time</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#point</code></td>
-      <td><code class="highlighter-rouge">POINT</code></td>
-      <td><code class="highlighter-rouge">PG::Geo::Point</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#point</code></td>
+      <td><code class="language-plaintext highlighter-rouge">POINT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PG::Geo::Point</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#lseg</code></td>
-      <td><code class="highlighter-rouge">lseg</code></td>
-      <td><code class="highlighter-rouge">PG::Geo::LineSegment</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#lseg</code></td>
+      <td><code class="language-plaintext highlighter-rouge">lseg</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PG::Geo::LineSegment</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#path</code></td>
-      <td><code class="highlighter-rouge">PATH</code></td>
-      <td><code class="highlighter-rouge">PG::Geo::Path</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#path</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PATH</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PG::Geo::Path</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#box</code></td>
-      <td><code class="highlighter-rouge">BOX</code></td>
-      <td><code class="highlighter-rouge">PG::Geo::Box</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#box</code></td>
+      <td><code class="language-plaintext highlighter-rouge">BOX</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PG::Geo::Box</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#polygon</code></td>
-      <td><code class="highlighter-rouge">POLYGON</code></td>
-      <td><code class="highlighter-rouge">PG::Geo::Polygon</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#polygon</code></td>
+      <td><code class="language-plaintext highlighter-rouge">POLYGON</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PG::Geo::Polygon</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#line</code></td>
-      <td><code class="highlighter-rouge">LINE</code></td>
-      <td><code class="highlighter-rouge">PG::Geo::Line</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#line</code></td>
+      <td><code class="language-plaintext highlighter-rouge">LINE</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PG::Geo::Line</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#circle</code></td>
-      <td><code class="highlighter-rouge">CIRCLE</code></td>
-      <td><code class="highlighter-rouge">PG::Geo::Circle</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#circle</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CIRCLE</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PG::Geo::Circle</code></td>
     </tr>
   </tbody>
 </table>
 
-<p>Also if you use postgres array types are available as well: <code class="highlighter-rouge">Array(Int32)</code>, <code class="highlighter-rouge">Array(Char)</code>, <code class="highlighter-rouge">Array(Float32)</code>,  <code class="highlighter-rouge">Array(Float64)</code>, <code class="highlighter-rouge">Array(Int16)</code>, <code class="highlighter-rouge">Array(Int32)</code>, <code class="highlighter-rouge">Array(Int64)</code>, <code class="highlighter-rouge">Array(String)</code>.</p>
+<p>Also if you use postgres array types are available as well: <code class="language-plaintext highlighter-rouge">Array(Int32)</code>, <code class="language-plaintext highlighter-rouge">Array(Char)</code>, <code class="language-plaintext highlighter-rouge">Array(Float32)</code>,  <code class="language-plaintext highlighter-rouge">Array(Float64)</code>, <code class="language-plaintext highlighter-rouge">Array(Int16)</code>, <code class="language-plaintext highlighter-rouge">Array(Int32)</code>, <code class="language-plaintext highlighter-rouge">Array(Int64)</code>, <code class="language-plaintext highlighter-rouge">Array(String)</code>.</p>
 
 <p>All those methods accepts additional options:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">:sql_type</code> - gets exact (except size) field type;</li>
-  <li><code class="highlighter-rouge">:null</code> - present nullable if field (by default is <code class="highlighter-rouge">false</code> for all types and field);</li>
-  <li><code class="highlighter-rouge">:primary</code> - marks field as primary key field (could be several ones but this provides some bugs with query generation for such model - for now try to avoid this).</li>
-  <li><code class="highlighter-rouge">:default</code> - default value for field</li>
-  <li><code class="highlighter-rouge">:auto_increment</code> - marks field to use auto increment (properly works only with <code class="highlighter-rouge">Int32</code> fields, another crystal types have cut functionality for it);</li>
-  <li><code class="highlighter-rouge">:array</code> - mark field to be array type (postgres only)</li>
+  <li><code class="language-plaintext highlighter-rouge">:sql_type</code> - gets exact (except size) field type;</li>
+  <li><code class="language-plaintext highlighter-rouge">:null</code> - present nullable if field (by default is <code class="language-plaintext highlighter-rouge">false</code> for all types and field);</li>
+  <li><code class="language-plaintext highlighter-rouge">:primary</code> - marks field as primary key field (could be several ones but this provides some bugs with query generation for such model - for now try to avoid this).</li>
+  <li><code class="language-plaintext highlighter-rouge">:default</code> - default value for field</li>
+  <li><code class="language-plaintext highlighter-rouge">:auto_increment</code> - marks field to use auto increment (properly works only with <code class="language-plaintext highlighter-rouge">Int32</code> fields, another crystal types have cut functionality for it);</li>
+  <li><code class="language-plaintext highlighter-rouge">:array</code> - mark field to be array type (postgres only)</li>
 </ul>
 
-<p>Also there is <code class="highlighter-rouge">#field</code> method which allows to directly define SQL type.</p>
+<p>Also there is <code class="language-plaintext highlighter-rouge">#field</code> method which allows to directly define SQL type.</p>
 
-<p>To define reference to other table you can use <code class="highlighter-rouge">#reference</code>:</p>
+<p>To define reference to other table you can use <code class="language-plaintext highlighter-rouge">#reference</code>:</p>
 
-<pre><code class="language-crystal">create_table :pictures do |t|
-  t.reference :user
-  t.reference :attachable, { :polymorphic =&gt; true } # for polymorphic relation
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_table</span> <span class="ss">:pictures</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">reference</span> <span class="ss">:user</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">reference</span> <span class="ss">:attachable</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:polymorphic</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="p">}</span> <span class="c1"># for polymorphic relation</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>For more details about this and other methods see <a href="https://imdrasil.github.io/jennifer.cr/latest/Jennifer/Migration/TableBuilder/CreateTable.html"><code class="highlighter-rouge">Jennifer::Migration::TableBuilder::CreateTable</code></a></p>
+<p>For more details about this and other methods see <a href="https://imdrasil.github.io/jennifer.cr/latest/Jennifer/Migration/TableBuilder/CreateTable.html"><code class="language-plaintext highlighter-rouge">Jennifer::Migration::TableBuilder::CreateTable</code></a></p>
 
 <p>To drop table just write:</p>
 
-<pre><code class="language-crystal">drop_table(:addresses)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop_table</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>To create materialized view (postgres only):</p>
 
-<pre><code class="language-crystal">create_materialized_view("female_contacts", Contact.all.where { _gender == "female" })
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_materialized_view</span><span class="p">(</span><span class="s2">"female_contacts"</span><span class="p">,</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_gender</span> <span class="o">==</span> <span class="s2">"female"</span> <span class="p">})</span>
+</code></pre></div></div>
 
 <p>And to drop it:</p>
 
-<pre><code class="language-crystal">drop_materialized_view("female_contacts")
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop_materialized_view</span><span class="p">(</span><span class="s2">"female_contacts"</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>To alter existing table use next methods:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">#change_column</code> - to change column definition;</li>
-  <li><code class="highlighter-rouge">#add_column</code> - adds new column;</li>
-  <li><code class="highlighter-rouge">#drop_column</code> - drops existing column;</li>
-  <li><code class="highlighter-rouge">#add_index</code> - adds new index;</li>
-  <li><code class="highlighter-rouge">#drop_index</code> - drops existing index;</li>
-  <li><code class="highlighter-rouge">#add_foreign_key</code> - adds foreign key constraint;</li>
-  <li><code class="highlighter-rouge">drop_foreign_key</code> - drops foreign key constraint;</li>
-  <li><code class="highlighter-rouge">#rename_table</code> - renames table.</li>
+  <li><code class="language-plaintext highlighter-rouge">#change_column</code> - to change column definition;</li>
+  <li><code class="language-plaintext highlighter-rouge">#add_column</code> - adds new column;</li>
+  <li><code class="language-plaintext highlighter-rouge">#drop_column</code> - drops existing column;</li>
+  <li><code class="language-plaintext highlighter-rouge">#add_index</code> - adds new index;</li>
+  <li><code class="language-plaintext highlighter-rouge">#drop_index</code> - drops existing index;</li>
+  <li><code class="language-plaintext highlighter-rouge">#add_foreign_key</code> - adds foreign key constraint;</li>
+  <li><code class="language-plaintext highlighter-rouge">drop_foreign_key</code> - drops foreign key constraint;</li>
+  <li><code class="language-plaintext highlighter-rouge">#rename_table</code> - renames table.</li>
 </ul>
 
-<p>For more details about this and other methods see <a href="https://imdrasil.github.io/jennifer.cr/latest/Jennifer/Migration/TableBuilder/ChangeTable.html"><code class="highlighter-rouge">Jennifer::Migration::TableBuilder::CreateTable</code></a></p>
+<p>For more details about this and other methods see <a href="https://imdrasil.github.io/jennifer.cr/latest/Jennifer/Migration/TableBuilder/ChangeTable.html"><code class="language-plaintext highlighter-rouge">Jennifer::Migration::TableBuilder::CreateTable</code></a></p>
 
 <p>Also next support methods are available:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">#table_exists?</code></li>
-  <li><code class="highlighter-rouge">#index_exists?</code></li>
-  <li><code class="highlighter-rouge">#column_exists?</code></li>
-  <li><code class="highlighter-rouge">#foreign_key_exists?</code></li>
-  <li><code class="highlighter-rouge">#enum_exists?</code> (for postgres ENUM only)</li>
-  <li><code class="highlighter-rouge">#material_view_exists?</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#table_exists?</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#index_exists?</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#column_exists?</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#foreign_key_exists?</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#enum_exists?</code> (for postgres ENUM only)</li>
+  <li><code class="language-plaintext highlighter-rouge">#material_view_exists?</code></li>
 </ul>
 
 <p>Here is a quick example:</p>
 
-<pre><code class="language-crystal">def up
-  change_table(:contacts) do |t|
-    t.change_column(:age, :short, {:default =&gt; 0})
-    t.add_column(:description, :text)
-    t.add_index(:description, type: :uniq, order: :asc)
-  end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">up</span>
+  <span class="n">change_table</span><span class="p">(</span><span class="ss">:contacts</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">change_column</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="ss">:short</span><span class="p">,</span> <span class="p">{</span><span class="ss">:default</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">})</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">add_column</span><span class="p">(</span><span class="ss">:description</span><span class="p">,</span> <span class="ss">:text</span><span class="p">)</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">add_index</span><span class="p">(</span><span class="ss">:description</span><span class="p">,</span> <span class="ss">type: :uniq</span><span class="p">,</span> <span class="ss">order: :asc</span><span class="p">)</span>
+  <span class="k">end</span>
 
-  change_table(:addresses) do |t|
-    t.add_column(:details, :json)
-  end
-end
+  <span class="n">change_table</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">add_column</span><span class="p">(</span><span class="ss">:details</span><span class="p">,</span> <span class="ss">:json</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-def down
-  change_table(:contacts) do |t|
-    t.change_column(:age, :integer, {:default =&gt; 0})
-    t.drop_column(:description)
-  end
+<span class="k">def</span> <span class="nf">down</span>
+  <span class="n">change_table</span><span class="p">(</span><span class="ss">:contacts</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">change_column</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="ss">:integer</span><span class="p">,</span> <span class="p">{</span><span class="ss">:default</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">})</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">drop_column</span><span class="p">(</span><span class="ss">:description</span><span class="p">)</span>
+  <span class="k">end</span>
 
-  change_table(:addresses) do |t|
-    t.drop_column(:details)
-  end
-end
-</code></pre>
+  <span class="n">change_table</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">drop_column</span><span class="p">(</span><span class="ss">:details</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>Also plain SQL could be executed as well:</p>
 
-<pre><code class="language-crystal">exec("ALTER TABLE addresses CHANGE street st VARCHAR(20)")
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">exec</span><span class="p">(</span><span class="s2">"ALTER TABLE addresses CHANGE street st VARCHAR(20)"</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>All changes are executed one by one so you also could add data changes here (in <code class="highlighter-rouge">#up</code> and/or <code class="highlighter-rouge">#down</code>).</p>
+<p>All changes are executed one by one so you also could add data changes here (in <code class="language-plaintext highlighter-rouge">#up</code> and/or <code class="language-plaintext highlighter-rouge">#down</code>).</p>
 
-<p>To be sure that your db is up to date, add <code class="highlighter-rouge">Jennifer::Migration::Runner.migrate</code> in <code class="highlighter-rouge">spec_helper.cr</code>.</p>
+<p>To be sure that your db is up to date, add <code class="language-plaintext highlighter-rouge">Jennifer::Migration::Runner.migrate</code> in <code class="language-plaintext highlighter-rouge">spec_helper.cr</code>.</p>
 
 <h4 id="enum">Enum</h4>
 
 <p>Now enums are supported as well but each adapter has own implementation. For mysql is enough just write down all values:</p>
 
-<pre><code class="language-crystal">create_table(:contacts) do |t|
-  t.enum(:gender, ["male", "female"])
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_table</span><span class="p">(</span><span class="ss">:contacts</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">enum</span><span class="p">(</span><span class="ss">:gender</span><span class="p">,</span> <span class="p">[</span><span class="s2">"male"</span><span class="p">,</span> <span class="s2">"female"</span><span class="p">])</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>Postgres provides much more flexible and complex behavior. Using it you need to create enum firstly:</p>
 
-<pre><code class="language-crystal">create_enum(:gender_enum, ["male", "female"])
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_enum</span><span class="p">(</span><span class="ss">:gender_enum</span><span class="p">,</span> <span class="p">[</span><span class="s2">"male"</span><span class="p">,</span> <span class="s2">"female"</span><span class="p">])</span>
 
-create_table(:contacts) do |t|
-  t.string :name, {:size =&gt; 30}
-  t.integer :age
-  t.field :gender, :gender_enum
-  t.timestamps
-end
+<span class="n">create_table</span><span class="p">(</span><span class="ss">:contacts</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:name</span><span class="p">,</span> <span class="p">{</span><span class="ss">:size</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">}</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">integer</span> <span class="ss">:age</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">field</span> <span class="ss">:gender</span><span class="p">,</span> <span class="ss">:gender_enum</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">timestamps</span>
+<span class="k">end</span>
 
-change_enum(:gender_enum, {:add_values =&gt; ["unknown"]})
-change_enum(:gender_enum, {:rename_values =&gt; ["unknown", "other"]})
-change_enum(:gender_enum, {:remove_values =&gt; ["other"]})
-</code></pre>
+<span class="n">change_enum</span><span class="p">(</span><span class="ss">:gender_enum</span><span class="p">,</span> <span class="p">{</span><span class="ss">:add_values</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"unknown"</span><span class="p">]})</span>
+<span class="n">change_enum</span><span class="p">(</span><span class="ss">:gender_enum</span><span class="p">,</span> <span class="p">{</span><span class="ss">:rename_values</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"unknown"</span><span class="p">,</span> <span class="s2">"other"</span><span class="p">]})</span>
+<span class="n">change_enum</span><span class="p">(</span><span class="ss">:gender_enum</span><span class="p">,</span> <span class="p">{</span><span class="ss">:remove_values</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"other"</span><span class="p">]})</span>
+</code></pre></div></div>
 
 <p>For more details check source code and PostgreSQL docs.</p>
 
 <h2 id="micrate">Micrate</h2>
 
-<p>It it is more convenient to you to store migrations in a plain SQL it is possible to use <a href="">micrate</a> together with Jennifer. To do so you need to add it to you dependencies and add <code class="highlighter-rouge">micrate.cr</code> file at the root (or any other convenient place) of your project with the following content:</p>
+<p>It it is more convenient to you to store migrations in a plain SQL it is possible to use <a href="">micrate</a> together with Jennifer. To do so you need to add it to you dependencies and add <code class="language-plaintext highlighter-rouge">micrate.cr</code> file at the root (or any other convenient place) of your project with the following content:</p>
 
-<pre><code class="language-crystal">require "micrate"
-# Load here the part your your app responsible for Jennifer initialization
-# require "./config/db.cr"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"micrate"</span>
+<span class="c1"># Load here the part your your app responsible for Jennifer initialization</span>
+<span class="c1"># require "./config/db.cr"</span>
 
-# These overrides are required to specify custom `db_dir`
-module Micrate
-  # Add here the path from your app root to the directory with `migration` folder
-  # inside
-  def self.db_dir
-    "db"
-  end
+<span class="c1"># These overrides are required to specify custom `db_dir`</span>
+<span class="k">module</span> <span class="nn">Micrate</span>
+  <span class="c1"># Add here the path from your app root to the directory with `migration` folder</span>
+  <span class="c1"># inside</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">db_dir</span>
+    <span class="s2">"db"</span>
+  <span class="k">end</span>
 
-  private def self.migrations_by_version
-    Dir.entries(migrations_dir)
-      .select { |name| File.file?(File.join(migrations_dir, name)) }
-      .select { |name| /^\d+_.+\.sql$/ =~ name }
-      .map { |name| Migration.from_file(name) }
-      .index_by { |migration| migration.version }
-  end
-end
+  <span class="kp">private</span> <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">migrations_by_version</span>
+    <span class="no">Dir</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="n">migrations_dir</span><span class="p">)</span>
+      <span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="nb">name</span><span class="o">|</span> <span class="no">File</span><span class="p">.</span><span class="nf">file?</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">migrations_dir</span><span class="p">,</span> <span class="nb">name</span><span class="p">))</span> <span class="p">}</span>
+      <span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="nb">name</span><span class="o">|</span> <span class="sr">/^\d+_.+\.sql$/</span> <span class="o">=~</span> <span class="nb">name</span> <span class="p">}</span>
+      <span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="nb">name</span><span class="o">|</span> <span class="no">Migration</span><span class="p">.</span><span class="nf">from_file</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span> <span class="p">}</span>
+      <span class="p">.</span><span class="nf">index_by</span> <span class="p">{</span> <span class="o">|</span><span class="n">migration</span><span class="o">|</span> <span class="n">migration</span><span class="p">.</span><span class="nf">version</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-Micrate::DB.connection_url = Jennifer::Adapter.default_adapter.connection_string(:db)
-puts Dir.
-Micrate::Cli.run
+<span class="no">Micrate</span><span class="o">::</span><span class="no">DB</span><span class="p">.</span><span class="nf">connection_url</span> <span class="o">=</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Adapter</span><span class="p">.</span><span class="nf">default_adapter</span><span class="p">.</span><span class="nf">connection_string</span><span class="p">(</span><span class="ss">:db</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="no">Dir</span><span class="o">.</span>
+<span class="no">Micrate</span><span class="o">::</span><span class="no">Cli</span><span class="p">.</span><span class="nf">run</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p>After this all migration files located in the specified directory is accessible for Micrate and you can use commands like</p>
 

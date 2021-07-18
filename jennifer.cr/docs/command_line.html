@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/command_line.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/command_line.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/command_line.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/command_line.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -92,17 +94,17 @@
 
 <h1 id="command-line">Command Line</h1>
 
-<p>For command management Jennifer uses <a href="https://github.com/imdrasil/sam.cr">Sam</a>. So in your <code class="highlighter-rouge">sam.cr</code> just add loading migrations and Jennifer hooks.</p>
+<p>For command management Jennifer uses <a href="https://github.com/imdrasil/sam.cr">Sam</a>. So in your <code class="language-plaintext highlighter-rouge">sam.cr</code> just add loading migrations and Jennifer hooks.</p>
 
-<pre><code class="language-crystal">require "./your_configuration_folder/*" # with requiring jennifer and her adapter
-require "./migrations/*"
-require "sam"
-load_dependencies "jennifer"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"./your_configuration_folder/*"</span> <span class="c1"># with requiring jennifer and her adapter</span>
+<span class="nb">require</span> <span class="s2">"./migrations/*"</span>
+<span class="nb">require</span> <span class="s2">"sam"</span>
+<span class="n">load_dependencies</span> <span class="s2">"jennifer"</span>
 
-# your custom tasks here
+<span class="c1"># your custom tasks here</span>
 
-Sam.help
-</code></pre>
+<span class="no">Sam</span><span class="p">.</span><span class="nf">help</span>
+</code></pre></div></div>
 
 <h2 id="db-namespace">DB namespace</h2>
 
@@ -135,7 +137,7 @@ Sam.help
 
 <h3 id="dbmigrate">db:migrate</h3>
 
-<p>Runs all pending migrations and stores them in the <code class="highlighter-rouge">versions</code> table. After execution of new migrations database schema is dumped to the <code class="highlighter-rouge">structure.sql</code> file.</p>
+<p>Runs all pending migrations and stores them in the <code class="language-plaintext highlighter-rouge">versions</code> table. After execution of new migrations database schema is dumped to the <code class="language-plaintext highlighter-rouge">structure.sql</code> file.</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> db:migrate
 </code></pre></div></div>
@@ -182,7 +184,7 @@ bases.</p>
 
 <h3 id="dbschemaload">db:schema:load</h3>
 
-<p>Creates database from the <code class="highlighter-rouge">structure.sql</code> file.</p>
+<p>Creates database from the <code class="language-plaintext highlighter-rouge">structure.sql</code> file.</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> db:schema:load
 </code></pre></div></div>
@@ -205,62 +207,62 @@ bases.</p>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crystal sam.cr <span class="nt">--</span> generate:model Article title:string text:text? author:reference
 </code></pre></div></div>
 
-<pre><code class="language-crystal"># ./src/models/article.cr
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ./src/models/article.cr</span>
 
-class Article &lt; Jennifer::Model::Base
-  with_timestamps
+<span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">with_timestamps</span>
 
-  mapping(
-    id: Primary32,
-    title: String,
-    text: String?,
-    author_id: Int32?,
-    created_at: Time?,
-    updated_at: Time?,
-  )
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">title: </span><span class="no">String</span><span class="p">,</span>
+    <span class="ss">text: </span><span class="no">String</span><span class="p">?,</span>
+    <span class="ss">author_id: </span><span class="no">Int32</span><span class="p">?,</span>
+    <span class="ss">created_at: </span><span class="no">Time</span><span class="p">?,</span>
+    <span class="ss">updated_at: </span><span class="no">Time</span><span class="p">?,</span>
+  <span class="p">)</span>
 
-  belongs_to :author, Author
-end
+  <span class="n">belongs_to</span> <span class="p">:</span><span class="n">author</span><span class="p">,</span> <span class="no">Author</span>
+<span class="k">end</span>
 
-# ./db/migrations/&lt;timestamp&gt;_create_articles.cr
+<span class="c1"># ./db/migrations/&lt;timestamp&gt;_create_articles.cr</span>
 
-class CreateArticles &lt; Jennifer::Migration::Base
-  def up
-    create_table :articles do |t|
-      t.string :title, {:null =&gt; false}
-      t.text :text
+<span class="k">class</span> <span class="nc">CreateArticles</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Migration</span><span class="o">::</span><span class="no">Base</span>
+  <span class="k">def</span> <span class="nf">up</span>
+    <span class="n">create_table</span> <span class="p">:</span><span class="n">articles</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="p">:</span><span class="n">title</span><span class="p">,</span> <span class="p">{:</span><span class="n">null</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">}</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:text</span>
 
-      t.reference :author
+      <span class="n">t</span><span class="p">.</span><span class="nf">reference</span> <span class="ss">:author</span>
 
-      t.timestamps
-    end
-  end
+      <span class="n">t</span><span class="p">.</span><span class="nf">timestamps</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
 
-  def down
-    drop_table :articles if table_exists? :articles
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">down</span>
+    <span class="n">drop_table</span> <span class="ss">:articles</span> <span class="k">if</span> <span class="n">table_exists?</span> <span class="ss">:articles</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>Available types:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">bool</code></li>
-  <li><code class="highlighter-rouge">bigint</code></li>
-  <li><code class="highlighter-rouge">integer</code></li>
-  <li><code class="highlighter-rouge">short</code></li>
-  <li><code class="highlighter-rouge">tinyint</code></li>
-  <li><code class="highlighter-rouge">float</code></li>
-  <li><code class="highlighter-rouge">double</code></li>
-  <li><code class="highlighter-rouge">string</code></li>
-  <li><code class="highlighter-rouge">text</code></li>
-  <li><code class="highlighter-rouge">timestamp</code></li>
-  <li><code class="highlighter-rouge">date_time</code></li>
-  <li><code class="highlighter-rouge">json</code></li>
-  <li><code class="highlighter-rouge">reference</code></li>
+  <li><code class="language-plaintext highlighter-rouge">bool</code></li>
+  <li><code class="language-plaintext highlighter-rouge">bigint</code></li>
+  <li><code class="language-plaintext highlighter-rouge">integer</code></li>
+  <li><code class="language-plaintext highlighter-rouge">short</code></li>
+  <li><code class="language-plaintext highlighter-rouge">tinyint</code></li>
+  <li><code class="language-plaintext highlighter-rouge">float</code></li>
+  <li><code class="language-plaintext highlighter-rouge">double</code></li>
+  <li><code class="language-plaintext highlighter-rouge">string</code></li>
+  <li><code class="language-plaintext highlighter-rouge">text</code></li>
+  <li><code class="language-plaintext highlighter-rouge">timestamp</code></li>
+  <li><code class="language-plaintext highlighter-rouge">date_time</code></li>
+  <li><code class="language-plaintext highlighter-rouge">json</code></li>
+  <li><code class="language-plaintext highlighter-rouge">reference</code></li>
 </ul>
 
-<p>The <code class="highlighter-rouge">?</code> symbol at the end of type name means that this field is nilable.</p>
+<p>The <code class="language-plaintext highlighter-rouge">?</code> symbol at the end of type name means that this field is nilable.</p>
 
 <h3 id="generatemigration">generate:migration</h3>
 

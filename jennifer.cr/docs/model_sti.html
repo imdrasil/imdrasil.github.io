@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/model_sti.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/model_sti.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/model_sti.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/model_sti.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -92,48 +94,48 @@
 
 <h1 id="sti">STI</h1>
 
-<p>To use single table inheritance just inherit from your parent model and use regular <code class="highlighter-rouge">%mapping</code> macro:</p>
+<p>To use single table inheritance just inherit from your parent model and use regular <code class="language-plaintext highlighter-rouge">%mapping</code> macro:</p>
 
-<pre><code class="language-crystal">class Profile &lt; Jennifer::Model::Base
-  mapping(
-    id: {type: Int32, primary: true},
-    login: String,
-    contact_id: Int32?,
-    type: String
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Profile</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int32</span><span class="p">,</span> <span class="ss">primary: </span><span class="kp">true</span><span class="p">},</span>
+    <span class="ss">login: </span><span class="no">String</span><span class="p">,</span>
+    <span class="ss">contact_id: </span><span class="no">Int32</span><span class="p">?,</span>
+    <span class="ss">type: </span><span class="no">String</span>
+  <span class="p">)</span>
 
-  belongs_to :contact, Contact
-end
+  <span class="n">belongs_to</span> <span class="p">:</span><span class="n">contact</span><span class="p">,</span> <span class="no">Contact</span>
+<span class="k">end</span>
 
-class FacebookProfile &lt; Profile
-  mapping(
-    uid: String
-  )
+<span class="k">class</span> <span class="nc">FacebookProfile</span> <span class="o">&lt;</span> <span class="no">Profile</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">uid: </span><span class="no">String</span>
+  <span class="p">)</span>
 
-  has_and_belongs_to_many :facebook_contacts, Contact, foreign: :profile_id
-end
+  <span class="n">has_and_belongs_to_many</span> <span class="ss">:facebook_contacts</span><span class="p">,</span> <span class="no">Contact</span><span class="p">,</span> <span class="ss">foreign: :profile_id</span>
+<span class="k">end</span>
 
-class TwitterProfile &lt; Profile
-  mapping(
-    email: String
-  )
-end
-</code></pre>
+<span class="k">class</span> <span class="nc">TwitterProfile</span> <span class="o">&lt;</span> <span class="no">Profile</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">email: </span><span class="no">String</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>Requirements:</p>
 
 <ul>
   <li>created table for STI should include <strong>all</strong> fields of all subclasses (that’s why it is cold STI);</li>
-  <li>STI table has to have field named as <code class="highlighter-rouge">type</code> of any string type which will be able to store class name of child models;</li>
-  <li>parent class should have definition for <code class="highlighter-rouge">type</code> field;</li>
+  <li>STI table has to have field named as <code class="language-plaintext highlighter-rouge">type</code> of any string type which will be able to store class name of child models;</li>
+  <li>parent class should have definition for <code class="language-plaintext highlighter-rouge">type</code> field;</li>
 </ul>
 
 <p>To extract from DB several subclasses in one request - just use parent class to query:</p>
 
-<pre><code class="language-crystal">Profile.all.where { _login.like("%eter%") }
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Profile</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_login</span><span class="p">.</span><span class="nf">like</span><span class="p">(</span><span class="s2">"%eter%"</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div></div>
 
-<p>Each retrieved object will respect values in <code class="highlighter-rouge">type</code> field and appropriate class object will be builded (including invoking of <code class="highlighter-rouge">after_initialize</code> callbacks).</p>
+<p>Each retrieved object will respect values in <code class="language-plaintext highlighter-rouge">type</code> field and appropriate class object will be builded (including invoking of <code class="language-plaintext highlighter-rouge">after_initialize</code> callbacks).</p>
 
   </div>
 

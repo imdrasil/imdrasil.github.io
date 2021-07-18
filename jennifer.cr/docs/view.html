@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/view.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/view.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/view.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/view.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -100,47 +102,47 @@
 
 <p>Both adapters support non materialized view. Here is an example of migration:</p>
 
-<pre><code class="language-crystal">class AddView20170916095004544 &lt; Jennifer::Migration::Base
-  def up
-    create_view(:male_contacts, Jennifer::Query["contacts"].where { _gender == sql("'male'") })
-  end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AddView20170916095004544</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Migration</span><span class="o">::</span><span class="no">Base</span>
+  <span class="k">def</span> <span class="nf">up</span>
+    <span class="n">create_view</span><span class="p">(</span><span class="ss">:male_contacts</span><span class="p">,</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Query</span><span class="p">[</span><span class="s2">"contacts"</span><span class="p">].</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_gender</span> <span class="o">==</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"'male'"</span><span class="p">)</span> <span class="p">})</span>
+  <span class="k">end</span>
 
-  def down
-    drop_view(:male_contacts)
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">down</span>
+    <span class="n">drop_view</span><span class="p">(</span><span class="ss">:male_contacts</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>Second argument of <code class="highlighter-rouge">#create_view</code> describes query which will  be used to retrieve data.</p>
+<p>Second argument of <code class="language-plaintext highlighter-rouge">#create_view</code> describes query which will  be used to retrieve data.</p>
 
 <p><strong>Important restriction</strong>: any prepared argument is not allowed for now - all arguments should be escaped by your own.</p>
 
-<pre><code class="language-crystal"># bad
-create_view(:male_contacts, Jennifer::Query["contacts"].where { _gender == "male" })
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># bad</span>
+<span class="n">create_view</span><span class="p">(</span><span class="ss">:male_contacts</span><span class="p">,</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Query</span><span class="p">[</span><span class="s2">"contacts"</span><span class="p">].</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_gender</span> <span class="o">==</span> <span class="s2">"male"</span> <span class="p">})</span>
 
-# good
-create_view(:male_contacts, Jennifer::Query["contacts"].where { sql("gender = 'male'") })
-create_view(:male_contacts, Jennifer::Query["contacts"].where { _gender == sql("male") })
-</code></pre>
+<span class="c1"># good</span>
+<span class="n">create_view</span><span class="p">(</span><span class="ss">:male_contacts</span><span class="p">,</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Query</span><span class="p">[</span><span class="s2">"contacts"</span><span class="p">].</span><span class="nf">where</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"gender = 'male'"</span><span class="p">)</span> <span class="p">})</span>
+<span class="n">create_view</span><span class="p">(</span><span class="ss">:male_contacts</span><span class="p">,</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Query</span><span class="p">[</span><span class="s2">"contacts"</span><span class="p">].</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_gender</span> <span class="o">==</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"male"</span><span class="p">)</span> <span class="p">})</span>
+</code></pre></div></div>
 
 <p>There is an example of defining view:</p>
-<pre><code class="language-crystal">class MaleContact &lt; Jennifer::View::Base
-  mapping({
-    id:     Primary32,
-    name:   String,
-    gender: String,
-    age:    Int32,
-  }, false)
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MaleContact</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">View</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">({</span>
+    <span class="ss">id:     </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">name:   </span><span class="no">String</span><span class="p">,</span>
+    <span class="ss">gender: </span><span class="no">String</span><span class="p">,</span>
+    <span class="ss">age:    </span><span class="no">Int32</span><span class="p">,</span>
+  <span class="p">},</span> <span class="kp">false</span><span class="p">)</span>
 
-  scope :main { where { _age &lt; 50 } }
-  scope :older { |age| where { _age &gt;= age } }
-  scope :johny, JohnyQuery
-end
-</code></pre>
+  <span class="n">scope</span> <span class="ss">:main</span> <span class="p">{</span> <span class="n">where</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="p">}</span> <span class="p">}</span>
+  <span class="n">scope</span> <span class="ss">:older</span> <span class="p">{</span> <span class="o">|</span><span class="n">age</span><span class="o">|</span> <span class="n">where</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">&gt;=</span> <span class="n">age</span> <span class="p">}</span> <span class="p">}</span>
+  <span class="n">scope</span> <span class="ss">:johny</span><span class="p">,</span> <span class="no">JohnyQuery</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>All regular model mapping functionality are also available for views (except any functionality for deleting, updating or creating new view objects). Any scoping functionality is allowed as well. Only <code class="highlighter-rouge">after_initialize</code> callback is allowed. STI is not supported.</p>
+<p>All regular model mapping functionality are also available for views (except any functionality for deleting, updating or creating new view objects). Any scoping functionality is allowed as well. Only <code class="language-plaintext highlighter-rouge">after_initialize</code> callback is allowed. STI is not supported.</p>
 
-<p>Also all defined mapping properties are accessible via <code class="highlighter-rouge">COLUMNS_METADATA</code> constant and <code class="highlighter-rouge">.columns_tuple</code> method.</p>
+<p>Also all defined mapping properties are accessible via <code class="language-plaintext highlighter-rouge">COLUMNS_METADATA</code> constant and <code class="language-plaintext highlighter-rouge">.columns_tuple</code> method.</p>
 
 <h2 id="materialized">Materialized</h2>
 
@@ -150,38 +152,38 @@ end
 
 <p>Common migration for adding materialized view looks like this:</p>
 
-<pre><code class="language-crystal">class AddMaterializedView20170829000433679 &lt; Jennifer::Migration::Base
-  VIEW_NAME = "female_contacts"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AddMaterializedView20170829000433679</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Migration</span><span class="o">::</span><span class="no">Base</span>
+  <span class="no">VIEW_NAME</span> <span class="o">=</span> <span class="s2">"female_contacts"</span>
 
-  def up
-    create_materialized_view(
-      VIEW_NAME,
-      Contact.all.where { _gender == sql("'female'") }
-    )
-  end
+  <span class="k">def</span> <span class="nf">up</span>
+    <span class="n">create_materialized_view</span><span class="p">(</span>
+      <span class="no">VIEW_NAME</span><span class="p">,</span>
+      <span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_gender</span> <span class="o">==</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"'female'"</span><span class="p">)</span> <span class="p">}</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
 
-  def down
-    drop_materialized_view(VIEW_NAME)
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">down</span>
+    <span class="n">drop_materialized_view</span><span class="p">(</span><span class="no">VIEW_NAME</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>As for non materialized view all arguments should be escaped explicitly as well.</p>
 
 <p>Example of defining created before materialized view looks like:</p>
 
-<pre><code class="language-crystal">class FemaleContact &lt; Jennifer::Model::Materialized
-  mapping({
-    id:   Primary32,
-    name: String?,
-  }, false)
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">FemaleContact</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Materialized</span>
+  <span class="n">mapping</span><span class="p">({</span>
+    <span class="ss">id:   </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">name: </span><span class="no">String</span><span class="p">?,</span>
+  <span class="p">},</span> <span class="kp">false</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>To refresh content of materialized view use:</p>
 
-<pre><code class="language-crystal">FemaleContact.refresh
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">FemaleContact</span><span class="p">.</span><span class="nf">refresh</span>
+</code></pre></div></div>
 
   </div>
 

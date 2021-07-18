@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>JenniferTwin | Imdrasil Homebrew Stuff</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="JenniferTwin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer_twin/" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer_twin/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JenniferTwin" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"JenniferTwin","url":"https://imdrasil.github.io/jennifer_twin/","@context":"http://schema.org"}</script>
+{"headline":"JenniferTwin","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer_twin/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -37,7 +39,7 @@
 <h2 id="installation">Installation</h2>
 
 <ol>
-  <li>Add the dependency to your <code class="highlighter-rouge">shard.yml</code>:</li>
+  <li>Add the dependency to your <code class="language-plaintext highlighter-rouge">shard.yml</code>:</li>
 </ol>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
@@ -47,103 +49,103 @@
 </code></pre></div></div>
 
 <ol>
-  <li>Run <code class="highlighter-rouge">shards install</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">shards install</code></li>
 </ol>
 
 <h2 id="usage">Usage</h2>
 
-<p>Jennifer generates some amount of hidden attributes for a mode to be able to track whether attribute has been changed, relation load state or just a collection, etc. For some tasks you would like to have an instance containing only model attributes or it’s subset. One of the most popular example - <code class="highlighter-rouge">JSON::Serializable</code>. Therefor JenniferTwin copies all data from original instance and store them.</p>
+<p>Jennifer generates some amount of hidden attributes for a mode to be able to track whether attribute has been changed, relation load state or just a collection, etc. For some tasks you would like to have an instance containing only model attributes or it’s subset. One of the most popular example - <code class="language-plaintext highlighter-rouge">JSON::Serializable</code>. Therefor JenniferTwin copies all data from original instance and store them.</p>
 
 <blockquote>
   <p>If you trying to solve issue of model serialization to JSON - take a look at <a href="https://github.com/imdrasil/serializer">Serializer</a>.</p>
 </blockquote>
 
-<p>To create a <strong>twin</strong> include <code class="highlighter-rouge">JenniferTwin</code> and call <code class="highlighter-rouge">.map_fields</code> macro:</p>
+<p>To create a <strong>twin</strong> include <code class="language-plaintext highlighter-rouge">JenniferTwin</code> and call <code class="language-plaintext highlighter-rouge">.map_fields</code> macro:</p>
 
-<pre><code class="language-crystal">require "jennifer_twin"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"jennifer_twin"</span>
 
-class UserTwin
-  include JenniferTwin
+<span class="k">class</span> <span class="nc">UserTwin</span>
+  <span class="kp">include</span> <span class="no">JenniferTwin</span>
 
-  map_fields User
-end
-</code></pre>
+  <span class="n">map_fields</span> <span class="no">User</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <h3 id="mapping">Mapping</h3>
 
-<p><code class="highlighter-rouge">.map_fields</code> macro generates only 3 things:</p>
+<p><code class="language-plaintext highlighter-rouge">.map_fields</code> macro generates only 3 things:</p>
 
 <ul>
   <li>getters for all fields named after model’s ones (unless other name is specified)</li>
   <li>initializer accepting model instance to copy</li>
-  <li><code class="highlighter-rouge">#to_model</code> method to create a model instance from it’s fields</li>
+  <li><code class="language-plaintext highlighter-rouge">#to_model</code> method to create a model instance from it’s fields</li>
 </ul>
 
-<pre><code class="language-crystal">user = User.all.first
-user_twin = UserTwin.new(user)
-user_twin.to_model # =&gt; User
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">first</span>
+<span class="n">user_twin</span> <span class="o">=</span> <span class="no">UserTwin</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+<span class="n">user_twin</span><span class="p">.</span><span class="nf">to_model</span> <span class="c1"># =&gt; User</span>
+</code></pre></div></div>
 
 <p>As a 2nd argument macro accepts named tuple or symbol-based hash of field options. Supported options are:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">:ignore</code> - if set to <code class="highlighter-rouge">true</code> ignores specified field</li>
-  <li><code class="highlighter-rouge">:key</code> - defines attribute with the specified value</li>
-  <li><code class="highlighter-rouge">:annotations</code> - adds annotations above field setter</li>
+  <li><code class="language-plaintext highlighter-rouge">:ignore</code> - if set to <code class="language-plaintext highlighter-rouge">true</code> ignores specified field</li>
+  <li><code class="language-plaintext highlighter-rouge">:key</code> - defines attribute with the specified value</li>
+  <li><code class="language-plaintext highlighter-rouge">:annotations</code> - adds annotations above field setter</li>
 </ul>
 
 <p>Let’s take a look at more descriptive example:</p>
 
-<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
-  mapping(
-    id: Primary32,
-    name: String?,
-    age: Int32?,
-    password_hash: String?
-  )
-end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">name: </span><span class="no">String</span><span class="p">?,</span>
+    <span class="ss">age: </span><span class="no">Int32</span><span class="p">?,</span>
+    <span class="ss">password_hash: </span><span class="no">String</span><span class="p">?</span>
+  <span class="p">)</span>
+<span class="k">end</span>
 
-class UserTwin
-  include JenniferTwin
-  include JSON::Serializable
+<span class="k">class</span> <span class="nc">UserTwin</span>
+  <span class="kp">include</span> <span class="no">JenniferTwin</span>
+  <span class="kp">include</span> <span class="no">JSON</span><span class="o">::</span><span class="no">Serializable</span>
 
-  map_fields(User, {
-    age: { annotations: [@[JSON::Field(emit_null: true)]] }
-    name: { key: :full_name },
-    password_hash: { ignore: true }
-  })
+  <span class="n">map_fields</span><span class="p">(</span><span class="no">User</span><span class="p">,</span> <span class="p">{</span>
+    <span class="ss">age: </span><span class="p">{</span> <span class="ss">annotations: </span><span class="p">[</span><span class="nd">@[JSON::Field(emit_null: true)]</span><span class="p">]</span> <span class="p">}</span>
+    <span class="ss">name: </span><span class="p">{</span> <span class="ss">key: </span><span class="p">:</span><span class="n">full_name</span> <span class="p">},</span>
+    <span class="ss">password_hash: </span><span class="p">{</span> <span class="ss">ignore: </span><span class="kp">true</span> <span class="p">}</span>
+  <span class="p">})</span>
 
-  setter full_name
-end
+  <span class="n">setter</span> <span class="n">full_name</span>
+<span class="k">end</span>
 
-user = User.all.first # &lt;User:0x000000000010 id: 1, name: "User 8", age: nil, password_hash: "&lt;hash&gt;"&gt;
-user_twin = UserTwin.new(user) # &lt;UserTwin:0x000000000020 @id=1, @full_name="User 8", @age=nil&gt;
-user_twin.to_json # =&gt; %({"id":1,"full_name":"User 8","age":null})
+<span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">first</span> <span class="c1"># &lt;User:0x000000000010 id: 1, name: "User 8", age: nil, password_hash: "&lt;hash&gt;"&gt;</span>
+<span class="n">user_twin</span> <span class="o">=</span> <span class="no">UserTwin</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="c1"># &lt;UserTwin:0x000000000020 @id=1, @full_name="User 8", @age=nil&gt;</span>
+<span class="n">user_twin</span><span class="p">.</span><span class="nf">to_json</span> <span class="c1"># =&gt; %({"id":1,"full_name":"User 8","age":null})</span>
 
-user_twin.full_name = "New Name"
-user_twin.to_modal # &lt;User:0x000000000030 id: nil, name: "New Name", age: nil, password_hash: nil&gt;
-</code></pre>
+<span class="n">user_twin</span><span class="p">.</span><span class="nf">full_name</span> <span class="o">=</span> <span class="s2">"New Name"</span>
+<span class="n">user_twin</span><span class="p">.</span><span class="nf">to_modal</span> <span class="c1"># &lt;User:0x000000000030 id: nil, name: "New Name", age: nil, password_hash: nil&gt;</span>
+</code></pre></div></div>
 
-<p>Also you can add additional custom logic to generated initializer passing a block to the macro call. To access model instance use <code class="highlighter-rouge">record</code> variable name.</p>
+<p>Also you can add additional custom logic to generated initializer passing a block to the macro call. To access model instance use <code class="language-plaintext highlighter-rouge">record</code> variable name.</p>
 
-<pre><code class="language-crystal">class UserTwin
-  include JenniferTwin
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UserTwin</span>
+  <span class="kp">include</span> <span class="no">JenniferTwin</span>
 
-  getter full_name : String
+  <span class="kp">getter</span> <span class="n">full_name</span> <span class="p">:</span> <span class="no">String</span>
 
-  map_fields(User) do
-    @full_name = "#{record.name} Snow"
-  end
-end
-</code></pre>
+  <span class="n">map_fields</span><span class="p">(</span><span class="no">User</span><span class="p">)</span> <span class="k">do</span>
+    <span class="vi">@full_name</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="kp">record</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2"> Snow"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <h2 id="contributing">Contributing</h2>
 
 <ol>
   <li>Fork it (<a href="https://github.com/imdrasil/jennifer_twin/fork">https://github.com/imdrasil/jennifer_twin/fork</a>)</li>
-  <li>Create your feature branch (<code class="highlighter-rouge">git checkout -b my-new-feature</code>)</li>
-  <li>Commit your changes (<code class="highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
-  <li>Push to the branch (<code class="highlighter-rouge">git push origin my-new-feature</code>)</li>
+  <li>Create your feature branch (<code class="language-plaintext highlighter-rouge">git checkout -b my-new-feature</code>)</li>
+  <li>Commit your changes (<code class="language-plaintext highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
+  <li>Push to the branch (<code class="language-plaintext highlighter-rouge">git push origin my-new-feature</code>)</li>
   <li>Create a new Pull Request</li>
 </ol>
 

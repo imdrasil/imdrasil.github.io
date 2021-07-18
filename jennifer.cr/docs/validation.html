@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/validation.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/validation.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/validation.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/validation.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -94,446 +96,446 @@
 
 <p>Here is an example of validation usage:</p>
 
-<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
-  mapping({
-    # ...
-    login: String
-  })
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">({</span>
+    <span class="c1"># ...</span>
+    <span class="ss">login: </span><span class="no">String</span>
+  <span class="p">})</span>
 
-  validates_length :login, in: 8..16
-end
+  <span class="n">validates_length</span> <span class="ss">:login</span><span class="p">,</span> <span class="ss">in: </span><span class="mi">8</span><span class="o">..</span><span class="mi">16</span>
+<span class="k">end</span>
 
-user = User.build(login: "login")
-user.validate!
-user.valid? # false
-user.login = "longlogin"
-user.validate!
-user.valid? # true
-</code></pre>
+<span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">build</span><span class="p">(</span><span class="ss">login: </span><span class="s2">"login"</span><span class="p">)</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">validate!</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">valid?</span> <span class="c1"># false</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">login</span> <span class="o">=</span> <span class="s2">"longlogin"</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">validate!</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">valid?</span> <span class="c1"># true</span>
+</code></pre></div></div>
 
 <h2 id="trigger-validation">Trigger validation</h2>
 
 <p>The following model methods triggers validations in a scope of own execution:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">#validate</code></li>
-  <li><code class="highlighter-rouge">#validate!</code></li>
-  <li><code class="highlighter-rouge">#valid?</code></li>
-  <li><code class="highlighter-rouge">.create</code></li>
-  <li><code class="highlighter-rouge">.create!</code></li>
-  <li><code class="highlighter-rouge">#save</code></li>
-  <li><code class="highlighter-rouge">#save_without_transaction</code></li>
-  <li><code class="highlighter-rouge">#save!</code></li>
-  <li><code class="highlighter-rouge">#update</code></li>
-  <li><code class="highlighter-rouge">#update!</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#validate</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#validate!</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#valid?</code></li>
+  <li><code class="language-plaintext highlighter-rouge">.create</code></li>
+  <li><code class="language-plaintext highlighter-rouge">.create!</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#save</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#save_without_transaction</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#save!</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#update</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#update!</code></li>
 </ul>
 
 <blockquote>
   <p>NOTE: Bang method version will raise an exception if record is invalid.</p>
 
-  <p>NOTE: <code class="highlighter-rouge">#valid?</code> is an alias for <code class="highlighter-rouge">#validate!</code>.</p>
+  <p>NOTE: <code class="language-plaintext highlighter-rouge">#valid?</code> is an alias for <code class="language-plaintext highlighter-rouge">#validate!</code>.</p>
 
-  <p><code class="highlighter-rouge">Jennifer::Query#patch</code> also invokes validation (and callbacks) for each matched record.</p>
+  <p><code class="language-plaintext highlighter-rouge">Jennifer::Query#patch</code> also invokes validation (and callbacks) for each matched record.</p>
 </blockquote>
 
-<p><code class="highlighter-rouge">#validate!</code> method invokes validation callbacks. Be aware: <code class="highlighter-rouge">after_validation</code> callbacks may not be triggered if record is invalid or <code class="highlighter-rouge">before_validation</code> has raised <code class="highlighter-rouge">Jennifer::Skip</code> exception.</p>
+<p><code class="language-plaintext highlighter-rouge">#validate!</code> method invokes validation callbacks. Be aware: <code class="language-plaintext highlighter-rouge">after_validation</code> callbacks may not be triggered if record is invalid or <code class="language-plaintext highlighter-rouge">before_validation</code> has raised <code class="language-plaintext highlighter-rouge">Jennifer::Skip</code> exception.</p>
 
 <h2 id="skip-validation">Skip validation</h2>
 
 <p>Some methods skip validation on invocation:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Model::Base#invalid?</code></li>
-  <li><code class="highlighter-rouge">Model::Base#save(skip_validation: true)</code></li>
-  <li><code class="highlighter-rouge">Model::Base#update_column</code></li>
-  <li><code class="highlighter-rouge">Model::Base#update_columns</code></li>
-  <li><code class="highlighter-rouge">QueryBuilder::Query#update</code></li>
-  <li><code class="highlighter-rouge">QueryBuilder::Query#increment</code></li>
-  <li><code class="highlighter-rouge">QueryBuilder::Query#decrement</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Model::Base#invalid?</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Model::Base#save(skip_validation: true)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Model::Base#update_column</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Model::Base#update_columns</code></li>
+  <li><code class="language-plaintext highlighter-rouge">QueryBuilder::Query#update</code></li>
+  <li><code class="language-plaintext highlighter-rouge">QueryBuilder::Query#increment</code></li>
+  <li><code class="language-plaintext highlighter-rouge">QueryBuilder::Query#decrement</code></li>
 </ul>
 
 <blockquote>
-  <p>NOTE: <code class="highlighter-rouge">#invalid?</code> method will only check if <code class="highlighter-rouge">#errors</code> is empty.</p>
+  <p>NOTE: <code class="language-plaintext highlighter-rouge">#invalid?</code> method will only check if <code class="language-plaintext highlighter-rouge">#errors</code> is empty.</p>
 </blockquote>
 
 <h2 id="accessing-errors-list">Accessing errors list</h2>
 
-<p>Each record has a container to hold error messages - <code class="highlighter-rouge">Accord::ErrorList</code>. To retrieve it use <code class="highlighter-rouge">#errors</code> method.</p>
+<p>Each record has a container to hold error messages - <code class="language-plaintext highlighter-rouge">Accord::ErrorList</code>. To retrieve it use <code class="language-plaintext highlighter-rouge">#errors</code> method.</p>
 
-<p>By it own <code class="highlighter-rouge">#errors</code> doesn’t trigger validation so first of all you need to perform it explicitly by listed upper methods or using <code class="highlighter-rouge">#validate!</code> method:</p>
+<p>By it own <code class="language-plaintext highlighter-rouge">#errors</code> doesn’t trigger validation so first of all you need to perform it explicitly by listed upper methods or using <code class="language-plaintext highlighter-rouge">#validate!</code> method:</p>
 
-<pre><code class="language-crystal">user = User.build(login: "login")
-user.errors.any? # false
-user.validate!
-user.errors.any? # true
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">build</span><span class="p">(</span><span class="ss">login: </span><span class="s2">"login"</span><span class="p">)</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">errors</span><span class="p">.</span><span class="nf">any?</span> <span class="c1"># false</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">validate!</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">errors</span><span class="p">.</span><span class="nf">any?</span> <span class="c1"># true</span>
+</code></pre></div></div>
 
-<h3 id="errors"><code class="highlighter-rouge">errors[]</code></h3>
+<h3 id="errors"><code class="language-plaintext highlighter-rouge">errors[]</code></h3>
 
-<p>To check whether or not a particular attribute of an object is valid you can use  <code class="highlighter-rouge">#errors[:attribute]</code>. It returns an array of error messages for <code class="highlighter-rouge">:attribute</code>. If there is no error - empty array will be returned.</p>
+<p>To check whether or not a particular attribute of an object is valid you can use  <code class="language-plaintext highlighter-rouge">#errors[:attribute]</code>. It returns an array of error messages for <code class="language-plaintext highlighter-rouge">:attribute</code>. If there is no error - empty array will be returned.</p>
 
-<h3 id="errorsadd"><code class="highlighter-rouge">#errors.add</code></h3>
+<h3 id="errorsadd"><code class="language-plaintext highlighter-rouge">#errors.add</code></h3>
 
 <p>This methods let you add an error message related to a particular attribute. It takes as arguments tre attribute and the error message.</p>
 
-<pre><code class="language-crystal">user = User.create(login: "login")
-user.errors.add(:login, "Some custom message")
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">login: </span><span class="s2">"login"</span><span class="p">)</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">errors</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="ss">:login</span><span class="p">,</span> <span class="s2">"Some custom message"</span><span class="p">)</span>
+</code></pre></div></div>
 
-<h3 id="errorsclear"><code class="highlighter-rouge">errors.clear!</code></h3>
+<h3 id="errorsclear"><code class="language-plaintext highlighter-rouge">errors.clear!</code></h3>
 
-<p>The <code class="highlighter-rouge">#clear!</code> method is used when all error messages should be removed. It is automatically invoked by <code class="highlighter-rouge">#validate!</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">#clear!</code> method is used when all error messages should be removed. It is automatically invoked by <code class="language-plaintext highlighter-rouge">#validate!</code>.</p>
 
 <h3 id="non-model-usage">Non-model usage</h3>
 
-<p>It is possible to use <code class="highlighter-rouge">Jennifer::Model::Errors</code> for handling errors of any class that includes <code class="highlighter-rouge">Jennifer::Model::Translation</code> and implements <code class="highlighter-rouge">.superclass</code> method.</p>
+<p>It is possible to use <code class="language-plaintext highlighter-rouge">Jennifer::Model::Errors</code> for handling errors of any class that includes <code class="language-plaintext highlighter-rouge">Jennifer::Model::Translation</code> and implements <code class="language-plaintext highlighter-rouge">.superclass</code> method.</p>
 
-<pre><code class="language-crystal">class Post
-  include Jennifer::Model::Translation
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Post</span>
+  <span class="kp">include</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Translation</span>
 
-  property title : String?
-  getter errors
+  <span class="kp">property</span> <span class="n">title</span> <span class="p">:</span> <span class="no">String</span><span class="p">?</span>
+  <span class="kp">getter</span> <span class="n">errors</span>
 
-  def initialize
-    @errors = Jennifer::Model::Errors.new(self)
-  end
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vi">@errors</span> <span class="o">=</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Errors</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+  <span class="k">end</span>
 
-  def validate
-    errors.clear
-    errors.add(:title, :blank) if title.nil?
-  end
+  <span class="k">def</span> <span class="nf">validate</span>
+    <span class="n">errors</span><span class="p">.</span><span class="nf">clear</span>
+    <span class="n">errors</span><span class="p">.</span><span class="nf">add</span><span class="p">(:</span><span class="n">title</span><span class="p">,</span> <span class="ss">:blank</span><span class="p">)</span> <span class="k">if</span> <span class="n">title</span><span class="p">.</span><span class="nf">nil?</span>
+  <span class="k">end</span>
 
-  # The following method is needed to be minimally implemented
+  <span class="c1"># The following method is needed to be minimally implemented</span>
 
-  def self.superclass; end
-end
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">superclass</span><span class="p">;</span> <span class="k">end</span>
+<span class="k">end</span>
 
-post = Post.new
-post.validate
-post.errors[:title] # "can't be blank"
-</code></pre>
+<span class="n">post</span> <span class="o">=</span> <span class="no">Post</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">post</span><span class="p">.</span><span class="nf">validate</span>
+<span class="n">post</span><span class="p">.</span><span class="nf">errors</span><span class="p">[</span><span class="ss">:title</span><span class="p">]</span> <span class="c1"># "can't be blank"</span>
+</code></pre></div></div>
 
 <h2 id="validation-macros">Validation macros</h2>
 
 <p>Please take into account that all validators described below implement singleton pattern - there is only one instance of each of them in application.</p>
 
-<h3 id="acceptance"><code class="highlighter-rouge">acceptance</code></h3>
+<h3 id="acceptance"><code class="language-plaintext highlighter-rouge">acceptance</code></h3>
 
 <p>This macro validates that a given field equals to true or be one of given values. This is useful for validating checkbox value:</p>
 
-<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
-  mapping(
-    # ...
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+  <span class="p">)</span>
 
-  property terms_of_service = false
-  property eula : String?
+  <span class="kp">property</span> <span class="n">terms_of_service</span> <span class="o">=</span> <span class="kp">false</span>
+  <span class="kp">property</span> <span class="n">eula</span> <span class="p">:</span> <span class="no">String</span><span class="p">?</span>
 
-  validates_acceptance :terms_of_service
-  validates_acceptance :eula, accept: %w(true accept yes)
-end
-</code></pre>
+  <span class="n">validates_acceptance</span> <span class="p">:</span><span class="n">terms_of_service</span>
+  <span class="n">validates_acceptance</span> <span class="ss">:eula</span><span class="p">,</span> <span class="ss">accept: </span><span class="sx">%w(true accept yes)</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>By default <code class="highlighter-rouge">"1"</code> and <code class="highlighter-rouge">true</code> is recognized as accepted values, but, as described, this behavior could be override by passing <code class="highlighter-rouge">accept</code> option with array.</p>
+<p>By default <code class="language-plaintext highlighter-rouge">"1"</code> and <code class="language-plaintext highlighter-rouge">true</code> is recognized as accepted values, but, as described, this behavior could be override by passing <code class="language-plaintext highlighter-rouge">accept</code> option with array.</p>
 
-<h3 id="confirmation"><code class="highlighter-rouge">confirmation</code></h3>
+<h3 id="confirmation"><code class="language-plaintext highlighter-rouge">confirmation</code></h3>
 
 <p>This validation helps to check if confirmation field was filled with same value as specified.</p>
 
-<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
-  mapping(
-    # ...
-    email: String?,
-    address: String?
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="ss">email: </span><span class="no">String</span><span class="p">?,</span>
+    <span class="ss">address: </span><span class="no">String</span><span class="p">?</span>
+  <span class="p">)</span>
 
-  property email_confirmation : String?, address_confirmation : String?
+  <span class="kp">property</span> <span class="n">email_confirmation</span> <span class="p">:</span> <span class="no">String</span><span class="p">?,</span> <span class="n">address_confirmation</span> <span class="p">:</span> <span class="no">String</span><span class="p">?</span>
 
-  validates_confirmation :email
-  validates_confirmation :address, case_insensitive: true
-end
-</code></pre>
+  <span class="n">validates_confirmation</span> <span class="p">:</span><span class="n">email</span>
+  <span class="n">validates_confirmation</span> <span class="p">:</span><span class="n">address</span><span class="p">,</span> <span class="ss">case_insensitive: </span><span class="kp">true</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>If confirmation is nil - this validation will be skipped. Such behavior allows to normally proceed in places where this validation is not needed (e.g. email confirmation is important only during new user creating).</p>
 
-<p>To make comparison case insensitive - specify second argument as <code class="highlighter-rouge">true</code>.</p>
+<p>To make comparison case insensitive - specify second argument as <code class="language-plaintext highlighter-rouge">true</code>.</p>
 
-<h3 id="exclusion"><code class="highlighter-rouge">exclusion</code></h3>
+<h3 id="exclusion"><code class="language-plaintext highlighter-rouge">exclusion</code></h3>
 
-<p>This macro validates that the attribute’s value aren’t included in a given set. This could be any object which responds to <code class="highlighter-rouge">#includes?</code> method.</p>
+<p>This macro validates that the attribute’s value aren’t included in a given set. This could be any object which responds to <code class="language-plaintext highlighter-rouge">#includes?</code> method.</p>
 
-<pre><code class="language-crystal">class Country &lt; Jennifer::Base::Model
-  mapping(
-    # ...
-    code: String
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Country</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Base</span><span class="o">::</span><span class="no">Model</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="ss">code: </span><span class="no">String</span>
+  <span class="p">)</span>
 
-  validates_exclusion :code, in: %w(AA DD)
-end
-</code></pre>
+  <span class="n">validates_exclusion</span> <span class="ss">:code</span><span class="p">,</span> <span class="ss">in: </span><span class="sx">%w(AA DD)</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<h3 id="format"><code class="highlighter-rouge">format</code></h3>
+<h3 id="format"><code class="language-plaintext highlighter-rouge">format</code></h3>
 
 <p>This macro validates that the attribute’s value satisfies given regular expression.</p>
 
-<pre><code class="language-crystal">class Contact &lt; Jennifer::Model::Base
-  mapping(
-    # ...
-    street: String
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Contact</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="ss">street: </span><span class="no">String</span>
+  <span class="p">)</span>
 
-  validates_format :street, /st\.|street/i
-end
-</code></pre>
+  <span class="n">validates_format</span> <span class="ss">:street</span><span class="p">,</span> <span class="sr">/st\.|street/i</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<h3 id="inclusion"><code class="highlighter-rouge">inclusion</code></h3>
+<h3 id="inclusion"><code class="language-plaintext highlighter-rouge">inclusion</code></h3>
 
-<p>This macro validates that the attribute’s value are included in the set. This could be any object which responds to <code class="highlighter-rouge">#includes?</code> method.</p>
+<p>This macro validates that the attribute’s value are included in the set. This could be any object which responds to <code class="language-plaintext highlighter-rouge">#includes?</code> method.</p>
 
-<pre><code class="language-crystal">class User &lt; Jennifer::Base::Model
-  mapping(
-    # ...
-    country_code: String
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Base</span><span class="o">::</span><span class="no">Model</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="ss">country_code: </span><span class="no">String</span>
+  <span class="p">)</span>
 
-  validates_inclusion :code, in: Country::KNOWN_COUNTRIES
-end
-</code></pre>
+  <span class="n">validates_inclusion</span> <span class="ss">:code</span><span class="p">,</span> <span class="ss">in: </span><span class="no">Country</span><span class="o">::</span><span class="no">KNOWN_COUNTRIES</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<h3 id="length"><code class="highlighter-rouge">length</code></h3>
+<h3 id="length"><code class="language-plaintext highlighter-rouge">length</code></h3>
 
 <p>This macro validates the attribute’s value length. There are a lot of options so constraint can be specified in different ways.</p>
 
-<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
-  mapping(
-    # ...
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+  <span class="p">)</span>
 
-  validates_length :name, minimum: 2
-  validates_length :login, in: 4..16
-  validates_length :uid, is: 16
-end
-</code></pre>
+  <span class="n">validates_length</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">minimum: </span><span class="mi">2</span>
+  <span class="n">validates_length</span> <span class="ss">:login</span><span class="p">,</span> <span class="ss">in: </span><span class="mi">4</span><span class="o">..</span><span class="mi">16</span>
+  <span class="n">validates_length</span> <span class="ss">:uid</span><span class="p">,</span> <span class="ss">is: </span><span class="mi">16</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>The possible constraints are:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">minimum</code> - length can’t be less than specified one,</li>
-  <li><code class="highlighter-rouge">maximum</code> - length can’t be greater than specified on,</li>
-  <li><code class="highlighter-rouge">in</code> - length must be included in given <strong>interval</strong></li>
-  <li><code class="highlighter-rouge">is</code> - length must be same as specified</li>
+  <li><code class="language-plaintext highlighter-rouge">minimum</code> - length can’t be less than specified one,</li>
+  <li><code class="language-plaintext highlighter-rouge">maximum</code> - length can’t be greater than specified on,</li>
+  <li><code class="language-plaintext highlighter-rouge">in</code> - length must be included in given <strong>interval</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">is</code> - length must be same as specified</li>
 </ul>
 
-<h3 id="numericality"><code class="highlighter-rouge">numericality</code></h3>
+<h3 id="numericality"><code class="language-plaintext highlighter-rouge">numericality</code></h3>
 
 <p>This macro validates if given number field satisfies specified constraints.</p>
 
-<pre><code class="language-crystal">class Player &lt; Jennifer::Model::Base
-  mapping(
-    # ...
-    points: Float64?
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Player</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="ss">points: </span><span class="no">Float64</span><span class="p">?</span>
+  <span class="p">)</span>
 
-  validates_numericality :points, greater_than: 0
-end
-</code></pre>
+  <span class="n">validates_numericality</span> <span class="p">:</span><span class="n">points</span><span class="p">,</span> <span class="ss">greater_than: </span><span class="mi">0</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>This macro accepts following constraints:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">greater_than</code></li>
-  <li><code class="highlighter-rouge">greater_than_or_equal_to</code></li>
-  <li><code class="highlighter-rouge">equal_to</code></li>
-  <li><code class="highlighter-rouge">less_than</code></li>
-  <li><code class="highlighter-rouge">less_than_or_equal_to</code></li>
-  <li><code class="highlighter-rouge">other_than</code></li>
-  <li><code class="highlighter-rouge">odd</code></li>
-  <li><code class="highlighter-rouge">even</code></li>
+  <li><code class="language-plaintext highlighter-rouge">greater_than</code></li>
+  <li><code class="language-plaintext highlighter-rouge">greater_than_or_equal_to</code></li>
+  <li><code class="language-plaintext highlighter-rouge">equal_to</code></li>
+  <li><code class="language-plaintext highlighter-rouge">less_than</code></li>
+  <li><code class="language-plaintext highlighter-rouge">less_than_or_equal_to</code></li>
+  <li><code class="language-plaintext highlighter-rouge">other_than</code></li>
+  <li><code class="language-plaintext highlighter-rouge">odd</code></li>
+  <li><code class="language-plaintext highlighter-rouge">even</code></li>
 </ul>
 
-<h3 id="presence_of"><code class="highlighter-rouge">presence_of</code></h3>
+<h3 id="presence_of"><code class="language-plaintext highlighter-rouge">presence_of</code></h3>
 
-<p>This macro validates that attribute’s value is not empty. It uses <code class="highlighter-rouge">#blank?</code> method from the core pact of <a href="https://github.com/imdrasil/ifrit#core">Ifrit</a>.</p>
+<p>This macro validates that attribute’s value is not empty. It uses <code class="language-plaintext highlighter-rouge">#blank?</code> method from the core pact of <a href="https://github.com/imdrasil/ifrit#core">Ifrit</a>.</p>
 
-<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
-  mapping(
-    # ...
-    email: String?
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="ss">email: </span><span class="no">String</span><span class="p">?</span>
+  <span class="p">)</span>
 
-  validates_presence :email
-end
-</code></pre>
+  <span class="n">validates_presence</span> <span class="p">:</span><span class="n">email</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<h3 id="absence"><code class="highlighter-rouge">absence</code></h3>
+<h3 id="absence"><code class="language-plaintext highlighter-rouge">absence</code></h3>
 
-<p>This validates that attribute’s value is blank. It uses <code class="highlighter-rouge">#blank?</code> method from Ifrit as well as <code class="highlighter-rouge">presence</code> validation.</p>
+<p>This validates that attribute’s value is blank. It uses <code class="language-plaintext highlighter-rouge">#blank?</code> method from Ifrit as well as <code class="language-plaintext highlighter-rouge">presence</code> validation.</p>
 
-<pre><code class="language-crystal">class SuperUser &lt; User
-  mapping(
-    # ...
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SuperUser</span> <span class="o">&lt;</span> <span class="no">User</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+  <span class="p">)</span>
 
-  validates_absence :title
-end
-</code></pre>
+  <span class="n">validates_absence</span> <span class="ss">:title</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<h3 id="uniqueness"><code class="highlighter-rouge">uniqueness</code></h3>
+<h3 id="uniqueness"><code class="language-plaintext highlighter-rouge">uniqueness</code></h3>
 
 <p>This validates that the attribute’s value is unique right before object gets validated. It doesn’t create any db constraint so it doesn’t totally guaranty that another another application instance creates record with save value in overlapping time. <strong>Don’t use</strong> this validation for sensitive data. On the other hand this could help in generating readable error messages.</p>
 
-<pre><code class="language-crystal">class Country &lt; Jennifer::Model::Base
-  mapping(
-    # ...
-    code: String
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Country</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="ss">code: </span><span class="no">String</span>
+  <span class="p">)</span>
 
-  validates_uniqueness :code
-end
-</code></pre>
+  <span class="n">validates_uniqueness</span> <span class="ss">:code</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <blockquote>
   <p>NOTE: Be aware that mysql performs case insensitive string comparison.</p>
 </blockquote>
 
-<h3 id="validates_with"><code class="highlighter-rouge">validates_with</code></h3>
+<h3 id="validates_with"><code class="language-plaintext highlighter-rouge">validates_with</code></h3>
 
 <p>This passes the record to a new instance of given validator class to be validated.</p>
 
-<pre><code class="language-crystal">class EnnValidator &lt; Jennifer::Validations::Validator
-  def validate(record, **opts)
-    if record.enn!.size &lt; 4 &amp;&amp; record.enn![0].downcase == 'a'
-      record.errors.add(:enn, "Invalid enn")
-    end
-  end
-end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">EnnValidator</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Validations</span><span class="o">::</span><span class="no">Validator</span>
+  <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="kp">record</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+    <span class="k">if</span> <span class="kp">record</span><span class="p">.</span><span class="nf">enn!</span><span class="p">.</span><span class="nf">size</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="kp">record</span><span class="p">.</span><span class="nf">enn!</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">downcase</span> <span class="o">==</span> <span class="s1">'a'</span>
+      <span class="kp">record</span><span class="p">.</span><span class="nf">errors</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="ss">:enn</span><span class="p">,</span> <span class="s2">"Invalid enn"</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-class Passport &lt; Jennifer::Model::Base
-  mapping(
-    # ...
-    enn: {type: String, primary: true}
-  )
+<span class="k">class</span> <span class="nc">Passport</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="ss">enn: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">,</span> <span class="ss">primary: </span><span class="kp">true</span><span class="p">}</span>
+  <span class="p">)</span>
 
-  validates_with EnnValidator
-end
-</code></pre>
+  <span class="n">validates_with</span> <span class="no">EnnValidator</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<h3 id="validates_with_method"><code class="highlighter-rouge">validates_with_method</code></h3>
+<h3 id="validates_with_method"><code class="language-plaintext highlighter-rouge">validates_with_method</code></h3>
 
 <p>This invokes specified record method to perform validation</p>
 
-<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
-  mapping(
-    id: Primary?
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary</span><span class="p">?</span>
+  <span class="p">)</span>
 
-  validates_with_method :thirteen
+  <span class="n">validates_with_method</span> <span class="p">:</span><span class="n">thirteen</span>
 
-  def thirteen
-    if id == 13
-      errors.add(:id, "Can't be 13")
-    end
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">thirteen</span>
+    <span class="k">if</span> <span class="nb">id</span> <span class="o">==</span> <span class="mi">13</span>
+      <span class="n">errors</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="ss">:id</span><span class="p">,</span> <span class="s2">"Can't be 13"</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<h3 id="allow_blank-validation-option"><code class="highlighter-rouge">allow_blank</code> validation option</h3>
+<h3 id="allow_blank-validation-option"><code class="language-plaintext highlighter-rouge">allow_blank</code> validation option</h3>
 
-<p>This option skip validation if attribute’s value is <code class="highlighter-rouge">nil</code>. All validation methods accepts this except:</p>
+<p>This option skip validation if attribute’s value is <code class="language-plaintext highlighter-rouge">nil</code>. All validation methods accepts this except:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">uniqueness</code></li>
-  <li><code class="highlighter-rouge">presence</code></li>
-  <li><code class="highlighter-rouge">absence</code></li>
-  <li><code class="highlighter-rouge">acceptance</code></li>
-  <li><code class="highlighter-rouge">confirmation</code></li>
+  <li><code class="language-plaintext highlighter-rouge">uniqueness</code></li>
+  <li><code class="language-plaintext highlighter-rouge">presence</code></li>
+  <li><code class="language-plaintext highlighter-rouge">absence</code></li>
+  <li><code class="language-plaintext highlighter-rouge">acceptance</code></li>
+  <li><code class="language-plaintext highlighter-rouge">confirmation</code></li>
 </ul>
 
-<p>By default it is set to <code class="highlighter-rouge">false</code>.</p>
+<p>By default it is set to <code class="language-plaintext highlighter-rouge">false</code>.</p>
 
-<h3 id="if-validation-option"><code class="highlighter-rouge">if</code> validation option</h3>
+<h3 id="if-validation-option"><code class="language-plaintext highlighter-rouge">if</code> validation option</h3>
 
 <p>Sometimes it will make sense to validate an object only when a given predicate is satisfied. You can do that by using the :if option, which can take a symbol or an expression. You may use the :if option when you want to specify when the validation should happen.</p>
 
 <p>The symbol value of :if options corresponds to the method name that will get called right before validation happens.</p>
 
-<pre><code class="language-crystal">class Player &lt; Jennifer::Model::Base
-  mapping(
-    # ...
-    health: Float64,
-    live_creature: {type: Bool, default: true, virtual: true}
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Player</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="ss">health: </span><span class="no">Float64</span><span class="p">,</span>
+    <span class="ss">live_creature: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Bool</span><span class="p">,</span> <span class="ss">default: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">virtual: </span><span class="kp">true</span><span class="p">}</span>
+  <span class="p">)</span>
 
-  validates_numericality :health, greater_than: 0, if: :live_creature
-end
-</code></pre>
+  <span class="n">validates_numericality</span> <span class="ss">:health</span><span class="p">,</span> <span class="ss">greater_than: </span><span class="mi">0</span><span class="p">,</span> <span class="ss">if: :live_creature</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>An expression may be used to simulate <em>unless</em> behavior of simple condition without wrapping it into a method.</p>
 
-<pre><code class="language-crystal">class Player &lt; Jennifer::Model::Base
-  mapping(
-    # ...
-    health: Float64,
-    undead: {type: Bool, default: false, virtual: true}
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Player</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="ss">health: </span><span class="no">Float64</span><span class="p">,</span>
+    <span class="ss">undead: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Bool</span><span class="p">,</span> <span class="ss">default: </span><span class="kp">false</span><span class="p">,</span> <span class="ss">virtual: </span><span class="kp">true</span><span class="p">}</span>
+  <span class="p">)</span>
 
-  validates_numericality :health, greater_than: 0, if: !undead
-end
-</code></pre>
+  <span class="n">validates_numericality</span> <span class="ss">:health</span><span class="p">,</span> <span class="ss">greater_than: </span><span class="mi">0</span><span class="p">,</span> <span class="ss">if: </span><span class="o">!</span><span class="n">undead</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <h2 id="custom-validation">Custom validation</h2>
 
 <h3 id="custom-validators">Custom validators</h3>
 
-<p>Custom validators are classes that inherit from <code class="highlighter-rouge">Jennifer::Validations::Validator</code> and implement <code class="highlighter-rouge">#validate</code> method.</p>
+<p>Custom validators are classes that inherit from <code class="language-plaintext highlighter-rouge">Jennifer::Validations::Validator</code> and implement <code class="language-plaintext highlighter-rouge">#validate</code> method.</p>
 
-<pre><code class="language-crystal">class Passport &lt; Jennifer::Model::Base
-  mapping(
-    enn: {type: String, primary: true}
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Passport</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">enn: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">,</span> <span class="ss">primary: </span><span class="kp">true</span><span class="p">}</span>
+  <span class="p">)</span>
 
-  validates_with EnnValidator
-end
+  <span class="n">validates_with</span> <span class="no">EnnValidator</span>
+<span class="k">end</span>
 
-class EnnValidator &lt; Jennifer::Validations::Validator
-  def validate(record)
-    if record.enn!.size &lt; 4 &amp;&amp; record.enn![0].downcase == 'a'
-      record.errors.add(:enn, "Invalid enn")
-    end
-  end
-end
-</code></pre>
+<span class="k">class</span> <span class="nc">EnnValidator</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Validations</span><span class="o">::</span><span class="no">Validator</span>
+  <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="kp">record</span><span class="p">)</span>
+    <span class="k">if</span> <span class="kp">record</span><span class="p">.</span><span class="nf">enn!</span><span class="p">.</span><span class="nf">size</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="kp">record</span><span class="p">.</span><span class="nf">enn!</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">downcase</span> <span class="o">==</span> <span class="s1">'a'</span>
+      <span class="kp">record</span><span class="p">.</span><span class="nf">errors</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="ss">:enn</span><span class="p">,</span> <span class="s2">"Invalid enn"</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>If there is any named argument specified after validator class - it will be passed to <code class="highlighter-rouge">#validate</code> method as well.</p>
+<p>If there is any named argument specified after validator class - it will be passed to <code class="language-plaintext highlighter-rouge">#validate</code> method as well.</p>
 
-<pre><code class="language-crystal">class Passport &lt; Jennifer::Model::Base
-  mapping(
-    enn: {type: String, primary: true}
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Passport</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">enn: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">,</span> <span class="ss">primary: </span><span class="kp">true</span><span class="p">}</span>
+  <span class="p">)</span>
 
-  validates_with EnnValidator, length: 6
-end
+  <span class="n">validates_with</span> <span class="no">EnnValidator</span><span class="p">,</span> <span class="ss">length: </span><span class="mi">6</span>
+<span class="k">end</span>
 
-class EnnValidator &lt; Jennifer::Validator
-  def validate(record, length)
-    if record.enn!.size &lt; length &amp;&amp; record.enn![0].downcase == 'a'
-      record.errors.add(:enn, "Invalid enn")
-    end
-  end
-end
-</code></pre>
+<span class="k">class</span> <span class="nc">EnnValidator</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Validator</span>
+  <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="kp">record</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+    <span class="k">if</span> <span class="kp">record</span><span class="p">.</span><span class="nf">enn!</span><span class="p">.</span><span class="nf">size</span> <span class="o">&lt;</span> <span class="n">length</span> <span class="o">&amp;&amp;</span> <span class="kp">record</span><span class="p">.</span><span class="nf">enn!</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">downcase</span> <span class="o">==</span> <span class="s1">'a'</span>
+      <span class="kp">record</span><span class="p">.</span><span class="nf">errors</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="ss">:enn</span><span class="p">,</span> <span class="s2">"Invalid enn"</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>To override default singleton behavior of validator define <code class="highlighter-rouge">.instance</code> method this way:</p>
+<p>To override default singleton behavior of validator define <code class="language-plaintext highlighter-rouge">.instance</code> method this way:</p>
 
-<pre><code class="language-crystal">class CustomValidator &lt; Jennifer::Validations::Validator
-  def self.instance
-    new
-  end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CustomValidator</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Validations</span><span class="o">::</span><span class="no">Validator</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">instance</span>
+    <span class="kp">new</span>
+  <span class="k">end</span>
 
-  def validate(record)
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="kp">record</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
   </div>
 

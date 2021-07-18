@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/time.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/time.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/time.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/time.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -92,41 +94,41 @@
 
 <h1 id="time">Time</h1>
 
-<p>Any <code class="highlighter-rouge">Time</code> value is automatically converted from it’s time zone to UTC when is passed to database. This includes both model fields downstreaming to a database and any query parameter of <code class="highlighter-rouge">Time</code> class. This means when record is saved it’s <code class="highlighter-rouge">created_at</code> field is converted from it’s time zone (for instance <code class="highlighter-rouge">Europe/Kyiv</code>) to UTC. This also works when you use time parameters in your queries:</p>
+<p>Any <code class="language-plaintext highlighter-rouge">Time</code> value is automatically converted from it’s time zone to UTC when is passed to database. This includes both model fields downstreaming to a database and any query parameter of <code class="language-plaintext highlighter-rouge">Time</code> class. This means when record is saved it’s <code class="language-plaintext highlighter-rouge">created_at</code> field is converted from it’s time zone (for instance <code class="language-plaintext highlighter-rouge">Europe/Kyiv</code>) to UTC. This also works when you use time parameters in your queries:</p>
 
-<pre><code class="language-crystal">Book.where { _publication_date &lt; Time.local(2021, 10, 10, 20, location: Jennifer::Config.local_time_zone) }
-# SELECT books.* FROM books where books.publication_date &lt; '2021-10-10 17:00:00'
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Book</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_publication_date</span> <span class="o">&lt;</span> <span class="no">Time</span><span class="p">.</span><span class="nf">local</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">location: </span><span class="no">Jennifer</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">local_time_zone</span><span class="p">)</span> <span class="p">}</span>
+<span class="c1"># SELECT books.* FROM books where books.publication_date &lt; '2021-10-10 17:00:00'</span>
+</code></pre></div></div>
 
 <p>To pass time value into database request <em>as-is</em> - use UTC:</p>
 
-<pre><code class="language-crystal">Book.where { _publication_date &lt; Time.utc(2021, 10, 10, 20) }
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Book</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_publication_date</span> <span class="o">&lt;</span> <span class="no">Time</span><span class="p">.</span><span class="nf">utc</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div></div>
 
-<p>It is important to notice that column values are converted back to application time zone (set by <code class="highlighter-rouge">Jennifer::Config.local_time_zone_name=</code>) when are read from a database. So in both cases <code class="highlighter-rouge">User.all.pluck(:created_at)</code> and <code class="highlighter-rouge">User.first.created_at</code> time object will be converted from UTC to configured time zone.</p>
+<p>It is important to notice that column values are converted back to application time zone (set by <code class="language-plaintext highlighter-rouge">Jennifer::Config.local_time_zone_name=</code>) when are read from a database. So in both cases <code class="language-plaintext highlighter-rouge">User.all.pluck(:created_at)</code> and <code class="language-plaintext highlighter-rouge">User.first.created_at</code> time object will be converted from UTC to configured time zone.</p>
 
 <p>Local time could be set using:</p>
 
-<pre><code class="language-crystal">Jennifer::Config.config do |conf|
-  conf.local_time_zone_name = "Etc/GMT+1"
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jennifer</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">config</span> <span class="k">do</span> <span class="o">|</span><span class="n">conf</span><span class="o">|</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">local_time_zone_name</span> <span class="o">=</span> <span class="s2">"Etc/GMT+1"</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>By default is used local time zone.</p>
 
-<p>It is possible to turn off time zone converting logic entirely by setting <code class="highlighter-rouge">Jennifer::Config.time_zone_aware_attributes</code> to <code class="highlighter-rouge">false</code>. In this case all time objects will be passed to database without converting to UTC (as “wall clock” time). When time is read from a database <code class="highlighter-rouge">Jennifer::Config.local_time_zone</code> as time zone.</p>
+<p>It is possible to turn off time zone converting logic entirely by setting <code class="language-plaintext highlighter-rouge">Jennifer::Config.time_zone_aware_attributes</code> to <code class="language-plaintext highlighter-rouge">false</code>. In this case all time objects will be passed to database without converting to UTC (as “wall clock” time). When time is read from a database <code class="language-plaintext highlighter-rouge">Jennifer::Config.local_time_zone</code> as time zone.</p>
 
-<p>If only specific column should ignore time converting logic you can specify <code class="highlighter-rouge">time_zone_aware: false</code> option for it in model mapping.</p>
+<p>If only specific column should ignore time converting logic you can specify <code class="language-plaintext highlighter-rouge">time_zone_aware: false</code> option for it in model mapping.</p>
 
-<pre><code class="language-crystal">class Book &lt; Jennifer::Model::Base
-  mapping(
-    # ...
-    publishing_date: { type: Time, time_zone_aware: false }
-  )
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Book</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="ss">publishing_date: </span><span class="p">{</span> <span class="ss">type: </span><span class="no">Time</span><span class="p">,</span> <span class="ss">time_zone_aware: </span><span class="kp">false</span> <span class="p">}</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>It is important to notice that in this case time zone converting will be omitted only when model instance is read from a database or is written to it. In other words <code class="highlighter-rouge">Book.all.pluck(:publishing_date)</code> in this case will perform time zone converting.</p>
+<p>It is important to notice that in this case time zone converting will be omitted only when model instance is read from a database or is written to it. In other words <code class="language-plaintext highlighter-rouge">Book.all.pluck(:publishing_date)</code> in this case will perform time zone converting.</p>
 
   </div>
 

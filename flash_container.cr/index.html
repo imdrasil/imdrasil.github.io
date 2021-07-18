@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>flash_container | Imdrasil Homebrew Stuff</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="flash_container" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/flash_container.cr/" />
 <meta property="og:url" content="https://imdrasil.github.io/flash_container.cr/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="flash_container" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"flash_container","url":"https://imdrasil.github.io/flash_container.cr/","@context":"http://schema.org"}</script>
+{"headline":"flash_container","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/flash_container.cr/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -37,41 +39,41 @@
 <h2 id="installation">Installation</h2>
 
 <ol>
-  <li>Add the dependency to your <code class="highlighter-rouge">shard.yml</code>:
+  <li>Add the dependency to your <code class="language-plaintext highlighter-rouge">shard.yml</code>:
     <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">flash_container</span><span class="pi">:</span>
 <span class="err"> </span><span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/flash_container.cr</span>
 </code></pre></div>    </div>
   </li>
-  <li>Run <code class="highlighter-rouge">shards install</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">shards install</code></li>
 </ol>
 
 <h2 id="usage">Usage</h2>
 
-<pre><code class="language-crystal">require "flash_container"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"flash_container"</span>
 
-# Load flash messages from session
-flash = FlashContainer.from_session(session.string?(FlashContainer.key))
+<span class="c1"># Load flash messages from session</span>
+<span class="n">flash</span> <span class="o">=</span> <span class="no">FlashContainer</span><span class="p">.</span><span class="nf">from_session</span><span class="p">(</span><span class="n">session</span><span class="p">.</span><span class="nf">string?</span><span class="p">(</span><span class="no">FlashContainer</span><span class="p">.</span><span class="nf">key</span><span class="p">))</span>
 
-flash[:notice] = "Some message"
+<span class="n">flash</span><span class="p">[</span><span class="ss">:notice</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Some message"</span>
 
-# Write messages back to session
-session.string(FlashContainer.key, flash.to_session)
-</code></pre>
+<span class="c1"># Write messages back to session</span>
+<span class="n">session</span><span class="p">.</span><span class="nf">string</span><span class="p">(</span><span class="no">FlashContainer</span><span class="p">.</span><span class="nf">key</span><span class="p">,</span> <span class="n">flash</span><span class="p">.</span><span class="nf">to_session</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h2 id="contributing">Contributing</h2>
 
 <ol>
   <li>Fork it (<a href="https://github.com/imdrasil/flash_container.cr/fork">https://github.com/imdrasil/flash_container.cr/fork</a>)</li>
-  <li>Create your feature branch (<code class="highlighter-rouge">git checkout -b my-new-feature</code>)</li>
-  <li>Commit your changes (<code class="highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
-  <li>Push to the branch (<code class="highlighter-rouge">git push origin my-new-feature</code>)</li>
+  <li>Create your feature branch (<code class="language-plaintext highlighter-rouge">git checkout -b my-new-feature</code>)</li>
+  <li>Commit your changes (<code class="language-plaintext highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
+  <li>Push to the branch (<code class="language-plaintext highlighter-rouge">git push origin my-new-feature</code>)</li>
   <li>Create a new Pull Request</li>
 </ol>
 
 <h2 id="contributors">Contributors</h2>
 
-<p>Inspired by <code class="highlighter-rouge">Amber::Router::Flash::FlashStore</code>.</p>
+<p>Inspired by <code class="language-plaintext highlighter-rouge">Amber::Router::Flash::FlashStore</code>.</p>
 
 <ul>
   <li><a href="https://github.com/imdrasil">Roman Kalnytskyi</a> - creator and maintainer</li>

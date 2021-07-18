@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/internationalization.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/internationalization.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/internationalization.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/internationalization.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -96,38 +98,38 @@
 
 <h2 id="translation-for-jennifer-models">Translation for Jennifer Models</h2>
 
-<p>You can use the <code class="highlighter-rouge">Jennifer::Model::Base.human</code> and <code class="highlighter-rouge">Jennifer::Model::Base.human_attribute_name(attribute)</code> to get translation for your model and attribute names. If there is no defined translation - it will be guessed by <code class="highlighter-rouge">Inflector.humanize</code>.</p>
+<p>You can use the <code class="language-plaintext highlighter-rouge">Jennifer::Model::Base.human</code> and <code class="language-plaintext highlighter-rouge">Jennifer::Model::Base.human_attribute_name(attribute)</code> to get translation for your model and attribute names. If there is no defined translation - it will be guessed by <code class="language-plaintext highlighter-rouge">Inflector.humanize</code>.</p>
 
 <h3 id="model-translation-lookup">Model translation lookup</h3>
 
-<p>Firstly path <code class="highlighter-rouge">jennifer.models.your_model_name</code> will be checked. If there is no such - all ancestors will be iterated: <code class="highlighter-rouge">jennifer.models.parent_model</code> and feather. Otherwise - <code class="highlighter-rouge">Inflector.humanize(i18n_key)</code> will be invoked.</p>
+<p>Firstly path <code class="language-plaintext highlighter-rouge">jennifer.models.your_model_name</code> will be checked. If there is no such - all ancestors will be iterated: <code class="language-plaintext highlighter-rouge">jennifer.models.parent_model</code> and feather. Otherwise - <code class="language-plaintext highlighter-rouge">Inflector.humanize(i18n_key)</code> will be invoked.</p>
 
-<p>Also model name could be pluralized passing <code class="highlighter-rouge">count</code> as argument.</p>
+<p>Also model name could be pluralized passing <code class="language-plaintext highlighter-rouge">count</code> as argument.</p>
 
-<pre><code class="language-crystal">User.human(count: 2) # Customers
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">User</span><span class="p">.</span><span class="nf">human</span><span class="p">(</span><span class="ss">count: </span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Customers</span>
+</code></pre></div></div>
 
 <h3 id="attribute-translation-lookup">Attribute translation lookup</h3>
 
-<p><code class="highlighter-rouge">::human_attribute_name</code> will use following lookup:</p>
+<p><code class="language-plaintext highlighter-rouge">::human_attribute_name</code> will use following lookup:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">jennifer.attributes.[model_name].attributes.attribute_name</code></li>
-  <li><code class="highlighter-rouge">jennifer.attributes.[parent_model_name].attributes.attribute_name</code> and so on for all ancestors</li>
-  <li><code class="highlighter-rouge">jennifer.attributes.attribute_name</code></li>
+  <li><code class="language-plaintext highlighter-rouge">jennifer.attributes.[model_name].attributes.attribute_name</code></li>
+  <li><code class="language-plaintext highlighter-rouge">jennifer.attributes.[parent_model_name].attributes.attribute_name</code> and so on for all ancestors</li>
+  <li><code class="language-plaintext highlighter-rouge">jennifer.attributes.attribute_name</code></li>
 </ul>
 
 <h3 id="error-message-translation">Error message translation</h3>
 
-<p>Error messages of predefined validation helper macros are generated using <code class="highlighter-rouge">Jennifer::Model::Errors#generate_message</code> method and is retrieved from local files. Lets take a look how it will search <code class="highlighter-rouge">blank</code> error message:</p>
+<p>Error messages of predefined validation helper macros are generated using <code class="language-plaintext highlighter-rouge">Jennifer::Model::Errors#generate_message</code> method and is retrieved from local files. Lets take a look how it will search <code class="language-plaintext highlighter-rouge">blank</code> error message:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">jennifer.errors.[model_name].attributes.[attribute_name].blank</code></li>
-  <li><code class="highlighter-rouge">jennifer.errors.[model_name].[attribute_name].blank</code></li>
-  <li><code class="highlighter-rouge">jennifer.errors.[ancestor_model_name].attributes.[attribute_name].blank</code></li>
-  <li><code class="highlighter-rouge">jennifer.errors.[ancestor_model_name].[attribute_name].blank</code> (this and previous one will be repeated for all ancestors)</li>
-  <li><code class="highlighter-rouge">jennifer.errors.[attribute_name].blank</code></li>
-  <li><code class="highlighter-rouge">jennifer.errors.messages.blank</code></li>
+  <li><code class="language-plaintext highlighter-rouge">jennifer.errors.[model_name].attributes.[attribute_name].blank</code></li>
+  <li><code class="language-plaintext highlighter-rouge">jennifer.errors.[model_name].[attribute_name].blank</code></li>
+  <li><code class="language-plaintext highlighter-rouge">jennifer.errors.[ancestor_model_name].attributes.[attribute_name].blank</code></li>
+  <li><code class="language-plaintext highlighter-rouge">jennifer.errors.[ancestor_model_name].[attribute_name].blank</code> (this and previous one will be repeated for all ancestors)</li>
+  <li><code class="language-plaintext highlighter-rouge">jennifer.errors.[attribute_name].blank</code></li>
+  <li><code class="language-plaintext highlighter-rouge">jennifer.errors.messages.blank</code></li>
 </ul>
 
 <p>Based on this you can specify specific message for any error.</p>

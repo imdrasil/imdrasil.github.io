@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Ifrit | Imdrasil Homebrew Stuff</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Ifrit" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/ifrit/" />
 <meta property="og:url" content="https://imdrasil.github.io/ifrit/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Ifrit" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Ifrit","url":"https://imdrasil.github.io/ifrit/","@context":"http://schema.org"}</script>
+{"headline":"Ifrit","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/ifrit/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -36,7 +38,7 @@
 
 <h2 id="installation">Installation</h2>
 
-<p>Add this to your application’s <code class="highlighter-rouge">shard.yml</code>:</p>
+<p>Add this to your application’s <code class="language-plaintext highlighter-rouge">shard.yml</code>:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">ifrit</span><span class="pi">:</span>
@@ -47,77 +49,77 @@
 
 <p>This lib provides modular approach so you should specify what exactly you want to require:</p>
 
-<pre><code class="language-crystal">require "ifrit/core" # for basic methods
-require "ifrit/inheritable_json" # for particular pact like InheritableJSON
-require "ifrit" # to load everything
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"ifrit/core"</span> <span class="c1"># for basic methods</span>
+<span class="nb">require</span> <span class="s2">"ifrit/inheritable_json"</span> <span class="c1"># for particular pact like InheritableJSON</span>
+<span class="nb">require</span> <span class="s2">"ifrit"</span> <span class="c1"># to load everything</span>
+</code></pre></div></div>
 
 <h3 id="pacts">Pacts</h3>
 
 <h4 id="core">Core</h4>
 
-<pre><code class="language-crystal">require "ifrit/core"
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"ifrit/core"</span>
+</code></pre></div></div>
 
 <p>Includes next methods:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">#blank?</code> - behaves same way as rails one;</li>
-  <li><code class="highlighter-rouge">#present?</code> - opposite to <code class="highlighter-rouge">#blank?</code>;</li>
-  <li><code class="highlighter-rouge">#to_bool</code> - parses string or integer for boolean value interpretation.</li>
+  <li><code class="language-plaintext highlighter-rouge">#blank?</code> - behaves same way as rails one;</li>
+  <li><code class="language-plaintext highlighter-rouge">#present?</code> - opposite to <code class="language-plaintext highlighter-rouge">#blank?</code>;</li>
+  <li><code class="language-plaintext highlighter-rouge">#to_bool</code> - parses string or integer for boolean value interpretation.</li>
 </ul>
 
 <h4 id="converter">Converter</h4>
 
-<pre><code class="language-crystal">require "ifrit/converter"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"ifrit/converter"</span>
 
-Ifrit.typed_hash({"a" =&gt; 1, "b" =&gt; "asd"}, String, String | Int32) # Hash(String, String | Int32)
-</code></pre>
+<span class="no">Ifrit</span><span class="p">.</span><span class="nf">typed_hash</span><span class="p">({</span><span class="s2">"a"</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"b"</span> <span class="o">=&gt;</span> <span class="s2">"asd"</span><span class="p">},</span> <span class="no">String</span><span class="p">,</span> <span class="no">String</span> <span class="o">|</span> <span class="no">Int32</span><span class="p">)</span> <span class="c1"># Hash(String, String | Int32)</span>
+</code></pre></div></div>
 
 <h4 id="symbol-table">Symbol Table</h4>
 
-<pre><code class="language-crystal">require "ifrit/symbol_table"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"ifrit/symbol_table"</span>
 
-include SymbolTable::Methods
+<span class="kp">include</span> <span class="no">SymbolTable</span><span class="o">::</span><span class="no">Methods</span>
 
-a = s(:asd)
-# ...
-"asd".to_sym # :asd
-</code></pre>
+<span class="n">a</span> <span class="o">=</span> <span class="n">s</span><span class="p">(</span><span class="ss">:asd</span><span class="p">)</span>
+<span class="c1"># ...</span>
+<span class="s2">"asd"</span><span class="p">.</span><span class="nf">to_sym</span> <span class="c1"># :asd</span>
+</code></pre></div></div>
 
 <h4 id="inheritable-json">Inheritable JSON</h4>
 
-<pre><code class="language-crystal">require "ifrit/inheritable_json"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"ifrit/inheritable_json"</span>
 
-class A
-  extend InheritableJSON
+<span class="k">class</span> <span class="nc">A</span>
+  <span class="kp">extend</span> <span class="no">InheritableJSON</span>
 
-  json_mapping({
-    a:               String,
-    b:               {type: Int32},
-    nillable_field1: {type: String?},
-    nillable_field2: {type: String?},
-  })
-end
+  <span class="n">json_mapping</span><span class="p">({</span>
+    <span class="ss">a:               </span><span class="no">String</span><span class="p">,</span>
+    <span class="ss">b:               </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int32</span><span class="p">},</span>
+    <span class="ss">nillable_field1: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">?},</span>
+    <span class="ss">nillable_field2: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">?},</span>
+  <span class="p">})</span>
+<span class="k">end</span>
 
-private class B &lt; A
-end
+<span class="kp">private</span> <span class="k">class</span> <span class="nc">B</span> <span class="o">&lt;</span> <span class="no">A</span>
+<span class="k">end</span>
 
-private class C &lt; B
-  json_mapping({
-    with_default: {type: String?, default: "default"},
-  })
-end
-</code></pre>
+<span class="kp">private</span> <span class="k">class</span> <span class="nc">C</span> <span class="o">&lt;</span> <span class="no">B</span>
+  <span class="n">json_mapping</span><span class="p">({</span>
+    <span class="ss">with_default: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">?,</span> <span class="ss">default: </span><span class="s2">"default"</span><span class="p">},</span>
+  <span class="p">})</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <h4 id="hash-with-indifferent-access">Hash with indifferent access</h4>
 
-<pre><code class="language-crystal">require "ifrit/hash_with_indifferent_access"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"ifrit/hash_with_indifferent_access"</span>
 
-h = HashWithIndifferentAccess(Int32).new
-h[:asd] = 23
-h["asd"] # 23
-</code></pre>
+<span class="n">h</span> <span class="o">=</span> <span class="no">HashWithIndifferentAccess</span><span class="p">(</span><span class="no">Int32</span><span class="p">).</span><span class="nf">new</span>
+<span class="n">h</span><span class="p">[</span><span class="ss">:asd</span><span class="p">]</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">h</span><span class="p">[</span><span class="s2">"asd"</span><span class="p">]</span> <span class="c1"># 23</span>
+</code></pre></div></div>
 
 <h2 id="contributing">Contributing</h2>
 

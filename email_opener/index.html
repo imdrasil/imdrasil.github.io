@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Email Opener | Imdrasil Homebrew Stuff</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Email Opener" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/email_opener/" />
 <meta property="og:url" content="https://imdrasil.github.io/email_opener/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Email Opener" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Email Opener","url":"https://imdrasil.github.io/email_opener/","@context":"http://schema.org"}</script>
+{"headline":"Email Opener","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/email_opener/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -37,73 +39,73 @@
 <h2 id="installation">Installation</h2>
 
 <ol>
-  <li>Add the dependency to your <code class="highlighter-rouge">shard.yml</code>:
+  <li>Add the dependency to your <code class="language-plaintext highlighter-rouge">shard.yml</code>:
     <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">email_opener</span><span class="pi">:</span>
 <span class="err"> </span><span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/email_opener</span>
 </code></pre></div>    </div>
   </li>
-  <li>Run <code class="highlighter-rouge">shards install</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">shards install</code></li>
 </ol>
 
 <h2 id="usage">Usage</h2>
 
-<p>Depending on used email library you need to implement adapter for <code class="highlighter-rouge">EmailOpener</code>. ATM this library is delivered with <a href="https://github.com/luckyframework/carbon">carbon</a> adaptor on the board. Here is simple example of basic carbon base mailer:</p>
+<p>Depending on used email library you need to implement adapter for <code class="language-plaintext highlighter-rouge">EmailOpener</code>. ATM this library is delivered with <a href="https://github.com/luckyframework/carbon">carbon</a> adaptor on the board. Here is simple example of basic carbon base mailer:</p>
 
-<pre><code class="language-crystal">require "email_opener/carbon_adapter"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"email_opener/carbon_adapter"</span>
 
-MAILER_ADAPTER = EmailOpener::CarbonAdapter.new
+<span class="no">MAILER_ADAPTER</span> <span class="o">=</span> <span class="no">EmailOpener</span><span class="o">::</span><span class="no">CarbonAdapter</span><span class="p">.</span><span class="nf">new</span>
 
-abstract class ApplicationMailer &lt; Carbon::Email
-  getter email_subject : String, email_address : String
+<span class="n">abstract</span> <span class="k">class</span> <span class="nc">ApplicationMailer</span> <span class="o">&lt;</span> <span class="no">Carbon</span><span class="o">::</span><span class="no">Email</span>
+  <span class="kp">getter</span> <span class="n">email_subject</span> <span class="p">:</span> <span class="no">String</span><span class="p">,</span> <span class="n">email_address</span> <span class="p">:</span> <span class="no">String</span>
 
-  from Carbon::Address.new("Sample App", "noreply@sample-app.com")
-  to email_address
-  subject email_subject
-  settings.adapter = MAILER_ADAPTER
+  <span class="n">from</span> <span class="no">Carbon</span><span class="o">::</span><span class="no">Address</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Sample App"</span><span class="p">,</span> <span class="s2">"noreply@sample-app.com"</span><span class="p">)</span>
+  <span class="n">to</span> <span class="n">email_address</span>
+  <span class="n">subject</span> <span class="n">email_subject</span>
+  <span class="n">settings</span><span class="p">.</span><span class="nf">adapter</span> <span class="o">=</span> <span class="no">MAILER_ADAPTER</span>
 
-  def initialize
-    @email_address = ""
-    @email_subject = ""
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vi">@email_address</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="vi">@email_subject</span> <span class="o">=</span> <span class="s2">""</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>After email is sent HTML part is written to <code class="highlighter-rouge">./tmp/email_opener/rich.html</code> and opened by default browser.</p>
+<p>After email is sent HTML part is written to <code class="language-plaintext highlighter-rouge">./tmp/email_opener/rich.html</code> and opened by default browser.</p>
 
 <h2 id="development">Development</h2>
 
-<p>To implement own adapter include <code class="highlighter-rouge">EmailOpener::AbstractAdapter</code> module and invoke in a delivery method <code class="highlighter-rouge">#__deliver__</code> passing <code class="highlighter-rouge">EmailOpener::Message</code> with all information regarding email.</p>
+<p>To implement own adapter include <code class="language-plaintext highlighter-rouge">EmailOpener::AbstractAdapter</code> module and invoke in a delivery method <code class="language-plaintext highlighter-rouge">#__deliver__</code> passing <code class="language-plaintext highlighter-rouge">EmailOpener::Message</code> with all information regarding email.</p>
 
-<pre><code class="language-crystal">require "email_opener/abstract_adapter"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"email_opener/abstract_adapter"</span>
 
-class OwnAdapter &lt; SomeLibrary::Adapter
-  include EmailOpener::AbstractAdapter
+<span class="k">class</span> <span class="nc">OwnAdapter</span> <span class="o">&lt;</span> <span class="no">SomeLibrary</span><span class="o">::</span><span class="no">Adapter</span>
+  <span class="kp">include</span> <span class="no">EmailOpener</span><span class="o">::</span><span class="no">AbstractAdapter</span>
 
-  def deliver(email)
-    __deliver__(
-      EmailOpener::Message.new(
-        email.html_body,
-        email.text_body,
-        email.subject,
-        email.from,
-        mail.to,
-        email.cc,
-        email.bcc,
-        email.reply_to
-      )
-    )
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">deliver</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+    <span class="n">__deliver__</span><span class="p">(</span>
+      <span class="no">EmailOpener</span><span class="o">::</span><span class="no">Message</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
+        <span class="n">email</span><span class="p">.</span><span class="nf">html_body</span><span class="p">,</span>
+        <span class="n">email</span><span class="p">.</span><span class="nf">text_body</span><span class="p">,</span>
+        <span class="n">email</span><span class="p">.</span><span class="nf">subject</span><span class="p">,</span>
+        <span class="n">email</span><span class="p">.</span><span class="nf">from</span><span class="p">,</span>
+        <span class="n">mail</span><span class="p">.</span><span class="nf">to</span><span class="p">,</span>
+        <span class="n">email</span><span class="p">.</span><span class="nf">cc</span><span class="p">,</span>
+        <span class="n">email</span><span class="p">.</span><span class="nf">bcc</span><span class="p">,</span>
+        <span class="n">email</span><span class="p">.</span><span class="nf">reply_to</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <h2 id="contributing">Contributing</h2>
 
 <ol>
   <li>Fork it (<a href="https://github.com/imdrasil/email_opener/fork">https://github.com/imdrasil/email_opener/fork</a>)</li>
-  <li>Create your feature branch (<code class="highlighter-rouge">git checkout -b my-new-feature</code>)</li>
-  <li>Commit your changes (<code class="highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
-  <li>Push to the branch (<code class="highlighter-rouge">git push origin my-new-feature</code>)</li>
+  <li>Create your feature branch (<code class="language-plaintext highlighter-rouge">git checkout -b my-new-feature</code>)</li>
+  <li>Commit your changes (<code class="language-plaintext highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
+  <li>Push to the branch (<code class="language-plaintext highlighter-rouge">git push origin my-new-feature</code>)</li>
   <li>Create a new Pull Request</li>
 </ol>
 

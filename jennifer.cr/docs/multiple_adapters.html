@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/multiple_adapters.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/multiple_adapters.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/multiple_adapters.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/multiple_adapters.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -92,77 +94,77 @@
 
 <h1 id="multiple-adapters">Multiple adapters</h1>
 
-<p>If you have multiple data sources (databases) it is possible to connect to all of them. For this just create a separate <code class="highlighter-rouge">Jennifer::Config</code> instance apart of the main one and initialize new adapter:</p>
+<p>If you have multiple data sources (databases) it is possible to connect to all of them. For this just create a separate <code class="language-plaintext highlighter-rouge">Jennifer::Config</code> instance apart of the main one and initialize new adapter:</p>
 
-<pre><code class="language-crystal">separate_config = Jennifer::Config.new.tap do |config|
-  config.db = "db_2"
-  config.host = "&lt;some host&gt;"
-  # ...
-  # db.adapter = "mysql" - it is not required to set up any adapter name as we
-  # gonna initialize it by our own
-end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">separate_config</span> <span class="o">=</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">db</span> <span class="o">=</span> <span class="s2">"db_2"</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">host</span> <span class="o">=</span> <span class="s2">"&lt;some host&gt;"</span>
+  <span class="c1"># ...</span>
+  <span class="c1"># db.adapter = "mysql" - it is not required to set up any adapter name as we</span>
+  <span class="c1"># gonna initialize it by our own</span>
+<span class="k">end</span>
 
-SEPARATE_ADAPTER = Jennifer::Mysql::Adapter.new(separate_config)
-</code></pre>
+<span class="no">SEPARATE_ADAPTER</span> <span class="o">=</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Mysql</span><span class="o">::</span><span class="no">Adapter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">separate_config</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>Now created above adapter can be used to connect to specified database. It should be used at least in two places: for model connection and for migration one.</p>
 
 <h2 id="model">Model</h2>
 
-<p>To override model adapter (in other words specify connection) - override <code class="highlighter-rouge">.adapter</code> method:</p>
+<p>To override model adapter (in other words specify connection) - override <code class="language-plaintext highlighter-rouge">.adapter</code> method:</p>
 
-<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
-  # ...
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="c1"># ...</span>
 
-  def self.adapter
-    SEPARATE_ADAPTER
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">adapter</span>
+    <span class="no">SEPARATE_ADAPTER</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>In this case <code class="highlighter-rouge">SEPARATE_ADAPTER</code> is used for <strong>both</strong> read and write operations. If you need to connect to the specified database only for read or write operation you can override <code class="highlighter-rouge">.read_adapter</code> or <code class="highlighter-rouge">.write_adapter</code>.</p>
+<p>In this case <code class="language-plaintext highlighter-rouge">SEPARATE_ADAPTER</code> is used for <strong>both</strong> read and write operations. If you need to connect to the specified database only for read or write operation you can override <code class="language-plaintext highlighter-rouge">.read_adapter</code> or <code class="language-plaintext highlighter-rouge">.write_adapter</code>.</p>
 
-<p>It is possible to define associations between models that are in different databases but be careful with <code class="highlighter-rouge">JOIN</code>s - obviously it isn’t possible. But you can preload them (as it does separate requests per association).</p>
+<p>It is possible to define associations between models that are in different databases but be careful with <code class="language-plaintext highlighter-rouge">JOIN</code>s - obviously it isn’t possible. But you can preload them (as it does separate requests per association).</p>
 
 <h2 id="migration">Migration</h2>
 
-<p>To specify using which adapter you are going to execute a database migration you should define <code class="highlighter-rouge">#adapter</code> method:</p>
+<p>To specify using which adapter you are going to execute a database migration you should define <code class="language-plaintext highlighter-rouge">#adapter</code> method:</p>
 
-<pre><code class="language-crystal">class SomeMigration &lt; Jennifer::Migration::Base
-  def adapter
-    SEPARATE_ADAPTER
-  end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SomeMigration</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Migration</span><span class="o">::</span><span class="no">Base</span>
+  <span class="k">def</span> <span class="nf">adapter</span>
+    <span class="no">SEPARATE_ADAPTER</span>
+  <span class="k">end</span>
 
-  def up
-    # ...
-  end
+  <span class="k">def</span> <span class="nf">up</span>
+    <span class="c1"># ...</span>
+  <span class="k">end</span>
 
-  def down
-    # ...
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">down</span>
+    <span class="c1"># ...</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>As a result all operations in <code class="highlighter-rouge">#up</code> and <code class="highlighter-rouge">#down</code> will be executed using <code class="highlighter-rouge">SEPARATE_ADAPTER</code>.</p>
+<p>As a result all operations in <code class="language-plaintext highlighter-rouge">#up</code> and <code class="language-plaintext highlighter-rouge">#down</code> will be executed using <code class="language-plaintext highlighter-rouge">SEPARATE_ADAPTER</code>.</p>
 
 <blockquote>
   <p>Migration instance can operate only in a scope of one adapter. If you want to apply changes to tables in multiple databases - use multiple migrations.</p>
 </blockquote>
 
-<p>If you need to create/drop a database for extra connection you have to define own Sam task (or handle it somehow). You can redefine <code class="highlighter-rouge">db:create</code> and <code class="highlighter-rouge">db:drop</code> task as follows:</p>
+<p>If you need to create/drop a database for extra connection you have to define own Sam task (or handle it somehow). You can redefine <code class="language-plaintext highlighter-rouge">db:create</code> and <code class="language-plaintext highlighter-rouge">db:drop</code> task as follows:</p>
 
-<pre><code class="language-crystal">Sam.namespace "db" do
-  task "create" do
-    Jennifer::Migration::Runner.create
-    Jennifer::Migration::Runner.create(SEPARATE_ADAPTER)
-  end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Sam</span><span class="p">.</span><span class="nf">namespace</span> <span class="s2">"db"</span> <span class="k">do</span>
+  <span class="n">task</span> <span class="s2">"create"</span> <span class="k">do</span>
+    <span class="no">Jennifer</span><span class="o">::</span><span class="no">Migration</span><span class="o">::</span><span class="no">Runner</span><span class="p">.</span><span class="nf">create</span>
+    <span class="no">Jennifer</span><span class="o">::</span><span class="no">Migration</span><span class="o">::</span><span class="no">Runner</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="no">SEPARATE_ADAPTER</span><span class="p">)</span>
+  <span class="k">end</span>
 
-  task "drop" do
-    Jennifer::Migration::Runner.drop
-    Jennifer::Migration::Runner.drop(SEPARATE_ADAPTER)
-  end
-end
-</code></pre>
+  <span class="n">task</span> <span class="s2">"drop"</span> <span class="k">do</span>
+    <span class="no">Jennifer</span><span class="o">::</span><span class="no">Migration</span><span class="o">::</span><span class="no">Runner</span><span class="p">.</span><span class="nf">drop</span>
+    <span class="no">Jennifer</span><span class="o">::</span><span class="no">Migration</span><span class="o">::</span><span class="no">Runner</span><span class="p">.</span><span class="nf">drop</span><span class="p">(</span><span class="no">SEPARATE_ADAPTER</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>Now when you execute those commands you will affect both connections.</p>
 

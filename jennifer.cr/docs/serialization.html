@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/serialization.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/serialization.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/serialization.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/serialization.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -98,113 +100,113 @@
 
 <p>Jennifer defines some hidden instance attributes in defined models for own use. Sometimes we would like to operate with a class where we have full access to all defined attributes/methods. For this case the easiest way is to use <a href="https://github.com/imdrasil/jennifer_twin">JenniferTwin</a> lib. Using it you can dump Jennifer model instance to a separate object that is totally under your control. One of the cases when this approach may come in handy when ther is a need to use attribute annotations, like <a href="https://github.com/crystal-community/msgpack-crystal">MessagePack::Serializable</a> or <a href="https://crystal-lang.org/api/0.31.1/JSON/Serializable.html">JSON::Serializable</a>.</p>
 
-<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
-  mapping(
-    id: Primary32,
-    name: String?,
-    age: Int32?,
-    password_hash: String?
-  )
-end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">name: </span><span class="no">String</span><span class="p">?,</span>
+    <span class="ss">age: </span><span class="no">Int32</span><span class="p">?,</span>
+    <span class="ss">password_hash: </span><span class="no">String</span><span class="p">?</span>
+  <span class="p">)</span>
+<span class="k">end</span>
 
-class UserTwin
-  include JenniferTwin
-  include JSON::Serializable
+<span class="k">class</span> <span class="nc">UserTwin</span>
+  <span class="kp">include</span> <span class="no">JenniferTwin</span>
+  <span class="kp">include</span> <span class="no">JSON</span><span class="o">::</span><span class="no">Serializable</span>
 
-  map_fields(User, {
-    name: {key: :full_name},
-    password_hash: {ignore: true}
-  })
+  <span class="n">map_fields</span><span class="p">(</span><span class="no">User</span><span class="p">,</span> <span class="p">{</span>
+    <span class="ss">name: </span><span class="p">{</span><span class="ss">key: </span><span class="p">:</span><span class="n">full_name</span><span class="p">},</span>
+    <span class="ss">password_hash: </span><span class="p">{</span><span class="ss">ignore: </span><span class="kp">true</span><span class="p">}</span>
+  <span class="p">})</span>
 
-  setter full_name
+  <span class="n">setter</span> <span class="n">full_name</span>
 
-  @[JSON::Field(emit_null: false)]
-  @age : Int32?
-end
+  <span class="nd">@[JSON::Field(emit_null: false)]</span>
+  <span class="vi">@age</span> <span class="p">:</span> <span class="no">Int32</span><span class="p">?</span>
+<span class="k">end</span>
 
-user = User.all.first # &lt;User:0x000000000010 id: 1, name: "User 8", age: nil, password_hash: "&lt;hash&gt;"&gt;
-user_twin = UserTwin.new(user) # &lt;UserTwin:0x000000000020 @id=1, @full_name="User 8", @age=nil&gt;
-user_twin.to_json # =&gt; %({"id":1,"full_name":"User 8","age":null})
-</code></pre>
+<span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">first</span> <span class="c1"># &lt;User:0x000000000010 id: 1, name: "User 8", age: nil, password_hash: "&lt;hash&gt;"&gt;</span>
+<span class="n">user_twin</span> <span class="o">=</span> <span class="no">UserTwin</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="c1"># &lt;UserTwin:0x000000000020 @id=1, @full_name="User 8", @age=nil&gt;</span>
+<span class="n">user_twin</span><span class="p">.</span><span class="nf">to_json</span> <span class="c1"># =&gt; %({"id":1,"full_name":"User 8","age":null})</span>
+</code></pre></div></div>
 
 <p>Also you can easily convert such twin back to model</p>
 
-<pre><code class="language-crystal">user_twin.full_name = "New Name"
-user_twin.to_modal # &lt;User:0x000000000030 id: nil, name: "New Name", age: nil, password_hash: nil&gt;
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user_twin</span><span class="p">.</span><span class="nf">full_name</span> <span class="o">=</span> <span class="s2">"New Name"</span>
+<span class="n">user_twin</span><span class="p">.</span><span class="nf">to_modal</span> <span class="c1"># &lt;User:0x000000000030 id: nil, name: "New Name", age: nil, password_hash: nil&gt;</span>
+</code></pre></div></div>
 
 <h2 id="json">JSON</h2>
 
 <p>For JSON serialization there are 3 options (one of which is described above).</p>
 
-<h3 id="to_json"><code class="highlighter-rouge">#to_json</code></h3>
+<h3 id="to_json"><code class="language-plaintext highlighter-rouge">#to_json</code></h3>
 
-<p>Out of the box Jennifer provides <code class="highlighter-rouge">#to_json</code> method at model and query levels. They allows you to serialize specific records all together with any additional custom properties.</p>
+<p>Out of the box Jennifer provides <code class="language-plaintext highlighter-rouge">#to_json</code> method at model and query levels. They allows you to serialize specific records all together with any additional custom properties.</p>
 
-<pre><code class="language-crystal">user = User.all.first # &lt;User:0x000000000010 id: 1, name: "User 8", age: nil, password_hash: "&lt;hash&gt;"&gt;
-user.to_json # =&gt; {"id":1,"name":"User 8","age":null}
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">first</span> <span class="c1"># &lt;User:0x000000000010 id: 1, name: "User 8", age: nil, password_hash: "&lt;hash&gt;"&gt;</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">to_json</span> <span class="c1"># =&gt; {"id":1,"name":"User 8","age":null}</span>
+</code></pre></div></div>
 
-<p>To specify exact subset of fields that should be serialized use <code class="highlighter-rouge">only</code> argument</p>
+<p>To specify exact subset of fields that should be serialized use <code class="language-plaintext highlighter-rouge">only</code> argument</p>
 
-<pre><code class="language-crystal">user.to_json(only: %w[id name]) # =&gt; {"id":1,"name":"User 8"}
-# or just
-user.to_json(%w[id name])
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span><span class="p">.</span><span class="nf">to_json</span><span class="p">(</span><span class="ss">only: </span><span class="sx">%w[id name]</span><span class="p">)</span> <span class="c1"># =&gt; {"id":1,"name":"User 8"}</span>
+<span class="c1"># or just</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">to_json</span><span class="p">(</span><span class="sx">%w[id name]</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>It is possible to specify exception list of fields by <code class="highlighter-rouge">except</code> argument:</p>
+<p>It is possible to specify exception list of fields by <code class="language-plaintext highlighter-rouge">except</code> argument:</p>
 
-<pre><code class="language-crystal">user.to_json(except: %w[id]) # =&gt; {"name":"User 8","age":null}
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span><span class="p">.</span><span class="nf">to_json</span><span class="p">(</span><span class="ss">except: </span><span class="sx">%w[id]</span><span class="p">)</span> <span class="c1"># =&gt; {"name":"User 8","age":null}</span>
+</code></pre></div></div>
 
 <p>To extend serialized object you can pass a block:</p>
 
-<pre><code class="language-crystal">user.to_json(only: %w[id name]) do |json|
-  json.field "custom", "value"
-end # =&gt; {"id":1,"name":"User 8","custom":"value}
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span><span class="p">.</span><span class="nf">to_json</span><span class="p">(</span><span class="ss">only: </span><span class="sx">%w[id name]</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">json</span><span class="o">|</span>
+  <span class="n">json</span><span class="p">.</span><span class="nf">field</span> <span class="s2">"custom"</span><span class="p">,</span> <span class="s2">"value"</span>
+<span class="k">end</span> <span class="c1"># =&gt; {"id":1,"name":"User 8","custom":"value}</span>
+</code></pre></div></div>
 
-<p>To serialize collection retrieved from the database call <code class="highlighter-rouge">#to_json</code> method of <code class="highlighter-rouge">Jennifer::Query</code> directly. It accepts the same arguments as described above.</p>
+<p>To serialize collection retrieved from the database call <code class="language-plaintext highlighter-rouge">#to_json</code> method of <code class="language-plaintext highlighter-rouge">Jennifer::Query</code> directly. It accepts the same arguments as described above.</p>
 
-<pre><code class="language-crystal">User.all.where { _name.like("%ohn%) }.to_json(except: %w[age]) do |json, record|
-  json.field "custom", record.age
-end # =&gt; [{"id":1,"name":"John","custom":23}]
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">User</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_name</span><span class="p">.</span><span class="nf">like</span><span class="p">(</span><span class="s2">"%ohn%) }.to_json(except: %w[age]) do |json, record|
+  json.field "</span><span class="n">custom</span><span class="s2">", record.age
+end # =&gt; [{"</span><span class="nb">id</span><span class="s2">":1,"</span><span class="nb">name</span><span class="s2">":"</span><span class="no">John</span><span class="s2">","</span><span class="n">custom</span><span class="s2">":23}]
+</span></code></pre></div></div>
 
 <h3 id="serializer">Serializer</h3>
 
-<p>As an alternate you can use <a href="https://github.com/imdrasil/serializer">Serializer</a> library dedicated to this purpose - serialize Jennifer object relations. Apart from simple attribute mapping/renaming you can also specify all relationships (<code class="highlighter-rouge">has_many</code>/<code class="highlighter-rouge">belongs_to</code>/<code class="highlighter-rouge">has_one</code>), override methods, dynamically specify which attributes/relations should be serialized.</p>
+<p>As an alternate you can use <a href="https://github.com/imdrasil/serializer">Serializer</a> library dedicated to this purpose - serialize Jennifer object relations. Apart from simple attribute mapping/renaming you can also specify all relationships (<code class="language-plaintext highlighter-rouge">has_many</code>/<code class="language-plaintext highlighter-rouge">belongs_to</code>/<code class="language-plaintext highlighter-rouge">has_one</code>), override methods, dynamically specify which attributes/relations should be serialized.</p>
 
-<pre><code class="language-crystal">class CommentSerializer &lt; Serializer::Base(Comment)
-  attribute :text
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CommentSerializer</span> <span class="o">&lt;</span> <span class="no">Serializer</span><span class="o">::</span><span class="no">Base</span><span class="p">(</span><span class="no">Comment</span><span class="p">)</span>
+  <span class="n">attribute</span> <span class="ss">:text</span>
 
-  belongs_to :post, PostSerializer
-end
+  <span class="n">belongs_to</span> <span class="ss">:post</span><span class="p">,</span> <span class="no">PostSerializer</span>
+<span class="k">end</span>
 
-class PostSerializer &lt; Serializer::Base(Post)
-  attribute :title, :Title, if: :test_title
-  attribute :body
-  attribute :category
+<span class="k">class</span> <span class="nc">PostSerializer</span> <span class="o">&lt;</span> <span class="no">Serializer</span><span class="o">::</span><span class="no">Base</span><span class="p">(</span><span class="no">Post</span><span class="p">)</span>
+  <span class="n">attribute</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">:Title</span><span class="p">,</span> <span class="ss">if: :test_title</span>
+  <span class="n">attribute</span> <span class="ss">:body</span>
+  <span class="n">attribute</span> <span class="ss">:category</span>
 
-  has_many :comments, CommentSerializer
+  <span class="n">has_many</span> <span class="ss">:comments</span><span class="p">,</span> <span class="no">CommentSerializer</span>
 
-  def test_title(object, options)
-    options.nil? || !options[:test]?
-  end
+  <span class="k">def</span> <span class="nf">test_title</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+    <span class="n">options</span><span class="p">.</span><span class="nf">nil?</span> <span class="o">||</span> <span class="o">!</span><span class="n">options</span><span class="p">[</span><span class="ss">:test</span><span class="p">]?</span>
+  <span class="k">end</span>
 
-  def category
-    12
-  end
-end
+  <span class="k">def</span> <span class="nf">category</span>
+    <span class="mi">12</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-ModelSerializer.new(Post.last).serialize(
-  except: [:category],
-  includes: {
-    :comments =&gt; [:post], # you can specify relations any level deep
-  },
-  meta: { :page =&gt; 0 } # and add meta data
-)
-</code></pre>
+<span class="no">ModelSerializer</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">Post</span><span class="p">.</span><span class="nf">last</span><span class="p">).</span><span class="nf">serialize</span><span class="p">(</span>
+  <span class="ss">except: </span><span class="p">[:</span><span class="n">category</span><span class="p">],</span>
+  <span class="ss">includes: </span><span class="p">{</span>
+    <span class="ss">:comments</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:post</span><span class="p">],</span> <span class="c1"># you can specify relations any level deep</span>
+  <span class="p">},</span>
+  <span class="ss">meta: </span><span class="p">{</span> <span class="ss">:page</span> <span class="o">=&gt;</span> <span class="mi">0</span> <span class="p">}</span> <span class="c1"># and add meta data</span>
+<span class="p">)</span>
+</code></pre></div></div>
 
 <p>More descriptions you can find on it’s github page.</p>
 

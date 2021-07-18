@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>http_method_emulator | Imdrasil Homebrew Stuff</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="http_method_emulator" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/http_method_emulator/" />
 <meta property="og:url" content="https://imdrasil.github.io/http_method_emulator/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="http_method_emulator" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"http_method_emulator","url":"https://imdrasil.github.io/http_method_emulator/","@context":"http://schema.org"}</script>
+{"headline":"http_method_emulator","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/http_method_emulator/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -37,30 +39,30 @@
 <h2 id="installation">Installation</h2>
 
 <ol>
-  <li>Add the dependency to your <code class="highlighter-rouge">shard.yml</code>:
+  <li>Add the dependency to your <code class="language-plaintext highlighter-rouge">shard.yml</code>:
     <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">http_method_emulator</span><span class="pi">:</span>
 <span class="err"> </span><span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/http_method_emulator</span>
 </code></pre></div>    </div>
   </li>
-  <li>Run <code class="highlighter-rouge">shards install</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">shards install</code></li>
 </ol>
 
 <h2 id="usage">Usage</h2>
 
-<p>HTML form supports only <code class="highlighter-rouge">GET</code> and <code class="highlighter-rouge">POST</code> method. To bring other methods support you can use this shard. This shard will be useful for a web frameworks/libs that have no such functionality (like Kemal or Spider-Gazelle).</p>
+<p>HTML form supports only <code class="language-plaintext highlighter-rouge">GET</code> and <code class="language-plaintext highlighter-rouge">POST</code> method. To bring other methods support you can use this shard. This shard will be useful for a web frameworks/libs that have no such functionality (like Kemal or Spider-Gazelle).</p>
 
-<pre><code class="language-crystal">require "http_method_emulator"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"http_method_emulator"</span>
 
-# Add handler to your middlewares
-# like for Kemal
+<span class="c1"># Add handler to your middlewares</span>
+<span class="c1"># like for Kemal</span>
 
-add_handler HTTPMethodEmulator::Handler::INSTANCE
-</code></pre>
+<span class="n">add_handler</span> <span class="no">HTTPMethodEmulator</span><span class="o">::</span><span class="no">Handler</span><span class="o">::</span><span class="no">INSTANCE</span>
+</code></pre></div></div>
 
-<p>Also require <code class="highlighter-rouge">"lib/http_method_emulator/assets/http_method_emulator.js"</code> in your js assets.</p>
+<p>Also require <code class="language-plaintext highlighter-rouge">"lib/http_method_emulator/assets/http_method_emulator.js"</code> in your js assets.</p>
 
-<p>Now you can just create <code class="highlighter-rouge">POST</code> form with hidden field <code class="highlighter-rouge">_method</code> holding required method.</p>
+<p>Now you can just create <code class="language-plaintext highlighter-rouge">POST</code> form with hidden field <code class="language-plaintext highlighter-rouge">_method</code> holding required method.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">action=</span><span class="s">"/some/path"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"_method"</span> <span class="na">value=</span><span class="s">"PATCH"</span><span class="nt">&gt;</span>
@@ -68,28 +70,28 @@ add_handler HTTPMethodEmulator::Handler::INSTANCE
 <span class="nt">&lt;/form&gt;</span>
 </code></pre></div></div>
 
-<p>JS catches submit event and add query parameter based on form <code class="highlighter-rouge">_method</code> field (or do nothing if it isn’t exist). Handler modifies <code class="highlighter-rouge">POST</code> request method setting value sent in query <code class="highlighter-rouge">_method</code> field.</p>
+<p>JS catches submit event and add query parameter based on form <code class="language-plaintext highlighter-rouge">_method</code> field (or do nothing if it isn’t exist). Handler modifies <code class="language-plaintext highlighter-rouge">POST</code> request method setting value sent in query <code class="language-plaintext highlighter-rouge">_method</code> field.</p>
 
 <h3 id="configuration">Configuration</h3>
 
 <p>You can specify field name to be used for holding method name. This should be done in two places - crystal and JS.</p>
 
-<pre><code class="language-crystal">HTTPMethodEmulator.config do |conf|
-  conf.key = "http_method"
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">HTTPMethodEmulator</span><span class="p">.</span><span class="nf">config</span> <span class="k">do</span> <span class="o">|</span><span class="n">conf</span><span class="o">|</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">key</span> <span class="o">=</span> <span class="s2">"http_method"</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Anywhere after js being imported</span>
-<span class="nb">window</span><span class="p">.</span><span class="nx">HTTPMethodEmulator</span><span class="p">.</span><span class="nx">key</span> <span class="o">=</span> <span class="s2">"http_method"</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">HTTPMethodEmulator</span><span class="p">.</span><span class="nx">key</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http_method</span><span class="dl">"</span>
 </code></pre></div></div>
 
 <h2 id="contributing">Contributing</h2>
 
 <ol>
   <li>Fork it (<a href="https://github.com/imdrasil/http_method_emulator/fork">https://github.com/imdrasil/http_method_emulator/fork</a>)</li>
-  <li>Create your feature branch (<code class="highlighter-rouge">git checkout -b my-new-feature</code>)</li>
-  <li>Commit your changes (<code class="highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
-  <li>Push to the branch (<code class="highlighter-rouge">git push origin my-new-feature</code>)</li>
+  <li>Create your feature branch (<code class="language-plaintext highlighter-rouge">git checkout -b my-new-feature</code>)</li>
+  <li>Commit your changes (<code class="language-plaintext highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
+  <li>Push to the branch (<code class="language-plaintext highlighter-rouge">git push origin my-new-feature</code>)</li>
   <li>Create a new Pull Request</li>
 </ol>
 

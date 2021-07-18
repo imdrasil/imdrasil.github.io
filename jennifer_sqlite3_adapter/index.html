@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Jennifer SQLite3 adapter | Imdrasil Homebrew Stuff</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Jennifer SQLite3 adapter" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer_sqlite3_adapter/" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer_sqlite3_adapter/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Jennifer SQLite3 adapter" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Jennifer SQLite3 adapter","url":"https://imdrasil.github.io/jennifer_sqlite3_adapter/","@context":"http://schema.org"}</script>
+{"headline":"Jennifer SQLite3 adapter","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer_sqlite3_adapter/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -37,31 +39,31 @@
 <h2 id="installation">Installation</h2>
 
 <ol>
-  <li>Add the dependency to your <code class="highlighter-rouge">shard.yml</code>:
+  <li>Add the dependency to your <code class="language-plaintext highlighter-rouge">shard.yml</code>:
     <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer_sqlite3_adapter</span><span class="pi">:</span>
 <span class="err"> </span><span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer_sqlite3_adapter</span>
  <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.3.0"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Run <code class="highlighter-rouge">shards install</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">shards install</code></li>
 </ol>
 
 <h2 id="usage">Usage</h2>
 
-<p>This shard supports Jennifer <code class="highlighter-rouge">0.9.0</code> and above. It is tested with SQLite <code class="highlighter-rouge">3.22.0</code> version.</p>
+<p>This shard supports Jennifer <code class="language-plaintext highlighter-rouge">0.9.0</code> and above. It is tested with SQLite <code class="language-plaintext highlighter-rouge">3.22.0</code> version.</p>
 
-<pre><code class="language-crystal">require "jennifer"
-require "jennifer_sqlite3_adapter"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"jennifer"</span>
+<span class="nb">require</span> <span class="s2">"jennifer_sqlite3_adapter"</span>
 
-Jennifer::Config.configure do |conf|
-  conf.adapter = "sqlite3"
-  conf.host = "."
-  conf.db = "test.db"
-end
-</code></pre>
+<span class="no">Jennifer</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">conf</span><span class="o">|</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">adapter</span> <span class="o">=</span> <span class="s2">"sqlite3"</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">host</span> <span class="o">=</span> <span class="s2">"."</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">db</span> <span class="o">=</span> <span class="s2">"test.db"</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p><code class="highlighter-rouge">user</code> and <code class="highlighter-rouge">password</code> configuration is not required as database is SQLite doesn’t provide db-user authentication and they are ignored. <code class="highlighter-rouge">host</code> options is used to specify path to db-file, <code class="highlighter-rouge">db</code> - file name.</p>
+<p><code class="language-plaintext highlighter-rouge">user</code> and <code class="language-plaintext highlighter-rouge">password</code> configuration is not required as database is SQLite doesn’t provide db-user authentication and they are ignored. <code class="language-plaintext highlighter-rouge">host</code> options is used to specify path to db-file, <code class="language-plaintext highlighter-rouge">db</code> - file name.</p>
 
 <p>As</p>
 
@@ -77,69 +79,69 @@ end
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">#bool</code></td>
-      <td><code class="highlighter-rouge">INTEGER</code></td>
-      <td><code class="highlighter-rouge">Bool</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#bool</code></td>
+      <td><code class="language-plaintext highlighter-rouge">INTEGER</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Bool</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#integer</code></td>
-      <td><code class="highlighter-rouge">INTEGER</code></td>
-      <td><code class="highlighter-rouge">Int32</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#integer</code></td>
+      <td><code class="language-plaintext highlighter-rouge">INTEGER</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Int32</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#bigint</code></td>
-      <td><code class="highlighter-rouge">INTEGER</code></td>
-      <td><code class="highlighter-rouge">Int32</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#bigint</code></td>
+      <td><code class="language-plaintext highlighter-rouge">INTEGER</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Int32</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#short</code></td>
-      <td><code class="highlighter-rouge">INTEGER</code></td>
-      <td><code class="highlighter-rouge">Int32</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#short</code></td>
+      <td><code class="language-plaintext highlighter-rouge">INTEGER</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Int32</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#tinyint</code></td>
-      <td><code class="highlighter-rouge">INTEGER</code></td>
-      <td><code class="highlighter-rouge">Int32</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#tinyint</code></td>
+      <td><code class="language-plaintext highlighter-rouge">INTEGER</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Int32</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#float</code></td>
-      <td><code class="highlighter-rouge">REAL</code></td>
-      <td><code class="highlighter-rouge">Float64</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#float</code></td>
+      <td><code class="language-plaintext highlighter-rouge">REAL</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Float64</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#double</code></td>
-      <td><code class="highlighter-rouge">REAL</code></td>
-      <td><code class="highlighter-rouge">Float64</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#double</code></td>
+      <td><code class="language-plaintext highlighter-rouge">REAL</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Float64</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#real</code></td>
-      <td><code class="highlighter-rouge">REAL</code></td>
-      <td><code class="highlighter-rouge">Float64</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#real</code></td>
+      <td><code class="language-plaintext highlighter-rouge">REAL</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Float64</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#text</code></td>
-      <td><code class="highlighter-rouge">TEXT</code></td>
-      <td><code class="highlighter-rouge">String</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#text</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TEXT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">String</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#string</code></td>
-      <td><code class="highlighter-rouge">TEXT</code></td>
-      <td><code class="highlighter-rouge">String</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#string</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TEXT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">String</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#varchar</code></td>
-      <td><code class="highlighter-rouge">TEXT</code></td>
-      <td><code class="highlighter-rouge">String</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#varchar</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TEXT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">String</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#time</code></td>
-      <td><code class="highlighter-rouge">TEXT</code></td>
-      <td><code class="highlighter-rouge">Time</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#time</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TEXT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Time</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#timestamp</code></td>
-      <td><code class="highlighter-rouge">TEXT</code></td>
-      <td><code class="highlighter-rouge">Time</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#timestamp</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TEXT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Time</code></td>
     </tr>
   </tbody>
 </table>
@@ -159,19 +161,19 @@ end
 
 <h4 id="foreign-key">Foreign key</h4>
 
-<p>At a startup adapter automatically enable foreign keys executing <code class="highlighter-rouge">PRAGMA foreign_keys = ON</code>.
+<p>At a startup adapter automatically enable foreign keys executing <code class="language-plaintext highlighter-rouge">PRAGMA foreign_keys = ON</code>.
 But be aware using migrations - as described above, some table manipulations will recreate a table.
 To avoid breaking of any foreign key, adapter will try to disable them until the end of a manipulation,
 but this is possible only outside of a transaction. Therefore in a such kind of migrations add
-<code class="highlighter-rouge">with_transaction false</code> at the class body to disable automatic transaction around migration methods.</p>
+<code class="language-plaintext highlighter-rouge">with_transaction false</code> at the class body to disable automatic transaction around migration methods.</p>
 
 <h2 id="contributing">Contributing</h2>
 
 <ol>
   <li>Fork it (<a href="https://github.com/imdrasil/jennifer_sqlite3_adapter/fork">https://github.com/imdrasil/jennifer_sqlite3_adapter/fork</a>)</li>
-  <li>Create your feature branch (<code class="highlighter-rouge">git checkout -b my-new-feature</code>)</li>
-  <li>Commit your changes (<code class="highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
-  <li>Push to the branch (<code class="highlighter-rouge">git push origin my-new-feature</code>)</li>
+  <li>Create your feature branch (<code class="language-plaintext highlighter-rouge">git checkout -b my-new-feature</code>)</li>
+  <li>Commit your changes (<code class="language-plaintext highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
+  <li>Push to the branch (<code class="language-plaintext highlighter-rouge">git push origin my-new-feature</code>)</li>
   <li>Create a new Pull Request</li>
 </ol>
 

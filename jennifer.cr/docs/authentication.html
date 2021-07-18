@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/authentication.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/authentication.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/authentication.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/authentication.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -92,45 +94,45 @@
 
 <h1 id="authentication">Authentication</h1>
 
-<p>To add authentication to your user model just use <code class="highlighter-rouge">Jennifer::Model::Authentication</code> module’s <code class="highlighter-rouge">with_authentication</code> macro:</p>
+<p>To add authentication to your user model just use <code class="language-plaintext highlighter-rouge">Jennifer::Model::Authentication</code> module’s <code class="language-plaintext highlighter-rouge">with_authentication</code> macro:</p>
 
-<pre><code class="language-crystal">require "jennifer/model/authentication"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"jennifer/model/authentication"</span>
 
-class User &lt; Jennifer::Model::Base
-  include Jennifer::Model::Authentication
+<span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="kp">include</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Authentication</span>
 
-  with_authentication
+  <span class="n">with_authentication</span>
 
-  mapping(
-    id: Primary32,
-    email: {type: String, default: ""},
-    password_digest: {type: String, default: ""},
-    password: Password,
-    password_confirmation: { type: String?, virtual: true }
-  )
-end
-</code></pre>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">email: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">,</span> <span class="ss">default: </span><span class="s2">""</span><span class="p">},</span>
+    <span class="ss">password_digest: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">,</span> <span class="ss">default: </span><span class="s2">""</span><span class="p">},</span>
+    <span class="ss">password: </span><span class="no">Password</span><span class="p">,</span>
+    <span class="ss">password_confirmation: </span><span class="p">{</span> <span class="ss">type: </span><span class="no">String</span><span class="p">?,</span> <span class="ss">virtual: </span><span class="kp">true</span> <span class="p">}</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p><code class="highlighter-rouge">Password</code> in the <code class="highlighter-rouge">password</code> field definition is actually <code class="highlighter-rouge">Jennifer::Model::Authentication::Password</code> constant which includes definition for virtual password attribute. It looks like:</p>
+<p><code class="language-plaintext highlighter-rouge">Password</code> in the <code class="language-plaintext highlighter-rouge">password</code> field definition is actually <code class="language-plaintext highlighter-rouge">Jennifer::Model::Authentication::Password</code> constant which includes definition for virtual password attribute. It looks like:</p>
 
-<pre><code class="language-crystal">Password = {
-  type:    String?,
-  virtual: true,
-  setter:  false,
-}
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Password</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">type:    </span><span class="no">String</span><span class="p">?,</span>
+  <span class="ss">virtual: </span><span class="kp">true</span><span class="p">,</span>
+  <span class="ss">setter:  </span><span class="kp">false</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p>Mapping automatically resolves it to its definition. At the moment only top level non generic definition could be used, e.g. <code class="highlighter-rouge">password: { type: Password }</code> and <code class="highlighter-rouge">password: Password?</code> are not supported.</p>
+<p>Mapping automatically resolves it to its definition. At the moment only top level non generic definition could be used, e.g. <code class="language-plaintext highlighter-rouge">password: { type: Password }</code> and <code class="language-plaintext highlighter-rouge">password: Password?</code> are not supported.</p>
 
-<p>For authentication <code class="highlighter-rouge">Crypto::Bcrypt::Password</code> is used. This mechanism requires you to have a <code class="highlighter-rouge">password_digest</code>, <code class="highlighter-rouge">password</code>, <code class="highlighter-rouge">password_confirmation</code> attributes defined in your mapping. This attribute can be customized - <code class="highlighter-rouge">with_authentication</code> macro accepts next arguments:</p>
+<p>For authentication <code class="language-plaintext highlighter-rouge">Crypto::Bcrypt::Password</code> is used. This mechanism requires you to have a <code class="language-plaintext highlighter-rouge">password_digest</code>, <code class="language-plaintext highlighter-rouge">password</code>, <code class="language-plaintext highlighter-rouge">password_confirmation</code> attributes defined in your mapping. This attribute can be customized - <code class="language-plaintext highlighter-rouge">with_authentication</code> macro accepts next arguments:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">password</code> - presents string based raw password attribute name;</li>
-  <li><code class="highlighter-rouge">password_digest</code> - presents string based encrypted password.</li>
+  <li><code class="language-plaintext highlighter-rouge">password</code> - presents string based raw password attribute name;</li>
+  <li><code class="language-plaintext highlighter-rouge">password_digest</code> - presents string based encrypted password.</li>
 </ul>
 
 <blockquote>
-  <p>NOTE: <code class="highlighter-rouge">password_confirmation</code> attribute name is generated based on the <code class="highlighter-rouge">password</code> value + <code class="highlighter-rouge">_confirmation</code>.</p>
+  <p>NOTE: <code class="language-plaintext highlighter-rouge">password_confirmation</code> attribute name is generated based on the <code class="language-plaintext highlighter-rouge">password</code> value + <code class="language-plaintext highlighter-rouge">_confirmation</code>.</p>
 </blockquote>
 
 <p>The following validations are added automatically:</p>
@@ -143,21 +145,21 @@ end
 
 <p>If password confirmation validation is not needed, simply leave out the value for password_confirmation (i.e. don’t provide a form field for it). When this attribute has a nil value, the validation will not be triggered.</p>
 
-<pre><code class="language-crystal">user = User.build(name: "david")
-user.password = ""
-user.password_confirmation = "nomatch"
-user.save # =&gt; false, password required
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">build</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"david"</span><span class="p">)</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">password</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">password_confirmation</span> <span class="o">=</span> <span class="s2">"nomatch"</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">save</span> <span class="c1"># =&gt; false, password required</span>
 
-user.password = "mUc3m00RsqyRe"
-user.save # =&gt; false, confirmation doesn't match
-user.password_confirmation = 'mUc3m00RsqyRe'
-user.save # =&gt; true
+<span class="n">user</span><span class="p">.</span><span class="nf">password</span> <span class="o">=</span> <span class="s2">"mUc3m00RsqyRe"</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">save</span> <span class="c1"># =&gt; false, confirmation doesn't match</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">password_confirmation</span> <span class="o">=</span> <span class="s1">'e'</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">save</span> <span class="c1"># =&gt; true</span>
 
-user.authenticate("notright")  # =&gt; false
-user.authenticate("mUc3m00RsqyRe") # =&gt; user
-User.all.where { _name == "david" }.first.try(&amp;.authenticate("notright")) # nil
-User.all.where { _name == "david" }.first.try(&amp;.authenticate("mUc3m00RsqyRe")) # =&gt; User
-</code></pre>
+<span class="n">user</span><span class="p">.</span><span class="nf">authenticate</span><span class="p">(</span><span class="s2">"notright"</span><span class="p">)</span>  <span class="c1"># =&gt; false</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">authenticate</span><span class="p">(</span><span class="s2">"mUc3m00RsqyRe"</span><span class="p">)</span> <span class="c1"># =&gt; user</span>
+<span class="no">User</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_name</span> <span class="o">==</span> <span class="s2">"david"</span> <span class="p">}.</span><span class="nf">first</span><span class="p">.</span><span class="nf">try</span><span class="p">(</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">authenticate</span><span class="p">(</span><span class="s2">"notright"</span><span class="p">))</span> <span class="c1"># nil</span>
+<span class="no">User</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_name</span> <span class="o">==</span> <span class="s2">"david"</span> <span class="p">}.</span><span class="nf">first</span><span class="p">.</span><span class="nf">try</span><span class="p">(</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">authenticate</span><span class="p">(</span><span class="s2">"mUc3m00RsqyRe"</span><span class="p">))</span> <span class="c1"># =&gt; User</span>
+</code></pre></div></div>
 
   </div>
 

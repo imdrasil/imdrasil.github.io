@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/model_scopes.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/model_scopes.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/model_scopes.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/model_scopes.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -94,9 +96,9 @@
 
 <p>Also you can specify prepared query statement.</p>
 
-<pre><code class="language-crystal">scope :query_name { where { c("some_field") &gt; 10 } }
-scope :query_with_arguments { |a, b| where { (c("f1") == a) &amp;&amp; (c("f2").in(b) } }
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scope</span> <span class="ss">:query_name</span> <span class="p">{</span> <span class="n">where</span> <span class="p">{</span> <span class="n">c</span><span class="p">(</span><span class="s2">"some_field"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="p">}</span> <span class="p">}</span>
+<span class="n">scope</span> <span class="ss">:query_with_arguments</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">|</span> <span class="n">where</span> <span class="p">{</span> <span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"f1"</span><span class="p">)</span> <span class="o">==</span> <span class="n">a</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"f2"</span><span class="p">).</span><span class="nf">in</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div></div>
 
 <p>As you can see arguments are next:</p>
 
@@ -107,23 +109,23 @@ scope :query_with_arguments { |a, b| where { (c("f1") == a) &amp;&amp; (c("f2").
 
 <p>Also they are chainable, so you could do:</p>
 
-<pre><code class="language-crystal">ModelName.all
-  .where { _some_field &gt; 1 }
-  .query_with_arguments("done", [1,2])
-  .order(f1: :asc)
-  .no_argument_query
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">ModelName</span><span class="p">.</span><span class="nf">all</span>
+  <span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_some_field</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
+  <span class="p">.</span><span class="nf">query_with_arguments</span><span class="p">(</span><span class="s2">"done"</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+  <span class="p">.</span><span class="nf">order</span><span class="p">(</span><span class="ss">f1: :asc</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">no_argument_query</span>
+</code></pre></div></div>
 
 <h2 id="default-model-scope">Default model scope</h2>
 
-<p>To define a default model scope override <code class="highlighter-rouge">.all</code> method:</p>
+<p>To define a default model scope override <code class="language-plaintext highlighter-rouge">.all</code> method:</p>
 
-<pre><code class="language-crystal">class Model &lt; Jennifer::Mode::Base
-  def self.all
-    super.where { _deleted == false }
-  end
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Model</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Mode</span><span class="o">::</span><span class="no">Base</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">all</span>
+    <span class="k">super</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_deleted</span> <span class="o">==</span> <span class="kp">false</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
   </div>
 

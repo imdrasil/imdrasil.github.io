@@ -2,7 +2,7 @@ title: Imdrasil Homebrew Stuff
 email: moranibaca@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://imdrasil.github.io"
-github_username:  imdrasil
+github_username: imdrasil
 
 # Build settings
 markdown: kramdown

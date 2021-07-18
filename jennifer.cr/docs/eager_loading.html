@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/eager_loading.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/eager_loading.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/eager_loading.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/eager_loading.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -95,70 +97,70 @@
 <p>As was said Jennifer provide lazy query evaluation so it will be performed only after invoking executing method. Here is a list of all executing methods:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">#last</code> - returns last found record or <code class="highlighter-rouge">nil</code> if nothing was found;</li>
-  <li><code class="highlighter-rouge">#last!</code> - returns last record or raise <code class="highlighter-rouge">RecordNotFound</code> if nothing was found;</li>
-  <li><code class="highlighter-rouge">#first</code> - returns first found record or <code class="highlighter-rouge">nil</code> if nothing was found;</li>
-  <li><code class="highlighter-rouge">#first!</code> - returns first record or raise <code class="highlighter-rouge">RecordNotFound</code> if nothing was found;</li>
-  <li><code class="highlighter-rouge">#pluck</code> - returns array of specified fields values instead of records;</li>
-  <li><code class="highlighter-rouge">#delete</code> - deletes all records in db by query;</li>
-  <li><code class="highlighter-rouge">#exists?</code> - checks if there is any record in DB that fits query;</li>
-  <li><code class="highlighter-rouge">#update</code> - updates fields by given values;</li>
-  <li><code class="highlighter-rouge">#modify</code> - modify fields by given values using specified operators;</li>
-  <li><code class="highlighter-rouge">#increment</code> - increments fields by given values;</li>
-  <li><code class="highlighter-rouge">#decrement</code> - decrements fields by given values;</li>
-  <li><code class="highlighter-rouge">#to_a</code> - calls <code class="highlighter-rouge">#results</code>;</li>
-  <li><code class="highlighter-rouge">#db_results</code> - returns array of hashes found by query execution;</li>
-  <li><code class="highlighter-rouge">#results</code> - returns array of results found by query execution;</li>
-  <li><code class="highlighter-rouge">#ids</code> - plucks <code class="highlighter-rouge">id</code> field and converts it to the <code class="highlighter-rouge">Int32</code>;</li>
-  <li><code class="highlighter-rouge">#each</code> - calls <code class="highlighter-rouge">#to_a</code> and yields each object;</li>
-  <li><code class="highlighter-rouge">#each_result_set</code> - perform request and yield each result set;</li>
-  <li><code class="highlighter-rouge">#find_in_batches</code> - retrieves from db result sets of given size and yields them;</li>
-  <li><code class="highlighter-rouge">#find_each</code> - same as <code class="highlighter-rouge">#find_in_batches</code> but yields each result instead of array;</li>
-  <li><code class="highlighter-rouge">#find_records_by_sql</code> - returns array of <code class="highlighter-rouge">Jennifer::Record</code> found by given plain SQL request;</li>
-  <li><code class="highlighter-rouge">#destroy</code> - invokes <code class="highlighter-rouge">#to_a</code> and calls <code class="highlighter-rouge">#destroy</code> on each record`.</li>
+  <li><code class="language-plaintext highlighter-rouge">#last</code> - returns last found record or <code class="language-plaintext highlighter-rouge">nil</code> if nothing was found;</li>
+  <li><code class="language-plaintext highlighter-rouge">#last!</code> - returns last record or raise <code class="language-plaintext highlighter-rouge">RecordNotFound</code> if nothing was found;</li>
+  <li><code class="language-plaintext highlighter-rouge">#first</code> - returns first found record or <code class="language-plaintext highlighter-rouge">nil</code> if nothing was found;</li>
+  <li><code class="language-plaintext highlighter-rouge">#first!</code> - returns first record or raise <code class="language-plaintext highlighter-rouge">RecordNotFound</code> if nothing was found;</li>
+  <li><code class="language-plaintext highlighter-rouge">#pluck</code> - returns array of specified fields values instead of records;</li>
+  <li><code class="language-plaintext highlighter-rouge">#delete</code> - deletes all records in db by query;</li>
+  <li><code class="language-plaintext highlighter-rouge">#exists?</code> - checks if there is any record in DB that fits query;</li>
+  <li><code class="language-plaintext highlighter-rouge">#update</code> - updates fields by given values;</li>
+  <li><code class="language-plaintext highlighter-rouge">#modify</code> - modify fields by given values using specified operators;</li>
+  <li><code class="language-plaintext highlighter-rouge">#increment</code> - increments fields by given values;</li>
+  <li><code class="language-plaintext highlighter-rouge">#decrement</code> - decrements fields by given values;</li>
+  <li><code class="language-plaintext highlighter-rouge">#to_a</code> - calls <code class="language-plaintext highlighter-rouge">#results</code>;</li>
+  <li><code class="language-plaintext highlighter-rouge">#db_results</code> - returns array of hashes found by query execution;</li>
+  <li><code class="language-plaintext highlighter-rouge">#results</code> - returns array of results found by query execution;</li>
+  <li><code class="language-plaintext highlighter-rouge">#ids</code> - plucks <code class="language-plaintext highlighter-rouge">id</code> field and converts it to the <code class="language-plaintext highlighter-rouge">Int32</code>;</li>
+  <li><code class="language-plaintext highlighter-rouge">#each</code> - calls <code class="language-plaintext highlighter-rouge">#to_a</code> and yields each object;</li>
+  <li><code class="language-plaintext highlighter-rouge">#each_result_set</code> - perform request and yield each result set;</li>
+  <li><code class="language-plaintext highlighter-rouge">#find_in_batches</code> - retrieves from db result sets of given size and yields them;</li>
+  <li><code class="language-plaintext highlighter-rouge">#find_each</code> - same as <code class="language-plaintext highlighter-rouge">#find_in_batches</code> but yields each result instead of array;</li>
+  <li><code class="language-plaintext highlighter-rouge">#find_records_by_sql</code> - returns array of <code class="language-plaintext highlighter-rouge">Jennifer::Record</code> found by given plain SQL request;</li>
+  <li><code class="language-plaintext highlighter-rouge">#destroy</code> - invokes <code class="language-plaintext highlighter-rouge">#to_a</code> and calls <code class="language-plaintext highlighter-rouge">#destroy</code> on each record`.</li>
 </ul>
 
-<p><code class="highlighter-rouge">#pluck</code> returns array of values if only one field was given and array of arrays otherwise. By default it uses scope of current table (e.g. in previous example select clause included <code class="highlighter-rouge">contacts.id</code>). To allow grepping custom fields or any statement you need to specify custom select clause:</p>
+<p><code class="language-plaintext highlighter-rouge">#pluck</code> returns array of values if only one field was given and array of arrays otherwise. By default it uses scope of current table (e.g. in previous example select clause included <code class="language-plaintext highlighter-rouge">contacts.id</code>). To allow grepping custom fields or any statement you need to specify custom select clause:</p>
 
-<pre><code class="language-crystal">Contact.all
-  .select("COUNT(id) as count, contacts.name")
-  .group("name")
-  .having { sql("COUNT(id)") &gt; 1 }
-  .pluck(:count)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span>
+  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="s2">"COUNT(id) as count, contacts.name"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">having</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"COUNT(id)"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
+  <span class="p">.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:count</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h2 id="relation-eager-loading">Relation Eager Loading</h2>
 
 <p>To prevent N+1 problem you may want to automatically load some related objects. There 3 possible ways how to do this:</p>
 
 <ul>
-  <li>using <code class="highlighter-rouge">#eager_load</code> - will automatically join all provided relations using <code class="highlighter-rouge">LEFT OUTER JOIN</code>;</li>
-  <li>using <code class="highlighter-rouge">#relation</code> (or manual joining) + <code class="highlighter-rouge">#with</code> - works as <code class="highlighter-rouge">#eager_load</code> but allows you to manipulate loaded records;</li>
-  <li>using <code class="highlighter-rouge">#includes</code>/<code class="highlighter-rouge">#preload</code> - will load all specified relations using separate requests.</li>
+  <li>using <code class="language-plaintext highlighter-rouge">#eager_load</code> - will automatically join all provided relations using <code class="language-plaintext highlighter-rouge">LEFT OUTER JOIN</code>;</li>
+  <li>using <code class="language-plaintext highlighter-rouge">#relation</code> (or manual joining) + <code class="language-plaintext highlighter-rouge">#with</code> - works as <code class="language-plaintext highlighter-rouge">#eager_load</code> but allows you to manipulate loaded records;</li>
+  <li>using <code class="language-plaintext highlighter-rouge">#includes</code>/<code class="language-plaintext highlighter-rouge">#preload</code> - will load all specified relations using separate requests.</li>
 </ul>
 
 <p>Examples:</p>
 
-<pre><code class="language-crystal"># #eager_load
-Contact.all.eager_load(:addresses)
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># #eager_load</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">eager_load</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span>
 
-# manual eager load
-Contact.all.left_join(Address) { _contacts__id == _contact_id }.with_relation(:addresses)
+<span class="c1"># manual eager load</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">left_join</span><span class="p">(</span><span class="no">Address</span><span class="p">)</span> <span class="p">{</span> <span class="n">_contacts__id</span> <span class="o">==</span> <span class="n">_contact_id</span> <span class="p">}.</span><span class="nf">with_relation</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span>
 
-# #includes/#preload
-Contact.all.includes(:addresses)
-# or
-Contact.all.preload(:addresses)
-</code></pre>
+<span class="c1"># #includes/#preload</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">preload</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span>
+</code></pre></div></div>
 
 <blockquote>
-  <p>NOTE: <code class="highlighter-rouge">#preload</code> is just an alias for <code class="highlighter-rouge">#includes</code>.</p>
+  <p>NOTE: <code class="language-plaintext highlighter-rouge">#preload</code> is just an alias for <code class="language-plaintext highlighter-rouge">#includes</code>.</p>
 </blockquote>
 
-<p>Also <code class="highlighter-rouge">#eager_load</code> and <code class="highlighter-rouge">#includes</code> accepts splatted named tuple as last arguments specifying nested relations to load:</p>
+<p>Also <code class="language-plaintext highlighter-rouge">#eager_load</code> and <code class="language-plaintext highlighter-rouge">#includes</code> accepts splatted named tuple as last arguments specifying nested relations to load:</p>
 
-<pre><code class="language-crystal">City.all.eager_load(country: { contact: [:passport, :addresses]})
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">City</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">eager_load</span><span class="p">(</span><span class="ss">country: </span><span class="p">{</span> <span class="ss">contact: </span><span class="p">[</span><span class="ss">:passport</span><span class="p">,</span> <span class="ss">:addresses</span><span class="p">]})</span>
+</code></pre></div></div>
 
   </div>
 

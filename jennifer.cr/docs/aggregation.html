@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/aggregation.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/aggregation.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/aggregation.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/aggregation.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -92,61 +94,61 @@
 
 <h1 id="aggregations">Aggregations</h1>
 
-<p>There are 2 types of aggregation functions: ones which are working without a GROUP clause and returns single values (e.g. <code class="highlighter-rouge">max</code>, <code class="highlighter-rouge">min</code>, <code class="highlighter-rouge">count</code>) and ones, working with GROUP clause and returning arrays of values.</p>
+<p>There are 2 types of aggregation functions: ones which are working without a GROUP clause and returns single values (e.g. <code class="language-plaintext highlighter-rouge">max</code>, <code class="language-plaintext highlighter-rouge">min</code>, <code class="language-plaintext highlighter-rouge">count</code>) and ones, working with GROUP clause and returning arrays of values.</p>
 
 <h4 id="max">Max</h4>
 
-<pre><code class="language-crystal">Contact.all.max(:name, String)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="no">String</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h4 id="min">Min</h4>
 
-<pre><code class="language-crystal">Contact.all.min(:age, Int32)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="no">Int32</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h4 id="avg">Avg</h4>
 
-<pre><code class="language-crystal">Contact.all.avg(:age, Float64) # mysql specific
-Contact.all.avg(:age, PG::Numeric) # Postgres specific
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">avg</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="no">Float64</span><span class="p">)</span> <span class="c1"># mysql specific</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">avg</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="no">PG</span><span class="o">::</span><span class="no">Numeric</span><span class="p">)</span> <span class="c1"># Postgres specific</span>
+</code></pre></div></div>
 
 <h4 id="sum">Sum</h4>
 
-<pre><code class="language-crystal">Contact.all.sum(:age, Float64) # mysql specific
-Contact.all.sum(:age, Int64) # postgres specific
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="no">Float64</span><span class="p">)</span> <span class="c1"># mysql specific</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="no">Int64</span><span class="p">)</span> <span class="c1"># postgres specific</span>
+</code></pre></div></div>
 
 <h4 id="count">Count</h4>
 
-<pre><code class="language-crystal">Contact.all.count
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">count</span>
+</code></pre></div></div>
 
 <h4 id="group-max">Group Max</h4>
 
-<pre><code class="language-crystal">Contact.all.group(:gender).group_max(:age, Int32)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="ss">:gender</span><span class="p">).</span><span class="nf">group_max</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="no">Int32</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h4 id="group-min">Group Min</h4>
 
-<pre><code class="language-crystal">Contact.all.group(:gender).group_min(:age, Int32)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="ss">:gender</span><span class="p">).</span><span class="nf">group_min</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="no">Int32</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h4 id="group-avg">Group Avg</h4>
 
-<pre><code class="language-crystal">Contact.all.group(:gender).group_avg(:age, Float64) # mysql specific
-Contact.all.group(:gender).group_avg(:age, PG::Numeric) # Postgres specific
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="ss">:gender</span><span class="p">).</span><span class="nf">group_avg</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="no">Float64</span><span class="p">)</span> <span class="c1"># mysql specific</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="ss">:gender</span><span class="p">).</span><span class="nf">group_avg</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="no">PG</span><span class="o">::</span><span class="no">Numeric</span><span class="p">)</span> <span class="c1"># Postgres specific</span>
+</code></pre></div></div>
 
 <h4 id="group-sum">Group Sum</h4>
 
-<pre><code class="language-crystal">Contact.all.group(:gender).group_sum(:age, Float64) # mysql specific
-Contact.all.group(:gender).group_sum(:age, Int64) # postgres specific
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="ss">:gender</span><span class="p">).</span><span class="nf">group_sum</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="no">Float64</span><span class="p">)</span> <span class="c1"># mysql specific</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="ss">:gender</span><span class="p">).</span><span class="nf">group_sum</span><span class="p">(</span><span class="ss">:age</span><span class="p">,</span> <span class="no">Int64</span><span class="p">)</span> <span class="c1"># postgres specific</span>
+</code></pre></div></div>
 
 <h4 id="group-count">Group Count</h4>
 
-<pre><code class="language-crystal">Contact.all.group(:gender).group_count(:age)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="ss">:gender</span><span class="p">).</span><span class="nf">group_count</span><span class="p">(</span><span class="ss">:age</span><span class="p">)</span>
+</code></pre></div></div>
 
   </div>
 

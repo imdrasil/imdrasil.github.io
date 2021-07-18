@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Factory | Imdrasil Homebrew Stuff</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Factory" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/factory/" />
 <meta property="og:url" content="https://imdrasil.github.io/factory/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Factory" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Factory","url":"https://imdrasil.github.io/factory/","@context":"http://schema.org"}</script>
+{"headline":"Factory","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/factory/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -36,7 +38,7 @@
 
 <h2 id="installation">Installation</h2>
 
-<p>Add this to your application’s <code class="highlighter-rouge">shard.yml</code>:</p>
+<p>Add this to your application’s <code class="language-plaintext highlighter-rouge">shard.yml</code>:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">factory</span><span class="pi">:</span>
@@ -45,182 +47,182 @@
 
 <h2 id="usage">Usage</h2>
 
-<pre><code class="language-crystal">require "factory"
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"factory"</span>
+</code></pre></div></div>
 
 <p>To define new factory</p>
-<pre><code class="language-crystal">class HumanFactory &lt; Factory::Base
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">HumanFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Base</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>By convenience this factory will builds <code class="highlighter-rouge">Human</code> class but this behavior can be overrided using <code class="highlighter-rouge">describe_class</code> macro:</p>
+<p>By convenience this factory will builds <code class="language-plaintext highlighter-rouge">Human</code> class but this behavior can be overrided using <code class="language-plaintext highlighter-rouge">describe_class</code> macro:</p>
 
-<pre><code class="language-crystal">class AdminFactory &lt; Factory::Base
-  describe_class User
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AdminFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">describe_class</span> <span class="no">User</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>Factory will build class passing to constructor hash with string keys, so those class should be ready for this. To define attributes for passing to constructor use <code class="highlighter-rouge">attr</code> macro:</p>
+<p>Factory will build class passing to constructor hash with string keys, so those class should be ready for this. To define attributes for passing to constructor use <code class="language-plaintext highlighter-rouge">attr</code> macro:</p>
 
-<pre><code class="language-crystal">class TestFactory &lt; Factory::Base
-  attr :f1, "Ivan"
-  attr :f2, rand, Float64
-  attr :f3, -&gt; { rand(1..3) }
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TestFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Base</span>
+  <span class="kp">attr</span> <span class="ss">:f1</span><span class="p">,</span> <span class="s2">"Ivan"</span>
+  <span class="kp">attr</span> <span class="ss">:f2</span><span class="p">,</span> <span class="nb">rand</span><span class="p">,</span> <span class="no">Float64</span>
+  <span class="kp">attr</span> <span class="ss">:f3</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>Attributes, passed as <code class="highlighter-rouge">Proc</code> will be executed each time. Other ones - only once and cached. If type could be analyzed (as with calling <code class="highlighter-rouge">rand</code> upper), you can specify exact type passing it as third parameter.</p>
+<p>Attributes, passed as <code class="language-plaintext highlighter-rouge">Proc</code> will be executed each time. Other ones - only once and cached. If type could be analyzed (as with calling <code class="language-plaintext highlighter-rouge">rand</code> upper), you can specify exact type passing it as third parameter.</p>
 
-<p>There is also assign strategy using <code class="highlighter-rouge">assign</code> macro. Using it all attributes will be assigned after initializing.</p>
+<p>There is also assign strategy using <code class="language-plaintext highlighter-rouge">assign</code> macro. Using it all attributes will be assigned after initializing.</p>
 
-<pre><code class="language-crystal">class TestFactory &lt; Factory::Base
-  assign :f1, "Ivan"
-  assign :f2, rand, Float64
-  assign :f3, -&gt; { rand(1..3 }
-end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TestFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">assign</span> <span class="ss">:f1</span><span class="p">,</span> <span class="s2">"Ivan"</span>
+  <span class="n">assign</span> <span class="ss">:f2</span><span class="p">,</span> <span class="nb">rand</span><span class="p">,</span> <span class="no">Float64</span>
+  <span class="n">assign</span> <span class="ss">:f3</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span> <span class="p">}</span>
+<span class="k">end</span>
 
-# Will be do smth like
-obj = Test.new
-obj.f1 = TestFactory.f1 # "Ivan"
-obj.f2 = TestFactory.f2 # 0.61 - just random value shared across all object
-obj.f3 = -&gt; { rand(1..3) }.call
-</code></pre>
+<span class="c1"># Will be do smth like</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="no">Test</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">obj</span><span class="p">.</span><span class="nf">f1</span> <span class="o">=</span> <span class="no">TestFactory</span><span class="p">.</span><span class="nf">f1</span> <span class="c1"># "Ivan"</span>
+<span class="n">obj</span><span class="p">.</span><span class="nf">f2</span> <span class="o">=</span> <span class="no">TestFactory</span><span class="p">.</span><span class="nf">f2</span> <span class="c1"># 0.61 - just random value shared across all object</span>
+<span class="n">obj</span><span class="p">.</span><span class="nf">f3</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">)</span> <span class="p">}.</span><span class="nf">call</span>
+</code></pre></div></div>
 
-<p>If you specify no <code class="highlighter-rouge">attr</code> - will call construtor without any arguments and you will not be able pass anything to it.</p>
+<p>If you specify no <code class="language-plaintext highlighter-rouge">attr</code> - will call construtor without any arguments and you will not be able pass anything to it.</p>
 
-<p>If you need to specify exact type of given hash value use <code class="highlighter-rouge">argument_type</code>:</p>
+<p>If you need to specify exact type of given hash value use <code class="language-plaintext highlighter-rouge">argument_type</code>:</p>
 
-<pre><code class="language-crystal">class Test
-  @@static = 1
-  @@dynamic = 1
-  property f1 : String, f2 : Int32, f3 : Float64,
-    f4 : String?, f5 : Int32?, f6 : Array(Int32)?
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Test</span>
+  <span class="vc">@@static</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="vc">@@dynamic</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="kp">property</span> <span class="n">f1</span> <span class="p">:</span> <span class="no">String</span><span class="p">,</span> <span class="n">f2</span> <span class="p">:</span> <span class="no">Int32</span><span class="p">,</span> <span class="n">f3</span> <span class="p">:</span> <span class="no">Float64</span><span class="p">,</span>
+    <span class="n">f4</span> <span class="p">:</span> <span class="no">String</span><span class="p">?,</span> <span class="n">f5</span> <span class="p">:</span> <span class="no">Int32</span><span class="p">?,</span> <span class="n">f6</span> <span class="p">:</span> <span class="no">Array</span><span class="p">(</span><span class="no">Int32</span><span class="p">)?</span>
 
-  def initialize(hash)
-    @f1 = hash["f1"].as(String)
-    @f2 = hash["f2"].as(Int32)
-    @f3 = hash["f3"].as(Float64)
-    @f6 = hash["f6"].as(Array(Int32)) if hash.has_key?("f6")
-  end
-end
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
+    <span class="vi">@f1</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">[</span><span class="s2">"f1"</span><span class="p">].</span><span class="nf">as</span><span class="p">(</span><span class="no">String</span><span class="p">)</span>
+    <span class="vi">@f2</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">[</span><span class="s2">"f2"</span><span class="p">].</span><span class="nf">as</span><span class="p">(</span><span class="no">Int32</span><span class="p">)</span>
+    <span class="vi">@f3</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">[</span><span class="s2">"f3"</span><span class="p">].</span><span class="nf">as</span><span class="p">(</span><span class="no">Float64</span><span class="p">)</span>
+    <span class="vi">@f6</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">[</span><span class="s2">"f6"</span><span class="p">].</span><span class="nf">as</span><span class="p">(</span><span class="no">Array</span><span class="p">(</span><span class="no">Int32</span><span class="p">))</span> <span class="k">if</span> <span class="nb">hash</span><span class="p">.</span><span class="nf">has_key?</span><span class="p">(</span><span class="s2">"f6"</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-class TestFactory &lt; Factory::Base
-  argument_type String | Int32 | Float64 | Array(Int32)
-  attr :f1, "some"
-  attr :f2, 1
-  attr :f3, rand, Float64
-end
-</code></pre>
+<span class="k">class</span> <span class="nc">TestFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">argument_type</span> <span class="no">String</span> <span class="o">|</span> <span class="no">Int32</span> <span class="o">|</span> <span class="no">Float64</span> <span class="o">|</span> <span class="no">Array</span><span class="p">(</span><span class="no">Int32</span><span class="p">)</span>
+  <span class="kp">attr</span> <span class="p">:</span><span class="n">f1</span><span class="p">,</span> <span class="s2">"some"</span>
+  <span class="kp">attr</span> <span class="ss">:f2</span><span class="p">,</span> <span class="mi">1</span>
+  <span class="kp">attr</span> <span class="ss">:f3</span><span class="p">,</span> <span class="nb">rand</span><span class="p">,</span> <span class="no">Float64</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>Also <code class="highlighter-rouge">after_initialize</code> callback could be specified:</p>
+<p>Also <code class="language-plaintext highlighter-rouge">after_initialize</code> callback could be specified:</p>
 
-<pre><code class="language-crystal">class TestFactory &lt; Factory::Base
-  after_initialize do |t|
-    super # if you want parrent one to be inked as well
-    t.f1.not_nil! += 1
-  end
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TestFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">after_initialize</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+    <span class="k">super</span> <span class="c1"># if you want parrent one to be inked as well</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">f1</span><span class="p">.</span><span class="nf">not_nil!</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>Builder method could be specified as well:</p>
 
-<pre><code class="language-crystal">class TestFactory &lt; Factory::Base
-  # here is default builder
-  initialize_with do |hash, traits|
-    obj = Test.new(hash)
-    make_assigns(obj, traits) # makes all assignements (traits will be described later)
-    obj
-  end
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TestFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Base</span>
+  <span class="c1"># here is default builder</span>
+  <span class="n">initialize_with</span> <span class="k">do</span> <span class="o">|</span><span class="nb">hash</span><span class="p">,</span> <span class="n">traits</span><span class="o">|</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="no">Test</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
+    <span class="n">make_assigns</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">traits</span><span class="p">)</span> <span class="c1"># makes all assignements (traits will be described later)</span>
+    <span class="n">obj</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>To specify sequence of some attributes (only allowed as attr hook) use <code class="highlighter-rouge">sequence</code>:</p>
+<p>To specify sequence of some attributes (only allowed as attr hook) use <code class="language-plaintext highlighter-rouge">sequence</code>:</p>
 
-<pre><code class="language-crystal">sequence(:f1) { |i| "user#{i}@example.com" }
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sequence</span><span class="p">(</span><span class="ss">:f1</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="s2">"user</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">@example.com"</span> <span class="p">}</span>
+</code></pre></div></div>
 
 <p>You could inherite from existing factory and override some parameters:</p>
-<pre><code class="language-crystal">class HumanFactory &lt; Factory::Base
-  describe_class User
-  attr :f1, "asd"
-end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">HumanFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">describe_class</span> <span class="no">User</span>
+  <span class="kp">attr</span> <span class="ss">:f1</span><span class="p">,</span> <span class="s2">"asd"</span>
+<span class="k">end</span>
 
-class AdminFactory &lt; HumanFactory
-  attr :f1, "admin"
-  assign :f2, 1
-end
-</code></pre>
+<span class="k">class</span> <span class="nc">AdminFactory</span> <span class="o">&lt;</span> <span class="no">HumanFactory</span>
+  <span class="kp">attr</span> <span class="ss">:f1</span><span class="p">,</span> <span class="s2">"admin"</span>
+  <span class="n">assign</span> <span class="ss">:f2</span><span class="p">,</span> <span class="mi">1</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>Child factory inherits all attrs, assigns, traits, sequences, callbacks, class names, has value type.</p>
 
 <p>To group several attributes or assignments use trait.</p>
 
-<pre><code class="language-crystal">class HumanFactory &lt; Factory::Base
-  trait :homo do
-    attr :iq, 50
-  end
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">HumanFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">trait</span> <span class="ss">:homo</span> <span class="k">do</span>
+    <span class="kp">attr</span> <span class="ss">:iq</span><span class="p">,</span> <span class="mi">50</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>Traits can’t specify callbacks, described type, hash value type.</p>
 
 <p>To build object direct call could be used</p>
-<pre><code class="language-crystal">HumanFactory.build
-HumanFactory.build(some_attr: "asd")
-HumanFactory.build({"some_attr" =&gt; "asd")
-HumanFactory.build(["some_trait"], some_attr: "asd")
-HumanFactory.build(["some_trait"], {"some_attr" =&gt; "asd"})
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">HumanFactory</span><span class="p">.</span><span class="nf">build</span>
+<span class="no">HumanFactory</span><span class="p">.</span><span class="nf">build</span><span class="p">(</span><span class="ss">some_attr: </span><span class="s2">"asd"</span><span class="p">)</span>
+<span class="no">HumanFactory</span><span class="p">.</span><span class="nf">build</span><span class="p">({</span><span class="s2">"some_attr"</span> <span class="o">=&gt;</span> <span class="s2">"asd"</span><span class="p">)</span>
+<span class="no">HumanFactory</span><span class="p">.</span><span class="nf">build</span><span class="p">([</span><span class="s2">"some_trait"</span><span class="p">],</span> <span class="ss">some_attr: </span><span class="s2">"asd"</span><span class="p">)</span>
+<span class="no">HumanFactory</span><span class="p">.</span><span class="nf">build</span><span class="p">([</span><span class="s2">"some_trait"</span><span class="p">],</span> <span class="p">{</span><span class="s2">"some_attr"</span> <span class="o">=&gt;</span> <span class="s2">"asd"</span><span class="p">})</span>
+</code></pre></div></div>
 
 <p>Also helper methods are defined as well</p>
 
-<pre><code class="language-crystal">Factory.build_human
-Factory.build_human(some_attr: "asd")
-Factory.build_human({"some_attr" =&gt; "asd")
-Factory.build_human(["some_trait"], some_attr: "asd")
-Factory.build_human(["some_trait"], {"some_attr" =&gt; "asd"})
-# also you can specify count as first parameter in any of thos methods
-Factory.build_human(3, ["some_trait"], {"some_attr" =&gt; "asd"})
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Factory</span><span class="p">.</span><span class="nf">build_human</span>
+<span class="no">Factory</span><span class="p">.</span><span class="nf">build_human</span><span class="p">(</span><span class="ss">some_attr: </span><span class="s2">"asd"</span><span class="p">)</span>
+<span class="no">Factory</span><span class="p">.</span><span class="nf">build_human</span><span class="p">({</span><span class="s2">"some_attr"</span> <span class="o">=&gt;</span> <span class="s2">"asd"</span><span class="p">)</span>
+<span class="no">Factory</span><span class="p">.</span><span class="nf">build_human</span><span class="p">([</span><span class="s2">"some_trait"</span><span class="p">],</span> <span class="ss">some_attr: </span><span class="s2">"asd"</span><span class="p">)</span>
+<span class="no">Factory</span><span class="p">.</span><span class="nf">build_human</span><span class="p">([</span><span class="s2">"some_trait"</span><span class="p">],</span> <span class="p">{</span><span class="s2">"some_attr"</span> <span class="o">=&gt;</span> <span class="s2">"asd"</span><span class="p">})</span>
+<span class="c1"># also you can specify count as first parameter in any of thos methods</span>
+<span class="no">Factory</span><span class="p">.</span><span class="nf">build_human</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="s2">"some_trait"</span><span class="p">],</span> <span class="p">{</span><span class="s2">"some_attr"</span> <span class="o">=&gt;</span> <span class="s2">"asd"</span><span class="p">})</span>
+</code></pre></div></div>
 
 <h4 id="jennifer-support">Jennifer Support</h4>
 
 <p>To create factory for (Jennifer)[https://github.com/imdrasil/jennifer.cr] model</p>
 
-<pre><code class="language-crystal"># require all jennifer staff and models
-require "factory"
-require "factory/jennifer"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># require all jennifer staff and models</span>
+<span class="nb">require</span> <span class="s2">"factory"</span>
+<span class="nb">require</span> <span class="s2">"factory/jennifer"</span>
 
-class FilmFactory &lt; Factory::Jennifer::Base
-  attr :rating, 5
-  assign :name, "Test Film" 
+<span class="k">class</span> <span class="nc">FilmFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Jennifer</span><span class="o">::</span><span class="no">Base</span>
+  <span class="kp">attr</span> <span class="ss">:rating</span><span class="p">,</span> <span class="mi">5</span>
+  <span class="n">assign</span> <span class="ss">:name</span><span class="p">,</span> <span class="s2">"Test Film"</span> 
 
-  trait :bad do
-    assign :rating, 0
-  end
-end
-</code></pre>
+  <span class="n">trait</span> <span class="ss">:bad</span> <span class="k">do</span>
+    <span class="n">assign</span> <span class="ss">:rating</span><span class="p">,</span> <span class="mi">0</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>It provides direct creating methods same as for building:</p>
 
-<pre><code class="language-crystal">FilmFactory.create([:bad], {:name =&gt; "Atilla"})
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">FilmFactory</span><span class="p">.</span><span class="nf">create</span><span class="p">([</span><span class="ss">:bad</span><span class="p">],</span> <span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Atilla"</span><span class="p">})</span>
+</code></pre></div></div>
 
 <p>Also any association could be described on the factory or trait level:</p>
 
-<pre><code class="language-crystal">class FilmFactory &lt; Factory::Jennifer::Base
-  association :author
-  association :actor, UserFactory, options: {name: "Artemius Fault"}
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">FilmFactory</span> <span class="o">&lt;</span> <span class="no">Factory</span><span class="o">::</span><span class="no">Jennifer</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">association</span> <span class="ss">:author</span>
+  <span class="n">association</span> <span class="ss">:actor</span><span class="p">,</span> <span class="no">UserFactory</span><span class="p">,</span> <span class="ss">options: </span><span class="p">{</span><span class="ss">name: </span><span class="s2">"Artemius Fault"</span><span class="p">}</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>Allowed arguments:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">:name</code> - first argument - represent model association name (mandatory)</li>
-  <li><code class="highlighter-rouge">:factory</code> - represents factory class (optional); is defaulted from association name</li>
-  <li><code class="highlighter-rouge">:strategy</code> - represents creation strategy; optional; default is “create” (also “build” is allowed)</li>
-  <li><code class="highlighter-rouge">:options</code> - represents extra arguments to association factory; optional</li>
+  <li><code class="language-plaintext highlighter-rouge">:name</code> - first argument - represent model association name (mandatory)</li>
+  <li><code class="language-plaintext highlighter-rouge">:factory</code> - represents factory class (optional); is defaulted from association name</li>
+  <li><code class="language-plaintext highlighter-rouge">:strategy</code> - represents creation strategy; optional; default is “create” (also “build” is allowed)</li>
+  <li><code class="language-plaintext highlighter-rouge">:options</code> - represents extra arguments to association factory; optional</li>
 </ul>
 
 <h2 id="development">Development</h2>
@@ -231,7 +233,7 @@ end
 
 <ul>
   <li>think  about adding assigning via hash or named tuble argument;</li>
-  <li>adding <code class="highlighter-rouge">%attr</code> to traits.</li>
+  <li>adding <code class="language-plaintext highlighter-rouge">%attr</code> to traits.</li>
 </ul>
 
 <h2 id="contributing">Contributing</h2>

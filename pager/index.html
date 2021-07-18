@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Pager | Imdrasil Homebrew Stuff</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Pager" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/pager/" />
 <meta property="og:url" content="https://imdrasil.github.io/pager/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Pager" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Pager","url":"https://imdrasil.github.io/pager/","@context":"http://schema.org"}</script>
+{"headline":"Pager","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/pager/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -37,62 +39,62 @@
 <h2 id="installation">Installation</h2>
 
 <ol>
-  <li>Add the dependency to your <code class="highlighter-rouge">shard.yml</code>:
+  <li>Add the dependency to your <code class="language-plaintext highlighter-rouge">shard.yml</code>:
     <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">pager</span><span class="pi">:</span>
 <span class="err"> </span><span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/pager</span>
 </code></pre></div>    </div>
   </li>
-  <li>Run <code class="highlighter-rouge">shards install</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">shards install</code></li>
 </ol>
 
 <p>Also if you use default bootstrap presenter ensure that you’ve added appropriate css to your project from the CDN or directly in the code.</p>
 
 <h2 id="usage">Usage</h2>
 
-<p>Pager provides two basic container: for <code class="highlighter-rouge">Array</code> and <code class="highlighter-rouge">Jennifer::QueryBuilder::ModelQuery</code>. Also it includes basic bootstrap presenter, which is the default presenter.</p>
+<p>Pager provides two basic container: for <code class="language-plaintext highlighter-rouge">Array</code> and <code class="language-plaintext highlighter-rouge">Jennifer::QueryBuilder::ModelQuery</code>. Also it includes basic bootstrap presenter, which is the default presenter.</p>
 
-<pre><code class="language-crystal">require "pager"
-require "pager/collections/array" # for arrays
-require "pager/collections/jennifer" # for Jennifer collections
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"pager"</span>
+<span class="nb">require</span> <span class="s2">"pager/collections/array"</span> <span class="c1"># for arrays</span>
+<span class="nb">require</span> <span class="s2">"pager/collections/jennifer"</span> <span class="c1"># for Jennifer collections</span>
+</code></pre></div></div>
 
-<p>Collection objects responds to <code class="highlighter-rouge">#each</code> method which yield objects in the collection so you can easily iterate over them.</p>
+<p>Collection objects responds to <code class="language-plaintext highlighter-rouge">#each</code> method which yield objects in the collection so you can easily iterate over them.</p>
 
 <h3 id="array">Array</h3>
 
-<p><code class="highlighter-rouge">Pager::ArrayCollection</code> extends <code class="highlighter-rouge">Array</code> with new <code class="highlighter-rouge">#paginate</code> method, which accepts current page and count of elements on each one.</p>
+<p><code class="language-plaintext highlighter-rouge">Pager::ArrayCollection</code> extends <code class="language-plaintext highlighter-rouge">Array</code> with new <code class="language-plaintext highlighter-rouge">#paginate</code> method, which accepts current page and count of elements on each one.</p>
 
-<pre><code class="language-crystal">(1..21).to_a.paginate(1, 4) # [5, 6, 7, 8]
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">21</span><span class="p">).</span><span class="nf">to_a</span><span class="p">.</span><span class="nf">paginate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># [5, 6, 7, 8]</span>
+</code></pre></div></div>
 
 <h3 id="jennifer">Jennifer</h3>
 
-<p><code class="highlighter-rouge">Pager::JenniferCollection</code> extends <code class="highlighter-rouge">Jennifer::QueryBuilder::ModelQuery</code> with <code class="highlighter-rouge">#paginate</code> methods which accepts current page number and count of records in a page. This method is executable one so should be the last one in a chain.</p>
+<p><code class="language-plaintext highlighter-rouge">Pager::JenniferCollection</code> extends <code class="language-plaintext highlighter-rouge">Jennifer::QueryBuilder::ModelQuery</code> with <code class="language-plaintext highlighter-rouge">#paginate</code> methods which accepts current page number and count of records in a page. This method is executable one so should be the last one in a chain.</p>
 
-<pre><code class="language-crystal">User.all.where { _active }.paginate(1, 4)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">User</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_active</span> <span class="p">}.</span><span class="nf">paginate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h3 id="configuration">Configuration</h3>
 
-<pre><code class="language-crystal">Pager.configure do |config|
-  config.default_presenter = Pager::Bootstrap
-  config.visible_pages = 7
-  config.per_page = 20
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Pager</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">default_presenter</span> <span class="o">=</span> <span class="no">Pager</span><span class="o">::</span><span class="no">Bootstrap</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">visible_pages</span> <span class="o">=</span> <span class="mi">7</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">per_page</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>Available configurations:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">default_presenter</code> - presenter class to be used by <code class="highlighter-rouge">ViewHelper#paginate</code></li>
-  <li><code class="highlighter-rouge">visible_pages</code> - number of page links generated by <code class="highlighter-rouge">ViewHelper#paginate</code></li>
-  <li><code class="highlighter-rouge">per_page</code> - default number of pages for collection</li>
+  <li><code class="language-plaintext highlighter-rouge">default_presenter</code> - presenter class to be used by <code class="language-plaintext highlighter-rouge">ViewHelper#paginate</code></li>
+  <li><code class="language-plaintext highlighter-rouge">visible_pages</code> - number of page links generated by <code class="language-plaintext highlighter-rouge">ViewHelper#paginate</code></li>
+  <li><code class="language-plaintext highlighter-rouge">per_page</code> - default number of pages for collection</li>
 </ul>
 
 <h3 id="view">View</h3>
 
-<p>To render navigation section include <code class="highlighter-rouge">Pager::ViewHelper</code> to appropriate context and call <code class="highlighter-rouge">#paginate</code> method passing collection, path to be used to generate links and number of visible pages.</p>
+<p>To render navigation section include <code class="language-plaintext highlighter-rouge">Pager::ViewHelper</code> to appropriate context and call <code class="language-plaintext highlighter-rouge">#paginate</code> method passing collection, path to be used to generate links and number of visible pages.</p>
 
 <div class="language-erb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;%=</span> <span class="n">paginate</span><span class="p">((</span><span class="mi">1</span><span class="o">..</span><span class="mi">100</span><span class="p">).</span><span class="nf">collection</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="s2">"/"</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="cp">%&gt;</span>
 </code></pre></div></div>
@@ -126,7 +128,7 @@ end
 <span class="nt">&lt;/nav&gt;</span>
 </code></pre></div></div>
 
-<p>As you can see page is added as a GET parameter <code class="highlighter-rouge">page</code>. If query already has some GET parameter this will be recognized and <code class="highlighter-rouge">page</code> will be added to the end.</p>
+<p>As you can see page is added as a GET parameter <code class="language-plaintext highlighter-rouge">page</code>. If query already has some GET parameter this will be recognized and <code class="language-plaintext highlighter-rouge">page</code> will be added to the end.</p>
 
 <h3 id="translation">Translation</h3>
 
@@ -137,7 +139,7 @@ end
   <span class="na">next_label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Next</span><span class="nv"> </span><span class="s">&amp;rsaquo;"</span>
 </code></pre></div></div>
 
-<p>For the translation purpose <code class="highlighter-rouge">TechMagister/i18n.cr</code> library is used.</p>
+<p>For the translation purpose <code class="language-plaintext highlighter-rouge">TechMagister/i18n.cr</code> library is used.</p>
 
 <h2 id="development">Development</h2>
 
@@ -153,9 +155,9 @@ end
 
 <ol>
   <li>Fork it (<a href="https://github.com/imdrasil/pager/fork">https://github.com/imdrasil/pager/fork</a>)</li>
-  <li>Create your feature branch (<code class="highlighter-rouge">git checkout -b my-new-feature</code>)</li>
-  <li>Commit your changes (<code class="highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
-  <li>Push to the branch (<code class="highlighter-rouge">git push origin my-new-feature</code>)</li>
+  <li>Create your feature branch (<code class="language-plaintext highlighter-rouge">git checkout -b my-new-feature</code>)</li>
+  <li>Commit your changes (<code class="language-plaintext highlighter-rouge">git commit -am 'Add some feature'</code>)</li>
+  <li>Push to the branch (<code class="language-plaintext highlighter-rouge">git push origin my-new-feature</code>)</li>
   <li>Create a new Pull Request</li>
 </ol>
 

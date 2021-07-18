@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/transaction_and_lock.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/transaction_and_lock.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/transaction_and_lock.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/transaction_and_lock.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -96,12 +98,12 @@
 
 <p>Transaction mechanism provides block-like syntax:</p>
 
-<pre><code class="language-crystal">Jennifer::Adapter.default_adapter.transaction do |tx|
-  Contact.create({:name =&gt; "Chose", :age =&gt; 20})
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jennifer</span><span class="o">::</span><span class="no">Adapter</span><span class="p">.</span><span class="nf">default_adapter</span><span class="p">.</span><span class="nf">transaction</span> <span class="k">do</span> <span class="o">|</span><span class="n">tx</span><span class="o">|</span>
+  <span class="no">Contact</span><span class="p">.</span><span class="nf">create</span><span class="p">({</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Chose"</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">})</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>If any error was raised in block transaction will be rollbacked. To rollback transaction raise <code class="highlighter-rouge">DB::Rollback</code> exception.</p>
+<p>If any error was raised in block transaction will be rollbacked. To rollback transaction raise <code class="language-plaintext highlighter-rouge">DB::Rollback</code> exception.</p>
 
 <p>Transaction lock connection for current fiber avoiding grepping new one from pool.</p>
 
@@ -109,55 +111,55 @@ end
 
 <h4 id="row-level">Row level</h4>
 
-<p>Provides support for row-level locking using <code class="highlighter-rouge">SELECT … FOR UPDATE</code> and other lock types.</p>
+<p>Provides support for row-level locking using <code class="language-plaintext highlighter-rouge">SELECT … FOR UPDATE</code> and other lock types.</p>
 
-<p>Chain <code class="highlighter-rouge">#find</code> to <code class="highlighter-rouge">#lock</code> to obtain an exclusive lock on the selected rows:</p>
+<p>Chain <code class="language-plaintext highlighter-rouge">#find</code> to <code class="language-plaintext highlighter-rouge">#lock</code> to obtain an exclusive lock on the selected rows:</p>
 
-<pre><code class="language-crystal"># select * from contacts where id=1 for update
-Contact.all.lock.find(1)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># select * from contacts where id=1 for update</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">lock</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>You can also use <code class="highlighter-rouge">Jennifer::Model::Base#lock!</code> method to lock one record by id. This may be better if you don’t need to lock every row. Example:</p>
+<p>You can also use <code class="language-plaintext highlighter-rouge">Jennifer::Model::Base#lock!</code> method to lock one record by id. This may be better if you don’t need to lock every row. Example:</p>
 
-<pre><code class="language-crystal">Contact.transaction do
-  # select * from contacts where ...
-  contacts = Contact.where { _age &gt; 15 }.to_a
-  contact = contacts.find { |c| c.name =~ /John/ }.not_nil!
-  contact.lock!
-  contact.age += 10
-  contact.save!
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">transaction</span> <span class="k">do</span>
+  <span class="c1"># select * from contacts where ...</span>
+  <span class="n">contacts</span> <span class="o">=</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">&gt;</span> <span class="mi">15</span> <span class="p">}.</span><span class="nf">to_a</span>
+  <span class="n">contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">.</span><span class="nf">find</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">c</span><span class="p">.</span><span class="nf">name</span> <span class="o">=~</span> <span class="sr">/John/</span> <span class="p">}.</span><span class="nf">not_nil!</span>
+  <span class="n">contact</span><span class="p">.</span><span class="nf">lock!</span>
+  <span class="n">contact</span><span class="p">.</span><span class="nf">age</span> <span class="o">+=</span> <span class="mi">10</span>
+  <span class="n">contact</span><span class="p">.</span><span class="nf">save!</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>You can start a transaction and acquire the lock in one go by calling with_lock with a block. The block is called from within a transaction, the object is already locked. Example:</p>
 
-<pre><code class="language-crystal">contact = Contact.first!
-contact.with_lock do
-  # This block is called within a transaction,
-  # record is already locked.
-  contact.age += 100
-  contact.save!
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">contact</span> <span class="o">=</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">first!</span>
+<span class="n">contact</span><span class="p">.</span><span class="nf">with_lock</span> <span class="k">do</span>
+  <span class="c1"># This block is called within a transaction,</span>
+  <span class="c1"># record is already locked.</span>
+  <span class="n">contact</span><span class="p">.</span><span class="nf">age</span> <span class="o">+=</span> <span class="mi">100</span>
+  <span class="n">contact</span><span class="p">.</span><span class="nf">save!</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <h4 id="table-level">Table level</h4>
 
-<p>To lock table use <code class="highlighter-rouge">Jennifer::Adapter#with_table_lock</code> method</p>
+<p>To lock table use <code class="language-plaintext highlighter-rouge">Jennifer::Adapter#with_table_lock</code> method</p>
 
-<pre><code class="language-crystal">Jennifer::Adapter.default_adapter("table_name") do
-  # some operations here
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jennifer</span><span class="o">::</span><span class="no">Adapter</span><span class="p">.</span><span class="nf">default_adapter</span><span class="p">(</span><span class="s2">"table_name"</span><span class="p">)</span> <span class="k">do</span>
+  <span class="c1"># some operations here</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>Or performing directly on model class:</p>
 
-<pre><code class="language-crystal">Contact.with_table_lock do
-  # some operations here
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">with_table_lock</span> <span class="k">do</span>
+  <span class="c1"># some operations here</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <blockquote>
-  <p>But <strong>only</strong> postgres adapter supports the real table <code class="highlighter-rouge">LOCK</code> statement - mysql one just wraps a call to the transaction. This is caused by performing queries with prepared statements and mysql doesn’t allow lock table via it.</p>
+  <p>But <strong>only</strong> postgres adapter supports the real table <code class="language-plaintext highlighter-rouge">LOCK</code> statement - mysql one just wraps a call to the transaction. This is caused by performing queries with prepared statements and mysql doesn’t allow lock table via it.</p>
 </blockquote>
 
 <p>Database-specific information on row locking:</p>

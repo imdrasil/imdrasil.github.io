@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/crud.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/crud.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/crud.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/crud.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -97,107 +99,107 @@
 <p>To create new object there are several ways:</p>
 
 <ul>
-  <li>create it passing arguments to <code class="highlighter-rouge">#create</code> method</li>
+  <li>create it passing arguments to <code class="language-plaintext highlighter-rouge">#create</code> method</li>
 </ul>
 
-<pre><code class="language-crystal">Contact.create(name: "John", age: 18)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"John"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">18</span><span class="p">)</span>
+</code></pre></div></div>
 
 <ul>
   <li>building it and saving manually</li>
 </ul>
 
-<pre><code class="language-crystal">c = Contact.build({:name =&gt; "Horus", :age =&gt; 4000})
-c.age = 18
-c.save
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">build</span><span class="p">({</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Horus"</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">4000</span><span class="p">})</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">age</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">save</span>
+</code></pre></div></div>
 
 <blockquote>
-  <p>Any <code class="highlighter-rouge">::create</code> and <code class="highlighter-rouge">#save</code> method call by default process under a transaction. If transaction is already started will not create new one.</p>
+  <p>Any <code class="language-plaintext highlighter-rouge">::create</code> and <code class="language-plaintext highlighter-rouge">#save</code> method call by default process under a transaction. If transaction is already started will not create new one.</p>
 </blockquote>
 
-<p>To insert multiple records at once use <code class="highlighter-rouge">::import</code>:</p>
+<p>To insert multiple records at once use <code class="language-plaintext highlighter-rouge">::import</code>:</p>
 
-<pre><code class="language-crystal">objects = [Contact.new({name: "Tom", age: 18}), Contact.new({name: "Jerry", age: 16})]
-Contact.import(objects)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">objects</span> <span class="o">=</span> <span class="p">[</span><span class="no">Contact</span><span class="p">.</span><span class="nf">new</span><span class="p">({</span><span class="ss">name: </span><span class="s2">"Tom"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">18</span><span class="p">}),</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">new</span><span class="p">({</span><span class="ss">name: </span><span class="s2">"Jerry"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">16</span><span class="p">})]</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">import</span><span class="p">(</span><span class="n">objects</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h4 id="read">Read</h4>
 
-<p>Object could be retrieved by id using <code class="highlighter-rouge">#find</code> (returns <code class="highlighter-rouge">T?</code>) and <code class="highlighter-rouge">#find!</code> (returns <code class="highlighter-rouge">T</code> or raises <code class="highlighter-rouge">RecordNotFound</code> exception) methods.</p>
+<p>Object could be retrieved by id using <code class="language-plaintext highlighter-rouge">#find</code> (returns <code class="language-plaintext highlighter-rouge">T?</code>) and <code class="language-plaintext highlighter-rouge">#find!</code> (returns <code class="language-plaintext highlighter-rouge">T</code> or raises <code class="language-plaintext highlighter-rouge">RecordNotFound</code> exception) methods.</p>
 
-<pre><code class="language-crystal">Contact.find!(1)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">find!</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>Also there is flexible DSL for building queries.</p>
 
-<p>To reload all fields from db use <code class="highlighter-rouge">#reload</code></p>
+<p>To reload all fields from db use <code class="language-plaintext highlighter-rouge">#reload</code></p>
 
-<pre><code class="language-crystal">c1 = Contact.create(name: "Sam", age: 25)
-Contact.where { _id == c1.id }.update(age: 30)
-c1.reload
-puts c1.age # 30
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c1</span> <span class="o">=</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Sam"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">25</span><span class="p">)</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_id</span> <span class="o">==</span> <span class="n">c1</span><span class="p">.</span><span class="nf">id</span> <span class="p">}.</span><span class="nf">update</span><span class="p">(</span><span class="ss">age: </span><span class="mi">30</span><span class="p">)</span>
+<span class="n">c1</span><span class="p">.</span><span class="nf">reload</span>
+<span class="nb">puts</span> <span class="n">c1</span><span class="p">.</span><span class="nf">age</span> <span class="c1"># 30</span>
+</code></pre></div></div>
 
 <h4 id="update">Update</h4>
 
 <p>There are several ways which allows to update object. Some of them were mentioned in mapping section. There are few extra methods to do this:</p>
 <ul>
-  <li><code class="highlighter-rouge">#update_column(name, value)</code> - sets directly attribute and store it to db without any callback</li>
-  <li><code class="highlighter-rouge">#update_columns(values)</code> - same for several ones</li>
-  <li><code class="highlighter-rouge">#set_attributes(values)</code> - just set attributes</li>
-  <li><code class="highlighter-rouge">#set_attribute(name, value)</code> - set attribute by given name</li>
+  <li><code class="language-plaintext highlighter-rouge">#update_column(name, value)</code> - sets directly attribute and store it to db without any callback</li>
+  <li><code class="language-plaintext highlighter-rouge">#update_columns(values)</code> - same for several ones</li>
+  <li><code class="language-plaintext highlighter-rouge">#set_attributes(values)</code> - just set attributes</li>
+  <li><code class="language-plaintext highlighter-rouge">#set_attribute(name, value)</code> - set attribute by given name</li>
 </ul>
 
 <p>You can provide hash or named tuple with new field values to update all records satisfying given conditions:</p>
-<pre><code class="language-crystal">Contact.all.update(age: 1, name: "Wonder")
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="ss">age: </span><span class="mi">1</span><span class="p">,</span> <span class="ss">name: </span><span class="s2">"Wonder"</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>Will not trigger any callback.</p>
 
 <p>Also relative modification allowed as well:</p>
 
-<pre><code class="language-crystal"># UPDATE contacts SET age = contacts.age + 2 WHERE contacts.id = 12
-Contact.where { _id == 12 }.increment(age: 2)
-# or
-Contact.where { _id == 12 }.update { {:age =&gt; _age + 12} }
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># UPDATE contacts SET age = contacts.age + 2 WHERE contacts.id = 12</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_id</span> <span class="o">==</span> <span class="mi">12</span> <span class="p">}.</span><span class="nf">increment</span><span class="p">(</span><span class="ss">age: </span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_id</span> <span class="o">==</span> <span class="mi">12</span> <span class="p">}.</span><span class="nf">update</span> <span class="p">{</span> <span class="p">{</span><span class="ss">:age</span> <span class="o">=&gt;</span> <span class="n">_age</span> <span class="o">+</span> <span class="mi">12</span><span class="p">}</span> <span class="p">}</span>
+</code></pre></div></div>
 
 <h4 id="destroy">Destroy</h4>
 
-<p>To destroy object use <code class="highlighter-rouge">#delete</code> (is called without callbacks) or <code class="highlighter-rouge">#destroy</code>. To destroy several objects by their ids use class method:</p>
+<p>To destroy object use <code class="language-plaintext highlighter-rouge">#delete</code> (is called without callbacks) or <code class="language-plaintext highlighter-rouge">#destroy</code>. To destroy several objects by their ids use class method:</p>
 
-<pre><code class="language-crystal">ids = [1, 20, 18]
-Contact.destroy(ids)
-Address.delete(1)
-Country.delete(1,2,3)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">18</span><span class="p">]</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">destroy</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+<span class="no">Address</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="no">Country</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>To stop deleting from a callback just add some error:</p>
 
-<pre><code class="language-crystal">class MyModel &lt; Jennifer::Model::Base
-  # mapping
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyModel</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="c1"># mapping</span>
 
-  before_destroy :check
+  <span class="n">before_destroy</span> <span class="ss">:check</span>
 
-  def check
-    if some_field &gt; 10
-     errors.add(:some_field, "Can't be deleted")
-    end
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">check</span>
+    <span class="k">if</span> <span class="n">some_field</span> <span class="o">&gt;</span> <span class="mi">10</span>
+     <span class="n">errors</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="ss">:some_field</span><span class="p">,</span> <span class="s2">"Can't be deleted"</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 <blockquote>
-  <p>Any <code class="highlighter-rouge">#destroy</code> method call as well as <code class="highlighter-rouge">#save</code> use a transaction.</p>
+  <p>Any <code class="language-plaintext highlighter-rouge">#destroy</code> method call as well as <code class="language-plaintext highlighter-rouge">#save</code> use a transaction.</p>
 </blockquote>
 
 <h5 id="truncation">Truncation</h5>
 
 <p>To truncate entire table use:</p>
-<pre><code class="language-crystal">Jennifer::Adapter.default_adapter.truncate("contacts")
-# or
-Jennifer::Adapter.default_adapter.truncate(Contact)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jennifer</span><span class="o">::</span><span class="no">Adapter</span><span class="p">.</span><span class="nf">default_adapter</span><span class="p">.</span><span class="nf">truncate</span><span class="p">(</span><span class="s2">"contacts"</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="no">Jennifer</span><span class="o">::</span><span class="no">Adapter</span><span class="p">.</span><span class="nf">default_adapter</span><span class="p">.</span><span class="nf">truncate</span><span class="p">(</span><span class="no">Contact</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>This functionality could be useful to clear db between test cases.</p>
 

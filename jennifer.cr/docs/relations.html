@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/relations.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/relations.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/relations.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/relations.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -92,49 +94,49 @@
 
 <h1 id="relations">Relations</h1>
 
-<p>There are 4 types of relations: <code class="highlighter-rouge">has_many</code>, <code class="highlighter-rouge">has_and_belongs_to_many</code>, <code class="highlighter-rouge">belongs_to</code> and <code class="highlighter-rouge">has_one</code>. All of them have same semantic but generate slightly different methods.</p>
+<p>There are 4 types of relations: <code class="language-plaintext highlighter-rouge">has_many</code>, <code class="language-plaintext highlighter-rouge">has_and_belongs_to_many</code>, <code class="language-plaintext highlighter-rouge">belongs_to</code> and <code class="language-plaintext highlighter-rouge">has_one</code>. All of them have same semantic but generate slightly different methods.</p>
 
 <p>They takes next arguments:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">name</code> - relation name</li>
-  <li><code class="highlighter-rouge">klass</code> - target class</li>
-  <li><code class="highlighter-rouge">request</code> - additional request (will be used inside of where clause) - optional</li>
-  <li><code class="highlighter-rouge">foreign</code> - name of foreign key - optional; by default use singularized table name + “_id”</li>
-  <li><code class="highlighter-rouge">primary</code> - primary field name - optional;  by default it uses default primary field of class.</li>
+  <li><code class="language-plaintext highlighter-rouge">name</code> - relation name</li>
+  <li><code class="language-plaintext highlighter-rouge">klass</code> - target class</li>
+  <li><code class="language-plaintext highlighter-rouge">request</code> - additional request (will be used inside of where clause) - optional</li>
+  <li><code class="language-plaintext highlighter-rouge">foreign</code> - name of foreign key - optional; by default use singularized table name + “_id”</li>
+  <li><code class="language-plaintext highlighter-rouge">primary</code> - primary field name - optional;  by default it uses default primary field of class.</li>
 </ul>
 
 <p>has_and_belongs_to_many also accepts extra 2 arguments and use regular arguments slightly in another way:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">join_table</code> - join table name; be default relation table names in alphabetic order joined by underscore is used</li>
-  <li><code class="highlighter-rouge">join_foreign</code> - foreign key for current model (left foreign key of join table)</li>
-  <li><code class="highlighter-rouge">foreign</code> - used as right foreign key</li>
-  <li><code class="highlighter-rouge">primary</code> - used as primary field of current table; for now it properly works only if both models in this relation has primary field named <code class="highlighter-rouge">id</code></li>
+  <li><code class="language-plaintext highlighter-rouge">join_table</code> - join table name; be default relation table names in alphabetic order joined by underscore is used</li>
+  <li><code class="language-plaintext highlighter-rouge">join_foreign</code> - foreign key for current model (left foreign key of join table)</li>
+  <li><code class="language-plaintext highlighter-rouge">foreign</code> - used as right foreign key</li>
+  <li><code class="language-plaintext highlighter-rouge">primary</code> - used as primary field of current table; for now it properly works only if both models in this relation has primary field named <code class="language-plaintext highlighter-rouge">id</code></li>
 </ul>
 
 <p>All relation macros provide next methods:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">#{{relation_name}}</code> - cache relation object (or array of them) and returns it;</li>
-  <li><code class="highlighter-rouge">#{{relation_name}}_reload</code> - reload relation and returns it;</li>
-  <li><code class="highlighter-rouge">#{{relation_name}}_query</code> - returns query which is used to get objects of this object relation entities form db.</li>
-  <li><code class="highlighter-rouge">#remove_{{relation_name}}</code> - removes given object from relation</li>
-  <li><code class="highlighter-rouge">#add_{{relation_name}}</code> - adds given object to relation or builds it from hash and then adds</li>
+  <li><code class="language-plaintext highlighter-rouge">#{{relation_name}}</code> - cache relation object (or array of them) and returns it;</li>
+  <li><code class="language-plaintext highlighter-rouge">#{{relation_name}}_reload</code> - reload relation and returns it;</li>
+  <li><code class="language-plaintext highlighter-rouge">#{{relation_name}}_query</code> - returns query which is used to get objects of this object relation entities form db.</li>
+  <li><code class="language-plaintext highlighter-rouge">#remove_{{relation_name}}</code> - removes given object from relation</li>
+  <li><code class="language-plaintext highlighter-rouge">#add_{{relation_name}}</code> - adds given object to relation or builds it from hash and then adds</li>
 </ul>
 
 <p>This allows dynamically adds objects to relations with automatically setting foreign id:</p>
 
-<pre><code class="language-crystal">contact = Contact.all.find!
-contact.add_addresses({:main =&gt; true, :street =&gt; "some street", :details =&gt; nil})
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">contact</span> <span class="o">=</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">find!</span>
+<span class="n">contact</span><span class="p">.</span><span class="nf">add_addresses</span><span class="p">({</span><span class="ss">:main</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> <span class="ss">:street</span> <span class="o">=&gt;</span> <span class="s2">"some street"</span><span class="p">,</span> <span class="ss">:details</span> <span class="o">=&gt;</span> <span class="kp">nil</span><span class="p">})</span>
 
-address = contact.addresses.last
-contact.remove_addresses(address)
-</code></pre>
+<span class="n">address</span> <span class="o">=</span> <span class="n">contact</span><span class="p">.</span><span class="nf">addresses</span><span class="p">.</span><span class="nf">last</span>
+<span class="n">contact</span><span class="p">.</span><span class="nf">remove_addresses</span><span class="p">(</span><span class="n">address</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p><code class="highlighter-rouge">belongs_to</code> and <code class="highlighter-rouge">has_one</code> add extra method <code class="highlighter-rouge">#relation_name!</code> which also adds assertion for <code class="highlighter-rouge">nil</code> inside of it.</p>
+<p><code class="language-plaintext highlighter-rouge">belongs_to</code> and <code class="language-plaintext highlighter-rouge">has_one</code> add extra method <code class="language-plaintext highlighter-rouge">#relation_name!</code> which also adds assertion for <code class="language-plaintext highlighter-rouge">nil</code> inside of it.</p>
 
-<p><code class="highlighter-rouge">%has_and_belongs_to_many</code> relation allows to define many-to-many relationship between 2 models. By given parameters could be specified field names described on the next schema:</p>
+<p><code class="language-plaintext highlighter-rouge">%has_and_belongs_to_many</code> relation allows to define many-to-many relationship between 2 models. By given parameters could be specified field names described on the next schema:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| "Model A" |   | "Join Table" (join_table) |       | "Model B"               |
 | --------- |   |---------------------------|       |-------------------------|
@@ -144,51 +146,51 @@ contact.remove_addresses(address)
 
 <p>As you can see primary field of related model can’t be specified - defined primary key (in the mapping) will be got.</p>
 
-<p>Also <code class="highlighter-rouge">has_many</code>, <code class="highlighter-rouge">belongs_to</code> and <code class="highlighter-rouge">has_one</code> relations have <code class="highlighter-rouge">dependent</code> parameter - defines extra callback for cleaning up related data after destroying parent one. Allowed types are:</p>
+<p>Also <code class="language-plaintext highlighter-rouge">has_many</code>, <code class="language-plaintext highlighter-rouge">belongs_to</code> and <code class="language-plaintext highlighter-rouge">has_one</code> relations have <code class="language-plaintext highlighter-rouge">dependent</code> parameter - defines extra callback for cleaning up related data after destroying parent one. Allowed types are:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">nullify</code> - sets foreign key to <code class="highlighter-rouge">null</code> (<code class="highlighter-rouge">belongs_to</code> doesn’t support it) - default for <code class="highlighter-rouge">has_many</code> and <code class="highlighter-rouge">has_one</code></li>
-  <li><code class="highlighter-rouge">delete</code> - deletes all related objects</li>
-  <li><code class="highlighter-rouge">destroy</code> - destroys all related objects</li>
-  <li><code class="highlighter-rouge">restrict_with_exception</code> - will raise <code class="highlighter-rouge">Jennifer::RecordExists</code> exception if there is any related object</li>
-  <li><code class="highlighter-rouge">none</code> - will do nothing - default for <code class="highlighter-rouge">belongs_to</code></li>
+  <li><code class="language-plaintext highlighter-rouge">nullify</code> - sets foreign key to <code class="language-plaintext highlighter-rouge">null</code> (<code class="language-plaintext highlighter-rouge">belongs_to</code> doesn’t support it) - default for <code class="language-plaintext highlighter-rouge">has_many</code> and <code class="language-plaintext highlighter-rouge">has_one</code></li>
+  <li><code class="language-plaintext highlighter-rouge">delete</code> - deletes all related objects</li>
+  <li><code class="language-plaintext highlighter-rouge">destroy</code> - destroys all related objects</li>
+  <li><code class="language-plaintext highlighter-rouge">restrict_with_exception</code> - will raise <code class="language-plaintext highlighter-rouge">Jennifer::RecordExists</code> exception if there is any related object</li>
+  <li><code class="language-plaintext highlighter-rouge">none</code> - will do nothing - default for <code class="language-plaintext highlighter-rouge">belongs_to</code></li>
 </ul>
 
 <h2 id="inverse-of">Inverse of</h2>
 
-<p><code class="highlighter-rouge">has_many</code> and <code class="highlighter-rouge">has_one</code> relations also accepts <code class="highlighter-rouge">inverse_of</code> option which presents inverse relation name. Specifying this option will automatically load owner object during any relation loading (because of <code class="highlighter-rouge">ModelQuery#includes</code> or <code class="highlighter-rouge">ModelQuery#eager_load</code> or even plaint <code class="highlighter-rouge">SomeModel#relation_name</code> method call).</p>
+<p><code class="language-plaintext highlighter-rouge">has_many</code> and <code class="language-plaintext highlighter-rouge">has_one</code> relations also accepts <code class="language-plaintext highlighter-rouge">inverse_of</code> option which presents inverse relation name. Specifying this option will automatically load owner object during any relation loading (because of <code class="language-plaintext highlighter-rouge">ModelQuery#includes</code> or <code class="language-plaintext highlighter-rouge">ModelQuery#eager_load</code> or even plaint <code class="language-plaintext highlighter-rouge">SomeModel#relation_name</code> method call).</p>
 
 <h2 id="polymorphic-relations">Polymorphic Relations</h2>
 
 <p>Polymorphic relation can be easily configured:</p>
 
-<pre><code class="language-crystal">class Photo &lt; Jennifer::Model::Base
-  mapping(
-    # ...
-    attachable_type: String?,
-    attachable_id: int32?
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Photo</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="c1"># ...</span>
+    <span class="ss">attachable_type: </span><span class="no">String</span><span class="p">?,</span>
+    <span class="ss">attachable_id: </span><span class="n">int32?</span>
+  <span class="p">)</span>
 
-  # klass options specifies the exact union of models allowed to use this one
-  belongs_to :attachable, Union(Post | Comment), polymorphic: true
-end
+  <span class="c1"># klass options specifies the exact union of models allowed to use this one</span>
+  <span class="n">belongs_to</span> <span class="p">:</span><span class="n">attachable</span><span class="p">,</span> <span class="no">Union</span><span class="p">(</span><span class="no">Post</span> <span class="o">|</span> <span class="no">Comment</span><span class="p">),</span> <span class="ss">polymorphic: </span><span class="kp">true</span>
+<span class="k">end</span>
 
-class Post &lt; Jennifer::Model::Base
-  # ...
+<span class="k">class</span> <span class="nc">Post</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="c1"># ...</span>
 
-  # The :inverse_of option here specifies the polymorphic interface and is required
-  has_many :photos, Photo, polymorphic: true, inverse_of: :attachable
-end
-</code></pre>
+  <span class="c1"># The :inverse_of option here specifies the polymorphic interface and is required</span>
+  <span class="n">has_many</span> <span class="ss">:photos</span><span class="p">,</span> <span class="no">Photo</span><span class="p">,</span> <span class="ss">polymorphic: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">inverse_of: :attachable</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>This works by using a type column in addition to a foreign key to specify the associated record. In the <code class="highlighter-rouge">Photo</code> example, you’d need an <code class="highlighter-rouge">attachable_id</code> integer column and an <code class="highlighter-rouge">attachable_type</code> string column.</p>
+<p>This works by using a type column in addition to a foreign key to specify the associated record. In the <code class="language-plaintext highlighter-rouge">Photo</code> example, you’d need an <code class="language-plaintext highlighter-rouge">attachable_id</code> integer column and an <code class="language-plaintext highlighter-rouge">attachable_type</code> string column.</p>
 
 <p><strong>Important restriction</strong>: Polymorphic belongs_to relation can’t be loaded dynamically. E.g., based on the previous example:</p>
 
-<pre><code class="language-crystal">Photo.all.includes(:attachable) # This is forbidden
-# and
-photo.attachable_query # =&gt; Jennifer::QueryBuilder::Query instead of Jennifer::QueryBuilder::ModelQuery
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Photo</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="ss">:attachable</span><span class="p">)</span> <span class="c1"># This is forbidden</span>
+<span class="c1"># and</span>
+<span class="n">photo</span><span class="p">.</span><span class="nf">attachable_query</span> <span class="c1"># =&gt; Jennifer::QueryBuilder::Query instead of Jennifer::QueryBuilder::ModelQuery</span>
+</code></pre></div></div>
 
   </div>
 

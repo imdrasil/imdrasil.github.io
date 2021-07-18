@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/pagination_and_ordering.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/pagination_and_ordering.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/pagination_and_ordering.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/pagination_and_ordering.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -94,26 +96,26 @@
 
 <h2 id="pagination">Pagination</h2>
 
-<p>For now you can only specify <code class="highlighter-rouge">limit</code> and <code class="highlighter-rouge">offset</code>:</p>
+<p>For now you can only specify <code class="language-plaintext highlighter-rouge">limit</code> and <code class="language-plaintext highlighter-rouge">offset</code>:</p>
 
-<pre><code class="language-crystal">Contact.all.limit(10).offset(10)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="nf">offset</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h2 id="order">Order</h2>
 
 <p>You can specifies orders to sort by:</p>
 
-<pre><code class="language-crystal"># named tuple
-Contact.all.order(name: :asc, id: "desc")
-# symbol key hash
-Contact.all.order({:name =&gt; :asc})
-# string key hash
-Contact.all.order({"name" =&gt; :asc})
-# with block returning array of Jennifer::QueryBuilder::OrderExpression
-Contact.all.order { [_name.asc] }
-# or pass it as an argument
-Contact.all.order(Contact._name.asc)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># named tuple</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">order</span><span class="p">(</span><span class="ss">name: :asc</span><span class="p">,</span> <span class="ss">id: </span><span class="s2">"desc"</span><span class="p">)</span>
+<span class="c1"># symbol key hash</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">order</span><span class="p">({</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="ss">:asc</span><span class="p">})</span>
+<span class="c1"># string key hash</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">order</span><span class="p">({</span><span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="ss">:asc</span><span class="p">})</span>
+<span class="c1"># with block returning array of Jennifer::QueryBuilder::OrderExpression</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">order</span> <span class="p">{</span> <span class="p">[</span><span class="n">_name</span><span class="p">.</span><span class="nf">asc</span><span class="p">]</span> <span class="p">}</span>
+<span class="c1"># or pass it as an argument</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">order</span><span class="p">(</span><span class="no">Contact</span><span class="p">.</span><span class="nf">_name</span><span class="p">.</span><span class="nf">asc</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>Any symbol-based names are considered as a column names. Any string-based - as raw SQL.</p>
 
@@ -121,9 +123,9 @@ Contact.all.order(Contact._name.asc)
 
 <p>To avoid all existing ordering and assign new one:</p>
 
-<pre><code class="language-crystal">c = Contact.all.order(name: :desc)
-c.reoder(id: :asc).to_a
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">order</span><span class="p">(</span><span class="ss">name: :desc</span><span class="p">)</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">reoder</span><span class="p">(</span><span class="ss">id: :asc</span><span class="p">).</span><span class="nf">to_a</span>
+</code></pre></div></div>
 
   </div>
 

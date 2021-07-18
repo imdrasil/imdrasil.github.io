@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/configuration.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/configuration.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/configuration.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/configuration.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -94,21 +96,21 @@
 
 <p>Put</p>
 
-<pre><code class="language-crystal">require "jennifer"
-require "jennifer/adapter/mysql" # for mysql
-require "jennifer/adapter/postgres" # for postgres
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"jennifer"</span>
+<span class="nb">require</span> <span class="s2">"jennifer/adapter/mysql"</span> <span class="c1"># for mysql</span>
+<span class="nb">require</span> <span class="s2">"jennifer/adapter/postgres"</span> <span class="c1"># for postgres</span>
+</code></pre></div></div>
 
 <blockquote>
-  <p>Be attentive - adapter should be required <strong>after</strong> Jennifer. From <code class="highlighter-rouge">0.5.0</code> several adapters could be required at the same time.</p>
+  <p>Be attentive - adapter should be required <strong>after</strong> Jennifer. From <code class="language-plaintext highlighter-rouge">0.5.0</code> several adapters could be required at the same time.</p>
 </blockquote>
 
 <p><a href="https://github.com/imdrasil/jennifer_sqlite3_adapter">SQLite3</a> adapter is in a separate shard.</p>
 
 <p>This should be done before you load your application configurations (or at least models). Now configuration could be loaded from yaml file:</p>
 
-<pre><code class="language-crystal">Jennifer::Config.read("./spec/fixtures/database.yml", :development)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jennifer</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="s2">"./spec/fixtures/database.yml"</span><span class="p">,</span> <span class="ss">:development</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>Second argument presents environment and just use it as namespace key grepping values from yml.</p>
 
@@ -130,28 +132,28 @@ require "jennifer/adapter/postgres" # for postgres
 
 <p>This also can be written using DSL:</p>
 
-<pre><code class="language-crystal">Jennifer::Config.configure do |conf|
-  conf.host = "localhost"
-  conf.user = "root"
-  conf.password = ""
-  conf.adapter = "mysql"
-  conf.db = "crystal"
-  conf.migration_files_path = "./any/path/migrations"
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jennifer</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">conf</span><span class="o">|</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">host</span> <span class="o">=</span> <span class="s2">"localhost"</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">user</span> <span class="o">=</span> <span class="s2">"root"</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">password</span> <span class="o">=</span> <span class="s2">""</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">adapter</span> <span class="o">=</span> <span class="s2">"mysql"</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">db</span> <span class="o">=</span> <span class="s2">"crystal"</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">migration_files_path</span> <span class="o">=</span> <span class="s2">"./any/path/migrations"</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>If your configurations aren’t stored on the top level - you can manipulate which document subpart will be used to parse parameters:</p>
 
-<pre><code class="language-crystal">Jennifer::Config.read("./spec/fixtures/database.yml", &amp;.["database"]["development"])
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jennifer</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="s2">"./spec/fixtures/database.yml"</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">.</span><span class="nf">[</span><span class="s2">"database"</span><span class="p">][</span><span class="s2">"development"</span><span class="p">])</span>
+</code></pre></div></div>
 
 <p>Also configuration can be parsed directly from URI:</p>
 
-<pre><code class="language-crystal">db_uri = "mysql://root@somehost/some_database?max_pool_size=111&amp;initial_pool_size=222&amp;max_idle_pool_size=333&amp;retry_attempts=444&amp;checkout_timeout=555&amp;retry_delay=666"
-Jennifer::Config.from_uri(db)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">db_uri</span> <span class="o">=</span> <span class="s2">"mysql://root@somehost/some_database?max_pool_size=111&amp;initial_pool_size=222&amp;max_idle_pool_size=333&amp;retry_attempts=444&amp;checkout_timeout=555&amp;retry_delay=666"</span>
+<span class="no">Jennifer</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">from_uri</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>Take into account - some configs can’t be initialized using URI or yaml file but all of them always can be initialized using <code class="highlighter-rouge">Jennifer::Config.configure</code>. Here is the list of such configs:</p>
+<p>Take into account - some configs can’t be initialized using URI or yaml file but all of them always can be initialized using <code class="language-plaintext highlighter-rouge">Jennifer::Config.configure</code>. Here is the list of such configs:</p>
 
 <table>
   <thead>
@@ -163,77 +165,77 @@ Jennifer::Config.from_uri(db)
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">logger</code></td>
+      <td><code class="language-plaintext highlighter-rouge">logger</code></td>
       <td>❌</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">migration_files_path</code></td>
+      <td><code class="language-plaintext highlighter-rouge">migration_files_path</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">verbose_migrations</code></td>
+      <td><code class="language-plaintext highlighter-rouge">verbose_migrations</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">model_files_path</code></td>
+      <td><code class="language-plaintext highlighter-rouge">model_files_path</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">local_time_zone_name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">local_time_zone_name</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">schema</code></td>
+      <td><code class="language-plaintext highlighter-rouge">schema</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">structure_folder</code></td>
+      <td><code class="language-plaintext highlighter-rouge">structure_folder</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">skip_dumping_schema_sql</code></td>
+      <td><code class="language-plaintext highlighter-rouge">skip_dumping_schema_sql</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">docker_container</code></td>
+      <td><code class="language-plaintext highlighter-rouge">docker_container</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">docker_source_location</code></td>
+      <td><code class="language-plaintext highlighter-rouge">docker_source_location</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">command_shell_sudo</code></td>
+      <td><code class="language-plaintext highlighter-rouge">command_shell_sudo</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">migration_failure_handler_method</code></td>
+      <td><code class="language-plaintext highlighter-rouge">migration_failure_handler_method</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">allow_outdated_pending_migration</code></td>
+      <td><code class="language-plaintext highlighter-rouge">allow_outdated_pending_migration</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">max_bind_vars_count</code></td>
+      <td><code class="language-plaintext highlighter-rouge">max_bind_vars_count</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">time_zone_aware_attributes</code></td>
+      <td><code class="language-plaintext highlighter-rouge">time_zone_aware_attributes</code></td>
       <td>✔</td>
       <td>❌</td>
     </tr>
@@ -243,54 +245,54 @@ Jennifer::Config.from_uri(db)
 <h2 id="supported-configuration-options">Supported configuration options</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">host</code> - database host; default: <code class="highlighter-rouge">"localhost"</code></li>
-  <li><code class="highlighter-rouge">port</code> - database port; default: <code class="highlighter-rouge">-1</code> (<code class="highlighter-rouge">-1</code> value makes adapter to skip port in building connection URL, specify required port number)</li>
-  <li><code class="highlighter-rouge">logger</code> - logger instance; default: <code class="highlighter-rouge">Log.for("db", :debug)</code></li>
-  <li><code class="highlighter-rouge">schema</code> - PostgreSQL database schema name; default: <code class="highlighter-rouge">"public"</code></li>
-  <li><code class="highlighter-rouge">user</code> - database user name used to connect to the database</li>
-  <li><code class="highlighter-rouge">password</code> - database user password used to connect to the database (if not specified - connection URL will specify only user name)</li>
-  <li><code class="highlighter-rouge">db</code> - database name</li>
-  <li><code class="highlighter-rouge">adapter</code> - adapter name to be used to connect to the database (e.g. <code class="highlighter-rouge">"postgres"</code>)</li>
-  <li><code class="highlighter-rouge">pool_size</code> - count of simultaneously alive database connection; default: <code class="highlighter-rouge">1</code></li>
-  <li><code class="highlighter-rouge">retry_attempts</code> - count of attempts to connect to the database before raising an exception; default: <code class="highlighter-rouge">1</code></li>
-  <li><code class="highlighter-rouge">retry_delay</code> - amount of seconds to wait between connection retries; default: <code class="highlighter-rouge">1.0</code></li>
-  <li><code class="highlighter-rouge">checkout_timeout</code> - amount of seconds to be wait for connection; default: <code class="highlighter-rouge">5.0</code></li>
-  <li><code class="highlighter-rouge">local_time_zone_name</code> - local time zone name; automatically taken from <code class="highlighter-rouge">Time::Location.local.name</code></li>
-  <li><code class="highlighter-rouge">skip_dumping_schema_sql</code> - skip dumping database structure if set to <code class="highlighter-rouge">true</code>; default: <code class="highlighter-rouge">false</code></li>
-  <li><code class="highlighter-rouge">allow_outdated_pending_migration</code> - allows outdated pending migrations (which version is below the latest run migration) to be invoked without exception; default: <code class="highlighter-rouge">false</code></li>
-  <li><code class="highlighter-rouge">command_shell</code> - the name of system command interface to be used for some operations that require system calls; default: <code class="highlighter-rouge">"bash"</code>; <code class="highlighter-rouge">"docker"</code> value makes commands to be invoked inside of specified docker container</li>
-  <li><code class="highlighter-rouge">docker_container</code> - container name with database instance (is used when <code class="highlighter-rouge">command_shell</code> set to <code class="highlighter-rouge">"docker"</code>); default: <code class="highlighter-rouge">""</code></li>
-  <li><code class="highlighter-rouge">docker_source_location</code> - default source location prefix for the executables inside of docker container (is used when <code class="highlighter-rouge">command_shell</code> set to <code class="highlighter-rouge">"docker"</code>); default: <code class="highlighter-rouge">""</code></li>
-  <li><code class="highlighter-rouge">command_shell_sudo</code> - marks whether system commands should be invoked with <code class="highlighter-rouge">sudo</code>; default: <code class="highlighter-rouge">false</code></li>
-  <li><code class="highlighter-rouge">migration_failure_handler_method</code> - strategy used on migration file failure; default: <code class="highlighter-rouge">"none"</code>; supported:
+  <li><code class="language-plaintext highlighter-rouge">host</code> - database host; default: <code class="language-plaintext highlighter-rouge">"localhost"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">port</code> - database port; default: <code class="language-plaintext highlighter-rouge">-1</code> (<code class="language-plaintext highlighter-rouge">-1</code> value makes adapter to skip port in building connection URL, specify required port number)</li>
+  <li><code class="language-plaintext highlighter-rouge">logger</code> - logger instance; default: <code class="language-plaintext highlighter-rouge">Log.for("db", :debug)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">schema</code> - PostgreSQL database schema name; default: <code class="language-plaintext highlighter-rouge">"public"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">user</code> - database user name used to connect to the database</li>
+  <li><code class="language-plaintext highlighter-rouge">password</code> - database user password used to connect to the database (if not specified - connection URL will specify only user name)</li>
+  <li><code class="language-plaintext highlighter-rouge">db</code> - database name</li>
+  <li><code class="language-plaintext highlighter-rouge">adapter</code> - adapter name to be used to connect to the database (e.g. <code class="language-plaintext highlighter-rouge">"postgres"</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">pool_size</code> - count of simultaneously alive database connection; default: <code class="language-plaintext highlighter-rouge">1</code></li>
+  <li><code class="language-plaintext highlighter-rouge">retry_attempts</code> - count of attempts to connect to the database before raising an exception; default: <code class="language-plaintext highlighter-rouge">1</code></li>
+  <li><code class="language-plaintext highlighter-rouge">retry_delay</code> - amount of seconds to wait between connection retries; default: <code class="language-plaintext highlighter-rouge">1.0</code></li>
+  <li><code class="language-plaintext highlighter-rouge">checkout_timeout</code> - amount of seconds to be wait for connection; default: <code class="language-plaintext highlighter-rouge">5.0</code></li>
+  <li><code class="language-plaintext highlighter-rouge">local_time_zone_name</code> - local time zone name; automatically taken from <code class="language-plaintext highlighter-rouge">Time::Location.local.name</code></li>
+  <li><code class="language-plaintext highlighter-rouge">skip_dumping_schema_sql</code> - skip dumping database structure if set to <code class="language-plaintext highlighter-rouge">true</code>; default: <code class="language-plaintext highlighter-rouge">false</code></li>
+  <li><code class="language-plaintext highlighter-rouge">allow_outdated_pending_migration</code> - allows outdated pending migrations (which version is below the latest run migration) to be invoked without exception; default: <code class="language-plaintext highlighter-rouge">false</code></li>
+  <li><code class="language-plaintext highlighter-rouge">command_shell</code> - the name of system command interface to be used for some operations that require system calls; default: <code class="language-plaintext highlighter-rouge">"bash"</code>; <code class="language-plaintext highlighter-rouge">"docker"</code> value makes commands to be invoked inside of specified docker container</li>
+  <li><code class="language-plaintext highlighter-rouge">docker_container</code> - container name with database instance (is used when <code class="language-plaintext highlighter-rouge">command_shell</code> set to <code class="language-plaintext highlighter-rouge">"docker"</code>); default: <code class="language-plaintext highlighter-rouge">""</code></li>
+  <li><code class="language-plaintext highlighter-rouge">docker_source_location</code> - default source location prefix for the executables inside of docker container (is used when <code class="language-plaintext highlighter-rouge">command_shell</code> set to <code class="language-plaintext highlighter-rouge">"docker"</code>); default: <code class="language-plaintext highlighter-rouge">""</code></li>
+  <li><code class="language-plaintext highlighter-rouge">command_shell_sudo</code> - marks whether system commands should be invoked with <code class="language-plaintext highlighter-rouge">sudo</code>; default: <code class="language-plaintext highlighter-rouge">false</code></li>
+  <li><code class="language-plaintext highlighter-rouge">migration_failure_handler_method</code> - strategy used on migration file failure; default: <code class="language-plaintext highlighter-rouge">"none"</code>; supported:
     <ul>
-      <li><code class="highlighter-rouge">"none"</code> - do nothing</li>
-      <li><code class="highlighter-rouge">"reverse_direction"</code> - invokes an opposite method to migration direction (<code class="highlighter-rouge">#down</code> for an up-migration)</li>
-      <li><code class="highlighter-rouge">"callback"</code> - invokes <code class="highlighter-rouge">#after_up_failure</code> on a failed up-migration and <code class="highlighter-rouge">#after_down_failure</code> on a failed down-migration</li>
+      <li><code class="language-plaintext highlighter-rouge">"none"</code> - do nothing</li>
+      <li><code class="language-plaintext highlighter-rouge">"reverse_direction"</code> - invokes an opposite method to migration direction (<code class="language-plaintext highlighter-rouge">#down</code> for an up-migration)</li>
+      <li><code class="language-plaintext highlighter-rouge">"callback"</code> - invokes <code class="language-plaintext highlighter-rouge">#after_up_failure</code> on a failed up-migration and <code class="language-plaintext highlighter-rouge">#after_down_failure</code> on a failed down-migration</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">migration_files_path</code> - path to the location with migration files; default: <code class="highlighter-rouge">"./db/migrations"</code></li>
-  <li><code class="highlighter-rouge">verbose_migrations</code> - outputs basic invoked migration information if set to <code class="highlighter-rouge">true</code>; default: <code class="highlighter-rouge">true</code></li>
-  <li><code class="highlighter-rouge">model_files_path</code> - path to the models locations; is used by model and migration generators; default: <code class="highlighter-rouge">"./src/models"</code></li>
-  <li><code class="highlighter-rouge">structure_folder</code> - path to the database structure file location; if set to empty string - parent folder of <code class="highlighter-rouge">migration_files_path</code> is used; default: <code class="highlighter-rouge">""</code></li>
-  <li><code class="highlighter-rouge">max_bind_vars_count</code> - maximum allowed count of bind variables; if nothing specified - used adapter’s default value; default: <code class="highlighter-rouge">nil</code></li>
-  <li><code class="highlighter-rouge">time_zone_aware_attributes</code> - whether Jennifer should convert time objects to UTC and back to application time zone when store/load them from a database; default: <code class="highlighter-rouge">true</code></li>
+  <li><code class="language-plaintext highlighter-rouge">migration_files_path</code> - path to the location with migration files; default: <code class="language-plaintext highlighter-rouge">"./db/migrations"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">verbose_migrations</code> - outputs basic invoked migration information if set to <code class="language-plaintext highlighter-rouge">true</code>; default: <code class="language-plaintext highlighter-rouge">true</code></li>
+  <li><code class="language-plaintext highlighter-rouge">model_files_path</code> - path to the models locations; is used by model and migration generators; default: <code class="language-plaintext highlighter-rouge">"./src/models"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">structure_folder</code> - path to the database structure file location; if set to empty string - parent folder of <code class="language-plaintext highlighter-rouge">migration_files_path</code> is used; default: <code class="language-plaintext highlighter-rouge">""</code></li>
+  <li><code class="language-plaintext highlighter-rouge">max_bind_vars_count</code> - maximum allowed count of bind variables; if nothing specified - used adapter’s default value; default: <code class="language-plaintext highlighter-rouge">nil</code></li>
+  <li><code class="language-plaintext highlighter-rouge">time_zone_aware_attributes</code> - whether Jennifer should convert time objects to UTC and back to application time zone when store/load them from a database; default: <code class="language-plaintext highlighter-rouge">true</code></li>
 </ul>
 
 <h2 id="logging">Logging</h2>
 
 <p>Jennifer uses <a href="https://crystal-lang.org/api/latest/Log.html">standard</a> Crystal logging mechanism so you could specify your own logger:</p>
 
-<pre><code class="language-crystal"># This is default logger configuration
-Jennifer::Config.configure do |conf|
-  conf.logger = Log.for("db", :debug)
-end
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is default logger configuration</span>
+<span class="no">Jennifer</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">conf</span><span class="o">|</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">logger</span> <span class="o">=</span> <span class="no">Log</span><span class="p">.</span><span class="nf">for</span><span class="p">(</span><span class="s2">"db"</span><span class="p">,</span> <span class="ss">:debug</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p>As a default formatter <code class="highlighter-rouge">Jennifer::Adapter::DBFormatter</code> could be used:</p>
+<p>As a default formatter <code class="language-plaintext highlighter-rouge">Jennifer::Adapter::DBFormatter</code> could be used:</p>
 
-<pre><code class="language-crystal">Log.setup "db", :debug, Log::IOBackend.new(formatter: Jennifer::Adapter::DBFormatter)
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Log</span><span class="p">.</span><span class="nf">setup</span> <span class="s2">"db"</span><span class="p">,</span> <span class="ss">:debug</span><span class="p">,</span> <span class="no">Log</span><span class="o">::</span><span class="no">IOBackend</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">formatter: </span><span class="no">Jennifer</span><span class="o">::</span><span class="no">Adapter</span><span class="o">::</span><span class="no">DBFormatter</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>More about logging could be found <a href="https://crystal-lang.org/api/latest/Log.html">in the crystal doc</a>.</p>
 
@@ -298,25 +300,25 @@ end
 
 <p>Some database related operations need to be performed by invoking bash command (like creating or dropping database). By default bash shell is used for such purposes under user invoking this operation, but this may be specified.</p>
 
-<p>To specify another command shell set <code class="highlighter-rouge">command_shell</code> configuration to another registered one. One more onboard command shell is <code class="highlighter-rouge">"docker"</code> but you mau also define your own. To do this you should inherit from <code class="highlighter-rouge">Jennifer::Adapter::ICommandShell</code> abstract class and register it:</p>
+<p>To specify another command shell set <code class="language-plaintext highlighter-rouge">command_shell</code> configuration to another registered one. One more onboard command shell is <code class="language-plaintext highlighter-rouge">"docker"</code> but you mau also define your own. To do this you should inherit from <code class="language-plaintext highlighter-rouge">Jennifer::Adapter::ICommandShell</code> abstract class and register it:</p>
 
-<pre><code class="language-crystal">class MySimpleDocker &lt; Jennifer::Adapter::ICommandShell
-  def execute(command)
-    command_string = String.build do |io|
-      io &lt;&lt; "sudo " if config.command_shell_sudo
-      io &lt;&lt; "docker exec -i "
-      io &lt;&lt; config.docker_container
-      io &lt;&lt; " "
-      io &lt;&lt; command.executable
-      io &lt;&lt; " "
-      io &lt;&lt; OPTIONS_PLACEHOLDER
-    end
-    invoke(command_string, command.options)
-  end
-end
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MySimpleDocker</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Adapter</span><span class="o">::</span><span class="no">ICommandShell</span>
+  <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+    <span class="n">command_string</span> <span class="o">=</span> <span class="no">String</span><span class="p">.</span><span class="nf">build</span> <span class="k">do</span> <span class="o">|</span><span class="n">io</span><span class="o">|</span>
+      <span class="n">io</span> <span class="o">&lt;&lt;</span> <span class="s2">"sudo "</span> <span class="k">if</span> <span class="n">config</span><span class="p">.</span><span class="nf">command_shell_sudo</span>
+      <span class="n">io</span> <span class="o">&lt;&lt;</span> <span class="s2">"docker exec -i "</span>
+      <span class="n">io</span> <span class="o">&lt;&lt;</span> <span class="n">config</span><span class="p">.</span><span class="nf">docker_container</span>
+      <span class="n">io</span> <span class="o">&lt;&lt;</span> <span class="s2">" "</span>
+      <span class="n">io</span> <span class="o">&lt;&lt;</span> <span class="n">command</span><span class="p">.</span><span class="nf">executable</span>
+      <span class="n">io</span> <span class="o">&lt;&lt;</span> <span class="s2">" "</span>
+      <span class="n">io</span> <span class="o">&lt;&lt;</span> <span class="no">OPTIONS_PLACEHOLDER</span>
+    <span class="k">end</span>
+    <span class="n">invoke</span><span class="p">(</span><span class="n">command_string</span><span class="p">,</span> <span class="n">command</span><span class="p">.</span><span class="nf">options</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-Jennifer::Adapter::DBCommandInterface.register_shell("my_docker", MySimpleDocker)
-</code></pre>
+<span class="no">Jennifer</span><span class="o">::</span><span class="no">Adapter</span><span class="o">::</span><span class="no">DBCommandInterface</span><span class="p">.</span><span class="nf">register_shell</span><span class="p">(</span><span class="s2">"my_docker"</span><span class="p">,</span> <span class="no">MySimpleDocker</span><span class="p">)</span>
+</code></pre></div></div>
 
   </div>
 

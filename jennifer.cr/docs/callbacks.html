@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/callbacks.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/callbacks.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/callbacks.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/callbacks.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -102,19 +104,19 @@
 
 <p>In order to use available callbacks, you need to define them. To do this implement callback as instance method and use macro to register it as callback:</p>
 
-<pre><code class="language-crystal">class User &lt; Jennifer::Base::Model
-  mapping(
-    id: Primary32,
-    email: String
-  )
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Base</span><span class="o">::</span><span class="no">Model</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">email: </span><span class="no">String</span>
+  <span class="p">)</span>
 
-  before_validation :clean_up_email
+  <span class="n">before_validation</span> <span class="ss">:clean_up_email</span>
 
-  private def clean_up_email
-    self.email = email.gsub('+', "")
-  end
-end
-</code></pre>
+  <span class="kp">private</span> <span class="k">def</span> <span class="nf">clean_up_email</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">email</span> <span class="o">=</span> <span class="n">email</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="s1">'+'</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <h2 id="available-callbacks">Available callbacks</h2>
 
@@ -123,33 +125,33 @@ end
 <h3 id="creating-new-object">Creating new object</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">before_validation</code></li>
-  <li><code class="highlighter-rouge">after_validation</code></li>
-  <li><code class="highlighter-rouge">before_save</code></li>
-  <li><code class="highlighter-rouge">before_create</code></li>
-  <li><code class="highlighter-rouge">after_create</code></li>
-  <li><code class="highlighter-rouge">after_save</code></li>
-  <li><code class="highlighter-rouge">after_commit</code> / <code class="highlighter-rouge">after_rollback</code></li>
+  <li><code class="language-plaintext highlighter-rouge">before_validation</code></li>
+  <li><code class="language-plaintext highlighter-rouge">after_validation</code></li>
+  <li><code class="language-plaintext highlighter-rouge">before_save</code></li>
+  <li><code class="language-plaintext highlighter-rouge">before_create</code></li>
+  <li><code class="language-plaintext highlighter-rouge">after_create</code></li>
+  <li><code class="language-plaintext highlighter-rouge">after_save</code></li>
+  <li><code class="language-plaintext highlighter-rouge">after_commit</code> / <code class="language-plaintext highlighter-rouge">after_rollback</code></li>
 </ul>
 
 <h3 id="updating-existing-object">Updating existing object</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">before_validation</code></li>
-  <li><code class="highlighter-rouge">after_validation</code></li>
-  <li><code class="highlighter-rouge">before_save</code></li>
-  <li><code class="highlighter-rouge">before_update</code></li>
-  <li><code class="highlighter-rouge">after_update</code></li>
-  <li><code class="highlighter-rouge">after_save</code></li>
-  <li><code class="highlighter-rouge">after_commit</code> / <code class="highlighter-rouge">after_rollback</code></li>
+  <li><code class="language-plaintext highlighter-rouge">before_validation</code></li>
+  <li><code class="language-plaintext highlighter-rouge">after_validation</code></li>
+  <li><code class="language-plaintext highlighter-rouge">before_save</code></li>
+  <li><code class="language-plaintext highlighter-rouge">before_update</code></li>
+  <li><code class="language-plaintext highlighter-rouge">after_update</code></li>
+  <li><code class="language-plaintext highlighter-rouge">after_save</code></li>
+  <li><code class="language-plaintext highlighter-rouge">after_commit</code> / <code class="language-plaintext highlighter-rouge">after_rollback</code></li>
 </ul>
 
 <h3 id="destroying-an-object">Destroying an object</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">before_destroy</code></li>
-  <li><code class="highlighter-rouge">after_destroy</code></li>
-  <li><code class="highlighter-rouge">after_commit</code> / <code class="highlighter-rouge">after_rollback</code></li>
+  <li><code class="language-plaintext highlighter-rouge">before_destroy</code></li>
+  <li><code class="language-plaintext highlighter-rouge">after_destroy</code></li>
+  <li><code class="language-plaintext highlighter-rouge">after_commit</code> / <code class="language-plaintext highlighter-rouge">after_rollback</code></li>
 </ul>
 
 <h2 id="invoking-callbacks">Invoking callbacks</h2>
@@ -170,7 +172,7 @@ end
   <li>update!</li>
 </ul>
 
-<p>The <code class="highlighter-rouge">after_initialize</code> callback is triggered each time record is initialized using method <code class="highlighter-rouge">::build</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">after_initialize</code> callback is triggered each time record is initialized using method <code class="language-plaintext highlighter-rouge">::build</code>.</p>
 
 <h2 id="skipping-callbacks">Skipping callbacks</h2>
 
@@ -194,38 +196,38 @@ end
 
 <h2 id="stopping-execution">Stopping execution</h2>
 
-<p>Raising <code class="highlighter-rouge">::Jennifer::Skip</code> exception inside of any callback will stop further callback invoking; such behavior in the any <code class="highlighter-rouge">before</code> callback stops current action from being processed.</p>
+<p>Raising <code class="language-plaintext highlighter-rouge">::Jennifer::Skip</code> exception inside of any callback will stop further callback invoking; such behavior in the any <code class="language-plaintext highlighter-rouge">before</code> callback stops current action from being processed.</p>
 
 <h2 id="transaction-callbacks">Transaction callbacks</h2>
 
-<p>There are 2 additional callbacks that are triggered right after database transaction completion: <code class="highlighter-rouge">after_commit</code> and <code class="highlighter-rouge">after_rollback</code>. The main difference of these callbacks is they will be executed only after top level transaction will be completed (committed or rolled back) - instead invoking just in place. Also they expect context to be invoked on: create, save, update or destroy. E.g.:</p>
+<p>There are 2 additional callbacks that are triggered right after database transaction completion: <code class="language-plaintext highlighter-rouge">after_commit</code> and <code class="language-plaintext highlighter-rouge">after_rollback</code>. The main difference of these callbacks is they will be executed only after top level transaction will be completed (committed or rolled back) - instead invoking just in place. Also they expect context to be invoked on: create, save, update or destroy. E.g.:</p>
 
-<pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
-  mapping(
-    id: Primary32,
-    name: String
-  )
-  after_save :saved
-  after_commit :committed, on: :save
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">name: </span><span class="no">String</span>
+  <span class="p">)</span>
+  <span class="n">after_save</span> <span class="ss">:saved</span>
+  <span class="n">after_commit</span> <span class="ss">:committed</span><span class="p">,</span> <span class="ss">on: :save</span>
 
-  def saved
-    puts "saved"
-  end
+  <span class="k">def</span> <span class="nf">saved</span>
+    <span class="nb">puts</span> <span class="s2">"saved"</span>
+  <span class="k">end</span>
 
-  def committed
-    puts "committed"
-  end
-end
+  <span class="k">def</span> <span class="nf">committed</span>
+    <span class="nb">puts</span> <span class="s2">"committed"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-user = User.all.first!
+<span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">first!</span>
 
-User.transaction do
-  user.name = "new name"
-  user.save
-  puts "end of transaction"
-end
-puts "after transaction"
-</code></pre>
+<span class="no">User</span><span class="p">.</span><span class="nf">transaction</span> <span class="k">do</span>
+  <span class="n">user</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"new name"</span>
+  <span class="n">user</span><span class="p">.</span><span class="nf">save</span>
+  <span class="nb">puts</span> <span class="s2">"end of transaction"</span>
+<span class="k">end</span>
+<span class="nb">puts</span> <span class="s2">"after transaction"</span>
+</code></pre></div></div>
 
 <p>will ends with next output:</p>
 

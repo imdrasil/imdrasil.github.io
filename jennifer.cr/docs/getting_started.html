@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/getting_started.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/getting_started.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/getting_started.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/getting_started.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -94,7 +96,7 @@
 
 <h2 id="installation">Installation</h2>
 
-<p>Add the shard to your <code class="highlighter-rouge">shard.yml</code>. Also</p>
+<p>Add the shard to your <code class="language-plaintext highlighter-rouge">shard.yml</code>. Also</p>
 
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
@@ -134,157 +136,157 @@
 
 <h3 id="setting-up-database-connection">Setting up database connection</h3>
 
-<p>Create <code class="highlighter-rouge">./config</code> folder - it will contain all your configurations. Also create <code class="highlighter-rouge">./config/initializers/database.cr</code> with following content:</p>
+<p>Create <code class="language-plaintext highlighter-rouge">./config</code> folder - it will contain all your configurations. Also create <code class="language-plaintext highlighter-rouge">./config/initializers/database.cr</code> with following content:</p>
 
-<pre><code class="language-crystal">require "jennifer"
-require "jennifer/adapter/postgres" # for PostgreSQL
-# require "jennifer/adapter/mysql" for MySQL
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"jennifer"</span>
+<span class="nb">require</span> <span class="s2">"jennifer/adapter/postgres"</span> <span class="c1"># for PostgreSQL</span>
+<span class="c1"># require "jennifer/adapter/mysql" for MySQL</span>
 
-APP_ENV = ENV["APP_ENV"]? || "development"
+<span class="no">APP_ENV</span> <span class="o">=</span> <span class="no">ENV</span><span class="p">[</span><span class="s2">"APP_ENV"</span><span class="p">]?</span> <span class="o">||</span> <span class="s2">"development"</span>
 
-Jennifer::Config.configure do |conf|
-  conf.read("config/database.yml", APP_ENV)
-  conf.from_uri(ENV["DATABASE_URI"]) if ENV.has_key?("DATABASE_URI")
-  conf.logger.level = APP_ENV == "development" ? :debug : :error
-end
+<span class="no">Jennifer</span><span class="o">::</span><span class="no">Config</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">conf</span><span class="o">|</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="s2">"config/database.yml"</span><span class="p">,</span> <span class="no">APP_ENV</span><span class="p">)</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">from_uri</span><span class="p">(</span><span class="no">ENV</span><span class="p">[</span><span class="s2">"DATABASE_URI"</span><span class="p">])</span> <span class="k">if</span> <span class="no">ENV</span><span class="p">.</span><span class="nf">has_key?</span><span class="p">(</span><span class="s2">"DATABASE_URI"</span><span class="p">)</span>
+  <span class="n">conf</span><span class="p">.</span><span class="nf">logger</span><span class="p">.</span><span class="nf">level</span> <span class="o">=</span> <span class="no">APP_ENV</span> <span class="o">==</span> <span class="s2">"development"</span> <span class="p">?</span> <span class="p">:</span><span class="n">debug</span> <span class="p">:</span> <span class="ss">:error</span>
+<span class="k">end</span>
 
-Log.setup "db", :debug, Log::IOBackend.new(formatter: Jennifer::Adapter::DBFormatter)
-</code></pre>
+<span class="no">Log</span><span class="p">.</span><span class="nf">setup</span> <span class="s2">"db"</span><span class="p">,</span> <span class="ss">:debug</span><span class="p">,</span> <span class="no">Log</span><span class="o">::</span><span class="no">IOBackend</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">formatter: </span><span class="no">Jennifer</span><span class="o">::</span><span class="no">Adapter</span><span class="o">::</span><span class="no">DBFormatter</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>This allows you to put all database related configuration to structured yml file and override it with custom database connection URI passing it in <code class="highlighter-rouge">DATABASE_URI</code>.</p>
+<p>This allows you to put all database related configuration to structured yml file and override it with custom database connection URI passing it in <code class="language-plaintext highlighter-rouge">DATABASE_URI</code>.</p>
 
-<p>Now let’s create <code class="highlighter-rouge">./config/database.yml</code>:</p>
+<p>Now let’s create <code class="language-plaintext highlighter-rouge">./config/database.yml</code>:</p>
 
-<pre><code class="language-crystal">default: &amp;default
-  host: localhost
-  user: user_name
-  password: user_password
-  adapter: postgres
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="ss">default: </span><span class="o">&amp;</span><span class="k">def</span><span class="nf">ault</span>
+  <span class="ss">host: </span><span class="n">localhost</span>
+  <span class="ss">user: </span><span class="n">user_name</span>
+  <span class="ss">password: </span><span class="n">user_password</span>
+  <span class="ss">adapter: </span><span class="n">postgres</span>
 
-development:
-  &lt;&lt;: *default
-  db: application_database_name_development
+<span class="ss">development:
+  </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="k">def</span><span class="nf">ault</span>
+  <span class="ss">db: </span><span class="n">application_database_name_development</span>
 
-test:
-  &lt;&lt;: *default
-  db: application_database_name_development
+<span class="ss">test:
+  </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="k">def</span><span class="nf">ault</span>
+  <span class="ss">db: </span><span class="n">application_database_name_development</span>
 
-production:
-  &lt;&lt;: *default
-  db: application_database_name_development
-</code></pre>
+<span class="ss">production:
+  </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="k">def</span><span class="nf">ault</span>
+  <span class="ss">db: </span><span class="n">application_database_name_development</span>
+</code></pre></div></div>
 
 <blockquote>
-  <p>NOTE: prefer creating shared database configuration file template rather than exact one (aka <code class="highlighter-rouge">database.example.yml</code>) so everyone can configure it for themselves.</p>
+  <p>NOTE: prefer creating shared database configuration file template rather than exact one (aka <code class="language-plaintext highlighter-rouge">database.example.yml</code>) so everyone can configure it for themselves.</p>
 </blockquote>
 
-<p>Now create <code class="highlighter-rouge">./config/config.cr</code> which is responsible for loading all dependency’s configurations:</p>
+<p>Now create <code class="language-plaintext highlighter-rouge">./config/config.cr</code> which is responsible for loading all dependency’s configurations:</p>
 
-<pre><code class="language-crystal">require "./initializers/**"
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"./initializers/**"</span>
+</code></pre></div></div>
 
 <h3 id="translations">Translations</h3>
 
-<p>Jennifer under the hood use <a href="https://github.com/TechMagister/i18n.cr">i18n</a> for error message translation. Create <code class="highlighter-rouge">./config/locales/en.yml</code> for any custom translations and add <code class="highlighter-rouge">./config/initializers/zzz_i18n.cr</code> with following content:</p>
+<p>Jennifer under the hood use <a href="https://github.com/TechMagister/i18n.cr">i18n</a> for error message translation. Create <code class="language-plaintext highlighter-rouge">./config/locales/en.yml</code> for any custom translations and add <code class="language-plaintext highlighter-rouge">./config/initializers/zzz_i18n.cr</code> with following content:</p>
 
-<pre><code class="language-crystal">I18n.load_path += ["./config/locales"]
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">I18n</span><span class="p">.</span><span class="nf">load_path</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"./config/locales"</span><span class="p">]</span>
 
-I18n.init
-</code></pre>
+<span class="no">I18n</span><span class="p">.</span><span class="nf">init</span>
+</code></pre></div></div>
 
 <h3 id="cli">CLI</h3>
 
-<p>To be able to use CLI install <a href="https://github.com/imdrasil/sam.cr">sam</a> task manager and modify <code class="highlighter-rouge">sam.cr</code> file in you application root folder with following content:</p>
+<p>To be able to use CLI install <a href="https://github.com/imdrasil/sam.cr">sam</a> task manager and modify <code class="language-plaintext highlighter-rouge">sam.cr</code> file in you application root folder with following content:</p>
 
-<pre><code class="language-crystal">require "./your_configuration_folder/*" # here load jennifer and all required configurations
-require "sam"
-load_dependencies "jennifer"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"./your_configuration_folder/*"</span> <span class="c1"># here load jennifer and all required configurations</span>
+<span class="nb">require</span> <span class="s2">"sam"</span>
+<span class="n">load_dependencies</span> <span class="s2">"jennifer"</span>
 
-# ...
+<span class="c1"># ...</span>
 
-Sam.help
-</code></pre>
+<span class="no">Sam</span><span class="p">.</span><span class="nf">help</span>
+</code></pre></div></div>
 
-<p>Now you can invoke <code class="highlighter-rouge">$ crystal sam.cr -- help</code> to get list of all available tasks. Also you can generate makefile shorthand for this - just invoke <code class="highlighter-rouge">$ crystal sam.cr -- generate:makefile</code>. Now you are able to invoke Sam tasks by <code class="highlighter-rouge">make</code> - <code class="highlighter-rouge">$make sam help</code>.</p>
+<p>Now you can invoke <code class="language-plaintext highlighter-rouge">$ crystal sam.cr -- help</code> to get list of all available tasks. Also you can generate makefile shorthand for this - just invoke <code class="language-plaintext highlighter-rouge">$ crystal sam.cr -- generate:makefile</code>. Now you are able to invoke Sam tasks by <code class="language-plaintext highlighter-rouge">make</code> - <code class="language-plaintext highlighter-rouge">$make sam help</code>.</p>
 
 <h2 id="usage">Usage</h2>
 
 <h3 id="first-models">First Models</h3>
 
-<p>We will use built-in generator to obtain our first model. Just create a folder <code class="highlighter-rouge">./src/models</code> for your models and invoke</p>
+<p>We will use built-in generator to obtain our first model. Just create a folder <code class="language-plaintext highlighter-rouge">./src/models</code> for your models and invoke</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ make sam generate:model User name:string age:integer
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ make sam generate:model User name:string age:integer
 </code></pre></div></div>
 
 <p>This generates 2 files:</p>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">./src/models/user.cr</code> - files containing model definition</p>
+    <p><code class="language-plaintext highlighter-rouge">./src/models/user.cr</code> - files containing model definition</p>
 
-    <pre><code class="language-crystal">class User &lt; Jennifer::Model::Base
-  with_timestamps
+    <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">with_timestamps</span>
 
-  mapping(
-    id: Primary32,
-    name: String,
-    age: Int32,
-  )
-end
-</code></pre>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">name: </span><span class="no">String</span><span class="p">,</span>
+    <span class="ss">age: </span><span class="no">Int32</span><span class="p">,</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
   </li>
   <li>
-    <p><code class="highlighter-rouge">./db/migrations/&lt;timestamp&gt;_create_users.cr</code> - migration file (it is required to change your database schema)</p>
+    <p><code class="language-plaintext highlighter-rouge">./db/migrations/&lt;timestamp&gt;_create_users.cr</code> - migration file (it is required to change your database schema)</p>
 
-    <pre><code class="language-crystal">class CreateUsers &lt; Jennifer::Migration::Base
-  def up
-    create_table :users do |t|
-      t.string :title, {:null =&gt; false}
-      t.integer :age, {:null =&gt; false}
+    <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CreateUsers</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Migration</span><span class="o">::</span><span class="no">Base</span>
+  <span class="k">def</span> <span class="nf">up</span>
+    <span class="n">create_table</span> <span class="ss">:users</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:title</span><span class="p">,</span> <span class="p">{</span><span class="ss">:null</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">}</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">integer</span> <span class="ss">:age</span><span class="p">,</span> <span class="p">{</span><span class="ss">:null</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">}</span>
 
-      t.timestamps
-    end
-  end
+      <span class="n">t</span><span class="p">.</span><span class="nf">timestamps</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
 
-  def down
-    drop_table :users if table_exists? :users
-  end
-end
-</code></pre>
+  <span class="k">def</span> <span class="nf">down</span>
+    <span class="n">drop_table</span> <span class="ss">:users</span> <span class="k">if</span> <span class="n">table_exists?</span> <span class="ss">:users</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
   </li>
 </ul>
 
-<p>Now you could add next lines at the bottom of your <code class="highlighter-rouge">./config/config.cr</code></p>
+<p>Now you could add next lines at the bottom of your <code class="language-plaintext highlighter-rouge">./config/config.cr</code></p>
 
-<pre><code class="language-crystal">require "../src/models/*"
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"../src/models/*"</span>
+</code></pre></div></div>
 
 <p>This is optional; it depends how you would like to load your models - centralized or on demand.</p>
 
-<p>Also you need to extend <code class="highlighter-rouge">sam.cr</code> file:</p>
+<p>Also you need to extend <code class="language-plaintext highlighter-rouge">sam.cr</code> file:</p>
 
-<pre><code class="language-crystal">require "./your_configuration_folder/*" # here load jennifer and all required configurations
-require "sam"
-require "./db/migrations/*"
-load_dependencies "jennifer"
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"./your_configuration_folder/*"</span> <span class="c1"># here load jennifer and all required configurations</span>
+<span class="nb">require</span> <span class="s2">"sam"</span>
+<span class="nb">require</span> <span class="s2">"./db/migrations/*"</span>
+<span class="n">load_dependencies</span> <span class="s2">"jennifer"</span>
 
-# ...
+<span class="c1"># ...</span>
 
-Sam.help
-</code></pre>
+<span class="no">Sam</span><span class="p">.</span><span class="nf">help</span>
+</code></pre></div></div>
 
 <p>To be able to use our new model we need to populate schema changes to the database. For this invoke next commands:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">$ make sam db:create</code> - this creates a new database (should be invoked only once at setup stage);</li>
-  <li><code class="highlighter-rouge">$ make sam db:migrate</code> - invokes all pending migrations.</li>
+  <li><code class="language-plaintext highlighter-rouge">$ make sam db:create</code> - this creates a new database (should be invoked only once at setup stage);</li>
+  <li><code class="language-plaintext highlighter-rouge">$ make sam db:migrate</code> - invokes all pending migrations.</li>
 </ul>
 
 <p>Now we are able to use our model:</p>
 
-<pre><code class="language-crystal">user = User.create({name: "New User", age: 100})
-puts user.inspect
-</code></pre>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">create</span><span class="p">({</span><span class="ss">name: </span><span class="s2">"New User"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">100</span><span class="p">})</span>
+<span class="nb">puts</span> <span class="n">user</span><span class="p">.</span><span class="nf">inspect</span>
+</code></pre></div></div>
 
   </div>
 

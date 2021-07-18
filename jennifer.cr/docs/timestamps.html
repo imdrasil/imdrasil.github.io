@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal site" />
@@ -12,8 +12,10 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/timestamps.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/timestamps.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","headline":"Imdrasil Homebrew Stuff","url":"https://imdrasil.github.io/jennifer.cr/docs/timestamps.html","@context":"http://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/timestamps.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -92,20 +94,20 @@
 
 <h1 id="timestamps">Timestamps</h1>
 
-<p><code class="highlighter-rouge">with_timestamps</code> macros adds callbacks for <code class="highlighter-rouge">created_at</code> and <code class="highlighter-rouge">updated_at</code> fields update. But now they still should be defined in the mapping manually:</p>
+<p><code class="language-plaintext highlighter-rouge">with_timestamps</code> macros adds callbacks for <code class="language-plaintext highlighter-rouge">created_at</code> and <code class="language-plaintext highlighter-rouge">updated_at</code> fields update. But now they still should be defined in the mapping manually:</p>
 
-<pre><code class="language-crystal">class MyModel &lt; Jennifer::Model::Base
-  with_timestamps
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyModel</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">with_timestamps</span>
 
-  mapping(
-    id: Primary32,
-    created_at: {type: Time, null: true},
-    updated_at: {type: Time, null: true}
-  )
-end
-</code></pre>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">created_at: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Time</span><span class="p">,</span> <span class="ss">null: </span><span class="kp">true</span><span class="p">},</span>
+    <span class="ss">updated_at: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Time</span><span class="p">,</span> <span class="ss">null: </span><span class="kp">true</span><span class="p">}</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
-<p><code class="highlighter-rouge">created_at</code> field is populated with current time when corresponding record is stored to the database. <code class="highlighter-rouge">updated_at</code> - whenever record is updated (the way that callbacks are invoked).</p>
+<p><code class="language-plaintext highlighter-rouge">created_at</code> field is populated with current time when corresponding record is stored to the database. <code class="language-plaintext highlighter-rouge">updated_at</code> - whenever record is updated (the way that callbacks are invoked).</p>
 
   </div>
 
