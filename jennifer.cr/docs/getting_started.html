@@ -2,7 +2,7 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Imdrasil Homebrew Stuff | Personal site</title>
 <meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Imdrasil Homebrew Stuff" />
@@ -12,8 +12,6 @@
 <link rel="canonical" href="https://imdrasil.github.io/jennifer.cr/docs/getting_started.html" />
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/getting_started.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
 {"headline":"Imdrasil Homebrew Stuff","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/getting_started.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
@@ -157,22 +155,22 @@
 
 <p>Now let’s create <code class="language-plaintext highlighter-rouge">./config/database.yml</code>:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="ss">default: </span><span class="o">&amp;</span><span class="k">def</span><span class="nf">ault</span>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="ss">default: </span><span class="o">&amp;</span><span class="n">default</span>
   <span class="ss">host: </span><span class="n">localhost</span>
   <span class="ss">user: </span><span class="n">user_name</span>
   <span class="ss">password: </span><span class="n">user_password</span>
   <span class="ss">adapter: </span><span class="n">postgres</span>
 
 <span class="ss">development:
-  </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="k">def</span><span class="nf">ault</span>
+  </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="n">default</span>
   <span class="ss">db: </span><span class="n">application_database_name_development</span>
 
 <span class="ss">test:
-  </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="k">def</span><span class="nf">ault</span>
+  </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="n">default</span>
   <span class="ss">db: </span><span class="n">application_database_name_development</span>
 
 <span class="ss">production:
-  </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="k">def</span><span class="nf">ault</span>
+  </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="n">default</span>
   <span class="ss">db: </span><span class="n">application_database_name_development</span>
 </code></pre></div></div>
 

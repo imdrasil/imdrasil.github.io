@@ -66,6 +66,11 @@ if repo == 'all' # TODO: fix this
   end
   FileUtils.cp_r("./_src/.", "./")
 else
+  %w[feed.xml index.html assets].each do |name|
+    path = File.join('.', name)
+    FileUtils.rm_r(path) if File.exists?(path) || Dir.exists?(path)
+    FileUtils.cp_r(File.join('./_src', name), path)
+  end
   %w[index.html versions.html].each do |name|
     path = File.join('.', repo, name)
     FileUtils.rm_r(path) if File.exists?(path)
