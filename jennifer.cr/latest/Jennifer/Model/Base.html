@@ -521,6 +521,11 @@
       
     </li>
   
+  <li class=" " data-id="jennifer/Jennifer/Model/Timestamp" data-name="jennifer::model::timestamp">
+      <a href="../../Jennifer/Model/Timestamp.html">Timestamp</a>
+      
+    </li>
+  
   <li class=" " data-id="jennifer/Jennifer/Model/TimeZoneConverter" data-name="jennifer::model::timezoneconverter">
       <a href="../../Jennifer/Model/TimeZoneConverter.html">TimeZoneConverter</a>
       
@@ -1275,6 +1280,8 @@
     
       <li class="other-type">Jennifer::Model::STIMapping</li>
     
+      <li class="other-type"><a href="../../Jennifer/Model/Timestamp.html">Jennifer::Model::Timestamp</a></li>
+    
       <li class="other-type"><a href="../../Jennifer/Model/Validation.html">Jennifer::Model::Validation</a></li>
     
       <li class="other-type"><a href="../../Jennifer/Presentable.html">Jennifer::Presentable</a></li>
@@ -1314,7 +1321,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L20" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L21" target="_blank">
         jennifer/model/base.cr
       </a>
     
@@ -1623,6 +1630,16 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#track_timestamps_on_create-instance-method" class="signature"><strong>#track_timestamps_on_create</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#track_timestamps_on_update-instance-method" class="signature"><strong>#track_timestamps_on_update</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#update(values:Hash%7CNamedTuple):Bool-instance-method" class="signature"><strong>#update</strong>(values : Hash | NamedTuple) : Bool</a>
         
           <div class="summary"><p>Sets attributes based on given <em>values</em> using <code><a href="../../Jennifer/Model/Base.html#set_attribute(name:String%7CSymbol,value:AttrType)-instance-method">#set_attribute</a></code> and saves it to the database, if validation pass.</p></div>
@@ -1714,6 +1731,16 @@
     validate!</a>
     
   
+
+
+    
+
+
+    
+
+
+  
+    
 
 
     
@@ -2080,7 +2107,7 @@ manually invoke this method anywhere after table name definition.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L80" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L82" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2104,7 +2131,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L110" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L112" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2125,7 +2152,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L231" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L233" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2141,7 +2168,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L235" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L237" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2167,7 +2194,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L138" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L140" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2192,7 +2219,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L151" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L153" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2217,7 +2244,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L164" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L166" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2243,7 +2270,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L178" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L180" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2268,7 +2295,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L191" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L193" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2293,7 +2320,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L204" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L206" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2314,7 +2341,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L551" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L555" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2335,7 +2362,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L546" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L550" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2356,7 +2383,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L534" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L538" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2382,7 +2409,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L529" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L533" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2405,7 +2432,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L508" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L512" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2428,7 +2455,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L517" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L521" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2453,7 +2480,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L98" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2474,7 +2501,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L102" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L104" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2497,7 +2524,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L73" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2525,7 +2552,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L572" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L576" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2548,7 +2575,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L215" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L217" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2569,7 +2596,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L499" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L503" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2604,7 +2631,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L288" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L290" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2627,7 +2654,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L283" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L285" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2655,7 +2682,7 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L269" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L271" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2678,7 +2705,7 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L434" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L436" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2703,7 +2730,7 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L278" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L280" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2724,7 +2751,7 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L421" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L423" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2745,7 +2772,7 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L120" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L122" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2766,7 +2793,7 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L442" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L444" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2787,7 +2814,7 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L115" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L117" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2809,7 +2836,7 @@ it wasn't destroyed, otherwise returns <code>false</code>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L126" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L128" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2837,7 +2864,7 @@ user.reload <span class="c"># =&gt; #&lt;User id: 1, name: &quot;Will&quot;&gt;<
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L486" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L490" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2869,7 +2896,7 @@ user.save <span class="c"># =&gt; true</span></code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L404" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L406" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2900,7 +2927,7 @@ user.save! <span class="c"># =&gt; true</span></code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L384" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L386" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2921,7 +2948,7 @@ user.save! <span class="c"># =&gt; true</span></code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L411" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L413" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2944,7 +2971,7 @@ user.save! <span class="c"># =&gt; true</span></code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L244" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L246" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2969,7 +2996,7 @@ post.set_attributes(title: <span class="s">&quot;New Title&quot;</span>, created
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L353" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L355" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2990,7 +3017,39 @@ post.set_attributes(title: <span class="s">&quot;New Title&quot;</span>, created
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L358" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L360" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="track_timestamps_on_create-instance-method">
+      <div class="signature">
+        
+        def <strong>track_timestamps_on_create</strong>
+
+        <a class="method-permalink" href="#track_timestamps_on_create-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L58" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="track_timestamps_on_update-instance-method">
+      <div class="signature">
+        
+        def <strong>track_timestamps_on_update</strong>
+
+        <a class="method-permalink" href="#track_timestamps_on_update-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L58" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3017,7 +3076,7 @@ contact.update({name: <span class="s">&quot;Jennifer&quot;</span>})</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L305" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L307" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3043,7 +3102,7 @@ and saves it to the database, if validation pass.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L318" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L320" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3069,7 +3128,7 @@ contact.update!({name: <span class="s">&quot;Jennifer&quot;</span>})</code></pre
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L330" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L332" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3094,7 +3153,7 @@ contact.update!({name: <span class="s">&quot;Jennifer&quot;</span>})</code></pre
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L342" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L344" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3119,7 +3178,7 @@ Doesn't use attribute writer.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L367" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L369" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3148,7 +3207,7 @@ without running validations and callbacks.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L257" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L259" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3169,7 +3228,7 @@ without running validations and callbacks.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/base.cr#L448" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/base.cr#L450" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="jennifer">
-  <title>Jennifer::Validations::Inclusion - jennifer master</title>
+  <title>Jennifer::Model::Timestamp - jennifer master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -421,7 +421,7 @@
       
     </li>
   
-  <li class="parent " data-id="jennifer/Jennifer/Model" data-name="jennifer::model">
+  <li class="parent open current" data-id="jennifer/Jennifer/Model" data-name="jennifer::model">
       <a href="../../Jennifer/Model.html">Model</a>
       
         <ul>
@@ -521,7 +521,7 @@
       
     </li>
   
-  <li class=" " data-id="jennifer/Jennifer/Model/Timestamp" data-name="jennifer::model::timestamp">
+  <li class=" current" data-id="jennifer/Jennifer/Model/Timestamp" data-name="jennifer::model::timestamp">
       <a href="../../Jennifer/Model/Timestamp.html">Timestamp</a>
       
     </li>
@@ -1136,7 +1136,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="jennifer/Jennifer/Validations" data-name="jennifer::validations">
+  <li class="parent " data-id="jennifer/Jennifer/Validations" data-name="jennifer::validations">
       <a href="../../Jennifer/Validations.html">Validations</a>
       
         <ul>
@@ -1166,7 +1166,7 @@
       
     </li>
   
-  <li class=" current" data-id="jennifer/Jennifer/Validations/Inclusion" data-name="jennifer::validations::inclusion">
+  <li class=" " data-id="jennifer/Jennifer/Validations/Inclusion" data-name="jennifer::validations::inclusion">
       <a href="../../Jennifer/Validations/Inclusion.html">Inclusion</a>
       
     </li>
@@ -1250,38 +1250,37 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Jennifer::Validations::Inclusion
+  <span class="kind">module</span> Jennifer::Model::Timestamp
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Jennifer/Validations/Inclusion.html">Jennifer::Validations::Inclusion</a></li><li class="superclass"><a href="../../Jennifer/Validations/Validator.html">Jennifer::Validations::Validator</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
 
 
 
 
   <h2>
-    <a id="overview" class="anchor" href="#overview">
+    <a id="direct-including-types" class="anchor" href="#direct-including-types">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Overview
+    Direct including types
   </h2>
-
-  <p>Inclusion validation class.</p>
-
-<p>For more details see <code><a href="../../Jennifer/Validations/Macros.html#validates_inclusion(field,inin_value,allow_blank=false,ifif_value=nil)-macro">Macros.validates_inclusion</a></code>.</p>
-
-
-
-
-
-
-
-
-
-
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../../Jennifer/Model/Base.html">Jennifer::Model::Base</a></li>
+    
+  </ul>
 
 
 
@@ -1296,8 +1295,8 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/validations/inclusion.cr#L6" target="_blank">
-        jennifer/validations/inclusion.cr
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/timestamp.cr#L2" target="_blank">
+        jennifer/model/timestamp.cr
       </a>
     
     <br/>
@@ -1309,172 +1308,82 @@
 
 
 
-  <h2>
-    <a id="class-method-summary" class="anchor" href="#class-method-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Class Method Summary
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#instance-class-method" class="signature"><strong>.instance</strong></a>
-        
-          <div class="summary"><p>Inclusion validation class.</p></div>
-        
-      </li>
-    
-  </ul>
+
 
 
 
   <h2>
-    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+    <a id="macro-summary" class="anchor" href="#macro-summary">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Instance Method Summary
+    Macro Summary
   </h2>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#validate(record,**opts)-instance-method" class="signature"><strong>#validate</strong>(record, **opts)</a>
+        <a href="#with_timestamps(created_at=true,updated_at=true)-macro" class="signature"><strong>with_timestamps</strong>(created_at = <span class="n">true</span>, updated_at = <span class="n">true</span>)</a>
         
-          <div class="summary"><p>Validates given <em>record</em> based on <em>args</em> and <em>opts</em>.</p></div>
+          <div class="summary"><p>Adds callbacks for <code>created_at</code> and <code>updated_at</code> fields.</p></div>
         
       </li>
     
   </ul>
-
-
 
 
 
 <div class="methods-inherited">
-  
-    
-
-  <h3>Instance methods inherited from class <code><a href="../../Jennifer/Validations/Validator.html">Jennifer::Validations::Validator</a></code></h3>
-  
-  
-    <a href="../../Jennifer/Validations/Validator.html#blank_validation(record,field,value,allow_blank)-instance-method" class="tooltip">
-      <span>blank_validation(record, field, value, allow_blank)</span>
-    blank_validation</a>, 
-    
-  
-    <a href="../../Jennifer/Validations/Validator.html#validate(record,**opts)-instance-method" class="tooltip">
-      <span>validate(record, **opts)</span>
-    validate</a>
-    
-  
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
   
 </div>
 
 
 
 
+
+
+
+
   <h2>
-    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+    <a id="macro-detail" class="anchor" href="#macro-detail">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Class Method Detail
+    Macro Detail
   </h2>
   
-    <div class="entry-detail" id="instance-class-method">
+    <div class="entry-detail" id="with_timestamps(created_at=true,updated_at=true)-macro">
       <div class="signature">
         
-        def self.<strong>instance</strong>
+        macro <strong>with_timestamps</strong>(created_at = <span class="n">true</span>, updated_at = <span class="n">true</span>)
 
-        <a class="method-permalink" href="#instance-class-method">#</a>
+        <a class="method-permalink" href="#with_timestamps(created_at=true,updated_at=true)-macro">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Inclusion validation class.</p>
+          <p>Adds callbacks for <code>created_at</code> and <code>updated_at</code> fields.</p>
 
-<p>For more details see <code><a href="../../Jennifer/Validations/Macros.html#validates_inclusion(field,inin_value,allow_blank=false,ifif_value=nil)-macro">Macros.validates_inclusion</a></code>.</p>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">MyModel</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
+  with_timestamps
+
+  mapping(
+    id: {<span class="k">type</span>: <span class="t">Int32</span>, primary: <span class="n">true</span>},
+    created_at: {<span class="k">type</span>: <span class="t">Time</span>, null: <span class="n">true</span>},
+    updated_at: {<span class="k">type</span>: <span class="t">Time</span>, null: <span class="n">true</span>}
+  )
+<span class="k">end</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/validations/inclusion.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/timestamp.cr#L24" target="_blank">View source</a>]
         
       </div>
     </div>
   
-
-
-
-  <h2>
-    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Instance Method Detail
-  </h2>
-  
-    <div class="entry-detail" id="validate(record,**opts)-instance-method">
-      <div class="signature">
-        
-        def <strong>validate</strong>(record, **opts)
-
-        <a class="method-permalink" href="#validate(record,**opts)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-            <div class="doc-inherited">
-              Description copied from class <a href="../../Jennifer/Validations/Validator.html">Jennifer::Validations::Validator</a>
-            </div>
-          
-          <p>Validates given <em>record</em> based on <em>args</em> and <em>opts</em>.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/validations/inclusion.cr#L7" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-
-
 
 
 </div>

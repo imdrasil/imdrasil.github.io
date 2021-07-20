@@ -521,6 +521,11 @@
       
     </li>
   
+  <li class=" " data-id="jennifer/Jennifer/Model/Timestamp" data-name="jennifer::model::timestamp">
+      <a href="../../Jennifer/Model/Timestamp.html">Timestamp</a>
+      
+    </li>
+  
   <li class=" " data-id="jennifer/Jennifer/Model/TimeZoneConverter" data-name="jennifer::model::timezoneconverter">
       <a href="../../Jennifer/Model/TimeZoneConverter.html">TimeZoneConverter</a>
       
@@ -1434,7 +1439,7 @@ behaves in scope of "single table inheritance".</p>
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/mapping.cr#L129" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/mapping.cr#L129" target="_blank">
         jennifer/model/mapping.cr
       </a>
     
@@ -1492,13 +1497,6 @@ behaves in scope of "single table inheritance".</p>
         
       </li>
     
-      <li class="entry-summary">
-        <a href="#with_timestamps(created_at=true,updated_at=true)-macro" class="signature"><strong>with_timestamps</strong>(created_at = <span class="n">true</span>, updated_at = <span class="n">true</span>)</a>
-        
-          <div class="summary"><p>Adds callbacks for <code>created_at</code> and <code>updated_at</code> fields.</p></div>
-        
-      </li>
-    
   </ul>
 
 
@@ -1552,7 +1550,7 @@ behaves in scope of "single table inheritance".</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/mapping.cr#L133" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/mapping.cr#L133" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1591,7 +1589,7 @@ behaves in scope of "single table inheritance".</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/mapping.cr#L545" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/mapping.cr#L512" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1612,38 +1610,7 @@ behaves in scope of "single table inheritance".</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/mapping.cr#L553" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="with_timestamps(created_at=true,updated_at=true)-macro">
-      <div class="signature">
-        
-        macro <strong>with_timestamps</strong>(created_at = <span class="n">true</span>, updated_at = <span class="n">true</span>)
-
-        <a class="method-permalink" href="#with_timestamps(created_at=true,updated_at=true)-macro">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Adds callbacks for <code>created_at</code> and <code>updated_at</code> fields.</p>
-
-<pre><code class="language-crystal"><span class="k">class</span> <span class="t">MyModel</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
-  with_timestamps
-
-  mapping(
-    id: {<span class="k">type</span>: <span class="t">Int32</span>, primary: <span class="n">true</span>},
-    created_at: {<span class="k">type</span>: <span class="t">Time</span>, null: <span class="n">true</span>},
-    updated_at: {<span class="k">type</span>: <span class="t">Time</span>, null: <span class="n">true</span>}
-  )
-<span class="k">end</span></code></pre>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/45710e635b1dbf23b5ac67156c732c9354fab186/src/jennifer/model/mapping.cr#L212" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/92a864d1462485de1304c7ba1d99a6aa409e21ed/src/jennifer/model/mapping.cr#L520" target="_blank">View source</a>]
         
       </div>
     </div>
