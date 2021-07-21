@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="crystal_docs.project_version" content="0.11.0">
+<meta name="crystal_docs.project_name" content="jennifer">
+
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
+
+  <meta name="repository-name" content="jennifer">
+  <title>Jennifer::QueryBuilder::CurrentTimeFunction - jennifer 0.11.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../../index.html">
+          jennifer
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.11.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="jennifer/Char" data-name="char">
+      <a href="../../Char.html">Char</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/DB" data-name="db">
+      <a href="../../DB.html">DB</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/DB/MetadataValueConverter" data-name="db::metadatavalueconverter">
+      <a href="../../DB/MetadataValueConverter.html">MetadataValueConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/DB/Statement" data-name="db::statement">
+      <a href="../../DB/Statement.html">Statement</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent open current" data-id="jennifer/Jennifer" data-name="jennifer">
+      <a href="../../Jennifer.html">Jennifer</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/AbstractMethod" data-name="jennifer::abstractmethod">
+      <a href="../../Jennifer/AbstractMethod.html">AbstractMethod</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Adapter" data-name="jennifer::adapter">
+      <a href="../../Jennifer/Adapter.html">Adapter</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Adapter/Base" data-name="jennifer::adapter::base">
+      <a href="../../Jennifer/Adapter/Base.html">Base</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/Base/AbstractClassMethods" data-name="jennifer::adapter::base::abstractclassmethods">
+      <a href="../../Jennifer/Adapter/Base/AbstractClassMethods.html">AbstractClassMethods</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/Base/ArgsType" data-name="jennifer::adapter::base::argstype">
+      <a href="../../Jennifer/Adapter/Base/ArgsType.html">ArgsType</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/Base/ConnectionType" data-name="jennifer::adapter::base::connectiontype">
+      <a href="../../Jennifer/Adapter/Base/ConnectionType.html">ConnectionType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Adapter/BaseSQLGenerator" data-name="jennifer::adapter::basesqlgenerator">
+      <a href="../../Jennifer/Adapter/BaseSQLGenerator.html">BaseSQLGenerator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/BaseSQLGenerator/ClassMethods" data-name="jennifer::adapter::basesqlgenerator::classmethods">
+      <a href="../../Jennifer/Adapter/BaseSQLGenerator/ClassMethods.html">ClassMethods</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/Bash" data-name="jennifer::adapter::bash">
+      <a href="../../Jennifer/Adapter/Bash.html">Bash</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Adapter/DBCommandInterface" data-name="jennifer::adapter::dbcommandinterface">
+      <a href="../../Jennifer/Adapter/DBCommandInterface.html">DBCommandInterface</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/DBCommandInterface/Command" data-name="jennifer::adapter::dbcommandinterface::command">
+      <a href="../../Jennifer/Adapter/DBCommandInterface/Command.html">Command</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/DBFormatter" data-name="jennifer::adapter::dbformatter">
+      <a href="../../Jennifer/Adapter/DBFormatter.html">DBFormatter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/Docker" data-name="jennifer::adapter::docker">
+      <a href="../../Jennifer/Adapter/Docker.html">Docker</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Adapter/ICommandShell" data-name="jennifer::adapter::icommandshell">
+      <a href="../../Jennifer/Adapter/ICommandShell.html">ICommandShell</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Adapter/ICommandShell/Command" data-name="jennifer::adapter::icommandshell::command">
+      <a href="../../Jennifer/Adapter/ICommandShell/Command.html">Command</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/ICommandShell/Command/Failed" data-name="jennifer::adapter::icommandshell::command::failed">
+      <a href="../../Jennifer/Adapter/ICommandShell/Command/Failed.html">Failed</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/ICommandShell/Command/Option" data-name="jennifer::adapter::icommandshell::command::option">
+      <a href="../../Jennifer/Adapter/ICommandShell/Command/Option.html">Option</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/JSONEncoder" data-name="jennifer::adapter::jsonencoder">
+      <a href="../../Jennifer/Adapter/JSONEncoder.html">JSONEncoder</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/Quoting" data-name="jennifer::adapter::quoting">
+      <a href="../../Jennifer/Adapter/Quoting.html">Quoting</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/RequestMethods" data-name="jennifer::adapter::requestmethods">
+      <a href="../../Jennifer/Adapter/RequestMethods.html">RequestMethods</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/ResultParsers" data-name="jennifer::adapter::resultparsers">
+      <a href="../../Jennifer/Adapter/ResultParsers.html">ResultParsers</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Adapter/SchemaProcessor" data-name="jennifer::adapter::schemaprocessor">
+      <a href="../../Jennifer/Adapter/SchemaProcessor.html">SchemaProcessor</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/SchemaProcessor/FkEventActions" data-name="jennifer::adapter::schemaprocessor::fkeventactions">
+      <a href="../../Jennifer/Adapter/SchemaProcessor/FkEventActions.html">FkEventActions</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/TransactionObserver" data-name="jennifer::adapter::transactionobserver">
+      <a href="../../Jennifer/Adapter/TransactionObserver.html">TransactionObserver</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Adapter/Transactions" data-name="jennifer::adapter::transactions">
+      <a href="../../Jennifer/Adapter/Transactions.html">Transactions</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/AlreadyInitialized" data-name="jennifer::alreadyinitialized">
+      <a href="../../Jennifer/AlreadyInitialized.html">AlreadyInitialized</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/AmbiguousSQL" data-name="jennifer::ambiguoussql">
+      <a href="../../Jennifer/AmbiguousSQL.html">AmbiguousSQL</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/BadQuery" data-name="jennifer::badquery">
+      <a href="../../Jennifer/BadQuery.html">BadQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/BaseException" data-name="jennifer::baseexception">
+      <a href="../../Jennifer/BaseException.html">BaseException</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Config" data-name="jennifer::config">
+      <a href="../../Jennifer/Config.html">Config</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Config/MigrationFailureHandler" data-name="jennifer::config::migrationfailurehandler">
+      <a href="../../Jennifer/Config/MigrationFailureHandler.html">MigrationFailureHandler</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/DataTypeCasting" data-name="jennifer::datatypecasting">
+      <a href="../../Jennifer/DataTypeCasting.html">DataTypeCasting</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/DataTypeMismatch" data-name="jennifer::datatypemismatch">
+      <a href="../../Jennifer/DataTypeMismatch.html">DataTypeMismatch</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/DBAny" data-name="jennifer::dbany">
+      <a href="../../Jennifer/DBAny.html">DBAny</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/InvalidConfig" data-name="jennifer::invalidconfig">
+      <a href="../../Jennifer/InvalidConfig.html">InvalidConfig</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Macros" data-name="jennifer::macros">
+      <a href="../../Jennifer/Macros.html">Macros</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Migration" data-name="jennifer::migration">
+      <a href="../../Jennifer/Migration.html">Migration</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Migration/Base" data-name="jennifer::migration::base">
+      <a href="../../Jennifer/Migration/Base.html">Base</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/Base/AbstractClassMethods" data-name="jennifer::migration::base::abstractclassmethods">
+      <a href="../../Jennifer/Migration/Base/AbstractClassMethods.html">AbstractClassMethods</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/Runner" data-name="jennifer::migration::runner">
+      <a href="../../Jennifer/Migration/Runner.html">Runner</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Migration/TableBuilder" data-name="jennifer::migration::tablebuilder">
+      <a href="../../Jennifer/Migration/TableBuilder.html">TableBuilder</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Migration/TableBuilder/Base" data-name="jennifer::migration::tablebuilder::base">
+      <a href="../../Jennifer/Migration/TableBuilder/Base.html">Base</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/Base/AAllowedTypes" data-name="jennifer::migration::tablebuilder::base::aallowedtypes">
+      <a href="../../Jennifer/Migration/TableBuilder/Base/AAllowedTypes.html">AAllowedTypes</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/Base/AllowedTypes" data-name="jennifer::migration::tablebuilder::base::allowedtypes">
+      <a href="../../Jennifer/Migration/TableBuilder/Base/AllowedTypes.html">AllowedTypes</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/Base/DbOptions" data-name="jennifer::migration::tablebuilder::base::dboptions">
+      <a href="../../Jennifer/Migration/TableBuilder/Base/DbOptions.html">DbOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/Base/EAllowedTypes" data-name="jennifer::migration::tablebuilder::base::eallowedtypes">
+      <a href="../../Jennifer/Migration/TableBuilder/Base/EAllowedTypes.html">EAllowedTypes</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/ChangeTable" data-name="jennifer::migration::tablebuilder::changetable">
+      <a href="../../Jennifer/Migration/TableBuilder/ChangeTable.html">ChangeTable</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/CreateForeignKey" data-name="jennifer::migration::tablebuilder::createforeignkey">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateForeignKey.html">CreateForeignKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/CreateIndex" data-name="jennifer::migration::tablebuilder::createindex">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateIndex.html">CreateIndex</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/CreateTable" data-name="jennifer::migration::tablebuilder::createtable">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateTable.html">CreateTable</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/CreateView" data-name="jennifer::migration::tablebuilder::createview">
+      <a href="../../Jennifer/Migration/TableBuilder/CreateView.html">CreateView</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/DropForeignKey" data-name="jennifer::migration::tablebuilder::dropforeignkey">
+      <a href="../../Jennifer/Migration/TableBuilder/DropForeignKey.html">DropForeignKey</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/DropIndex" data-name="jennifer::migration::tablebuilder::dropindex">
+      <a href="../../Jennifer/Migration/TableBuilder/DropIndex.html">DropIndex</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/DropTable" data-name="jennifer::migration::tablebuilder::droptable">
+      <a href="../../Jennifer/Migration/TableBuilder/DropTable.html">DropTable</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/DropView" data-name="jennifer::migration::tablebuilder::dropview">
+      <a href="../../Jennifer/Migration/TableBuilder/DropView.html">DropView</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Migration/TableBuilder/Raw" data-name="jennifer::migration::tablebuilder::raw">
+      <a href="../../Jennifer/Migration/TableBuilder/Raw.html">Raw</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Model" data-name="jennifer::model">
+      <a href="../../Jennifer/Model.html">Model</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Authentication" data-name="jennifer::model::authentication">
+      <a href="../../Jennifer/Model/Authentication.html">Authentication</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Model/Base" data-name="jennifer::model::base">
+      <a href="../../Jennifer/Model/Base.html">Base</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Base/AbstractClassMethods" data-name="jennifer::model::base::abstractclassmethods">
+      <a href="../../Jennifer/Model/Base/AbstractClassMethods.html">AbstractClassMethods</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/BigDecimalConverter" data-name="jennifer::model::bigdecimalconverter(t)">
+      <a href="../../Jennifer/Model/BigDecimalConverter.html">BigDecimalConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Callback" data-name="jennifer::model::callback">
+      <a href="../../Jennifer/Model/Callback.html">Callback</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Coercer" data-name="jennifer::model::coercer">
+      <a href="../../Jennifer/Model/Coercer.html">Coercer</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/EnumConverter" data-name="jennifer::model::enumconverter(t)">
+      <a href="../../Jennifer/Model/EnumConverter.html">EnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Errors" data-name="jennifer::model::errors">
+      <a href="../../Jennifer/Model/Errors.html">Errors</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/JSONConverter" data-name="jennifer::model::jsonconverter">
+      <a href="../../Jennifer/Model/JSONConverter.html">JSONConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/JSONSerializableConverter" data-name="jennifer::model::jsonserializableconverter(t)">
+      <a href="../../Jennifer/Model/JSONSerializableConverter.html">JSONSerializableConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Mapping" data-name="jennifer::model::mapping">
+      <a href="../../Jennifer/Model/Mapping.html">Mapping</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/NumericToFloat64Converter" data-name="jennifer::model::numerictofloat64converter">
+      <a href="../../Jennifer/Model/NumericToFloat64Converter.html">NumericToFloat64Converter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
+      <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/RelationDefinition" data-name="jennifer::model::relationdefinition">
+      <a href="../../Jennifer/Model/RelationDefinition.html">RelationDefinition</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Model/Resource" data-name="jennifer::model::resource">
+      <a href="../../Jennifer/Model/Resource.html">Resource</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Resource/AbstractClassMethods" data-name="jennifer::model::resource::abstractclassmethods">
+      <a href="../../Jennifer/Model/Resource/AbstractClassMethods.html">AbstractClassMethods</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Scoping" data-name="jennifer::model::scoping">
+      <a href="../../Jennifer/Model/Scoping.html">Scoping</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Timestamp" data-name="jennifer::model::timestamp">
+      <a href="../../Jennifer/Model/Timestamp.html">Timestamp</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/TimeZoneConverter" data-name="jennifer::model::timezoneconverter">
+      <a href="../../Jennifer/Model/TimeZoneConverter.html">TimeZoneConverter</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Model/Translation" data-name="jennifer::model::translation">
+      <a href="../../Jennifer/Model/Translation.html">Translation</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Translation/ClassMethods" data-name="jennifer::model::translation::classmethods">
+      <a href="../../Jennifer/Model/Translation/ClassMethods.html">ClassMethods</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Translation/LocalizeableTypes" data-name="jennifer::model::translation::localizeabletypes">
+      <a href="../../Jennifer/Model/Translation/LocalizeableTypes.html">LocalizeableTypes</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Validation" data-name="jennifer::model::validation">
+      <a href="../../Jennifer/Model/Validation.html">Validation</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Mysql" data-name="jennifer::mysql">
+      <a href="../../Jennifer/Mysql.html">Mysql</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Mysql/Adapter" data-name="jennifer::mysql::adapter">
+      <a href="../../Jennifer/Mysql/Adapter.html">Adapter</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Mysql/Adapter/EnumType" data-name="jennifer::mysql::adapter::enumtype">
+      <a href="../../Jennifer/Mysql/Adapter/EnumType.html">EnumType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Mysql/CommandInterface" data-name="jennifer::mysql::commandinterface">
+      <a href="../../Jennifer/Mysql/CommandInterface.html">CommandInterface</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Mysql/SchemaProcessor" data-name="jennifer::mysql::schemaprocessor">
+      <a href="../../Jennifer/Mysql/SchemaProcessor.html">SchemaProcessor</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Mysql/SQLGenerator" data-name="jennifer::mysql::sqlgenerator">
+      <a href="../../Jennifer/Mysql/SQLGenerator.html">SQLGenerator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Postgres" data-name="jennifer::postgres">
+      <a href="../../Jennifer/Postgres.html">Postgres</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Postgres/Adapter" data-name="jennifer::postgres::adapter">
+      <a href="../../Jennifer/Postgres/Adapter.html">Adapter</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Postgres/Adapter/EnumType" data-name="jennifer::postgres::adapter::enumtype">
+      <a href="../../Jennifer/Postgres/Adapter/EnumType.html">EnumType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Postgres/CommandInterface" data-name="jennifer::postgres::commandinterface">
+      <a href="../../Jennifer/Postgres/CommandInterface.html">CommandInterface</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Postgres/ExecResult" data-name="jennifer::postgres::execresult">
+      <a href="../../Jennifer/Postgres/ExecResult.html">ExecResult</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Postgres/Migration" data-name="jennifer::postgres::migration">
+      <a href="../../Jennifer/Postgres/Migration.html">Migration</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Postgres/Migration/TableBuilder" data-name="jennifer::postgres::migration::tablebuilder">
+      <a href="../../Jennifer/Postgres/Migration/TableBuilder.html">TableBuilder</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Postgres/Migration/TableBuilder/Base" data-name="jennifer::postgres::migration::tablebuilder::base">
+      <a href="../../Jennifer/Postgres/Migration/TableBuilder/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Postgres/Migration/TableBuilder/ChangeEnum" data-name="jennifer::postgres::migration::tablebuilder::changeenum">
+      <a href="../../Jennifer/Postgres/Migration/TableBuilder/ChangeEnum.html">ChangeEnum</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Postgres/Migration/TableBuilder/CreateEnum" data-name="jennifer::postgres::migration::tablebuilder::createenum">
+      <a href="../../Jennifer/Postgres/Migration/TableBuilder/CreateEnum.html">CreateEnum</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Postgres/Migration/TableBuilder/CreateMaterializedView" data-name="jennifer::postgres::migration::tablebuilder::creatematerializedview">
+      <a href="../../Jennifer/Postgres/Migration/TableBuilder/CreateMaterializedView.html">CreateMaterializedView</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Postgres/Migration/TableBuilder/DropEnum" data-name="jennifer::postgres::migration::tablebuilder::dropenum">
+      <a href="../../Jennifer/Postgres/Migration/TableBuilder/DropEnum.html">DropEnum</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Postgres/Migration/TableBuilder/DropMaterializedView" data-name="jennifer::postgres::migration::tablebuilder::dropmaterializedview">
+      <a href="../../Jennifer/Postgres/Migration/TableBuilder/DropMaterializedView.html">DropMaterializedView</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Postgres/Quoting" data-name="jennifer::postgres::quoting">
+      <a href="../../Jennifer/Postgres/Quoting.html">Quoting</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Postgres/SchemaProcessor" data-name="jennifer::postgres::schemaprocessor">
+      <a href="../../Jennifer/Postgres/SchemaProcessor.html">SchemaProcessor</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Postgres/SQLGenerator" data-name="jennifer::postgres::sqlgenerator">
+      <a href="../../Jennifer/Postgres/SQLGenerator.html">SQLGenerator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Presentable" data-name="jennifer::presentable">
+      <a href="../../Jennifer/Presentable.html">Presentable</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Query" data-name="jennifer::query">
+      <a href="../../Jennifer/Query.html">Query</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="jennifer/Jennifer/QueryBuilder" data-name="jennifer::querybuilder">
+      <a href="../../Jennifer/QueryBuilder.html">QueryBuilder</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/AbsFunction" data-name="jennifer::querybuilder::absfunction">
+      <a href="../../Jennifer/QueryBuilder/AbsFunction.html">AbsFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Aggregations" data-name="jennifer::querybuilder::aggregations">
+      <a href="../../Jennifer/QueryBuilder/Aggregations.html">Aggregations</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/All" data-name="jennifer::querybuilder::all">
+      <a href="../../Jennifer/QueryBuilder/All.html">All</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/And" data-name="jennifer::querybuilder::and">
+      <a href="../../Jennifer/QueryBuilder/And.html">And</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Any" data-name="jennifer::querybuilder::any">
+      <a href="../../Jennifer/QueryBuilder/Any.html">Any</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/AvgFunction" data-name="jennifer::querybuilder::avgfunction">
+      <a href="../../Jennifer/QueryBuilder/AvgFunction.html">AvgFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Cast" data-name="jennifer::querybuilder::cast">
+      <a href="../../Jennifer/QueryBuilder/Cast.html">Cast</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/CeilFunction" data-name="jennifer::querybuilder::ceilfunction">
+      <a href="../../Jennifer/QueryBuilder/CeilFunction.html">CeilFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/CoalesceFunction" data-name="jennifer::querybuilder::coalescefunction">
+      <a href="../../Jennifer/QueryBuilder/CoalesceFunction.html">CoalesceFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/CommonTableExpression" data-name="jennifer::querybuilder::commontableexpression">
+      <a href="../../Jennifer/QueryBuilder/CommonTableExpression.html">CommonTableExpression</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/ConcatFunction" data-name="jennifer::querybuilder::concatfunction">
+      <a href="../../Jennifer/QueryBuilder/ConcatFunction.html">ConcatFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/ConcatWsFunction" data-name="jennifer::querybuilder::concatwsfunction">
+      <a href="../../Jennifer/QueryBuilder/ConcatWsFunction.html">ConcatWsFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Condition" data-name="jennifer::querybuilder::condition">
+      <a href="../../Jennifer/QueryBuilder/Condition.html">Condition</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/CountFunction" data-name="jennifer::querybuilder::countfunction">
+      <a href="../../Jennifer/QueryBuilder/CountFunction.html">CountFunction</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/QueryBuilder/Criteria" data-name="jennifer::querybuilder::criteria">
+      <a href="../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Criteria/Rightable" data-name="jennifer::querybuilder::criteria::rightable">
+      <a href="../../Jennifer/QueryBuilder/Criteria/Rightable.html">Rightable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/CurrentDateFunction" data-name="jennifer::querybuilder::currentdatefunction">
+      <a href="../../Jennifer/QueryBuilder/CurrentDateFunction.html">CurrentDateFunction</a>
+      
+    </li>
+  
+  <li class=" current" data-id="jennifer/Jennifer/QueryBuilder/CurrentTimeFunction" data-name="jennifer::querybuilder::currenttimefunction">
+      <a href="../../Jennifer/QueryBuilder/CurrentTimeFunction.html">CurrentTimeFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/CurrentTimestampFunction" data-name="jennifer::querybuilder::currenttimestampfunction">
+      <a href="../../Jennifer/QueryBuilder/CurrentTimestampFunction.html">CurrentTimestampFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/EagerLoading" data-name="jennifer::querybuilder::eagerloading">
+      <a href="../../Jennifer/QueryBuilder/EagerLoading.html">EagerLoading</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Executables" data-name="jennifer::querybuilder::executables">
+      <a href="../../Jennifer/QueryBuilder/Executables.html">Executables</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/ExpressionBuilder" data-name="jennifer::querybuilder::expressionbuilder">
+      <a href="../../Jennifer/QueryBuilder/ExpressionBuilder.html">ExpressionBuilder</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/FloorFunction" data-name="jennifer::querybuilder::floorfunction">
+      <a href="../../Jennifer/QueryBuilder/FloorFunction.html">FloorFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Function" data-name="jennifer::querybuilder::function">
+      <a href="../../Jennifer/QueryBuilder/Function.html">Function</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Grouping" data-name="jennifer::querybuilder::grouping">
+      <a href="../../Jennifer/QueryBuilder/Grouping.html">Grouping</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/IModelQuery" data-name="jennifer::querybuilder::imodelquery">
+      <a href="../../Jennifer/QueryBuilder/IModelQuery.html">IModelQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Join" data-name="jennifer::querybuilder::join">
+      <a href="../../Jennifer/QueryBuilder/Join.html">Join</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Joining" data-name="jennifer::querybuilder::joining">
+      <a href="../../Jennifer/QueryBuilder/Joining.html">Joining</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/JSONSelector" data-name="jennifer::querybuilder::jsonselector">
+      <a href="../../Jennifer/QueryBuilder/JSONSelector.html">JSONSelector</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/LateralJoin" data-name="jennifer::querybuilder::lateraljoin">
+      <a href="../../Jennifer/QueryBuilder/LateralJoin.html">LateralJoin</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/QueryBuilder/LogicOperator" data-name="jennifer::querybuilder::logicoperator">
+      <a href="../../Jennifer/QueryBuilder/LogicOperator.html">LogicOperator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/LogicOperator/Operandable" data-name="jennifer::querybuilder::logicoperator::operandable">
+      <a href="../../Jennifer/QueryBuilder/LogicOperator/Operandable.html">Operandable</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/LogicOperator/Operators" data-name="jennifer::querybuilder::logicoperator::operators">
+      <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html">Operators</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/LowerFunction" data-name="jennifer::querybuilder::lowerfunction">
+      <a href="../../Jennifer/QueryBuilder/LowerFunction.html">LowerFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/MaxFunction" data-name="jennifer::querybuilder::maxfunction">
+      <a href="../../Jennifer/QueryBuilder/MaxFunction.html">MaxFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/MinFunction" data-name="jennifer::querybuilder::minfunction">
+      <a href="../../Jennifer/QueryBuilder/MinFunction.html">MinFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/ModelQuery" data-name="jennifer::querybuilder::modelquery(t)">
+      <a href="../../Jennifer/QueryBuilder/ModelQuery.html">ModelQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/MultiQueryRelationTree" data-name="jennifer::querybuilder::multiqueryrelationtree">
+      <a href="../../Jennifer/QueryBuilder/MultiQueryRelationTree.html">MultiQueryRelationTree</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/NestedRelationTree" data-name="jennifer::querybuilder::nestedrelationtree">
+      <a href="../../Jennifer/QueryBuilder/NestedRelationTree.html">NestedRelationTree</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/NowFunction" data-name="jennifer::querybuilder::nowfunction">
+      <a href="../../Jennifer/QueryBuilder/NowFunction.html">NowFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Or" data-name="jennifer::querybuilder::or">
+      <a href="../../Jennifer/QueryBuilder/Or.html">Or</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/QueryBuilder/OrderExpression" data-name="jennifer::querybuilder::orderexpression">
+      <a href="../../Jennifer/QueryBuilder/OrderExpression.html">OrderExpression</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/OrderExpression/Direction" data-name="jennifer::querybuilder::orderexpression::direction">
+      <a href="../../Jennifer/QueryBuilder/OrderExpression/Direction.html">Direction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/OrderExpression/NullPosition" data-name="jennifer::querybuilder::orderexpression::nullposition">
+      <a href="../../Jennifer/QueryBuilder/OrderExpression/NullPosition.html">NullPosition</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Ordering" data-name="jennifer::querybuilder::ordering">
+      <a href="../../Jennifer/QueryBuilder/Ordering.html">Ordering</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/QueryBuilder/Query" data-name="jennifer::querybuilder::query">
+      <a href="../../Jennifer/QueryBuilder/Query.html">Query</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Query/UnionType" data-name="jennifer::querybuilder::query::uniontype">
+      <a href="../../Jennifer/QueryBuilder/Query/UnionType.html">UnionType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/QueryObject" data-name="jennifer::querybuilder::queryobject">
+      <a href="../../Jennifer/QueryBuilder/QueryObject.html">QueryObject</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/RawSql" data-name="jennifer::querybuilder::rawsql">
+      <a href="../../Jennifer/QueryBuilder/RawSql.html">RawSql</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/QueryBuilder/RelationTree" data-name="jennifer::querybuilder::relationtree">
+      <a href="../../Jennifer/QueryBuilder/RelationTree.html">RelationTree</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/RelationTree/Element" data-name="jennifer::querybuilder::relationtree::element">
+      <a href="../../Jennifer/QueryBuilder/RelationTree/Element.html">Element</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/RoundFunction" data-name="jennifer::querybuilder::roundfunction">
+      <a href="../../Jennifer/QueryBuilder/RoundFunction.html">RoundFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/SQLNode" data-name="jennifer::querybuilder::sqlnode">
+      <a href="../../Jennifer/QueryBuilder/SQLNode.html">SQLNode</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Star" data-name="jennifer::querybuilder::star">
+      <a href="../../Jennifer/QueryBuilder/Star.html">Star</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Statement" data-name="jennifer::querybuilder::statement">
+      <a href="../../Jennifer/QueryBuilder/Statement.html">Statement</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/SumFunction" data-name="jennifer::querybuilder::sumfunction">
+      <a href="../../Jennifer/QueryBuilder/SumFunction.html">SumFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/UpperFunction" data-name="jennifer::querybuilder::upperfunction">
+      <a href="../../Jennifer/QueryBuilder/UpperFunction.html">UpperFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Values" data-name="jennifer::querybuilder::values">
+      <a href="../../Jennifer/QueryBuilder/Values.html">Values</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/QueryBuilder/Xor" data-name="jennifer::querybuilder::xor">
+      <a href="../../Jennifer/QueryBuilder/Xor.html">Xor</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Record" data-name="jennifer::record">
+      <a href="../../Jennifer/Record.html">Record</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/RecordExists" data-name="jennifer::recordexists">
+      <a href="../../Jennifer/RecordExists.html">RecordExists</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/RecordInvalid" data-name="jennifer::recordinvalid">
+      <a href="../../Jennifer/RecordInvalid.html">RecordInvalid</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/RecordNotFound" data-name="jennifer::recordnotfound">
+      <a href="../../Jennifer/RecordNotFound.html">RecordNotFound</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Relation" data-name="jennifer::relation">
+      <a href="../../Jennifer/Relation.html">Relation</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Relation/Base" data-name="jennifer::relation::base(t, q)">
+      <a href="../../Jennifer/Relation/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Relation/BelongsTo" data-name="jennifer::relation::belongsto(t, q)">
+      <a href="../../Jennifer/Relation/BelongsTo.html">BelongsTo</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Relation/HasMany" data-name="jennifer::relation::hasmany(t, q)">
+      <a href="../../Jennifer/Relation/HasMany.html">HasMany</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Relation/HasOne" data-name="jennifer::relation::hasone(t, q)">
+      <a href="../../Jennifer/Relation/HasOne.html">HasOne</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Relation/IPolymorphicBelongsTo" data-name="jennifer::relation::ipolymorphicbelongsto">
+      <a href="../../Jennifer/Relation/IPolymorphicBelongsTo.html">IPolymorphicBelongsTo</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Relation/IRelation" data-name="jennifer::relation::irelation">
+      <a href="../../Jennifer/Relation/IRelation.html">IRelation</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Relation/ManyToMany" data-name="jennifer::relation::manytomany(t, q)">
+      <a href="../../Jennifer/Relation/ManyToMany.html">ManyToMany</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Relation/PolymorphicHasMany" data-name="jennifer::relation::polymorphichasmany(t, q)">
+      <a href="../../Jennifer/Relation/PolymorphicHasMany.html">PolymorphicHasMany</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Relation/PolymorphicHasOne" data-name="jennifer::relation::polymorphichasone(t, q)">
+      <a href="../../Jennifer/Relation/PolymorphicHasOne.html">PolymorphicHasOne</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Skip" data-name="jennifer::skip">
+      <a href="../../Jennifer/Skip.html">Skip</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/UnknownAttribute" data-name="jennifer::unknownattribute">
+      <a href="../../Jennifer/UnknownAttribute.html">UnknownAttribute</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/UnknownRelation" data-name="jennifer::unknownrelation">
+      <a href="../../Jennifer/UnknownRelation.html">UnknownRelation</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/UnknownSTIType" data-name="jennifer::unknownstitype">
+      <a href="../../Jennifer/UnknownSTIType.html">UnknownSTIType</a>
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/Validations" data-name="jennifer::validations">
+      <a href="../../Jennifer/Validations.html">Validations</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/Validations/Absence" data-name="jennifer::validations::absence">
+      <a href="../../Jennifer/Validations/Absence.html">Absence</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Validations/Acceptance" data-name="jennifer::validations::acceptance">
+      <a href="../../Jennifer/Validations/Acceptance.html">Acceptance</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Validations/Confirmation" data-name="jennifer::validations::confirmation">
+      <a href="../../Jennifer/Validations/Confirmation.html">Confirmation</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Validations/Exclusion" data-name="jennifer::validations::exclusion">
+      <a href="../../Jennifer/Validations/Exclusion.html">Exclusion</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Validations/Format" data-name="jennifer::validations::format">
+      <a href="../../Jennifer/Validations/Format.html">Format</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Validations/Inclusion" data-name="jennifer::validations::inclusion">
+      <a href="../../Jennifer/Validations/Inclusion.html">Inclusion</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Validations/Length" data-name="jennifer::validations::length">
+      <a href="../../Jennifer/Validations/Length.html">Length</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Validations/Macros" data-name="jennifer::validations::macros">
+      <a href="../../Jennifer/Validations/Macros.html">Macros</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Validations/Numericality" data-name="jennifer::validations::numericality">
+      <a href="../../Jennifer/Validations/Numericality.html">Numericality</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Validations/Presence" data-name="jennifer::validations::presence">
+      <a href="../../Jennifer/Validations/Presence.html">Presence</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Validations/Uniqueness" data-name="jennifer::validations::uniqueness">
+      <a href="../../Jennifer/Validations/Uniqueness.html">Uniqueness</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Validations/Validator" data-name="jennifer::validations::validator">
+      <a href="../../Jennifer/Validations/Validator.html">Validator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="jennifer/Jennifer/View" data-name="jennifer::view">
+      <a href="../../Jennifer/View.html">View</a>
+      
+        <ul>
+  
+  <li class=" " data-id="jennifer/Jennifer/View/Base" data-name="jennifer::view::base">
+      <a href="../../Jennifer/View/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/View/Mapping" data-name="jennifer::view::mapping">
+      <a href="../../Jennifer/View/Mapping.html">Mapping</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/View/Materialized" data-name="jennifer::view::materialized">
+      <a href="../../Jennifer/View/Materialized.html">Materialized</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Slice" data-name="slice(t)">
+      <a href="../../Slice.html">Slice</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Jennifer::QueryBuilder::CurrentTimeFunction
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Jennifer/QueryBuilder/CurrentTimeFunction.html">Jennifer::QueryBuilder::CurrentTimeFunction</a></li><li class="superclass"><a href="../../Jennifer/QueryBuilder/Function.html">Jennifer::QueryBuilder::Function</a></li><li class="superclass"><a href="../../Jennifer/QueryBuilder/Criteria.html">Jennifer::QueryBuilder::Criteria</a></li><li class="superclass"><a href="../../Jennifer/QueryBuilder/SQLNode.html">Jennifer::QueryBuilder::SQLNode</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Returns the current time.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/v0.11.0/src/jennifer/query_builder/function.cr#L214" target="_blank">
+        jennifer/query_builder/function.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#as_sql(generator)-instance-method" class="signature"><strong>#as_sql</strong>(generator)</a>
+        
+          <div class="summary"><p>Converts node to SQL using <em>sql_generator</em> SQLGenerator.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clone-instance-method" class="signature"><strong>#clone</strong></a>
+        
+          <div class="summary"><p>Returns a copy of <code>self</code> with all instance variables cloned.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../../Jennifer/QueryBuilder/Function.html">Jennifer::QueryBuilder::Function</a></code></h3>
+  
+  
+    <a href="../../Jennifer/QueryBuilder/Function.html#alias_tables(aliases)-instance-method" class="tooltip">
+      <span>alias_tables(aliases)</span>
+    alias_tables</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Function.html#change_table(old_name,new_name)-instance-method" class="tooltip">
+      <span>change_table(old_name, new_name)</span>
+    change_table</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Function.html#clone-instance-method" class="tooltip">
+      <span>clone</span>
+    clone</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Function.html#definition(sql_generator)-instance-method" class="tooltip">
+      <span>definition(sql_generator)<br/>definition</span>
+    definition</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Function.html#filterable?-instance-method" class="tooltip">
+      <span>filterable?</span>
+    filterable?</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Function.html#operand_sql(operand:SQLNode,generator)-instance-method" class="tooltip">
+      <span>operand_sql(operand : SQLNode, generator)<br/>operand_sql(_operand, generator)</span>
+    operand_sql</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Function.html#operands:Array(Array(Array(Char)%7CArray(Float32)%7CArray(Float64)%7CArray(Int16)%7CArray(Int32)%7CArray(Int64)%7CArray(String)%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON::Any%7CPG::Geo::Box%7CPG::Geo::Circle%7CPG::Geo::Line%7CPG::Geo::LineSegment%7CPG::Geo::Path%7CPG::Geo::Point%7CPG::Geo::Polygon%7CPG::Numeric%7CSlice(UInt8)%7CString%7CTime%7CTime::Span%7CUInt32%7CUUID%7CNil)%7CArray(Char)%7CArray(Float32)%7CArray(Float64)%7CArray(Int16)%7CArray(Int32)%7CArray(Int64)%7CArray(String)%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON::Any%7CJennifer::QueryBuilder::SQLNode%7CPG::Geo::Box%7CPG::Geo::Circle%7CPG::Geo::Line%7CPG::Geo::LineSegment%7CPG::Geo::Path%7CPG::Geo::Point%7CPG::Geo::Polygon%7CPG::Numeric%7CSlice(UInt8)%7CString%7CTime%7CTime::Span%7CUInt32%7CUUID%7CNil)-instance-method" class="tooltip">
+      <span>operands : Array(Array(Array(Char) | Array(Float32) | Array(Float64) | Array(Int16) | Array(Int32) | Array(Int64) | Array(String) | Bool | Char | Float32 | Float64 | Int16 | Int32 | Int64 | Int8 | JSON::Any | PG::Geo::Box | PG::Geo::Circle | PG::Geo::Line | PG::Geo::LineSegment | PG::Geo::Path | PG::Geo::Point | PG::Geo::Polygon | PG::Numeric | Slice(UInt8) | String | Time | Time::Span | UInt32 | UUID | Nil) | Array(Char) | Array(Float32) | Array(Float64) | Array(Int16) | Array(Int32) | Array(Int64) | Array(String) | Bool | Char | Float32 | Float64 | Int16 | Int32 | Int64 | Int8 | JSON::Any | Jennifer::QueryBuilder::SQLNode | PG::Geo::Box | PG::Geo::Circle | PG::Geo::Line | PG::Geo::LineSegment | PG::Geo::Path | PG::Geo::Point | PG::Geo::Polygon | PG::Numeric | Slice(UInt8) | String | Time | Time::Span | UInt32 | UUID | Nil)</span>
+    operands</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Function.html#operands_to_sql(generator)-instance-method" class="tooltip">
+      <span>operands_to_sql(generator)</span>
+    operands_to_sql</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Function.html#set_relation(table,name)-instance-method" class="tooltip">
+      <span>set_relation(table, name)</span>
+    set_relation</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Function.html#sql_args:Array(DBAny)-instance-method" class="tooltip">
+      <span>sql_args : Array(DBAny)</span>
+    sql_args</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../../Jennifer/QueryBuilder/Function.html">Jennifer::QueryBuilder::Function</a></code></h3>
+  
+  
+    <a href="../../Jennifer/QueryBuilder/Function.html#new(*args)-class-method" class="tooltip">
+      <span>new(*args)</span>
+    new</a>
+    
+  
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../../Jennifer/QueryBuilder/Criteria.html">Jennifer::QueryBuilder::Criteria</a></code></h3>
+  
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#!=(value:Symbol)-instance-method" class="tooltip">
+      <span>!=(value : Symbol)<br/>!=(value : Rightable)</span>
+    !=</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#&(other:LogicOperator::Operandable)-instance-method" class="tooltip">
+      <span>&(other : LogicOperator::Operandable)</span>
+    &</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#*(value:Rightable)-instance-method" class="tooltip">
+      <span>*(value : Rightable)</span>
+    *</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#+(value:Rightable)-instance-method" class="tooltip">
+      <span>+(value : Rightable)</span>
+    +</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#-(value:Rightable)-instance-method" class="tooltip">
+      <span>-(value : Rightable)</span>
+    -</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#/(value:Rightable)-instance-method" class="tooltip">
+      <span>/(value : Rightable)</span>
+    /</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3C(value:Rightable)-instance-method" class="tooltip">
+      <span><(value : Rightable)</span>
+    <</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3C=(value:Rightable)-instance-method" class="tooltip">
+      <span><=(value : Rightable)</span>
+    <=</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#==(value:Symbol)-instance-method" class="tooltip">
+      <span>==(value : Symbol)<br/>==(value : Rightable)</span>
+    ==</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#=~(value:String)-instance-method" class="tooltip">
+      <span>=~(value : String)</span>
+    =~</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3E(value:Rightable)-instance-method" class="tooltip">
+      <span>>(value : Rightable)</span>
+    ></a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3E=(value:Rightable)-instance-method" class="tooltip">
+      <span>>=(value : Rightable)</span>
+    >=</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#[](key)-instance-method" class="tooltip">
+      <span>[](key)</span>
+    []</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#alias(name:String?)-instance-method" class="tooltip">
+      <span>alias(name : String?)<br/>alias : String?</span>
+    alias</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#alias_tables(aliases:Hash(String,String))-instance-method" class="tooltip">
+      <span>alias_tables(aliases : Hash(String, String))</span>
+    alias_tables</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#as_sql(_generator):String-instance-method" class="tooltip">
+      <span>as_sql(_generator) : String</span>
+    as_sql</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#asc-instance-method" class="tooltip">
+      <span>asc</span>
+    asc</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#between(left:Rightable,right:Rightable)-instance-method" class="tooltip">
+      <span>between(left : Rightable, right : Rightable)</span>
+    between</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#change_table(old_name:String,new_name:String)-instance-method" class="tooltip">
+      <span>change_table(old_name : String, new_name : String)</span>
+    change_table</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#clone-instance-method" class="tooltip">
+      <span>clone</span>
+    clone</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#contain(value:Rightable)-instance-method" class="tooltip">
+      <span>contain(value : Rightable)</span>
+    contain</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#contained(value:Rightable)-instance-method" class="tooltip">
+      <span>contained(value : Rightable)</span>
+    contained</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#definition(_sql_generator)-instance-method" class="tooltip">
+      <span>definition(_sql_generator)<br/>definition</span>
+    definition</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#desc-instance-method" class="tooltip">
+      <span>desc</span>
+    desc</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#eql?(other:Criteria)-instance-method" class="tooltip">
+      <span>eql?(other : Criteria)</span>
+    eql?</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#equal(value:Rightable)-instance-method" class="tooltip">
+      <span>equal(value : Rightable)</span>
+    equal</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#field:String-instance-method" class="tooltip">
+      <span>field : String</span>
+    field</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#filterable?-instance-method" class="tooltip">
+      <span>filterable?</span>
+    filterable?</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#hash(hasher)-instance-method" class="tooltip">
+      <span>hash(hasher)</span>
+    hash</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#identifier:String-instance-method" class="tooltip">
+      <span>identifier : String</span>
+    identifier</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#ilike(value:Rightable)-instance-method" class="tooltip">
+      <span>ilike(value : Rightable)</span>
+    ilike</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#in(arr:Array)-instance-method" class="tooltip">
+      <span>in(arr : Array)<br/>in(arr : SQLNode)</span>
+    in</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#is(value:Symbol%7CBool%7CNil)-instance-method" class="tooltip">
+      <span>is(value : Symbol | Bool | Nil)</span>
+    is</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#like(value:Rightable)-instance-method" class="tooltip">
+      <span>like(value : Rightable)</span>
+    like</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#not(value:Symbol%7CBool%7CNil)-instance-method" class="tooltip">
+      <span>not(value : Symbol | Bool | Nil)<br/>not</span>
+    not</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#not_equal(value)-instance-method" class="tooltip">
+      <span>not_equal(value)</span>
+    not_equal</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#not_like(value:Rightable)-instance-method" class="tooltip">
+      <span>not_like(value : Rightable)</span>
+    not_like</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#not_regexp(value:Rightable)-instance-method" class="tooltip">
+      <span>not_regexp(value : Rightable)</span>
+    not_regexp</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#order(direction:String%7CSymbol)-instance-method" class="tooltip">
+      <span>order(direction : String | Symbol)</span>
+    order</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#overlap(value:Rightable)-instance-method" class="tooltip">
+      <span>overlap(value : Rightable)</span>
+    overlap</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#path(elements:String)-instance-method" class="tooltip">
+      <span>path(elements : String)</span>
+    path</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#regexp(value:Rightable)-instance-method" class="tooltip">
+      <span>regexp(value : Rightable)</span>
+    regexp</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#relation:String?-instance-method" class="tooltip">
+      <span>relation : String?</span>
+    relation</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#set_relation(table:String,name:String)-instance-method" class="tooltip">
+      <span>set_relation(table : String, name : String)</span>
+    set_relation</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#sql_args:Array(DBAny)-instance-method" class="tooltip">
+      <span>sql_args : Array(DBAny)</span>
+    sql_args</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#table:String-instance-method" class="tooltip">
+      <span>table : String</span>
+    table</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#take(key:String%7CNumber)-instance-method" class="tooltip">
+      <span>take(key : String | Number)</span>
+    take</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#to_s(io:IO)-instance-method" class="tooltip">
+      <span>to_s(io : IO)</span>
+    to_s</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#xor(other:LogicOperator::Operandable)-instance-method" class="tooltip">
+      <span>xor(other : LogicOperator::Operandable)</span>
+    xor</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#%7C(other:LogicOperator::Operandable)-instance-method" class="tooltip">
+      <span>|(other : LogicOperator::Operandable)</span>
+    |</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../../Jennifer/QueryBuilder/Criteria.html">Jennifer::QueryBuilder::Criteria</a></code></h3>
+  
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#new(field:String,table:String,relation=nil)-class-method" class="tooltip">
+      <span>new(field : String, table : String, relation = <span class="n">nil</span>)</span>
+    new</a>
+    
+  
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../../Jennifer/QueryBuilder/SQLNode.html">Jennifer::QueryBuilder::SQLNode</a></code></h3>
+  
+  
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#alias_tables(aliases)-instance-method" class="tooltip">
+      <span>alias_tables(aliases)</span>
+    alias_tables</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#as_sql-instance-method" class="tooltip">
+      <span>as_sql</span>
+    as_sql</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#change_table(old_name,new_name)-instance-method" class="tooltip">
+      <span>change_table(old_name, new_name)</span>
+    change_table</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#eql?(other)-instance-method" class="tooltip">
+      <span>eql?(other)</span>
+    eql?</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#set_relation(table,name)-instance-method" class="tooltip">
+      <span>set_relation(table, name)</span>
+    set_relation</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#to_condition-instance-method" class="tooltip">
+      <span>to_condition</span>
+    to_condition</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/Statement.html">Jennifer::QueryBuilder::Statement</a></code></h3>
+  
+  
+    <a href="../../Jennifer/QueryBuilder/Statement.html#as_sql(sql_generator)-instance-method" class="tooltip">
+      <span>as_sql(sql_generator)</span>
+    as_sql</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Statement.html#filterable?-instance-method" class="tooltip">
+      <span>filterable?</span>
+    filterable?</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Statement.html#sql_args:Array(DBAny)-instance-method" class="tooltip">
+      <span>sql_args : Array(DBAny)</span>
+    sql_args</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="as_sql(generator)-instance-method">
+      <div class="signature">
+        
+        def <strong>as_sql</strong>(generator)
+
+        <a class="method-permalink" href="#as_sql(generator)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module <a href="../../Jennifer/QueryBuilder/Statement.html">Jennifer::QueryBuilder::Statement</a>
+            </div>
+          
+          <p>Converts node to SQL using <em>sql_generator</em> SQLGenerator.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/v0.11.0/src/jennifer/query_builder/function.cr#L215" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clone-instance-method">
+      <div class="signature">
+        
+        def <strong>clone</strong>
+
+        <a class="method-permalink" href="#clone-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a copy of <code>self</code> with all instance variables cloned.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
