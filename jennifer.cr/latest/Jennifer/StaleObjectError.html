@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="jennifer">
-  <title>Jennifer::BadQuery - jennifer master</title>
+  <title>Jennifer::StaleObjectError - jennifer master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -251,7 +251,7 @@
       
     </li>
   
-  <li class=" current" data-id="jennifer/Jennifer/BadQuery" data-name="jennifer::badquery">
+  <li class=" " data-id="jennifer/Jennifer/BadQuery" data-name="jennifer::badquery">
       <a href="../Jennifer/BadQuery.html">BadQuery</a>
       
     </li>
@@ -1131,7 +1131,7 @@
       
     </li>
   
-  <li class=" " data-id="jennifer/Jennifer/StaleObjectError" data-name="jennifer::staleobjecterror">
+  <li class=" current" data-id="jennifer/Jennifer/StaleObjectError" data-name="jennifer::staleobjecterror">
       <a href="../Jennifer/StaleObjectError.html">StaleObjectError</a>
       
     </li>
@@ -1265,26 +1265,15 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Jennifer::BadQuery
+  <span class="kind">class</span> Jennifer::StaleObjectError
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Jennifer/BadQuery.html">Jennifer::BadQuery</a></li><li class="superclass"><a href="../Jennifer/BaseException.html">Jennifer::BaseException</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Jennifer/StaleObjectError.html">Jennifer::StaleObjectError</a></li><li class="superclass"><a href="../Jennifer/BaseException.html">Jennifer::BaseException</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
-
-  <h2>
-    <a id="overview" class="anchor" href="#overview">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Overview
-  </h2>
-
-  <p>Wraps driver query native exception with some extra information.</p>
 
 
 
@@ -1309,7 +1298,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/0f9df4fa9373bc10f55b162f447b475300d1754d/src/jennifer/exceptions.cr#L39" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/0f9df4fa9373bc10f55b162f447b475300d1754d/src/jennifer/exceptions.cr#L175" target="_blank">
         jennifer/exceptions.cr
       </a>
     
@@ -1331,40 +1320,13 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(original_message,query,args)-class-method" class="signature"><strong>.new</strong>(original_message, query, args)</a>
+        <a href="#new(model)-class-method" class="signature"><strong>.new</strong>(model)</a>
         
       </li>
     
   </ul>
 
 
-
-  <h2>
-    <a id="class-method-summary" class="anchor" href="#class-method-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Class Method Summary
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#format_query(query,args:Array)-class-method" class="signature"><strong>.format_query</strong>(query, args : Array)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#format_query(query,arg=nil)-class-method" class="signature"><strong>.format_query</strong>(query, arg = <span class="n">nil</span>)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#prepend_information(error:Exception,query,args)-class-method" class="signature"><strong>.prepend_information</strong>(error : Exception, query, args)</a>
-        
-      </li>
-    
-  </ul>
 
 
 
@@ -1453,82 +1415,24 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(original_message,query,args)-class-method">
+    <div class="entry-detail" id="new(model)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(original_message, query, args)
+        def self.<strong>new</strong>(model)
 
-        <a class="method-permalink" href="#new(original_message,query,args)-class-method">#</a>
+        <a class="method-permalink" href="#new(model)-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0f9df4fa9373bc10f55b162f447b475300d1754d/src/jennifer/exceptions.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0f9df4fa9373bc10f55b162f447b475300d1754d/src/jennifer/exceptions.cr#L176" target="_blank">View source</a>]
         
       </div>
     </div>
   
 
 
-
-  <h2>
-    <a id="class-method-detail" class="anchor" href="#class-method-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Class Method Detail
-  </h2>
-  
-    <div class="entry-detail" id="format_query(query,args:Array)-class-method">
-      <div class="signature">
-        
-        def self.<strong>format_query</strong>(query, args : Array)
-
-        <a class="method-permalink" href="#format_query(query,args:Array)-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0f9df4fa9373bc10f55b162f447b475300d1754d/src/jennifer/exceptions.cr#L48" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="format_query(query,arg=nil)-class-method">
-      <div class="signature">
-        
-        def self.<strong>format_query</strong>(query, arg = <span class="n">nil</span>)
-
-        <a class="method-permalink" href="#format_query(query,arg=nil)-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0f9df4fa9373bc10f55b162f447b475300d1754d/src/jennifer/exceptions.cr#L52" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="prepend_information(error:Exception,query,args)-class-method">
-      <div class="signature">
-        
-        def self.<strong>prepend_information</strong>(error : Exception, query, args)
-
-        <a class="method-permalink" href="#prepend_information(error:Exception,query,args)-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/0f9df4fa9373bc10f55b162f447b475300d1754d/src/jennifer/exceptions.cr#L44" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
 
 
 
