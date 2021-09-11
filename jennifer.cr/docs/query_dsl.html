@@ -388,24 +388,27 @@ WHERE contacts.name = lower($1)
 
 <h2 id="select">SELECT</h2>
 
-<p>Raw SQL for <code class="language-plaintext highlighter-rouge">SELECT</code> clause could be passed into <code class="language-plaintext highlighter-rouge">#select</code> method. This have highest priority during forming this query part.</p>
+<p>Raw SQL for <code class="language-plaintext highlighter-rouge">SELECT</code> clause could be passed into <code class="language-plaintext highlighter-rouge">#select</code> method. This have the highest priority during <code class="language-plaintext highlighter-rouge">SELECT</code> clause composing  of SQL request.</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span>
   <span class="p">.</span><span class="nf">all</span>
-  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="s2">"COUNT(id) as count, contacts.name"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="s2">"COUNT(id) AS count"</span><span class="p">)</span>
   <span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span>
   <span class="p">.</span><span class="nf">having</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"COUNT(id)"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
-  <span class="p">.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:count</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Also <code class="language-plaintext highlighter-rouge">#select</code> accepts block where all fields could be specified and aliased:</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span>
   <span class="p">.</span><span class="nf">all</span>
-  <span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="p">[</span><span class="n">sql</span><span class="p">(</span><span class="s2">"COUNT(id)"</span><span class="p">).</span><span class="nf">alias</span><span class="p">(</span><span class="s2">"count"</span><span class="p">),</span> <span class="n">_name</span><span class="p">]</span> <span class="p">}</span>
+  <span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="p">[</span><span class="n">sql</span><span class="p">(</span><span class="s2">"COUNT(id)"</span><span class="p">).</span><span class="nf">alias</span><span class="p">(</span><span class="s2">"count"</span><span class="p">)]</span> <span class="p">}</span>
   <span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">having</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"count"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">having</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"count"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
+  <span class="p">.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:count</span><span class="p">)</span>
 </code></pre></div></div>
+
+<p>It is important to note that currently it is impossible to pass <code class="language-plaintext highlighter-rouge">Jennifer::QueryBuilder::Condition</code> to <code class="language-plaintext highlighter-rouge">#select</code>. In other words <code class="language-plaintext highlighter-rouge">Contact.all.select { [(_age * 2).alias("age")] }</code> isn’t allowed. As a workaround you can temporary use <code class="language-plaintext highlighter-rouge">#sql</code>: <code class="language-plaintext highlighter-rouge">Contact.all.select { [sql("age * 2").alias("age")] }</code>.</p>
 
 <h2 id="join">JOIN</h2>
 

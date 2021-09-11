@@ -99,7 +99,7 @@
   <li><code class="language-plaintext highlighter-rouge">#last!</code> - returns last record or raise <code class="language-plaintext highlighter-rouge">RecordNotFound</code> if nothing was found;</li>
   <li><code class="language-plaintext highlighter-rouge">#first</code> - returns first found record or <code class="language-plaintext highlighter-rouge">nil</code> if nothing was found;</li>
   <li><code class="language-plaintext highlighter-rouge">#first!</code> - returns first record or raise <code class="language-plaintext highlighter-rouge">RecordNotFound</code> if nothing was found;</li>
-  <li><code class="language-plaintext highlighter-rouge">#pluck</code> - returns array of specified fields values instead of records;</li>
+  <li><code class="language-plaintext highlighter-rouge">#pluck</code> - returns array of specified fields values instead of records; also can return array of named tuples;</li>
   <li><code class="language-plaintext highlighter-rouge">#delete</code> - deletes all records in db by query;</li>
   <li><code class="language-plaintext highlighter-rouge">#exists?</code> - checks if there is any record in DB that fits query;</li>
   <li><code class="language-plaintext highlighter-rouge">#update</code> - updates fields by given values;</li>
@@ -118,13 +118,36 @@
   <li><code class="language-plaintext highlighter-rouge">#destroy</code> - invokes <code class="language-plaintext highlighter-rouge">#to_a</code> and calls <code class="language-plaintext highlighter-rouge">#destroy</code> on each record`.</li>
 </ul>
 
-<p><code class="language-plaintext highlighter-rouge">#pluck</code> returns array of values if only one field was given and array of arrays otherwise. By default it uses scope of current table (e.g. in previous example select clause included <code class="language-plaintext highlighter-rouge">contacts.id</code>). To allow grepping custom fields or any statement you need to specify custom select clause:</p>
+<h4 id="pluck">Pluck</h4>
+
+<p>User <code class="language-plaintext highlighter-rouge">#pluck</code> as a shortcut to select one or more attributes without loading a bunch of records to grab the attributes you want.</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>instead of</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">#pluck</code> returns array of values if only one field was given and array of arrays otherwise. If query object has no specified custom attributes to select given attributes is used to compose <code class="language-plaintext highlighter-rouge">SELECT</code> clause (query’s table is used as a target - <code class="language-plaintext highlighter-rouge">contacts.name</code> for example above).</p>
+
+<p>To grab custom attributes you need to specify custom select clause:</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span>
-  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="s2">"COUNT(id) as count, contacts.name"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="s2">"COUNT(id) as count"</span><span class="p">)</span> <span class="c1"># same as .select { [sql("COUNT(id)").alias("count")] }</span>
   <span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span>
   <span class="p">.</span><span class="nf">having</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"COUNT(id)"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
   <span class="p">.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:count</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>To return array of named tuple instead of array of arrays specify fields and desired data types as splatted named tuple:</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span>
+  <span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="p">[</span><span class="n">sql</span><span class="p">(</span><span class="s2">"COUNT(id)"</span><span class="p">).</span><span class="nf">alias</span><span class="p">(</span><span class="s2">"count"</span><span class="p">),</span> <span class="n">_name</span><span class="p">]</span> <span class="p">}</span>
+  <span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">having</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"COUNT(id)"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
+  <span class="p">.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">count: </span><span class="no">Int32</span><span class="p">,</span> <span class="ss">name: </span><span class="no">String</span><span class="p">)</span> <span class="c1"># =&gt; Array(NamedTuple(count: Int32, name: String))</span>
 </code></pre></div></div>
 
 <h2 id="relation-eager-loading">Relation Eager Loading</h2>
