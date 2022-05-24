@@ -12,7 +12,7 @@ gem "pry"
 gem "activesupport", "~>4.2.6"
 gem "faraday", "= 1.0.1"
 gem "listen", "= 3.5.0"
-gem "nokogiri", "= 1.10.10"
+gem "nokogiri", "1.13.6"
 gem "rubyzip", "= 1.3.0"
 
 group :jekyll_plugins do
