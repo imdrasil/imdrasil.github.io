@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1285,9 +1285,11 @@
   </h2>
 
   <p>A <code><a href="Slice.html">Slice</a></code> is a <code>Pointer</code> with an associated size.</p>
+
 <p>While a pointer is unsafe because no bound checks are performed when reading from and writing to it,
 reading from and writing to a slice involve bound checks.
 In this way, a slice is a safe alternative to <code>Pointer</code>.</p>
+
 <p>A Slice can be created as read-only: trying to write to it
 will raise. For example the slice of bytes returned by
 <code>String#to_slice</code> is read-only.</p>
@@ -1308,7 +1310,7 @@ will raise. For example the slice of bytes returned by
     
       <li class="other-type">Comparable(<a href="Slice.html">Slice(T)</a>)</li>
     
-      <li class="other-type">Indexable::Mutable(T)</li>
+      <li class="other-type">Indexable(T)</li>
     
   </ul>
 
@@ -1357,7 +1359,7 @@ will raise. For example the slice of bytes returned by
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#to_json%28json%3AJSON%3A%3ABuilder%29-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
+        <a href="#to_json(json:JSON::Builder)-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
         
       </li>
     
@@ -1373,16 +1375,6 @@ will raise. For example the slice of bytes returned by
 
 
 <div class="methods-inherited">
-  
-    
-
-
-    
-
-
-    
-
-
   
     
 
@@ -1475,7 +1467,7 @@ will raise. For example the slice of bytes returned by
         
         def <strong>to_json</strong>(json : JSON::Builder)
 
-        <a class="method-permalink" href="#to_json%28json%3AJSON%3A%3ABuilder%29-instance-method">#</a>
+        <a class="method-permalink" href="#to_json(json:JSON::Builder)-instance-method">#</a>
       </div>
       
       <br/>

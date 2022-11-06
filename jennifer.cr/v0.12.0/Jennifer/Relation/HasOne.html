@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1320,7 +1320,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28%2Aopts%29-class-method" class="signature"><strong>.new</strong>(*opts)</a>
+        <a href="#new(*opts)-class-method" class="signature"><strong>.new</strong>(*opts)</a>
         
       </li>
     
@@ -1341,12 +1341,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#insert%28obj%3AQ%2Crel%3AT%29-instance-method" class="signature"><strong>#insert</strong>(obj : Q, rel : T)</a>
+        <a href="#insert(obj:Q,rel:T)-instance-method" class="signature"><strong>#insert</strong>(obj : Q, rel : T)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#remove%28obj%3AQ%29-instance-method" class="signature"><strong>#remove</strong>(obj : Q)</a>
+        <a href="#remove(obj:Q)-instance-method" class="signature"><strong>#remove</strong>(obj : Q)</a>
         
       </li>
     
@@ -1368,12 +1368,12 @@
     adapter</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#condition_clause%28ids%3AArray%28DBAny%29%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#condition_clause(ids:Array(DBAny))-instance-method" class="tooltip">
       <span>condition_clause(ids : Array(DBAny))<br/>condition_clause(id : DBAny)<br/>condition_clause</span>
     condition_clause</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#foreign%3AString%3F-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#foreign:String?-instance-method" class="tooltip">
       <span>foreign : String?</span>
     foreign</a>, 
     
@@ -1383,17 +1383,17 @@
     foreign_field</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#insert%28obj%3AQ%2Crel%3AHash%28String%2CT%3A%3AAttrType%29%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#insert(obj:Q,rel:Hash(String,T::AttrType))-instance-method" class="tooltip">
       <span>insert(obj : Q, rel : Hash(String, T::AttrType))<br/>insert(obj : Q, rel : Hash(Symbol, T::AttrType))<br/>insert(obj : Q, rel : T)</span>
     insert</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#join_condition%28query%2Ctype%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#join_condition(query,type)-instance-method" class="tooltip">
       <span>join_condition(query, type)</span>
     join_condition</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#join_query%3AQueryBuilder%3A%3ACondition%7CQueryBuilder%3A%3ALogicOperator%7CNil-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#join_query:QueryBuilder::Condition%7CQueryBuilder::LogicOperator%7CNil-instance-method" class="tooltip">
       <span>join_query : QueryBuilder::Condition | QueryBuilder::LogicOperator | Nil</span>
     join_query</a>, 
     
@@ -1403,17 +1403,17 @@
     model_class</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#name%3AString-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#name:String-instance-method" class="tooltip">
       <span>name : String</span>
     name</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#preload_relation%28collection%2Cout_collection%3AArray%28Model%3A%3AResource%29%2Cpk_repo%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#preload_relation(collection,out_collection:Array(Model::Resource),pk_repo)-instance-method" class="tooltip">
       <span>preload_relation(collection, out_collection : Array(Model::Resource), pk_repo)</span>
     preload_relation</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#primary%3AString%3F-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#primary:String?-instance-method" class="tooltip">
       <span>primary : String?</span>
     primary</a>, 
     
@@ -1423,12 +1423,12 @@
     primary_field</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#query%28primary_value_or_array%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#query(primary_value_or_array)-instance-method" class="tooltip">
       <span>query(primary_value_or_array)</span>
     query</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#remove%28obj%3AQ%2Crel%3AT%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#remove(obj:Q,rel:T)-instance-method" class="tooltip">
       <span>remove(obj : Q, rel : T)</span>
     remove</a>, 
     
@@ -1438,7 +1438,7 @@
     table_name</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#through%3ASymbol%3F-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#through:Symbol?-instance-method" class="tooltip">
       <span>through : Symbol?</span>
     through</a>
     
@@ -1450,8 +1450,8 @@
   <h3>Constructor methods inherited from class <code><a href="../../Jennifer/Relation/Base.html">Jennifer::Relation::Base(T, Q)</a></code></h3>
   
   
-    <a href="../../Jennifer/Relation/Base.html#new%28name%3AString%2Cforeign%3AString%7CSymbol%3F%2Cprimary%3AString%7CSymbol%3F%2Cquery%3AQueryBuilder%3A%3AQuery%2Cthrough%3ASymbol%3F%3Dnil%29-class-method" class="tooltip">
-      <span>new(name : String, foreign : String | Symbol?, primary : String | Symbol?, query : QueryBuilder::Query, through : Symbol? = <span class="n">nil</span>)</span>
+    <a href="../../Jennifer/Relation/Base.html#new(name,foreign:String%7CSymbol?,primary:String%7CSymbol?,query:QueryBuilder::Query,through=nil)-class-method" class="tooltip">
+      <span>new(name, foreign : String | Symbol?, primary : String | Symbol?, query : QueryBuilder::Query, through = <span class="n">nil</span>)</span>
     new</a>
     
   
@@ -1466,7 +1466,7 @@
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/Relation/IRelation.html">Jennifer::Relation::IRelation</a></code></h3>
   
   
-    <a href="../../Jennifer/Relation/IRelation.html#join_condition%28a%2Cb%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/IRelation.html#join_condition(a,b)-instance-method" class="tooltip">
       <span>join_condition(a, b)</span>
     join_condition</a>, 
     
@@ -1481,12 +1481,12 @@
     model_class</a>, 
     
   
-    <a href="../../Jennifer/Relation/IRelation.html#preload_relation%28collection%2Cout_collection%3AArray%28Model%3A%3AResource%29%2Cpk_repo%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/IRelation.html#preload_relation(collection,out_collection:Array(Model::Resource),pk_repo)-instance-method" class="tooltip">
       <span>preload_relation(collection, out_collection : Array(Model::Resource), pk_repo)</span>
     preload_relation</a>, 
     
   
-    <a href="../../Jennifer/Relation/IRelation.html#query%28primary_value%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/IRelation.html#query(primary_value)-instance-method" class="tooltip">
       <span>query(primary_value)</span>
     query</a>, 
     
@@ -1542,7 +1542,7 @@
         
         def self.<strong>new</strong>(*opts)
 
-        <a class="method-permalink" href="#new%28%2Aopts%29-class-method">#</a>
+        <a class="method-permalink" href="#new(*opts)-class-method">#</a>
       </div>
       
       <br/>
@@ -1572,7 +1572,7 @@
         
         def <strong>insert</strong>(obj : Q, rel : T)
 
-        <a class="method-permalink" href="#insert%28obj%3AQ%2Crel%3AT%29-instance-method">#</a>
+        <a class="method-permalink" href="#insert(obj:Q,rel:T)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1588,7 +1588,7 @@
         
         def <strong>remove</strong>(obj : Q)
 
-        <a class="method-permalink" href="#remove%28obj%3AQ%29-instance-method">#</a>
+        <a class="method-permalink" href="#remove(obj:Q)-instance-method">#</a>
       </div>
       
       <br/>

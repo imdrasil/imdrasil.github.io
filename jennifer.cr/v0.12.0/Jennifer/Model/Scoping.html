@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1338,14 +1338,14 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#scope%28name%2C%26block%29-macro" class="signature"><strong>scope</strong>(name, &block)</a>
+        <a href="#scope(name,&block)-macro" class="signature"><strong>scope</strong>(name, &block)</a>
         
           <div class="summary"><p>Adds a class method for retrieving and querying objects.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#scope%28name%2Cklass%29-macro" class="signature"><strong>scope</strong>(name, klass)</a>
+        <a href="#scope(name,klass)-macro" class="signature"><strong>scope</strong>(name, klass)</a>
         
           <div class="summary"><p>Adds a class method for retrieving and querying objects.</p></div>
         
@@ -1380,14 +1380,16 @@
         
         macro <strong>scope</strong>(name, &block)
 
-        <a class="method-permalink" href="#scope%28name%2C%26block%29-macro">#</a>
+        <a class="method-permalink" href="#scope(name,&block)-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds a class method for retrieving and querying objects.</p>
-<p>A <code><a href="../../Jennifer/Model/Scoping.html#scope%28name%2C%26block%29-macro">.scope</a></code> presents a narrowing of a database query, such as
-<code>where { _color == &quot;red&quot; }.includes(:washing_instructions)</code>.</p>
+
+<p>A <code><a href="../../Jennifer/Model/Scoping.html#scope(name,&block)-macro">.scope</a></code> presents a narrowing of a database query, such as
+<code>where { _color == "red" }.includes(:washing_instructions)</code>.</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">Shirt</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   <span class="c"># ...</span>
   scope <span class="n">:red</span> { where { _color <span class="o">==</span> <span class="s">&quot;red&quot;</span> } }
@@ -1407,13 +1409,15 @@
         
         macro <strong>scope</strong>(name, klass)
 
-        <a class="method-permalink" href="#scope%28name%2Cklass%29-macro">#</a>
+        <a class="method-permalink" href="#scope(name,klass)-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds a class method for retrieving and querying objects.</p>
-<p>A <code><a href="../../Jennifer/Model/Scoping.html#scope%28name%2C%26block%29-macro">.scope</a></code> presents a narrowing of a database query, such as <code>where { _color == &quot;red&quot; }.includes(:washing_instructions)</code>.</p>
+
+<p>A <code><a href="../../Jennifer/Model/Scoping.html#scope(name,&block)-macro">.scope</a></code> presents a narrowing of a database query, such as <code>where { _color == "red" }.includes(:washing_instructions)</code>.</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">Shirt</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   <span class="c"># ...</span>
   scope <span class="n">:red</span>, {where { _color <span class="o">==</span> <span class="s">&quot;red&quot;</span> }}

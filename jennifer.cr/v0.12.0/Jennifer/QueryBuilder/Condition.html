@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1366,17 +1366,17 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28field%3AString%2Ctable%3AString%2Crelation%3Dnil%29-class-method" class="signature"><strong>.new</strong>(field : String, table : String, relation = <span class="n">nil</span>)</a>
+        <a href="#new(field:String,table:String,relation=nil)-class-method" class="signature"><strong>.new</strong>(field : String, table : String, relation = <span class="n">nil</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28lhs%3AJennifer%3A%3AQueryBuilder%3A%3ASQLNode%2Coperator%3ASymbol%2Crhs%3AArray%28Array%28Char%29%7CArray%28Float32%29%7CArray%28Float64%29%7CArray%28Int16%29%7CArray%28Int32%29%7CArray%28Int64%29%7CArray%28String%29%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON%3A%3AAny%7CPG%3A%3AGeo%3A%3ABox%7CPG%3A%3AGeo%3A%3ACircle%7CPG%3A%3AGeo%3A%3ALine%7CPG%3A%3AGeo%3A%3ALineSegment%7CPG%3A%3AGeo%3A%3APath%7CPG%3A%3AGeo%3A%3APoint%7CPG%3A%3AGeo%3A%3APolygon%7CPG%3A%3ANumeric%7CSlice%28UInt8%29%7CString%7CTime%7CTime%3A%3ASpan%7CUInt32%7CUUID%7CNil%29%7CArray%28Char%29%7CArray%28Float32%29%7CArray%28Float64%29%7CArray%28Int16%29%7CArray%28Int32%29%7CArray%28Int64%29%7CArray%28String%29%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON%3A%3AAny%7CJennifer%3A%3AQueryBuilder%3A%3ASQLNode%7CPG%3A%3AGeo%3A%3ABox%7CPG%3A%3AGeo%3A%3ACircle%7CPG%3A%3AGeo%3A%3ALine%7CPG%3A%3AGeo%3A%3ALineSegment%7CPG%3A%3AGeo%3A%3APath%7CPG%3A%3AGeo%3A%3APoint%7CPG%3A%3AGeo%3A%3APolygon%7CPG%3A%3ANumeric%7CSlice%28UInt8%29%7CString%7CTime%7CTime%3A%3ASpan%7CUInt32%7CUUID%7CNil%29-class-method" class="signature"><strong>.new</strong>(lhs : Jennifer::QueryBuilder::SQLNode, operator : Symbol, rhs : Array(Array(Char) | Array(Float32) | Array(Float64) | Array(Int16) | Array(Int32) | Array(Int64) | Array(String) | Bool | Char | Float32 | Float64 | Int16 | Int32 | Int64 | Int8 | JSON::Any | PG::Geo::Box | PG::Geo::Circle | PG::Geo::Line | PG::Geo::LineSegment | PG::Geo::Path | PG::Geo::Point | PG::Geo::Polygon | PG::Numeric | Slice(UInt8) | String | Time | Time::Span | UInt32 | UUID | Nil) | Array(Char) | Array(Float32) | Array(Float64) | Array(Int16) | Array(Int32) | Array(Int64) | Array(String) | Bool | Char | Float32 | Float64 | Int16 | Int32 | Int64 | Int8 | JSON::Any | Jennifer::QueryBuilder::SQLNode | PG::Geo::Box | PG::Geo::Circle | PG::Geo::Line | PG::Geo::LineSegment | PG::Geo::Path | PG::Geo::Point | PG::Geo::Polygon | PG::Numeric | Slice(UInt8) | String | Time | Time::Span | UInt32 | UUID | Nil)</a>
+        <a href="#new(lhs,operator,rhs)-class-method" class="signature"><strong>.new</strong>(lhs, operator, rhs)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28lhs%3AJennifer%3A%3AQueryBuilder%3A%3ASQLNode%29-class-method" class="signature"><strong>.new</strong>(lhs : Jennifer::QueryBuilder::SQLNode)</a>
+        <a href="#new(lhs)-class-method" class="signature"><strong>.new</strong>(lhs)</a>
         
       </li>
     
@@ -1397,19 +1397,19 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#%3D%3D%28other%29-instance-method" class="signature"><strong>#==</strong>(other)</a>
+        <a href="#==(other)-instance-method" class="signature"><strong>#==</strong>(other)</a>
         
           <div class="summary"><p>Returns <code>false</code> (other can only be a <code>Value</code> here).</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#alias_tables%28aliases%29-instance-method" class="signature"><strong>#alias_tables</strong>(aliases)</a>
+        <a href="#alias_tables(aliases)-instance-method" class="signature"><strong>#alias_tables</strong>(aliases)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#as_sql%28generator%29-instance-method" class="signature"><strong>#as_sql</strong>(generator)</a>
+        <a href="#as_sql(generator)-instance-method" class="signature"><strong>#as_sql</strong>(generator)</a>
         
           <div class="summary"><p>Converts node to SQL using <em>sql_generator</em> SQLGenerator.</p></div>
         
@@ -1421,7 +1421,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#change_table%28old_name%2Cnew_name%29-instance-method" class="signature"><strong>#change_table</strong>(old_name, new_name)</a>
+        <a href="#change_table(old_name,new_name)-instance-method" class="signature"><strong>#change_table</strong>(old_name, new_name)</a>
         
       </li>
     
@@ -1433,24 +1433,24 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#eql%3F%28other%3ACondition%29-instance-method" class="signature"><strong>#eql?</strong>(other : Condition)</a>
+        <a href="#eql?(other:Condition)-instance-method" class="signature"><strong>#eql?</strong>(other : Condition)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#eql%3F%28other%29-instance-method" class="signature"><strong>#eql?</strong>(other)</a>
+        <a href="#eql?(other)-instance-method" class="signature"><strong>#eql?</strong>(other)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#filterable%3F-instance-method" class="signature"><strong>#filterable?</strong></a>
+        <a href="#filterable?-instance-method" class="signature"><strong>#filterable?</strong></a>
         
           <div class="summary"><p>Returns whether node has an argument to be added to SQL statement arguments.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#lhs%3ASQLNode-instance-method" class="signature"><strong>#lhs</strong> : SQLNode</a>
+        <a href="#lhs:SQLNode-instance-method" class="signature"><strong>#lhs</strong> : SQLNode</a>
         
           <div class="summary"><p>Left hand side of condition.</p></div>
         
@@ -1464,33 +1464,33 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#operator%3ASymbol-instance-method" class="signature"><strong>#operator</strong> : Symbol</a>
+        <a href="#operator:Symbol-instance-method" class="signature"><strong>#operator</strong> : Symbol</a>
         
           <div class="summary"><p>Condition operator.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#rhs%3ACriteria%3A%3ARightable%3F-instance-method" class="signature"><strong>#rhs</strong> : Criteria::Rightable?</a>
+        <a href="#rhs:Criteria::Rightable?-instance-method" class="signature"><strong>#rhs</strong> : Criteria::Rightable?</a>
         
           <div class="summary"><p>Right hand side of condition.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_relation%28table%2Cname%29-instance-method" class="signature"><strong>#set_relation</strong>(table, name)</a>
+        <a href="#set_relation(table,name)-instance-method" class="signature"><strong>#set_relation</strong>(table, name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#sql_args%3AArray%28DBAny%29-instance-method" class="signature"><strong>#sql_args</strong> : Array(DBAny)</a>
+        <a href="#sql_args:Array(DBAny)-instance-method" class="signature"><strong>#sql_args</strong> : Array(DBAny)</a>
         
           <div class="summary"><p>Returns array of SQL query arguments.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_s%28io%3AIO%29-instance-method" class="signature"><strong>#to_s</strong>(io : IO)</a>
+        <a href="#to_s(io:IO)-instance-method" class="signature"><strong>#to_s</strong>(io : IO)</a>
         
           <div class="summary"><p>Appends a short String representation of this object which includes its class name and its object address.</p></div>
         
@@ -1509,17 +1509,17 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/Statement.html">Jennifer::QueryBuilder::Statement</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Statement.html#as_sql%28sql_generator%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Statement.html#as_sql(sql_generator)-instance-method" class="tooltip">
       <span>as_sql(sql_generator)</span>
     as_sql</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Statement.html#filterable%3F-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Statement.html#filterable?-instance-method" class="tooltip">
       <span>filterable?</span>
     filterable?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Statement.html#sql_args%3AArray%28DBAny%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Statement.html#sql_args:Array(DBAny)-instance-method" class="tooltip">
       <span>sql_args : Array(DBAny)</span>
     sql_args</a>
     
@@ -1538,19 +1538,19 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html">Jennifer::QueryBuilder::LogicOperator::Operators</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#%26%28other%3ACriteria%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#&(other:Criteria)-instance-method" class="tooltip">
       <span>&(other : Criteria)<br/>&(other : Operandable)</span>
     &</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#%7C%28other%3ACriteria%29-instance-method" class="tooltip">
-      <span>|(other : Criteria)<br/>|(other : Operandable)</span>
-    |</a>, 
+    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#xor(other:Criteria)-instance-method" class="tooltip">
+      <span>xor(other : Criteria)<br/>xor(other : Operandable)</span>
+    xor</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#xor%28other%3ACriteria%29-instance-method" class="tooltip">
-      <span>xor(other : Criteria)<br/>xor(other : Operandable)</span>
-    xor</a>
+    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#%7C(other:Criteria)-instance-method" class="tooltip">
+      <span>|(other : Criteria)<br/>|(other : Operandable)</span>
+    |</a>
     
   
 
@@ -1599,7 +1599,7 @@
         
         def self.<strong>new</strong>(field : String, table : String, relation = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new%28field%3AString%2Ctable%3AString%2Crelation%3Dnil%29-class-method">#</a>
+        <a class="method-permalink" href="#new(field:String,table:String,relation=nil)-class-method">#</a>
       </div>
       
       <br/>
@@ -1610,12 +1610,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="new(lhs:Jennifer::QueryBuilder::SQLNode,operator:Symbol,rhs:Array(Array(Char)|Array(Float32)|Array(Float64)|Array(Int16)|Array(Int32)|Array(Int64)|Array(String)|Bool|Char|Float32|Float64|Int16|Int32|Int64|Int8|JSON::Any|PG::Geo::Box|PG::Geo::Circle|PG::Geo::Line|PG::Geo::LineSegment|PG::Geo::Path|PG::Geo::Point|PG::Geo::Polygon|PG::Numeric|Slice(UInt8)|String|Time|Time::Span|UInt32|UUID|Nil)|Array(Char)|Array(Float32)|Array(Float64)|Array(Int16)|Array(Int32)|Array(Int64)|Array(String)|Bool|Char|Float32|Float64|Int16|Int32|Int64|Int8|JSON::Any|Jennifer::QueryBuilder::SQLNode|PG::Geo::Box|PG::Geo::Circle|PG::Geo::Line|PG::Geo::LineSegment|PG::Geo::Path|PG::Geo::Point|PG::Geo::Polygon|PG::Numeric|Slice(UInt8)|String|Time|Time::Span|UInt32|UUID|Nil)-class-method">
+    <div class="entry-detail" id="new(lhs,operator,rhs)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(lhs : <a href="../../Jennifer/QueryBuilder/SQLNode.html">Jennifer::QueryBuilder::SQLNode</a>, operator : Symbol, rhs : Array(Array(<a href="../../Char.html">Char</a>) | Array(Float32) | Array(Float64) | Array(Int16) | Array(Int32) | Array(Int64) | Array(String) | Bool | <a href="../../Char.html">Char</a> | Float32 | Float64 | Int16 | Int32 | Int64 | Int8 | JSON::Any | PG::Geo::Box | PG::Geo::Circle | PG::Geo::Line | PG::Geo::LineSegment | PG::Geo::Path | PG::Geo::Point | PG::Geo::Polygon | PG::Numeric | <a href="../../Slice.html">Slice</a>(UInt8) | String | Time | Time::Span | UInt32 | UUID | Nil) | Array(<a href="../../Char.html">Char</a>) | Array(Float32) | Array(Float64) | Array(Int16) | Array(Int32) | Array(Int64) | Array(String) | Bool | <a href="../../Char.html">Char</a> | Float32 | Float64 | Int16 | Int32 | Int64 | Int8 | JSON::Any | <a href="../../Jennifer/QueryBuilder/SQLNode.html">Jennifer::QueryBuilder::SQLNode</a> | PG::Geo::Box | PG::Geo::Circle | PG::Geo::Line | PG::Geo::LineSegment | PG::Geo::Path | PG::Geo::Point | PG::Geo::Polygon | PG::Numeric | <a href="../../Slice.html">Slice</a>(UInt8) | String | Time | Time::Span | UInt32 | UUID | Nil)
+        def self.<strong>new</strong>(lhs, operator, rhs)
 
-        <a class="method-permalink" href="#new%28lhs%3AJennifer%3A%3AQueryBuilder%3A%3ASQLNode%2Coperator%3ASymbol%2Crhs%3AArray%28Array%28Char%29%7CArray%28Float32%29%7CArray%28Float64%29%7CArray%28Int16%29%7CArray%28Int32%29%7CArray%28Int64%29%7CArray%28String%29%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON%3A%3AAny%7CPG%3A%3AGeo%3A%3ABox%7CPG%3A%3AGeo%3A%3ACircle%7CPG%3A%3AGeo%3A%3ALine%7CPG%3A%3AGeo%3A%3ALineSegment%7CPG%3A%3AGeo%3A%3APath%7CPG%3A%3AGeo%3A%3APoint%7CPG%3A%3AGeo%3A%3APolygon%7CPG%3A%3ANumeric%7CSlice%28UInt8%29%7CString%7CTime%7CTime%3A%3ASpan%7CUInt32%7CUUID%7CNil%29%7CArray%28Char%29%7CArray%28Float32%29%7CArray%28Float64%29%7CArray%28Int16%29%7CArray%28Int32%29%7CArray%28Int64%29%7CArray%28String%29%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON%3A%3AAny%7CJennifer%3A%3AQueryBuilder%3A%3ASQLNode%7CPG%3A%3AGeo%3A%3ABox%7CPG%3A%3AGeo%3A%3ACircle%7CPG%3A%3AGeo%3A%3ALine%7CPG%3A%3AGeo%3A%3ALineSegment%7CPG%3A%3AGeo%3A%3APath%7CPG%3A%3AGeo%3A%3APoint%7CPG%3A%3AGeo%3A%3APolygon%7CPG%3A%3ANumeric%7CSlice%28UInt8%29%7CString%7CTime%7CTime%3A%3ASpan%7CUInt32%7CUUID%7CNil%29-class-method">#</a>
+        <a class="method-permalink" href="#new(lhs,operator,rhs)-class-method">#</a>
       </div>
       
       <br/>
@@ -1626,12 +1626,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="new(lhs:Jennifer::QueryBuilder::SQLNode)-class-method">
+    <div class="entry-detail" id="new(lhs)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(lhs : <a href="../../Jennifer/QueryBuilder/SQLNode.html">Jennifer::QueryBuilder::SQLNode</a>)
+        def self.<strong>new</strong>(lhs)
 
-        <a class="method-permalink" href="#new%28lhs%3AJennifer%3A%3AQueryBuilder%3A%3ASQLNode%29-class-method">#</a>
+        <a class="method-permalink" href="#new(lhs)-class-method">#</a>
       </div>
       
       <br/>
@@ -1661,7 +1661,7 @@
         
         def <strong>==</strong>(other)
 
-        <a class="method-permalink" href="#%3D%3D%28other%29-instance-method">#</a>
+        <a class="method-permalink" href="#==(other)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1686,7 +1686,7 @@
         
         def <strong>alias_tables</strong>(aliases)
 
-        <a class="method-permalink" href="#alias_tables%28aliases%29-instance-method">#</a>
+        <a class="method-permalink" href="#alias_tables(aliases)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1702,7 +1702,7 @@
         
         def <strong>as_sql</strong>(generator)
 
-        <a class="method-permalink" href="#as_sql%28generator%29-instance-method">#</a>
+        <a class="method-permalink" href="#as_sql(generator)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1743,7 +1743,7 @@
         
         def <strong>change_table</strong>(old_name, new_name)
 
-        <a class="method-permalink" href="#change_table%28old_name%2Cnew_name%29-instance-method">#</a>
+        <a class="method-permalink" href="#change_table(old_name,new_name)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1780,7 +1780,7 @@
         
         def <strong>eql?</strong>(other : <a href="../../Jennifer/QueryBuilder/Condition.html">Condition</a>)
 
-        <a class="method-permalink" href="#eql%3F%28other%3ACondition%29-instance-method">#</a>
+        <a class="method-permalink" href="#eql?(other:Condition)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1796,7 +1796,7 @@
         
         def <strong>eql?</strong>(other)
 
-        <a class="method-permalink" href="#eql%3F%28other%29-instance-method">#</a>
+        <a class="method-permalink" href="#eql?(other)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1812,7 +1812,7 @@
         
         def <strong>filterable?</strong>
 
-        <a class="method-permalink" href="#filterable%3F-instance-method">#</a>
+        <a class="method-permalink" href="#filterable?-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1837,7 +1837,7 @@
         
         def <strong>lhs</strong> : <a href="../../Jennifer/QueryBuilder/SQLNode.html">SQLNode</a>
 
-        <a class="method-permalink" href="#lhs%3ASQLNode-instance-method">#</a>
+        <a class="method-permalink" href="#lhs:SQLNode-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1864,6 +1864,7 @@
         <div class="doc">
           
           <p>Makes condition negative.</p>
+
 <p>Will add <code>NOT</code> statement before condition in generated SQL.</p>
         </div>
       
@@ -1880,7 +1881,7 @@
         
         def <strong>operator</strong> : Symbol
 
-        <a class="method-permalink" href="#operator%3ASymbol-instance-method">#</a>
+        <a class="method-permalink" href="#operator:Symbol-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1901,7 +1902,7 @@
         
         def <strong>rhs</strong> : <a href="../../Jennifer/QueryBuilder/Criteria/Rightable.html">Criteria::Rightable</a>?
 
-        <a class="method-permalink" href="#rhs%3ACriteria%3A%3ARightable%3F-instance-method">#</a>
+        <a class="method-permalink" href="#rhs:Criteria::Rightable?-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1922,7 +1923,7 @@
         
         def <strong>set_relation</strong>(table, name)
 
-        <a class="method-permalink" href="#set_relation%28table%2Cname%29-instance-method">#</a>
+        <a class="method-permalink" href="#set_relation(table,name)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1938,7 +1939,7 @@
         
         def <strong>sql_args</strong> : Array(<a href="../../Jennifer/DBAny.html">DBAny</a>)
 
-        <a class="method-permalink" href="#sql_args%3AArray%28DBAny%29-instance-method">#</a>
+        <a class="method-permalink" href="#sql_args:Array(DBAny)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1963,7 +1964,7 @@
         
         def <strong>to_s</strong>(io : IO)
 
-        <a class="method-permalink" href="#to_s%28io%3AIO%29-instance-method">#</a>
+        <a class="method-permalink" href="#to_s(io:IO)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1974,12 +1975,13 @@
           
           <p>Appends a short String representation of this object
 which includes its class name and its object address.</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">Person</span>
   <span class="k">def</span> <span class="m">initialize</span>(@name : <span class="t">String</span>, @age : <span class="t">Int32</span>)
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="t">Person</span>.new(<span class="s">&quot;John&quot;</span>, <span class="n">32</span>).to_s <span class="c"># =&gt; #&lt;Person:0x10a199f20&gt;</span></code></pre>
+<span class="t">Person</span>.<span class="k">new</span>(<span class="s">&quot;John&quot;</span>, <span class="n">32</span>).to_s <span class="c"># =&gt; #&lt;Person:0x10a199f20&gt;</span></code></pre>
         </div>
       
       <br/>

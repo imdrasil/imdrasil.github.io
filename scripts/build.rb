@@ -10,14 +10,15 @@ require_relative "site"
 require_relative "project"
 require_relative "jennifer"
 
-repo = ARGV[-1]
-opts = ARGV.getopts('', 'doc:', 'exclude:')
+repo = ARGV[-1] || 'all'
+opts = ARGV.getopts('', 'doc:', 'exclude:', 'only:')
+
 # puts ARGV
 # puts opts
 doc_build_command = opts['doc']
 doc_build_command = "crystal doc" if doc_build_command.nil? || doc_build_command.empty?
 skip_versions = opts['exclude']
-skip_versions = ""  if skip_versions.nil?
+only_versions = opts['only']
 
 site = Site.new(user: "imdrasil", target_dir: "src")
 
@@ -45,7 +46,11 @@ projects =
     supported_projects
   else
     project = supported_projects.find { |project| project.name == repo }
-    project.skip_versions.concat(skip_versions.split(','))
+    if only_versions
+      project.only_versions = only_versions.split(',')
+    elsif skip_versions
+      project.skip_versions.concat(skip_versions.split(','))
+    end
     [project]
   end
 

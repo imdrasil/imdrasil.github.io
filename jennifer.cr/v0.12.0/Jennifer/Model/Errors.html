@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1285,7 +1285,9 @@
   </h2>
 
   <p>Container that you can include in your object for handling error messages.</p>
+
 <p>An example of a minimal implementation could be:</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">Post</span>
   <span class="k">include</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Translation</span>
 
@@ -1293,7 +1295,7 @@
   getter errors
 
   <span class="k">def</span> <span class="m">initialize</span>
-    @errors <span class="o">=</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Errors</span>.new(<span class="k">self</span>)
+    @errors <span class="o">=</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Errors</span>.<span class="k">new</span>(<span class="k">self</span>)
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="m">validate</span>
@@ -1304,6 +1306,7 @@
 
   <span class="k">def</span> <span class="m">self</span>.superclass; <span class="k">end</span>
 <span class="k">end</span></code></pre>
+
 <p>The last method in the described class is required to be implemented to allow Jennifer::Model::Errors to
 correctly work with class translation lookup. <code>nil</code> return value presents that class has no lookup.</p>
 
@@ -1352,7 +1355,7 @@ correctly work with class translation lookup. <code>nil</code> return value pres
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28base%3AJennifer%3A%3AModel%3A%3ATranslation%29-class-method" class="signature"><strong>.new</strong>(base : Jennifer::Model::Translation)</a>
+        <a href="#new(base)-class-method" class="signature"><strong>.new</strong>(base)</a>
         
       </li>
     
@@ -1373,36 +1376,36 @@ correctly work with class translation lookup. <code>nil</code> return value pres
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#%5B%5D%28attribute%3ASymbol%29-instance-method" class="signature"><strong>#[]</strong>(attribute : Symbol)</a>
+        <a href="#[](attribute:Symbol)-instance-method" class="signature"><strong>#[]</strong>(attribute : Symbol)</a>
         
           <div class="summary"><p>When passed a symbol or a name of a method, returns an array of errors for the method.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%5B%5D%3F%28attribute%3ASymbol%29-instance-method" class="signature"><strong>#[]?</strong>(attribute : Symbol)</a>
+        <a href="#[]?(attribute:Symbol)-instance-method" class="signature"><strong>#[]?</strong>(attribute : Symbol)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#add%28attribute%3ASymbol%2Cmessage%3AString%7CSymbol%3D%3Ainvalid%2Ccount%3AInt%3F%3Dnil%2Coptions%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, count : Int? = <span class="n">nil</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> <span class="o">=&gt;</span> <span class="t">String</span>)</a>
+        <a href="#add(attribute:Symbol,message:String%7CSymbol=:invalid,count:Int?=nil,options:Hash=%7B%7DofString=%3EString)-instance-method" class="signature"><strong>#add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, count : Int? = <span class="n">nil</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
         
           <div class="summary"><p>Adds <code>message</code> to the error messages and used validator type to <code>details</code> on <code>attribute</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#add%28attribute%3ASymbol%2Cmessage%3AString%7CSymbol%3D%3Ainvalid%2Coptions%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> <span class="o">=&gt;</span> <span class="t">String</span>)</a>
+        <a href="#add(attribute:Symbol,message:String%7CSymbol=:invalid,options:Hash=%7B%7DofString=%3EString)-instance-method" class="signature"><strong>#add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#any%3F-instance-method" class="signature"><strong>#any?</strong></a>
+        <a href="#any?-instance-method" class="signature"><strong>#any?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#blank%3F-instance-method" class="signature"><strong>#blank?</strong></a>
+        <a href="#blank?-instance-method" class="signature"><strong>#blank?</strong></a>
         
           <div class="summary"><p>Returns if object is <em>blank</em> one - empty (or whitespaced) string, empty array, empty hash, <code>nil</code> or <code>false</code>.</p></div>
         
@@ -1423,28 +1426,28 @@ correctly work with class translation lookup. <code>nil</code> return value pres
       </li>
     
       <li class="entry-summary">
-        <a href="#delete%28key%3ASymbol%29-instance-method" class="signature"><strong>#delete</strong>(key : Symbol)</a>
+        <a href="#delete(key:Symbol)-instance-method" class="signature"><strong>#delete</strong>(key : Symbol)</a>
         
           <div class="summary"><p>Delete messages for <code>key</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#each%28%26%29-instance-method" class="signature"><strong>#each</strong>(&)</a>
+        <a href="#each(&)-instance-method" class="signature"><strong>#each</strong>(&)</a>
         
           <div class="summary"><p>Iterates through each error key, value pair in the error messages hash.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#empty%3F-instance-method" class="signature"><strong>#empty?</strong></a>
+        <a href="#empty?-instance-method" class="signature"><strong>#empty?</strong></a>
         
           <div class="summary"><p>Returns <code>true</code> if no errors are found, <code>false</code> otherwise.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#full_message%28attribute%3ASymbol%2Cmessage%3AString%29-instance-method" class="signature"><strong>#full_message</strong>(attribute : Symbol, message : String)</a>
+        <a href="#full_message(attribute:Symbol,message:String)-instance-method" class="signature"><strong>#full_message</strong>(attribute : Symbol, message : String)</a>
         
           <div class="summary"><p>Returns a full message for a given attribute.</p></div>
         
@@ -1458,33 +1461,33 @@ correctly work with class translation lookup. <code>nil</code> return value pres
       </li>
     
       <li class="entry-summary">
-        <a href="#full_messages_for%28attribute%3ASymbol%29-instance-method" class="signature"><strong>#full_messages_for</strong>(attribute : Symbol)</a>
+        <a href="#full_messages_for(attribute:Symbol)-instance-method" class="signature"><strong>#full_messages_for</strong>(attribute : Symbol)</a>
         
           <div class="summary"><p>Returns all the full error messages for a given attribute in an array.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#generate_message%28attribute%3ASymbol%2Cmessage%3ASymbol%2Ccount%2Coptions%3AHash%29-instance-method" class="signature"><strong>#generate_message</strong>(attribute : Symbol, message : Symbol, count, options : Hash)</a>
+        <a href="#generate_message(attribute:Symbol,message:Symbol,count,options:Hash)-instance-method" class="signature"><strong>#generate_message</strong>(attribute : Symbol, message : Symbol, count, options : Hash)</a>
         
           <div class="summary"><p>Translates an error message in its default scope</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#generate_message%28attribute%3ASymbol%2Cmessage%3AString%2Ccount%2Coptions%3AHash%29-instance-method" class="signature"><strong>#generate_message</strong>(attribute : Symbol, message : String, count, options : Hash)</a>
+        <a href="#generate_message(attribute:Symbol,message:String,count,options:Hash)-instance-method" class="signature"><strong>#generate_message</strong>(attribute : Symbol, message : String, count, options : Hash)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#include%3F%28attribute%3ASymbol%29-instance-method" class="signature"><strong>#include?</strong>(attribute : Symbol)</a>
+        <a href="#include?(attribute:Symbol)-instance-method" class="signature"><strong>#include?</strong>(attribute : Symbol)</a>
         
           <div class="summary"><p>Returns whether error messages include an error for the given key <code>attribute</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#inspect%28io%29%3ANil-instance-method" class="signature"><strong>#inspect</strong>(io) : Nil</a>
+        <a href="#inspect(io):Nil-instance-method" class="signature"><strong>#inspect</strong>(io) : Nil</a>
         
       </li>
     
@@ -1554,12 +1557,12 @@ correctly work with class translation lookup. <code>nil</code> return value pres
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(base:Jennifer::Model::Translation)-class-method">
+    <div class="entry-detail" id="new(base)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(base : <a href="../../Jennifer/Model/Translation.html">Jennifer::Model::Translation</a>)
+        def self.<strong>new</strong>(base)
 
-        <a class="method-permalink" href="#new%28base%3AJennifer%3A%3AModel%3A%3ATranslation%29-class-method">#</a>
+        <a class="method-permalink" href="#new(base)-class-method">#</a>
       </div>
       
       <br/>
@@ -1589,7 +1592,7 @@ correctly work with class translation lookup. <code>nil</code> return value pres
         
         def <strong>[]</strong>(attribute : Symbol)
 
-        <a class="method-permalink" href="#%5B%5D%28attribute%3ASymbol%29-instance-method">#</a>
+        <a class="method-permalink" href="#[](attribute:Symbol)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1611,7 +1614,7 @@ for the method.</p>
         
         def <strong>[]?</strong>(attribute : Symbol)
 
-        <a class="method-permalink" href="#%5B%5D%3F%28attribute%3ASymbol%29-instance-method">#</a>
+        <a class="method-permalink" href="#[]?(attribute:Symbol)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1625,14 +1628,15 @@ for the method.</p>
     <div class="entry-detail" id="add(attribute:Symbol,message:String|Symbol=:invalid,count:Int?=nil,options:Hash={}ofString=&gt;String)-instance-method">
       <div class="signature">
         
-        def <strong>add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, count : Int? = <span class="n">nil</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> <span class="o">=&gt;</span> <span class="t">String</span>)
+        def <strong>add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, count : Int? = <span class="n">nil</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
-        <a class="method-permalink" href="#add%28attribute%3ASymbol%2Cmessage%3AString%7CSymbol%3D%3Ainvalid%2Ccount%3AInt%3F%3Dnil%2Coptions%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#add(attribute:Symbol,message:String%7CSymbol=:invalid,count:Int?=nil,options:Hash=%7B%7DofString=%3EString)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds <code>message</code> to the error messages and used validator type to <code>details</code> on <code>attribute</code>.</p>
+
 <p>More than one error can be added to the same <code>attribute</code>.
 If no <code>message</code> is supplied, <code>:invalid</code> is assumed.</p>
         </div>
@@ -1648,9 +1652,9 @@ If no <code>message</code> is supplied, <code>:invalid</code> is assumed.</p>
     <div class="entry-detail" id="add(attribute:Symbol,message:String|Symbol=:invalid,options:Hash={}ofString=&gt;String)-instance-method">
       <div class="signature">
         
-        def <strong>add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> <span class="o">=&gt;</span> <span class="t">String</span>)
+        def <strong>add</strong>(attribute : Symbol, message : String | Symbol = <span class="n">:invalid</span>, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
-        <a class="method-permalink" href="#add%28attribute%3ASymbol%2Cmessage%3AString%7CSymbol%3D%3Ainvalid%2Coptions%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#add(attribute:Symbol,message:String%7CSymbol=:invalid,options:Hash=%7B%7DofString=%3EString)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1666,7 +1670,7 @@ If no <code>message</code> is supplied, <code>:invalid</code> is assumed.</p>
         
         def <strong>any?</strong>
 
-        <a class="method-permalink" href="#any%3F-instance-method">#</a>
+        <a class="method-permalink" href="#any?-instance-method">#</a>
       </div>
       
       <br/>
@@ -1682,7 +1686,7 @@ If no <code>message</code> is supplied, <code>:invalid</code> is assumed.</p>
         
         def <strong>blank?</strong>
 
-        <a class="method-permalink" href="#blank%3F-instance-method">#</a>
+        <a class="method-permalink" href="#blank?-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1749,7 +1753,7 @@ If no <code>message</code> is supplied, <code>:invalid</code> is assumed.</p>
         
         def <strong>delete</strong>(key : Symbol)
 
-        <a class="method-permalink" href="#delete%28key%3ASymbol%29-instance-method">#</a>
+        <a class="method-permalink" href="#delete(key:Symbol)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1770,12 +1774,13 @@ If no <code>message</code> is supplied, <code>:invalid</code> is assumed.</p>
         
         def <strong>each</strong>(&)
 
-        <a class="method-permalink" href="#each%28%26%29-instance-method">#</a>
+        <a class="method-permalink" href="#each(&)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Iterates through each error key, value pair in the error messages hash.</p>
+
 <p>Yields the attribute and the error for that attribute. If the attribute
 has more than one error message, yields once for each error message.</p>
         </div>
@@ -1793,7 +1798,7 @@ has more than one error message, yields once for each error message.</p>
         
         def <strong>empty?</strong>
 
-        <a class="method-permalink" href="#empty%3F-instance-method">#</a>
+        <a class="method-permalink" href="#empty?-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1815,7 +1820,7 @@ If the error message is a string it can be empty.</p>
         
         def <strong>full_message</strong>(attribute : Symbol, message : String)
 
-        <a class="method-permalink" href="#full_message%28attribute%3ASymbol%2Cmessage%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#full_message(attribute:Symbol,message:String)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1857,7 +1862,7 @@ If the error message is a string it can be empty.</p>
         
         def <strong>full_messages_for</strong>(attribute : Symbol)
 
-        <a class="method-permalink" href="#full_messages_for%28attribute%3ASymbol%29-instance-method">#</a>
+        <a class="method-permalink" href="#full_messages_for(attribute:Symbol)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1878,7 +1883,7 @@ If the error message is a string it can be empty.</p>
         
         def <strong>generate_message</strong>(attribute : Symbol, message : Symbol, count, options : Hash)
 
-        <a class="method-permalink" href="#generate_message%28attribute%3ASymbol%2Cmessage%3ASymbol%2Ccount%2Coptions%3AHash%29-instance-method">#</a>
+        <a class="method-permalink" href="#generate_message(attribute:Symbol,message:Symbol,count,options:Hash)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1899,7 +1904,7 @@ If the error message is a string it can be empty.</p>
         
         def <strong>generate_message</strong>(attribute : Symbol, message : String, count, options : Hash)
 
-        <a class="method-permalink" href="#generate_message%28attribute%3ASymbol%2Cmessage%3AString%2Ccount%2Coptions%3AHash%29-instance-method">#</a>
+        <a class="method-permalink" href="#generate_message(attribute:Symbol,message:String,count,options:Hash)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1915,7 +1920,7 @@ If the error message is a string it can be empty.</p>
         
         def <strong>include?</strong>(attribute : Symbol)
 
-        <a class="method-permalink" href="#include%3F%28attribute%3ASymbol%29-instance-method">#</a>
+        <a class="method-permalink" href="#include?(attribute:Symbol)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1936,7 +1941,7 @@ If the error message is a string it can be empty.</p>
         
         def <strong>inspect</strong>(io) : Nil
 
-        <a class="method-permalink" href="#inspect%28io%29%3ANil-instance-method">#</a>
+        <a class="method-permalink" href="#inspect(io):Nil-instance-method">#</a>
       </div>
       
       <br/>

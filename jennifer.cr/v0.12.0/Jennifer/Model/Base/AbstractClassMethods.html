@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1345,28 +1345,28 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#field_count%3AInt32-instance-method" class="signature"><strong>#field_count</strong> : Int32</a>
+        <a href="#field_count:Int32-instance-method" class="signature"><strong>#field_count</strong> : Int32</a>
         
           <div class="summary"><p>Returns number of model's fields.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#field_names%3AArray%28String%29-instance-method" class="signature"><strong>#field_names</strong> : Array(String)</a>
+        <a href="#field_names:Array(String)-instance-method" class="signature"><strong>#field_names</strong> : Array(String)</a>
         
           <div class="summary"><p>Returns array of field names.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28values%3AHash%7CNamedTuple%29-instance-method" class="signature"><strong>#new</strong>(values : Hash | NamedTuple)</a>
+        <a href="#new(values:Hash%7CNamedTuple)-instance-method" class="signature"><strong>#new</strong>(values : Hash | NamedTuple)</a>
         
           <div class="summary"><p>Instantiate new object base on given <em>values</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#primary_auto_incrementable%3F-instance-method" class="signature"><strong>#primary_auto_incrementable?</strong></a>
+        <a href="#primary_auto_incrementable?-instance-method" class="signature"><strong>#primary_auto_incrementable?</strong></a>
         
           <div class="summary"><p>Returns whether primary field is autoincrementable.</p></div>
         
@@ -1423,6 +1423,7 @@
         <div class="doc">
           
           <p>Returns model's column metadata.</p>
+
 <p>The metadata is a result of processing attributes passed to <code>.mapping</code> macro.</p>
         </div>
       
@@ -1439,7 +1440,7 @@
         abstract 
         def <strong>field_count</strong> : Int32
 
-        <a class="method-permalink" href="#field_count%3AInt32-instance-method">#</a>
+        <a class="method-permalink" href="#field_count:Int32-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1460,7 +1461,7 @@
         abstract 
         def <strong>field_names</strong> : Array(String)
 
-        <a class="method-permalink" href="#field_names%3AArray%28String%29-instance-method">#</a>
+        <a class="method-permalink" href="#field_names:Array(String)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1481,19 +1482,21 @@
         abstract 
         def <strong>new</strong>(values : Hash | NamedTuple)
 
-        <a class="method-permalink" href="#new%28values%3AHash%7CNamedTuple%29-instance-method">#</a>
+        <a class="method-permalink" href="#new(values:Hash%7CNamedTuple)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Instantiate new object base on given <em>values</em>.</p>
+
 <p><code>after_initialize</code> callbacks are called after an object is initialized.</p>
-<pre><code class="language-crystal"><span class="t">Contact</span>.new({ <span class="s">&quot;name&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;Jennifer&quot;</span> })
-<span class="t">Contact</span>.new({ <span class="n">:name</span> <span class="o">=&gt;</span> <span class="s">&quot;Jennifer&quot;</span> })
-<span class="t">Contact</span>.new({ name: <span class="s">&quot;Jennifer&quot;</span> })
-<span class="t">Contact</span>.new(<span class="n">:name</span>: <span class="s">&quot;Jennifer&quot;</span>})
+
+<pre><code class="language-crystal"><span class="t">Contact</span>.<span class="k">new</span>({ <span class="s">&quot;name&quot;</span> => <span class="s">&quot;Jennifer&quot;</span> })
+<span class="t">Contact</span>.<span class="k">new</span>({ <span class="n">:name</span> => <span class="s">&quot;Jennifer&quot;</span> })
+<span class="t">Contact</span>.<span class="k">new</span>({ name: <span class="s">&quot;Jennifer&quot;</span> })
+<span class="t">Contact</span>.<span class="k">new</span>(<span class="n">:name</span>: <span class="s">&quot;Jennifer&quot;</span>})
 <span class="c"># only in a case when all Contact&#39;s fields are nillable or with default values</span>
-<span class="t">Contact</span>.new</code></pre>
+<span class="t">Contact</span>.<span class="k">new</span></code></pre>
         </div>
       
       <br/>
@@ -1509,7 +1512,7 @@
         abstract 
         def <strong>primary_auto_incrementable?</strong>
 
-        <a class="method-permalink" href="#primary_auto_incrementable%3F-instance-method">#</a>
+        <a class="method-permalink" href="#primary_auto_incrementable?-instance-method">#</a>
       </div>
       
         <div class="doc">

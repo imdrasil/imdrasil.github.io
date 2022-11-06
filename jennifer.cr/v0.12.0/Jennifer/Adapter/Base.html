@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1366,7 +1366,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28config%3AConfig%29-class-method" class="signature"><strong>.new</strong>(config : Config)</a>
+        <a href="#new(config:Config)-class-method" class="signature"><strong>.new</strong>(config : Config)</a>
         
       </li>
     
@@ -1385,33 +1385,33 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#foreign_key_name%28from_table%2Cto_table%3Dnil%2Ccolumn%3Dnil%2Cname%3AString%3F%3Dnil%29%3AString-class-method" class="signature"><strong>.foreign_key_name</strong>(from_table, to_table = <span class="n">nil</span>, column = <span class="n">nil</span>, name : String? = <span class="n">nil</span>) : String</a>
+        <a href="#foreign_key_name(from_table,to_table=nil,column=nil,name:String?=nil):String-class-method" class="signature"><strong>.foreign_key_name</strong>(from_table, to_table = <span class="n">nil</span>, column = <span class="n">nil</span>, name : String? = <span class="n">nil</span>) : String</a>
         
           <div class="summary"><p>Generates foreign key name for given tables.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#join_table_name%28table1%3AString%7CSymbol%2Ctable2%3AString%7CSymbol%29-class-method" class="signature"><strong>.join_table_name</strong>(table1 : String | Symbol, table2 : String | Symbol)</a>
+        <a href="#join_table_name(table1:String%7CSymbol,table2:String%7CSymbol)-class-method" class="signature"><strong>.join_table_name</strong>(table1 : String | Symbol, table2 : String | Symbol)</a>
         
           <div class="summary"><p>Generates name for join table.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#t%28field%3ANil%29-class-method" class="signature"><strong>.t</strong>(field : Nil)</a>
+        <a href="#t(field:Nil)-class-method" class="signature"><strong>.t</strong>(field : Nil)</a>
         
           <div class="summary"><p>filter out value; should be refactored</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#t%28field%3AString%29-class-method" class="signature"><strong>.t</strong>(field : String)</a>
+        <a href="#t(field:String)-class-method" class="signature"><strong>.t</strong>(field : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#t%28field%29-class-method" class="signature"><strong>.t</strong>(field)</a>
+        <a href="#t(field)-class-method" class="signature"><strong>.t</strong>(field)</a>
         
       </li>
     
@@ -1430,17 +1430,17 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#bulk_insert%28table%3AString%2Cfields%3AArray%28String%29%2Cvalues%3AArray%28ArgsType%29%29-instance-method" class="signature"><strong>#bulk_insert</strong>(table : String, fields : Array(String), values : Array(ArgsType))</a>
+        <a href="#bulk_insert(table:String,fields:Array(String),values:Array(ArgsType))-instance-method" class="signature"><strong>#bulk_insert</strong>(table : String, fields : Array(String), values : Array(ArgsType))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#bulk_insert%28collection%3AArray%28Model%3A%3ABase%29%29-instance-method" class="signature"><strong>#bulk_insert</strong>(collection : Array(Model::Base))</a>
+        <a href="#bulk_insert(collection:Array(Model::Base))-instance-method" class="signature"><strong>#bulk_insert</strong>(collection : Array(Model::Base))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#column_exists%3F%28table%2Cname%29-instance-method" class="signature"><strong>#column_exists?</strong>(table, name)</a>
+        <a href="#column_exists?(table,name)-instance-method" class="signature"><strong>#column_exists?</strong>(table, name)</a>
         
           <div class="summary"><p>Returns whether column of <em>table</em> with <em>name</em> exists.</p></div>
         
@@ -1452,17 +1452,17 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#config%3AConfig-instance-method" class="signature"><strong>#config</strong> : Config</a>
+        <a href="#config:Config-instance-method" class="signature"><strong>#config</strong> : Config</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#connection_string%28type%3AConnectionType%29-instance-method" class="signature"><strong>#connection_string</strong>(type : ConnectionType)</a>
+        <a href="#connection_string(type:ConnectionType)-instance-method" class="signature"><strong>#connection_string</strong>(type : ConnectionType)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#count%28query%3AQueryBuilder%3A%3AQuery%29-instance-method" class="signature"><strong>#count</strong>(query : QueryBuilder::Query)</a>
+        <a href="#count(query:QueryBuilder::Query)-instance-method" class="signature"><strong>#count</strong>(query : QueryBuilder::Query)</a>
         
       </li>
     
@@ -1472,29 +1472,29 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#database_exists%3F-instance-method" class="signature"><strong>#database_exists?</strong></a>
+        <a href="#database_exists?-instance-method" class="signature"><strong>#database_exists?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#db%3ADB%3A%3ADatabase-instance-method" class="signature"><strong>#db</strong> : DB::Database</a>
+        <a href="#db:DB::Database-instance-method" class="signature"><strong>#db</strong> : DB::Database</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#db_connection%28%26%29-instance-method" class="signature"><strong>#db_connection</strong>(&)</a>
+        <a href="#db_connection(&)-instance-method" class="signature"><strong>#db_connection</strong>(&)</a>
         
           <div class="summary"><p>Yields to block connection to the database main schema.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#default_type_size%28name%29-instance-method" class="signature"><strong>#default_type_size</strong>(name)</a>
+        <a href="#default_type_size(name)-instance-method" class="signature"><strong>#default_type_size</strong>(name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete%28query%3AQueryBuilder%3A%3AQuery%29-instance-method" class="signature"><strong>#delete</strong>(query : QueryBuilder::Query)</a>
+        <a href="#delete(query:QueryBuilder::Query)-instance-method" class="signature"><strong>#delete</strong>(query : QueryBuilder::Query)</a>
         
       </li>
     
@@ -1504,22 +1504,22 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#exec%28query%3AString%2Cargs%3AArgsType%3D%5B%5DofDBAny%29%3ADB%3A%3AExecResult-instance-method" class="signature"><strong>#exec</strong>(query : String, args : ArgsType = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>) : DB::ExecResult</a>
+        <a href="#exec(query:String,args:ArgsType=[]ofDBAny):DB::ExecResult-instance-method" class="signature"><strong>#exec</strong>(query : String, args : ArgsType = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>) : DB::ExecResult</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#exists%3F%28query%3AQueryBuilder%3A%3AQuery%29%3ABool-instance-method" class="signature"><strong>#exists?</strong>(query : QueryBuilder::Query) : Bool</a>
+        <a href="#exists?(query:QueryBuilder::Query):Bool-instance-method" class="signature"><strong>#exists?</strong>(query : QueryBuilder::Query) : Bool</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#explain%28q%29-instance-method" class="signature"><strong>#explain</strong>(q)</a>
+        <a href="#explain(q)-instance-method" class="signature"><strong>#explain</strong>(q)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#foreign_key_exists%3F%28from_table%2Cto_table%3Dnil%2Ccolumn%3Dnil%2Cname%3AString%3F%3Dnil%29%3ABool-instance-method" class="signature"><strong>#foreign_key_exists?</strong>(from_table, to_table = <span class="n">nil</span>, column = <span class="n">nil</span>, name : String? = <span class="n">nil</span>) : Bool</a>
+        <a href="#foreign_key_exists?(from_table,to_table=nil,column=nil,name:String?=nil):Bool-instance-method" class="signature"><strong>#foreign_key_exists?</strong>(from_table, to_table = <span class="n">nil</span>, column = <span class="n">nil</span>, name : String? = <span class="n">nil</span>) : Bool</a>
         
           <div class="summary"><p>Checks to see if a foreign key exists on a table for a given foreign key definition.</p></div>
         
@@ -1531,19 +1531,19 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#index_exists%3F%28table%2Cfields%3AArray%29-instance-method" class="signature"><strong>#index_exists?</strong>(table, fields : Array)</a>
+        <a href="#index_exists?(table,fields:Array)-instance-method" class="signature"><strong>#index_exists?</strong>(table, fields : Array)</a>
         
           <div class="summary"><p>Returns whether index for the *table` with <em>name</em> or <em>fields</em> exists.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#index_exists%3F%28table%2Cname%3AString%29-instance-method" class="signature"><strong>#index_exists?</strong>(table, name : String)</a>
+        <a href="#index_exists?(table,name:String)-instance-method" class="signature"><strong>#index_exists?</strong>(table, name : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#insert%28obj%3AModel%3A%3ABase%29-instance-method" class="signature"><strong>#insert</strong>(obj : Model::Base)</a>
+        <a href="#insert(obj:Model::Base)-instance-method" class="signature"><strong>#insert</strong>(obj : Model::Base)</a>
         
       </li>
     
@@ -1553,12 +1553,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#log_query%28query%3AString%2Cargs%3AEnumerable%2C%26%29-instance-method" class="signature"><strong>#log_query</strong>(query : String, args : Enumerable, &)</a>
+        <a href="#log_query(query:String,args:Enumerable,&)-instance-method" class="signature"><strong>#log_query</strong>(query : String, args : Enumerable, &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#log_query%28query%3AString%2C%26%29-instance-method" class="signature"><strong>#log_query</strong>(query : String, &)</a>
+        <a href="#log_query(query:String,&)-instance-method" class="signature"><strong>#log_query</strong>(query : String, &)</a>
         
       </li>
     
@@ -1568,12 +1568,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#parse_query%28q%3AString%2Cargs%3AArgsType%29-instance-method" class="signature"><strong>#parse_query</strong>(q : String, args : ArgsType)</a>
+        <a href="#parse_query(q:String,args:ArgsType)-instance-method" class="signature"><strong>#parse_query</strong>(q : String, args : ArgsType)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#parse_query%28q%3AString%29-instance-method" class="signature"><strong>#parse_query</strong>(q : String)</a>
+        <a href="#parse_query(q:String)-instance-method" class="signature"><strong>#parse_query</strong>(q : String)</a>
         
       </li>
     
@@ -1583,27 +1583,27 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#query%28query%3AString%2Cargs%3AArgsType%3D%5B%5DofDBAny%2C%26%29-instance-method" class="signature"><strong>#query</strong>(query : String, args : ArgsType = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>, &)</a>
+        <a href="#query(query:String,args:ArgsType=[]ofDBAny,&)-instance-method" class="signature"><strong>#query</strong>(query : String, args : ArgsType = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>, &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#query_array%28_query%3AString%2Cklass%3AT.class%2Cfield_count%3AInt32%3D1%29forallT-instance-method" class="signature"><strong>#query_array</strong>(_query : String, klass : <span class="t">T</span>.<span class="k">class</span>, field_count : Int32 = <span class="n">1</span>) forall T</a>
+        <a href="#query_array(_query:String,klass:T.class,field_count:Int32=1)forallT-instance-method" class="signature"><strong>#query_array</strong>(_query : String, klass : <span class="t">T</span>.<span class="k">class</span>, field_count : Int32 = <span class="n">1</span>) forall T</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#ready_to_migrate%21-instance-method" class="signature"><strong>#ready_to_migrate!</strong></a>
+        <a href="#ready_to_migrate!-instance-method" class="signature"><strong>#ready_to_migrate!</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#refresh_materialized_view%28name%29-instance-method" class="signature"><strong>#refresh_materialized_view</strong>(name)</a>
+        <a href="#refresh_materialized_view(name)-instance-method" class="signature"><strong>#refresh_materialized_view</strong>(name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#scalar%28query%3AString%2Cargs%3AArgsType%3D%5B%5DofDBAny%29-instance-method" class="signature"><strong>#scalar</strong>(query : String, args : ArgsType = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>)</a>
+        <a href="#scalar(query:String,args:ArgsType=[]ofDBAny)-instance-method" class="signature"><strong>#scalar</strong>(query : String, args : ArgsType = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>)</a>
         
       </li>
     
@@ -1618,58 +1618,58 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#table_column_count%28table%29-instance-method" class="signature"><strong>#table_column_count</strong>(table)</a>
+        <a href="#table_column_count(table)-instance-method" class="signature"><strong>#table_column_count</strong>(table)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#table_exists%3F%28table%29-instance-method" class="signature"><strong>#table_exists?</strong>(table)</a>
+        <a href="#table_exists?(table)-instance-method" class="signature"><strong>#table_exists?</strong>(table)</a>
         
           <div class="summary"><p>Returns where table with given <em>table</em> name exists.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#tables_column_count%28tables%3AArray%28String%29%29-instance-method" class="signature"><strong>#tables_column_count</strong>(tables : Array(String))</a>
+        <a href="#tables_column_count(tables:Array(String))-instance-method" class="signature"><strong>#tables_column_count</strong>(tables : Array(String))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#translate_type%28name%29-instance-method" class="signature"><strong>#translate_type</strong>(name)</a>
+        <a href="#translate_type(name)-instance-method" class="signature"><strong>#translate_type</strong>(name)</a>
         
           <div class="summary"><p>Translates symbol data type name to database-specific data type.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#truncate%28klass%3AClass%29-instance-method" class="signature"><strong>#truncate</strong>(klass : Class)</a>
+        <a href="#truncate(klass:Class)-instance-method" class="signature"><strong>#truncate</strong>(klass : Class)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#truncate%28table_name%3AString%29-instance-method" class="signature"><strong>#truncate</strong>(table_name : String)</a>
+        <a href="#truncate(table_name:String)-instance-method" class="signature"><strong>#truncate</strong>(table_name : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#upsert%28table%3AString%2Cfields%3AArray%28String%29%2Cvalues%3AArray%28ArgsType%29%2Cunique_fields%3AArray%2Con_conflict%3AHash%29-instance-method" class="signature"><strong>#upsert</strong>(table : String, fields : Array(String), values : Array(ArgsType), unique_fields : Array, on_conflict : Hash)</a>
+        <a href="#upsert(table:String,fields:Array(String),values:Array(ArgsType),unique_fields:Array,on_conflict:Hash)-instance-method" class="signature"><strong>#upsert</strong>(table : String, fields : Array(String), values : Array(ArgsType), unique_fields : Array, on_conflict : Hash)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#upsert%28collection%3AArray%28Model%3A%3ABase%29%2Cunique_fields%3AArray%2Cdefinition%3AHash%3D%7B%7DofNil%3D%3ENil%29-instance-method" class="signature"><strong>#upsert</strong>(collection : Array(Model::Base), unique_fields : Array, definition : Hash = {} <span class="k">of</span> <span class="t">Nil</span> <span class="o">=&gt;</span> <span class="t">Nil</span>)</a>
+        <a href="#upsert(collection:Array(Model::Base),unique_fields:Array,definition:Hash=%7B%7DofNil=%3ENil)-instance-method" class="signature"><strong>#upsert</strong>(collection : Array(Model::Base), unique_fields : Array, definition : Hash = {} <span class="k">of</span> <span class="t">Nil</span> => <span class="t">Nil</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#view_exists%3F%28name%29%3ABool-instance-method" class="signature"><strong>#view_exists?</strong>(name) : Bool</a>
+        <a href="#view_exists?(name):Bool-instance-method" class="signature"><strong>#view_exists?</strong>(name) : Bool</a>
         
           <div class="summary"><p>Check whether view with given <em>name</em> exists.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#with_table_lock%28table%3AString%2Ctype%3AString%3D%22default%22%2C%26block%3ADB%3A%3ATransaction-%3EVoid%29-instance-method" class="signature"><strong>#with_table_lock</strong>(table : String, type : String = <span class="s">&quot;default&quot;</span>, &block : DB::Transaction -> Void)</a>
+        <a href="#with_table_lock(table:String,type:String=%22default%22,&block:DB::Transaction-%3EVoid)-instance-method" class="signature"><strong>#with_table_lock</strong>(table : String, type : String = <span class="s">&quot;default&quot;</span>, &block : DB::Transaction -> Void)</a>
         
       </li>
     
@@ -1686,17 +1686,17 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/Adapter/ResultParsers.html">Jennifer::Adapter::ResultParsers</a></code></h3>
   
   
-    <a href="../../Jennifer/Adapter/ResultParsers.html#read_column%28rs%2Ccolumn%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/ResultParsers.html#read_column(rs,column)-instance-method" class="tooltip">
       <span>read_column(rs, column)</span>
     read_column</a>, 
     
   
-    <a href="../../Jennifer/Adapter/ResultParsers.html#result_to_array_by_names%28rs%2Cnames%3AArray%28String%29%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/ResultParsers.html#result_to_array_by_names(rs,names:Array(String))-instance-method" class="tooltip">
       <span>result_to_array_by_names(rs, names : Array(String))</span>
     result_to_array_by_names</a>, 
     
   
-    <a href="../../Jennifer/Adapter/ResultParsers.html#result_to_hash%28rs%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/ResultParsers.html#result_to_hash(rs)-instance-method" class="tooltip">
       <span>result_to_hash(rs)</span>
     result_to_hash</a>
     
@@ -1730,32 +1730,32 @@
     rollback_transaction</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Transactions.html#subscribe_on_commit%28block%3A-%3EBool%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/Transactions.html#subscribe_on_commit(block:-%3EBool)-instance-method" class="tooltip">
       <span>subscribe_on_commit(block :  -> Bool)</span>
     subscribe_on_commit</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Transactions.html#subscribe_on_rollback%28block%3A-%3EBool%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/Transactions.html#subscribe_on_rollback(block:-%3EBool)-instance-method" class="tooltip">
       <span>subscribe_on_rollback(block :  -> Bool)</span>
     subscribe_on_rollback</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Transactions.html#transaction%28%26%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/Transactions.html#transaction(&)-instance-method" class="tooltip">
       <span>transaction(&)</span>
     transaction</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Transactions.html#under_transaction%3F-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/Transactions.html#under_transaction?-instance-method" class="tooltip">
       <span>under_transaction?</span>
     under_transaction?</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Transactions.html#with_connection%28%26%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/Transactions.html#with_connection(&)-instance-method" class="tooltip">
       <span>with_connection(&)</span>
     with_connection</a>, 
     
   
-    <a href="../../Jennifer/Adapter/Transactions.html#with_manual_connection%28%26%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/Transactions.html#with_manual_connection(&)-instance-method" class="tooltip">
       <span>with_manual_connection(&)</span>
     with_manual_connection</a>
     
@@ -1806,7 +1806,7 @@
         
         def self.<strong>new</strong>(config : <a href="../../Jennifer/Config.html">Config</a>)
 
-        <a class="method-permalink" href="#new%28config%3AConfig%29-class-method">#</a>
+        <a class="method-permalink" href="#new(config:Config)-class-method">#</a>
       </div>
       
       <br/>
@@ -1834,7 +1834,7 @@
         
         def self.<strong>foreign_key_name</strong>(from_table, to_table = <span class="n">nil</span>, column = <span class="n">nil</span>, name : String? = <span class="n">nil</span>) : String
 
-        <a class="method-permalink" href="#foreign_key_name%28from_table%2Cto_table%3Dnil%2Ccolumn%3Dnil%2Cname%3AString%3F%3Dnil%29%3AString-class-method">#</a>
+        <a class="method-permalink" href="#foreign_key_name(from_table,to_table=nil,column=nil,name:String?=nil):String-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1855,7 +1855,7 @@
         
         def self.<strong>join_table_name</strong>(table1 : String | Symbol, table2 : String | Symbol)
 
-        <a class="method-permalink" href="#join_table_name%28table1%3AString%7CSymbol%2Ctable2%3AString%7CSymbol%29-class-method">#</a>
+        <a class="method-permalink" href="#join_table_name(table1:String%7CSymbol,table2:String%7CSymbol)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1876,7 +1876,7 @@
         
         def self.<strong>t</strong>(field : Nil)
 
-        <a class="method-permalink" href="#t%28field%3ANil%29-class-method">#</a>
+        <a class="method-permalink" href="#t(field:Nil)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1897,7 +1897,7 @@
         
         def self.<strong>t</strong>(field : String)
 
-        <a class="method-permalink" href="#t%28field%3AString%29-class-method">#</a>
+        <a class="method-permalink" href="#t(field:String)-class-method">#</a>
       </div>
       
       <br/>
@@ -1913,7 +1913,7 @@
         
         def self.<strong>t</strong>(field)
 
-        <a class="method-permalink" href="#t%28field%29-class-method">#</a>
+        <a class="method-permalink" href="#t(field)-class-method">#</a>
       </div>
       
       <br/>
@@ -1941,7 +1941,7 @@
         
         def <strong>bulk_insert</strong>(table : String, fields : Array(String), values : Array(<a href="../../Jennifer/Adapter/Base/ArgsType.html">ArgsType</a>))
 
-        <a class="method-permalink" href="#bulk_insert%28table%3AString%2Cfields%3AArray%28String%29%2Cvalues%3AArray%28ArgsType%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#bulk_insert(table:String,fields:Array(String),values:Array(ArgsType))-instance-method">#</a>
       </div>
       
       <br/>
@@ -1957,7 +1957,7 @@
         
         def <strong>bulk_insert</strong>(collection : Array(<a href="../../Jennifer/Model/Base.html">Model::Base</a>))
 
-        <a class="method-permalink" href="#bulk_insert%28collection%3AArray%28Model%3A%3ABase%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#bulk_insert(collection:Array(Model::Base))-instance-method">#</a>
       </div>
       
       <br/>
@@ -1973,12 +1973,13 @@
         abstract 
         def <strong>column_exists?</strong>(table, name)
 
-        <a class="method-permalink" href="#column_exists%3F%28table%2Cname%29-instance-method">#</a>
+        <a class="method-permalink" href="#column_exists?(table,name)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns whether column of <em>table</em> with <em>name</em> exists.</p>
+
 <pre><code class="language-crystal"><span class="c"># Check a column exists</span>
 column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)</code></pre>
         </div>
@@ -2012,7 +2013,7 @@ column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)<
         
         def <strong>config</strong> : <a href="../../Jennifer/Config.html">Config</a>
 
-        <a class="method-permalink" href="#config%3AConfig-instance-method">#</a>
+        <a class="method-permalink" href="#config:Config-instance-method">#</a>
       </div>
       
       <br/>
@@ -2028,7 +2029,7 @@ column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)<
         
         def <strong>connection_string</strong>(type : <a href="../../Jennifer/Adapter/Base/ConnectionType.html">ConnectionType</a>)
 
-        <a class="method-permalink" href="#connection_string%28type%3AConnectionType%29-instance-method">#</a>
+        <a class="method-permalink" href="#connection_string(type:ConnectionType)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2044,7 +2045,7 @@ column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)<
         
         def <strong>count</strong>(query : <a href="../../Jennifer/QueryBuilder/Query.html">QueryBuilder::Query</a>)
 
-        <a class="method-permalink" href="#count%28query%3AQueryBuilder%3A%3AQuery%29-instance-method">#</a>
+        <a class="method-permalink" href="#count(query:QueryBuilder::Query)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2076,7 +2077,7 @@ column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)<
         
         def <strong>database_exists?</strong>
 
-        <a class="method-permalink" href="#database_exists%3F-instance-method">#</a>
+        <a class="method-permalink" href="#database_exists?-instance-method">#</a>
       </div>
       
       <br/>
@@ -2092,7 +2093,7 @@ column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)<
         
         def <strong>db</strong> : DB::Database
 
-        <a class="method-permalink" href="#db%3ADB%3A%3ADatabase-instance-method">#</a>
+        <a class="method-permalink" href="#db:DB::Database-instance-method">#</a>
       </div>
       
       <br/>
@@ -2108,7 +2109,7 @@ column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)<
         
         def <strong>db_connection</strong>(&)
 
-        <a class="method-permalink" href="#db_connection%28%26%29-instance-method">#</a>
+        <a class="method-permalink" href="#db_connection(&)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2129,7 +2130,7 @@ column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)<
         abstract 
         def <strong>default_type_size</strong>(name)
 
-        <a class="method-permalink" href="#default_type_size%28name%29-instance-method">#</a>
+        <a class="method-permalink" href="#default_type_size(name)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2145,7 +2146,7 @@ column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)<
         
         def <strong>delete</strong>(query : <a href="../../Jennifer/QueryBuilder/Query.html">QueryBuilder::Query</a>)
 
-        <a class="method-permalink" href="#delete%28query%3AQueryBuilder%3A%3AQuery%29-instance-method">#</a>
+        <a class="method-permalink" href="#delete(query:QueryBuilder::Query)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2177,7 +2178,7 @@ column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)<
         
         def <strong>exec</strong>(query : String, args : <a href="../../Jennifer/Adapter/Base/ArgsType.html">ArgsType</a> = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>) : DB::ExecResult
 
-        <a class="method-permalink" href="#exec%28query%3AString%2Cargs%3AArgsType%3D%5B%5DofDBAny%29%3ADB%3A%3AExecResult-instance-method">#</a>
+        <a class="method-permalink" href="#exec(query:String,args:ArgsType=[]ofDBAny):DB::ExecResult-instance-method">#</a>
       </div>
       
       <br/>
@@ -2193,7 +2194,7 @@ column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)<
         
         def <strong>exists?</strong>(query : <a href="../../Jennifer/QueryBuilder/Query.html">QueryBuilder::Query</a>) : Bool
 
-        <a class="method-permalink" href="#exists%3F%28query%3AQueryBuilder%3A%3AQuery%29%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#exists?(query:QueryBuilder::Query):Bool-instance-method">#</a>
       </div>
       
       <br/>
@@ -2209,7 +2210,7 @@ column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)<
         abstract 
         def <strong>explain</strong>(q)
 
-        <a class="method-permalink" href="#explain%28q%29-instance-method">#</a>
+        <a class="method-permalink" href="#explain(q)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2225,12 +2226,13 @@ column_exists?(<span class="n">:suppliers</span>, <span class="n">:name</span>)<
         abstract 
         def <strong>foreign_key_exists?</strong>(from_table, to_table = <span class="n">nil</span>, column = <span class="n">nil</span>, name : String? = <span class="n">nil</span>) : Bool
 
-        <a class="method-permalink" href="#foreign_key_exists%3F%28from_table%2Cto_table%3Dnil%2Ccolumn%3Dnil%2Cname%3AString%3F%3Dnil%29%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#foreign_key_exists?(from_table,to_table=nil,column=nil,name:String?=nil):Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Checks to see if a foreign key exists on a table for a given foreign key definition.</p>
+
 <pre><code class="language-crystal"><span class="c"># Checks to see if a foreign key exists.</span>
 adapter.foreign_key_exists?(<span class="n">:accounts</span>, <span class="n">:branches</span>)
 
@@ -2270,12 +2272,13 @@ adapter.foreign_key_exists?(<span class="n">:accounts</span>, name: <span class=
         
         def <strong>index_exists?</strong>(table, fields : Array)
 
-        <a class="method-permalink" href="#index_exists%3F%28table%2Cfields%3AArray%29-instance-method">#</a>
+        <a class="method-permalink" href="#index_exists?(table,fields:Array)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns whether index for the *table` with <em>name</em> or <em>fields</em> exists.</p>
+
 <pre><code class="language-crystal"><span class="c"># Check an index exists</span>
 adapter.index_exists?(<span class="n">:suppliers</span>, <span class="n">:company_id</span>)
 
@@ -2299,7 +2302,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         abstract 
         def <strong>index_exists?</strong>(table, name : String)
 
-        <a class="method-permalink" href="#index_exists%3F%28table%2Cname%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#index_exists?(table,name:String)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2315,7 +2318,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         abstract 
         def <strong>insert</strong>(obj : <a href="../../Jennifer/Model/Base.html">Model::Base</a>)
 
-        <a class="method-permalink" href="#insert%28obj%3AModel%3A%3ABase%29-instance-method">#</a>
+        <a class="method-permalink" href="#insert(obj:Model::Base)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2347,7 +2350,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         
         def <strong>log_query</strong>(query : String, args : Enumerable, &)
 
-        <a class="method-permalink" href="#log_query%28query%3AString%2Cargs%3AEnumerable%2C%26%29-instance-method">#</a>
+        <a class="method-permalink" href="#log_query(query:String,args:Enumerable,&)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2363,7 +2366,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         
         def <strong>log_query</strong>(query : String, &)
 
-        <a class="method-permalink" href="#log_query%28query%3AString%2C%26%29-instance-method">#</a>
+        <a class="method-permalink" href="#log_query(query:String,&)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2395,7 +2398,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         
         def <strong>parse_query</strong>(q : String, args : <a href="../../Jennifer/Adapter/Base/ArgsType.html">ArgsType</a>)
 
-        <a class="method-permalink" href="#parse_query%28q%3AString%2Cargs%3AArgsType%29-instance-method">#</a>
+        <a class="method-permalink" href="#parse_query(q:String,args:ArgsType)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2411,7 +2414,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         
         def <strong>parse_query</strong>(q : String)
 
-        <a class="method-permalink" href="#parse_query%28q%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#parse_query(q:String)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2443,7 +2446,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         
         def <strong>query</strong>(query : String, args : <a href="../../Jennifer/Adapter/Base/ArgsType.html">ArgsType</a> = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>, &)
 
-        <a class="method-permalink" href="#query%28query%3AString%2Cargs%3AArgsType%3D%5B%5DofDBAny%2C%26%29-instance-method">#</a>
+        <a class="method-permalink" href="#query(query:String,args:ArgsType=[]ofDBAny,&)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2459,7 +2462,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         
         def <strong>query_array</strong>(_query : String, klass : <span class="t">T</span>.<span class="k">class</span>, field_count : Int32 = <span class="n">1</span>) forall T
 
-        <a class="method-permalink" href="#query_array%28_query%3AString%2Cklass%3AT.class%2Cfield_count%3AInt32%3D1%29forallT-instance-method">#</a>
+        <a class="method-permalink" href="#query_array(_query:String,klass:T.class,field_count:Int32=1)forallT-instance-method">#</a>
       </div>
       
       <br/>
@@ -2475,7 +2478,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         
         def <strong>ready_to_migrate!</strong>
 
-        <a class="method-permalink" href="#ready_to_migrate%21-instance-method">#</a>
+        <a class="method-permalink" href="#ready_to_migrate!-instance-method">#</a>
       </div>
       
       <br/>
@@ -2491,7 +2494,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         
         def <strong>refresh_materialized_view</strong>(name)
 
-        <a class="method-permalink" href="#refresh_materialized_view%28name%29-instance-method">#</a>
+        <a class="method-permalink" href="#refresh_materialized_view(name)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2507,7 +2510,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         
         def <strong>scalar</strong>(query : String, args : <a href="../../Jennifer/Adapter/Base/ArgsType.html">ArgsType</a> = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>)
 
-        <a class="method-permalink" href="#scalar%28query%3AString%2Cargs%3AArgsType%3D%5B%5DofDBAny%29-instance-method">#</a>
+        <a class="method-permalink" href="#scalar(query:String,args:ArgsType=[]ofDBAny)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2555,7 +2558,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         abstract 
         def <strong>table_column_count</strong>(table)
 
-        <a class="method-permalink" href="#table_column_count%28table%29-instance-method">#</a>
+        <a class="method-permalink" href="#table_column_count(table)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2571,12 +2574,13 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         abstract 
         def <strong>table_exists?</strong>(table)
 
-        <a class="method-permalink" href="#table_exists%3F%28table%29-instance-method">#</a>
+        <a class="method-permalink" href="#table_exists?(table)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns where table with given <em>table</em> name exists.</p>
+
 <pre><code class="language-crystal">adapter.table_exists?(<span class="n">:developers</span>)</code></pre>
         </div>
       
@@ -2593,7 +2597,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         abstract 
         def <strong>tables_column_count</strong>(tables : Array(String))
 
-        <a class="method-permalink" href="#tables_column_count%28tables%3AArray%28String%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#tables_column_count(tables:Array(String))-instance-method">#</a>
       </div>
       
       <br/>
@@ -2609,7 +2613,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         abstract 
         def <strong>translate_type</strong>(name)
 
-        <a class="method-permalink" href="#translate_type%28name%29-instance-method">#</a>
+        <a class="method-permalink" href="#translate_type(name)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2630,7 +2634,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         
         def <strong>truncate</strong>(klass : Class)
 
-        <a class="method-permalink" href="#truncate%28klass%3AClass%29-instance-method">#</a>
+        <a class="method-permalink" href="#truncate(klass:Class)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2646,7 +2650,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         
         def <strong>truncate</strong>(table_name : String)
 
-        <a class="method-permalink" href="#truncate%28table_name%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#truncate(table_name:String)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2662,7 +2666,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         
         def <strong>upsert</strong>(table : String, fields : Array(String), values : Array(<a href="../../Jennifer/Adapter/Base/ArgsType.html">ArgsType</a>), unique_fields : Array, on_conflict : Hash)
 
-        <a class="method-permalink" href="#upsert%28table%3AString%2Cfields%3AArray%28String%29%2Cvalues%3AArray%28ArgsType%29%2Cunique_fields%3AArray%2Con_conflict%3AHash%29-instance-method">#</a>
+        <a class="method-permalink" href="#upsert(table:String,fields:Array(String),values:Array(ArgsType),unique_fields:Array,on_conflict:Hash)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2676,9 +2680,9 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
     <div class="entry-detail" id="upsert(collection:Array(Model::Base),unique_fields:Array,definition:Hash={}ofNil=&gt;Nil)-instance-method">
       <div class="signature">
         
-        def <strong>upsert</strong>(collection : Array(<a href="../../Jennifer/Model/Base.html">Model::Base</a>), unique_fields : Array, definition : Hash = {} <span class="k">of</span> <span class="t">Nil</span> <span class="o">=&gt;</span> <span class="t">Nil</span>)
+        def <strong>upsert</strong>(collection : Array(<a href="../../Jennifer/Model/Base.html">Model::Base</a>), unique_fields : Array, definition : Hash = {} <span class="k">of</span> <span class="t">Nil</span> => <span class="t">Nil</span>)
 
-        <a class="method-permalink" href="#upsert%28collection%3AArray%28Model%3A%3ABase%29%2Cunique_fields%3AArray%2Cdefinition%3AHash%3D%7B%7DofNil%3D%3ENil%29-instance-method">#</a>
+        <a class="method-permalink" href="#upsert(collection:Array(Model::Base),unique_fields:Array,definition:Hash=%7B%7DofNil=%3ENil)-instance-method">#</a>
       </div>
       
       <br/>
@@ -2694,12 +2698,13 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         abstract 
         def <strong>view_exists?</strong>(name) : Bool
 
-        <a class="method-permalink" href="#view_exists%3F%28name%29%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#view_exists?(name):Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Check whether view with given <em>name</em> exists.</p>
+
 <pre><code class="language-crystal">adapter.view_exists?(<span class="n">:youth_contacts</span>)</code></pre>
         </div>
       
@@ -2716,7 +2721,7 @@ adapter.index_exists?(<span class="n">:suppliers</span>, <span class="s">&quot;i
         abstract 
         def <strong>with_table_lock</strong>(table : String, type : String = <span class="s">&quot;default&quot;</span>, &block : DB::Transaction -> Void)
 
-        <a class="method-permalink" href="#with_table_lock%28table%3AString%2Ctype%3AString%3D%22default%22%2C%26block%3ADB%3A%3ATransaction-%3EVoid%29-instance-method">#</a>
+        <a class="method-permalink" href="#with_table_lock(table:String,type:String=%22default%22,&block:DB::Transaction-%3EVoid)-instance-method">#</a>
       </div>
       
       <br/>

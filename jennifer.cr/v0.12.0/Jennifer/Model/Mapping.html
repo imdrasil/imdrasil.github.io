@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1283,26 +1283,19 @@
   </h2>
 
   <p>Contains macros to define model mapping.</p>
-<p>To define model mapping use <code><a href="../../Jennifer/Model/Mapping.html#mapping%28%2A%2Aproperties%29-macro">.mapping</a></code> macro. It accepts hash, tuple and splatted tuple,
+
+<p>To define model mapping use <code><a href="../../Jennifer/Model/Mapping.html#mapping(**properties)-macro">.mapping</a></code> macro. It accepts hash, tuple and splatted tuple,
 where keys are model attributes (they reflects column names but this can be overided) and values -
 mapping properties. Mapping value can be <code>Class</code>, <code>HashLiteral</code>, <code>NamedTupleLiteral</code> or constant
 that can be resolved as <code>HashLiteral</code> or <code>NamedTupleLiteral</code>.</p>
+
 <p>Available mapping properties:</p>
-<ul>
-<li><code>:type</code> - data type class (e.g. <code>Int32</code>);</li>
-<li><code>:primary</code> - whether field is primary - at least one file of a model must be primary;</li>
-<li><code>:null</code> - whether field is nillable; another way to define this is specify <code>type</code> as union with
-the second <code>Nil</code> (e.g. <code>Int32?</code>);</li>
-<li><code>:default</code> - attribute default value that is assigned when new object is created and no value
-is specified;</li>
-<li><code>:column</code> - database column name associated with this attribute (default is attribute name);</li>
-<li><code>:getter</code> - whether attribute reader should be generated (<code>true</code> by default);</li>
-<li><code>:setter</code> - whether attribute writer should be generated (<code>true</code> by default);</li>
-<li><code>:virtual</code> - whether attribute is virtual (will not be stored to / retrieved from database);</li>
-<li><code>:converter</code> - class to be used to serialize/deserialize data.</li>
-<li><code>:auto</code> - mark primary key as autoincrementable - it's value will be assigned by database automatically
-(<code>true</code> for <code>Int32</code> &amp; <code>Int64</code>)</li>
-</ul>
+
+<ul><li><code>:type</code> - data type class (e.g. <code>Int32</code>);</li><li><code>:primary</code> - whether field is primary - at least one file of a model must be primary;</li><li><code>:null</code> - whether field is nillable; another way to define this is specify <code>type</code> as union with
+the second <code>Nil</code> (e.g. <code>Int32?</code>);</li><li><code>:default</code> - attribute default value that is assigned when new object is created and no value
+is specified;</li><li><code>:column</code> - database column name associated with this attribute (default is attribute name);</li><li><code>:getter</code> - whether attribute reader should be generated (<code>true</code> by default);</li><li><code>:setter</code> - whether attribute writer should be generated (<code>true</code> by default);</li><li><code>:virtual</code> - whether attribute is virtual (will not be stored to / retrieved from database);</li><li><code>:converter</code> - class to be used to serialize/deserialize data.</li><li><code>:auto</code> - mark primary key as autoincrementable - it's value will be assigned by database automatically
+(<code>true</code> for <code>Int32</code> & <code>Int64</code>)</li></ul>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">Contact</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   with_timestamps
   mapping(
@@ -1315,30 +1308,37 @@ is specified;</li>
     updated_at: <span class="t">Time</span> <span class="o">|</span> <span class="t">Nil</span>
   )
 <span class="k">end</span></code></pre>
+
 <h3><a id="mapping-type" class="anchor" href="#mapping-type">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Mapping type</h3>
+
 <p>Constants used as a <code>:type</code> value and presents subset of mapping properties are called <strong>mapping type</strong>.
 To use them you should firstly register it</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">ApplicationRecord</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   <span class="t">EmptyString</span> <span class="o">=</span> {
     <span class="k">type</span>:    <span class="t">String</span>,
     default: <span class="s">&quot;&quot;</span>,
   }
 
-  <span class="o">{%</span> <span class="t">TYPES</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;EmptyString&quot;</span> <span class="o">%}</span>
+  {% <span class="t">TYPES</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;EmptyString&quot;</span> %}
   <span class="c"># or if this is outside of model or view scope</span>
-  <span class="o">{%</span> <span class="t">::</span><span class="t">Jennifer</span><span class="t">::</span><span class="t">Macros</span><span class="t">::</span><span class="t">TYPES</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;EmptyString&quot;</span> <span class="o">%}</span>
+  {% <span class="t">::</span><span class="t">Jennifer</span><span class="t">::</span><span class="t">Macros</span><span class="t">::</span><span class="t">TYPES</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;EmptyString&quot;</span> %}
 <span class="k">end</span></code></pre>
+
 <p>For more details about exiting mapping types see <code><a href="../../Jennifer/Macros.html">Macros</a></code> and <code><a href="../../Jennifer/Model/Authentication.html">Authentication</a></code>.</p>
+
 <h3><a id="inheritance" class="anchor" href="#inheritance">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Inheritance</h3>
+
 <p>Mapping also can be specified in abstract super class to be shared with all subclass models</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">ApplicationRecord</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   mapping(
     id: <span class="t">Primary32</span>
@@ -1350,7 +1350,9 @@ To use them you should firstly register it</p>
     name: <span class="t">String</span>
   )
 <span class="k">end</span></code></pre>
+
 <p>Or inside of a module</p>
+
 <pre><code class="language-crystal"><span class="k">module</span> <span class="t">SharedMapping</span>
   <span class="k">include</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Mapping</span>
 
@@ -1366,16 +1368,20 @@ To use them you should firstly register it</p>
     email: <span class="t">String</span>
   )
 <span class="k">end</span></code></pre>
-<p><code><a href="../../Jennifer/Model/Mapping.html#mapping%28%2A%2Aproperties%29-macro">.mapping</a></code> can be used only once per module/class definition. If class has no field to be added after
-inheritance or module inclusion - place <code><a href="../../Jennifer/Model/Mapping.html#mapping%28%2A%2Aproperties%29-macro">.mapping</a></code> without any argument.</p>
+
+<p><code><a href="../../Jennifer/Model/Mapping.html#mapping(**properties)-macro">.mapping</a></code> can be used only once per module/class definition. If class has no field to be added after
+inheritance or module inclusion - place <code><a href="../../Jennifer/Model/Mapping.html#mapping(**properties)-macro">.mapping</a></code> without any argument.</p>
+
 <h3><a id="sti" class="anchor" href="#sti">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>STI</h3>
+
 <p>For single table inheritance just define define parent non-abstract class with all common fields and
 <code>type: String</code> extra field and inherit from it. Any class inherited from non-abstract model automatically
-behaves in scope of &quot;single table inheritance&quot;.</p>
+behaves in scope of "single table inheritance".</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">Profile</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   mapping(
     id: <span class="t">Primary32</span>,
@@ -1474,7 +1480,7 @@ behaves in scope of &quot;single table inheritance&quot;.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#attribute_metadata%28name%3AString%7CSymbol%29-instance-method" class="signature"><strong>#attribute_metadata</strong>(name : String | Symbol)</a>
+        <a href="#attribute_metadata(name:String%7CSymbol)-instance-method" class="signature"><strong>#attribute_metadata</strong>(name : String | Symbol)</a>
         
       </li>
     
@@ -1493,14 +1499,14 @@ behaves in scope of &quot;single table inheritance&quot;.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#mapping%28properties%2Cstrict%3Dtrue%29-macro" class="signature"><strong>mapping</strong>(properties, strict = <span class="n">true</span>)</a>
+        <a href="#mapping(properties,strict=true)-macro" class="signature"><strong>mapping</strong>(properties, strict = <span class="n">true</span>)</a>
         
           <div class="summary"><p>Defines model mapping.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mapping%28%2A%2Aproperties%29-macro" class="signature"><strong>mapping</strong>(**properties)</a>
+        <a href="#mapping(**properties)-macro" class="signature"><strong>mapping</strong>(**properties)</a>
         
           <div class="summary"><p>Defines model mapping.</p></div>
         
@@ -1553,7 +1559,7 @@ behaves in scope of &quot;single table inheritance&quot;.</p>
         
         def <strong>attribute_metadata</strong>(name : String | Symbol)
 
-        <a class="method-permalink" href="#attribute_metadata%28name%3AString%7CSymbol%29-instance-method">#</a>
+        <a class="method-permalink" href="#attribute_metadata(name:String%7CSymbol)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1581,24 +1587,17 @@ behaves in scope of &quot;single table inheritance&quot;.</p>
         
         macro <strong>mapping</strong>(properties, strict = <span class="n">true</span>)
 
-        <a class="method-permalink" href="#mapping%28properties%2Cstrict%3Dtrue%29-macro">#</a>
+        <a class="method-permalink" href="#mapping(properties,strict=true)-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Defines model mapping.</p>
+
 <p>Acceptable keys:</p>
-<ul>
-<li>type</li>
-<li>getter</li>
-<li>setter</li>
-<li>null</li>
-<li>primary</li>
-<li>virtual</li>
-<li>default</li>
-<li>converter</li>
-<li>column</li>
-</ul>
+
+<ul><li>type</li><li>getter</li><li>setter</li><li>null</li><li>primary</li><li>virtual</li><li>default</li><li>converter</li><li>column</li></ul>
+
 <p>For more details see <code><a href="../../Jennifer/Model/Mapping.html">Mapping</a></code> module documentation.</p>
         </div>
       
@@ -1615,24 +1614,17 @@ behaves in scope of &quot;single table inheritance&quot;.</p>
         
         macro <strong>mapping</strong>(**properties)
 
-        <a class="method-permalink" href="#mapping%28%2A%2Aproperties%29-macro">#</a>
+        <a class="method-permalink" href="#mapping(**properties)-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Defines model mapping.</p>
+
 <p>Acceptable keys:</p>
-<ul>
-<li>type</li>
-<li>getter</li>
-<li>setter</li>
-<li>null</li>
-<li>primary</li>
-<li>virtual</li>
-<li>default</li>
-<li>converter</li>
-<li>column</li>
-</ul>
+
+<ul><li>type</li><li>getter</li><li>setter</li><li>null</li><li>primary</li><li>virtual</li><li>default</li><li>converter</li><li>column</li></ul>
+
 <p>For more details see <code><a href="../../Jennifer/Model/Mapping.html">Mapping</a></code> module documentation.</p>
         </div>
       

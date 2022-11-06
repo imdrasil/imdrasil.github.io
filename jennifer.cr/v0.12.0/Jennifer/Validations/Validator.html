@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1285,15 +1285,18 @@
   </h2>
 
   <p>Base validation class.</p>
+
 <p>Take into account that Validator implement singleton pattern. This means that
 only one instance of each validator will be created cross the application. As a result #validate
 method should be pure.</p>
+
 <p>To implement own validator just inherit and define #validate class, which accepts <em>record</em> as a first
 argument</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">CustomValidator</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Validations</span><span class="t">::</span><span class="t">Validator</span>
   <span class="k">def</span> <span class="m">validate</span>(record, field, message <span class="o">=</span> <span class="n">nil</span>)
     <span class="k">if</span> record.attribute(field) <span class="o">==</span> <span class="s">&quot;invalid&quot;</span>
-      record.errors.add(field, message <span class="o">||</span> <span class="s">&quot;blank&quot;</span>)
+      record.errors.add(field, message || <span class="s">&quot;blank&quot;</span>)
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span></code></pre>
@@ -1393,12 +1396,12 @@ argument</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#blank_validation%28record%2Cfield%2Cvalue%2Callow_blank%29-instance-method" class="signature"><strong>#blank_validation</strong>(record, field, value, allow_blank)</a>
+        <a href="#blank_validation(record,field,value,allow_blank)-instance-method" class="signature"><strong>#blank_validation</strong>(record, field, value, allow_blank)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#validate%28record%2C%2A%2Aopts%29-instance-method" class="signature"><strong>#validate</strong>(record, **opts)</a>
+        <a href="#validate(record,**opts)-instance-method" class="signature"><strong>#validate</strong>(record, **opts)</a>
         
           <div class="summary"><p>Validates given <em>record</em> based on <em>args</em> and <em>opts</em>.</p></div>
         
@@ -1419,7 +1422,7 @@ argument</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#with_blank_validation%28record%2Cfield%2Cvalue%2Callow_blank%29-macro" class="signature"><strong>with_blank_validation</strong>(record, field, value, allow_blank)</a>
+        <a href="#with_blank_validation(record,field,value,allow_blank)-macro" class="signature"><strong>with_blank_validation</strong>(record, field, value, allow_blank)</a>
         
       </li>
     
@@ -1470,7 +1473,7 @@ argument</p>
         
         def <strong>blank_validation</strong>(record, field, value, allow_blank)
 
-        <a class="method-permalink" href="#blank_validation%28record%2Cfield%2Cvalue%2Callow_blank%29-instance-method">#</a>
+        <a class="method-permalink" href="#blank_validation(record,field,value,allow_blank)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1486,7 +1489,7 @@ argument</p>
         abstract 
         def <strong>validate</strong>(record, **opts)
 
-        <a class="method-permalink" href="#validate%28record%2C%2A%2Aopts%29-instance-method">#</a>
+        <a class="method-permalink" href="#validate(record,**opts)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1519,7 +1522,7 @@ argument</p>
         
         macro <strong>with_blank_validation</strong>(record, field, value, allow_blank)
 
-        <a class="method-permalink" href="#with_blank_validation%28record%2Cfield%2Cvalue%2Callow_blank%29-macro">#</a>
+        <a class="method-permalink" href="#with_blank_validation(record,field,value,allow_blank)-macro">#</a>
       </div>
       
       <br/>

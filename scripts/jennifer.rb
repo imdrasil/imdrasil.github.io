@@ -1,6 +1,6 @@
 class Jennifer < Project
   def initialize
-    super(name: "jennifer.cr", doc_builder: "sh generate-docs.sh")
+    super(name: "jennifer.cr", doc_builder: "sh generate-docs.sh", skip_versions: %w[v0.10.0])
   end
 
   def process_after_deploy

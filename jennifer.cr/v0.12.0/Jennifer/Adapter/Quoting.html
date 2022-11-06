@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1323,7 +1323,7 @@
       
     
       <dt class="entry-const" id="STRING_QUOTING_PATTERNS">
-        <strong>STRING_QUOTING_PATTERNS</strong> = <code>{<span class="s">&#39;\\&#39;</span> <span class="o">=&gt;</span> <span class="s">&quot;\\\\&quot;</span>, <span class="s">&#39;\&#39;&#39;</span> <span class="o">=&gt;</span> <span class="s">&quot;&#39;&#39;&quot;</span>, <span class="s">&#39;&quot;&#39;</span> <span class="o">=&gt;</span> <span class="s">&quot;\\\&quot;&quot;</span>}</code>
+        <strong>STRING_QUOTING_PATTERNS</strong> = <code>{<span class="s">&#39;\\&#39;</span> => <span class="s">&quot;\\\\&quot;</span>, <span class="s">&#39;\&#39;&#39;</span> => <span class="s">&quot;&#39;&#39;&quot;</span>, <span class="s">&#39;&quot;&#39;</span> => <span class="s">&quot;\\\&quot;&quot;</span>}</code>
       </dt>
       
     
@@ -1346,7 +1346,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#escape_string%28size%3AInt32%29-instance-method" class="signature"><strong>#escape_string</strong>(size : Int32)</a>
+        <a href="#escape_string(size:Int32)-instance-method" class="signature"><strong>#escape_string</strong>(size : Int32)</a>
         
       </li>
     
@@ -1356,93 +1356,93 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#filter_out%28arg%3AArray%2Csingle%3ABool%3Dtrue%29-instance-method" class="signature"><strong>#filter_out</strong>(arg : Array, single : Bool = <span class="n">true</span>)</a>
+        <a href="#filter_out(arg:Array,single:Bool=true)-instance-method" class="signature"><strong>#filter_out</strong>(arg : Array, single : Bool = <span class="n">true</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#filter_out%28arg%3AQueryBuilder%3A%3ASQLNode%29-instance-method" class="signature"><strong>#filter_out</strong>(arg : QueryBuilder::SQLNode)</a>
+        <a href="#filter_out(arg:QueryBuilder::SQLNode)-instance-method" class="signature"><strong>#filter_out</strong>(arg : QueryBuilder::SQLNode)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#filter_out%28arg%29-instance-method" class="signature"><strong>#filter_out</strong>(arg)</a>
+        <a href="#filter_out(arg)-instance-method" class="signature"><strong>#filter_out</strong>(arg)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote%28value%3AString%29-instance-method" class="signature"><strong>#quote</strong>(value : String)</a>
+        <a href="#quote(value:String)-instance-method" class="signature"><strong>#quote</strong>(value : String)</a>
         
           <div class="summary"><p>Quotes the column value to help prevent -[SQL injection attacks][https://en.wikipedia.org/wiki/SQL_injection].</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote%28value%3ANil%29-instance-method" class="signature"><strong>#quote</strong>(value : Nil)</a>
+        <a href="#quote(value:Nil)-instance-method" class="signature"><strong>#quote</strong>(value : Nil)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote%28value%3ABool%29-instance-method" class="signature"><strong>#quote</strong>(value : Bool)</a>
+        <a href="#quote(value:Bool)-instance-method" class="signature"><strong>#quote</strong>(value : Bool)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote%28value%3AInt%7CFloat%7CUInt32%29-instance-method" class="signature"><strong>#quote</strong>(value : Int | Float | UInt32)</a>
+        <a href="#quote(value:Int%7CFloat%7CUInt32)-instance-method" class="signature"><strong>#quote</strong>(value : Int | Float | UInt32)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote%28value%3AChar%29-instance-method" class="signature"><strong>#quote</strong>(value : Char)</a>
+        <a href="#quote(value:Char)-instance-method" class="signature"><strong>#quote</strong>(value : Char)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote%28value%3ATime%29-instance-method" class="signature"><strong>#quote</strong>(value : Time)</a>
+        <a href="#quote(value:Time)-instance-method" class="signature"><strong>#quote</strong>(value : Time)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote%28value%3ATime%3A%3ASpan%29-instance-method" class="signature"><strong>#quote</strong>(value : Time::Span)</a>
+        <a href="#quote(value:Time::Span)-instance-method" class="signature"><strong>#quote</strong>(value : Time::Span)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote%28value%3ASlice%28UInt8%29%29-instance-method" class="signature"><strong>#quote</strong>(value : Slice(UInt8))</a>
+        <a href="#quote(value:Slice(UInt8))-instance-method" class="signature"><strong>#quote</strong>(value : Slice(UInt8))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote%28value%3AJSON%3A%3AAny%29-instance-method" class="signature"><strong>#quote</strong>(value : JSON::Any)</a>
+        <a href="#quote(value:JSON::Any)-instance-method" class="signature"><strong>#quote</strong>(value : JSON::Any)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote%28value%29-instance-method" class="signature"><strong>#quote</strong>(value)</a>
+        <a href="#quote(value)-instance-method" class="signature"><strong>#quote</strong>(value)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote_identifier%28identifier%3AString%7CSymbol%29-instance-method" class="signature"><strong>#quote_identifier</strong>(identifier : String | Symbol)</a>
+        <a href="#quote_identifier(identifier:String%7CSymbol)-instance-method" class="signature"><strong>#quote_identifier</strong>(identifier : String | Symbol)</a>
         
           <div class="summary"><p>Quotes the given identifier according to the language specification to prevent overlappings with predefined keywords.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote_identifiers%28identifiers%29-instance-method" class="signature"><strong>#quote_identifiers</strong>(identifiers)</a>
+        <a href="#quote_identifiers(identifiers)-instance-method" class="signature"><strong>#quote_identifiers</strong>(identifiers)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote_json_string%28value%3AString%29-instance-method" class="signature"><strong>#quote_json_string</strong>(value : String)</a>
+        <a href="#quote_json_string(value:String)-instance-method" class="signature"><strong>#quote_json_string</strong>(value : String)</a>
         
           <div class="summary"><p>Quotes strings of JSON column value to help prevent -[SQL injection attacks][https://en.wikipedia.org/wiki/SQL_injection].</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote_table%28table%3AString%29-instance-method" class="signature"><strong>#quote_table</strong>(table : String)</a>
+        <a href="#quote_table(table:String)-instance-method" class="signature"><strong>#quote_table</strong>(table : String)</a>
         
           <div class="summary"><p>Quotes the given table name according to the language specification.</p></div>
         
@@ -1477,7 +1477,7 @@
         
         def <strong>escape_string</strong>(size : Int32)
 
-        <a class="method-permalink" href="#escape_string%28size%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#escape_string(size:Int32)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1509,7 +1509,7 @@
         
         def <strong>filter_out</strong>(arg : Array, single : Bool = <span class="n">true</span>)
 
-        <a class="method-permalink" href="#filter_out%28arg%3AArray%2Csingle%3ABool%3Dtrue%29-instance-method">#</a>
+        <a class="method-permalink" href="#filter_out(arg:Array,single:Bool=true)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1525,7 +1525,7 @@
         
         def <strong>filter_out</strong>(arg : <a href="../../Jennifer/QueryBuilder/SQLNode.html">QueryBuilder::SQLNode</a>)
 
-        <a class="method-permalink" href="#filter_out%28arg%3AQueryBuilder%3A%3ASQLNode%29-instance-method">#</a>
+        <a class="method-permalink" href="#filter_out(arg:QueryBuilder::SQLNode)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1541,7 +1541,7 @@
         
         def <strong>filter_out</strong>(arg)
 
-        <a class="method-permalink" href="#filter_out%28arg%29-instance-method">#</a>
+        <a class="method-permalink" href="#filter_out(arg)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1557,7 +1557,7 @@
         abstract 
         def <strong>quote</strong>(value : String)
 
-        <a class="method-permalink" href="#quote%28value%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote(value:String)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1578,7 +1578,7 @@
         
         def <strong>quote</strong>(value : Nil)
 
-        <a class="method-permalink" href="#quote%28value%3ANil%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote(value:Nil)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1594,7 +1594,7 @@
         
         def <strong>quote</strong>(value : Bool)
 
-        <a class="method-permalink" href="#quote%28value%3ABool%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote(value:Bool)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1610,7 +1610,7 @@
         
         def <strong>quote</strong>(value : Int | Float | UInt32)
 
-        <a class="method-permalink" href="#quote%28value%3AInt%7CFloat%7CUInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote(value:Int%7CFloat%7CUInt32)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1626,7 +1626,7 @@
         
         def <strong>quote</strong>(value : <a href="../../Char.html">Char</a>)
 
-        <a class="method-permalink" href="#quote%28value%3AChar%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote(value:Char)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1642,7 +1642,7 @@
         
         def <strong>quote</strong>(value : Time)
 
-        <a class="method-permalink" href="#quote%28value%3ATime%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote(value:Time)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1658,7 +1658,7 @@
         
         def <strong>quote</strong>(value : Time::Span)
 
-        <a class="method-permalink" href="#quote%28value%3ATime%3A%3ASpan%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote(value:Time::Span)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1674,7 +1674,7 @@
         
         def <strong>quote</strong>(value : <a href="../../Slice.html">Slice</a>(UInt8))
 
-        <a class="method-permalink" href="#quote%28value%3ASlice%28UInt8%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote(value:Slice(UInt8))-instance-method">#</a>
       </div>
       
       <br/>
@@ -1690,7 +1690,7 @@
         
         def <strong>quote</strong>(value : JSON::Any)
 
-        <a class="method-permalink" href="#quote%28value%3AJSON%3A%3AAny%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote(value:JSON::Any)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1706,7 +1706,7 @@
         
         def <strong>quote</strong>(value)
 
-        <a class="method-permalink" href="#quote%28value%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote(value)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1722,7 +1722,7 @@
         abstract 
         def <strong>quote_identifier</strong>(identifier : String | Symbol)
 
-        <a class="method-permalink" href="#quote_identifier%28identifier%3AString%7CSymbol%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote_identifier(identifier:String%7CSymbol)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1744,7 +1744,7 @@ keywords.</p>
         
         def <strong>quote_identifiers</strong>(identifiers)
 
-        <a class="method-permalink" href="#quote_identifiers%28identifiers%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote_identifiers(identifiers)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1760,7 +1760,7 @@ keywords.</p>
         
         def <strong>quote_json_string</strong>(value : String)
 
-        <a class="method-permalink" href="#quote_json_string%28value%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote_json_string(value:String)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1781,12 +1781,13 @@ keywords.</p>
         abstract 
         def <strong>quote_table</strong>(table : String)
 
-        <a class="method-permalink" href="#quote_table%28table%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#quote_table(table:String)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Quotes the given table name according to the language specification.</p>
+
 <p>Dot inside of name is allowed to specify schema name.</p>
         </div>
       

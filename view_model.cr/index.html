@@ -2,7 +2,7 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>ViewModel | Imdrasil Homebrew Stuff</title>
 <meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="ViewModel" />
@@ -12,10 +12,8 @@
 <link rel="canonical" href="https://imdrasil.github.io/view_model.cr/" />
 <meta property="og:url" content="https://imdrasil.github.io/view_model.cr/" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="ViewModel" />
 <script type="application/ld+json">
-{"headline":"ViewModel","description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/view_model.cr/","@context":"https://schema.org"}</script>
+{"url":"https://imdrasil.github.io/view_model.cr/","description":"Personal site","@type":"WebPage","headline":"ViewModel","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -127,14 +125,14 @@
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">SharedPartials</span>
   <span class="kp">include</span> <span class="no">ViewModel</span><span class="o">::</span><span class="no">Helpers</span>
 
-  <span class="k">def</span><span class="nf">_partial</span> <span class="n">button</span><span class="p">,</span> <span class="n">color</span>
+  <span class="n">def_partial</span> <span class="n">button</span><span class="p">,</span> <span class="n">color</span>
 <span class="k">end</span>
 
 <span class="k">module</span> <span class="nn">Posts</span>
   <span class="k">class</span> <span class="nc">ShowView</span> <span class="o">&lt;</span> <span class="no">ApplicationView</span>
     <span class="kp">include</span> <span class="no">SharedPartials</span>
 
-    <span class="k">def</span><span class="nf">_partial</span> <span class="n">body</span>
+    <span class="n">def_partial</span> <span class="n">body</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div></div>

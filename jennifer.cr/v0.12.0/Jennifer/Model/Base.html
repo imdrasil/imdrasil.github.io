@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1369,14 +1369,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#build%28values%3AHash%7CNamedTuple%2Cnew_record%3ABool%29-class-method" class="signature"><strong>.build</strong>(values : Hash | NamedTuple, new_record : Bool)</a>
+        <a href="#build(values:Hash%7CNamedTuple,new_record:Bool)-class-method" class="signature"><strong>.build</strong>(values : Hash | NamedTuple, new_record : Bool)</a>
         
           <div class="summary"><p>Initializes new object based on given arguments.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#build%28pull%3ADB%3A%3AResultSet%29-class-method" class="signature"><strong>.build</strong>(pull : DB::ResultSet)</a>
+        <a href="#build(pull:DB::ResultSet)-class-method" class="signature"><strong>.build</strong>(pull : DB::ResultSet)</a>
         
           <div class="summary"><p>Alias for <code>.new</code>.</p></div>
         
@@ -1388,7 +1388,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#create%28values%3AHash%7CNamedTuple%29-class-method" class="signature"><strong>.create</strong>(values : Hash | NamedTuple)</a>
+        <a href="#create(values:Hash%7CNamedTuple)-class-method" class="signature"><strong>.create</strong>(values : Hash | NamedTuple)</a>
         
           <div class="summary"><p>Creates an object based on given <code>values</code> and saves it to the database, if validation pass.</p></div>
         
@@ -1402,77 +1402,77 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#create%28%2A%2Avalues%29-class-method" class="signature"><strong>.create</strong>(**values)</a>
+        <a href="#create(**values)-class-method" class="signature"><strong>.create</strong>(**values)</a>
         
           <div class="summary"><p>Creates an object based on <code>values</code> and saves it to the database, if validation pass.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create%21%28values%3AHash%7CNamedTuple%29-class-method" class="signature"><strong>.create!</strong>(values : Hash | NamedTuple)</a>
+        <a href="#create!(values:Hash%7CNamedTuple)-class-method" class="signature"><strong>.create!</strong>(values : Hash | NamedTuple)</a>
         
           <div class="summary"><p>Creates an object based on <code>values</code> and saves it to the database, if validation pass.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create%21-class-method" class="signature"><strong>.create!</strong></a>
+        <a href="#create!-class-method" class="signature"><strong>.create!</strong></a>
         
           <div class="summary"><p>Creates an object based on empty hash and saves it to the database, if validation pass.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create%21%28%2A%2Avalues%29-class-method" class="signature"><strong>.create!</strong>(**values)</a>
+        <a href="#create!(**values)-class-method" class="signature"><strong>.create!</strong>(**values)</a>
         
           <div class="summary"><p>Creates an object based on <code>values</code> and saves it to the database, if validation pass.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete%28ids%3AArray%29-class-method" class="signature"><strong>.delete</strong>(ids : Array)</a>
+        <a href="#delete(ids:Array)-class-method" class="signature"><strong>.delete</strong>(ids : Array)</a>
         
           <div class="summary"><p>Deletes records by given ids.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete%28%2Aids%29-class-method" class="signature"><strong>.delete</strong>(*ids)</a>
+        <a href="#delete(*ids)-class-method" class="signature"><strong>.delete</strong>(*ids)</a>
         
           <div class="summary"><p>Deletes records by given ids.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#destroy%28ids%3AArray%29-class-method" class="signature"><strong>.destroy</strong>(ids : Array)</a>
+        <a href="#destroy(ids:Array)-class-method" class="signature"><strong>.destroy</strong>(ids : Array)</a>
         
           <div class="summary"><p>Destroys records by given ids.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#destroy%28%2Aids%29-class-method" class="signature"><strong>.destroy</strong>(*ids)</a>
+        <a href="#destroy(*ids)-class-method" class="signature"><strong>.destroy</strong>(*ids)</a>
         
           <div class="summary"><p>Destroys records by given ids.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#find%28id%29-class-method" class="signature"><strong>.find</strong>(id)</a>
+        <a href="#find(id)-class-method" class="signature"><strong>.find</strong>(id)</a>
         
           <div class="summary"><p>Returns record by given primary field or <code>nil</code> otherwise.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#find%21%28id%29-class-method" class="signature"><strong>.find!</strong>(id)</a>
+        <a href="#find!(id)-class-method" class="signature"><strong>.find!</strong>(id)</a>
         
           <div class="summary"><p>Returns record by given primary field or raises <code><a href="../../Jennifer/RecordNotFound.html">Jennifer::RecordNotFound</a></code> exception otherwise.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#foreign_key_name%28value%3AString%7CSymbol%29-class-method" class="signature"><strong>.foreign_key_name</strong>(value : String | Symbol)</a>
+        <a href="#foreign_key_name(value:String%7CSymbol)-class-method" class="signature"><strong>.foreign_key_name</strong>(value : String | Symbol)</a>
         
           <div class="summary"><p>Sets custom model foreign key name.</p></div>
         
@@ -1486,14 +1486,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#has_table%3F-class-method" class="signature"><strong>.has_table?</strong></a>
+        <a href="#has_table?-class-method" class="signature"><strong>.has_table?</strong></a>
         
           <div class="summary"><p>Returns whether model has a table.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#import%28collection%3AArray%28self%29%29-class-method" class="signature"><strong>.import</strong>(collection : Array(<span class="k">self</span>))</a>
+        <a href="#import(collection:Array(self))-class-method" class="signature"><strong>.import</strong>(collection : Array(<span class="k">self</span>))</a>
         
           <div class="summary"><p>Performs bulk import of given collection.</p></div>
         
@@ -1507,19 +1507,19 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#upsert%28collection%3AArray%28self%29%2Cunique_fields%3D%5B%5DofString%29-class-method" class="signature"><strong>.upsert</strong>(collection : Array(<span class="k">self</span>), unique_fields = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)</a>
+        <a href="#upsert(collection:Array(self),unique_fields=[]ofString)-class-method" class="signature"><strong>.upsert</strong>(collection : Array(<span class="k">self</span>), unique_fields = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)</a>
         
           <div class="summary"><p>Performs bulk import of given <em>collection</em> while ignoring models that would cause a duplicate value of any <code>UNIQUE</code> index on given <em>unique_fields</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#upsert%28collection%3AArray%28self%29%2Cunique_fields%3D%5B%5Dof%3A%3AString%2C%26%29-class-method" class="signature"><strong>.upsert</strong>(collection : Array(<span class="k">self</span>), unique_fields = <span class="o">[]</span> <span class="k">of</span> <span class="t">::</span><span class="t">String</span>, &)</a>
+        <a href="#upsert(collection:Array(self),unique_fields=[]of::String,&)-class-method" class="signature"><strong>.upsert</strong>(collection : Array(<span class="k">self</span>), unique_fields = <span class="o">[]</span> <span class="k">of</span> <span class="t">::</span><span class="t">String</span>, &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#with_table_lock%28type%3AString%7CSymbol%2C%26%29-class-method" class="signature"><strong>.with_table_lock</strong>(type : String | Symbol, &)</a>
+        <a href="#with_table_lock(type:String%7CSymbol,&)-class-method" class="signature"><strong>.with_table_lock</strong>(type : String | Symbol, &)</a>
         
           <div class="summary"><p>Performs table lock for current model's table.</p></div>
         
@@ -1554,14 +1554,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#changed%3F%3ABool-instance-method" class="signature"><strong>#changed?</strong> : Bool</a>
+        <a href="#changed?:Bool-instance-method" class="signature"><strong>#changed?</strong> : Bool</a>
         
           <div class="summary"><p>Returns whether any field was changed.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#changes%3AHash%28String%2CJennifer%3A%3ADBAny%29-instance-method" class="signature"><strong>#changes</strong> : Hash(String, Jennifer::DBAny)</a>
+        <a href="#changes:Hash(String,Jennifer::DBAny)-instance-method" class="signature"><strong>#changes</strong> : Hash(String, Jennifer::DBAny)</a>
         
           <div class="summary"><p>Hash of changed columns and their new values.</p></div>
         
@@ -1575,7 +1575,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#destroy%3ABool-instance-method" class="signature"><strong>#destroy</strong> : Bool</a>
+        <a href="#destroy:Bool-instance-method" class="signature"><strong>#destroy</strong> : Bool</a>
         
           <div class="summary"><p>Deletes object from db and calls all related callbacks.</p></div>
         
@@ -1589,28 +1589,28 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#destroyed%3F%3ABool-instance-method" class="signature"><strong>#destroyed?</strong> : Bool</a>
+        <a href="#destroyed?:Bool-instance-method" class="signature"><strong>#destroyed?</strong> : Bool</a>
         
           <div class="summary"><p>Returns whether record isn't destroyed.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#lock%21%28type%3AString%7CBool%3Dtrue%29-instance-method" class="signature"><strong>#lock!</strong>(type : String | Bool = <span class="n">true</span>)</a>
+        <a href="#lock!(type:String%7CBool=true)-instance-method" class="signature"><strong>#lock!</strong>(type : String | Bool = <span class="n">true</span>)</a>
         
           <div class="summary"><p>Lock current object in the database.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new_record%3F%3ABool-instance-method" class="signature"><strong>#new_record?</strong> : Bool</a>
+        <a href="#new_record?:Bool-instance-method" class="signature"><strong>#new_record?</strong> : Bool</a>
         
           <div class="summary"><p>Returns whether record isn't persisted.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#persisted%3F-instance-method" class="signature"><strong>#persisted?</strong></a>
+        <a href="#persisted?-instance-method" class="signature"><strong>#persisted?</strong></a>
         
           <div class="summary"><p>Returns <code>true</code> if the record is persisted, i.e.</p></div>
         
@@ -1624,42 +1624,42 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method" class="signature"><strong>#save</strong>(skip_validation : Bool = <span class="n">false</span>) : Bool</a>
+        <a href="#save(skip_validation:Bool=false):Bool-instance-method" class="signature"><strong>#save</strong>(skip_validation : Bool = <span class="n">false</span>) : Bool</a>
         
           <div class="summary"><p>Saves the object.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#save%21-instance-method" class="signature"><strong>#save!</strong></a>
+        <a href="#save!-instance-method" class="signature"><strong>#save!</strong></a>
         
           <div class="summary"><p>Saves the object.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#save_without_transaction%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method" class="signature"><strong>#save_without_transaction</strong>(skip_validation : Bool = <span class="n">false</span>) : Bool</a>
+        <a href="#save_without_transaction(skip_validation:Bool=false):Bool-instance-method" class="signature"><strong>#save_without_transaction</strong>(skip_validation : Bool = <span class="n">false</span>) : Bool</a>
         
           <div class="summary"><p>Saves all changes to the database without starting a transaction; if any validation fails - returns <code>false</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_attribute%28name%3AString%7CSymbol%2Cvalue%3AAttrType%29-instance-method" class="signature"><strong>#set_attribute</strong>(name : String | Symbol, value : AttrType)</a>
+        <a href="#set_attribute(name:String%7CSymbol,value:AttrType)-instance-method" class="signature"><strong>#set_attribute</strong>(name : String | Symbol, value : AttrType)</a>
         
           <div class="summary"><p>Sets <em>name</em> field with <em>value</em></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_attributes%28values%3AHash%7CNamedTuple%29-instance-method" class="signature"><strong>#set_attributes</strong>(values : Hash | NamedTuple)</a>
+        <a href="#set_attributes(values:Hash%7CNamedTuple)-instance-method" class="signature"><strong>#set_attributes</strong>(values : Hash | NamedTuple)</a>
         
           <div class="summary"><p>Sets attributes based on <code>values</code> where keys are attribute names.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_attributes%28%2A%2Avalues%29-instance-method" class="signature"><strong>#set_attributes</strong>(**values)</a>
+        <a href="#set_attributes(**values)-instance-method" class="signature"><strong>#set_attributes</strong>(**values)</a>
         
           <div class="summary"><p>Sets attributes based on <code>values</code> where keys are attribute names.</p></div>
         
@@ -1676,49 +1676,49 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#update%28values%3AHash%7CNamedTuple%29%3ABool-instance-method" class="signature"><strong>#update</strong>(values : Hash | NamedTuple) : Bool</a>
+        <a href="#update(values:Hash%7CNamedTuple):Bool-instance-method" class="signature"><strong>#update</strong>(values : Hash | NamedTuple) : Bool</a>
         
-          <div class="summary"><p>Sets attributes based on given <em>values</em> using <code><a href="../../Jennifer/Model/Base.html#set_attribute%28name%3AString%7CSymbol%2Cvalue%3AAttrType%29-instance-method">#set_attribute</a></code> and saves it to the database, if validation pass.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#update%28%2A%2Avalues%29-instance-method" class="signature"><strong>#update</strong>(**values)</a>
-        
-          <div class="summary"><p>Sets attributes based on given <em>values</em> using <code><a href="../../Jennifer/Model/Base.html#set_attribute%28name%3AString%7CSymbol%2Cvalue%3AAttrType%29-instance-method">#set_attribute</a></code> and saves it to the database, if validation pass.</p></div>
+          <div class="summary"><p>Sets attributes based on given <em>values</em> using <code><a href="../../Jennifer/Model/Base.html#set_attribute(name:String%7CSymbol,value:AttrType)-instance-method">#set_attribute</a></code> and saves it to the database, if validation pass.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update%21%28values%3AHash%7CNamedTuple%29%3ABool-instance-method" class="signature"><strong>#update!</strong>(values : Hash | NamedTuple) : Bool</a>
+        <a href="#update(**values)-instance-method" class="signature"><strong>#update</strong>(**values)</a>
+        
+          <div class="summary"><p>Sets attributes based on given <em>values</em> using <code><a href="../../Jennifer/Model/Base.html#set_attribute(name:String%7CSymbol,value:AttrType)-instance-method">#set_attribute</a></code> and saves it to the database, if validation pass.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#update!(values:Hash%7CNamedTuple):Bool-instance-method" class="signature"><strong>#update!</strong>(values : Hash | NamedTuple) : Bool</a>
         
           <div class="summary"><p>Sets attributes based on given <em>values</em> and saves it to the database, if validation pass.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update%21%28%2A%2Avalues%29%3ABool-instance-method" class="signature"><strong>#update!</strong>(**values) : Bool</a>
+        <a href="#update!(**values):Bool-instance-method" class="signature"><strong>#update!</strong>(**values) : Bool</a>
         
           <div class="summary"><p>Sets attributes based on given <em>values</em> and saves it to the database, if validation pass.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update_column%28name%3AString%7CSymbol%2Cvalue%3AJennifer%3A%3ADBAny%29-instance-method" class="signature"><strong>#update_column</strong>(name : String | Symbol, value : Jennifer::DBAny)</a>
+        <a href="#update_column(name:String%7CSymbol,value:Jennifer::DBAny)-instance-method" class="signature"><strong>#update_column</strong>(name : String | Symbol, value : Jennifer::DBAny)</a>
         
           <div class="summary"><p>Sets <em>value</em> to field with name <em>name</em> and stores them directly to the database without any validation or callback.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update_columns%28values%3AHash%28String%7CSymbol%2CAttrType%29%29-instance-method" class="signature"><strong>#update_columns</strong>(values : Hash(String | Symbol, AttrType))</a>
+        <a href="#update_columns(values:Hash(String%7CSymbol,AttrType))-instance-method" class="signature"><strong>#update_columns</strong>(values : Hash(String | Symbol, AttrType))</a>
         
           <div class="summary"><p>Assigns record properties based on key-value pairs of <em>values</em> and stores them directly to the database without running validations and callbacks.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#with_lock%28type%3AString%7CBool%3Dtrue%2C%26%29-instance-method" class="signature"><strong>#with_lock</strong>(type : String | Bool = <span class="n">true</span>, &)</a>
+        <a href="#with_lock(type:String%7CBool=true,&)-instance-method" class="signature"><strong>#with_lock</strong>(type : String | Bool = <span class="n">true</span>, &)</a>
         
           <div class="summary"><p>Starts a transaction and locks current object.</p></div>
         
@@ -1747,22 +1747,22 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/Model/Validation.html">Jennifer::Model::Validation</a></code></h3>
   
   
-    <a href="../../Jennifer/Model/Validation.html#errors%3AErrors-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Validation.html#errors:Errors-instance-method" class="tooltip">
       <span>errors : Errors</span>
     errors</a>, 
     
   
-    <a href="../../Jennifer/Model/Validation.html#invalid%3F-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Validation.html#invalid?-instance-method" class="tooltip">
       <span>invalid?</span>
     invalid?</a>, 
     
   
-    <a href="../../Jennifer/Model/Validation.html#valid%3F-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Validation.html#valid?-instance-method" class="tooltip">
       <span>valid?</span>
     valid?</a>, 
     
   
-    <a href="../../Jennifer/Model/Validation.html#validate%21%28skip%3Dfalse%29%3ABool-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Validation.html#validate!(skip=false):Bool-instance-method" class="tooltip">
       <span>validate!(skip = <span class="n">false</span>) : Bool</span>
     validate!</a>
     
@@ -1821,7 +1821,7 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/Model/Mapping.html">Jennifer::Model::Mapping</a></code></h3>
   
   
-    <a href="../../Jennifer/Model/Mapping.html#attribute_metadata%28name%3AString%7CSymbol%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Mapping.html#attribute_metadata(name:String%7CSymbol)-instance-method" class="tooltip">
       <span>attribute_metadata(name : String | Symbol)</span>
     attribute_metadata</a>
     
@@ -1860,27 +1860,27 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/Presentable.html">Jennifer::Presentable</a></code></h3>
   
   
-    <a href="../../Jennifer/Presentable.html#attribute%28name%3AString%7CSymbol%2Craise_exception%3ABool%3Dtrue%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Presentable.html#attribute(name:String%7CSymbol,raise_exception:Bool=true)-instance-method" class="tooltip">
       <span>attribute(name : String | Symbol, raise_exception : Bool = <span class="n">true</span>)</span>
     attribute</a>, 
     
   
-    <a href="../../Jennifer/Presentable.html#attribute_metadata%28name%3AString%7CSymbol%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Presentable.html#attribute_metadata(name:String%7CSymbol)-instance-method" class="tooltip">
       <span>attribute_metadata(name : String | Symbol)</span>
     attribute_metadata</a>, 
     
   
-    <a href="../../Jennifer/Presentable.html#class_name%3AString-instance-method" class="tooltip">
+    <a href="../../Jennifer/Presentable.html#class_name:String-instance-method" class="tooltip">
       <span>class_name : String</span>
     class_name</a>, 
     
   
-    <a href="../../Jennifer/Presentable.html#errors%3AJennifer%3A%3AModel%3A%3AErrors-instance-method" class="tooltip">
+    <a href="../../Jennifer/Presentable.html#errors:Jennifer::Model::Errors-instance-method" class="tooltip">
       <span>errors : Jennifer::Model::Errors</span>
     errors</a>, 
     
   
-    <a href="../../Jennifer/Presentable.html#human_attribute_name%28name%3AString%7CSymbol%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Presentable.html#human_attribute_name(name:String%7CSymbol)-instance-method" class="tooltip">
       <span>human_attribute_name(name : String | Symbol)</span>
     human_attribute_name</a>
     
@@ -1899,22 +1899,22 @@
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/Model/Resource.html">Jennifer::Model::Resource</a></code></h3>
   
   
-    <a href="../../Jennifer/Model/Resource.html#append_relation%28name%3AString%2Chash%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#append_relation(name:String,hash)-instance-method" class="tooltip">
       <span>append_relation(name : String, hash)</span>
     append_relation</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#attribute%28name%3AString%7CSymbol%2Craise_exception%3ABool%3Dtrue%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#attribute(name:String%7CSymbol,raise_exception:Bool=true)-instance-method" class="tooltip">
       <span>attribute(name : String | Symbol, raise_exception : Bool = <span class="n">true</span>)</span>
     attribute</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#get_relation%28name%3AString%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#get_relation(name:String)-instance-method" class="tooltip">
       <span>get_relation(name : String)</span>
     get_relation</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#inspect%28io%29%3ANil-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#inspect(io):Nil-instance-method" class="tooltip">
       <span>inspect(io) : Nil</span>
     inspect</a>, 
     
@@ -1924,7 +1924,7 @@
     primary</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#set_inverse_of%28name%3AString%2Cobject%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#set_inverse_of(name:String,object)-instance-method" class="tooltip">
       <span>set_inverse_of(name : String, object)</span>
     set_inverse_of</a>, 
     
@@ -1934,7 +1934,7 @@
     to_h</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#to_json%28only%3AArray%28String%29%3F%3Dnil%2Cexcept%3AArray%28String%29%3F%3Dnil%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#to_json(only:Array(String)?=nil,except:Array(String)?=nil)-instance-method" class="tooltip">
       <span>to_json(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>)<br/>to_json(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)<br/>to_json(json : JSON::Builder)<br/>to_json(json : JSON::Builder, only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)</span>
     to_json</a>, 
     
@@ -1964,12 +1964,12 @@
     all</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#build%28values%3AHash%28Symbol%2CJennifer%3A%3ADBAny%29%7CNamedTuple%29-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#build(values:Hash(Symbol,Jennifer::DBAny)%7CNamedTuple)-class-method" class="tooltip">
       <span>build(values : Hash(Symbol, Jennifer::DBAny) | NamedTuple)<br/>build(values : Hash(String, Jennifer::DBAny))<br/>build(**values)</span>
     build</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#c%28name%3AString%7CSymbol%2Crelation%29-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#c(name:String%7CSymbol,relation)-class-method" class="tooltip">
       <span>c(name : String | Symbol, relation)<br/>c(name : String | Symbol)</span>
     c</a>, 
     
@@ -1984,7 +1984,7 @@
     read_adapter</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#relation%28name%29-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#relation(name)-class-method" class="tooltip">
       <span>relation(name)</span>
     relation</a>, 
     
@@ -1994,17 +1994,17 @@
     star</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#table_name%28value%3AString%7CSymbol%29-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#table_name(value:String%7CSymbol)-class-method" class="tooltip">
       <span>table_name(value : String | Symbol)<br/>table_name : String</span>
     table_name</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#transaction%28%26%29-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#transaction(&)-class-method" class="tooltip">
       <span>transaction(&)</span>
     transaction</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#where%28%26%29-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#where(&)-class-method" class="tooltip">
       <span>where(&)<br/>where(conditions : Hash(Symbol, _))</span>
     where</a>, 
     
@@ -2032,22 +2032,22 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/Model/RelationDefinition.html">Jennifer::Model::RelationDefinition</a></code></h3>
   
   
-    <a href="../../Jennifer/Model/RelationDefinition.html#append_relation%28name%3AString%2Chash%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/RelationDefinition.html#append_relation(name:String,hash)-instance-method" class="tooltip">
       <span>append_relation(name : String, hash)</span>
     append_relation</a>, 
     
   
-    <a href="../../Jennifer/Model/RelationDefinition.html#get_relation%28name%3AString%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/RelationDefinition.html#get_relation(name:String)-instance-method" class="tooltip">
       <span>get_relation(name : String)</span>
     get_relation</a>, 
     
   
-    <a href="../../Jennifer/Model/RelationDefinition.html#relation_retrieved%28name%3AString%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/RelationDefinition.html#relation_retrieved(name:String)-instance-method" class="tooltip">
       <span>relation_retrieved(name : String)</span>
     relation_retrieved</a>, 
     
   
-    <a href="../../Jennifer/Model/RelationDefinition.html#set_inverse_of%28name%3AString%2Cobject%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/RelationDefinition.html#set_inverse_of(name:String,object)-instance-method" class="tooltip">
       <span>set_inverse_of(name : String, object)</span>
     set_inverse_of</a>
     
@@ -2076,17 +2076,17 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/Model/Translation.html">Jennifer::Model::Translation</a></code></h3>
   
   
-    <a href="../../Jennifer/Model/Translation.html#class_name%3AString-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Translation.html#class_name:String-instance-method" class="tooltip">
       <span>class_name : String</span>
     class_name</a>, 
     
   
-    <a href="../../Jennifer/Model/Translation.html#human_attribute_name%28attribute%3AString%7CSymbol%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Translation.html#human_attribute_name(attribute:String%7CSymbol)-instance-method" class="tooltip">
       <span>human_attribute_name(attribute : String | Symbol)</span>
     human_attribute_name</a>, 
     
   
-    <a href="../../Jennifer/Model/Translation.html#lookup_ancestors%28%26%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Translation.html#lookup_ancestors(&)-instance-method" class="tooltip">
       <span>lookup_ancestors(&)</span>
     lookup_ancestors</a>
     
@@ -2145,6 +2145,7 @@
         <div class="doc">
           
           <p>Returns actual model table column amount (is grepped from db).</p>
+
 <p>If somewhy you define model with custom table name after the place where adapter is used the first time -
 manually invoke this method anywhere after table name definition.</p>
         </div>
@@ -2162,14 +2163,15 @@ manually invoke this method anywhere after table name definition.</p>
         
         def self.<strong>build</strong>(values : Hash | NamedTuple, new_record : Bool)
 
-        <a class="method-permalink" href="#build%28values%3AHash%7CNamedTuple%2Cnew_record%3ABool%29-class-method">#</a>
+        <a class="method-permalink" href="#build(values:Hash%7CNamedTuple,new_record:Bool)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Initializes new object based on given arguments.</p>
+
 <p><code>after_initialize</code> callbacks are invoked. If model mapping allows creating an object
-without passing any argument - relevant <code><a href="../../Jennifer/Model/Base.html#build%28values%3AHash%7CNamedTuple%2Cnew_record%3ABool%29-class-method">#build</a></code> method will be generated for such model.</p>
+without passing any argument - relevant <code><a href="../../Jennifer/Model/Base.html#build(values:Hash%7CNamedTuple,new_record:Bool)-class-method">#build</a></code> method will be generated for such model.</p>
         </div>
       
       <br/>
@@ -2185,7 +2187,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>build</strong>(pull : DB::ResultSet)
 
-        <a class="method-permalink" href="#build%28pull%3ADB%3A%3AResultSet%29-class-method">#</a>
+        <a class="method-permalink" href="#build(pull:DB::ResultSet)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2222,14 +2224,16 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>create</strong>(values : Hash | NamedTuple)
 
-        <a class="method-permalink" href="#create%28values%3AHash%7CNamedTuple%29-class-method">#</a>
+        <a class="method-permalink" href="#create(values:Hash%7CNamedTuple)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates an object based on given <code>values</code> and saves it to the database, if validation pass.</p>
+
 <p>The resulting object is return whether it was saved to the database or not.</p>
-<pre><code class="language-crystal"><span class="t">Contact</span>.create({<span class="n">:name</span> <span class="o">=&gt;</span> <span class="s">&quot;Jennifer&quot;</span>})
+
+<pre><code class="language-crystal"><span class="t">Contact</span>.create({<span class="n">:name</span> => <span class="s">&quot;Jennifer&quot;</span>})
 <span class="t">Contact</span>.create({name: <span class="s">&quot;Jennifer&quot;</span>})</code></pre>
         </div>
       
@@ -2252,7 +2256,9 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         <div class="doc">
           
           <p>Creates an object based on an empty hash and saves it to the database, if validation pass.</p>
+
 <p>The resulting object is return whether it was saved to the database or not.</p>
+
 <pre><code class="language-crystal"><span class="t">Contact</span>.create</code></pre>
         </div>
       
@@ -2269,13 +2275,15 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>create</strong>(**values)
 
-        <a class="method-permalink" href="#create%28%2A%2Avalues%29-class-method">#</a>
+        <a class="method-permalink" href="#create(**values)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates an object based on <code>values</code> and saves it to the database, if validation pass.</p>
+
 <p>The resulting object is return whether it was saved to the database or not.</p>
+
 <pre><code class="language-crystal"><span class="t">Contact</span>.create(name: <span class="s">&quot;Jennifer&quot;</span>)</code></pre>
         </div>
       
@@ -2292,14 +2300,16 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>create!</strong>(values : Hash | NamedTuple)
 
-        <a class="method-permalink" href="#create%21%28values%3AHash%7CNamedTuple%29-class-method">#</a>
+        <a class="method-permalink" href="#create!(values:Hash%7CNamedTuple)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates an object based on <code>values</code> and saves it to the database, if validation pass.</p>
+
 <p>Raises an <code><a href="../../Jennifer/RecordInvalid.html">RecordInvalid</a></code> error if validation fail, unlike <code><a href="../../Jennifer/Model/Base.html#create-class-method">.create</a></code>.</p>
-<pre><code class="language-crystal"><span class="t">Contact</span>.create!({<span class="n">:name</span> <span class="o">=&gt;</span> <span class="s">&quot;Jennifer&quot;</span>})
+
+<pre><code class="language-crystal"><span class="t">Contact</span>.create!({<span class="n">:name</span> => <span class="s">&quot;Jennifer&quot;</span>})
 <span class="t">Contact</span>.create!({name: <span class="s">&quot;Jennifer&quot;</span>})</code></pre>
         </div>
       
@@ -2316,13 +2326,15 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>create!</strong>
 
-        <a class="method-permalink" href="#create%21-class-method">#</a>
+        <a class="method-permalink" href="#create!-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates an object based on empty hash and saves it to the database, if validation pass.</p>
+
 <p>Raises an <code><a href="../../Jennifer/RecordInvalid.html">RecordInvalid</a></code> error if validation fail, unlike <code><a href="../../Jennifer/Model/Base.html#create-class-method">.create</a></code>.</p>
+
 <pre><code class="language-crystal"><span class="t">Contact</span>.create!</code></pre>
         </div>
       
@@ -2339,13 +2351,15 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>create!</strong>(**values)
 
-        <a class="method-permalink" href="#create%21%28%2A%2Avalues%29-class-method">#</a>
+        <a class="method-permalink" href="#create!(**values)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates an object based on <code>values</code> and saves it to the database, if validation pass.</p>
+
 <p>Raises an <code><a href="../../Jennifer/RecordInvalid.html">RecordInvalid</a></code> error if validation fail, unlike <code><a href="../../Jennifer/Model/Base.html#create-class-method">.create</a></code>.</p>
+
 <pre><code class="language-crystal"><span class="t">Contact</span>.create!(name: <span class="s">&quot;Jennifer&quot;</span>)</code></pre>
         </div>
       
@@ -2362,7 +2376,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>delete</strong>(ids : Array)
 
-        <a class="method-permalink" href="#delete%28ids%3AArray%29-class-method">#</a>
+        <a class="method-permalink" href="#delete(ids:Array)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2383,7 +2397,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>delete</strong>(*ids)
 
-        <a class="method-permalink" href="#delete%28%2Aids%29-class-method">#</a>
+        <a class="method-permalink" href="#delete(*ids)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2404,13 +2418,15 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>destroy</strong>(ids : Array)
 
-        <a class="method-permalink" href="#destroy%28ids%3AArray%29-class-method">#</a>
+        <a class="method-permalink" href="#destroy(ids:Array)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Destroys records by given ids.</p>
-<p>All <code><a href="../../Jennifer/Model/Base.html#destroy%3ABool-instance-method">#destroy</a></code> callbacks will be invoked for each record. All records are loaded in batches.</p>
+
+<p>All <code><a href="../../Jennifer/Model/Base.html#destroy:Bool-instance-method">#destroy</a></code> callbacks will be invoked for each record. All records are loaded in batches.</p>
+
 <pre><code class="language-crystal"><span class="t">Contact</span>.destroy(<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>)
 <span class="t">Contact</span>.destroy([<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>])</code></pre>
         </div>
@@ -2428,13 +2444,15 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>destroy</strong>(*ids)
 
-        <a class="method-permalink" href="#destroy%28%2Aids%29-class-method">#</a>
+        <a class="method-permalink" href="#destroy(*ids)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Destroys records by given ids.</p>
-<p>All <code><a href="../../Jennifer/Model/Base.html#destroy%3ABool-instance-method">#destroy</a></code> callbacks will be invoked for each record. All records are loaded in batches.</p>
+
+<p>All <code><a href="../../Jennifer/Model/Base.html#destroy:Bool-instance-method">#destroy</a></code> callbacks will be invoked for each record. All records are loaded in batches.</p>
+
 <pre><code class="language-crystal"><span class="t">Contact</span>.destroy(<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>)
 <span class="t">Contact</span>.destroy([<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>])</code></pre>
         </div>
@@ -2452,12 +2470,13 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>find</strong>(id)
 
-        <a class="method-permalink" href="#find%28id%29-class-method">#</a>
+        <a class="method-permalink" href="#find(id)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns record by given primary field or <code>nil</code> otherwise.</p>
+
 <pre><code class="language-crystal"><span class="t">Contact</span>.find(<span class="n">-1</span>) <span class="c"># =&gt; nil</span></code></pre>
         </div>
       
@@ -2474,12 +2493,13 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>find!</strong>(id)
 
-        <a class="method-permalink" href="#find%21%28id%29-class-method">#</a>
+        <a class="method-permalink" href="#find!(id)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns record by given primary field or raises <code><a href="../../Jennifer/RecordNotFound.html">Jennifer::RecordNotFound</a></code> exception otherwise.</p>
+
 <pre><code class="language-crystal"><span class="t">Contact</span>.find!(<span class="n">-1</span>) <span class="c"># Jennifer::RecordNotFound</span></code></pre>
         </div>
       
@@ -2496,12 +2516,13 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>foreign_key_name</strong>(value : String | Symbol)
 
-        <a class="method-permalink" href="#foreign_key_name%28value%3AString%7CSymbol%29-class-method">#</a>
+        <a class="method-permalink" href="#foreign_key_name(value:String%7CSymbol)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Sets custom model foreign key name.</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">User</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   foreign_key_name <span class="n">:client_id</span>
 <span class="k">end</span></code></pre>
@@ -2541,12 +2562,13 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>has_table?</strong>
 
-        <a class="method-permalink" href="#has_table%3F-class-method">#</a>
+        <a class="method-permalink" href="#has_table?-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns whether model has a table.</p>
+
 <p><span class="flag purple">NOTE</span>  shouldn't be used outside of tests.</p>
         </div>
       
@@ -2563,16 +2585,18 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>import</strong>(collection : Array(<span class="k">self</span>))
 
-        <a class="method-permalink" href="#import%28collection%3AArray%28self%29%29-class-method">#</a>
+        <a class="method-permalink" href="#import(collection:Array(self))-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Performs bulk import of given collection.</p>
+
 <p>Any callback is ignored.</p>
+
 <pre><code class="language-crystal"><span class="t">User</span>.import([
-  <span class="t">User</span>.new({name: <span class="s">&quot;John&quot;</span>}),
-  <span class="t">User</span>.new({name: <span class="s">&quot;Fahad&quot;</span>}),
+  <span class="t">User</span>.<span class="k">new</span>({name: <span class="s">&quot;John&quot;</span>}),
+  <span class="t">User</span>.<span class="k">new</span>({name: <span class="s">&quot;Fahad&quot;</span>}),
 ])</code></pre>
         </div>
       
@@ -2595,6 +2619,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         <div class="doc">
           
           <p>Returns array of all non-abstract subclasses of <em>Jennifer::Model::Base</em>.</p>
+
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>.models <span class="c"># =&gt; [Contact, Address, User]</span></code></pre>
         </div>
       
@@ -2611,18 +2636,21 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>upsert</strong>(collection : Array(<span class="k">self</span>), unique_fields = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)
 
-        <a class="method-permalink" href="#upsert%28collection%3AArray%28self%29%2Cunique_fields%3D%5B%5DofString%29-class-method">#</a>
+        <a class="method-permalink" href="#upsert(collection:Array(self),unique_fields=[]ofString)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Performs bulk import of given <em>collection</em> while ignoring models that would cause a duplicate value of any <code>UNIQUE</code> index on given <em>unique_fields</em>.</p>
+
 <p>Some RDBMS (like MySQL) doesn't require specifying exact constraint to be violated, therefore <em>unique_fields</em> argument by default is <code>[] of String</code>.</p>
+
 <p>Any callback is ignored.</p>
-<pre><code class="language-crystal"><span class="t">Order</span>.create({<span class="n">:uid</span> <span class="o">=&gt;</span> <span class="n">123</span>})
+
+<pre><code class="language-crystal"><span class="t">Order</span>.create({<span class="n">:uid</span> => <span class="n">123</span>})
 <span class="t">Order</span>.upsert([
-  <span class="t">Order</span>.new({<span class="n">:uid</span> <span class="o">=&gt;</span> <span class="n">123</span>}),
-  <span class="t">Order</span>.new({<span class="n">:uid</span> <span class="o">=&gt;</span> <span class="n">321</span>}),
+  <span class="t">Order</span>.<span class="k">new</span>({<span class="n">:uid</span> => <span class="n">123</span>}),
+  <span class="t">Order</span>.<span class="k">new</span>({<span class="n">:uid</span> => <span class="n">321</span>}),
 ])</code></pre>
         </div>
       
@@ -2639,7 +2667,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>upsert</strong>(collection : Array(<span class="k">self</span>), unique_fields = <span class="o">[]</span> <span class="k">of</span> <span class="t">::</span><span class="t">String</span>, &)
 
-        <a class="method-permalink" href="#upsert%28collection%3AArray%28self%29%2Cunique_fields%3D%5B%5Dof%3A%3AString%2C%26%29-class-method">#</a>
+        <a class="method-permalink" href="#upsert(collection:Array(self),unique_fields=[]of::String,&)-class-method">#</a>
       </div>
       
       <br/>
@@ -2655,7 +2683,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         
         def self.<strong>with_table_lock</strong>(type : String | Symbol, &)
 
-        <a class="method-permalink" href="#with_table_lock%28type%3AString%7CSymbol%2C%26%29-class-method">#</a>
+        <a class="method-permalink" href="#with_table_lock(type:String%7CSymbol,&)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2694,6 +2722,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         <div class="doc">
           
           <p>Returns named tuple of all model fields to insert.</p>
+
 <p><span class="flag purple">NOTE</span>  internal method</p>
         </div>
       
@@ -2716,6 +2745,7 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         <div class="doc">
           
           <p>Returns named tuple of all fields should be saved (because they are changed).</p>
+
 <p><span class="flag purple">NOTE</span>  internal method</p>
         </div>
       
@@ -2732,13 +2762,14 @@ without passing any argument - relevant <code><a href="../../Jennifer/Model/Base
         abstract 
         def <strong>changed?</strong> : Bool
 
-        <a class="method-permalink" href="#changed%3F%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#changed?:Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns whether any field was changed. If field again got first value - <code>true</code> anyway
 will be returned.</p>
+
 <pre><code class="language-crystal">user.name <span class="c"># =&gt; John</span>
 user.name <span class="o">=</span> <span class="s">&quot;Bill&quot;</span>
 user.changed? <span class="c"># =&gt; true</span>
@@ -2759,7 +2790,7 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
         abstract 
         def <strong>changes</strong> : Hash(String, <a href="../../Jennifer/DBAny.html">Jennifer::DBAny</a>)
 
-        <a class="method-permalink" href="#changes%3AHash%28String%2CJennifer%3A%3ADBAny%29-instance-method">#</a>
+        <a class="method-permalink" href="#changes:Hash(String,Jennifer::DBAny)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2786,6 +2817,7 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
         <div class="doc">
           
           <p>Deletes object from the database.</p>
+
 <p>Any callback is invoked. Doesn't start any transaction.</p>
         </div>
       
@@ -2802,13 +2834,15 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
         abstract 
         def <strong>destroy</strong> : Bool
 
-        <a class="method-permalink" href="#destroy%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#destroy:Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Deletes object from db and calls all related callbacks.</p>
+
 <p>It returns <code>true</code> if the object was successfully deleted.</p>
+
 <pre><code class="language-crystal"><span class="t">Contact</span>.first!.destroy <span class="c"># =&gt; true</span></code></pre>
         </div>
       
@@ -2846,7 +2880,7 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
         
         def <strong>destroyed?</strong> : Bool
 
-        <a class="method-permalink" href="#destroyed%3F%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#destroyed?:Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2867,7 +2901,7 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
         
         def <strong>lock!</strong>(type : String | Bool = <span class="n">true</span>)
 
-        <a class="method-permalink" href="#lock%21%28type%3AString%7CBool%3Dtrue%29-instance-method">#</a>
+        <a class="method-permalink" href="#lock!(type:String%7CBool=true)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2888,7 +2922,7 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
         
         def <strong>new_record?</strong> : Bool
 
-        <a class="method-permalink" href="#new_record%3F%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#new_record?:Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2909,7 +2943,7 @@ user.changed? <span class="c"># =&gt; true</span></code></pre>
         
         def <strong>persisted?</strong>
 
-        <a class="method-permalink" href="#persisted%3F-instance-method">#</a>
+        <a class="method-permalink" href="#persisted?-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2937,8 +2971,10 @@ it wasn't destroyed, otherwise returns <code>false</code>.</p>
         <div class="doc">
           
           <p>Reloads the record from the database.</p>
+
 <p>This method finds record by its primary key and modifies the receiver in-place. All relations are
 refreshed.</p>
+
 <pre><code class="language-crystal">user <span class="o">=</span> <span class="t">User</span>.first!
 user.name <span class="o">=</span> <span class="s">&quot;John&quot;</span>
 user.reload <span class="c"># =&gt; #&lt;User id: 1, name: &quot;Will&quot;&gt;</span></code></pre>
@@ -2957,17 +2993,21 @@ user.reload <span class="c"># =&gt; #&lt;User id: 1, name: &quot;Will&quot;&gt;<
         
         def <strong>save</strong>(skip_validation : Bool = <span class="n">false</span>) : Bool
 
-        <a class="method-permalink" href="#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#save(skip_validation:Bool=false):Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Saves the object.</p>
+
 <p>If the object is a new record it is created in the database, otherwise the existing record get updated.</p>
-<p>By default, <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">#save</a></code> triggers validations but they can be skipped passing <code>true</code> as the second argument.
-If any of them fails <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">#save</a></code> returns <code>false</code>.</p>
-<p>There is a series of callbacks associated with <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">#save</a></code>. If any of the <code>before_*</code> callbacks return <code>false</code>
+
+<p>By default, <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">#save</a></code> triggers validations but they can be skipped passing <code>true</code> as the second argument.
+If any of them fails <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">#save</a></code> returns <code>false</code>.</p>
+
+<p>There is a series of callbacks associated with <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">#save</a></code>. If any of the <code>before_*</code> callbacks return <code>false</code>
 the action is cancelled and <code>false</code> is returned. See <code><a href="../../Jennifer/Model/Callback.html">Jennifer::Model::Callback</a></code> for further details.</p>
+
 <pre><code class="language-crystal">user.name <span class="o">=</span> <span class="s">&quot;Will&quot;</span>
 user.save <span class="c"># =&gt; true</span></code></pre>
         </div>
@@ -2985,16 +3025,20 @@ user.save <span class="c"># =&gt; true</span></code></pre>
         
         def <strong>save!</strong>
 
-        <a class="method-permalink" href="#save%21-instance-method">#</a>
+        <a class="method-permalink" href="#save!-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Saves the object.</p>
+
 <p>If the object is a new record it is created in the database, otherwise the existing record get updated.</p>
-<p><code><a href="../../Jennifer/Model/Base.html#save%21-instance-method">#save!</a></code> always triggers validations. If any of them fails <code><a href="../../Jennifer/RecordInvalid.html">Jennifer::RecordInvalid</a></code> gets raised.</p>
-<p>There is a series of callbacks associated with <code><a href="../../Jennifer/Model/Base.html#save%21-instance-method">#save!</a></code>. If any of the <code>before_*</code> callbacks return <code>false</code>
+
+<p><code><a href="../../Jennifer/Model/Base.html#save!-instance-method">#save!</a></code> always triggers validations. If any of them fails <code><a href="../../Jennifer/RecordInvalid.html">Jennifer::RecordInvalid</a></code> gets raised.</p>
+
+<p>There is a series of callbacks associated with <code><a href="../../Jennifer/Model/Base.html#save!-instance-method">#save!</a></code>. If any of the <code>before_*</code> callbacks return <code>false</code>
 the action is cancelled and exception is raised. See <code><a href="../../Jennifer/Model/Callback.html">Jennifer::Model::Callback</a></code> for further details.</p>
+
 <pre><code class="language-crystal">user.name <span class="o">=</span> <span class="s">&quot;Will&quot;</span>
 user.save! <span class="c"># =&gt; true</span></code></pre>
         </div>
@@ -3012,7 +3056,7 @@ user.save! <span class="c"># =&gt; true</span></code></pre>
         
         def <strong>save_without_transaction</strong>(skip_validation : Bool = <span class="n">false</span>) : Bool
 
-        <a class="method-permalink" href="#save_without_transaction%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#save_without_transaction(skip_validation:Bool=false):Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -3033,12 +3077,13 @@ user.save! <span class="c"># =&gt; true</span></code></pre>
         abstract 
         def <strong>set_attribute</strong>(name : String | Symbol, value : AttrType)
 
-        <a class="method-permalink" href="#set_attribute%28name%3AString%7CSymbol%2Cvalue%3AAttrType%29-instance-method">#</a>
+        <a class="method-permalink" href="#set_attribute(name:String%7CSymbol,value:AttrType)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Sets <em>name</em> field with <em>value</em></p>
+
 <pre><code class="language-crystal">contact.set_attribute(<span class="n">:name</span>, <span class="s">&quot;Ivan&quot;</span>)</code></pre>
         </div>
       
@@ -3055,13 +3100,14 @@ user.save! <span class="c"># =&gt; true</span></code></pre>
         
         def <strong>set_attributes</strong>(values : Hash | NamedTuple)
 
-        <a class="method-permalink" href="#set_attributes%28values%3AHash%7CNamedTuple%29-instance-method">#</a>
+        <a class="method-permalink" href="#set_attributes(values:Hash%7CNamedTuple)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Sets attributes based on <code>values</code> where keys are attribute names.</p>
-<pre><code class="language-crystal">post.set_attributes({<span class="n">:title</span> <span class="o">=&gt;</span> <span class="s">&quot;New Title&quot;</span>, <span class="n">:created_at</span> <span class="o">=&gt;</span> <span class="t">Time</span>.local})
+
+<pre><code class="language-crystal">post.set_attributes({<span class="n">:title</span> => <span class="s">&quot;New Title&quot;</span>, <span class="n">:created_at</span> => <span class="t">Time</span>.local})
 post.set_attributes({title: <span class="s">&quot;New Title&quot;</span>, created_at: <span class="t">Time</span>.local})
 post.set_attributes(title: <span class="s">&quot;New Title&quot;</span>, created_at: <span class="t">Time</span>.local)</code></pre>
         </div>
@@ -3079,13 +3125,14 @@ post.set_attributes(title: <span class="s">&quot;New Title&quot;</span>, created
         
         def <strong>set_attributes</strong>(**values)
 
-        <a class="method-permalink" href="#set_attributes%28%2A%2Avalues%29-instance-method">#</a>
+        <a class="method-permalink" href="#set_attributes(**values)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Sets attributes based on <code>values</code> where keys are attribute names.</p>
-<pre><code class="language-crystal">post.set_attributes({<span class="n">:title</span> <span class="o">=&gt;</span> <span class="s">&quot;New Title&quot;</span>, <span class="n">:created_at</span> <span class="o">=&gt;</span> <span class="t">Time</span>.local})
+
+<pre><code class="language-crystal">post.set_attributes({<span class="n">:title</span> => <span class="s">&quot;New Title&quot;</span>, <span class="n">:created_at</span> => <span class="t">Time</span>.local})
 post.set_attributes({title: <span class="s">&quot;New Title&quot;</span>, created_at: <span class="t">Time</span>.local})
 post.set_attributes(title: <span class="s">&quot;New Title&quot;</span>, created_at: <span class="t">Time</span>.local)</code></pre>
         </div>
@@ -3135,15 +3182,17 @@ post.set_attributes(title: <span class="s">&quot;New Title&quot;</span>, created
         
         def <strong>update</strong>(values : Hash | NamedTuple) : Bool
 
-        <a class="method-permalink" href="#update%28values%3AHash%7CNamedTuple%29%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#update(values:Hash%7CNamedTuple):Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Sets attributes based on given <em>values</em> using <code><a href="../../Jennifer/Model/Base.html#set_attribute%28name%3AString%7CSymbol%2Cvalue%3AAttrType%29-instance-method">#set_attribute</a></code>
+          <p>Sets attributes based on given <em>values</em> using <code><a href="../../Jennifer/Model/Base.html#set_attribute(name:String%7CSymbol,value:AttrType)-instance-method">#set_attribute</a></code>
 and saves it to the database, if validation pass.</p>
+
 <p>Returns whether object is successfully saved.</p>
-<pre><code class="language-crystal">contact.update({<span class="n">:name</span> <span class="o">=&gt;</span> <span class="s">&quot;Jennifer&quot;</span>})
+
+<pre><code class="language-crystal">contact.update({<span class="n">:name</span> => <span class="s">&quot;Jennifer&quot;</span>})
 contact.update({name: <span class="s">&quot;Jennifer&quot;</span>})</code></pre>
         </div>
       
@@ -3160,14 +3209,16 @@ contact.update({name: <span class="s">&quot;Jennifer&quot;</span>})</code></pre>
         
         def <strong>update</strong>(**values)
 
-        <a class="method-permalink" href="#update%28%2A%2Avalues%29-instance-method">#</a>
+        <a class="method-permalink" href="#update(**values)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Sets attributes based on given <em>values</em> using <code><a href="../../Jennifer/Model/Base.html#set_attribute%28name%3AString%7CSymbol%2Cvalue%3AAttrType%29-instance-method">#set_attribute</a></code>
+          <p>Sets attributes based on given <em>values</em> using <code><a href="../../Jennifer/Model/Base.html#set_attribute(name:String%7CSymbol,value:AttrType)-instance-method">#set_attribute</a></code>
 and saves it to the database, if validation pass.</p>
+
 <p>Returns whether object is successfully saved.</p>
+
 <pre><code class="language-crystal">contact.update(name: <span class="s">&quot;Jennifer&quot;</span>)</code></pre>
         </div>
       
@@ -3184,14 +3235,16 @@ and saves it to the database, if validation pass.</p>
         
         def <strong>update!</strong>(values : Hash | NamedTuple) : Bool
 
-        <a class="method-permalink" href="#update%21%28values%3AHash%7CNamedTuple%29%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#update!(values:Hash%7CNamedTuple):Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Sets attributes based on given <em>values</em> and saves it to the database, if validation pass.</p>
-<p>Raises an <code><a href="../../Jennifer/RecordInvalid.html">RecordInvalid</a></code> error if validation fail, unlike <code><a href="../../Jennifer/Model/Base.html#update%28%2A%2Avalues%29-instance-method">#update</a></code>.</p>
-<pre><code class="language-crystal">contact.update!({<span class="n">:name</span> <span class="o">=&gt;</span> <span class="s">&quot;Jennifer&quot;</span>})
+
+<p>Raises an <code><a href="../../Jennifer/RecordInvalid.html">RecordInvalid</a></code> error if validation fail, unlike <code><a href="../../Jennifer/Model/Base.html#update(**values)-instance-method">#update</a></code>.</p>
+
+<pre><code class="language-crystal">contact.update!({<span class="n">:name</span> => <span class="s">&quot;Jennifer&quot;</span>})
 contact.update!({name: <span class="s">&quot;Jennifer&quot;</span>})</code></pre>
         </div>
       
@@ -3208,13 +3261,15 @@ contact.update!({name: <span class="s">&quot;Jennifer&quot;</span>})</code></pre
         
         def <strong>update!</strong>(**values) : Bool
 
-        <a class="method-permalink" href="#update%21%28%2A%2Avalues%29%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#update!(**values):Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Sets attributes based on given <em>values</em> and saves it to the database, if validation pass.</p>
-<p>Raises an <code><a href="../../Jennifer/RecordInvalid.html">RecordInvalid</a></code> error if validation fail, unlike <code><a href="../../Jennifer/Model/Base.html#update%28%2A%2Avalues%29-instance-method">#update</a></code>.</p>
+
+<p>Raises an <code><a href="../../Jennifer/RecordInvalid.html">RecordInvalid</a></code> error if validation fail, unlike <code><a href="../../Jennifer/Model/Base.html#update(**values)-instance-method">#update</a></code>.</p>
+
 <pre><code class="language-crystal">contact.update!(name: <span class="s">&quot;Jennifer&quot;</span>)</code></pre>
         </div>
       
@@ -3231,14 +3286,15 @@ contact.update!({name: <span class="s">&quot;Jennifer&quot;</span>})</code></pre
         
         def <strong>update_column</strong>(name : String | Symbol, value : <a href="../../Jennifer/DBAny.html">Jennifer::DBAny</a>)
 
-        <a class="method-permalink" href="#update_column%28name%3AString%7CSymbol%2Cvalue%3AJennifer%3A%3ADBAny%29-instance-method">#</a>
+        <a class="method-permalink" href="#update_column(name:String%7CSymbol,value:Jennifer::DBAny)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Sets <em>value</em> to field with name <em>name</em> and stores them directly to the database without
 any validation or callback.</p>
-<p>Is a shorthand for <code><a href="../../Jennifer/Model/Base.html#update_columns%28values%3AHash%28String%7CSymbol%2CAttrType%29%29-instance-method">#update_columns({ name =&gt; value })</a></code>.
+
+<p>Is a shorthand for <code><a href="../../Jennifer/Model/Base.html#update_columns(values:Hash(String%7CSymbol,AttrType))-instance-method">#update_columns({ name => value })</a></code>.
 Doesn't use attribute writer.</p>
         </div>
       
@@ -3255,17 +3311,20 @@ Doesn't use attribute writer.</p>
         abstract 
         def <strong>update_columns</strong>(values : Hash(String | Symbol, AttrType))
 
-        <a class="method-permalink" href="#update_columns%28values%3AHash%28String%7CSymbol%2CAttrType%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#update_columns(values:Hash(String%7CSymbol,AttrType))-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Assigns record properties based on key-value pairs of <em>values</em> and stores them directly to the database
 without running validations and callbacks.</p>
+
 <p><em>updated_at</em> property is not updated as well.</p>
+
 <p>If at least one attribute get value of wrong type or attribute is missing or is virtual -
 <code><a href="../../Jennifer/BaseException.html">BaseException</a></code> is raised.</p>
-<pre><code class="language-crystal">user.update_columns({<span class="n">:name</span> <span class="o">=&gt;</span> <span class="s">&quot;Jennifer&quot;</span>})</code></pre>
+
+<pre><code class="language-crystal">user.update_columns({<span class="n">:name</span> => <span class="s">&quot;Jennifer&quot;</span>})</code></pre>
         </div>
       
       <br/>
@@ -3281,7 +3340,7 @@ without running validations and callbacks.</p>
         
         def <strong>with_lock</strong>(type : String | Bool = <span class="n">true</span>, &)
 
-        <a class="method-permalink" href="#with_lock%28type%3AString%7CBool%3Dtrue%2C%26%29-instance-method">#</a>
+        <a class="method-permalink" href="#with_lock(type:String%7CBool=true,&)-instance-method">#</a>
       </div>
       
         <div class="doc">

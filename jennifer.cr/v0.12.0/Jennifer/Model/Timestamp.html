@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1338,7 +1338,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#with_timestamps%28created_at%3Dtrue%2Cupdated_at%3Dtrue%29-macro" class="signature"><strong>with_timestamps</strong>(created_at = <span class="n">true</span>, updated_at = <span class="n">true</span>)</a>
+        <a href="#with_timestamps(created_at=true,updated_at=true)-macro" class="signature"><strong>with_timestamps</strong>(created_at = <span class="n">true</span>, updated_at = <span class="n">true</span>)</a>
         
           <div class="summary"><p>Adds callbacks for <code>created_at</code> and <code>updated_at</code> fields.</p></div>
         
@@ -1373,12 +1373,13 @@
         
         macro <strong>with_timestamps</strong>(created_at = <span class="n">true</span>, updated_at = <span class="n">true</span>)
 
-        <a class="method-permalink" href="#with_timestamps%28created_at%3Dtrue%2Cupdated_at%3Dtrue%29-macro">#</a>
+        <a class="method-permalink" href="#with_timestamps(created_at=true,updated_at=true)-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds callbacks for <code>created_at</code> and <code>updated_at</code> fields.</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">MyModel</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   with_timestamps
 

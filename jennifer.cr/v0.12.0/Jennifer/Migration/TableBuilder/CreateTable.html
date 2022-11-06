@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1285,10 +1285,11 @@
   </h2>
 
   <p>Component responsible for creating a new table based on specified columns and properties.</p>
+
 <pre><code class="language-crystal">create_table(<span class="n">:contacts</span>) <span class="k">do</span> <span class="o">|</span>t<span class="o">|</span>
-  t.string <span class="n">:name</span>, {<span class="n">:size</span> <span class="o">=&gt;</span> <span class="n">30</span>}
+  t.string <span class="n">:name</span>, {<span class="n">:size</span> => <span class="n">30</span>}
   t.integer <span class="n">:age</span>
-  t.integer <span class="n">:tags</span>, {<span class="n">:array</span> <span class="o">=&gt;</span> <span class="n">true</span>}
+  t.integer <span class="n">:tags</span>, {<span class="n">:array</span> => <span class="n">true</span>}
   t.decimal <span class="n">:ballance</span>
   t.field <span class="n">:gender</span>, <span class="n">:gender_enum</span>
   t.timestamps <span class="n">true</span>
@@ -1343,98 +1344,98 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#bigint%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#bigint</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#bigint(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#bigint</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#bigint%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#bigint</a></code> with given <em>options</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#blchar%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#blchar</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#blchar%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#blchar</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#bigint(name:String%7CSymbol,options=DbOptions.new)-instance-method">#bigint</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#blob%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#blob</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#blchar(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#blchar</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#blob%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#blob</a></code> with given <em>options</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#bool%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#bool</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#bool%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#bool</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#blchar(name:String%7CSymbol,options=DbOptions.new)-instance-method">#blchar</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#box%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#box</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#blob(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#blob</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#box%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#box</a></code> with given <em>options</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#bytea%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#bytea</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#bytea%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#bytea</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#blob(name:String%7CSymbol,options=DbOptions.new)-instance-method">#blob</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#char%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#char</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#bool(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#bool</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#char%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#char</a></code> with given <em>options</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#circle%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#circle</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#circle%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#circle</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#bool(name:String%7CSymbol,options=DbOptions.new)-instance-method">#bool</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#column%28name%2Ctype%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#column</strong>(name, type, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#box(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#box</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Alias for <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#field%28name%3AString%7CSymbol%2Ctype%3ASymbol%7CString%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">#field</a></code>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#date%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#date</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#date%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#date</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#box(name:String%7CSymbol,options=DbOptions.new)-instance-method">#box</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#date_time%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#date_time</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#bytea(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#bytea</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#date_time%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#date_time</a></code> with given <em>options</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#decimal%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#decimal</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#decimal%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#decimal</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#bytea(name:String%7CSymbol,options=DbOptions.new)-instance-method">#bytea</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#double%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#double</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#char(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#char</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#double%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#double</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#char(name:String%7CSymbol,options=DbOptions.new)-instance-method">#char</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#enum%28name%3AString%7CSymbol%2Cvalues%3AArray%28String%29%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method" class="signature"><strong>#enum</strong>(name : String | Symbol, values : Array(String), options : Hash(Symbol, AAllowedTypes) = <span class="t">DbOptions</span>.new)</a>
+        <a href="#circle(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#circle</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#circle(name:String%7CSymbol,options=DbOptions.new)-instance-method">#circle</a></code> with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#column(name,type,options=DbOptions.new)-instance-method" class="signature"><strong>#column</strong>(name, type, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#field(name:String%7CSymbol,type:Symbol%7CString,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">#field</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#date(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#date</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#date(name:String%7CSymbol,options=DbOptions.new)-instance-method">#date</a></code> with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#date_time(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#date_time</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#date_time(name:String%7CSymbol,options=DbOptions.new)-instance-method">#date_time</a></code> with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#decimal(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#decimal</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#decimal(name:String%7CSymbol,options=DbOptions.new)-instance-method">#decimal</a></code> with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#double(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#double</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#double(name:String%7CSymbol,options=DbOptions.new)-instance-method">#double</a></code> with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enum(name:String%7CSymbol,values:Array(String),options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method" class="signature"><strong>#enum</strong>(name : String | Symbol, values : Array(String), options : Hash(Symbol, AAllowedTypes) = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
           <div class="summary"><p>Defines new enum column <em>name</em> with given <em>options</em>.</p></div>
         
@@ -1448,112 +1449,112 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#field%28name%3AString%7CSymbol%2Ctype%3ASymbol%7CString%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method" class="signature"><strong>#field</strong>(name : String | Symbol, type : Symbol | String, options : Hash(Symbol, AAllowedTypes) = <span class="t">DbOptions</span>.new)</a>
+        <a href="#field(name:String%7CSymbol,type:Symbol%7CString,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method" class="signature"><strong>#field</strong>(name : String | Symbol, type : Symbol | String, options : Hash(Symbol, AAllowedTypes) = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
           <div class="summary"><p>Defines field <em>name</em> of type <em>type</em> with with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#fields%3AHash%28String%2CHash%28Symbol%2CArray%28Bool%7CFloat32%7CFloat64%7CInt32%7CInt64%7CJSON%3A%3AAny%7CString%7CSymbol%7CNil%29%7CBool%7CFloat32%7CFloat64%7CInt32%7CInt64%7CJSON%3A%3AAny%7CString%7CSymbol%7CNil%29%29-instance-method" class="signature"><strong>#fields</strong> : Hash(String, Hash(Symbol, Array(Bool | Float32 | Float64 | Int32 | Int64 | JSON::Any | String | Symbol | Nil) | Bool | Float32 | Float64 | Int32 | Int64 | JSON::Any | String | Symbol | Nil))</a>
+        <a href="#fields:Hash(String,Hash(Symbol,Array(Bool%7CFloat32%7CFloat64%7CInt32%7CInt64%7CJSON::Any%7CString%7CSymbol%7CNil)%7CBool%7CFloat32%7CFloat64%7CInt32%7CInt64%7CJSON::Any%7CString%7CSymbol%7CNil))-instance-method" class="signature"><strong>#fields</strong> : Hash(String, Hash(Symbol, Array(Bool | Float32 | Float64 | Int32 | Int64 | JSON::Any | String | Symbol | Nil) | Bool | Float32 | Float64 | Int32 | Int64 | JSON::Any | String | Symbol | Nil))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#float%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#float</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#float(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#float</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#float%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#float</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#float(name:String%7CSymbol,options=DbOptions.new)-instance-method">#float</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#foreign_key%28to_table%3AString%7CSymbol%2Ccolumn%3Dnil%2Cprimary_key%3Dnil%2Cname%3Dnil%2C%2A%2Con_update%3ASymbol%3DDEFAULT_ON_EVENT_ACTION%2Con_delete%3ASymbol%3DDEFAULT_ON_EVENT_ACTION%29-instance-method" class="signature"><strong>#foreign_key</strong>(to_table : String | Symbol, column = <span class="n">nil</span>, primary_key = <span class="n">nil</span>, name = <span class="n">nil</span>, *, on_update : Symbol = <span class="t">DEFAULT_ON_EVENT_ACTION</span>, on_delete : Symbol = <span class="t">DEFAULT_ON_EVENT_ACTION</span>)</a>
+        <a href="#foreign_key(to_table:String%7CSymbol,column=nil,primary_key=nil,name=nil,*,on_update:Symbol=DEFAULT_ON_EVENT_ACTION,on_delete:Symbol=DEFAULT_ON_EVENT_ACTION)-instance-method" class="signature"><strong>#foreign_key</strong>(to_table : String | Symbol, column = <span class="n">nil</span>, primary_key = <span class="n">nil</span>, name = <span class="n">nil</span>, *, on_update : Symbol = <span class="t">DEFAULT_ON_EVENT_ACTION</span>, on_delete : Symbol = <span class="t">DEFAULT_ON_EVENT_ACTION</span>)</a>
         
           <div class="summary"><p>Creates a foreign key constraint to <code>to_table</code> table.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#index%28fields%3AArray%28Symbol%29%2Ctype%3ASymbol%3F%3Dnil%2Cname%3AString%3F%3Dnil%2Clengths%3AHash%28Symbol%2CInt32%29%3D%7B%7DofSymbol%3D%3EInt32%2Corders%3AHash%28Symbol%2CSymbol%29%3D%7B%7DofSymbol%3D%3ESymbol%29-instance-method" class="signature"><strong>#index</strong>(fields : Array(Symbol), type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, lengths : Hash(Symbol, Int32) = {} <span class="k">of</span> <span class="t">Symbol</span> <span class="o">=&gt;</span> <span class="t">Int32</span>, orders : Hash(Symbol, Symbol) = {} <span class="k">of</span> <span class="t">Symbol</span> <span class="o">=&gt;</span> <span class="t">Symbol</span>)</a>
+        <a href="#index(fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)=%7B%7DofSymbol=%3EInt32,orders:Hash(Symbol,Symbol)=%7B%7DofSymbol=%3ESymbol)-instance-method" class="signature"><strong>#index</strong>(fields : Array(Symbol), type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, lengths : Hash(Symbol, Int32) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Int32</span>, orders : Hash(Symbol, Symbol) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Symbol</span>)</a>
         
           <div class="summary"><p>Adds index.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#index%28field%3ASymbol%2Ctype%3ASymbol%3F%3Dnil%2Cname%3AString%3F%3Dnil%2Clength%3AInt32%3F%3Dnil%2Corder%3ASymbol%3F%3Dnil%29-instance-method" class="signature"><strong>#index</strong>(field : Symbol, type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, length : Int32? = <span class="n">nil</span>, order : Symbol? = <span class="n">nil</span>)</a>
+        <a href="#index(field:Symbol,type:Symbol?=nil,name:String?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method" class="signature"><strong>#index</strong>(field : Symbol, type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, length : Int32? = <span class="n">nil</span>, order : Symbol? = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Adds index.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#integer%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#integer</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#integer(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#integer</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#integer%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#integer</a></code> with given <em>options</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#json%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#json</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#json%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#json</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#integer(name:String%7CSymbol,options=DbOptions.new)-instance-method">#integer</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#jsonb%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#jsonb</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#json(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#json</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#jsonb%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#jsonb</a></code> with given <em>options</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#line%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#line</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#line%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#line</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#json(name:String%7CSymbol,options=DbOptions.new)-instance-method">#json</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#lseg%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#lseg</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#jsonb(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#jsonb</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#lseg%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#lseg</a></code> with given <em>options</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#numeric%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#numeric</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#numeric%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#numeric</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#jsonb(name:String%7CSymbol,options=DbOptions.new)-instance-method">#jsonb</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#oid%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#oid</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#line(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#line</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#oid%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#oid</a></code> with given <em>options</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#path%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#path</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#path%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#path</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#line(name:String%7CSymbol,options=DbOptions.new)-instance-method">#line</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#point%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#point</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#lseg(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#lseg</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#point%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#point</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#lseg(name:String%7CSymbol,options=DbOptions.new)-instance-method">#lseg</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#polygon%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#polygon</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#numeric(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#numeric</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#polygon%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#polygon</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#numeric(name:String%7CSymbol,options=DbOptions.new)-instance-method">#numeric</a></code> with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#oid(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#oid</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#oid(name:String%7CSymbol,options=DbOptions.new)-instance-method">#oid</a></code> with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#path(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#path</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#path(name:String%7CSymbol,options=DbOptions.new)-instance-method">#path</a></code> with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#point(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#point</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#point(name:String%7CSymbol,options=DbOptions.new)-instance-method">#point</a></code> with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#polygon(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#polygon</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#polygon(name:String%7CSymbol,options=DbOptions.new)-instance-method">#polygon</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
@@ -1565,79 +1566,79 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#reference%28name%2Ctype%3ASymbol%3D%3Ainteger%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method" class="signature"><strong>#reference</strong>(name, type : Symbol = <span class="n">:integer</span>, options : Hash(Symbol, AAllowedTypes) = <span class="t">DbOptions</span>.new)</a>
+        <a href="#reference(name,type:Symbol=:integer,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method" class="signature"><strong>#reference</strong>(name, type : Symbol = <span class="n">:integer</span>, options : Hash(Symbol, AAllowedTypes) = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
           <div class="summary"><p>Adds a reference.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#short%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#short</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#short(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#short</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#short%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#short</a></code> with given <em>options</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#string%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#string</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#string%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#string</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#short(name:String%7CSymbol,options=DbOptions.new)-instance-method">#short</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#text%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#text</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#string(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#string</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#text%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#text</a></code> with given <em>options</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#timestamp%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#timestamp</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#timestamp%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#timestamp</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#string(name:String%7CSymbol,options=DbOptions.new)-instance-method">#string</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#timestamps%28null%3ABool%3Dfalse%29-instance-method" class="signature"><strong>#timestamps</strong>(null : Bool = <span class="n">false</span>)</a>
+        <a href="#text(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#text</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#text(name:String%7CSymbol,options=DbOptions.new)-instance-method">#text</a></code> with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timestamp(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#timestamp</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#timestamp(name:String%7CSymbol,options=DbOptions.new)-instance-method">#timestamp</a></code> with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timestamps(null:Bool=false)-instance-method" class="signature"><strong>#timestamps</strong>(null : Bool = <span class="n">false</span>)</a>
         
           <div class="summary"><p>Defines <code>created_at</code> and <code>updated_at</code> timestamp fields.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#timestamptz%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#timestamptz</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#timestamptz(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#timestamptz</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#timestamptz%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#timestamptz</a></code> with given <em>options</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#tinyint%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#tinyint</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#tinyint%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#tinyint</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#timestamptz(name:String%7CSymbol,options=DbOptions.new)-instance-method">#timestamptz</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#uuid%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#uuid</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#tinyint(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#tinyint</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#uuid%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#uuid</a></code> with given <em>options</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#varchar%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#varchar</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
-        
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#varchar%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#varchar</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#tinyint(name:String%7CSymbol,options=DbOptions.new)-instance-method">#tinyint</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#xml%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method" class="signature"><strong>#xml</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)</a>
+        <a href="#uuid(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#uuid</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
         
-          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#xml%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#xml</a></code> with given <em>options</em>.</p></div>
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#uuid(name:String%7CSymbol,options=DbOptions.new)-instance-method">#uuid</a></code> with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#varchar(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#varchar</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#varchar(name:String%7CSymbol,options=DbOptions.new)-instance-method">#varchar</a></code> with given <em>options</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#xml(name:String%7CSymbol,options=DbOptions.new)-instance-method" class="signature"><strong>#xml</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)</a>
+        
+          <div class="summary"><p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#xml(name:String%7CSymbol,options=DbOptions.new)-instance-method">#xml</a></code> with given <em>options</em>.</p></div>
         
       </li>
     
@@ -1654,12 +1655,12 @@
   <h3>Instance methods inherited from class <code><a href="../../../Jennifer/Migration/TableBuilder/Base.html">Jennifer::Migration::TableBuilder::Base</a></code></h3>
   
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#adapter%3AAdapter%3A%3ABase-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#adapter:Adapter::Base-instance-method" class="tooltip">
       <span>adapter : Adapter::Base</span>
     adapter</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#column_exists?(*args,**options)-instance-method" class="tooltip">
       <span>column_exists?(*args, **options)<br/>column_exists?(*args, **options, &)</span>
     column_exists?</a>, 
     
@@ -1669,12 +1670,12 @@
     explain</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#index_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#index_exists?(*args,**options)-instance-method" class="tooltip">
       <span>index_exists?(*args, **options)<br/>index_exists?(*args, **options, &)</span>
     index_exists?</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#name%3AString-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#name:String-instance-method" class="tooltip">
       <span>name : String</span>
     name</a>, 
     
@@ -1689,12 +1690,12 @@
     process_commands</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#schema_processor%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#schema_processor(*args,**options)-instance-method" class="tooltip">
       <span>schema_processor(*args, **options)<br/>schema_processor(*args, **options, &)</span>
     schema_processor</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#table_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#table_exists?(*args,**options)-instance-method" class="tooltip">
       <span>table_exists?(*args, **options)<br/>table_exists?(*args, **options, &)</span>
     table_exists?</a>
     
@@ -1706,8 +1707,8 @@
   <h3>Constructor methods inherited from class <code><a href="../../../Jennifer/Migration/TableBuilder/Base.html">Jennifer::Migration::TableBuilder::Base</a></code></h3>
   
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#new%28adapter%3AJennifer%3A%3AAdapter%3A%3ABase%2Cname%3AString%7CSymbol%29-class-method" class="tooltip">
-      <span>new(adapter : Jennifer::Adapter::Base, name : String | Symbol)</span>
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#new(adapter,name:String%7CSymbol)-class-method" class="tooltip">
+      <span>new(adapter, name : String | Symbol)</span>
     new</a>
     
   
@@ -1756,15 +1757,16 @@
     <div class="entry-detail" id="bigint(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>bigint</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>bigint</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#bigint%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#bigint(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#bigint%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#bigint</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#bigint(name:String%7CSymbol,options=DbOptions.new)-instance-method">#bigint</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -1778,15 +1780,16 @@
     <div class="entry-detail" id="blchar(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>blchar</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>blchar</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#blchar%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#blchar(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#blchar%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#blchar</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#blchar(name:String%7CSymbol,options=DbOptions.new)-instance-method">#blchar</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -1800,15 +1803,16 @@
     <div class="entry-detail" id="blob(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>blob</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>blob</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#blob%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#blob(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#blob%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#blob</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#blob(name:String%7CSymbol,options=DbOptions.new)-instance-method">#blob</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -1822,15 +1826,16 @@
     <div class="entry-detail" id="bool(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>bool</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>bool</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#bool%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#bool(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#bool%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#bool</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#bool(name:String%7CSymbol,options=DbOptions.new)-instance-method">#bool</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -1844,15 +1849,16 @@
     <div class="entry-detail" id="box(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>box</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>box</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#box%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#box(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#box%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#box</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#box(name:String%7CSymbol,options=DbOptions.new)-instance-method">#box</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -1866,15 +1872,16 @@
     <div class="entry-detail" id="bytea(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>bytea</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>bytea</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#bytea%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#bytea(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#bytea%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#bytea</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#bytea(name:String%7CSymbol,options=DbOptions.new)-instance-method">#bytea</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -1888,15 +1895,16 @@
     <div class="entry-detail" id="char(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>char</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>char</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#char%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#char(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#char%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#char</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#char(name:String%7CSymbol,options=DbOptions.new)-instance-method">#char</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -1910,15 +1918,16 @@
     <div class="entry-detail" id="circle(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>circle</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>circle</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#circle%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#circle(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#circle%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#circle</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#circle(name:String%7CSymbol,options=DbOptions.new)-instance-method">#circle</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -1932,14 +1941,14 @@
     <div class="entry-detail" id="column(name,type,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>column</strong>(name, type, options = <span class="t">DbOptions</span>.new)
+        def <strong>column</strong>(name, type, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#column%28name%2Ctype%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#column(name,type,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Alias for <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#field%28name%3AString%7CSymbol%2Ctype%3ASymbol%7CString%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">#field</a></code>.</p>
+          <p>Alias for <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#field(name:String%7CSymbol,type:Symbol%7CString,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">#field</a></code>.</p>
         </div>
       
       <br/>
@@ -1953,15 +1962,16 @@
     <div class="entry-detail" id="date(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>date</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>date</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#date%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#date(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#date%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#date</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#date(name:String%7CSymbol,options=DbOptions.new)-instance-method">#date</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -1975,15 +1985,16 @@
     <div class="entry-detail" id="date_time(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>date_time</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>date_time</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#date_time%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#date_time(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#date_time%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#date_time</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#date_time(name:String%7CSymbol,options=DbOptions.new)-instance-method">#date_time</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -1997,15 +2008,16 @@
     <div class="entry-detail" id="decimal(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>decimal</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>decimal</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#decimal%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#decimal(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#decimal%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#decimal</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#decimal(name:String%7CSymbol,options=DbOptions.new)-instance-method">#decimal</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2019,15 +2031,16 @@
     <div class="entry-detail" id="double(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>double</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>double</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#double%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#double(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#double%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#double</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#double(name:String%7CSymbol,options=DbOptions.new)-instance-method">#double</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2041,16 +2054,18 @@
     <div class="entry-detail" id="enum(name:String|Symbol,values:Array(String),options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>enum</strong>(name : String | Symbol, values : Array(String), options : Hash(Symbol, <a href="../../../Jennifer/Migration/TableBuilder/Base/AAllowedTypes.html">AAllowedTypes</a>) = <span class="t">DbOptions</span>.new)
+        def <strong>enum</strong>(name : String | Symbol, values : Array(String), options : Hash(Symbol, <a href="../../../Jennifer/Migration/TableBuilder/Base/AAllowedTypes.html">AAllowedTypes</a>) = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#enum%28name%3AString%7CSymbol%2Cvalues%3AArray%28String%29%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#enum(name:String%7CSymbol,values:Array(String),options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Defines new enum column <em>name</em> with given <em>options</em>.</p>
+
 <p><em>values</em> argument specified allowed enum values.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code></p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code></p>
         </div>
       
       <br/>
@@ -2089,21 +2104,24 @@
     <div class="entry-detail" id="field(name:String|Symbol,type:Symbol|String,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>field</strong>(name : String | Symbol, type : Symbol | String, options : Hash(Symbol, <a href="../../../Jennifer/Migration/TableBuilder/Base/AAllowedTypes.html">AAllowedTypes</a>) = <span class="t">DbOptions</span>.new)
+        def <strong>field</strong>(name : String | Symbol, type : Symbol | String, options : Hash(Symbol, <a href="../../../Jennifer/Migration/TableBuilder/Base/AAllowedTypes.html">AAllowedTypes</a>) = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#field%28name%3AString%7CSymbol%2Ctype%3ASymbol%7CString%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#field(name:String%7CSymbol,type:Symbol%7CString,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Defines field <em>name</em> of type <em>type</em> with with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>. The only difference is that <em>type</em> argument
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>. The only difference is that <em>type</em> argument
 is treated as SQL datatype - it works same way as specifying <code>:sql_type</code> parameter.</p>
+
 <pre><code class="language-crystal">create_enum <span class="n">:gender_enum</span>, <span class="s">%w(unspecified female male)</span>
 
 create_table <span class="n">:users</span> <span class="k">do</span> <span class="o">|</span>t<span class="o">|</span>
   t.field <span class="n">:gender</span>, <span class="n">:gender_enum</span>
 <span class="k">end</span></code></pre>
+
 <p>Migration above will create PostreSQL enum and a table with column of that type.</p>
         </div>
       
@@ -2120,7 +2138,7 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
         
         def <strong>fields</strong> : Hash(String, Hash(Symbol, Array(Bool | Float32 | Float64 | Int32 | Int64 | JSON::Any | String | Symbol | Nil) | Bool | Float32 | Float64 | Int32 | Int64 | JSON::Any | String | Symbol | Nil))
 
-        <a class="method-permalink" href="#fields%3AHash%28String%2CHash%28Symbol%2CArray%28Bool%7CFloat32%7CFloat64%7CInt32%7CInt64%7CJSON%3A%3AAny%7CString%7CSymbol%7CNil%29%7CBool%7CFloat32%7CFloat64%7CInt32%7CInt64%7CJSON%3A%3AAny%7CString%7CSymbol%7CNil%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#fields:Hash(String,Hash(Symbol,Array(Bool%7CFloat32%7CFloat64%7CInt32%7CInt64%7CJSON::Any%7CString%7CSymbol%7CNil)%7CBool%7CFloat32%7CFloat64%7CInt32%7CInt64%7CJSON::Any%7CString%7CSymbol%7CNil))-instance-method">#</a>
       </div>
       
       <br/>
@@ -2134,15 +2152,16 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
     <div class="entry-detail" id="float(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>float</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>float</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#float%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#float(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#float%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#float</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#float(name:String%7CSymbol,options=DbOptions.new)-instance-method">#float</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2158,13 +2177,14 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
         
         def <strong>foreign_key</strong>(to_table : String | Symbol, column = <span class="n">nil</span>, primary_key = <span class="n">nil</span>, name = <span class="n">nil</span>, *, on_update : Symbol = <span class="t">DEFAULT_ON_EVENT_ACTION</span>, on_delete : Symbol = <span class="t">DEFAULT_ON_EVENT_ACTION</span>)
 
-        <a class="method-permalink" href="#foreign_key%28to_table%3AString%7CSymbol%2Ccolumn%3Dnil%2Cprimary_key%3Dnil%2Cname%3Dnil%2C%2A%2Con_update%3ASymbol%3DDEFAULT_ON_EVENT_ACTION%2Con_delete%3ASymbol%3DDEFAULT_ON_EVENT_ACTION%29-instance-method">#</a>
+        <a class="method-permalink" href="#foreign_key(to_table:String%7CSymbol,column=nil,primary_key=nil,name=nil,*,on_update:Symbol=DEFAULT_ON_EVENT_ACTION,on_delete:Symbol=DEFAULT_ON_EVENT_ACTION)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates a foreign key constraint to <code>to_table</code> table.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/Base.html#add_foreign_key%28from_table%3AString%7CSymbol%2Cto_table%3AString%7CSymbol%2Ccolumn%3AString%7CSymbol%3F%3Dnil%2Cprimary_key%3AString%7CSymbol%3F%3Dnil%2Cname%3AString%3F%3Dnil%2Con_update%3ASymbol%3DTableBuilder%3A%3ABase%3A%3ADEFAULT_ON_EVENT_ACTION%2Con_delete%3ASymbol%3DTableBuilder%3A%3ABase%3A%3ADEFAULT_ON_EVENT_ACTION%29-instance-method">Migration::Base#add_foreign_key</a></code>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/Base.html#add_foreign_key(from_table:String%7CSymbol,to_table:String%7CSymbol,column:String%7CSymbol?=nil,primary_key:String%7CSymbol?=nil,name:String?=nil,on_update:Symbol=TableBuilder::Base::DEFAULT_ON_EVENT_ACTION,on_delete:Symbol=TableBuilder::Base::DEFAULT_ON_EVENT_ACTION)-instance-method">Migration::Base#add_foreign_key</a></code>.</p>
         </div>
       
       <br/>
@@ -2178,15 +2198,16 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
     <div class="entry-detail" id="index(fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)={}ofSymbol=&gt;Int32,orders:Hash(Symbol,Symbol)={}ofSymbol=&gt;Symbol)-instance-method">
       <div class="signature">
         
-        def <strong>index</strong>(fields : Array(Symbol), type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, lengths : Hash(Symbol, Int32) = {} <span class="k">of</span> <span class="t">Symbol</span> <span class="o">=&gt;</span> <span class="t">Int32</span>, orders : Hash(Symbol, Symbol) = {} <span class="k">of</span> <span class="t">Symbol</span> <span class="o">=&gt;</span> <span class="t">Symbol</span>)
+        def <strong>index</strong>(fields : Array(Symbol), type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, lengths : Hash(Symbol, Int32) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Int32</span>, orders : Hash(Symbol, Symbol) = {} <span class="k">of</span> <span class="t">Symbol</span> => <span class="t">Symbol</span>)
 
-        <a class="method-permalink" href="#index%28fields%3AArray%28Symbol%29%2Ctype%3ASymbol%3F%3Dnil%2Cname%3AString%3F%3Dnil%2Clengths%3AHash%28Symbol%2CInt32%29%3D%7B%7DofSymbol%3D%3EInt32%2Corders%3AHash%28Symbol%2CSymbol%29%3D%7B%7DofSymbol%3D%3ESymbol%29-instance-method">#</a>
+        <a class="method-permalink" href="#index(fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)=%7B%7DofSymbol=%3EInt32,orders:Hash(Symbol,Symbol)=%7B%7DofSymbol=%3ESymbol)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds index.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/Base.html#add_index%28table_name%3AString%7CSymbol%2Cfields%3AArray%28Symbol%29%2Ctype%3ASymbol%3F%3Dnil%2Cname%3AString%3F%3Dnil%2Clengths%3AHash%28Symbol%2CInt32%29%3D%7B%7DofSymbol%3D%3EInt32%2Corders%3AHash%28Symbol%2CSymbol%29%3D%7B%7DofSymbol%3D%3ESymbol%29-instance-method">Migration::Base#add_index</a></code>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/Base.html#add_index(table_name:String%7CSymbol,fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)=%7B%7DofSymbol=%3EInt32,orders:Hash(Symbol,Symbol)=%7B%7DofSymbol=%3ESymbol)-instance-method">Migration::Base#add_index</a></code>.</p>
         </div>
       
       <br/>
@@ -2202,13 +2223,14 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
         
         def <strong>index</strong>(field : Symbol, type : Symbol? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, length : Int32? = <span class="n">nil</span>, order : Symbol? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#index%28field%3ASymbol%2Ctype%3ASymbol%3F%3Dnil%2Cname%3AString%3F%3Dnil%2Clength%3AInt32%3F%3Dnil%2Corder%3ASymbol%3F%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#index(field:Symbol,type:Symbol?=nil,name:String?=nil,length:Int32?=nil,order:Symbol?=nil)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds index.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/Base.html#add_index%28table_name%3AString%7CSymbol%2Cfields%3AArray%28Symbol%29%2Ctype%3ASymbol%3F%3Dnil%2Cname%3AString%3F%3Dnil%2Clengths%3AHash%28Symbol%2CInt32%29%3D%7B%7DofSymbol%3D%3EInt32%2Corders%3AHash%28Symbol%2CSymbol%29%3D%7B%7DofSymbol%3D%3ESymbol%29-instance-method">Migration::Base#add_index</a></code>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/Base.html#add_index(table_name:String%7CSymbol,fields:Array(Symbol),type:Symbol?=nil,name:String?=nil,lengths:Hash(Symbol,Int32)=%7B%7DofSymbol=%3EInt32,orders:Hash(Symbol,Symbol)=%7B%7DofSymbol=%3ESymbol)-instance-method">Migration::Base#add_index</a></code>.</p>
         </div>
       
       <br/>
@@ -2222,15 +2244,16 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
     <div class="entry-detail" id="integer(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>integer</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>integer</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#integer%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#integer(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#integer%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#integer</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#integer(name:String%7CSymbol,options=DbOptions.new)-instance-method">#integer</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2244,15 +2267,16 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
     <div class="entry-detail" id="json(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>json</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>json</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#json%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#json(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#json%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#json</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#json(name:String%7CSymbol,options=DbOptions.new)-instance-method">#json</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2266,15 +2290,16 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
     <div class="entry-detail" id="jsonb(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>jsonb</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>jsonb</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#jsonb%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#jsonb(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#jsonb%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#jsonb</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#jsonb(name:String%7CSymbol,options=DbOptions.new)-instance-method">#jsonb</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2288,15 +2313,16 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
     <div class="entry-detail" id="line(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>line</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>line</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#line%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#line(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#line%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#line</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#line(name:String%7CSymbol,options=DbOptions.new)-instance-method">#line</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2310,15 +2336,16 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
     <div class="entry-detail" id="lseg(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>lseg</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>lseg</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#lseg%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#lseg(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#lseg%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#lseg</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#lseg(name:String%7CSymbol,options=DbOptions.new)-instance-method">#lseg</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2332,15 +2359,16 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
     <div class="entry-detail" id="numeric(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>numeric</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>numeric</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#numeric%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#numeric(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#numeric%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#numeric</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#numeric(name:String%7CSymbol,options=DbOptions.new)-instance-method">#numeric</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2354,15 +2382,16 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
     <div class="entry-detail" id="oid(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>oid</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>oid</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#oid%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#oid(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#oid%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#oid</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#oid(name:String%7CSymbol,options=DbOptions.new)-instance-method">#oid</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2376,15 +2405,16 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
     <div class="entry-detail" id="path(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>path</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>path</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#path%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#path(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#path%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#path</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#path(name:String%7CSymbol,options=DbOptions.new)-instance-method">#path</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2398,15 +2428,16 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
     <div class="entry-detail" id="point(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>point</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>point</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#point%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#point(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#point%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#point</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#point(name:String%7CSymbol,options=DbOptions.new)-instance-method">#point</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2420,15 +2451,16 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
     <div class="entry-detail" id="polygon(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>polygon</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>polygon</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#polygon%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#polygon(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#polygon%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#polygon</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#polygon(name:String%7CSymbol,options=DbOptions.new)-instance-method">#polygon</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2467,22 +2499,26 @@ create_table <span class="n">:users</span> <span class="k">do</span> <span class
     <div class="entry-detail" id="reference(name,type:Symbol=:integer,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>reference</strong>(name, type : Symbol = <span class="n">:integer</span>, options : Hash(Symbol, <a href="../../../Jennifer/Migration/TableBuilder/Base/AAllowedTypes.html">AAllowedTypes</a>) = <span class="t">DbOptions</span>.new)
+        def <strong>reference</strong>(name, type : Symbol = <span class="n">:integer</span>, options : Hash(Symbol, <a href="../../../Jennifer/Migration/TableBuilder/Base/AAllowedTypes.html">AAllowedTypes</a>) = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#reference%28name%2Ctype%3ASymbol%3D%3Ainteger%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#reference(name,type:Symbol=:integer,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds a reference.</p>
-<p>The reference column is an <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#integer%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#integer</a></code> by default, <em>type</em> argument can be used to specify a different type.</p>
-<p>If <em>polymorphic</em> option is <code>true</code> - additional string field <code>&quot;#{name}_type&quot;</code> is created and foreign key is
+
+<p>The reference column is an <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#integer(name:String%7CSymbol,options=DbOptions.new)-instance-method">#integer</a></code> by default, <em>type</em> argument can be used to specify a different type.</p>
+
+<p>If <em>polymorphic</em> option is <code>true</code> - additional string field <code>"#{name}_type"</code> is created and foreign key is
 not added.</p>
+
 <p><code>:to_table</code>, <code>:column</code>, <code>:primary_key</code> and <code>:key_name</code> options are used to create a foreign key constraint.
-See <code><a href="../../../Jennifer/Migration/Base.html#add_foreign_key%28from_table%3AString%7CSymbol%2Cto_table%3AString%7CSymbol%2Ccolumn%3AString%7CSymbol%3F%3Dnil%2Cprimary_key%3AString%7CSymbol%3F%3Dnil%2Cname%3AString%3F%3Dnil%2Con_update%3ASymbol%3DTableBuilder%3A%3ABase%3A%3ADEFAULT_ON_EVENT_ACTION%2Con_delete%3ASymbol%3DTableBuilder%3A%3ABase%3A%3ADEFAULT_ON_EVENT_ACTION%29-instance-method">Migration::Base#add_foreign_key</a></code> for details.</p>
+See <code><a href="../../../Jennifer/Migration/Base.html#add_foreign_key(from_table:String%7CSymbol,to_table:String%7CSymbol,column:String%7CSymbol?=nil,primary_key:String%7CSymbol?=nil,name:String?=nil,on_update:Symbol=TableBuilder::Base::DEFAULT_ON_EVENT_ACTION,on_delete:Symbol=TableBuilder::Base::DEFAULT_ON_EVENT_ACTION)-instance-method">Migration::Base#add_foreign_key</a></code> for details.</p>
+
 <pre><code class="language-crystal">reference <span class="n">:user</span>
 reference <span class="n">:order</span>, <span class="n">:bigint</span>
-reference <span class="n">:taggable</span>, {<span class="n">:polymorphic</span> <span class="o">=&gt;</span> <span class="n">true</span>}</code></pre>
+reference <span class="n">:taggable</span>, {<span class="n">:polymorphic</span> => <span class="n">true</span>}</code></pre>
         </div>
       
       <br/>
@@ -2496,15 +2532,16 @@ reference <span class="n">:taggable</span>, {<span class="n">:polymorphic</span>
     <div class="entry-detail" id="short(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>short</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>short</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#short%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#short(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#short%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#short</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#short(name:String%7CSymbol,options=DbOptions.new)-instance-method">#short</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2518,15 +2555,16 @@ reference <span class="n">:taggable</span>, {<span class="n">:polymorphic</span>
     <div class="entry-detail" id="string(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>string</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>string</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#string%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#string(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#string%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#string</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#string(name:String%7CSymbol,options=DbOptions.new)-instance-method">#string</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2540,15 +2578,16 @@ reference <span class="n">:taggable</span>, {<span class="n">:polymorphic</span>
     <div class="entry-detail" id="text(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>text</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>text</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#text%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#text(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#text%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#text</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#text(name:String%7CSymbol,options=DbOptions.new)-instance-method">#text</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2562,15 +2601,16 @@ reference <span class="n">:taggable</span>, {<span class="n">:polymorphic</span>
     <div class="entry-detail" id="timestamp(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>timestamp</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>timestamp</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#timestamp%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#timestamp(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#timestamp%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#timestamp</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#timestamp(name:String%7CSymbol,options=DbOptions.new)-instance-method">#timestamp</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2586,12 +2626,13 @@ reference <span class="n">:taggable</span>, {<span class="n">:polymorphic</span>
         
         def <strong>timestamps</strong>(null : Bool = <span class="n">false</span>)
 
-        <a class="method-permalink" href="#timestamps%28null%3ABool%3Dfalse%29-instance-method">#</a>
+        <a class="method-permalink" href="#timestamps(null:Bool=false)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Defines <code>created_at</code> and <code>updated_at</code> timestamp fields.</p>
+
 <p>Argument <em>null</em> sets <code>:null</code> option for both fields.</p>
         </div>
       
@@ -2606,15 +2647,16 @@ reference <span class="n">:taggable</span>, {<span class="n">:polymorphic</span>
     <div class="entry-detail" id="timestamptz(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>timestamptz</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>timestamptz</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#timestamptz%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#timestamptz(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#timestamptz%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#timestamptz</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#timestamptz(name:String%7CSymbol,options=DbOptions.new)-instance-method">#timestamptz</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2628,15 +2670,16 @@ reference <span class="n">:taggable</span>, {<span class="n">:polymorphic</span>
     <div class="entry-detail" id="tinyint(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>tinyint</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>tinyint</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#tinyint%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#tinyint(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#tinyint%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#tinyint</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#tinyint(name:String%7CSymbol,options=DbOptions.new)-instance-method">#tinyint</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2650,15 +2693,16 @@ reference <span class="n">:taggable</span>, {<span class="n">:polymorphic</span>
     <div class="entry-detail" id="uuid(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>uuid</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>uuid</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#uuid%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#uuid(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#uuid%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#uuid</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#uuid(name:String%7CSymbol,options=DbOptions.new)-instance-method">#uuid</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2672,15 +2716,16 @@ reference <span class="n">:taggable</span>, {<span class="n">:polymorphic</span>
     <div class="entry-detail" id="varchar(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>varchar</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>varchar</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#varchar%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#varchar(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#varchar%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#varchar</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#varchar(name:String%7CSymbol,options=DbOptions.new)-instance-method">#varchar</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>
@@ -2694,15 +2739,16 @@ reference <span class="n">:taggable</span>, {<span class="n">:polymorphic</span>
     <div class="entry-detail" id="xml(name:String|Symbol,options=DbOptions.new)-instance-method">
       <div class="signature">
         
-        def <strong>xml</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.new)
+        def <strong>xml</strong>(name : String | Symbol, options = <span class="t">DbOptions</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#xml%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#</a>
+        <a class="method-permalink" href="#xml(name:String%7CSymbol,options=DbOptions.new)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#xml%28name%3AString%7CSymbol%2Coptions%3DDbOptions.new%29-instance-method">#xml</a></code> with given <em>options</em>.</p>
-<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column%28name%3AString%7CSymbol%2Ctype%3ASymbol%3F%3Dnil%2Coptions%3AHash%28Symbol%2CAAllowedTypes%29%3DDbOptions.new%29-instance-method">ChangeTable#add_column</a></code>.</p>
+          <p>Defines new column <em>name</em> of type <code><a href="../../../Jennifer/Migration/TableBuilder/CreateTable.html#xml(name:String%7CSymbol,options=DbOptions.new)-instance-method">#xml</a></code> with given <em>options</em>.</p>
+
+<p>For more details see <code><a href="../../../Jennifer/Migration/TableBuilder/ChangeTable.html#add_column(name:String%7CSymbol,type:Symbol?=nil,options:Hash(Symbol,AAllowedTypes)=DbOptions.new)-instance-method">ChangeTable#add_column</a></code>.</p>
         </div>
       
       <br/>

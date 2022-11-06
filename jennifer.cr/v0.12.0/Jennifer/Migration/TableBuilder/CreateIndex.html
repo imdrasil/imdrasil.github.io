@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1320,7 +1320,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28adapter%2Ctable_name%3AString%2Cindex_name%2Cfields%3AArray%2Ctype%3ASymbol%3F%2Clengths%3AHash%28Symbol%2CInt32%29%2Corders%3AHash%28Symbol%2CSymbol%29%29-class-method" class="signature"><strong>.new</strong>(adapter, table_name : String, index_name, fields : Array, type : Symbol?, lengths : Hash(Symbol, Int32), orders : Hash(Symbol, Symbol))</a>
+        <a href="#new(adapter,table_name:String,index_name,fields:Array,type:Symbol?,lengths,orders)-class-method" class="signature"><strong>.new</strong>(adapter, table_name : String, index_name, fields : Array, type : Symbol?, lengths, orders)</a>
         
       </li>
     
@@ -1348,22 +1348,22 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#fields%3AArray%28Symbol%29-instance-method" class="signature"><strong>#fields</strong> : Array(Symbol)</a>
+        <a href="#fields:Array(Symbol)-instance-method" class="signature"><strong>#fields</strong> : Array(Symbol)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#index_name%3AString-instance-method" class="signature"><strong>#index_name</strong> : String</a>
+        <a href="#index_name:String-instance-method" class="signature"><strong>#index_name</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#lengths%3AHash%28Symbol%2CInt32%29-instance-method" class="signature"><strong>#lengths</strong> : Hash(Symbol, Int32)</a>
+        <a href="#lengths:Hash(Symbol,Int32)-instance-method" class="signature"><strong>#lengths</strong> : Hash(Symbol, Int32)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#orders%3AHash%28Symbol%2CSymbol%29-instance-method" class="signature"><strong>#orders</strong> : Hash(Symbol, Symbol)</a>
+        <a href="#orders:Hash(Symbol,Symbol)-instance-method" class="signature"><strong>#orders</strong> : Hash(Symbol, Symbol)</a>
         
       </li>
     
@@ -1375,7 +1375,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#type%3ASymbol%3F-instance-method" class="signature"><strong>#type</strong> : Symbol?</a>
+        <a href="#type:Symbol?-instance-method" class="signature"><strong>#type</strong> : Symbol?</a>
         
       </li>
     
@@ -1392,12 +1392,12 @@
   <h3>Instance methods inherited from class <code><a href="../../../Jennifer/Migration/TableBuilder/Base.html">Jennifer::Migration::TableBuilder::Base</a></code></h3>
   
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#adapter%3AAdapter%3A%3ABase-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#adapter:Adapter::Base-instance-method" class="tooltip">
       <span>adapter : Adapter::Base</span>
     adapter</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#column_exists?(*args,**options)-instance-method" class="tooltip">
       <span>column_exists?(*args, **options)<br/>column_exists?(*args, **options, &)</span>
     column_exists?</a>, 
     
@@ -1407,12 +1407,12 @@
     explain</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#index_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#index_exists?(*args,**options)-instance-method" class="tooltip">
       <span>index_exists?(*args, **options)<br/>index_exists?(*args, **options, &)</span>
     index_exists?</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#name%3AString-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#name:String-instance-method" class="tooltip">
       <span>name : String</span>
     name</a>, 
     
@@ -1427,12 +1427,12 @@
     process_commands</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#schema_processor%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#schema_processor(*args,**options)-instance-method" class="tooltip">
       <span>schema_processor(*args, **options)<br/>schema_processor(*args, **options, &)</span>
     schema_processor</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#table_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#table_exists?(*args,**options)-instance-method" class="tooltip">
       <span>table_exists?(*args, **options)<br/>table_exists?(*args, **options, &)</span>
     table_exists?</a>
     
@@ -1444,8 +1444,8 @@
   <h3>Constructor methods inherited from class <code><a href="../../../Jennifer/Migration/TableBuilder/Base.html">Jennifer::Migration::TableBuilder::Base</a></code></h3>
   
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#new%28adapter%3AJennifer%3A%3AAdapter%3A%3ABase%2Cname%3AString%7CSymbol%29-class-method" class="tooltip">
-      <span>new(adapter : Jennifer::Adapter::Base, name : String | Symbol)</span>
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#new(adapter,name:String%7CSymbol)-class-method" class="tooltip">
+      <span>new(adapter, name : String | Symbol)</span>
     new</a>
     
   
@@ -1487,12 +1487,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(adapter,table_name:String,index_name,fields:Array,type:Symbol?,lengths:Hash(Symbol,Int32),orders:Hash(Symbol,Symbol))-class-method">
+    <div class="entry-detail" id="new(adapter,table_name:String,index_name,fields:Array,type:Symbol?,lengths,orders)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(adapter, table_name : String, index_name, fields : Array, type : Symbol?, lengths : Hash(Symbol, Int32), orders : Hash(Symbol, Symbol))
+        def self.<strong>new</strong>(adapter, table_name : String, index_name, fields : Array, type : Symbol?, lengths, orders)
 
-        <a class="method-permalink" href="#new%28adapter%2Ctable_name%3AString%2Cindex_name%2Cfields%3AArray%2Ctype%3ASymbol%3F%2Clengths%3AHash%28Symbol%2CInt32%29%2Corders%3AHash%28Symbol%2CSymbol%29%29-class-method">#</a>
+        <a class="method-permalink" href="#new(adapter,table_name:String,index_name,fields:Array,type:Symbol?,lengths,orders)-class-method">#</a>
       </div>
       
       <br/>
@@ -1547,7 +1547,7 @@
         
         def <strong>fields</strong> : Array(Symbol)
 
-        <a class="method-permalink" href="#fields%3AArray%28Symbol%29-instance-method">#</a>
+        <a class="method-permalink" href="#fields:Array(Symbol)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1563,7 +1563,7 @@
         
         def <strong>index_name</strong> : String
 
-        <a class="method-permalink" href="#index_name%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#index_name:String-instance-method">#</a>
       </div>
       
       <br/>
@@ -1579,7 +1579,7 @@
         
         def <strong>lengths</strong> : Hash(Symbol, Int32)
 
-        <a class="method-permalink" href="#lengths%3AHash%28Symbol%2CInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#lengths:Hash(Symbol,Int32)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1595,7 +1595,7 @@
         
         def <strong>orders</strong> : Hash(Symbol, Symbol)
 
-        <a class="method-permalink" href="#orders%3AHash%28Symbol%2CSymbol%29-instance-method">#</a>
+        <a class="method-permalink" href="#orders:Hash(Symbol,Symbol)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1636,7 +1636,7 @@
         
         def <strong>type</strong> : Symbol?
 
-        <a class="method-permalink" href="#type%3ASymbol%3F-instance-method">#</a>
+        <a class="method-permalink" href="#type:Symbol?-instance-method">#</a>
       </div>
       
       <br/>

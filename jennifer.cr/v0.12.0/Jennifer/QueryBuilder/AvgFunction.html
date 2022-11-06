@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1285,6 +1285,7 @@
   </h2>
 
   <p>Returns the average of given field values.</p>
+
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;users&quot;</span>].<span class="k">select</span> { [_gender, avg(_age).<span class="k">alias</span>(<span class="s">&quot;human_age&quot;</span>)] }.group(<span class="n">:gender</span>)</code></pre>
 
 
@@ -1336,7 +1337,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#as_sql%28generator%29-instance-method" class="signature"><strong>#as_sql</strong>(generator)</a>
+        <a href="#as_sql(generator)-instance-method" class="signature"><strong>#as_sql</strong>(generator)</a>
         
           <div class="summary"><p>Converts node to SQL using <em>sql_generator</em> SQLGenerator.</p></div>
         
@@ -1362,12 +1363,12 @@
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/QueryBuilder/Function.html">Jennifer::QueryBuilder::Function</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Function.html#alias_tables%28aliases%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Function.html#alias_tables(aliases)-instance-method" class="tooltip">
       <span>alias_tables(aliases)</span>
     alias_tables</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Function.html#change_table%28old_name%2Cnew_name%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Function.html#change_table(old_name,new_name)-instance-method" class="tooltip">
       <span>change_table(old_name, new_name)</span>
     change_table</a>, 
     
@@ -1377,37 +1378,37 @@
     clone</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Function.html#definition%28sql_generator%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Function.html#definition(sql_generator)-instance-method" class="tooltip">
       <span>definition(sql_generator)<br/>definition</span>
     definition</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Function.html#filterable%3F-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Function.html#filterable?-instance-method" class="tooltip">
       <span>filterable?</span>
     filterable?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Function.html#operand_sql%28operand%3ASQLNode%2Cgenerator%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Function.html#operand_sql(operand:SQLNode,generator)-instance-method" class="tooltip">
       <span>operand_sql(operand : SQLNode, generator)<br/>operand_sql(_operand, generator)</span>
     operand_sql</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Function.html#operands%3AArray%28Array%28Array%28Char%29%7CArray%28Float32%29%7CArray%28Float64%29%7CArray%28Int16%29%7CArray%28Int32%29%7CArray%28Int64%29%7CArray%28String%29%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON%3A%3AAny%7CPG%3A%3AGeo%3A%3ABox%7CPG%3A%3AGeo%3A%3ACircle%7CPG%3A%3AGeo%3A%3ALine%7CPG%3A%3AGeo%3A%3ALineSegment%7CPG%3A%3AGeo%3A%3APath%7CPG%3A%3AGeo%3A%3APoint%7CPG%3A%3AGeo%3A%3APolygon%7CPG%3A%3ANumeric%7CSlice%28UInt8%29%7CString%7CTime%7CTime%3A%3ASpan%7CUInt32%7CUUID%7CNil%29%7CArray%28Char%29%7CArray%28Float32%29%7CArray%28Float64%29%7CArray%28Int16%29%7CArray%28Int32%29%7CArray%28Int64%29%7CArray%28String%29%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON%3A%3AAny%7CJennifer%3A%3AQueryBuilder%3A%3ASQLNode%7CPG%3A%3AGeo%3A%3ABox%7CPG%3A%3AGeo%3A%3ACircle%7CPG%3A%3AGeo%3A%3ALine%7CPG%3A%3AGeo%3A%3ALineSegment%7CPG%3A%3AGeo%3A%3APath%7CPG%3A%3AGeo%3A%3APoint%7CPG%3A%3AGeo%3A%3APolygon%7CPG%3A%3ANumeric%7CSlice%28UInt8%29%7CString%7CTime%7CTime%3A%3ASpan%7CUInt32%7CUUID%7CNil%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Function.html#operands:Array(Array(Array(Char)%7CArray(Float32)%7CArray(Float64)%7CArray(Int16)%7CArray(Int32)%7CArray(Int64)%7CArray(String)%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON::Any%7CPG::Geo::Box%7CPG::Geo::Circle%7CPG::Geo::Line%7CPG::Geo::LineSegment%7CPG::Geo::Path%7CPG::Geo::Point%7CPG::Geo::Polygon%7CPG::Numeric%7CSlice(UInt8)%7CString%7CTime%7CTime::Span%7CUInt32%7CUUID%7CNil)%7CArray(Char)%7CArray(Float32)%7CArray(Float64)%7CArray(Int16)%7CArray(Int32)%7CArray(Int64)%7CArray(String)%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON::Any%7CJennifer::QueryBuilder::SQLNode%7CPG::Geo::Box%7CPG::Geo::Circle%7CPG::Geo::Line%7CPG::Geo::LineSegment%7CPG::Geo::Path%7CPG::Geo::Point%7CPG::Geo::Polygon%7CPG::Numeric%7CSlice(UInt8)%7CString%7CTime%7CTime::Span%7CUInt32%7CUUID%7CNil)-instance-method" class="tooltip">
       <span>operands : Array(Array(Array(Char) | Array(Float32) | Array(Float64) | Array(Int16) | Array(Int32) | Array(Int64) | Array(String) | Bool | Char | Float32 | Float64 | Int16 | Int32 | Int64 | Int8 | JSON::Any | PG::Geo::Box | PG::Geo::Circle | PG::Geo::Line | PG::Geo::LineSegment | PG::Geo::Path | PG::Geo::Point | PG::Geo::Polygon | PG::Numeric | Slice(UInt8) | String | Time | Time::Span | UInt32 | UUID | Nil) | Array(Char) | Array(Float32) | Array(Float64) | Array(Int16) | Array(Int32) | Array(Int64) | Array(String) | Bool | Char | Float32 | Float64 | Int16 | Int32 | Int64 | Int8 | JSON::Any | Jennifer::QueryBuilder::SQLNode | PG::Geo::Box | PG::Geo::Circle | PG::Geo::Line | PG::Geo::LineSegment | PG::Geo::Path | PG::Geo::Point | PG::Geo::Polygon | PG::Numeric | Slice(UInt8) | String | Time | Time::Span | UInt32 | UUID | Nil)</span>
     operands</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Function.html#operands_to_sql%28generator%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Function.html#operands_to_sql(generator)-instance-method" class="tooltip">
       <span>operands_to_sql(generator)</span>
     operands_to_sql</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Function.html#set_relation%28table%2Cname%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Function.html#set_relation(table,name)-instance-method" class="tooltip">
       <span>set_relation(table, name)</span>
     set_relation</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Function.html#sql_args%3AArray%28DBAny%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Function.html#sql_args:Array(DBAny)-instance-method" class="tooltip">
       <span>sql_args : Array(DBAny)</span>
     sql_args</a>
     
@@ -1419,7 +1420,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../Jennifer/QueryBuilder/Function.html">Jennifer::QueryBuilder::Function</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Function.html#new%28%2Aargs%29-class-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Function.html#new(*args)-class-method" class="tooltip">
       <span>new(*args)</span>
     new</a>
     
@@ -1435,87 +1436,82 @@
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/QueryBuilder/Criteria.html">Jennifer::QueryBuilder::Criteria</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#%21%3D%28value%3ASymbol%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#!=(value:Symbol)-instance-method" class="tooltip">
       <span>!=(value : Symbol)<br/>!=(value : Rightable)</span>
     !=</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#%26%28other%3ALogicOperator%3A%3AOperandable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#&(other:LogicOperator::Operandable)-instance-method" class="tooltip">
       <span>&(other : LogicOperator::Operandable)</span>
     &</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#%2A%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#*(value:Rightable)-instance-method" class="tooltip">
       <span>*(value : Rightable)</span>
     *</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#%2B%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#+(value:Rightable)-instance-method" class="tooltip">
       <span>+(value : Rightable)</span>
     +</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#-%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#-(value:Rightable)-instance-method" class="tooltip">
       <span>-(value : Rightable)</span>
     -</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#/%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#/(value:Rightable)-instance-method" class="tooltip">
       <span>/(value : Rightable)</span>
     /</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3C%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3C(value:Rightable)-instance-method" class="tooltip">
       <span><(value : Rightable)</span>
     <</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3C%3D%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3C=(value:Rightable)-instance-method" class="tooltip">
       <span><=(value : Rightable)</span>
     <=</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3D%3D%28value%3ASymbol%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#==(value:Symbol)-instance-method" class="tooltip">
       <span>==(value : Symbol)<br/>==(value : Rightable)</span>
     ==</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3D~%28value%3AString%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#=~(value:String)-instance-method" class="tooltip">
       <span>=~(value : String)</span>
     =~</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3E%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3E(value:Rightable)-instance-method" class="tooltip">
       <span>>(value : Rightable)</span>
     ></a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3E%3D%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#%3E=(value:Rightable)-instance-method" class="tooltip">
       <span>>=(value : Rightable)</span>
     >=</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#%5B%5D%28key%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#[](key)-instance-method" class="tooltip">
       <span>[](key)</span>
     []</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#%7C%28other%3ALogicOperator%3A%3AOperandable%29-instance-method" class="tooltip">
-      <span>|(other : LogicOperator::Operandable)</span>
-    |</a>, 
-    
-  
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#alias%28name%3AString%3F%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#alias(name:String?)-instance-method" class="tooltip">
       <span>alias(name : String?)<br/>alias : String?</span>
     alias</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#alias_tables%28aliases%3AHash%28String%2CString%29%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#alias_tables(aliases:Hash(String,String))-instance-method" class="tooltip">
       <span>alias_tables(aliases : Hash(String, String))</span>
     alias_tables</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#as_sql%28generator%29%3AString-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#as_sql(generator):String-instance-method" class="tooltip">
       <span>as_sql(generator) : String</span>
     as_sql</a>, 
     
@@ -1525,12 +1521,12 @@
     asc</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#between%28left%3ARightable%2Cright%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#between(left:Rightable,right:Rightable)-instance-method" class="tooltip">
       <span>between(left : Rightable, right : Rightable)</span>
     between</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#change_table%28old_name%3AString%2Cnew_name%3AString%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#change_table(old_name:String,new_name:String)-instance-method" class="tooltip">
       <span>change_table(old_name : String, new_name : String)</span>
     change_table</a>, 
     
@@ -1540,17 +1536,17 @@
     clone</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#contain%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#contain(value:Rightable)-instance-method" class="tooltip">
       <span>contain(value : Rightable)</span>
     contain</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#contained%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#contained(value:Rightable)-instance-method" class="tooltip">
       <span>contained(value : Rightable)</span>
     contained</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#definition%28sql_generator%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#definition(sql_generator)-instance-method" class="tooltip">
       <span>definition(sql_generator)<br/>definition</span>
     definition</a>, 
     
@@ -1560,129 +1556,134 @@
     desc</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#eql%3F%28other%3ACriteria%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#eql?(other:Criteria)-instance-method" class="tooltip">
       <span>eql?(other : Criteria)</span>
     eql?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#equal%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#equal(value:Rightable)-instance-method" class="tooltip">
       <span>equal(value : Rightable)</span>
     equal</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#field%3AString-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#field:String-instance-method" class="tooltip">
       <span>field : String</span>
     field</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#filterable%3F-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#filterable?-instance-method" class="tooltip">
       <span>filterable?</span>
     filterable?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#hash%28hasher%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#hash(hasher)-instance-method" class="tooltip">
       <span>hash(hasher)</span>
     hash</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#identifier%28sql_generator%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#identifier(sql_generator)-instance-method" class="tooltip">
       <span>identifier(sql_generator)<br/>identifier : String</span>
     identifier</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#ilike%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#ilike(value:Rightable)-instance-method" class="tooltip">
       <span>ilike(value : Rightable)</span>
     ilike</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#in%28arr%3AArray%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#in(arr:Array)-instance-method" class="tooltip">
       <span>in(arr : Array)<br/>in(arr : SQLNode)</span>
     in</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#is%28value%3ASymbol%7CBool%7CNil%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#is(value:Symbol%7CBool%7CNil)-instance-method" class="tooltip">
       <span>is(value : Symbol | Bool | Nil)</span>
     is</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#like%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#like(value:Rightable)-instance-method" class="tooltip">
       <span>like(value : Rightable)</span>
     like</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#not%28value%3ASymbol%7CBool%7CNil%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#not(value:Symbol%7CBool%7CNil)-instance-method" class="tooltip">
       <span>not(value : Symbol | Bool | Nil)<br/>not</span>
     not</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#not_equal%28value%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#not_equal(value)-instance-method" class="tooltip">
       <span>not_equal(value)</span>
     not_equal</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#not_like%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#not_like(value:Rightable)-instance-method" class="tooltip">
       <span>not_like(value : Rightable)</span>
     not_like</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#not_regexp%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#not_regexp(value:Rightable)-instance-method" class="tooltip">
       <span>not_regexp(value : Rightable)</span>
     not_regexp</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#order%28direction%3AString%7CSymbol%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#order(direction:String%7CSymbol)-instance-method" class="tooltip">
       <span>order(direction : String | Symbol)</span>
     order</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#overlap%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#overlap(value:Rightable)-instance-method" class="tooltip">
       <span>overlap(value : Rightable)</span>
     overlap</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#path%28elements%3AString%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#path(elements:String)-instance-method" class="tooltip">
       <span>path(elements : String)</span>
     path</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#regexp%28value%3ARightable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#regexp(value:Rightable)-instance-method" class="tooltip">
       <span>regexp(value : Rightable)</span>
     regexp</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#relation%3AString%3F-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#relation:String?-instance-method" class="tooltip">
       <span>relation : String?</span>
     relation</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#set_relation%28table%3AString%2Cname%3AString%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#set_relation(table:String,name:String)-instance-method" class="tooltip">
       <span>set_relation(table : String, name : String)</span>
     set_relation</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#sql_args%3AArray%28DBAny%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#sql_args:Array(DBAny)-instance-method" class="tooltip">
       <span>sql_args : Array(DBAny)</span>
     sql_args</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#table%3AString-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#table:String-instance-method" class="tooltip">
       <span>table : String</span>
     table</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#take%28key%3AString%7CNumber%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#take(key:String%7CNumber)-instance-method" class="tooltip">
       <span>take(key : String | Number)</span>
     take</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#to_s%28io%3AIO%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#to_s(io:IO)-instance-method" class="tooltip">
       <span>to_s(io : IO)</span>
     to_s</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#xor%28other%3ALogicOperator%3A%3AOperandable%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#xor(other:LogicOperator::Operandable)-instance-method" class="tooltip">
       <span>xor(other : LogicOperator::Operandable)</span>
-    xor</a>
+    xor</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#%7C(other:LogicOperator::Operandable)-instance-method" class="tooltip">
+      <span>|(other : LogicOperator::Operandable)</span>
+    |</a>
     
   
 
@@ -1692,8 +1693,8 @@
   <h3>Constructor methods inherited from class <code><a href="../../Jennifer/QueryBuilder/Criteria.html">Jennifer::QueryBuilder::Criteria</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Criteria.html#new%28field%3AString%2Ctable%3AString%2Crelation%3AString%3F%3Dnil%29-class-method" class="tooltip">
-      <span>new(field : String, table : String, relation : String? = <span class="n">nil</span>)</span>
+    <a href="../../Jennifer/QueryBuilder/Criteria.html#new(field:String,table:String,relation=nil)-class-method" class="tooltip">
+      <span>new(field : String, table : String, relation = <span class="n">nil</span>)</span>
     new</a>
     
   
@@ -1708,7 +1709,7 @@
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/QueryBuilder/SQLNode.html">Jennifer::QueryBuilder::SQLNode</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/SQLNode.html#alias_tables%28aliases%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#alias_tables(aliases)-instance-method" class="tooltip">
       <span>alias_tables(aliases)</span>
     alias_tables</a>, 
     
@@ -1718,17 +1719,17 @@
     as_sql</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/SQLNode.html#change_table%28old_name%2Cnew_name%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#change_table(old_name,new_name)-instance-method" class="tooltip">
       <span>change_table(old_name, new_name)</span>
     change_table</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/SQLNode.html#eql%3F%28other%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#eql?(other)-instance-method" class="tooltip">
       <span>eql?(other)</span>
     eql?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/SQLNode.html#set_relation%28table%2Cname%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#set_relation(table,name)-instance-method" class="tooltip">
       <span>set_relation(table, name)</span>
     set_relation</a>, 
     
@@ -1752,17 +1753,17 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/Statement.html">Jennifer::QueryBuilder::Statement</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Statement.html#as_sql%28sql_generator%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Statement.html#as_sql(sql_generator)-instance-method" class="tooltip">
       <span>as_sql(sql_generator)</span>
     as_sql</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Statement.html#filterable%3F-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Statement.html#filterable?-instance-method" class="tooltip">
       <span>filterable?</span>
     filterable?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Statement.html#sql_args%3AArray%28DBAny%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Statement.html#sql_args:Array(DBAny)-instance-method" class="tooltip">
       <span>sql_args : Array(DBAny)</span>
     sql_args</a>
     
@@ -1817,7 +1818,7 @@
         
         def <strong>as_sql</strong>(generator)
 
-        <a class="method-permalink" href="#as_sql%28generator%29-instance-method">#</a>
+        <a class="method-permalink" href="#as_sql(generator)-instance-method">#</a>
       </div>
       
         <div class="doc">

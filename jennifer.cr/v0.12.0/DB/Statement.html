@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1286,18 +1286,14 @@
 
   <p>Represents a query in a <code>Connection</code>.
 It should be created by <code>QueryMethods</code>.</p>
+
 <h3><a id="note-to-implementors" class="anchor" href="#note-to-implementors">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Note to implementors</h3>
-<ol>
-<li>Subclass <code>Statements</code></li>
-<li><code>Statements</code> are created from a custom driver <code>Connection#prepare</code> method.</li>
-<li><code>#perform_query</code> executes a query that is expected to return a <code>ResultSet</code></li>
-<li><code>#perform_exec</code> executes a query that is expected to return an <code>ExecResult</code></li>
-<li><code>#do_close</code> is called to release the statement resources.</li>
-</ol>
+
+<ol><li>Subclass <code>Statements</code></li><li><code>Statements</code> are created from a custom driver <code>Connection#prepare</code> method.</li><li><code>#perform_query</code> executes a query that is expected to return a <code>ResultSet</code></li><li><code>#perform_exec</code> executes a query that is expected to return an <code>ExecResult</code></li><li><code>#do_close</code> is called to release the statement resources.</li></ol>
 
 
 

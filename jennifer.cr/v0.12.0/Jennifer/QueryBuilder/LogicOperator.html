@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1352,7 +1352,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28lhs%3AJennifer%3A%3AQueryBuilder%3A%3ACondition%7CJennifer%3A%3AQueryBuilder%3A%3ALogicOperator%7CJennifer%3A%3AQueryBuilder%3A%3ASQLNode%2Crhs%3AJennifer%3A%3AQueryBuilder%3A%3ACondition%7CJennifer%3A%3AQueryBuilder%3A%3ALogicOperator%7CJennifer%3A%3AQueryBuilder%3A%3ASQLNode%29-class-method" class="signature"><strong>.new</strong>(lhs : Jennifer::QueryBuilder::Condition | Jennifer::QueryBuilder::LogicOperator | Jennifer::QueryBuilder::SQLNode, rhs : Jennifer::QueryBuilder::Condition | Jennifer::QueryBuilder::LogicOperator | Jennifer::QueryBuilder::SQLNode)</a>
+        <a href="#new(lhs,rhs)-class-method" class="signature"><strong>.new</strong>(lhs, rhs)</a>
         
       </li>
     
@@ -1373,19 +1373,19 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#%3D%3D%28other%29-instance-method" class="signature"><strong>#==</strong>(other)</a>
+        <a href="#==(other)-instance-method" class="signature"><strong>#==</strong>(other)</a>
         
           <div class="summary"><p>Returns <code>false</code> (other can only be a <code>Value</code> here).</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#alias_tables%28aliases%29-instance-method" class="signature"><strong>#alias_tables</strong>(aliases)</a>
+        <a href="#alias_tables(aliases)-instance-method" class="signature"><strong>#alias_tables</strong>(aliases)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#as_sql%28generator%29-instance-method" class="signature"><strong>#as_sql</strong>(generator)</a>
+        <a href="#as_sql(generator)-instance-method" class="signature"><strong>#as_sql</strong>(generator)</a>
         
       </li>
     
@@ -1395,27 +1395,27 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#change_table%28old_name%2Cnew_name%29-instance-method" class="signature"><strong>#change_table</strong>(old_name, new_name)</a>
+        <a href="#change_table(old_name,new_name)-instance-method" class="signature"><strong>#change_table</strong>(old_name, new_name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#eql%3F%28other%3ALogicOperator%29-instance-method" class="signature"><strong>#eql?</strong>(other : LogicOperator)</a>
+        <a href="#eql?(other:LogicOperator)-instance-method" class="signature"><strong>#eql?</strong>(other : LogicOperator)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#eql%3F%28other%29-instance-method" class="signature"><strong>#eql?</strong>(other)</a>
+        <a href="#eql?(other)-instance-method" class="signature"><strong>#eql?</strong>(other)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#filterable%3F-instance-method" class="signature"><strong>#filterable?</strong></a>
+        <a href="#filterable?-instance-method" class="signature"><strong>#filterable?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#lhs%3AOperandable-instance-method" class="signature"><strong>#lhs</strong> : Operandable</a>
+        <a href="#lhs:Operandable-instance-method" class="signature"><strong>#lhs</strong> : Operandable</a>
         
       </li>
     
@@ -1425,22 +1425,22 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#rhs%3AOperandable-instance-method" class="signature"><strong>#rhs</strong> : Operandable</a>
+        <a href="#rhs:Operandable-instance-method" class="signature"><strong>#rhs</strong> : Operandable</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_relation%28table%2Cname%29-instance-method" class="signature"><strong>#set_relation</strong>(table, name)</a>
+        <a href="#set_relation(table,name)-instance-method" class="signature"><strong>#set_relation</strong>(table, name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#sql_args%3AArray%28DBAny%29-instance-method" class="signature"><strong>#sql_args</strong> : Array(DBAny)</a>
+        <a href="#sql_args:Array(DBAny)-instance-method" class="signature"><strong>#sql_args</strong> : Array(DBAny)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_s%28io%3AIO%29-instance-method" class="signature"><strong>#to_s</strong>(io : IO)</a>
+        <a href="#to_s(io:IO)-instance-method" class="signature"><strong>#to_s</strong>(io : IO)</a>
         
           <div class="summary"><p>Appends a short String representation of this object which includes its class name and its object address.</p></div>
         
@@ -1459,19 +1459,19 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html">Jennifer::QueryBuilder::LogicOperator::Operators</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#%26%28other%3ACriteria%29-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#&(other:Criteria)-instance-method" class="tooltip">
       <span>&(other : Criteria)<br/>&(other : Operandable)</span>
     &</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#%7C%28other%3ACriteria%29-instance-method" class="tooltip">
-      <span>|(other : Criteria)<br/>|(other : Operandable)</span>
-    |</a>, 
+    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#xor(other:Criteria)-instance-method" class="tooltip">
+      <span>xor(other : Criteria)<br/>xor(other : Operandable)</span>
+    xor</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#xor%28other%3ACriteria%29-instance-method" class="tooltip">
-      <span>xor(other : Criteria)<br/>xor(other : Operandable)</span>
-    xor</a>
+    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#%7C(other:Criteria)-instance-method" class="tooltip">
+      <span>|(other : Criteria)<br/>|(other : Operandable)</span>
+    |</a>
     
   
 
@@ -1515,12 +1515,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(lhs:Jennifer::QueryBuilder::Condition|Jennifer::QueryBuilder::LogicOperator|Jennifer::QueryBuilder::SQLNode,rhs:Jennifer::QueryBuilder::Condition|Jennifer::QueryBuilder::LogicOperator|Jennifer::QueryBuilder::SQLNode)-class-method">
+    <div class="entry-detail" id="new(lhs,rhs)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(lhs : <a href="../../Jennifer/QueryBuilder/Condition.html">Jennifer::QueryBuilder::Condition</a> | <a href="../../Jennifer/QueryBuilder/LogicOperator.html">Jennifer::QueryBuilder::LogicOperator</a> | <a href="../../Jennifer/QueryBuilder/SQLNode.html">Jennifer::QueryBuilder::SQLNode</a>, rhs : <a href="../../Jennifer/QueryBuilder/Condition.html">Jennifer::QueryBuilder::Condition</a> | <a href="../../Jennifer/QueryBuilder/LogicOperator.html">Jennifer::QueryBuilder::LogicOperator</a> | <a href="../../Jennifer/QueryBuilder/SQLNode.html">Jennifer::QueryBuilder::SQLNode</a>)
+        def self.<strong>new</strong>(lhs, rhs)
 
-        <a class="method-permalink" href="#new%28lhs%3AJennifer%3A%3AQueryBuilder%3A%3ACondition%7CJennifer%3A%3AQueryBuilder%3A%3ALogicOperator%7CJennifer%3A%3AQueryBuilder%3A%3ASQLNode%2Crhs%3AJennifer%3A%3AQueryBuilder%3A%3ACondition%7CJennifer%3A%3AQueryBuilder%3A%3ALogicOperator%7CJennifer%3A%3AQueryBuilder%3A%3ASQLNode%29-class-method">#</a>
+        <a class="method-permalink" href="#new(lhs,rhs)-class-method">#</a>
       </div>
       
       <br/>
@@ -1550,7 +1550,7 @@
         
         def <strong>==</strong>(other)
 
-        <a class="method-permalink" href="#%3D%3D%28other%29-instance-method">#</a>
+        <a class="method-permalink" href="#==(other)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1575,7 +1575,7 @@
         
         def <strong>alias_tables</strong>(aliases)
 
-        <a class="method-permalink" href="#alias_tables%28aliases%29-instance-method">#</a>
+        <a class="method-permalink" href="#alias_tables(aliases)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1591,7 +1591,7 @@
         
         def <strong>as_sql</strong>(generator)
 
-        <a class="method-permalink" href="#as_sql%28generator%29-instance-method">#</a>
+        <a class="method-permalink" href="#as_sql(generator)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1623,7 +1623,7 @@
         
         def <strong>change_table</strong>(old_name, new_name)
 
-        <a class="method-permalink" href="#change_table%28old_name%2Cnew_name%29-instance-method">#</a>
+        <a class="method-permalink" href="#change_table(old_name,new_name)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1639,7 +1639,7 @@
         
         def <strong>eql?</strong>(other : <a href="../../Jennifer/QueryBuilder/LogicOperator.html">LogicOperator</a>)
 
-        <a class="method-permalink" href="#eql%3F%28other%3ALogicOperator%29-instance-method">#</a>
+        <a class="method-permalink" href="#eql?(other:LogicOperator)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1655,7 +1655,7 @@
         
         def <strong>eql?</strong>(other)
 
-        <a class="method-permalink" href="#eql%3F%28other%29-instance-method">#</a>
+        <a class="method-permalink" href="#eql?(other)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1671,7 +1671,7 @@
         
         def <strong>filterable?</strong>
 
-        <a class="method-permalink" href="#filterable%3F-instance-method">#</a>
+        <a class="method-permalink" href="#filterable?-instance-method">#</a>
       </div>
       
       <br/>
@@ -1687,7 +1687,7 @@
         
         def <strong>lhs</strong> : <a href="../../Jennifer/QueryBuilder/LogicOperator/Operandable.html">Operandable</a>
 
-        <a class="method-permalink" href="#lhs%3AOperandable-instance-method">#</a>
+        <a class="method-permalink" href="#lhs:Operandable-instance-method">#</a>
       </div>
       
       <br/>
@@ -1719,7 +1719,7 @@
         
         def <strong>rhs</strong> : <a href="../../Jennifer/QueryBuilder/LogicOperator/Operandable.html">Operandable</a>
 
-        <a class="method-permalink" href="#rhs%3AOperandable-instance-method">#</a>
+        <a class="method-permalink" href="#rhs:Operandable-instance-method">#</a>
       </div>
       
       <br/>
@@ -1735,7 +1735,7 @@
         
         def <strong>set_relation</strong>(table, name)
 
-        <a class="method-permalink" href="#set_relation%28table%2Cname%29-instance-method">#</a>
+        <a class="method-permalink" href="#set_relation(table,name)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1751,7 +1751,7 @@
         
         def <strong>sql_args</strong> : Array(<a href="../../Jennifer/DBAny.html">DBAny</a>)
 
-        <a class="method-permalink" href="#sql_args%3AArray%28DBAny%29-instance-method">#</a>
+        <a class="method-permalink" href="#sql_args:Array(DBAny)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1767,7 +1767,7 @@
         
         def <strong>to_s</strong>(io : IO)
 
-        <a class="method-permalink" href="#to_s%28io%3AIO%29-instance-method">#</a>
+        <a class="method-permalink" href="#to_s(io:IO)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1778,12 +1778,13 @@
           
           <p>Appends a short String representation of this object
 which includes its class name and its object address.</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">Person</span>
   <span class="k">def</span> <span class="m">initialize</span>(@name : <span class="t">String</span>, @age : <span class="t">Int32</span>)
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="t">Person</span>.new(<span class="s">&quot;John&quot;</span>, <span class="n">32</span>).to_s <span class="c"># =&gt; #&lt;Person:0x10a199f20&gt;</span></code></pre>
+<span class="t">Person</span>.<span class="k">new</span>(<span class="s">&quot;John&quot;</span>, <span class="n">32</span>).to_s <span class="c"># =&gt; #&lt;Person:0x10a199f20&gt;</span></code></pre>
         </div>
       
       <br/>

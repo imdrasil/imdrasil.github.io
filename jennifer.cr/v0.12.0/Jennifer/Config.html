@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1285,39 +1285,17 @@
   </h2>
 
   <p>Configuration container.</p>
+
 <p>At the moment it implements singleton pattern but can be scaled to support several
 configuration instances per application.</p>
+
 <p>All class methods with same names as instance ones delegates the calls to default configuration (global)
 object.</p>
+
 <p>Supported configurations:</p>
-<ul>
-<li><code>migration_files_path = &quot;./db/migrations&quot;</code></li>
-<li><code>verbose_migrations = true</code></li>
-<li><code>model_files_path = &quot;./src/models&quot;</code></li>
-<li><code><a href="../Jennifer/Config.html#structure_folder%3AString-instance-method">#structure_folder</a></code> parent folder of <code><a href="../Jennifer/Config.html#migration_files_path%3AString-instance-method">#migration_files_path</a></code></li>
-<li><code>host = &quot;localhost&quot;</code></li>
-<li><code>port = -1</code></li>
-<li><code>logger = Log.for(&quot;db&quot;, :debug)</code></li>
-<li><code>schema = &quot;public&quot;</code></li>
-<li><code><a href="../Jennifer/Config.html#user%3AString-instance-method">#user</a></code></li>
-<li><code><a href="../Jennifer/Config.html#password%3AString-instance-method">#password</a></code></li>
-<li><code><a href="../Jennifer/Config.html#db%3AString-instance-method">#db</a></code></li>
-<li><code><a href="../Jennifer/Config.html#adapter%3AString-instance-method">#adapter</a></code></li>
-<li><code>pool_size = 1</code></li>
-<li><code>retry_attempts = 1</code></li>
-<li><code>checkout_timeout = 5.0</code></li>
-<li><code>retry_delay = 1.0</code></li>
-<li><code><a href="../Jennifer/Config.html#local_time_zone_name%3AString-instance-method">#local_time_zone_name</a></code> default time zone name</li>
-<li><code>skip_dumping_schema_sql = false</code></li>
-<li><code>command_shell = &quot;bash&quot;</code></li>
-<li><code>docker_container = &quot;&quot;</code></li>
-<li><code>docker_source_location = &quot;&quot;</code></li>
-<li><code>command_shell_sudo = false</code></li>
-<li><code>migration_failure_handler_method = :none</code></li>
-<li><code>allow_outdated_pending_migration = false</code></li>
-<li><code>max_bind_vars_count = nil</code></li>
-<li><code>time_zone_aware_attributes = true</code></li>
-</ul>
+
+<ul><li><code>migration_files_path = "./db/migrations"</code></li><li><code>verbose_migrations = true</code></li><li><code>model_files_path = "./src/models"</code></li><li><code><a href="../Jennifer/Config.html#structure_folder:String-instance-method">#structure_folder</a></code> parent folder of <code><a href="../Jennifer/Config.html#migration_files_path:String-instance-method">#migration_files_path</a></code></li><li><code>host = "localhost"</code></li><li><code>port = -1</code></li><li><code>logger = Log.for("db", :debug)</code></li><li><code>schema = "public"</code></li><li><code><a href="../Jennifer/Config.html#user:String-instance-method">#user</a></code></li><li><code><a href="../Jennifer/Config.html#password:String-instance-method">#password</a></code></li><li><code><a href="../Jennifer/Config.html#db:String-instance-method">#db</a></code></li><li><code><a href="../Jennifer/Config.html#adapter:String-instance-method">#adapter</a></code></li><li><code>pool_size = 1</code></li><li><code>retry_attempts = 1</code></li><li><code>checkout_timeout = 5.0</code></li><li><code>retry_delay = 1.0</code></li><li><code><a href="../Jennifer/Config.html#local_time_zone_name:String-instance-method">#local_time_zone_name</a></code> default time zone name</li><li><code>skip_dumping_schema_sql = false</code></li><li><code>command_shell = "bash"</code></li><li><code>docker_container = ""</code></li><li><code>docker_source_location = ""</code></li><li><code>command_shell_sudo = false</code></li><li><code>migration_failure_handler_method = :none</code></li><li><code>allow_outdated_pending_migration = false</code></li><li><code>max_bind_vars_count = nil</code></li><li><code>time_zone_aware_attributes = true</code></li></ul>
+
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Config</span>.configure <span class="k">do</span> <span class="o">|</span>conf<span class="o">|</span>
   conf.host <span class="o">=</span> <span class="s">&quot;localhost&quot;</span>
   conf.user <span class="o">=</span> <span class="s">&quot;root&quot;</span>
@@ -1394,21 +1372,21 @@ object.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#config%3Aself-class-method" class="signature"><strong>.config</strong> : <span class="k">self</span></a>
+        <a href="#config:self-class-method" class="signature"><strong>.config</strong> : <span class="k">self</span></a>
         
           <div class="summary"><p>Returns default configuration object.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#configure%3Aself-class-method" class="signature"><strong>.configure</strong> : <span class="k">self</span></a>
+        <a href="#configure:self-class-method" class="signature"><strong>.configure</strong> : <span class="k">self</span></a>
         
           <div class="summary"><p>Returns default configuration object.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#instance%3Aself-class-method" class="signature"><strong>.instance</strong> : <span class="k">self</span></a>
+        <a href="#instance:self-class-method" class="signature"><strong>.instance</strong> : <span class="k">self</span></a>
         
           <div class="summary"><p>Default configuration object used by application.</p></div>
         
@@ -1420,7 +1398,7 @@ object.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#reset_config%3AConfig-class-method" class="signature"><strong>.reset_config</strong> : Config</a>
+        <a href="#reset_config:Config-class-method" class="signature"><strong>.reset_config</strong> : Config</a>
         
           <div class="summary"><p>Reinitialize new configuration object with default values</p></div>
         
@@ -1443,75 +1421,75 @@ object.</p>
       <li class="entry-summary">
         <a href="#adapter-class-method" class="signature"><strong>.adapter</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#adapter%3AString-instance-method">#adapter</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#adapter:String-instance-method">#adapter</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#adapter%3D%28value%29-class-method" class="signature"><strong>.adapter=</strong>(value)</a>
+        <a href="#adapter=(value)-class-method" class="signature"><strong>.adapter=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#adapter%3D%28adapter%3AString%29-instance-method">#adapter=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#adapter=(adapter)-instance-method">#adapter=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#allow_outdated_pending_migration-class-method" class="signature"><strong>.allow_outdated_pending_migration</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#allow_outdated_pending_migration%3ABool-instance-method">#allow_outdated_pending_migration</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#allow_outdated_pending_migration:Bool-instance-method">#allow_outdated_pending_migration</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allow_outdated_pending_migration%3D%28value%29-class-method" class="signature"><strong>.allow_outdated_pending_migration=</strong>(value)</a>
+        <a href="#allow_outdated_pending_migration=(value)-class-method" class="signature"><strong>.allow_outdated_pending_migration=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#allow_outdated_pending_migration%3D%28allow_outdated_pending_migration%3ABool%29-instance-method">#allow_outdated_pending_migration=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#allow_outdated_pending_migration=(allow_outdated_pending_migration)-instance-method">#allow_outdated_pending_migration=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#checkout_timeout-class-method" class="signature"><strong>.checkout_timeout</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#checkout_timeout%3AFloat64-instance-method">#checkout_timeout</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#checkout_timeout:Float64-instance-method">#checkout_timeout</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#checkout_timeout%3D%28value%29-class-method" class="signature"><strong>.checkout_timeout=</strong>(value)</a>
+        <a href="#checkout_timeout=(value)-class-method" class="signature"><strong>.checkout_timeout=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#checkout_timeout%3D%28checkout_timeout%3AFloat64%29-instance-method">#checkout_timeout=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#checkout_timeout=(checkout_timeout)-instance-method">#checkout_timeout=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#command_shell-class-method" class="signature"><strong>.command_shell</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#command_shell%3AString-instance-method">#command_shell</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#command_shell:String-instance-method">#command_shell</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#command_shell%3D%28value%29-class-method" class="signature"><strong>.command_shell=</strong>(value)</a>
+        <a href="#command_shell=(value)-class-method" class="signature"><strong>.command_shell=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#command_shell%3D%28command_shell%3AString%29-instance-method">#command_shell=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#command_shell=(command_shell)-instance-method">#command_shell=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#command_shell_sudo-class-method" class="signature"><strong>.command_shell_sudo</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#command_shell_sudo%3ABool-instance-method">#command_shell_sudo</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#command_shell_sudo:Bool-instance-method">#command_shell_sudo</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#command_shell_sudo%3D%28value%29-class-method" class="signature"><strong>.command_shell_sudo=</strong>(value)</a>
+        <a href="#command_shell_sudo=(value)-class-method" class="signature"><strong>.command_shell_sudo=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#command_shell_sudo%3D%28command_shell_sudo%3ABool%29-instance-method">#command_shell_sudo=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#command_shell_sudo=(command_shell_sudo)-instance-method">#command_shell_sudo=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#configure%28%26%29-class-method" class="signature"><strong>.configure</strong>(&)</a>
+        <a href="#configure(&)-class-method" class="signature"><strong>.configure</strong>(&)</a>
         
           <div class="summary"><p>Yields default configuration instance to block and validates it.</p></div>
         
@@ -1520,47 +1498,47 @@ object.</p>
       <li class="entry-summary">
         <a href="#db-class-method" class="signature"><strong>.db</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#db%3AString-instance-method">#db</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#db:String-instance-method">#db</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#db%3D%28value%29-class-method" class="signature"><strong>.db=</strong>(value)</a>
+        <a href="#db=(value)-class-method" class="signature"><strong>.db=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#db%3D%28db%3AString%29-instance-method">#db=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#db=(db)-instance-method">#db=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#docker_container-class-method" class="signature"><strong>.docker_container</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#docker_container%3AString-instance-method">#docker_container</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#docker_container:String-instance-method">#docker_container</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#docker_container%3D%28value%29-class-method" class="signature"><strong>.docker_container=</strong>(value)</a>
+        <a href="#docker_container=(value)-class-method" class="signature"><strong>.docker_container=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#docker_container%3D%28docker_container%3AString%29-instance-method">#docker_container=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#docker_container=(docker_container)-instance-method">#docker_container=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#docker_source_location-class-method" class="signature"><strong>.docker_source_location</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#docker_source_location%3AString-instance-method">#docker_source_location</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#docker_source_location:String-instance-method">#docker_source_location</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#docker_source_location%3D%28value%29-class-method" class="signature"><strong>.docker_source_location=</strong>(value)</a>
+        <a href="#docker_source_location=(value)-class-method" class="signature"><strong>.docker_source_location=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#docker_source_location%3D%28docker_source_location%3AString%29-instance-method">#docker_source_location=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#docker_source_location=(docker_source_location)-instance-method">#docker_source_location=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#from_uri%28uri%29-class-method" class="signature"><strong>.from_uri</strong>(uri)</a>
+        <a href="#from_uri(uri)-class-method" class="signature"><strong>.from_uri</strong>(uri)</a>
         
           <div class="summary"><p>Delegates call to #from_uri.</p></div>
         
@@ -1569,28 +1547,28 @@ object.</p>
       <li class="entry-summary">
         <a href="#host-class-method" class="signature"><strong>.host</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#host%3AString-instance-method">#host</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#host:String-instance-method">#host</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host%3D%28value%29-class-method" class="signature"><strong>.host=</strong>(value)</a>
+        <a href="#host=(value)-class-method" class="signature"><strong>.host=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#host%3D%28host%3AString%29-instance-method">#host=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#host=(host)-instance-method">#host=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#initial_pool_size-class-method" class="signature"><strong>.initial_pool_size</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#initial_pool_size%3AInt32-instance-method">#initial_pool_size</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#initial_pool_size:Int32-instance-method">#initial_pool_size</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#initial_pool_size%3D%28value%29-class-method" class="signature"><strong>.initial_pool_size=</strong>(value)</a>
+        <a href="#initial_pool_size=(value)-class-method" class="signature"><strong>.initial_pool_size=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#initial_pool_size%3D%28initial_pool_size%3AInt32%29-instance-method">#initial_pool_size=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#initial_pool_size=(initial_pool_size)-instance-method">#initial_pool_size=</a></code>.</p></div>
         
       </li>
     
@@ -1604,14 +1582,14 @@ object.</p>
       <li class="entry-summary">
         <a href="#local_time_zone_name-class-method" class="signature"><strong>.local_time_zone_name</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#local_time_zone_name%3AString-instance-method">#local_time_zone_name</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#local_time_zone_name:String-instance-method">#local_time_zone_name</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#local_time_zone_name%3D%28value%29-class-method" class="signature"><strong>.local_time_zone_name=</strong>(value)</a>
+        <a href="#local_time_zone_name=(value)-class-method" class="signature"><strong>.local_time_zone_name=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#local_time_zone_name%3D%28value%3AString%29-instance-method">#local_time_zone_name=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#local_time_zone_name=(value:String)-instance-method">#local_time_zone_name=</a></code>.</p></div>
         
       </li>
     
@@ -1623,7 +1601,7 @@ object.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#logger%3D%28value%29-class-method" class="signature"><strong>.logger=</strong>(value)</a>
+        <a href="#logger=(value)-class-method" class="signature"><strong>.logger=</strong>(value)</a>
         
           <div class="summary"><p>Delegates to <code>#:logger=</code>.</p></div>
         
@@ -1637,7 +1615,7 @@ object.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#max_bind_vars_count%3D%28value%29-class-method" class="signature"><strong>.max_bind_vars_count=</strong>(value)</a>
+        <a href="#max_bind_vars_count=(value)-class-method" class="signature"><strong>.max_bind_vars_count=</strong>(value)</a>
         
           <div class="summary"><p>Delegates to <code>#:max_bind_vars_count=</code>.</p></div>
         
@@ -1646,171 +1624,171 @@ object.</p>
       <li class="entry-summary">
         <a href="#max_idle_pool_size-class-method" class="signature"><strong>.max_idle_pool_size</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#max_idle_pool_size%3AInt32-instance-method">#max_idle_pool_size</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#max_idle_pool_size:Int32-instance-method">#max_idle_pool_size</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#max_idle_pool_size%3D%28value%29-class-method" class="signature"><strong>.max_idle_pool_size=</strong>(value)</a>
+        <a href="#max_idle_pool_size=(value)-class-method" class="signature"><strong>.max_idle_pool_size=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#max_idle_pool_size%3D%28max_idle_pool_size%3AInt32%29-instance-method">#max_idle_pool_size=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#max_idle_pool_size=(max_idle_pool_size)-instance-method">#max_idle_pool_size=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#max_pool_size-class-method" class="signature"><strong>.max_pool_size</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#max_pool_size%3AInt32-instance-method">#max_pool_size</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#max_pool_size:Int32-instance-method">#max_pool_size</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#max_pool_size%3D%28value%29-class-method" class="signature"><strong>.max_pool_size=</strong>(value)</a>
+        <a href="#max_pool_size=(value)-class-method" class="signature"><strong>.max_pool_size=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#max_pool_size%3D%28max_pool_size%3AInt32%29-instance-method">#max_pool_size=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#max_pool_size=(max_pool_size)-instance-method">#max_pool_size=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#migration_files_path-class-method" class="signature"><strong>.migration_files_path</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#migration_files_path%3AString-instance-method">#migration_files_path</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#migration_files_path:String-instance-method">#migration_files_path</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#migration_files_path%3D%28value%29-class-method" class="signature"><strong>.migration_files_path=</strong>(value)</a>
+        <a href="#migration_files_path=(value)-class-method" class="signature"><strong>.migration_files_path=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#migration_files_path%3D%28migration_files_path%3AString%29-instance-method">#migration_files_path=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#migration_files_path=(migration_files_path)-instance-method">#migration_files_path=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#model_files_path-class-method" class="signature"><strong>.model_files_path</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#model_files_path%3AString-instance-method">#model_files_path</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#model_files_path:String-instance-method">#model_files_path</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#model_files_path%3D%28value%29-class-method" class="signature"><strong>.model_files_path=</strong>(value)</a>
+        <a href="#model_files_path=(value)-class-method" class="signature"><strong>.model_files_path=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#model_files_path%3D%28model_files_path%3AString%29-instance-method">#model_files_path=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#model_files_path=(model_files_path)-instance-method">#model_files_path=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#password-class-method" class="signature"><strong>.password</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#password%3AString-instance-method">#password</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#password:String-instance-method">#password</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#password%3D%28value%29-class-method" class="signature"><strong>.password=</strong>(value)</a>
+        <a href="#password=(value)-class-method" class="signature"><strong>.password=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#password%3D%28password%3AString%29-instance-method">#password=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#password=(password)-instance-method">#password=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#port-class-method" class="signature"><strong>.port</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#port%3AInt32-instance-method">#port</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#port:Int32-instance-method">#port</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#port%3D%28value%29-class-method" class="signature"><strong>.port=</strong>(value)</a>
+        <a href="#port=(value)-class-method" class="signature"><strong>.port=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#port%3D%28port%3AInt32%29-instance-method">#port=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#port=(port)-instance-method">#port=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#read%28%2Aargs%2C%2A%2Aopts%29-class-method" class="signature"><strong>.read</strong>(*args, **opts)</a>
+        <a href="#read(*args,**opts)-class-method" class="signature"><strong>.read</strong>(*args, **opts)</a>
         
           <div class="summary"><p>Delegates call to #read.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#read%28%2Aargs%2C%2A%2Aopts%2C%26%29-class-method" class="signature"><strong>.read</strong>(*args, **opts, &)</a>
+        <a href="#read(*args,**opts,&)-class-method" class="signature"><strong>.read</strong>(*args, **opts, &)</a>
         
       </li>
     
       <li class="entry-summary">
         <a href="#retry_attempts-class-method" class="signature"><strong>.retry_attempts</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#retry_attempts%3AInt32-instance-method">#retry_attempts</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#retry_attempts:Int32-instance-method">#retry_attempts</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#retry_attempts%3D%28value%29-class-method" class="signature"><strong>.retry_attempts=</strong>(value)</a>
+        <a href="#retry_attempts=(value)-class-method" class="signature"><strong>.retry_attempts=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#retry_attempts%3D%28retry_attempts%3AInt32%29-instance-method">#retry_attempts=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#retry_attempts=(retry_attempts)-instance-method">#retry_attempts=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#retry_delay-class-method" class="signature"><strong>.retry_delay</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#retry_delay%3AFloat64-instance-method">#retry_delay</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#retry_delay:Float64-instance-method">#retry_delay</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#retry_delay%3D%28value%29-class-method" class="signature"><strong>.retry_delay=</strong>(value)</a>
+        <a href="#retry_delay=(value)-class-method" class="signature"><strong>.retry_delay=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#retry_delay%3D%28retry_delay%3AFloat64%29-instance-method">#retry_delay=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#retry_delay=(retry_delay)-instance-method">#retry_delay=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#schema-class-method" class="signature"><strong>.schema</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#schema%3AString-instance-method">#schema</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#schema:String-instance-method">#schema</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#schema%3D%28value%29-class-method" class="signature"><strong>.schema=</strong>(value)</a>
+        <a href="#schema=(value)-class-method" class="signature"><strong>.schema=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#schema%3D%28schema%3AString%29-instance-method">#schema=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#schema=(schema)-instance-method">#schema=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#skip_dumping_schema_sql-class-method" class="signature"><strong>.skip_dumping_schema_sql</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#skip_dumping_schema_sql%3ABool-instance-method">#skip_dumping_schema_sql</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#skip_dumping_schema_sql:Bool-instance-method">#skip_dumping_schema_sql</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#skip_dumping_schema_sql%3D%28value%29-class-method" class="signature"><strong>.skip_dumping_schema_sql=</strong>(value)</a>
+        <a href="#skip_dumping_schema_sql=(value)-class-method" class="signature"><strong>.skip_dumping_schema_sql=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#skip_dumping_schema_sql%3D%28skip_dumping_schema_sql%3ABool%29-instance-method">#skip_dumping_schema_sql=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#skip_dumping_schema_sql=(skip_dumping_schema_sql)-instance-method">#skip_dumping_schema_sql=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#structure_folder-class-method" class="signature"><strong>.structure_folder</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#structure_folder%3AString-instance-method">#structure_folder</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#structure_folder:String-instance-method">#structure_folder</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#structure_folder%3D%28value%29-class-method" class="signature"><strong>.structure_folder=</strong>(value)</a>
+        <a href="#structure_folder=(value)-class-method" class="signature"><strong>.structure_folder=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#structure_folder%3D%28structure_folder%3AString%29-instance-method">#structure_folder=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#structure_folder=(structure_folder)-instance-method">#structure_folder=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#structure_path%3AString-class-method" class="signature"><strong>.structure_path</strong> : String</a>
+        <a href="#structure_path:String-class-method" class="signature"><strong>.structure_path</strong> : String</a>
         
           <div class="summary"><p>Delegates call to #structure_path.</p></div>
         
@@ -1819,42 +1797,42 @@ object.</p>
       <li class="entry-summary">
         <a href="#time_zone_aware_attributes-class-method" class="signature"><strong>.time_zone_aware_attributes</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#time_zone_aware_attributes%3ABool-instance-method">#time_zone_aware_attributes</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#time_zone_aware_attributes:Bool-instance-method">#time_zone_aware_attributes</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#time_zone_aware_attributes%3D%28value%29-class-method" class="signature"><strong>.time_zone_aware_attributes=</strong>(value)</a>
+        <a href="#time_zone_aware_attributes=(value)-class-method" class="signature"><strong>.time_zone_aware_attributes=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#time_zone_aware_attributes%3D%28time_zone_aware_attributes%3ABool%29-instance-method">#time_zone_aware_attributes=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#time_zone_aware_attributes=(time_zone_aware_attributes)-instance-method">#time_zone_aware_attributes=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#user-class-method" class="signature"><strong>.user</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#user%3AString-instance-method">#user</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#user:String-instance-method">#user</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#user%3D%28value%29-class-method" class="signature"><strong>.user=</strong>(value)</a>
+        <a href="#user=(value)-class-method" class="signature"><strong>.user=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#user%3D%28user%3AString%29-instance-method">#user=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#user=(user)-instance-method">#user=</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#verbose_migrations-class-method" class="signature"><strong>.verbose_migrations</strong></a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#verbose_migrations%3ABool-instance-method">#verbose_migrations</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#verbose_migrations:Bool-instance-method">#verbose_migrations</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#verbose_migrations%3D%28value%29-class-method" class="signature"><strong>.verbose_migrations=</strong>(value)</a>
+        <a href="#verbose_migrations=(value)-class-method" class="signature"><strong>.verbose_migrations=</strong>(value)</a>
         
-          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#verbose_migrations%3D%28verbose_migrations%3ABool%29-instance-method">#verbose_migrations=</a></code>.</p></div>
+          <div class="summary"><p>Delegates to <code><a href="../Jennifer/Config.html#verbose_migrations=(verbose_migrations)-instance-method">#verbose_migrations=</a></code>.</p></div>
         
       </li>
     
@@ -1873,235 +1851,235 @@ object.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#adapter%3AString-instance-method" class="signature"><strong>#adapter</strong> : String</a>
+        <a href="#adapter:String-instance-method" class="signature"><strong>#adapter</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#adapter%3D%28adapter%3AString%29-instance-method" class="signature"><strong>#adapter=</strong>(adapter : String)</a>
+        <a href="#adapter=(adapter)-instance-method" class="signature"><strong>#adapter=</strong>(adapter)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allow_outdated_pending_migration%3ABool-instance-method" class="signature"><strong>#allow_outdated_pending_migration</strong> : Bool</a>
+        <a href="#allow_outdated_pending_migration:Bool-instance-method" class="signature"><strong>#allow_outdated_pending_migration</strong> : Bool</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allow_outdated_pending_migration%3D%28allow_outdated_pending_migration%3ABool%29-instance-method" class="signature"><strong>#allow_outdated_pending_migration=</strong>(allow_outdated_pending_migration : Bool)</a>
+        <a href="#allow_outdated_pending_migration=(allow_outdated_pending_migration)-instance-method" class="signature"><strong>#allow_outdated_pending_migration=</strong>(allow_outdated_pending_migration)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#checkout_timeout%3AFloat64-instance-method" class="signature"><strong>#checkout_timeout</strong> : Float64</a>
+        <a href="#checkout_timeout:Float64-instance-method" class="signature"><strong>#checkout_timeout</strong> : Float64</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#checkout_timeout%3D%28checkout_timeout%3AFloat64%29-instance-method" class="signature"><strong>#checkout_timeout=</strong>(checkout_timeout : Float64)</a>
+        <a href="#checkout_timeout=(checkout_timeout)-instance-method" class="signature"><strong>#checkout_timeout=</strong>(checkout_timeout)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#command_shell%3AString-instance-method" class="signature"><strong>#command_shell</strong> : String</a>
+        <a href="#command_shell:String-instance-method" class="signature"><strong>#command_shell</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#command_shell%3D%28command_shell%3AString%29-instance-method" class="signature"><strong>#command_shell=</strong>(command_shell : String)</a>
+        <a href="#command_shell=(command_shell)-instance-method" class="signature"><strong>#command_shell=</strong>(command_shell)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#command_shell_sudo%3ABool-instance-method" class="signature"><strong>#command_shell_sudo</strong> : Bool</a>
+        <a href="#command_shell_sudo:Bool-instance-method" class="signature"><strong>#command_shell_sudo</strong> : Bool</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#command_shell_sudo%3D%28command_shell_sudo%3ABool%29-instance-method" class="signature"><strong>#command_shell_sudo=</strong>(command_shell_sudo : Bool)</a>
+        <a href="#command_shell_sudo=(command_shell_sudo)-instance-method" class="signature"><strong>#command_shell_sudo=</strong>(command_shell_sudo)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#db%3AString-instance-method" class="signature"><strong>#db</strong> : String</a>
+        <a href="#db:String-instance-method" class="signature"><strong>#db</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#db%3D%28db%3AString%29-instance-method" class="signature"><strong>#db=</strong>(db : String)</a>
+        <a href="#db=(db)-instance-method" class="signature"><strong>#db=</strong>(db)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#docker_container%3AString-instance-method" class="signature"><strong>#docker_container</strong> : String</a>
+        <a href="#docker_container:String-instance-method" class="signature"><strong>#docker_container</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#docker_container%3D%28docker_container%3AString%29-instance-method" class="signature"><strong>#docker_container=</strong>(docker_container : String)</a>
+        <a href="#docker_container=(docker_container)-instance-method" class="signature"><strong>#docker_container=</strong>(docker_container)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#docker_source_location%3AString-instance-method" class="signature"><strong>#docker_source_location</strong> : String</a>
+        <a href="#docker_source_location:String-instance-method" class="signature"><strong>#docker_source_location</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#docker_source_location%3D%28docker_source_location%3AString%29-instance-method" class="signature"><strong>#docker_source_location=</strong>(docker_source_location : String)</a>
+        <a href="#docker_source_location=(docker_source_location)-instance-method" class="signature"><strong>#docker_source_location=</strong>(docker_source_location)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#from_uri%28uri%3AString%29-instance-method" class="signature"><strong>#from_uri</strong>(uri : String)</a>
+        <a href="#from_uri(uri:String)-instance-method" class="signature"><strong>#from_uri</strong>(uri : String)</a>
         
           <div class="summary"><p>Reads configuration properties from the given <em>uri</em> string.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#from_uri%28uri%3AURI%29-instance-method" class="signature"><strong>#from_uri</strong>(uri : URI)</a>
+        <a href="#from_uri(uri:URI)-instance-method" class="signature"><strong>#from_uri</strong>(uri : URI)</a>
         
           <div class="summary"><p>Reads configuration properties from the given <em>uri</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#from_yaml%28source%29-instance-method" class="signature"><strong>#from_yaml</strong>(source)</a>
+        <a href="#from_yaml(source)-instance-method" class="signature"><strong>#from_yaml</strong>(source)</a>
         
           <div class="summary"><p>Reads configuration properties from the given YAML <em>source</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host%3AString-instance-method" class="signature"><strong>#host</strong> : String</a>
+        <a href="#host:String-instance-method" class="signature"><strong>#host</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host%3D%28host%3AString%29-instance-method" class="signature"><strong>#host=</strong>(host : String)</a>
+        <a href="#host=(host)-instance-method" class="signature"><strong>#host=</strong>(host)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#initial_pool_size%3AInt32-instance-method" class="signature"><strong>#initial_pool_size</strong> : Int32</a>
+        <a href="#initial_pool_size:Int32-instance-method" class="signature"><strong>#initial_pool_size</strong> : Int32</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#initial_pool_size%3D%28initial_pool_size%3AInt32%29-instance-method" class="signature"><strong>#initial_pool_size=</strong>(initial_pool_size : Int32)</a>
+        <a href="#initial_pool_size=(initial_pool_size)-instance-method" class="signature"><strong>#initial_pool_size=</strong>(initial_pool_size)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#local_time_zone%3ATime%3A%3ALocation-instance-method" class="signature"><strong>#local_time_zone</strong> : Time::Location</a>
+        <a href="#local_time_zone:Time::Location-instance-method" class="signature"><strong>#local_time_zone</strong> : Time::Location</a>
         
           <div class="summary"><p>Returns local time zone.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#local_time_zone_name%3AString-instance-method" class="signature"><strong>#local_time_zone_name</strong> : String</a>
+        <a href="#local_time_zone_name:String-instance-method" class="signature"><strong>#local_time_zone_name</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#local_time_zone_name%3D%28value%3AString%29-instance-method" class="signature"><strong>#local_time_zone_name=</strong>(value : String)</a>
+        <a href="#local_time_zone_name=(value:String)-instance-method" class="signature"><strong>#local_time_zone_name=</strong>(value : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#local_time_zone_name%3D%28local_time_zone_name%3AString%29-instance-method" class="signature"><strong>#local_time_zone_name=</strong>(local_time_zone_name : String)</a>
+        <a href="#local_time_zone_name=(local_time_zone_name)-instance-method" class="signature"><strong>#local_time_zone_name=</strong>(local_time_zone_name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#logger%3ALog-instance-method" class="signature"><strong>#logger</strong> : Log</a>
+        <a href="#logger:Log-instance-method" class="signature"><strong>#logger</strong> : Log</a>
         
           <div class="summary"><p><code>Log</code> instance.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#logger%3D%28logger%3ALog%29-instance-method" class="signature"><strong>#logger=</strong>(logger : Log)</a>
+        <a href="#logger=(logger:Log)-instance-method" class="signature"><strong>#logger=</strong>(logger : Log)</a>
         
           <div class="summary"><p><code>Log</code> instance.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#max_bind_vars_count%3AInt32%3F-instance-method" class="signature"><strong>#max_bind_vars_count</strong> : Int32?</a>
+        <a href="#max_bind_vars_count:Int32?-instance-method" class="signature"><strong>#max_bind_vars_count</strong> : Int32?</a>
         
           <div class="summary"><p>Maximum count of bind variables.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#max_bind_vars_count%3D%28max_bind_vars_count%3AInt32%3F%29-instance-method" class="signature"><strong>#max_bind_vars_count=</strong>(max_bind_vars_count : Int32?)</a>
+        <a href="#max_bind_vars_count=(max_bind_vars_count:Int32?)-instance-method" class="signature"><strong>#max_bind_vars_count=</strong>(max_bind_vars_count : Int32?)</a>
         
           <div class="summary"><p>Maximum count of bind variables.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#max_idle_pool_size%3AInt32-instance-method" class="signature"><strong>#max_idle_pool_size</strong> : Int32</a>
+        <a href="#max_idle_pool_size:Int32-instance-method" class="signature"><strong>#max_idle_pool_size</strong> : Int32</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#max_idle_pool_size%3D%28max_idle_pool_size%3AInt32%29-instance-method" class="signature"><strong>#max_idle_pool_size=</strong>(max_idle_pool_size : Int32)</a>
+        <a href="#max_idle_pool_size=(max_idle_pool_size)-instance-method" class="signature"><strong>#max_idle_pool_size=</strong>(max_idle_pool_size)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#max_pool_size%3AInt32-instance-method" class="signature"><strong>#max_pool_size</strong> : Int32</a>
+        <a href="#max_pool_size:Int32-instance-method" class="signature"><strong>#max_pool_size</strong> : Int32</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#max_pool_size%3D%28max_pool_size%3AInt32%29-instance-method" class="signature"><strong>#max_pool_size=</strong>(max_pool_size : Int32)</a>
+        <a href="#max_pool_size=(max_pool_size)-instance-method" class="signature"><strong>#max_pool_size=</strong>(max_pool_size)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#migration_failure_handler_method%3AJennifer%3A%3AConfig%3A%3AMigrationFailureHandler-instance-method" class="signature"><strong>#migration_failure_handler_method</strong> : Jennifer::Config::MigrationFailureHandler</a>
+        <a href="#migration_failure_handler_method:Jennifer::Config::MigrationFailureHandler-instance-method" class="signature"><strong>#migration_failure_handler_method</strong> : Jennifer::Config::MigrationFailureHandler</a>
         
-          <div class="summary"><p>Handler type for the failed migrations; default is <code>&quot;none&quot;</code>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#migration_failure_handler_method%3D%28value%3AMigrationFailureHandler%29-instance-method" class="signature"><strong>#migration_failure_handler_method=</strong>(value : MigrationFailureHandler)</a>
+          <div class="summary"><p>Handler type for the failed migrations; default is <code>"none"</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#migration_files_path%3AString-instance-method" class="signature"><strong>#migration_files_path</strong> : String</a>
+        <a href="#migration_failure_handler_method=(value:MigrationFailureHandler)-instance-method" class="signature"><strong>#migration_failure_handler_method=</strong>(value : MigrationFailureHandler)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#migration_files_path%3D%28migration_files_path%3AString%29-instance-method" class="signature"><strong>#migration_files_path=</strong>(migration_files_path : String)</a>
+        <a href="#migration_files_path:String-instance-method" class="signature"><strong>#migration_files_path</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#model_files_path%3AString-instance-method" class="signature"><strong>#model_files_path</strong> : String</a>
+        <a href="#migration_files_path=(migration_files_path)-instance-method" class="signature"><strong>#migration_files_path=</strong>(migration_files_path)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#model_files_path%3D%28model_files_path%3AString%29-instance-method" class="signature"><strong>#model_files_path=</strong>(model_files_path : String)</a>
+        <a href="#model_files_path:String-instance-method" class="signature"><strong>#model_files_path</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#password%3AString-instance-method" class="signature"><strong>#password</strong> : String</a>
+        <a href="#model_files_path=(model_files_path)-instance-method" class="signature"><strong>#model_files_path=</strong>(model_files_path)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#password%3D%28password%3AString%29-instance-method" class="signature"><strong>#password=</strong>(password : String)</a>
+        <a href="#password:String-instance-method" class="signature"><strong>#password</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#password=(password)-instance-method" class="signature"><strong>#password=</strong>(password)</a>
         
       </li>
     
@@ -2113,135 +2091,135 @@ object.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#pool_size%3D%28value%3AInt32%29-instance-method" class="signature"><strong>#pool_size=</strong>(value : Int32)</a>
+        <a href="#pool_size=(value:Int32)-instance-method" class="signature"><strong>#pool_size=</strong>(value : Int32)</a>
         
-          <div class="summary"><p>Sets <code><a href="../Jennifer/Config.html#max_pool_size%3AInt32-instance-method">#max_pool_size</a></code>, <code><a href="../Jennifer/Config.html#max_idle_pool_size%3AInt32-instance-method">#max_idle_pool_size</a></code> and <code><a href="../Jennifer/Config.html#initial_pool_size%3AInt32-instance-method">#initial_pool_size</a></code> to the given <em>value</em>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#port%3AInt32-instance-method" class="signature"><strong>#port</strong> : Int32</a>
+          <div class="summary"><p>Sets <code><a href="../Jennifer/Config.html#max_pool_size:Int32-instance-method">#max_pool_size</a></code>, <code><a href="../Jennifer/Config.html#max_idle_pool_size:Int32-instance-method">#max_idle_pool_size</a></code> and <code><a href="../Jennifer/Config.html#initial_pool_size:Int32-instance-method">#initial_pool_size</a></code> to the given <em>value</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#port%3D%28port%3AInt32%29-instance-method" class="signature"><strong>#port=</strong>(port : Int32)</a>
+        <a href="#port:Int32-instance-method" class="signature"><strong>#port</strong> : Int32</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#read%28path%3AString%2Cenv%3ASymbol%3D%3Adevelopment%29-instance-method" class="signature"><strong>#read</strong>(path : String, env : Symbol = <span class="n">:development</span>)</a>
+        <a href="#port=(port)-instance-method" class="signature"><strong>#port=</strong>(port)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#read(path:String,env:Symbol=:development)-instance-method" class="signature"><strong>#read</strong>(path : String, env : Symbol = <span class="n">:development</span>)</a>
         
           <div class="summary"><p>Reads configurations from the file with given <em>path</em> for given <em>env</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#read%28path%3AString%2Cenv%3AString%29-instance-method" class="signature"><strong>#read</strong>(path : String, env : String)</a>
+        <a href="#read(path:String,env:String)-instance-method" class="signature"><strong>#read</strong>(path : String, env : String)</a>
         
           <div class="summary"><p>Reads configurations from the file with given <em>path</em> for given <em>env</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#read%28path%3AString%2C%26%29-instance-method" class="signature"><strong>#read</strong>(path : String, &)</a>
+        <a href="#read(path:String,&)-instance-method" class="signature"><strong>#read</strong>(path : String, &)</a>
         
           <div class="summary"><p>Reads configurations from the file with given <em>path</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#retry_attempts%3AInt32-instance-method" class="signature"><strong>#retry_attempts</strong> : Int32</a>
+        <a href="#retry_attempts:Int32-instance-method" class="signature"><strong>#retry_attempts</strong> : Int32</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#retry_attempts%3D%28retry_attempts%3AInt32%29-instance-method" class="signature"><strong>#retry_attempts=</strong>(retry_attempts : Int32)</a>
+        <a href="#retry_attempts=(retry_attempts)-instance-method" class="signature"><strong>#retry_attempts=</strong>(retry_attempts)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#retry_delay%3AFloat64-instance-method" class="signature"><strong>#retry_delay</strong> : Float64</a>
+        <a href="#retry_delay:Float64-instance-method" class="signature"><strong>#retry_delay</strong> : Float64</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#retry_delay%3D%28retry_delay%3AFloat64%29-instance-method" class="signature"><strong>#retry_delay=</strong>(retry_delay : Float64)</a>
+        <a href="#retry_delay=(retry_delay)-instance-method" class="signature"><strong>#retry_delay=</strong>(retry_delay)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#schema%3AString-instance-method" class="signature"><strong>#schema</strong> : String</a>
+        <a href="#schema:String-instance-method" class="signature"><strong>#schema</strong> : String</a>
         
           <div class="summary"><p>Defines postgres database schema name (postgres specific configuration).</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#schema%3D%28schema%3AString%29-instance-method" class="signature"><strong>#schema=</strong>(schema : String)</a>
+        <a href="#schema=(schema)-instance-method" class="signature"><strong>#schema=</strong>(schema)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#skip_dumping_schema_sql%3ABool-instance-method" class="signature"><strong>#skip_dumping_schema_sql</strong> : Bool</a>
+        <a href="#skip_dumping_schema_sql:Bool-instance-method" class="signature"><strong>#skip_dumping_schema_sql</strong> : Bool</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#skip_dumping_schema_sql%3D%28skip_dumping_schema_sql%3ABool%29-instance-method" class="signature"><strong>#skip_dumping_schema_sql=</strong>(skip_dumping_schema_sql : Bool)</a>
+        <a href="#skip_dumping_schema_sql=(skip_dumping_schema_sql)-instance-method" class="signature"><strong>#skip_dumping_schema_sql=</strong>(skip_dumping_schema_sql)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#structure_folder%3AString-instance-method" class="signature"><strong>#structure_folder</strong> : String</a>
+        <a href="#structure_folder:String-instance-method" class="signature"><strong>#structure_folder</strong> : String</a>
         
           <div class="summary"><p>Returns <code>schema.sql</code> folder name.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#structure_folder%3D%28structure_folder%3AString%29-instance-method" class="signature"><strong>#structure_folder=</strong>(structure_folder : String)</a>
+        <a href="#structure_folder=(structure_folder)-instance-method" class="signature"><strong>#structure_folder=</strong>(structure_folder)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#structure_path%3AString-instance-method" class="signature"><strong>#structure_path</strong> : String</a>
+        <a href="#structure_path:String-instance-method" class="signature"><strong>#structure_path</strong> : String</a>
         
           <div class="summary"><p>Return path to <code>structure.sql</code> file.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#time_zone_aware_attributes%3ABool-instance-method" class="signature"><strong>#time_zone_aware_attributes</strong> : Bool</a>
+        <a href="#time_zone_aware_attributes:Bool-instance-method" class="signature"><strong>#time_zone_aware_attributes</strong> : Bool</a>
         
           <div class="summary"><p>Whether Jennifer should convert time objects to UTC and back to application time zone when store/load them from a database.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#time_zone_aware_attributes%3D%28time_zone_aware_attributes%3ABool%29-instance-method" class="signature"><strong>#time_zone_aware_attributes=</strong>(time_zone_aware_attributes : Bool)</a>
+        <a href="#time_zone_aware_attributes=(time_zone_aware_attributes)-instance-method" class="signature"><strong>#time_zone_aware_attributes=</strong>(time_zone_aware_attributes)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#user%3AString-instance-method" class="signature"><strong>#user</strong> : String</a>
+        <a href="#user:String-instance-method" class="signature"><strong>#user</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#user%3D%28user%3AString%29-instance-method" class="signature"><strong>#user=</strong>(user : String)</a>
+        <a href="#user=(user)-instance-method" class="signature"><strong>#user=</strong>(user)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#verbose_migrations%3ABool-instance-method" class="signature"><strong>#verbose_migrations</strong> : Bool</a>
+        <a href="#verbose_migrations:Bool-instance-method" class="signature"><strong>#verbose_migrations</strong> : Bool</a>
         
           <div class="summary"><p>Returns whether migrations should be performed in verbose mode.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#verbose_migrations%3D%28verbose_migrations%3ABool%29-instance-method" class="signature"><strong>#verbose_migrations=</strong>(verbose_migrations : Bool)</a>
+        <a href="#verbose_migrations=(verbose_migrations)-instance-method" class="signature"><strong>#verbose_migrations=</strong>(verbose_migrations)</a>
         
       </li>
     
@@ -2290,7 +2268,7 @@ object.</p>
         
         def self.<strong>config</strong> : <span class="k">self</span>
 
-        <a class="method-permalink" href="#config%3Aself-class-method">#</a>
+        <a class="method-permalink" href="#config:self-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2311,7 +2289,7 @@ object.</p>
         
         def self.<strong>configure</strong> : <span class="k">self</span>
 
-        <a class="method-permalink" href="#configure%3Aself-class-method">#</a>
+        <a class="method-permalink" href="#configure:self-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2332,7 +2310,7 @@ object.</p>
         
         def self.<strong>instance</strong> : <span class="k">self</span>
 
-        <a class="method-permalink" href="#instance%3Aself-class-method">#</a>
+        <a class="method-permalink" href="#instance:self-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2369,7 +2347,7 @@ object.</p>
         
         def self.<strong>reset_config</strong> : <a href="../Jennifer/Config.html">Config</a>
 
-        <a class="method-permalink" href="#reset_config%3AConfig-class-method">#</a>
+        <a class="method-permalink" href="#reset_config:Config-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2407,7 +2385,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#adapter%3AString-instance-method">#adapter</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#adapter:String-instance-method">#adapter</a></code>.</p>
         </div>
       
       <br/>
@@ -2421,12 +2399,12 @@ object.</p>
         
         def self.<strong>adapter=</strong>(value)
 
-        <a class="method-permalink" href="#adapter%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#adapter=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#adapter%3D%28adapter%3AString%29-instance-method">#adapter=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#adapter=(adapter)-instance-method">#adapter=</a></code>.</p>
         </div>
       
       <br/>
@@ -2445,7 +2423,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#allow_outdated_pending_migration%3ABool-instance-method">#allow_outdated_pending_migration</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#allow_outdated_pending_migration:Bool-instance-method">#allow_outdated_pending_migration</a></code>.</p>
         </div>
       
       <br/>
@@ -2459,12 +2437,12 @@ object.</p>
         
         def self.<strong>allow_outdated_pending_migration=</strong>(value)
 
-        <a class="method-permalink" href="#allow_outdated_pending_migration%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#allow_outdated_pending_migration=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#allow_outdated_pending_migration%3D%28allow_outdated_pending_migration%3ABool%29-instance-method">#allow_outdated_pending_migration=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#allow_outdated_pending_migration=(allow_outdated_pending_migration)-instance-method">#allow_outdated_pending_migration=</a></code>.</p>
         </div>
       
       <br/>
@@ -2483,7 +2461,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#checkout_timeout%3AFloat64-instance-method">#checkout_timeout</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#checkout_timeout:Float64-instance-method">#checkout_timeout</a></code>.</p>
         </div>
       
       <br/>
@@ -2497,12 +2475,12 @@ object.</p>
         
         def self.<strong>checkout_timeout=</strong>(value)
 
-        <a class="method-permalink" href="#checkout_timeout%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#checkout_timeout=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#checkout_timeout%3D%28checkout_timeout%3AFloat64%29-instance-method">#checkout_timeout=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#checkout_timeout=(checkout_timeout)-instance-method">#checkout_timeout=</a></code>.</p>
         </div>
       
       <br/>
@@ -2521,7 +2499,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#command_shell%3AString-instance-method">#command_shell</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#command_shell:String-instance-method">#command_shell</a></code>.</p>
         </div>
       
       <br/>
@@ -2535,12 +2513,12 @@ object.</p>
         
         def self.<strong>command_shell=</strong>(value)
 
-        <a class="method-permalink" href="#command_shell%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#command_shell=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#command_shell%3D%28command_shell%3AString%29-instance-method">#command_shell=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#command_shell=(command_shell)-instance-method">#command_shell=</a></code>.</p>
         </div>
       
       <br/>
@@ -2559,7 +2537,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#command_shell_sudo%3ABool-instance-method">#command_shell_sudo</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#command_shell_sudo:Bool-instance-method">#command_shell_sudo</a></code>.</p>
         </div>
       
       <br/>
@@ -2573,12 +2551,12 @@ object.</p>
         
         def self.<strong>command_shell_sudo=</strong>(value)
 
-        <a class="method-permalink" href="#command_shell_sudo%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#command_shell_sudo=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#command_shell_sudo%3D%28command_shell_sudo%3ABool%29-instance-method">#command_shell_sudo=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#command_shell_sudo=(command_shell_sudo)-instance-method">#command_shell_sudo=</a></code>.</p>
         </div>
       
       <br/>
@@ -2592,7 +2570,7 @@ object.</p>
         
         def self.<strong>configure</strong>(&)
 
-        <a class="method-permalink" href="#configure%28%26%29-class-method">#</a>
+        <a class="method-permalink" href="#configure(&)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2618,7 +2596,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#db%3AString-instance-method">#db</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#db:String-instance-method">#db</a></code>.</p>
         </div>
       
       <br/>
@@ -2632,12 +2610,12 @@ object.</p>
         
         def self.<strong>db=</strong>(value)
 
-        <a class="method-permalink" href="#db%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#db=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#db%3D%28db%3AString%29-instance-method">#db=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#db=(db)-instance-method">#db=</a></code>.</p>
         </div>
       
       <br/>
@@ -2656,7 +2634,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#docker_container%3AString-instance-method">#docker_container</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#docker_container:String-instance-method">#docker_container</a></code>.</p>
         </div>
       
       <br/>
@@ -2670,12 +2648,12 @@ object.</p>
         
         def self.<strong>docker_container=</strong>(value)
 
-        <a class="method-permalink" href="#docker_container%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#docker_container=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#docker_container%3D%28docker_container%3AString%29-instance-method">#docker_container=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#docker_container=(docker_container)-instance-method">#docker_container=</a></code>.</p>
         </div>
       
       <br/>
@@ -2694,7 +2672,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#docker_source_location%3AString-instance-method">#docker_source_location</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#docker_source_location:String-instance-method">#docker_source_location</a></code>.</p>
         </div>
       
       <br/>
@@ -2708,12 +2686,12 @@ object.</p>
         
         def self.<strong>docker_source_location=</strong>(value)
 
-        <a class="method-permalink" href="#docker_source_location%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#docker_source_location=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#docker_source_location%3D%28docker_source_location%3AString%29-instance-method">#docker_source_location=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#docker_source_location=(docker_source_location)-instance-method">#docker_source_location=</a></code>.</p>
         </div>
       
       <br/>
@@ -2727,7 +2705,7 @@ object.</p>
         
         def self.<strong>from_uri</strong>(uri)
 
-        <a class="method-permalink" href="#from_uri%28uri%29-class-method">#</a>
+        <a class="method-permalink" href="#from_uri(uri)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2753,7 +2731,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#host%3AString-instance-method">#host</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#host:String-instance-method">#host</a></code>.</p>
         </div>
       
       <br/>
@@ -2767,12 +2745,12 @@ object.</p>
         
         def self.<strong>host=</strong>(value)
 
-        <a class="method-permalink" href="#host%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#host=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#host%3D%28host%3AString%29-instance-method">#host=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#host=(host)-instance-method">#host=</a></code>.</p>
         </div>
       
       <br/>
@@ -2791,7 +2769,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#initial_pool_size%3AInt32-instance-method">#initial_pool_size</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#initial_pool_size:Int32-instance-method">#initial_pool_size</a></code>.</p>
         </div>
       
       <br/>
@@ -2805,12 +2783,12 @@ object.</p>
         
         def self.<strong>initial_pool_size=</strong>(value)
 
-        <a class="method-permalink" href="#initial_pool_size%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#initial_pool_size=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#initial_pool_size%3D%28initial_pool_size%3AInt32%29-instance-method">#initial_pool_size=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#initial_pool_size=(initial_pool_size)-instance-method">#initial_pool_size=</a></code>.</p>
         </div>
       
       <br/>
@@ -2850,7 +2828,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#local_time_zone_name%3AString-instance-method">#local_time_zone_name</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#local_time_zone_name:String-instance-method">#local_time_zone_name</a></code>.</p>
         </div>
       
       <br/>
@@ -2864,12 +2842,12 @@ object.</p>
         
         def self.<strong>local_time_zone_name=</strong>(value)
 
-        <a class="method-permalink" href="#local_time_zone_name%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#local_time_zone_name=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#local_time_zone_name%3D%28value%3AString%29-instance-method">#local_time_zone_name=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#local_time_zone_name=(value:String)-instance-method">#local_time_zone_name=</a></code>.</p>
         </div>
       
       <br/>
@@ -2904,7 +2882,7 @@ object.</p>
         
         def self.<strong>logger=</strong>(value)
 
-        <a class="method-permalink" href="#logger%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#logger=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2946,7 +2924,7 @@ object.</p>
         
         def self.<strong>max_bind_vars_count=</strong>(value)
 
-        <a class="method-permalink" href="#max_bind_vars_count%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#max_bind_vars_count=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -2972,7 +2950,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#max_idle_pool_size%3AInt32-instance-method">#max_idle_pool_size</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#max_idle_pool_size:Int32-instance-method">#max_idle_pool_size</a></code>.</p>
         </div>
       
       <br/>
@@ -2986,12 +2964,12 @@ object.</p>
         
         def self.<strong>max_idle_pool_size=</strong>(value)
 
-        <a class="method-permalink" href="#max_idle_pool_size%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#max_idle_pool_size=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#max_idle_pool_size%3D%28max_idle_pool_size%3AInt32%29-instance-method">#max_idle_pool_size=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#max_idle_pool_size=(max_idle_pool_size)-instance-method">#max_idle_pool_size=</a></code>.</p>
         </div>
       
       <br/>
@@ -3010,7 +2988,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#max_pool_size%3AInt32-instance-method">#max_pool_size</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#max_pool_size:Int32-instance-method">#max_pool_size</a></code>.</p>
         </div>
       
       <br/>
@@ -3024,12 +3002,12 @@ object.</p>
         
         def self.<strong>max_pool_size=</strong>(value)
 
-        <a class="method-permalink" href="#max_pool_size%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#max_pool_size=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#max_pool_size%3D%28max_pool_size%3AInt32%29-instance-method">#max_pool_size=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#max_pool_size=(max_pool_size)-instance-method">#max_pool_size=</a></code>.</p>
         </div>
       
       <br/>
@@ -3048,7 +3026,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#migration_files_path%3AString-instance-method">#migration_files_path</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#migration_files_path:String-instance-method">#migration_files_path</a></code>.</p>
         </div>
       
       <br/>
@@ -3062,12 +3040,12 @@ object.</p>
         
         def self.<strong>migration_files_path=</strong>(value)
 
-        <a class="method-permalink" href="#migration_files_path%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#migration_files_path=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#migration_files_path%3D%28migration_files_path%3AString%29-instance-method">#migration_files_path=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#migration_files_path=(migration_files_path)-instance-method">#migration_files_path=</a></code>.</p>
         </div>
       
       <br/>
@@ -3086,7 +3064,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#model_files_path%3AString-instance-method">#model_files_path</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#model_files_path:String-instance-method">#model_files_path</a></code>.</p>
         </div>
       
       <br/>
@@ -3100,12 +3078,12 @@ object.</p>
         
         def self.<strong>model_files_path=</strong>(value)
 
-        <a class="method-permalink" href="#model_files_path%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#model_files_path=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#model_files_path%3D%28model_files_path%3AString%29-instance-method">#model_files_path=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#model_files_path=(model_files_path)-instance-method">#model_files_path=</a></code>.</p>
         </div>
       
       <br/>
@@ -3124,7 +3102,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#password%3AString-instance-method">#password</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#password:String-instance-method">#password</a></code>.</p>
         </div>
       
       <br/>
@@ -3138,12 +3116,12 @@ object.</p>
         
         def self.<strong>password=</strong>(value)
 
-        <a class="method-permalink" href="#password%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#password=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#password%3D%28password%3AString%29-instance-method">#password=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#password=(password)-instance-method">#password=</a></code>.</p>
         </div>
       
       <br/>
@@ -3162,7 +3140,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#port%3AInt32-instance-method">#port</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#port:Int32-instance-method">#port</a></code>.</p>
         </div>
       
       <br/>
@@ -3176,12 +3154,12 @@ object.</p>
         
         def self.<strong>port=</strong>(value)
 
-        <a class="method-permalink" href="#port%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#port=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#port%3D%28port%3AInt32%29-instance-method">#port=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#port=(port)-instance-method">#port=</a></code>.</p>
         </div>
       
       <br/>
@@ -3195,7 +3173,7 @@ object.</p>
         
         def self.<strong>read</strong>(*args, **opts)
 
-        <a class="method-permalink" href="#read%28%2Aargs%2C%2A%2Aopts%29-class-method">#</a>
+        <a class="method-permalink" href="#read(*args,**opts)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -3216,7 +3194,7 @@ object.</p>
         
         def self.<strong>read</strong>(*args, **opts, &)
 
-        <a class="method-permalink" href="#read%28%2Aargs%2C%2A%2Aopts%2C%26%29-class-method">#</a>
+        <a class="method-permalink" href="#read(*args,**opts,&)-class-method">#</a>
       </div>
       
       <br/>
@@ -3237,7 +3215,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#retry_attempts%3AInt32-instance-method">#retry_attempts</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#retry_attempts:Int32-instance-method">#retry_attempts</a></code>.</p>
         </div>
       
       <br/>
@@ -3251,12 +3229,12 @@ object.</p>
         
         def self.<strong>retry_attempts=</strong>(value)
 
-        <a class="method-permalink" href="#retry_attempts%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#retry_attempts=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#retry_attempts%3D%28retry_attempts%3AInt32%29-instance-method">#retry_attempts=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#retry_attempts=(retry_attempts)-instance-method">#retry_attempts=</a></code>.</p>
         </div>
       
       <br/>
@@ -3275,7 +3253,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#retry_delay%3AFloat64-instance-method">#retry_delay</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#retry_delay:Float64-instance-method">#retry_delay</a></code>.</p>
         </div>
       
       <br/>
@@ -3289,12 +3267,12 @@ object.</p>
         
         def self.<strong>retry_delay=</strong>(value)
 
-        <a class="method-permalink" href="#retry_delay%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#retry_delay=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#retry_delay%3D%28retry_delay%3AFloat64%29-instance-method">#retry_delay=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#retry_delay=(retry_delay)-instance-method">#retry_delay=</a></code>.</p>
         </div>
       
       <br/>
@@ -3313,7 +3291,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#schema%3AString-instance-method">#schema</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#schema:String-instance-method">#schema</a></code>.</p>
         </div>
       
       <br/>
@@ -3327,12 +3305,12 @@ object.</p>
         
         def self.<strong>schema=</strong>(value)
 
-        <a class="method-permalink" href="#schema%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#schema=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#schema%3D%28schema%3AString%29-instance-method">#schema=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#schema=(schema)-instance-method">#schema=</a></code>.</p>
         </div>
       
       <br/>
@@ -3351,7 +3329,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#skip_dumping_schema_sql%3ABool-instance-method">#skip_dumping_schema_sql</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#skip_dumping_schema_sql:Bool-instance-method">#skip_dumping_schema_sql</a></code>.</p>
         </div>
       
       <br/>
@@ -3365,12 +3343,12 @@ object.</p>
         
         def self.<strong>skip_dumping_schema_sql=</strong>(value)
 
-        <a class="method-permalink" href="#skip_dumping_schema_sql%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#skip_dumping_schema_sql=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#skip_dumping_schema_sql%3D%28skip_dumping_schema_sql%3ABool%29-instance-method">#skip_dumping_schema_sql=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#skip_dumping_schema_sql=(skip_dumping_schema_sql)-instance-method">#skip_dumping_schema_sql=</a></code>.</p>
         </div>
       
       <br/>
@@ -3389,7 +3367,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#structure_folder%3AString-instance-method">#structure_folder</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#structure_folder:String-instance-method">#structure_folder</a></code>.</p>
         </div>
       
       <br/>
@@ -3403,12 +3381,12 @@ object.</p>
         
         def self.<strong>structure_folder=</strong>(value)
 
-        <a class="method-permalink" href="#structure_folder%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#structure_folder=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#structure_folder%3D%28structure_folder%3AString%29-instance-method">#structure_folder=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#structure_folder=(structure_folder)-instance-method">#structure_folder=</a></code>.</p>
         </div>
       
       <br/>
@@ -3422,7 +3400,7 @@ object.</p>
         
         def self.<strong>structure_path</strong> : String
 
-        <a class="method-permalink" href="#structure_path%3AString-class-method">#</a>
+        <a class="method-permalink" href="#structure_path:String-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -3448,7 +3426,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#time_zone_aware_attributes%3ABool-instance-method">#time_zone_aware_attributes</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#time_zone_aware_attributes:Bool-instance-method">#time_zone_aware_attributes</a></code>.</p>
         </div>
       
       <br/>
@@ -3462,12 +3440,12 @@ object.</p>
         
         def self.<strong>time_zone_aware_attributes=</strong>(value)
 
-        <a class="method-permalink" href="#time_zone_aware_attributes%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#time_zone_aware_attributes=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#time_zone_aware_attributes%3D%28time_zone_aware_attributes%3ABool%29-instance-method">#time_zone_aware_attributes=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#time_zone_aware_attributes=(time_zone_aware_attributes)-instance-method">#time_zone_aware_attributes=</a></code>.</p>
         </div>
       
       <br/>
@@ -3486,7 +3464,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#user%3AString-instance-method">#user</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#user:String-instance-method">#user</a></code>.</p>
         </div>
       
       <br/>
@@ -3500,12 +3478,12 @@ object.</p>
         
         def self.<strong>user=</strong>(value)
 
-        <a class="method-permalink" href="#user%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#user=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#user%3D%28user%3AString%29-instance-method">#user=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#user=(user)-instance-method">#user=</a></code>.</p>
         </div>
       
       <br/>
@@ -3524,7 +3502,7 @@ object.</p>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#verbose_migrations%3ABool-instance-method">#verbose_migrations</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#verbose_migrations:Bool-instance-method">#verbose_migrations</a></code>.</p>
         </div>
       
       <br/>
@@ -3538,12 +3516,12 @@ object.</p>
         
         def self.<strong>verbose_migrations=</strong>(value)
 
-        <a class="method-permalink" href="#verbose_migrations%3D%28value%29-class-method">#</a>
+        <a class="method-permalink" href="#verbose_migrations=(value)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Delegates to <code><a href="../Jennifer/Config.html#verbose_migrations%3D%28verbose_migrations%3ABool%29-instance-method">#verbose_migrations=</a></code>.</p>
+          <p>Delegates to <code><a href="../Jennifer/Config.html#verbose_migrations=(verbose_migrations)-instance-method">#verbose_migrations=</a></code>.</p>
         </div>
       
       <br/>
@@ -3569,7 +3547,7 @@ object.</p>
         
         def <strong>adapter</strong> : String
 
-        <a class="method-permalink" href="#adapter%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#adapter:String-instance-method">#</a>
       </div>
       
       <br/>
@@ -3578,12 +3556,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="adapter=(adapter:String)-instance-method">
+    <div class="entry-detail" id="adapter=(adapter)-instance-method">
       <div class="signature">
         
-        def <strong>adapter=</strong>(adapter : String)
+        def <strong>adapter=</strong>(adapter)
 
-        <a class="method-permalink" href="#adapter%3D%28adapter%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#adapter=(adapter)-instance-method">#</a>
       </div>
       
       <br/>
@@ -3597,7 +3575,7 @@ object.</p>
         
         def <strong>allow_outdated_pending_migration</strong> : Bool
 
-        <a class="method-permalink" href="#allow_outdated_pending_migration%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#allow_outdated_pending_migration:Bool-instance-method">#</a>
       </div>
       
       <br/>
@@ -3606,12 +3584,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="allow_outdated_pending_migration=(allow_outdated_pending_migration:Bool)-instance-method">
+    <div class="entry-detail" id="allow_outdated_pending_migration=(allow_outdated_pending_migration)-instance-method">
       <div class="signature">
         
-        def <strong>allow_outdated_pending_migration=</strong>(allow_outdated_pending_migration : Bool)
+        def <strong>allow_outdated_pending_migration=</strong>(allow_outdated_pending_migration)
 
-        <a class="method-permalink" href="#allow_outdated_pending_migration%3D%28allow_outdated_pending_migration%3ABool%29-instance-method">#</a>
+        <a class="method-permalink" href="#allow_outdated_pending_migration=(allow_outdated_pending_migration)-instance-method">#</a>
       </div>
       
       <br/>
@@ -3625,7 +3603,7 @@ object.</p>
         
         def <strong>checkout_timeout</strong> : Float64
 
-        <a class="method-permalink" href="#checkout_timeout%3AFloat64-instance-method">#</a>
+        <a class="method-permalink" href="#checkout_timeout:Float64-instance-method">#</a>
       </div>
       
       <br/>
@@ -3634,12 +3612,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="checkout_timeout=(checkout_timeout:Float64)-instance-method">
+    <div class="entry-detail" id="checkout_timeout=(checkout_timeout)-instance-method">
       <div class="signature">
         
-        def <strong>checkout_timeout=</strong>(checkout_timeout : Float64)
+        def <strong>checkout_timeout=</strong>(checkout_timeout)
 
-        <a class="method-permalink" href="#checkout_timeout%3D%28checkout_timeout%3AFloat64%29-instance-method">#</a>
+        <a class="method-permalink" href="#checkout_timeout=(checkout_timeout)-instance-method">#</a>
       </div>
       
       <br/>
@@ -3653,7 +3631,7 @@ object.</p>
         
         def <strong>command_shell</strong> : String
 
-        <a class="method-permalink" href="#command_shell%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#command_shell:String-instance-method">#</a>
       </div>
       
       <br/>
@@ -3662,12 +3640,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="command_shell=(command_shell:String)-instance-method">
+    <div class="entry-detail" id="command_shell=(command_shell)-instance-method">
       <div class="signature">
         
-        def <strong>command_shell=</strong>(command_shell : String)
+        def <strong>command_shell=</strong>(command_shell)
 
-        <a class="method-permalink" href="#command_shell%3D%28command_shell%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#command_shell=(command_shell)-instance-method">#</a>
       </div>
       
       <br/>
@@ -3681,7 +3659,7 @@ object.</p>
         
         def <strong>command_shell_sudo</strong> : Bool
 
-        <a class="method-permalink" href="#command_shell_sudo%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#command_shell_sudo:Bool-instance-method">#</a>
       </div>
       
       <br/>
@@ -3690,12 +3668,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="command_shell_sudo=(command_shell_sudo:Bool)-instance-method">
+    <div class="entry-detail" id="command_shell_sudo=(command_shell_sudo)-instance-method">
       <div class="signature">
         
-        def <strong>command_shell_sudo=</strong>(command_shell_sudo : Bool)
+        def <strong>command_shell_sudo=</strong>(command_shell_sudo)
 
-        <a class="method-permalink" href="#command_shell_sudo%3D%28command_shell_sudo%3ABool%29-instance-method">#</a>
+        <a class="method-permalink" href="#command_shell_sudo=(command_shell_sudo)-instance-method">#</a>
       </div>
       
       <br/>
@@ -3709,7 +3687,7 @@ object.</p>
         
         def <strong>db</strong> : String
 
-        <a class="method-permalink" href="#db%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#db:String-instance-method">#</a>
       </div>
       
       <br/>
@@ -3718,12 +3696,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="db=(db:String)-instance-method">
+    <div class="entry-detail" id="db=(db)-instance-method">
       <div class="signature">
         
-        def <strong>db=</strong>(db : String)
+        def <strong>db=</strong>(db)
 
-        <a class="method-permalink" href="#db%3D%28db%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#db=(db)-instance-method">#</a>
       </div>
       
       <br/>
@@ -3737,7 +3715,7 @@ object.</p>
         
         def <strong>docker_container</strong> : String
 
-        <a class="method-permalink" href="#docker_container%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#docker_container:String-instance-method">#</a>
       </div>
       
       <br/>
@@ -3746,12 +3724,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="docker_container=(docker_container:String)-instance-method">
+    <div class="entry-detail" id="docker_container=(docker_container)-instance-method">
       <div class="signature">
         
-        def <strong>docker_container=</strong>(docker_container : String)
+        def <strong>docker_container=</strong>(docker_container)
 
-        <a class="method-permalink" href="#docker_container%3D%28docker_container%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#docker_container=(docker_container)-instance-method">#</a>
       </div>
       
       <br/>
@@ -3765,7 +3743,7 @@ object.</p>
         
         def <strong>docker_source_location</strong> : String
 
-        <a class="method-permalink" href="#docker_source_location%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#docker_source_location:String-instance-method">#</a>
       </div>
       
       <br/>
@@ -3774,12 +3752,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="docker_source_location=(docker_source_location:String)-instance-method">
+    <div class="entry-detail" id="docker_source_location=(docker_source_location)-instance-method">
       <div class="signature">
         
-        def <strong>docker_source_location=</strong>(docker_source_location : String)
+        def <strong>docker_source_location=</strong>(docker_source_location)
 
-        <a class="method-permalink" href="#docker_source_location%3D%28docker_source_location%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#docker_source_location=(docker_source_location)-instance-method">#</a>
       </div>
       
       <br/>
@@ -3793,12 +3771,13 @@ object.</p>
         
         def <strong>from_uri</strong>(uri : String)
 
-        <a class="method-permalink" href="#from_uri%28uri%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#from_uri(uri:String)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Reads configuration properties from the given <em>uri</em> string.</p>
+
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Config</span>.from_uri(<span class="s">&quot;mysql://root:password@somehost:3306/some_database&quot;</span>)</code></pre>
         </div>
       
@@ -3815,7 +3794,7 @@ object.</p>
         
         def <strong>from_uri</strong>(uri : URI)
 
-        <a class="method-permalink" href="#from_uri%28uri%3AURI%29-instance-method">#</a>
+        <a class="method-permalink" href="#from_uri(uri:URI)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -3836,7 +3815,7 @@ object.</p>
         
         def <strong>from_yaml</strong>(source)
 
-        <a class="method-permalink" href="#from_yaml%28source%29-instance-method">#</a>
+        <a class="method-permalink" href="#from_yaml(source)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -3857,7 +3836,7 @@ object.</p>
         
         def <strong>host</strong> : String
 
-        <a class="method-permalink" href="#host%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#host:String-instance-method">#</a>
       </div>
       
       <br/>
@@ -3866,12 +3845,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="host=(host:String)-instance-method">
+    <div class="entry-detail" id="host=(host)-instance-method">
       <div class="signature">
         
-        def <strong>host=</strong>(host : String)
+        def <strong>host=</strong>(host)
 
-        <a class="method-permalink" href="#host%3D%28host%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#host=(host)-instance-method">#</a>
       </div>
       
       <br/>
@@ -3885,7 +3864,7 @@ object.</p>
         
         def <strong>initial_pool_size</strong> : Int32
 
-        <a class="method-permalink" href="#initial_pool_size%3AInt32-instance-method">#</a>
+        <a class="method-permalink" href="#initial_pool_size:Int32-instance-method">#</a>
       </div>
       
       <br/>
@@ -3894,12 +3873,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="initial_pool_size=(initial_pool_size:Int32)-instance-method">
+    <div class="entry-detail" id="initial_pool_size=(initial_pool_size)-instance-method">
       <div class="signature">
         
-        def <strong>initial_pool_size=</strong>(initial_pool_size : Int32)
+        def <strong>initial_pool_size=</strong>(initial_pool_size)
 
-        <a class="method-permalink" href="#initial_pool_size%3D%28initial_pool_size%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#initial_pool_size=(initial_pool_size)-instance-method">#</a>
       </div>
       
       <br/>
@@ -3913,7 +3892,7 @@ object.</p>
         
         def <strong>local_time_zone</strong> : Time::Location
 
-        <a class="method-permalink" href="#local_time_zone%3ATime%3A%3ALocation-instance-method">#</a>
+        <a class="method-permalink" href="#local_time_zone:Time::Location-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -3934,7 +3913,7 @@ object.</p>
         
         def <strong>local_time_zone_name</strong> : String
 
-        <a class="method-permalink" href="#local_time_zone_name%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#local_time_zone_name:String-instance-method">#</a>
       </div>
       
       <br/>
@@ -3948,7 +3927,7 @@ object.</p>
         
         def <strong>local_time_zone_name=</strong>(value : String)
 
-        <a class="method-permalink" href="#local_time_zone_name%3D%28value%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#local_time_zone_name=(value:String)-instance-method">#</a>
       </div>
       
       <br/>
@@ -3959,12 +3938,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="local_time_zone_name=(local_time_zone_name:String)-instance-method">
+    <div class="entry-detail" id="local_time_zone_name=(local_time_zone_name)-instance-method">
       <div class="signature">
         
-        def <strong>local_time_zone_name=</strong>(local_time_zone_name : String)
+        def <strong>local_time_zone_name=</strong>(local_time_zone_name)
 
-        <a class="method-permalink" href="#local_time_zone_name%3D%28local_time_zone_name%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#local_time_zone_name=(local_time_zone_name)-instance-method">#</a>
       </div>
       
       <br/>
@@ -3978,13 +3957,14 @@ object.</p>
         
         def <strong>logger</strong> : Log
 
-        <a class="method-permalink" href="#logger%3ALog-instance-method">#</a>
+        <a class="method-permalink" href="#logger:Log-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p><code>Log</code> instance.</p>
-<p>Default is <code>Log.for(&quot;db&quot;, Log::Severity::Debug)</code></p>
+
+<p>Default is <code>Log.for("db", Log::Severity::Debug)</code></p>
         </div>
       
       <br/>
@@ -4000,13 +3980,14 @@ object.</p>
         
         def <strong>logger=</strong>(logger : Log)
 
-        <a class="method-permalink" href="#logger%3D%28logger%3ALog%29-instance-method">#</a>
+        <a class="method-permalink" href="#logger=(logger:Log)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p><code>Log</code> instance.</p>
-<p>Default is <code>Log.for(&quot;db&quot;, Log::Severity::Debug)</code></p>
+
+<p>Default is <code>Log.for("db", Log::Severity::Debug)</code></p>
         </div>
       
       <br/>
@@ -4022,12 +4003,13 @@ object.</p>
         
         def <strong>max_bind_vars_count</strong> : Int32?
 
-        <a class="method-permalink" href="#max_bind_vars_count%3AInt32%3F-instance-method">#</a>
+        <a class="method-permalink" href="#max_bind_vars_count:Int32?-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Maximum count of bind variables.</p>
+
 <p>If <code>nil</code> - uses default adapter value.</p>
         </div>
       
@@ -4044,12 +4026,13 @@ object.</p>
         
         def <strong>max_bind_vars_count=</strong>(max_bind_vars_count : Int32?)
 
-        <a class="method-permalink" href="#max_bind_vars_count%3D%28max_bind_vars_count%3AInt32%3F%29-instance-method">#</a>
+        <a class="method-permalink" href="#max_bind_vars_count=(max_bind_vars_count:Int32?)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Maximum count of bind variables.</p>
+
 <p>If <code>nil</code> - uses default adapter value.</p>
         </div>
       
@@ -4066,7 +4049,7 @@ object.</p>
         
         def <strong>max_idle_pool_size</strong> : Int32
 
-        <a class="method-permalink" href="#max_idle_pool_size%3AInt32-instance-method">#</a>
+        <a class="method-permalink" href="#max_idle_pool_size:Int32-instance-method">#</a>
       </div>
       
       <br/>
@@ -4075,12 +4058,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="max_idle_pool_size=(max_idle_pool_size:Int32)-instance-method">
+    <div class="entry-detail" id="max_idle_pool_size=(max_idle_pool_size)-instance-method">
       <div class="signature">
         
-        def <strong>max_idle_pool_size=</strong>(max_idle_pool_size : Int32)
+        def <strong>max_idle_pool_size=</strong>(max_idle_pool_size)
 
-        <a class="method-permalink" href="#max_idle_pool_size%3D%28max_idle_pool_size%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#max_idle_pool_size=(max_idle_pool_size)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4094,7 +4077,7 @@ object.</p>
         
         def <strong>max_pool_size</strong> : Int32
 
-        <a class="method-permalink" href="#max_pool_size%3AInt32-instance-method">#</a>
+        <a class="method-permalink" href="#max_pool_size:Int32-instance-method">#</a>
       </div>
       
       <br/>
@@ -4103,12 +4086,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="max_pool_size=(max_pool_size:Int32)-instance-method">
+    <div class="entry-detail" id="max_pool_size=(max_pool_size)-instance-method">
       <div class="signature">
         
-        def <strong>max_pool_size=</strong>(max_pool_size : Int32)
+        def <strong>max_pool_size=</strong>(max_pool_size)
 
-        <a class="method-permalink" href="#max_pool_size%3D%28max_pool_size%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#max_pool_size=(max_pool_size)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4122,12 +4105,12 @@ object.</p>
         
         def <strong>migration_failure_handler_method</strong> : <a href="../Jennifer/Config/MigrationFailureHandler.html">Jennifer::Config::MigrationFailureHandler</a>
 
-        <a class="method-permalink" href="#migration_failure_handler_method%3AJennifer%3A%3AConfig%3A%3AMigrationFailureHandler-instance-method">#</a>
+        <a class="method-permalink" href="#migration_failure_handler_method:Jennifer::Config::MigrationFailureHandler-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Handler type for the failed migrations; default is <code>&quot;none&quot;</code>.</p>
+          <p>Handler type for the failed migrations; default is <code>"none"</code>.</p>
         </div>
       
       <br/>
@@ -4143,7 +4126,7 @@ object.</p>
         
         def <strong>migration_failure_handler_method=</strong>(value : <a href="../Jennifer/Config/MigrationFailureHandler.html">MigrationFailureHandler</a>)
 
-        <a class="method-permalink" href="#migration_failure_handler_method%3D%28value%3AMigrationFailureHandler%29-instance-method">#</a>
+        <a class="method-permalink" href="#migration_failure_handler_method=(value:MigrationFailureHandler)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4159,7 +4142,7 @@ object.</p>
         
         def <strong>migration_files_path</strong> : String
 
-        <a class="method-permalink" href="#migration_files_path%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#migration_files_path:String-instance-method">#</a>
       </div>
       
       <br/>
@@ -4168,12 +4151,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="migration_files_path=(migration_files_path:String)-instance-method">
+    <div class="entry-detail" id="migration_files_path=(migration_files_path)-instance-method">
       <div class="signature">
         
-        def <strong>migration_files_path=</strong>(migration_files_path : String)
+        def <strong>migration_files_path=</strong>(migration_files_path)
 
-        <a class="method-permalink" href="#migration_files_path%3D%28migration_files_path%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#migration_files_path=(migration_files_path)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4187,7 +4170,7 @@ object.</p>
         
         def <strong>model_files_path</strong> : String
 
-        <a class="method-permalink" href="#model_files_path%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#model_files_path:String-instance-method">#</a>
       </div>
       
       <br/>
@@ -4196,12 +4179,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="model_files_path=(model_files_path:String)-instance-method">
+    <div class="entry-detail" id="model_files_path=(model_files_path)-instance-method">
       <div class="signature">
         
-        def <strong>model_files_path=</strong>(model_files_path : String)
+        def <strong>model_files_path=</strong>(model_files_path)
 
-        <a class="method-permalink" href="#model_files_path%3D%28model_files_path%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#model_files_path=(model_files_path)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4215,7 +4198,7 @@ object.</p>
         
         def <strong>password</strong> : String
 
-        <a class="method-permalink" href="#password%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#password:String-instance-method">#</a>
       </div>
       
       <br/>
@@ -4224,12 +4207,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="password=(password:String)-instance-method">
+    <div class="entry-detail" id="password=(password)-instance-method">
       <div class="signature">
         
-        def <strong>password=</strong>(password : String)
+        def <strong>password=</strong>(password)
 
-        <a class="method-permalink" href="#password%3D%28password%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#password=(password)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4264,12 +4247,12 @@ object.</p>
         
         def <strong>pool_size=</strong>(value : Int32)
 
-        <a class="method-permalink" href="#pool_size%3D%28value%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#pool_size=(value:Int32)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Sets <code><a href="../Jennifer/Config.html#max_pool_size%3AInt32-instance-method">#max_pool_size</a></code>, <code><a href="../Jennifer/Config.html#max_idle_pool_size%3AInt32-instance-method">#max_idle_pool_size</a></code> and <code><a href="../Jennifer/Config.html#initial_pool_size%3AInt32-instance-method">#initial_pool_size</a></code> to the given <em>value</em>.</p>
+          <p>Sets <code><a href="../Jennifer/Config.html#max_pool_size:Int32-instance-method">#max_pool_size</a></code>, <code><a href="../Jennifer/Config.html#max_idle_pool_size:Int32-instance-method">#max_idle_pool_size</a></code> and <code><a href="../Jennifer/Config.html#initial_pool_size:Int32-instance-method">#initial_pool_size</a></code> to the given <em>value</em>.</p>
         </div>
       
       <br/>
@@ -4285,7 +4268,7 @@ object.</p>
         
         def <strong>port</strong> : Int32
 
-        <a class="method-permalink" href="#port%3AInt32-instance-method">#</a>
+        <a class="method-permalink" href="#port:Int32-instance-method">#</a>
       </div>
       
       <br/>
@@ -4294,12 +4277,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="port=(port:Int32)-instance-method">
+    <div class="entry-detail" id="port=(port)-instance-method">
       <div class="signature">
         
-        def <strong>port=</strong>(port : Int32)
+        def <strong>port=</strong>(port)
 
-        <a class="method-permalink" href="#port%3D%28port%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#port=(port)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4313,13 +4296,15 @@ object.</p>
         
         def <strong>read</strong>(path : String, env : Symbol = <span class="n">:development</span>)
 
-        <a class="method-permalink" href="#read%28path%3AString%2Cenv%3ASymbol%3D%3Adevelopment%29-instance-method">#</a>
+        <a class="method-permalink" href="#read(path:String,env:Symbol=:development)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Reads configurations from the file with given <em>path</em> for given <em>env</em>.</p>
+
 <p>All configuration properties will be read from the <em>env</em> key.</p>
+
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Config</span>.read(<span class="s">&quot;./db/database.yml&quot;</span>, <span class="n">:production</span>)</code></pre>
         </div>
       
@@ -4336,13 +4321,15 @@ object.</p>
         
         def <strong>read</strong>(path : String, env : String)
 
-        <a class="method-permalink" href="#read%28path%3AString%2Cenv%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#read(path:String,env:String)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Reads configurations from the file with given <em>path</em> for given <em>env</em>.</p>
+
 <p>All configuration properties will be read from the <em>env</em> key.</p>
+
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Config</span>.read(<span class="s">&quot;./db/database.yml&quot;</span>, <span class="n">:production</span>)</code></pre>
         </div>
       
@@ -4359,12 +4346,13 @@ object.</p>
         
         def <strong>read</strong>(path : String, &)
 
-        <a class="method-permalink" href="#read%28path%3AString%2C%26%29-instance-method">#</a>
+        <a class="method-permalink" href="#read(path:String,&)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Reads configurations from the file with given <em>path</em>.</p>
+
 <p>It is considered that all configuration properties are located at the root level.</p>
         </div>
       
@@ -4381,7 +4369,7 @@ object.</p>
         
         def <strong>retry_attempts</strong> : Int32
 
-        <a class="method-permalink" href="#retry_attempts%3AInt32-instance-method">#</a>
+        <a class="method-permalink" href="#retry_attempts:Int32-instance-method">#</a>
       </div>
       
       <br/>
@@ -4390,12 +4378,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="retry_attempts=(retry_attempts:Int32)-instance-method">
+    <div class="entry-detail" id="retry_attempts=(retry_attempts)-instance-method">
       <div class="signature">
         
-        def <strong>retry_attempts=</strong>(retry_attempts : Int32)
+        def <strong>retry_attempts=</strong>(retry_attempts)
 
-        <a class="method-permalink" href="#retry_attempts%3D%28retry_attempts%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#retry_attempts=(retry_attempts)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4409,7 +4397,7 @@ object.</p>
         
         def <strong>retry_delay</strong> : Float64
 
-        <a class="method-permalink" href="#retry_delay%3AFloat64-instance-method">#</a>
+        <a class="method-permalink" href="#retry_delay:Float64-instance-method">#</a>
       </div>
       
       <br/>
@@ -4418,12 +4406,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="retry_delay=(retry_delay:Float64)-instance-method">
+    <div class="entry-detail" id="retry_delay=(retry_delay)-instance-method">
       <div class="signature">
         
-        def <strong>retry_delay=</strong>(retry_delay : Float64)
+        def <strong>retry_delay=</strong>(retry_delay)
 
-        <a class="method-permalink" href="#retry_delay%3D%28retry_delay%3AFloat64%29-instance-method">#</a>
+        <a class="method-permalink" href="#retry_delay=(retry_delay)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4437,7 +4425,7 @@ object.</p>
         
         def <strong>schema</strong> : String
 
-        <a class="method-permalink" href="#schema%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#schema:String-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -4453,12 +4441,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="schema=(schema:String)-instance-method">
+    <div class="entry-detail" id="schema=(schema)-instance-method">
       <div class="signature">
         
-        def <strong>schema=</strong>(schema : String)
+        def <strong>schema=</strong>(schema)
 
-        <a class="method-permalink" href="#schema%3D%28schema%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#schema=(schema)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4472,7 +4460,7 @@ object.</p>
         
         def <strong>skip_dumping_schema_sql</strong> : Bool
 
-        <a class="method-permalink" href="#skip_dumping_schema_sql%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#skip_dumping_schema_sql:Bool-instance-method">#</a>
       </div>
       
       <br/>
@@ -4481,12 +4469,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="skip_dumping_schema_sql=(skip_dumping_schema_sql:Bool)-instance-method">
+    <div class="entry-detail" id="skip_dumping_schema_sql=(skip_dumping_schema_sql)-instance-method">
       <div class="signature">
         
-        def <strong>skip_dumping_schema_sql=</strong>(skip_dumping_schema_sql : Bool)
+        def <strong>skip_dumping_schema_sql=</strong>(skip_dumping_schema_sql)
 
-        <a class="method-permalink" href="#skip_dumping_schema_sql%3D%28skip_dumping_schema_sql%3ABool%29-instance-method">#</a>
+        <a class="method-permalink" href="#skip_dumping_schema_sql=(skip_dumping_schema_sql)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4500,7 +4488,7 @@ object.</p>
         
         def <strong>structure_folder</strong> : String
 
-        <a class="method-permalink" href="#structure_folder%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#structure_folder:String-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -4516,12 +4504,12 @@ object.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="structure_folder=(structure_folder:String)-instance-method">
+    <div class="entry-detail" id="structure_folder=(structure_folder)-instance-method">
       <div class="signature">
         
-        def <strong>structure_folder=</strong>(structure_folder : String)
+        def <strong>structure_folder=</strong>(structure_folder)
 
-        <a class="method-permalink" href="#structure_folder%3D%28structure_folder%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#structure_folder=(structure_folder)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4535,7 +4523,7 @@ object.</p>
         
         def <strong>structure_path</strong> : String
 
-        <a class="method-permalink" href="#structure_path%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#structure_path:String-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -4556,13 +4544,14 @@ object.</p>
         
         def <strong>time_zone_aware_attributes</strong> : Bool
 
-        <a class="method-permalink" href="#time_zone_aware_attributes%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#time_zone_aware_attributes:Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Whether Jennifer should convert time objects to UTC and back to application time zone when store/load them
 from a database.</p>
+
 <p>If set to <code>false</code> all time objects will be treated as local time - <code>Time#to_local_in</code> will be used instead of <code>Time#in</code>.</p>
         </div>
       
@@ -4574,12 +4563,12 @@ from a database.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="time_zone_aware_attributes=(time_zone_aware_attributes:Bool)-instance-method">
+    <div class="entry-detail" id="time_zone_aware_attributes=(time_zone_aware_attributes)-instance-method">
       <div class="signature">
         
-        def <strong>time_zone_aware_attributes=</strong>(time_zone_aware_attributes : Bool)
+        def <strong>time_zone_aware_attributes=</strong>(time_zone_aware_attributes)
 
-        <a class="method-permalink" href="#time_zone_aware_attributes%3D%28time_zone_aware_attributes%3ABool%29-instance-method">#</a>
+        <a class="method-permalink" href="#time_zone_aware_attributes=(time_zone_aware_attributes)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4593,7 +4582,7 @@ from a database.</p>
         
         def <strong>user</strong> : String
 
-        <a class="method-permalink" href="#user%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#user:String-instance-method">#</a>
       </div>
       
       <br/>
@@ -4602,12 +4591,12 @@ from a database.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="user=(user:String)-instance-method">
+    <div class="entry-detail" id="user=(user)-instance-method">
       <div class="signature">
         
-        def <strong>user=</strong>(user : String)
+        def <strong>user=</strong>(user)
 
-        <a class="method-permalink" href="#user%3D%28user%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#user=(user)-instance-method">#</a>
       </div>
       
       <br/>
@@ -4621,12 +4610,13 @@ from a database.</p>
         
         def <strong>verbose_migrations</strong> : Bool
 
-        <a class="method-permalink" href="#verbose_migrations%3ABool-instance-method">#</a>
+        <a class="method-permalink" href="#verbose_migrations:Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns whether migrations should be performed in verbose mode.</p>
+
 <p>Default is <code>true</code>.</p>
         </div>
       
@@ -4638,12 +4628,12 @@ from a database.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="verbose_migrations=(verbose_migrations:Bool)-instance-method">
+    <div class="entry-detail" id="verbose_migrations=(verbose_migrations)-instance-method">
       <div class="signature">
         
-        def <strong>verbose_migrations=</strong>(verbose_migrations : Bool)
+        def <strong>verbose_migrations=</strong>(verbose_migrations)
 
-        <a class="method-permalink" href="#verbose_migrations%3D%28verbose_migrations%3ABool%29-instance-method">#</a>
+        <a class="method-permalink" href="#verbose_migrations=(verbose_migrations)-instance-method">#</a>
       </div>
       
       <br/>

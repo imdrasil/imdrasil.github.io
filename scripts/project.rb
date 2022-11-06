@@ -3,19 +3,18 @@ class Project
   KEEP_COUNT = 5
   DROP_OUTDATED_VERSIONS = false
 
-  attr_accessor :site, :new_versions, :name
+  attr_accessor :site, :name, :skip_versions, :only_versions
 
-  attr_reader :skip_versions
-
-  def initialize(name: nil, uri: nil, after_deploy: nil, versions_file: true, doc_builder:, skip_versions: [])
+  def initialize(name: nil, uri: nil, after_deploy: nil, versions_file: true, doc_builder:,
+                 skip_versions: [], only_versions: [])
     @uri = uri
     @name = name
     @site = nil
     @doc_builder = doc_builder
-    @new_versions = []
     @after_deploy = after_deploy
     @versions_file = versions_file
     @skip_versions = skip_versions
+    @only_versions = only_versions
   end
 
   def uri
@@ -55,13 +54,10 @@ class Project
     site.under_repo do |deep|
       Dir.chdir @name do
         current_deep = File.join(deep, "..")
-        build(current_deep)
+        Git.fetch
+        build(current_deep) if target_latest?
 
-        gv = NaturalSort.sort(Git.versions - skip_versions).reverse!
-        @new_versions = gv[0...KEEP_COUNT] - versions
-
-
-        new_versions.each do |v|
+        target_versions.each do |v|
           build(current_deep, v)
         end
 
@@ -82,10 +78,10 @@ class Project
     @site.say "Start building of #{version} (#{@name})"
     is_latest = version == "latest"
     if is_latest
-      Git.fetch
       Git.checkout("master")
       Git.pull
       return if up_to_date?
+
       @site.manifest.set_hash(@name, Git.sha)
     else
       Git.checkout(version)
@@ -161,6 +157,18 @@ class Project
 
   def versions_file_path
     File.join(target_path, "versions.md")
+  end
+
+  def target_versions
+    if !only_versions.empty?
+      NaturalSort.sort(only_versions).reverse!
+    else
+      NaturalSort.sort(Git.versions - skip_versions).reverse!
+    end[0...KEEP_COUNT] - versions
+  end
+
+  def target_latest?
+    only_versions.empty?
   end
 
   def versions_file_template

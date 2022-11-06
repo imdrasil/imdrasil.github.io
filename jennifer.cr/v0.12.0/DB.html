@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1284,38 +1284,45 @@
 
   <p>The DB module is a unified interface for database access.
 Individual database systems are supported by specific database driver shards.</p>
+
 <p>Available drivers include:</p>
-<ul>
-<li><a href="https://github.com/crystal-lang/crystal-sqlite3">crystal-lang/crystal-sqlite3</a> for SQLite</li>
-<li><a href="https://github.com/crystal-lang/crystal-mysql">crystal-lang/crystal-mysql</a> for MySQL and MariaDB</li>
-<li><a href="https://github.com/will/crystal-pg">will/crystal-pg</a> for PostgreSQL</li>
-<li><a href="https://github.com/kaukas/crystal-cassandra">kaukas/crystal-cassandra</a> for Cassandra</li>
-</ul>
+
+<ul><li><a href="https://github.com/crystal-lang/crystal-sqlite3">crystal-lang/crystal-sqlite3</a> for SQLite</li><li><a href="https://github.com/crystal-lang/crystal-mysql">crystal-lang/crystal-mysql</a> for MySQL and MariaDB</li><li><a href="https://github.com/will/crystal-pg">will/crystal-pg</a> for PostgreSQL</li><li><a href="https://github.com/kaukas/crystal-cassandra">kaukas/crystal-cassandra</a> for Cassandra</li></ul>
+
 <p>For basic instructions on implementing a new database driver, check <code>Driver</code> and the existing drivers.</p>
+
 <p>DB manages a connection pool. The connection pool can be configured by query parameters to the
 connection <code>URI</code> as described in <code>Database</code>.</p>
+
 <h3><a id="usage" class="anchor" href="#usage">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Usage</h3>
+
 <p>Assuming <code>crystal-sqlite3</code> is included a SQLite3 database can be opened with <code>#open</code>.</p>
+
 <pre><code class="language-crystal">db <span class="o">=</span> <span class="t">DB</span>.open <span class="s">&quot;sqlite3:./path/to/db/file.db&quot;</span>
 db.close</code></pre>
+
 <p>If a block is given to <code>#open</code> the database is closed automatically</p>
+
 <pre><code class="language-crystal"><span class="t">DB</span>.open <span class="s">&quot;sqlite3:./file.db&quot;</span> <span class="k">do</span> <span class="o">|</span>db<span class="o">|</span>
   <span class="c"># work with db</span>
 <span class="k">end</span> <span class="c"># db is closed</span></code></pre>
+
 <p>In the code above <code>db</code> is a <code>Database</code>. Methods available for querying it are described in <code>QueryMethods</code>.</p>
+
 <p>Three kind of statements can be performed:</p>
-<ol>
-<li><code>Database#exec</code> waits no response from the database.</li>
-<li><code>Database#scalar</code> reads a single value of the response.</li>
-<li><code>Database#query</code> returns a ResultSet that allows iteration over the rows in the response and column information.</li>
-</ol>
+
+<ol><li><code>Database#exec</code> waits no response from the database.</li><li><code>Database#scalar</code> reads a single value of the response.</li><li><code>Database#query</code> returns a ResultSet that allows iteration over the rows in the response and column information.</li></ol>
+
 <p>All of the above methods allows parametrised query. Either positional or named arguments.</p>
+
 <p>Check a full working version:</p>
+
 <p>The following example uses SQLite where <code>?</code> indicates the arguments. If PostgreSQL is used <code>$1</code>, <code>$2</code>, etc. should be used. <code>crystal-db</code> does not interpret the statements.</p>
+
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;db&quot;</span>
 <span class="k">require</span> <span class="s">&quot;sqlite3&quot;</span>
 

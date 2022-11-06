@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1283,10 +1283,12 @@
   </h2>
 
   <p>Type converter for numeric field.</p>
+
 <p>Converts <code>PG::Numeric</code> (for PostgreSQL) or <code>Float64</code> data types (for MySQL) field to <code>BigDecimal</code> and back.
 This allows to map numeric fields to <code>BigDecimal</code> which allows to manipulate float numbers with fixed scale.
 It is important to specify scale value - the count of decimal digits in the fractional part, to the right of
 the decimal point.</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">Order</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   mapping(
     id: <span class="t">Primary32</span>,
@@ -1342,27 +1344,27 @@ the decimal point.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#coerce%28value%3AString%2C_options%29%3ABigDecimal%3F-class-method" class="signature"><strong>.coerce</strong>(value : String, _options) : BigDecimal?</a>
+        <a href="#coerce(value:String,_options):BigDecimal?-class-method" class="signature"><strong>.coerce</strong>(value : String, _options) : BigDecimal?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#from_db%28pull%2Coptions%29-class-method" class="signature"><strong>.from_db</strong>(pull, options)</a>
+        <a href="#from_db(pull,options)-class-method" class="signature"><strong>.from_db</strong>(pull, options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#from_hash%28hash%3AHash%2Ccolumn%2Coptions%29-class-method" class="signature"><strong>.from_hash</strong>(hash : Hash, column, options)</a>
+        <a href="#from_hash(hash:Hash,column,options)-class-method" class="signature"><strong>.from_hash</strong>(hash : Hash, column, options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_db%28value%3ABigDecimal%2Coptions%29-class-method" class="signature"><strong>.to_db</strong>(value : BigDecimal, options)</a>
+        <a href="#to_db(value:BigDecimal,options)-class-method" class="signature"><strong>.to_db</strong>(value : BigDecimal, options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_db%28value%3ANil%2Coptions%29%3ANil-class-method" class="signature"><strong>.to_db</strong>(value : Nil, options) : Nil</a>
+        <a href="#to_db(value:Nil,options):Nil-class-method" class="signature"><strong>.to_db</strong>(value : Nil, options) : Nil</a>
         
       </li>
     
@@ -1395,7 +1397,7 @@ the decimal point.</p>
         
         def self.<strong>coerce</strong>(value : String, _options) : BigDecimal?
 
-        <a class="method-permalink" href="#coerce%28value%3AString%2C_options%29%3ABigDecimal%3F-class-method">#</a>
+        <a class="method-permalink" href="#coerce(value:String,_options):BigDecimal?-class-method">#</a>
       </div>
       
       <br/>
@@ -1411,7 +1413,7 @@ the decimal point.</p>
         
         def self.<strong>from_db</strong>(pull, options)
 
-        <a class="method-permalink" href="#from_db%28pull%2Coptions%29-class-method">#</a>
+        <a class="method-permalink" href="#from_db(pull,options)-class-method">#</a>
       </div>
       
       <br/>
@@ -1427,7 +1429,7 @@ the decimal point.</p>
         
         def self.<strong>from_hash</strong>(hash : Hash, column, options)
 
-        <a class="method-permalink" href="#from_hash%28hash%3AHash%2Ccolumn%2Coptions%29-class-method">#</a>
+        <a class="method-permalink" href="#from_hash(hash:Hash,column,options)-class-method">#</a>
       </div>
       
       <br/>
@@ -1443,7 +1445,7 @@ the decimal point.</p>
         
         def self.<strong>to_db</strong>(value : BigDecimal, options)
 
-        <a class="method-permalink" href="#to_db%28value%3ABigDecimal%2Coptions%29-class-method">#</a>
+        <a class="method-permalink" href="#to_db(value:BigDecimal,options)-class-method">#</a>
       </div>
       
       <br/>
@@ -1459,7 +1461,7 @@ the decimal point.</p>
         
         def self.<strong>to_db</strong>(value : Nil, options) : Nil
 
-        <a class="method-permalink" href="#to_db%28value%3ANil%2Coptions%29%3ANil-class-method">#</a>
+        <a class="method-permalink" href="#to_db(value:Nil,options):Nil-class-method">#</a>
       </div>
       
       <br/>

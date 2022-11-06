@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1263,59 +1263,73 @@
 
 
 <div class="main-content">
-<h1><a id="jennifer-latest-release-docs" class="anchor" href="#jennifer-latest-release-docs">  <svg class="octicon-link" aria-hidden="true">
+<h1><a id="jennifer-latest-releasehttpsimg.shields.iogithubreleaseimdrasiljennifer.cr.svghttpsgithub.comimdrasiljennifer.crreleases-docshttpsimg.shields.iobadgedocs-available-brightgreen.svghttpsimdrasil.github.iojennifer.crdocs" class="anchor" href="#jennifer-latest-releasehttpsimg.shields.iogithubreleaseimdrasiljennifer.cr.svghttpsgithub.comimdrasiljennifer.crreleases-docshttpsimg.shields.iobadgedocs-available-brightgreen.svghttpsimdrasil.github.iojennifer.crdocs">
+  <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
-</a>Jennifer <a href="https://github.com/imdrasil/jennifer.cr/releases"><img src="https://img.shields.io/github/release/imdrasil/jennifer.cr.svg" alt="Latest Release" /></a> <a href="https://imdrasil.github.io/jennifer.cr/docs/"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs" /></a></h1>
+</a>Jennifer <a href="https://github.com/imdrasil/jennifer.cr/releases"><img src="https://img.shields.io/github/release/imdrasil/jennifer.cr.svg" alt="Latest Release"/></a> <a href="https://imdrasil.github.io/jennifer.cr/docs/"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs"/></a></h1>
+
 <p>ActiveRecord pattern implementation for Crystal with a powerful query DSL, validation, relationship definition, translation and migration mechanism.</p>
+
 <h2><a id="installation" class="anchor" href="#installation">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Installation</h2>
+
 <p>Add this to your application's <code>shard.yml</code>:</p>
+
 <pre><code class="language-yaml">dependencies:
   jennifer:
     github: imdrasil/jennifer.cr
-    version: &quot;~&gt; 0.12.0&quot;</code></pre>
+    version: "~> 0.12.0"</code></pre>
+
 <h3><a id="requirements" class="anchor" href="#requirements">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Requirements</h3>
-<ul>
-<li>you need to choose one of the existing drivers for your DB: <a href="https://github.com/crystal-lang/crystal-mysql">mysql</a> or <a href="https://github.com/will/crystal-pg">postgres</a>; sqlite3 adapter automatically installs required driver for it;</li>
-<li>crystal <code>&gt;= 1.0.0</code>.</li>
-</ul>
+
+<ul><li>you need to choose one of the existing drivers for your DB: <a href="https://github.com/crystal-lang/crystal-mysql">mysql</a> or <a href="https://github.com/will/crystal-pg">postgres</a>; sqlite3 adapter automatically installs required driver for it;</li><li>crystal <code>>= 1.0.0</code>.</li></ul>
+
 <h2><a id="usage" class="anchor" href="#usage">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Usage</h2>
+
 <p>Jennifer allows you to maintain everything for your models - from DB migrations and field mapping to callbacks and building queries. For detailed information see the <a href="https://imdrasil.github.io/jennifer.cr/docs/">docs</a> and <a href="https://imdrasil.github.io/jennifer.cr/versions">API documentation</a>.</p>
+
 <h3><a id="cli" class="anchor" href="#cli">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>CLI</h3>
+
 <p>For command management Jennifer uses <a href="https://github.com/imdrasil/sam.cr">Sam</a>. Due to this you can easily create/migrate/drop database or invoke generator to bootstrap your models and migrations.</p>
+
 <h3><a id="migration" class="anchor" href="#migration">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Migration</h3>
+
 <p>Jennifer has built-in database migration management system. Migrations allow you to organize all database changes.</p>
+
 <p>To start using Jennifer you'll first need to generate a migration:</p>
+
 <pre><code class="language-shell">$ crystal sam.cr -- generate:migration CreateContact</code></pre>
+
 <p>then fill the created migration file with content:</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">CreateContact</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Migration</span><span class="t">::</span><span class="t">Base</span>
   <span class="k">def</span> <span class="m">up</span>
     <span class="c"># Postgres requires to create specific enum type</span>
     create_enum(<span class="n">:gender_enum</span>, [<span class="s">&quot;male&quot;</span>, <span class="s">&quot;female&quot;</span>])
     create_table(<span class="n">:contacts</span>) <span class="k">do</span> <span class="o">|</span>t<span class="o">|</span>
-      t.string <span class="n">:name</span>, {<span class="n">:size</span> <span class="o">=&gt;</span> <span class="n">30</span>}
+      t.string <span class="n">:name</span>, {<span class="n">:size</span> => <span class="n">30</span>}
       t.integer <span class="n">:age</span>
-      t.integer <span class="n">:tags</span>, {<span class="n">:array</span> <span class="o">=&gt;</span> <span class="n">true</span>}
+      t.integer <span class="n">:tags</span>, {<span class="n">:array</span> => <span class="n">true</span>}
       t.field <span class="n">:gender</span>, <span class="n">:gender_enum</span>
       t.timestamps
     <span class="k">end</span>
@@ -1326,25 +1340,25 @@
     drop_enum(<span class="n">:gender_enum</span>)
   <span class="k">end</span>
 <span class="k">end</span></code></pre>
+
 <p>and run</p>
+
 <pre><code class="language-shell">$ crystal sam.cr -- db:setup</code></pre>
+
 <p>to create the database and run the newly created migration.</p>
+
 <h3><a id="model" class="anchor" href="#model">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Model</h3>
+
 <p>Jennifer provides next features:</p>
-<ul>
-<li>flexible model schema definition</li>
-<li>relationship definition (<code>belongs_to</code>, <code>has_many</code>, <code>has_one</code>, <code>has_and_belongs_to_many</code>) - including polymorphic ones</li>
-<li>built-in extendable validations</li>
-<li>model-specific query scope definition</li>
-<li>callbacks</li>
-<li>database view support</li>
-<li>SQL translations</li>
-</ul>
+
+<ul><li>flexible model schema definition</li><li>relationship definition (<code>belongs_to</code>, <code>has_many</code>, <code>has_one</code>, <code>has_and_belongs_to_many</code>) - including polymorphic ones</li><li>built-in extendable validations</li><li>model-specific query scope definition</li><li>callbacks</li><li>database view support</li><li>SQL translations</li></ul>
+
 <p>Hers is a model example:</p>
+
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">Contact</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   with_timestamps
   mapping(
@@ -1370,16 +1384,19 @@
   scope <span class="n">:ordered</span> { order(name: <span class="n">:asc</span>) }
 
   <span class="k">def</span> <span class="m">name_check</span>
-    <span class="k">return</span> <span class="k">unless</span> description <span class="o">&amp;&amp;</span> description.not_nil!.size <span class="o">&gt;</span> <span class="n">10</span>
+    <span class="k">return</span> <span class="k">unless</span> description && description.not_nil!.size <span class="o">&gt;</span> <span class="n">10</span>
     errors.add(<span class="n">:description</span>, <span class="s">&quot;Too large description&quot;</span>)
   <span class="k">end</span>
 <span class="k">end</span></code></pre>
+
 <h3><a id="query-dsl" class="anchor" href="#query-dsl">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Query DSL</h3>
+
 <p>Jennifer allows you to query the DB using a flexible DSL:</p>
+
 <pre><code class="language-crystal"><span class="t">Contact</span>
   .all
   .left_join(<span class="t">Passport</span>) { _contact_id <span class="o">==</span> _contact__id }
@@ -1388,47 +1405,52 @@
   .to_a
 <span class="t">Contact</span>.all.eager_load(<span class="n">:countries</span>).where { __countries { _name.like(<span class="s">&quot;%tan%&quot;</span>) } }
 <span class="t">Contact</span>.all.group(<span class="n">:gender</span>).group_avg(<span class="n">:age</span>, <span class="t">PG</span><span class="t">::</span><span class="t">Numeric</span>)</code></pre>
+
 <p>Supported features:</p>
-<ul>
-<li>fetching model objects from the database</li>
-<li>fetching records from a specific table</li>
-<li><em>magic</em> underscore  table column notation which allows effectively reference any table column or alias</li>
-<li>eager loading of model associations any levels deep</li>
-<li>support of common SQL functions (including aggregations) and mechanism to register own ones</li>
-<li>flexible DSL of all SQL clauses (<code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>JOIN</code>, <code>GROUP BY</code>, etc.)</li>
-<li><code>CTE</code> support</li>
-<li><code>JSON</code> operators</li>
-<li>table and column aliasing</li>
-</ul>
+
+<ul><li>fetching model objects from the database</li><li>fetching records from a specific table</li><li><em>magic</em> underscore  table column notation which allows effectively reference any table column or alias</li><li>eager loading of model associations any levels deep</li><li>support of common SQL functions (including aggregations) and mechanism to register own ones</li><li>flexible DSL of all SQL clauses (<code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>JOIN</code>, <code>GROUP BY</code>, etc.)</li><li><code>CTE</code> support</li><li><code>JSON</code> operators</li><li>table and column aliasing</li></ul>
+
 <p>Much more about the query DSL can be found in the wiki <a href="./docs/query_dsl.md">page</a>.</p>
+
 <h3><a id="internationalization" class="anchor" href="#internationalization">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Internationalization</h3>
+
 <p>You can easily configure error message generated for certain validation violation for a specific model or globally. Model and attribute names can be easily configured as well. For internationalization purpose <a href="https://github.com/TechMagister/i18n.cr">i18n</a> is used. For more details how does it work see <a href="./docs/internationalization_dsl.md">wiki</a>.</p>
+
 <h3><a id="logging-debugging" class="anchor" href="#logging-debugging">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
-</a>Logging &amp; Debugging</h3>
+</a>Logging & Debugging</h3>
+
 <p>Jennifer uses a <a href="https://crystal-lang.org/api/latest/Log.html">standard</a> Crystal logging mechanism so you could specify your own logger, backend and formatter:</p>
+
 <pre><code class="language-crystal"><span class="c"># This is the default logger configuration</span>
 <span class="t">Jennifer</span><span class="t">::</span><span class="t">Config</span>.configure <span class="k">do</span> <span class="o">|</span>conf<span class="o">|</span>
   conf.logger <span class="o">=</span> <span class="t">Log</span>.<span class="k">for</span>(<span class="s">&quot;db&quot;</span>, <span class="n">:debug</span>)
 <span class="k">end</span>
-<span class="t">Log</span>.setup <span class="s">&quot;db&quot;</span>, <span class="n">:debug</span>, <span class="t">Log</span><span class="t">::</span><span class="t">IOBackend</span>.new(formatter: <span class="t">Jennifer</span><span class="t">::</span><span class="t">Adapter</span><span class="t">::</span><span class="t">DBFormatter</span>)</code></pre>
+<span class="t">Log</span>.setup <span class="s">&quot;db&quot;</span>, <span class="n">:debug</span>, <span class="t">Log</span><span class="t">::</span><span class="t">IOBackend</span>.<span class="k">new</span>(formatter: <span class="t">Jennifer</span><span class="t">::</span><span class="t">Adapter</span><span class="t">::</span><span class="t">DBFormatter</span>)</code></pre>
+
 <p><code>Jennifer::Model::Base#inspect</code> returns formatted information about model attributes filtering out all unnecessary information.</p>
+
 <pre><code class="language-crystal"><span class="t">Address</span>.first!.inspect
 <span class="c"># #&lt;Address:0x7efde96ac0d0 id: 1, street: &quot;Ant st. 69&quot;, contact_id: nil, created_at: 2019-06-10 11:11:11.665032000 +03:00 Local&gt;</span></code></pre>
+
 <p>Also, you can get a query execution plan explanation right from your code - just execute <code>#explain</code> on query to get appropriate information (output is database specific):</p>
+
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.explain <span class="c"># =&gt; Seq Scan on contacts  (cost=0.00..14.30 rows=100.0 width=320)</span></code></pre>
+
 <h3><a id="testing-tips" class="anchor" href="#testing-tips">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Testing tips</h3>
+
 <p>The fastest way to rollback all changes in the DB after test case is by using a transaction. So add:</p>
+
 <pre><code class="language-crystal"><span class="t">Spec</span>.before_each <span class="k">do</span>
   <span class="t">Jennifer</span><span class="t">::</span><span class="t">Adapter</span>.default_adapter.begin_transaction
 <span class="k">end</span>
@@ -1436,97 +1458,116 @@
 <span class="t">Spec</span>.after_each <span class="k">do</span>
   <span class="t">Jennifer</span><span class="t">::</span><span class="t">Adapter</span>.default_adapter.rollback_transaction
 <span class="k">end</span></code></pre>
+
 <p>to your <code>spec_helper.cr</code>. NB. you could simply use regular deleting or truncation, but a transaction will provide a 15x speed up (at least for postgres; mysql gets less impact).</p>
-<blockquote>
-<p>These functions can be safely used only under test environment.</p>
-</blockquote>
+
+<blockquote>These functions can be safely used only under test environment.</blockquote>
+
 <h2><a id="versioning" class="anchor" href="#versioning">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Versioning</h2>
+
 <p>Now that Jennifer is under heavy development, there could be many breaking changes. So please check the release notes to check if any of the changes may prevent you from using it. Also, until this library reaches a beta version, the next version rules will be followed:</p>
-<ul>
-<li>
-<p>all bug fixes, new minor features or (sometimes) ones that don't break the existing API will be added as a patch number (e.g. 0.3.<strong>4</strong>);</p>
-</li>
-<li>
-<p>all breaking changes and new important features (as well as reaching a milestone) will be added by bumping the minor digit (0.<strong>4</strong>.0);</p>
-</li>
-</ul>
+
+<ul><li>all bug fixes, new minor features or (sometimes) ones that don't break the existing API will be added as a patch number (e.g. 0.3.<strong>4</strong>);</li></ul>
+
+<ul><li>all breaking changes and new important features (as well as reaching a milestone) will be added by bumping the minor digit (0.<strong>4</strong>.0);</li></ul>
+
 <p>So even a patch version change could bring a lot of new stuff.</p>
+
 <p>If there is a branch for the next release - it will be removed 1 month after the release. So please use them only as a hotfix or for experiments or contribution.</p>
+
 <h2><a id="development" class="anchor" href="#development">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Development</h2>
-<blockquote>
-<p>Before developing any feature please create an issue where you describe your idea.</p>
-</blockquote>
-<p>To setup dev environment run <code>./scripts/setup.sh</code> - it creates <code>./scripts/database.yml</code> configuration file. You can override there any values specific to your environment (like DB user &amp; password).</p>
+
+<blockquote>Before developing any feature please create an issue where you describe your idea.</blockquote>
+
+<p>To setup dev environment run <code>./scripts/setup.sh</code> - it creates <code>./scripts/database.yml</code> configuration file. You can override there any values specific to your environment (like DB user & password).</p>
+
 <p>To create the databases:</p>
+
 <pre><code class="language-shell"># Postgres
 $ make sam db:setup
 
 # Mysql
 $ DB=mysql make sam db:setup</code></pre>
+
 <h3><a id="running-tests" class="anchor" href="#running-tests">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Running tests</h3>
+
 <p>All unit tests are written using core <code>spec</code>. Also in <code>spec/spec_helper.cr</code> some custom unit test matchers are defined. All migrations are under the <code>./scripts/migrations</code> directory.</p>
+
 <p>The common way to run tests is just use using regular crystal spec tool:</p>
+
 <pre><code class="language-shell">$ crystal spec</code></pre>
+
 <p>By default <code>postgres</code> adapter is used. To run tests against <code>mysql</code> add <code><a href="DB.html">DB</a>=mysql</code> before command. Also custom database user and password could be specified:</p>
+
 <p>In case you need to set the database user or password, use:</p>
+
 <pre><code class="language-shell">$ DB_USER=user DB_PASSWORD=pass crystal spec</code></pre>
+
 <h4><a id="testing-multiadapter-support" class="anchor" href="#testing-multiadapter-support">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Testing multiadapter support</h4>
+
 <p>To run tests with multiple adapter involved you should create and migrate database with <code>PAIR=1</code> environment variable defined. For testing purpose <code>mysql</code> adapter will be created when <code>postgres</code> one is used as a main one and vice verse. Therefore both databases should be available to receive connections.</p>
+
 <p>Also <code>PAIR</code> variable should be defined when running tests.</p>
+
 <h4><a id="integration-tests" class="anchor" href="#integration-tests">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Integration tests</h4>
+
 <p>Except unit tests there are also several <em>integration</em> tests. These tests checks opportunity to compile and invoke Jennifer functionality in some special edge cases (e.g. without defined models, migrations, etc.).</p>
+
 <p>To run integration test just use standard spec runner:</p>
-<pre><code class="language-shell">$ crystal spec spec/integration/&lt;test_name&gt;.cr</code></pre>
+
+<pre><code class="language-shell">$ crystal spec spec/integration/&lt;test_name>.cr</code></pre>
+
 <p>Each test file is required to be invoked separately as it may have own configuration.</p>
+
 <h3><a id="documentation-generation" class="anchor" href="#documentation-generation">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Documentation generation</h3>
+
 <p>Self documentation is not fully support yet but docs can be compiled using this shell script:</p>
+
 <pre><code class="language-shell">$ ./generate-docs.sh</code></pre>
+
 <p>NB. It also depends on then chosen adapter (postgres by default).</p>
+
 <h2><a id="contributing" class="anchor" href="#contributing">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Contributing</h2>
-<ol>
-<li><a href="https://github.com/imdrasil/jennifer.cr/fork">Fork it</a></li>
-<li>Create your feature branch (git checkout -b my-new-feature)</li>
-<li>Commit your changes (git commit -am 'Add some feature')</li>
-<li>Push to the branch (git push origin my-new-feature)</li>
-<li>Create a new Pull Request</li>
-</ol>
+
+<ol><li><a href=" https://github.com/imdrasil/jennifer.cr/fork ">Fork it</a></li><li>Create your feature branch (git checkout -b my-new-feature)</li><li>Commit your changes (git commit -am 'Add some feature')</li><li>Push to the branch (git push origin my-new-feature)</li><li>Create a new Pull Request</li></ol>
+
 <p>Please ask me before starting work on smth. Also often there is a separate branch for the future minor release that includes all breaking changes.</p>
+
 <h2><a id="contributors" class="anchor" href="#contributors">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Contributors</h2>
-<ul>
-<li><a href="https://github.com/imdrasil">imdrasil</a> Roman Kalnytskyi - creator, maintainer</li>
-</ul>
+
+<ul><li><a href="https://github.com/imdrasil">imdrasil</a> Roman Kalnytskyi - creator, maintainer</li></ul>
 </div>
 </body>
 </html>

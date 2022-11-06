@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="crystal_docs.project_version" content="0.2.3">
+<meta name="crystal_docs.project_name" content="crymagick">
+
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
+
+  <meta name="repository-name" content="crymagick">
+  <title>CryMagick::Tool::MogrifyRestricted - crymagick 0.2.3</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../../index.html">
+          crymagick
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.2.3
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="crymagick/CryMagick" data-name="crymagick">
+      <a href="../../CryMagick.html">CryMagick</a>
+      
+        <ul>
+  
+  <li class=" " data-id="crymagick/CryMagick/Configuration" data-name="crymagick::configuration">
+      <a href="../../CryMagick/Configuration.html">Configuration</a>
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Error" data-name="crymagick::error">
+      <a href="../../CryMagick/Error.html">Error</a>
+      
+    </li>
+  
+  <li class="parent " data-id="crymagick/CryMagick/Image" data-name="crymagick::image">
+      <a href="../../CryMagick/Image.html">Image</a>
+      
+        <ul>
+  
+  <li class=" " data-id="crymagick/CryMagick/Image/Info" data-name="crymagick::image::info">
+      <a href="../../CryMagick/Image/Info.html">Info</a>
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Image/Pixel" data-name="crymagick::image::pixel">
+      <a href="../../CryMagick/Image/Pixel.html">Pixel</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Invalid" data-name="crymagick::invalid">
+      <a href="../../CryMagick/Invalid.html">Invalid</a>
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Shell" data-name="crymagick::shell">
+      <a href="../../CryMagick/Shell.html">Shell</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="crymagick/CryMagick/Tool" data-name="crymagick::tool">
+      <a href="../../CryMagick/Tool.html">Tool</a>
+      
+        <ul>
+  
+  <li class=" " data-id="crymagick/CryMagick/Tool/Animate" data-name="crymagick::tool::animate">
+      <a href="../../CryMagick/Tool/Animate.html">Animate</a>
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Tool/Compare" data-name="crymagick::tool::compare">
+      <a href="../../CryMagick/Tool/Compare.html">Compare</a>
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Tool/Composite" data-name="crymagick::tool::composite">
+      <a href="../../CryMagick/Tool/Composite.html">Composite</a>
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Tool/Conjure" data-name="crymagick::tool::conjure">
+      <a href="../../CryMagick/Tool/Conjure.html">Conjure</a>
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Tool/Convert" data-name="crymagick::tool::convert">
+      <a href="../../CryMagick/Tool/Convert.html">Convert</a>
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Tool/Display" data-name="crymagick::tool::display">
+      <a href="../../CryMagick/Tool/Display.html">Display</a>
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Tool/Identify" data-name="crymagick::tool::identify">
+      <a href="../../CryMagick/Tool/Identify.html">Identify</a>
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Tool/Import" data-name="crymagick::tool::import">
+      <a href="../../CryMagick/Tool/Import.html">Import</a>
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Tool/Mogrify" data-name="crymagick::tool::mogrify">
+      <a href="../../CryMagick/Tool/Mogrify.html">Mogrify</a>
+      
+    </li>
+  
+  <li class=" current" data-id="crymagick/CryMagick/Tool/MogrifyRestricted" data-name="crymagick::tool::mogrifyrestricted">
+      <a href="../../CryMagick/Tool/MogrifyRestricted.html">MogrifyRestricted</a>
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Tool/Montage" data-name="crymagick::tool::montage">
+      <a href="../../CryMagick/Tool/Montage.html">Montage</a>
+      
+    </li>
+  
+  <li class=" " data-id="crymagick/CryMagick/Tool/Stream" data-name="crymagick::tool::stream">
+      <a href="../../CryMagick/Tool/Stream.html">Stream</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> CryMagick::Tool::MogrifyRestricted
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../CryMagick/Tool/MogrifyRestricted.html">CryMagick::Tool::MogrifyRestricted</a></li><li class="superclass"><a href="../../CryMagick/Tool/Mogrify.html">CryMagick::Tool::Mogrify</a></li><li class="superclass"><a href="../../CryMagick/Tool.html">CryMagick::Tool</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/imdrasil/crymagick/blob/v0.2.3/src/crymagick/tool/mogrify_restricted.cr#L4" target="_blank">
+        crymagick/tool/mogrify_restricted.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#format%28%2Aargs%29-instance-method" class="signature"><strong>#format</strong>(*args)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../../CryMagick/Tool/Mogrify.html">CryMagick::Tool::Mogrify</a></code></h3>
+  
+  
+    <a href="../../CryMagick/Tool/Mogrify.html#new%28options%3D%7B%7DofSymbol%3D%3EBool%29-class-method" class="tooltip">
+      <span>new(options = {} <span class="k">of</span> <span class="t">Symbol</span> <span class="o">=&gt;</span> <span class="t">Bool</span>)</span>
+    new</a>
+    
+  
+
+
+    
+
+  <h3>Class methods inherited from class <code><a href="../../CryMagick/Tool/Mogrify.html">CryMagick::Tool::Mogrify</a></code></h3>
+  
+  
+    <a href="../../CryMagick/Tool/Mogrify.html#build%28options%3AHash%28Symbol%2CBool%29%3D%7B%7DofSymbol%3D%3EBool%2C%26%29-class-method" class="tooltip">
+      <span>build(options : Hash(Symbol, Bool) = {} <span class="k">of</span> <span class="t">Symbol</span> <span class="o">=&gt;</span> <span class="t">Bool</span>, &)</span>
+    build</a>
+    
+  
+
+
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../../CryMagick/Tool.html">CryMagick::Tool</a></code></h3>
+  
+  
+    <a href="../../CryMagick/Tool.html#%2B%28%2Avalues%29-instance-method" class="tooltip">
+      <span>+(*values)</span>
+    +</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#%3C%3C%28arg%29-instance-method" class="tooltip">
+      <span><<(arg)</span>
+    <<</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#args%3AArray%28String%29-instance-method" class="tooltip">
+      <span>args : Array(String)</span>
+    args</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#call%3AString-instance-method" class="tooltip">
+      <span>call : String<br/>call(&)</span>
+    call</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#canvas%28value%29-instance-method" class="tooltip">
+      <span>canvas(value)<br/>canvas</span>
+    canvas</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#caption%28value%29-instance-method" class="tooltip">
+      <span>caption(value)<br/>caption</span>
+    caption</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#clone%28%2Aargs%29-instance-method" class="tooltip">
+      <span>clone(*args)</span>
+    clone</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#command-instance-method" class="tooltip">
+      <span>command</span>
+    command</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#executable-instance-method" class="tooltip">
+      <span>executable</span>
+    executable</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#gradient%28value%29-instance-method" class="tooltip">
+      <span>gradient(value)<br/>gradient</span>
+    gradient</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#label%28value%29-instance-method" class="tooltip">
+      <span>label(value)<br/>label</span>
+    label</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#logo%28value%29-instance-method" class="tooltip">
+      <span>logo(value)<br/>logo</span>
+    logo</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#merge%21%28new_args%29-instance-method" class="tooltip">
+      <span>merge!(new_args)</span>
+    merge!</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#name%3AString-instance-method" class="tooltip">
+      <span>name : String</span>
+    name</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#pango%28value%29-instance-method" class="tooltip">
+      <span>pango(value)<br/>pango</span>
+    pango</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#pattern%28value%29-instance-method" class="tooltip">
+      <span>pattern(value)<br/>pattern</span>
+    pattern</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#plasma%28value%29-instance-method" class="tooltip">
+      <span>plasma(value)<br/>plasma</span>
+    plasma</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#radial_gradient%28value%29-instance-method" class="tooltip">
+      <span>radial_gradient(value)<br/>radial_gradient</span>
+    radial_gradient</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#rose%28value%29-instance-method" class="tooltip">
+      <span>rose(value)<br/>rose</span>
+    rose</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#send%28name%2C%2Aopts%29-instance-method" class="tooltip">
+      <span>send(name, *opts)</span>
+    send</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#stack%28%26%29-instance-method" class="tooltip">
+      <span>stack(&)</span>
+    stack</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#stdin-instance-method" class="tooltip">
+      <span>stdin</span>
+    stdin</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#stdout-instance-method" class="tooltip">
+      <span>stdout</span>
+    stdout</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#text%28value%29-instance-method" class="tooltip">
+      <span>text(value)<br/>text</span>
+    text</a>, 
+    
+  
+    <a href="../../CryMagick/Tool.html#xc%28value%29-instance-method" class="tooltip">
+      <span>xc(value)<br/>xc</span>
+    xc</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../../CryMagick/Tool.html">CryMagick::Tool</a></code></h3>
+  
+  
+    <a href="../../CryMagick/Tool.html#new%28name%3AString%2Coptions%3AHash%28Symbol%2CBool%29%3D%7B%7DofSymbol%3D%3EBool%29-class-method" class="tooltip">
+      <span>new(name : String, options : Hash(Symbol, Bool) = {} <span class="k">of</span> <span class="t">Symbol</span> <span class="o">=&gt;</span> <span class="t">Bool</span>)</span>
+    new</a>
+    
+  
+
+
+    
+
+  <h3>Class methods inherited from class <code><a href="../../CryMagick/Tool.html">CryMagick::Tool</a></code></h3>
+  
+  
+    <a href="../../CryMagick/Tool.html#build%28name%3AString%2C%26%29%3AString-class-method" class="tooltip">
+      <span>build(name : String, &) : String</span>
+    build</a>
+    
+  
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="format(*args)-instance-method">
+      <div class="signature">
+        
+        def <strong>format</strong>(*args)
+
+        <a class="method-permalink" href="#format%28%2Aargs%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/imdrasil/crymagick/blob/v0.2.3/src/crymagick/tool/mogrify_restricted.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1336,22 +1336,22 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#append_relation%28name%3AString%2Chash%29-instance-method" class="signature"><strong>#append_relation</strong>(name : String, hash)</a>
+        <a href="#append_relation(name:String,hash)-instance-method" class="signature"><strong>#append_relation</strong>(name : String, hash)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#get_relation%28name%3AString%29-instance-method" class="signature"><strong>#get_relation</strong>(name : String)</a>
+        <a href="#get_relation(name:String)-instance-method" class="signature"><strong>#get_relation</strong>(name : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#relation_retrieved%28name%3AString%29-instance-method" class="signature"><strong>#relation_retrieved</strong>(name : String)</a>
+        <a href="#relation_retrieved(name:String)-instance-method" class="signature"><strong>#relation_retrieved</strong>(name : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_inverse_of%28name%3AString%2Cobject%29-instance-method" class="signature"><strong>#set_inverse_of</strong>(name : String, object)</a>
+        <a href="#set_inverse_of(name:String,object)-instance-method" class="signature"><strong>#set_inverse_of</strong>(name : String, object)</a>
         
       </li>
     
@@ -1370,28 +1370,28 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#belongs_to%28name%2Cklass%2Crequest%3Dnil%2Cforeign%3Dnil%2Cprimary%3Dnil%2Cdependent%3D%3Anone%2Cpolymorphic%3Dfalse%2Cforeign_type%3Dnil%29-macro" class="signature"><strong>belongs_to</strong>(name, klass, request = <span class="n">nil</span>, foreign = <span class="n">nil</span>, primary = <span class="n">nil</span>, dependent = <span class="n">:none</span>, polymorphic = <span class="n">false</span>, foreign_type = <span class="n">nil</span>)</a>
+        <a href="#belongs_to(name,klass,request=nil,foreign=nil,primary=nil,dependent=:none,polymorphic=false,foreign_type=nil)-macro" class="signature"><strong>belongs_to</strong>(name, klass, request = <span class="n">nil</span>, foreign = <span class="n">nil</span>, primary = <span class="n">nil</span>, dependent = <span class="n">:none</span>, polymorphic = <span class="n">false</span>, foreign_type = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Specifies a one-to-one association with another class.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#has_and_belongs_to_many%28name%2Cklass%2Crequest%3Dnil%2Cforeign%3Dnil%2Cprimary%3Dnil%2Cjoin_table%3Dnil%2Cassociation_foreign%3Dnil%29-macro" class="signature"><strong>has_and_belongs_to_many</strong>(name, klass, request = <span class="n">nil</span>, foreign = <span class="n">nil</span>, primary = <span class="n">nil</span>, join_table = <span class="n">nil</span>, association_foreign = <span class="n">nil</span>)</a>
+        <a href="#has_and_belongs_to_many(name,klass,request=nil,foreign=nil,primary=nil,join_table=nil,association_foreign=nil)-macro" class="signature"><strong>has_and_belongs_to_many</strong>(name, klass, request = <span class="n">nil</span>, foreign = <span class="n">nil</span>, primary = <span class="n">nil</span>, join_table = <span class="n">nil</span>, association_foreign = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Specifies a many-to-many relationship with another class.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#has_many%28name%2Cklass%2Crequest%3Dnil%2Cforeign%3Dnil%2Cforeign_type%3Dnil%2Cprimary%3Dnil%2Cdependent%3D%3Anullify%2Cinverse_of%3Dnil%2Cpolymorphic%3Dfalse%29-macro" class="signature"><strong>has_many</strong>(name, klass, request = <span class="n">nil</span>, foreign = <span class="n">nil</span>, foreign_type = <span class="n">nil</span>, primary = <span class="n">nil</span>, dependent = <span class="n">:nullify</span>, inverse_of = <span class="n">nil</span>, polymorphic = <span class="n">false</span>)</a>
+        <a href="#has_many(name,klass,request=nil,foreign=nil,foreign_type=nil,primary=nil,dependent=:nullify,inverse_of=nil,polymorphic=false)-macro" class="signature"><strong>has_many</strong>(name, klass, request = <span class="n">nil</span>, foreign = <span class="n">nil</span>, foreign_type = <span class="n">nil</span>, primary = <span class="n">nil</span>, dependent = <span class="n">:nullify</span>, inverse_of = <span class="n">nil</span>, polymorphic = <span class="n">false</span>)</a>
         
           <div class="summary"><p>Specifies a one-to-many association.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#has_one%28name%2Cklass%2Crequest%3Dnil%2Cforeign%3Dnil%2Cforeign_type%3Dnil%2Cprimary%3Dnil%2Cdependent%3D%3Anullify%2Cinverse_of%3Dnil%2Cpolymorphic%3Dfalse%29-macro" class="signature"><strong>has_one</strong>(name, klass, request = <span class="n">nil</span>, foreign = <span class="n">nil</span>, foreign_type = <span class="n">nil</span>, primary = <span class="n">nil</span>, dependent = <span class="n">:nullify</span>, inverse_of = <span class="n">nil</span>, polymorphic = <span class="n">false</span>)</a>
+        <a href="#has_one(name,klass,request=nil,foreign=nil,foreign_type=nil,primary=nil,dependent=:nullify,inverse_of=nil,polymorphic=false)-macro" class="signature"><strong>has_one</strong>(name, klass, request = <span class="n">nil</span>, foreign = <span class="n">nil</span>, foreign_type = <span class="n">nil</span>, primary = <span class="n">nil</span>, dependent = <span class="n">:nullify</span>, inverse_of = <span class="n">nil</span>, polymorphic = <span class="n">false</span>)</a>
         
           <div class="summary"><p>Specifies a one-to-one association with another class.</p></div>
         
@@ -1424,7 +1424,7 @@
         
         def <strong>append_relation</strong>(name : String, hash)
 
-        <a class="method-permalink" href="#append_relation%28name%3AString%2Chash%29-instance-method">#</a>
+        <a class="method-permalink" href="#append_relation(name:String,hash)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1440,7 +1440,7 @@
         abstract 
         def <strong>get_relation</strong>(name : String)
 
-        <a class="method-permalink" href="#get_relation%28name%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#get_relation(name:String)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1456,7 +1456,7 @@
         
         def <strong>relation_retrieved</strong>(name : String)
 
-        <a class="method-permalink" href="#relation_retrieved%28name%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#relation_retrieved(name:String)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1472,7 +1472,7 @@
         abstract 
         def <strong>set_inverse_of</strong>(name : String, object)
 
-        <a class="method-permalink" href="#set_inverse_of%28name%3AString%2Cobject%29-instance-method">#</a>
+        <a class="method-permalink" href="#set_inverse_of(name:String,object)-instance-method">#</a>
       </div>
       
       <br/>
@@ -1500,45 +1500,32 @@
         
         macro <strong>belongs_to</strong>(name, klass, request = <span class="n">nil</span>, foreign = <span class="n">nil</span>, primary = <span class="n">nil</span>, dependent = <span class="n">:none</span>, polymorphic = <span class="n">false</span>, foreign_type = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#belongs_to%28name%2Cklass%2Crequest%3Dnil%2Cforeign%3Dnil%2Cprimary%3Dnil%2Cdependent%3D%3Anone%2Cpolymorphic%3Dfalse%2Cforeign_type%3Dnil%29-macro">#</a>
+        <a class="method-permalink" href="#belongs_to(name,klass,request=nil,foreign=nil,primary=nil,dependent=:none,polymorphic=false,foreign_type=nil)-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Specifies a one-to-one association with another class.</p>
+
 <p>This macro should only be used if this class contains the foreign key.
 If the other class contains the foreign key, then you should use has_one instead.</p>
+
 <p>Options:</p>
-<ul>
-<li><em>name</em> - relation name</li>
-<li><em>klass</em> - specify the class name of the association; in case of polymorphic relation use <code>Union(Class1 | Class2)</code> syntax</li>
-<li><em>request</em> - extra request scope to retrieve a specific set of records when access the associated collection
-(ATM only <code>WHERE</code> conditions are respected)</li>
-<li><em>foreign</em> - specify the foreign key used for the association</li>
-<li><em>primary</em> - specify the name of the column to use as the primary key for the relation</li>
-<li><em>dependent</em> - specify the destroy strategy of the associated objects when their owner is destroyed;
-available options are: <code>destroy</code>, <code>delete</code>, <code>nullify</code> (exception is polymorphic relation), <code>restrict_with_exception</code></li>
-<li><em>polymorphic</em> - specifies that this relation is a polymorphic</li>
-<li><em>foreign_type</em> - specify the column used to store  the associated object's type,
-if this is a polymorphic relation</li>
-</ul>
+
+<ul><li><em>name</em> - relation name</li><li><em>klass</em> - specify the class name of the association; in case of polymorphic relation use <code>Union(Class1 | Class2)</code> syntax</li><li><em>request</em> - extra request scope to retrieve a specific set of records when access the associated collection
+(ATM only <code>WHERE</code> conditions are respected)</li><li><em>foreign</em> - specify the foreign key used for the association</li><li><em>primary</em> - specify the name of the column to use as the primary key for the relation</li><li><em>dependent</em> - specify the destroy strategy of the associated objects when their owner is destroyed;
+available options are: <code>destroy</code>, <code>delete</code>, <code>nullify</code> (exception is polymorphic relation), <code>restrict_with_exception</code></li><li><em>polymorphic</em> - specifies that this relation is a polymorphic</li><li><em>foreign_type</em> - specify the column used to store  the associated object's type,
+if this is a polymorphic relation</li></ul>
+
 <p>Methods will be added for retrieval and query for a single associated object, for which this object holds an id:</p>
+
 <p><code>association</code> is a placeholder for the symbol passed as the <code>name</code> argument.</p>
-<ul>
-<li><code>.association_relation</code></li>
-<li><code>#association</code></li>
-<li><code>#association!</code></li>
-<li><code>#append_association(rel)</code></li>
-<li><code>#add_association(rel)</code></li>
-<li><code>#remove_association</code></li>
-<li><code>#association_query</code></li>
-<li><code>#association_reload</code></li>
-</ul>
+
+<ul><li><code>.association_relation</code></li><li><code>#association</code></li><li><code>#association!</code></li><li><code>#append_association(rel)</code></li><li><code>#add_association(rel)</code></li><li><code>#remove_association</code></li><li><code>#association_query</code></li><li><code>#association_reload</code></li></ul>
+
 <p>Polymorphic relation also generates next methods</p>
-<ul>
-<li><code>#association_class_name</code> - returns casted related object to <code>ClassName</code></li>
-<li><code>#association_class_name?</code> - returns whether related object is a <code>ClassName</code></li>
-</ul>
+
+<ul><li><code>#association_class_name</code> - returns casted related object to <code>ClassName</code></li><li><code>#association_class_name?</code> - returns whether related object is a <code>ClassName</code></li></ul>
         </div>
       
       <br/>
@@ -1554,39 +1541,29 @@ if this is a polymorphic relation</li>
         
         macro <strong>has_and_belongs_to_many</strong>(name, klass, request = <span class="n">nil</span>, foreign = <span class="n">nil</span>, primary = <span class="n">nil</span>, join_table = <span class="n">nil</span>, association_foreign = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#has_and_belongs_to_many%28name%2Cklass%2Crequest%3Dnil%2Cforeign%3Dnil%2Cprimary%3Dnil%2Cjoin_table%3Dnil%2Cassociation_foreign%3Dnil%29-macro">#</a>
+        <a class="method-permalink" href="#has_and_belongs_to_many(name,klass,request=nil,foreign=nil,primary=nil,join_table=nil,association_foreign=nil)-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Specifies a many-to-many relationship with another class.</p>
+
 <p>This associates two classes via an intermediate join table. Unless the join table is explicitly specified as an option,
 it is guessed using the lexical order of the class names.
-So a join between Developer and Project will give the default join table name of &quot;developers_projects&quot; because &quot;D&quot; precedes &quot;P&quot; alphabetically.
+So a join between Developer and Project will give the default join table name of "developers_projects" because "D" precedes "P" alphabetically.
 Note that this precedence is calculated using the &lt; operator for String. This means that if the strings are of different lengths, and
 the strings are equal when compared up to the shortest length, then the longer string is considered of higher lexical precedence than the shorter one.</p>
+
 <p>Options:</p>
-<ul>
-<li><em>name</em> - relation name</li>
-<li><em>klass</em> - specify the class name of the association</li>
-<li><em>request</em> - extra request scope to retrieve a specific set of records when access the associated collection
-(ATM only <code>WHERE</code> conditions are respected)</li>
-<li><em>foreign</em> - specify the foreign key used for the association</li>
-<li><em>primary</em> - specify the name of the column to use as the primary key for the relation</li>
-<li><em>join_table</em> - specifies the name of the join table if the default based on lexical order isn't what you want</li>
-<li><em>association_foreign</em> - specifies the foreign key used for the association on the receiving side of the association</li>
-</ul>
+
+<ul><li><em>name</em> - relation name</li><li><em>klass</em> - specify the class name of the association</li><li><em>request</em> - extra request scope to retrieve a specific set of records when access the associated collection
+(ATM only <code>WHERE</code> conditions are respected)</li><li><em>foreign</em> - specify the foreign key used for the association</li><li><em>primary</em> - specify the name of the column to use as the primary key for the relation</li><li><em>join_table</em> - specifies the name of the join table if the default based on lexical order isn't what you want</li><li><em>association_foreign</em> - specifies the foreign key used for the association on the receiving side of the association</li></ul>
+
 <p>The following methods for retrieval and query of a single associated object will be added:</p>
+
 <p><code>association</code> is a placeholder for the symbol passed as the name argument.</p>
-<ul>
-<li><code>.association_relation</code></li>
-<li><code>#association</code></li>
-<li><code>#append_association(rel)</code></li>
-<li><code>#add_association(rel)</code></li>
-<li><code>#remove_association(rel)</code></li>
-<li><code>#association_query</code></li>
-<li><code>#association_reload</code></li>
-</ul>
+
+<ul><li><code>.association_relation</code></li><li><code>#association</code></li><li><code>#append_association(rel)</code></li><li><code>#add_association(rel)</code></li><li><code>#remove_association(rel)</code></li><li><code>#association_query</code></li><li><code>#association_reload</code></li></ul>
         </div>
       
       <br/>
@@ -1602,39 +1579,26 @@ the strings are equal when compared up to the shortest length, then the longer s
         
         macro <strong>has_many</strong>(name, klass, request = <span class="n">nil</span>, foreign = <span class="n">nil</span>, foreign_type = <span class="n">nil</span>, primary = <span class="n">nil</span>, dependent = <span class="n">:nullify</span>, inverse_of = <span class="n">nil</span>, polymorphic = <span class="n">false</span>)
 
-        <a class="method-permalink" href="#has_many%28name%2Cklass%2Crequest%3Dnil%2Cforeign%3Dnil%2Cforeign_type%3Dnil%2Cprimary%3Dnil%2Cdependent%3D%3Anullify%2Cinverse_of%3Dnil%2Cpolymorphic%3Dfalse%29-macro">#</a>
+        <a class="method-permalink" href="#has_many(name,klass,request=nil,foreign=nil,foreign_type=nil,primary=nil,dependent=:nullify,inverse_of=nil,polymorphic=false)-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Specifies a one-to-many association.</p>
+
 <p>Options:</p>
-<ul>
-<li><em>name</em> - relation name</li>
-<li><em>klass</em> - specify the class name of the association</li>
-<li><em>request</em> - extra request scope to retrieve a specific set of records when access the associated collection
-(ATM only <code>WHERE</code> conditions are respected)</li>
-<li><em>foreign</em> - specify the foreign key used for the association</li>
-<li><em>foreign_type</em> - specify the column used to store  the associated object's type,
-if this is a polymorphic relation</li>
-<li><em>primary</em> - specify the name of the column to use as the primary key for the relation</li>
-<li><em>dependent</em> - specify the destroy strategy of the associated objects when their owner is destroyed;
-available options are: <code>destroy</code>, <code>delete</code>, <code>nullify</code>, <code>restrict_with_exception</code></li>
-<li><em>inverse_of</em> - specifies the name of the <code><a href="../../Jennifer/Model/RelationDefinition.html#belongs_to%28name%2Cklass%2Crequest%3Dnil%2Cforeign%3Dnil%2Cprimary%3Dnil%2Cdependent%3D%3Anone%2Cpolymorphic%3Dfalse%2Cforeign_type%3Dnil%29-macro">belongs_to</a></code> relation on the associated object that is the inverse of this relation;
-required for polymorphic relation</li>
-<li><em>polymorphic</em> - specifies that this relation is a polymorphic</li>
-</ul>
+
+<ul><li><em>name</em> - relation name</li><li><em>klass</em> - specify the class name of the association</li><li><em>request</em> - extra request scope to retrieve a specific set of records when access the associated collection
+(ATM only <code>WHERE</code> conditions are respected)</li><li><em>foreign</em> - specify the foreign key used for the association</li><li><em>foreign_type</em> - specify the column used to store  the associated object's type,
+if this is a polymorphic relation</li><li><em>primary</em> - specify the name of the column to use as the primary key for the relation</li><li><em>dependent</em> - specify the destroy strategy of the associated objects when their owner is destroyed;
+available options are: <code>destroy</code>, <code>delete</code>, <code>nullify</code>, <code>restrict_with_exception</code></li><li><em>inverse_of</em> - specifies the name of the <code><a href="../../Jennifer/Model/RelationDefinition.html#belongs_to(name,klass,request=nil,foreign=nil,primary=nil,dependent=:none,polymorphic=false,foreign_type=nil)-macro">belongs_to</a></code> relation on the associated object that is the inverse of this relation;
+required for polymorphic relation</li><li><em>polymorphic</em> - specifies that this relation is a polymorphic</li></ul>
+
 <p>The following methods for retrieval and query of a single associated object will be added:</p>
+
 <p><code>association</code> is a placeholder for the symbol passed as the name argument.</p>
-<ul>
-<li><code>.association_relation</code> - returns <code>association</code> relation</li>
-<li><code>#association</code> - returns array of related objects</li>
-<li><code>#append_association(rel)</code> - builds related object from hash (or use given instance) and adds to relation</li>
-<li><code>#add_association(rel)</code> - insert given object to db and relation; doesn't support <code>inverse_of</code> option</li>
-<li><code>#remove_association(rel)</code> - removes given object from relation array</li>
-<li><code>#association_query</code> - returns <code>association</code> relation query for the object</li>
-<li><code>#association_reload</code> - reloads related objects from the DB.</li>
-</ul>
+
+<ul><li><code>.association_relation</code> - returns <code>association</code> relation</li><li><code>#association</code> - returns array of related objects</li><li><code>#append_association(rel)</code> - builds related object from hash (or use given instance) and adds to relation</li><li><code>#add_association(rel)</code> - insert given object to db and relation; doesn't support <code>inverse_of</code> option</li><li><code>#remove_association(rel)</code> - removes given object from relation array</li><li><code>#association_query</code> - returns <code>association</code> relation query for the object</li><li><code>#association_reload</code> - reloads related objects from the DB.</li></ul>
         </div>
       
       <br/>
@@ -1650,42 +1614,29 @@ required for polymorphic relation</li>
         
         macro <strong>has_one</strong>(name, klass, request = <span class="n">nil</span>, foreign = <span class="n">nil</span>, foreign_type = <span class="n">nil</span>, primary = <span class="n">nil</span>, dependent = <span class="n">:nullify</span>, inverse_of = <span class="n">nil</span>, polymorphic = <span class="n">false</span>)
 
-        <a class="method-permalink" href="#has_one%28name%2Cklass%2Crequest%3Dnil%2Cforeign%3Dnil%2Cforeign_type%3Dnil%2Cprimary%3Dnil%2Cdependent%3D%3Anullify%2Cinverse_of%3Dnil%2Cpolymorphic%3Dfalse%29-macro">#</a>
+        <a class="method-permalink" href="#has_one(name,klass,request=nil,foreign=nil,foreign_type=nil,primary=nil,dependent=:nullify,inverse_of=nil,polymorphic=false)-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Specifies a one-to-one association with another class.</p>
+
 <p>This macro should only be used if the other class contains the foreign key.
 If the current class contains the foreign key, then you should use belongs_to instead.</p>
+
 <p>Options:</p>
-<ul>
-<li><em>name</em> - relation name</li>
-<li><em>klass</em> - specify the class name of the association</li>
-<li><em>request</em> - extra request scope to retrieve a specific set of records when access the associated collection
-(ATM only <code>WHERE</code> conditions are respected)</li>
-<li><em>foreign</em> - specify the foreign key used for the association</li>
-<li><em>foreign_type</em> - specify the column used to store  the associated object's type,
-if this is a polymorphic relation</li>
-<li><em>primary</em> - specify the name of the column to use as the primary key for the relation</li>
-<li><em>dependent</em> - specify the destroy strategy of the associated objects when their owner is destroyed;
-available options are: <code>destroy</code>, <code>delete</code>, <code>nullify</code>, <code>restrict_with_exception</code></li>
-<li><em>inverse_of</em> - specifies the name of the <code><a href="../../Jennifer/Model/RelationDefinition.html#belongs_to%28name%2Cklass%2Crequest%3Dnil%2Cforeign%3Dnil%2Cprimary%3Dnil%2Cdependent%3D%3Anone%2Cpolymorphic%3Dfalse%2Cforeign_type%3Dnil%29-macro">belongs_to</a></code> relation on the associated object that is the inverse of this relation;
-required for polymorphic relation</li>
-<li><em>polymorphic</em> - specifies that this relation is a polymorphic</li>
-</ul>
+
+<ul><li><em>name</em> - relation name</li><li><em>klass</em> - specify the class name of the association</li><li><em>request</em> - extra request scope to retrieve a specific set of records when access the associated collection
+(ATM only <code>WHERE</code> conditions are respected)</li><li><em>foreign</em> - specify the foreign key used for the association</li><li><em>foreign_type</em> - specify the column used to store  the associated object's type,
+if this is a polymorphic relation</li><li><em>primary</em> - specify the name of the column to use as the primary key for the relation</li><li><em>dependent</em> - specify the destroy strategy of the associated objects when their owner is destroyed;
+available options are: <code>destroy</code>, <code>delete</code>, <code>nullify</code>, <code>restrict_with_exception</code></li><li><em>inverse_of</em> - specifies the name of the <code><a href="../../Jennifer/Model/RelationDefinition.html#belongs_to(name,klass,request=nil,foreign=nil,primary=nil,dependent=:none,polymorphic=false,foreign_type=nil)-macro">belongs_to</a></code> relation on the associated object that is the inverse of this relation;
+required for polymorphic relation</li><li><em>polymorphic</em> - specifies that this relation is a polymorphic</li></ul>
+
 <p>The following methods for retrieval and query of a single associated object will be added:</p>
+
 <p><code>association</code> is a placeholder for the symbol passed as the name argument.</p>
-<ul>
-<li><code>.association_relation</code></li>
-<li><code>#association</code></li>
-<li><code>#association!</code></li>
-<li><code>#append_association(rel)</code></li>
-<li><code>#add_association(rel)</code></li>
-<li><code>#remove_association</code></li>
-<li><code>#association_query</code></li>
-<li><code>#association_reload</code></li>
-</ul>
+
+<ul><li><code>.association_relation</code></li><li><code>#association</code></li><li><code>#association!</code></li><li><code>#append_association(rel)</code></li><li><code>#add_association(rel)</code></li><li><code>#remove_association</code></li><li><code>#association_query</code></li><li><code>#association_reload</code></li></ul>
         </div>
       
       <br/>

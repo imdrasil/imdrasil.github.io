@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1285,6 +1285,7 @@
   </h2>
 
   <p>Default converter for <code>Time</code> fields.</p>
+
 <p>Converts time to <code><a href="../../Jennifer/Config.html#local_time_zone-class-method">Jennifer::Config.local_time_zone</a></code>.</p>
 
 
@@ -1368,14 +1369,14 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#coerce%28value%3AString%2Coptions%29%3ATime%3F-class-method" class="signature"><strong>.coerce</strong>(value : String, options) : Time?</a>
+        <a href="#coerce(value:String,options):Time?-class-method" class="signature"><strong>.coerce</strong>(value : String, options) : Time?</a>
         
           <div class="summary"><p>Coerces string to <em>Time</em></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#date_time%3F%28value%3AString%29%3ABool-class-method" class="signature"><strong>.date_time?</strong>(value : String) : Bool</a>
+        <a href="#date_time?(value:String):Bool-class-method" class="signature"><strong>.date_time?</strong>(value : String) : Bool</a>
         
           <div class="summary"><p>Returns whether given string has a date-time format</p></div>
         
@@ -1403,31 +1404,31 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#from_db%28pull%2Coptions%29-class-method" class="signature"><strong>.from_db</strong>(pull, options)</a>
+        <a href="#from_db(pull,options)-class-method" class="signature"><strong>.from_db</strong>(pull, options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#from_hash%28hash%3AHash%2Ccolumn%2Coptions%29-class-method" class="signature"><strong>.from_hash</strong>(hash : Hash, column, options)</a>
+        <a href="#from_hash(hash:Hash,column,options)-class-method" class="signature"><strong>.from_hash</strong>(hash : Hash, column, options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#time%3F%28value%3AString%29%3ABool-class-method" class="signature"><strong>.time?</strong>(value : String) : Bool</a>
+        <a href="#time?(value:String):Bool-class-method" class="signature"><strong>.time?</strong>(value : String) : Bool</a>
         
           <div class="summary"><p>Returns whether given string has a time format</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_db%28value%3ATime%2Coptions%29-class-method" class="signature"><strong>.to_db</strong>(value : Time, options)</a>
+        <a href="#to_db(value:Time,options)-class-method" class="signature"><strong>.to_db</strong>(value : Time, options)</a>
         
           <div class="summary"><p>Returns time <em>as is</em> as any <em>Time</em> object is converted to UTC automatically by query builder.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_db%28value%3ANil%2Coptions%29-class-method" class="signature"><strong>.to_db</strong>(value : Nil, options)</a>
+        <a href="#to_db(value:Nil,options)-class-method" class="signature"><strong>.to_db</strong>(value : Nil, options)</a>
         
       </li>
     
@@ -1480,7 +1481,7 @@
         
         def self.<strong>coerce</strong>(value : String, options) : Time?
 
-        <a class="method-permalink" href="#coerce%28value%3AString%2Coptions%29%3ATime%3F-class-method">#</a>
+        <a class="method-permalink" href="#coerce(value:String,options):Time?-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1501,7 +1502,7 @@
         
         def self.<strong>date_time?</strong>(value : String) : Bool
 
-        <a class="method-permalink" href="#date_time%3F%28value%3AString%29%3ABool-class-method">#</a>
+        <a class="method-permalink" href="#date_time?(value:String):Bool-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1585,7 +1586,7 @@
         
         def self.<strong>from_db</strong>(pull, options)
 
-        <a class="method-permalink" href="#from_db%28pull%2Coptions%29-class-method">#</a>
+        <a class="method-permalink" href="#from_db(pull,options)-class-method">#</a>
       </div>
       
       <br/>
@@ -1601,7 +1602,7 @@
         
         def self.<strong>from_hash</strong>(hash : Hash, column, options)
 
-        <a class="method-permalink" href="#from_hash%28hash%3AHash%2Ccolumn%2Coptions%29-class-method">#</a>
+        <a class="method-permalink" href="#from_hash(hash:Hash,column,options)-class-method">#</a>
       </div>
       
       <br/>
@@ -1617,7 +1618,7 @@
         
         def self.<strong>time?</strong>(value : String) : Bool
 
-        <a class="method-permalink" href="#time%3F%28value%3AString%29%3ABool-class-method">#</a>
+        <a class="method-permalink" href="#time?(value:String):Bool-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1638,12 +1639,13 @@
         
         def self.<strong>to_db</strong>(value : Time, options)
 
-        <a class="method-permalink" href="#to_db%28value%3ATime%2Coptions%29-class-method">#</a>
+        <a class="method-permalink" href="#to_db(value:Time,options)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns time <em>as is</em> as any <em>Time</em> object is converted to UTC automatically by query builder.</p>
+
 <p>If <code>:time_zone_aware</code> is <code>false</code> - changes time zone to application one instead of converting.</p>
         </div>
       
@@ -1660,7 +1662,7 @@
         
         def self.<strong>to_db</strong>(value : Nil, options)
 
-        <a class="method-permalink" href="#to_db%28value%3ANil%2Coptions%29-class-method">#</a>
+        <a class="method-permalink" href="#to_db(value:Nil,options)-class-method">#</a>
       </div>
       
       <br/>

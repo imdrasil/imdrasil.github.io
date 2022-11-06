@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.0.0">
 <meta name="crystal_docs.project_version" content="0.12.0">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -1332,14 +1332,14 @@ dropping and migration.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#create%28adapter%3AAdapter%3A%3ABase%3Ddefault_adapter%29-class-method" class="signature"><strong>.create</strong>(adapter : Adapter::Base = default_adapter)</a>
+        <a href="#create(adapter:Adapter::Base=default_adapter)-class-method" class="signature"><strong>.create</strong>(adapter : Adapter::Base = default_adapter)</a>
         
           <div class="summary"><p>Creates database using given <em>adapter</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#drop%28adapter%3AAdapter%3A%3ABase%3Ddefault_adapter%29-class-method" class="signature"><strong>.drop</strong>(adapter : Adapter::Base = default_adapter)</a>
+        <a href="#drop(adapter:Adapter::Base=default_adapter)-class-method" class="signature"><strong>.drop</strong>(adapter : Adapter::Base = default_adapter)</a>
         
           <div class="summary"><p>Drops database using given <em>adapter</em>.</p></div>
         
@@ -1353,21 +1353,21 @@ dropping and migration.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#migrate%28count%3AInt%3D-1%29-class-method" class="signature"><strong>.migrate</strong>(count : Int = <span class="n">-1</span>)</a>
+        <a href="#migrate(count:Int=-1)-class-method" class="signature"><strong>.migrate</strong>(count : Int = <span class="n">-1</span>)</a>
         
           <div class="summary"><p>Invokes migrations.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#pending_migration%3F-class-method" class="signature"><strong>.pending_migration?</strong></a>
+        <a href="#pending_migration?-class-method" class="signature"><strong>.pending_migration?</strong></a>
         
           <div class="summary"><p>Returns whether pending migration exists.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#rollback%28options%3AHash%28Symbol%2CDBAny%29%29-class-method" class="signature"><strong>.rollback</strong>(options : Hash(Symbol, DBAny))</a>
+        <a href="#rollback(options:Hash(Symbol,DBAny))-class-method" class="signature"><strong>.rollback</strong>(options : Hash(Symbol, DBAny))</a>
         
           <div class="summary"><p>Rollbacks migrations.</p></div>
         
@@ -1402,13 +1402,15 @@ dropping and migration.</p>
         
         def self.<strong>create</strong>(adapter : <a href="../../Jennifer/Adapter/Base.html">Adapter::Base</a> = default_adapter)
 
-        <a class="method-permalink" href="#create%28adapter%3AAdapter%3A%3ABase%3Ddefault_adapter%29-class-method">#</a>
+        <a class="method-permalink" href="#create(adapter:Adapter::Base=default_adapter)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates database using given <em>adapter</em>.</p>
+
 <p>If database already exists - do nothing.</p>
+
 <p>By default use application default adapter.</p>
         </div>
       
@@ -1425,12 +1427,13 @@ dropping and migration.</p>
         
         def self.<strong>drop</strong>(adapter : <a href="../../Jennifer/Adapter/Base.html">Adapter::Base</a> = default_adapter)
 
-        <a class="method-permalink" href="#drop%28adapter%3AAdapter%3A%3ABase%3Ddefault_adapter%29-class-method">#</a>
+        <a class="method-permalink" href="#drop(adapter:Adapter::Base=default_adapter)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Drops database using given <em>adapter</em>.</p>
+
 <p>By default use application default adapter.</p>
         </div>
       
@@ -1468,7 +1471,7 @@ dropping and migration.</p>
         
         def self.<strong>migrate</strong>(count : Int = <span class="n">-1</span>)
 
-        <a class="method-permalink" href="#migrate%28count%3AInt%3D-1%29-class-method">#</a>
+        <a class="method-permalink" href="#migrate(count:Int=-1)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1489,12 +1492,13 @@ dropping and migration.</p>
         
         def self.<strong>pending_migration?</strong>
 
-        <a class="method-permalink" href="#pending_migration%3F-class-method">#</a>
+        <a class="method-permalink" href="#pending_migration?-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns whether pending migration exists.</p>
+
 <p>Pending migration - known Jennifer::Migration::Base subclasses that hasn't been run.</p>
         </div>
       
@@ -1511,17 +1515,16 @@ dropping and migration.</p>
         
         def self.<strong>rollback</strong>(options : Hash(Symbol, <a href="../../Jennifer/DBAny.html">DBAny</a>))
 
-        <a class="method-permalink" href="#rollback%28options%3AHash%28Symbol%2CDBAny%29%29-class-method">#</a>
+        <a class="method-permalink" href="#rollback(options:Hash(Symbol,DBAny))-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Rollbacks migrations.</p>
+
 <p>Allowed options:</p>
-<ul>
-<li><em>count</em> - count of migrations to be rolled back</li>
-<li><em>to</em> - migration timestamp to which database should be rolled back</li>
-</ul>
+
+<ul><li><em>count</em> - count of migrations to be rolled back</li><li><em>to</em> - migration timestamp to which database should be rolled back</li></ul>
         </div>
       
       <br/>
