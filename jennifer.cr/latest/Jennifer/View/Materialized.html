@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1284,8 +1289,7 @@
     Overview
   </h2>
 
-  <p>Base class for a database <a href="https://en.wikipedia.org/wiki/View_(SQL">materialized view</a>#Materialized_views).</p>
-
+  <p>Base class for a database <a href="https://en.wikipedia.org/wiki/View_(SQL)#Materialized_views">materialized view</a>.</p>
 <p>The only difference from <code><a href="../../Jennifer/View/Base.html">Base</a></code> is one additional method <code><a href="../../Jennifer/View/Materialized.html#refresh-class-method">.refresh</a></code> which allows refreshing data of the view.
 Also this class usage makes sense only if you use PostgreSQL as only it has native support of materialized views.</p>
 
@@ -1312,7 +1316,7 @@ Also this class usage makes sense only if you use PostgreSQL as only it has nati
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/view/materialized.cr#L7" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/view/materialized.cr#L7" target="_blank">
         jennifer/view/materialized.cr
       </a>
     
@@ -1372,7 +1376,7 @@ Also this class usage makes sense only if you use PostgreSQL as only it has nati
   <h3>Class methods inherited from class <code><a href="../../Jennifer/View/Base.html">Jennifer::View::Base</a></code></h3>
   
   
-    <a href="../../Jennifer/View/Base.html#build(values:Hash%7CNamedTuple,new_record:Bool)-class-method" class="tooltip">
+    <a href="../../Jennifer/View/Base.html#build%28values%3AHash%7CNamedTuple%2Cnew_record%3ABool%29-class-method" class="tooltip">
       <span>build(values : Hash | NamedTuple, new_record : Bool)<br/>build(pull : DB::ResultSet)</span>
     build</a>, 
     
@@ -1382,12 +1386,12 @@ Also this class usage makes sense only if you use PostgreSQL as only it has nati
     i18n_scope</a>, 
     
   
-    <a href="../../Jennifer/View/Base.html#relation(name)-class-method" class="tooltip">
+    <a href="../../Jennifer/View/Base.html#relation%28name%29-class-method" class="tooltip">
       <span>relation(name)</span>
     relation</a>, 
     
   
-    <a href="../../Jennifer/View/Base.html#view_name(value:String)-class-method" class="tooltip">
+    <a href="../../Jennifer/View/Base.html#view_name%28value%3AString%29-class-method" class="tooltip">
       <span>view_name(value : String)<br/>view_name</span>
     view_name</a>, 
     
@@ -1415,7 +1419,7 @@ Also this class usage makes sense only if you use PostgreSQL as only it has nati
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/Model/Mapping.html">Jennifer::Model::Mapping</a></code></h3>
   
   
-    <a href="../../Jennifer/Model/Mapping.html#attribute_metadata(name:String%7CSymbol)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Mapping.html#attribute_metadata%28name%3AString%7CSymbol%29-instance-method" class="tooltip">
       <span>attribute_metadata(name : String | Symbol)</span>
     attribute_metadata</a>
     
@@ -1454,22 +1458,22 @@ Also this class usage makes sense only if you use PostgreSQL as only it has nati
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/Model/Resource.html">Jennifer::Model::Resource</a></code></h3>
   
   
-    <a href="../../Jennifer/Model/Resource.html#append_relation(name:String,hash)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#append_relation%28name%3AString%2Chash%29-instance-method" class="tooltip">
       <span>append_relation(name : String, hash)</span>
     append_relation</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#attribute(name:String%7CSymbol,raise_exception:Bool=true)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#attribute%28name%3AString%7CSymbol%2Craise_exception%3ABool%3Dtrue%29-instance-method" class="tooltip">
       <span>attribute(name : String | Symbol, raise_exception : Bool = <span class="n">true</span>)</span>
     attribute</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#get_relation(name:String)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#get_relation%28name%3AString%29-instance-method" class="tooltip">
       <span>get_relation(name : String)</span>
     get_relation</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#inspect(io):Nil-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#inspect%28io%29%3ANil-instance-method" class="tooltip">
       <span>inspect(io) : Nil</span>
     inspect</a>, 
     
@@ -1479,7 +1483,7 @@ Also this class usage makes sense only if you use PostgreSQL as only it has nati
     primary</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#set_inverse_of(name:String,object)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#set_inverse_of%28name%3AString%2Cobject%29-instance-method" class="tooltip">
       <span>set_inverse_of(name : String, object)</span>
     set_inverse_of</a>, 
     
@@ -1489,7 +1493,7 @@ Also this class usage makes sense only if you use PostgreSQL as only it has nati
     to_h</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#to_json(only:Array(String)?=nil,except:Array(String)?=nil)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#to_json%28only%3AArray%28String%29%3F%3Dnil%2Cexcept%3AArray%28String%29%3F%3Dnil%29-instance-method" class="tooltip">
       <span>to_json(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>)<br/>to_json(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)<br/>to_json(json : JSON::Builder)<br/>to_json(json : JSON::Builder, only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)</span>
     to_json</a>, 
     
@@ -1519,12 +1523,12 @@ Also this class usage makes sense only if you use PostgreSQL as only it has nati
     all</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#build(values:Hash(Symbol,Jennifer::DBAny)%7CNamedTuple)-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#build%28values%3AHash%28Symbol%2CJennifer%3A%3ADBAny%29%7CNamedTuple%29-class-method" class="tooltip">
       <span>build(values : Hash(Symbol, Jennifer::DBAny) | NamedTuple)<br/>build(values : Hash(String, Jennifer::DBAny))<br/>build(**values)</span>
     build</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#c(name:String%7CSymbol,relation)-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#c%28name%3AString%7CSymbol%2Crelation%29-class-method" class="tooltip">
       <span>c(name : String | Symbol, relation)<br/>c(name : String | Symbol)</span>
     c</a>, 
     
@@ -1539,7 +1543,7 @@ Also this class usage makes sense only if you use PostgreSQL as only it has nati
     read_adapter</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#relation(name)-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#relation%28name%29-class-method" class="tooltip">
       <span>relation(name)</span>
     relation</a>, 
     
@@ -1549,19 +1553,14 @@ Also this class usage makes sense only if you use PostgreSQL as only it has nati
     star</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#table_name(value:String%7CSymbol)-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#table_name%28value%3AString%7CSymbol%29-class-method" class="tooltip">
       <span>table_name(value : String | Symbol)<br/>table_name : String</span>
     table_name</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#transaction(&)-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#transaction%28%26%29-class-method" class="tooltip">
       <span>transaction(&)</span>
     transaction</a>, 
-    
-  
-    <a href="../../Jennifer/Model/Resource.html#where(&)-class-method" class="tooltip">
-      <span>where(&)<br/>where(conditions : Hash(Symbol, _))</span>
-    where</a>, 
     
   
     <a href="../../Jennifer/Model/Resource.html#write_adapter-class-method" class="tooltip">
@@ -1587,22 +1586,22 @@ Also this class usage makes sense only if you use PostgreSQL as only it has nati
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/Model/RelationDefinition.html">Jennifer::Model::RelationDefinition</a></code></h3>
   
   
-    <a href="../../Jennifer/Model/RelationDefinition.html#append_relation(name:String,hash)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/RelationDefinition.html#append_relation%28name%3AString%2Chash%29-instance-method" class="tooltip">
       <span>append_relation(name : String, hash)</span>
     append_relation</a>, 
     
   
-    <a href="../../Jennifer/Model/RelationDefinition.html#get_relation(name:String)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/RelationDefinition.html#get_relation%28name%3AString%29-instance-method" class="tooltip">
       <span>get_relation(name : String)</span>
     get_relation</a>, 
     
   
-    <a href="../../Jennifer/Model/RelationDefinition.html#relation_retrieved(name:String)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/RelationDefinition.html#relation_retrieved%28name%3AString%29-instance-method" class="tooltip">
       <span>relation_retrieved(name : String)</span>
     relation_retrieved</a>, 
     
   
-    <a href="../../Jennifer/Model/RelationDefinition.html#set_inverse_of(name:String,object)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/RelationDefinition.html#set_inverse_of%28name%3AString%2Cobject%29-instance-method" class="tooltip">
       <span>set_inverse_of(name : String, object)</span>
     set_inverse_of</a>
     
@@ -1631,17 +1630,17 @@ Also this class usage makes sense only if you use PostgreSQL as only it has nati
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/Model/Translation.html">Jennifer::Model::Translation</a></code></h3>
   
   
-    <a href="../../Jennifer/Model/Translation.html#class_name:String-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Translation.html#class_name%3AString-instance-method" class="tooltip">
       <span>class_name : String</span>
     class_name</a>, 
     
   
-    <a href="../../Jennifer/Model/Translation.html#human_attribute_name(attribute:String%7CSymbol)-instance-method" class="tooltip">
-      <span>human_attribute_name(attribute : String | Symbol)</span>
+    <a href="../../Jennifer/Model/Translation.html#human_attribute_name%28name%3AString%7CSymbol%29-instance-method" class="tooltip">
+      <span>human_attribute_name(name : String | Symbol)</span>
     human_attribute_name</a>, 
     
   
-    <a href="../../Jennifer/Model/Translation.html#lookup_ancestors(&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Translation.html#lookup_ancestors%28%26%29-instance-method" class="tooltip">
       <span>lookup_ancestors(&)</span>
     lookup_ancestors</a>
     
@@ -1705,7 +1704,7 @@ Also this class usage makes sense only if you use PostgreSQL as only it has nati
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/view/materialized.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/view/materialized.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>

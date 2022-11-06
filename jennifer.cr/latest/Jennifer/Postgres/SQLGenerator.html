@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1312,7 +1317,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/sql_generator.cr#L6" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/sql_generator.cr#L6" target="_blank">
         jennifer/adapter/postgres/sql_generator.cr
       </a>
     
@@ -1336,59 +1341,59 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#escape(value:Nil)-class-method" class="signature"><strong>.escape</strong>(value : Nil)</a>
+        <a href="#escape%28value%3ANil%29-class-method" class="signature"><strong>.escape</strong>(value : Nil)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#escape(value:Bool)-class-method" class="signature"><strong>.escape</strong>(value : Bool)</a>
+        <a href="#escape%28value%3ABool%29-class-method" class="signature"><strong>.escape</strong>(value : Bool)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#escape(value:Int32%7CInt16%7CFloat64%7CFloat32)-class-method" class="signature"><strong>.escape</strong>(value : Int32 | Int16 | Float64 | Float32)</a>
+        <a href="#escape%28value%3AInt32%7CInt16%7CFloat64%7CFloat32%29-class-method" class="signature"><strong>.escape</strong>(value : Int32 | Int16 | Float64 | Float32)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#insert(obj:Model::Base,with_primary_field=true)-class-method" class="signature"><strong>.insert</strong>(obj : Model::Base, with_primary_field = <span class="n">true</span>)</a>
+        <a href="#insert%28obj%3AModel%3A%3ABase%2Cwith_primary_field%3Dtrue%29-class-method" class="signature"><strong>.insert</strong>(obj : Model::Base, with_primary_field = <span class="n">true</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#insert_on_duplicate(table,fields,rows:Int32,unique_fields,on_conflict)-class-method" class="signature"><strong>.insert_on_duplicate</strong>(table, fields, rows : Int32, unique_fields, on_conflict)</a>
+        <a href="#insert_on_duplicate%28table%2Cfields%2Crows%3AInt32%2Cunique_fields%2Con_conflict%29-class-method" class="signature"><strong>.insert_on_duplicate</strong>(table, fields, rows : Int32, unique_fields, on_conflict)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#json_path(path:QueryBuilder::JSONSelector)-class-method" class="signature"><strong>.json_path</strong>(path : QueryBuilder::JSONSelector)</a>
+        <a href="#json_path%28path%3AQueryBuilder%3A%3AJSONSelector%29-class-method" class="signature"><strong>.json_path</strong>(path : QueryBuilder::JSONSelector)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#operator_to_sql(operator:Symbol)-class-method" class="signature"><strong>.operator_to_sql</strong>(operator : Symbol)</a>
+        <a href="#operator_to_sql%28operator%3ASymbol%29-class-method" class="signature"><strong>.operator_to_sql</strong>(operator : Symbol)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#order_expression(expression:QueryBuilder::OrderExpression)-class-method" class="signature"><strong>.order_expression</strong>(expression : QueryBuilder::OrderExpression)</a>
+        <a href="#order_expression%28expression%3AQueryBuilder%3A%3AOrderExpression%29-class-method" class="signature"><strong>.order_expression</strong>(expression : QueryBuilder::OrderExpression)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#parse_query(query,args:Array(DBAny))-class-method" class="signature"><strong>.parse_query</strong>(query, args : Array(DBAny))</a>
+        <a href="#parse_query%28query%2Cargs%3AArray%28DBAny%29%29-class-method" class="signature"><strong>.parse_query</strong>(query, args : Array(DBAny))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update(query,options:Hash)-class-method" class="signature"><strong>.update</strong>(query, options : Hash)</a>
+        <a href="#update%28query%2Coptions%3AHash%29-class-method" class="signature"><strong>.update</strong>(query, options : Hash)</a>
         
           <div class="summary"><p>Generates update request depending on given query and hash options.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#values_expression(field:Symbol)-class-method" class="signature"><strong>.values_expression</strong>(field : Symbol)</a>
+        <a href="#values_expression%28field%3ASymbol%29-class-method" class="signature"><strong>.values_expression</strong>(field : Symbol)</a>
         
       </li>
     
@@ -1413,132 +1418,132 @@
   <h3>Class methods inherited from class <code><a href="../../Jennifer/Adapter/BaseSQLGenerator.html">Jennifer::Adapter::BaseSQLGenerator</a></code></h3>
   
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#body_section(io:String::Builder,query)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#body_section%28io%3AString%3A%3ABuilder%2Cquery%29-class-method" class="tooltip">
       <span>body_section(io : String::Builder, query)</span>
     body_section</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#bulk_insert(table:String,field_names:Array(String),rows:Int32)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#bulk_insert%28table%3AString%2Cfield_names%3AArray%28String%29%2Crows%3AInt32%29-class-method" class="tooltip">
       <span>bulk_insert(table : String, field_names : Array(String), rows : Int32)<br/>bulk_insert(table : String, field_names : Array(String), rows : Array)</span>
     bulk_insert</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#cast_expression(expression,type:String)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#cast_expression%28expression%2Ctype%3AString%29-class-method" class="tooltip">
       <span>cast_expression(expression, type : String)</span>
     cast_expression</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#count(query)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#count%28query%29-class-method" class="tooltip">
       <span>count(query)</span>
     count</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#delete(query)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#delete%28query%29-class-method" class="tooltip">
       <span>delete(query)</span>
     delete</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#exists(query)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#exists%28query%29-class-method" class="tooltip">
       <span>exists(query)</span>
     exists</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#explain(query)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#explain%28query%29-class-method" class="tooltip">
       <span>explain(query)</span>
     explain</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#from_clause(io:String::Builder,from:String)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#from_clause%28io%3AString%3A%3ABuilder%2Cfrom%3AString%29-class-method" class="tooltip">
       <span>from_clause(io : String::Builder, from : String)<br/>from_clause(io : String::Builder, query)</span>
     from_clause</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#group_clause(io:String::Builder,query)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#group_clause%28io%3AString%3A%3ABuilder%2Cquery%29-class-method" class="tooltip">
       <span>group_clause(io : String::Builder, query)</span>
     group_clause</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#having_clause(io:String::Builder,query)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#having_clause%28io%3AString%3A%3ABuilder%2Cquery%29-class-method" class="tooltip">
       <span>having_clause(io : String::Builder, query)</span>
     having_clause</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#insert(table,hash)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#insert%28table%2Chash%29-class-method" class="tooltip">
       <span>insert(table, hash)</span>
     insert</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#join_clause(io:String::Builder,query)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#join_clause%28io%3AString%3A%3ABuilder%2Cquery%29-class-method" class="tooltip">
       <span>join_clause(io : String::Builder, query)</span>
     join_clause</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#limit_clause(io:String::Builder,query)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#limit_clause%28io%3AString%3A%3ABuilder%2Cquery%29-class-method" class="tooltip">
       <span>limit_clause(io : String::Builder, query)</span>
     limit_clause</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#lock_clause(io:String::Builder,query)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#lock_clause%28io%3AString%3A%3ABuilder%2Cquery%29-class-method" class="tooltip">
       <span>lock_clause(io : String::Builder, query)</span>
     lock_clause</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#modify(q,modifications:Hash)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#modify%28q%2Cmodifications%3AHash%29-class-method" class="tooltip">
       <span>modify(q, modifications : Hash)</span>
     modify</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#operator_to_sql(operator:Symbol)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#operator_to_sql%28operator%3ASymbol%29-class-method" class="tooltip">
       <span>operator_to_sql(operator : Symbol)</span>
     operator_to_sql</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#order_clause(io:String::Builder,query)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#order_clause%28io%3AString%3A%3ABuilder%2Cquery%29-class-method" class="tooltip">
       <span>order_clause(io : String::Builder, query)</span>
     order_clause</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#order_expression(expression:QueryBuilder::OrderExpression)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#order_expression%28expression%3AQueryBuilder%3A%3AOrderExpression%29-class-method" class="tooltip">
       <span>order_expression(expression : QueryBuilder::OrderExpression)</span>
     order_expression</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#parse_query(query:String,args:Array(DBAny))-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#parse_query%28query%3AString%2Cargs%3AArray%28DBAny%29%29-class-method" class="tooltip">
       <span>parse_query(query : String, args : Array(DBAny))</span>
     parse_query</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#select(query,exact_fields:Array=[]ofString)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#select%28query%2Cexact_fields%3AArray%3D%5B%5DofString%29-class-method" class="tooltip">
       <span>select(query, exact_fields : Array = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)</span>
     select</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#select_clause(io:String::Builder,query,exact_fields:Array=[]ofString)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#select_clause%28io%3AString%3A%3ABuilder%2Cquery%2Cexact_fields%3AArray%3D%5B%5DofString%29-class-method" class="tooltip">
       <span>select_clause(io : String::Builder, query, exact_fields : Array = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)</span>
     select_clause</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#truncate(table:String)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#truncate%28table%3AString%29-class-method" class="tooltip">
       <span>truncate(table : String)</span>
     truncate</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#union_clause(io:String::Builder,query)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#union_clause%28io%3AString%3A%3ABuilder%2Cquery%29-class-method" class="tooltip">
       <span>union_clause(io : String::Builder, query)</span>
     union_clause</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#update(query,options:Hash)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#update%28query%2Coptions%3AHash%29-class-method" class="tooltip">
       <span>update(query, options : Hash)<br/>update(obj : Model::Base)</span>
     update</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#where_clause(io:String::Builder,query:QueryBuilder::Query%7CQueryBuilder::ModelQuery)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#where_clause%28io%3AString%3A%3ABuilder%2Cquery%3AQueryBuilder%3A%3AQuery%7CQueryBuilder%3A%3AModelQuery%29-class-method" class="tooltip">
       <span>where_clause(io : String::Builder, query : QueryBuilder::Query | QueryBuilder::ModelQuery)<br/>where_clause(io : String::Builder, tree)</span>
     where_clause</a>, 
     
   
-    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#with_clause(io:String::Builder,query)-class-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/BaseSQLGenerator.html#with_clause%28io%3AString%3A%3ABuilder%2Cquery%29-class-method" class="tooltip">
       <span>with_clause(io : String::Builder, query)</span>
     with_clause</a>
     
@@ -1585,13 +1590,13 @@
         
         def self.<strong>escape</strong>(value : Nil)
 
-        <a class="method-permalink" href="#escape(value:Nil)-class-method">#</a>
+        <a class="method-permalink" href="#escape%28value%3ANil%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/sql_generator.cr#L113" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/sql_generator.cr#L116" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1601,13 +1606,13 @@
         
         def self.<strong>escape</strong>(value : Bool)
 
-        <a class="method-permalink" href="#escape(value:Bool)-class-method">#</a>
+        <a class="method-permalink" href="#escape%28value%3ABool%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/sql_generator.cr#L117" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/sql_generator.cr#L120" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1617,13 +1622,13 @@
         
         def self.<strong>escape</strong>(value : Int32 | Int16 | Float64 | Float32)
 
-        <a class="method-permalink" href="#escape(value:Int32%7CInt16%7CFloat64%7CFloat32)-class-method">#</a>
+        <a class="method-permalink" href="#escape%28value%3AInt32%7CInt16%7CFloat64%7CFloat32%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/sql_generator.cr#L121" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/sql_generator.cr#L124" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1633,13 +1638,13 @@
         
         def self.<strong>insert</strong>(obj : <a href="../../Jennifer/Model/Base.html">Model::Base</a>, with_primary_field = <span class="n">true</span>)
 
-        <a class="method-permalink" href="#insert(obj:Model::Base,with_primary_field=true)-class-method">#</a>
+        <a class="method-permalink" href="#insert%28obj%3AModel%3A%3ABase%2Cwith_primary_field%3Dtrue%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/sql_generator.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/sql_generator.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1649,13 +1654,13 @@
         
         def self.<strong>insert_on_duplicate</strong>(table, fields, rows : Int32, unique_fields, on_conflict)
 
-        <a class="method-permalink" href="#insert_on_duplicate(table,fields,rows:Int32,unique_fields,on_conflict)-class-method">#</a>
+        <a class="method-permalink" href="#insert_on_duplicate%28table%2Cfields%2Crows%3AInt32%2Cunique_fields%2Con_conflict%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/sql_generator.cr#L60" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/sql_generator.cr#L60" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1665,13 +1670,13 @@
         
         def self.<strong>json_path</strong>(path : <a href="../../Jennifer/QueryBuilder/JSONSelector.html">QueryBuilder::JSONSelector</a>)
 
-        <a class="method-permalink" href="#json_path(path:QueryBuilder::JSONSelector)-class-method">#</a>
+        <a class="method-permalink" href="#json_path%28path%3AQueryBuilder%3A%3AJSONSelector%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/sql_generator.cr#L100" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/sql_generator.cr#L103" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1681,13 +1686,13 @@
         
         def self.<strong>operator_to_sql</strong>(operator : Symbol)
 
-        <a class="method-permalink" href="#operator_to_sql(operator:Symbol)-class-method">#</a>
+        <a class="method-permalink" href="#operator_to_sql%28operator%3ASymbol%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/sql_generator.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/sql_generator.cr#L99" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1697,13 +1702,13 @@
         
         def self.<strong>order_expression</strong>(expression : <a href="../../Jennifer/QueryBuilder/OrderExpression.html">QueryBuilder::OrderExpression</a>)
 
-        <a class="method-permalink" href="#order_expression(expression:QueryBuilder::OrderExpression)-class-method">#</a>
+        <a class="method-permalink" href="#order_expression%28expression%3AQueryBuilder%3A%3AOrderExpression%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/sql_generator.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/sql_generator.cr#L91" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1713,13 +1718,13 @@
         
         def self.<strong>parse_query</strong>(query, args : Array(<a href="../../Jennifer/DBAny.html">DBAny</a>))
 
-        <a class="method-permalink" href="#parse_query(query,args:Array(DBAny))-class-method">#</a>
+        <a class="method-permalink" href="#parse_query%28query%2Cargs%3AArray%28DBAny%29%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/sql_generator.cr#L125" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/sql_generator.cr#L128" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1729,20 +1734,19 @@
         
         def self.<strong>update</strong>(query, options : Hash)
 
-        <a class="method-permalink" href="#update(query,options:Hash)-class-method">#</a>
+        <a class="method-permalink" href="#update%28query%2Coptions%3AHash%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Generates update request depending on given query and hash options.</p>
-
 <p>Allows joins inside of query.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/sql_generator.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/sql_generator.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1752,13 +1756,13 @@
         
         def self.<strong>values_expression</strong>(field : Symbol)
 
-        <a class="method-permalink" href="#values_expression(field:Symbol)-class-method">#</a>
+        <a class="method-permalink" href="#values_expression%28field%3ASymbol%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/sql_generator.cr#L84" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/sql_generator.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>

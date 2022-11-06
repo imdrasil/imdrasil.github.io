@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1338,7 +1343,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L4" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L4" target="_blank">
         jennifer/migration/table_builder/base.cr
       </a>
     
@@ -1383,7 +1388,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(adapter,name:String%7CSymbol)-class-method" class="signature"><strong>.new</strong>(adapter, name : String | Symbol)</a>
+        <a href="#new%28adapter%3AJennifer%3A%3AAdapter%3A%3ABase%2Cname%3AString%7CSymbol%29-class-method" class="signature"><strong>.new</strong>(adapter : Jennifer::Adapter::Base, name : String | Symbol)</a>
         
       </li>
     
@@ -1404,17 +1409,17 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#adapter:Adapter::Base-instance-method" class="signature"><strong>#adapter</strong> : Adapter::Base</a>
+        <a href="#adapter%3AAdapter%3A%3ABase-instance-method" class="signature"><strong>#adapter</strong> : Adapter::Base</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#column_exists?(*args,**options)-instance-method" class="signature"><strong>#column_exists?</strong>(*args, **options)</a>
+        <a href="#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#column_exists?</strong>(*args, **options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#column_exists?(*args,**options,&)-instance-method" class="signature"><strong>#column_exists?</strong>(*args, **options, &)</a>
+        <a href="#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#column_exists?</strong>(*args, **options, &)</a>
         
       </li>
     
@@ -1426,17 +1431,17 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#index_exists?(*args,**options)-instance-method" class="signature"><strong>#index_exists?</strong>(*args, **options)</a>
+        <a href="#index_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#index_exists?</strong>(*args, **options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#index_exists?(*args,**options,&)-instance-method" class="signature"><strong>#index_exists?</strong>(*args, **options, &)</a>
+        <a href="#index_exists%3F%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#index_exists?</strong>(*args, **options, &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#name:String-instance-method" class="signature"><strong>#name</strong> : String</a>
+        <a href="#name%3AString-instance-method" class="signature"><strong>#name</strong> : String</a>
         
       </li>
     
@@ -1455,22 +1460,22 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#schema_processor(*args,**options)-instance-method" class="signature"><strong>#schema_processor</strong>(*args, **options)</a>
+        <a href="#schema_processor%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#schema_processor</strong>(*args, **options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#schema_processor(*args,**options,&)-instance-method" class="signature"><strong>#schema_processor</strong>(*args, **options, &)</a>
+        <a href="#schema_processor%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#schema_processor</strong>(*args, **options, &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#table_exists?(*args,**options)-instance-method" class="signature"><strong>#table_exists?</strong>(*args, **options)</a>
+        <a href="#table_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#table_exists?</strong>(*args, **options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#table_exists?(*args,**options,&)-instance-method" class="signature"><strong>#table_exists?</strong>(*args, **options, &)</a>
+        <a href="#table_exists%3F%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#table_exists?</strong>(*args, **options, &)</a>
         
       </li>
     
@@ -1514,18 +1519,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(adapter,name:String|Symbol)-class-method">
+    <div class="entry-detail" id="new(adapter:Jennifer::Adapter::Base,name:String|Symbol)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(adapter, name : String | Symbol)
+        def self.<strong>new</strong>(adapter : <a href="../../../Jennifer/Adapter/Base.html">Jennifer::Adapter::Base</a>, name : String | Symbol)
 
-        <a class="method-permalink" href="#new(adapter,name:String%7CSymbol)-class-method">#</a>
+        <a class="method-permalink" href="#new%28adapter%3AJennifer%3A%3AAdapter%3A%3ABase%2Cname%3AString%7CSymbol%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L24" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1549,13 +1554,13 @@
         
         def <strong>adapter</strong> : <a href="../../../Jennifer/Adapter/Base.html">Adapter::Base</a>
 
-        <a class="method-permalink" href="#adapter:Adapter::Base-instance-method">#</a>
+        <a class="method-permalink" href="#adapter%3AAdapter%3A%3ABase-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1565,13 +1570,13 @@
         
         def <strong>column_exists?</strong>(*args, **options)
 
-        <a class="method-permalink" href="#column_exists?(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1581,13 +1586,13 @@
         
         def <strong>column_exists?</strong>(*args, **options, &)
 
-        <a class="method-permalink" href="#column_exists?(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1608,7 +1613,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1618,13 +1623,13 @@
         
         def <strong>index_exists?</strong>(*args, **options)
 
-        <a class="method-permalink" href="#index_exists?(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#index_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1634,13 +1639,13 @@
         
         def <strong>index_exists?</strong>(*args, **options, &)
 
-        <a class="method-permalink" href="#index_exists?(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#index_exists%3F%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1650,13 +1655,13 @@
         
         def <strong>name</strong> : String
 
-        <a class="method-permalink" href="#name:String-instance-method">#</a>
+        <a class="method-permalink" href="#name%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1677,7 +1682,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1698,7 +1703,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1708,13 +1713,13 @@
         
         def <strong>schema_processor</strong>(*args, **options)
 
-        <a class="method-permalink" href="#schema_processor(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#schema_processor%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1724,13 +1729,13 @@
         
         def <strong>schema_processor</strong>(*args, **options, &)
 
-        <a class="method-permalink" href="#schema_processor(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#schema_processor%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1740,13 +1745,13 @@
         
         def <strong>table_exists?</strong>(*args, **options)
 
-        <a class="method-permalink" href="#table_exists?(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#table_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1756,13 +1761,13 @@
         
         def <strong>table_exists?</strong>(*args, **options, &)
 
-        <a class="method-permalink" href="#table_exists?(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#table_exists%3F%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/base.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1293,7 +1298,9 @@
   </h2>
   <ul class="other-types-list">
     
-      <li class="other-type"><a href="../../Jennifer/Adapter/Base.html">Jennifer::Adapter::Base</a></li>
+      <li class="other-type"><a href="../../Jennifer/Mysql/Adapter.html">Jennifer::Mysql::Adapter</a></li>
+    
+      <li class="other-type"><a href="../../Jennifer/Postgres/Adapter.html">Jennifer::Postgres::Adapter</a></li>
     
   </ul>
 
@@ -1310,7 +1317,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/request_methods.cr#L3" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/request_methods.cr#L3" target="_blank">
         jennifer/adapter/request_methods.cr
       </a>
     
@@ -1336,42 +1343,42 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#insert(table,opts:Hash)-instance-method" class="signature"><strong>#insert</strong>(table, opts : Hash)</a>
+        <a href="#insert%28table%2Copts%3AHash%29-instance-method" class="signature"><strong>#insert</strong>(table, opts : Hash)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#insert(obj:Model::Base)-instance-method" class="signature"><strong>#insert</strong>(obj : Model::Base)</a>
+        <a href="#insert%28obj%3AModel%3A%3ABase%29-instance-method" class="signature"><strong>#insert</strong>(obj : Model::Base)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#modify(q,modifications:Hash)-instance-method" class="signature"><strong>#modify</strong>(q, modifications : Hash)</a>
+        <a href="#modify%28q%2Cmodifications%3AHash%29-instance-method" class="signature"><strong>#modify</strong>(q, modifications : Hash)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#pluck(query,fields:Array)-instance-method" class="signature"><strong>#pluck</strong>(query, fields : Array)</a>
+        <a href="#pluck%28query%2Cfields%3AArray%29-instance-method" class="signature"><strong>#pluck</strong>(query, fields : Array)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#pluck(query,field:String%7CSymbol)-instance-method" class="signature"><strong>#pluck</strong>(query, field : String | Symbol)</a>
+        <a href="#pluck%28query%2Cfield%3AString%7CSymbol%29-instance-method" class="signature"><strong>#pluck</strong>(query, field : String | Symbol)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#select(q,&)-instance-method" class="signature"><strong>#select</strong>(q, &)</a>
+        <a href="#select%28q%2C%26%29-instance-method" class="signature"><strong>#select</strong>(q, &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update(query,options:Hash)-instance-method" class="signature"><strong>#update</strong>(query, options : Hash)</a>
+        <a href="#update%28query%2Coptions%3AHash%29-instance-method" class="signature"><strong>#update</strong>(query, options : Hash)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update(obj:Model::Base)-instance-method" class="signature"><strong>#update</strong>(obj : Model::Base)</a>
+        <a href="#update%28obj%3AModel%3A%3ABase%29-instance-method" class="signature"><strong>#update</strong>(obj : Model::Base)</a>
         
       </li>
     
@@ -1404,13 +1411,13 @@
         
         def <strong>insert</strong>(table, opts : Hash)
 
-        <a class="method-permalink" href="#insert(table,opts:Hash)-instance-method">#</a>
+        <a class="method-permalink" href="#insert%28table%2Copts%3AHash%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/request_methods.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/request_methods.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1420,13 +1427,13 @@
         
         def <strong>insert</strong>(obj : <a href="../../Jennifer/Model/Base.html">Model::Base</a>)
 
-        <a class="method-permalink" href="#insert(obj:Model::Base)-instance-method">#</a>
+        <a class="method-permalink" href="#insert%28obj%3AModel%3A%3ABase%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/request_methods.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/request_methods.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1436,13 +1443,13 @@
         
         def <strong>modify</strong>(q, modifications : Hash)
 
-        <a class="method-permalink" href="#modify(q,modifications:Hash)-instance-method">#</a>
+        <a class="method-permalink" href="#modify%28q%2Cmodifications%3AHash%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/request_methods.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/request_methods.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1452,13 +1459,13 @@
         
         def <strong>pluck</strong>(query, fields : Array)
 
-        <a class="method-permalink" href="#pluck(query,fields:Array)-instance-method">#</a>
+        <a class="method-permalink" href="#pluck%28query%2Cfields%3AArray%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/request_methods.cr#L39" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/request_methods.cr#L39" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1468,13 +1475,13 @@
         
         def <strong>pluck</strong>(query, field : String | Symbol)
 
-        <a class="method-permalink" href="#pluck(query,field:String%7CSymbol)-instance-method">#</a>
+        <a class="method-permalink" href="#pluck%28query%2Cfield%3AString%7CSymbol%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/request_methods.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/request_methods.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1484,13 +1491,13 @@
         
         def <strong>select</strong>(q, &)
 
-        <a class="method-permalink" href="#select(q,&)-instance-method">#</a>
+        <a class="method-permalink" href="#select%28q%2C%26%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/request_methods.cr#L64" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/request_methods.cr#L64" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1500,13 +1507,13 @@
         
         def <strong>update</strong>(query, options : Hash)
 
-        <a class="method-permalink" href="#update(query,options:Hash)-instance-method">#</a>
+        <a class="method-permalink" href="#update%28query%2Coptions%3AHash%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/request_methods.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/request_methods.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1516,13 +1523,13 @@
         
         def <strong>update</strong>(obj : <a href="../../Jennifer/Model/Base.html">Model::Base</a>)
 
-        <a class="method-permalink" href="#update(obj:Model::Base)-instance-method">#</a>
+        <a class="method-permalink" href="#update%28obj%3AModel%3A%3ABase%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/request_methods.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/request_methods.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>

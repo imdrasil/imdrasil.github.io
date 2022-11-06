@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1326,7 +1331,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L6" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L6" target="_blank">
         jennifer/query_builder/i_model_query.cr
       </a>
     
@@ -1366,28 +1371,28 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#find(id)-instance-method" class="signature"><strong>#find</strong>(id)</a>
+        <a href="#find%28id%29-instance-method" class="signature"><strong>#find</strong>(id)</a>
         
           <div class="summary"><p>Returns record by given primary field or <code>nil</code> otherwise.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#find!(id)-instance-method" class="signature"><strong>#find!</strong>(id)</a>
+        <a href="#find%21%28id%29-instance-method" class="signature"><strong>#find!</strong>(id)</a>
         
           <div class="summary"><p>Returns record by given primary field or raises <code><a href="../../Jennifer/RecordNotFound.html">Jennifer::RecordNotFound</a></code> exception otherwise.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#find_each(batch_size:Int32=1000,start=nil,direction:String%7CSymbol=%22asc%22,&)-instance-method" class="signature"><strong>#find_each</strong>(batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)</a>
+        <a href="#find_each%28batch_size%3AInt32%3D1000%2Cstart%3Dnil%2Cdirection%3AString%7CSymbol%3D%22asc%22%2C%26%29-instance-method" class="signature"><strong>#find_each</strong>(batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)</a>
         
           <div class="summary"><p>Yields each record in batches from #find_in_batches.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#find_in_batches(batch_size:Int32=1000,start=nil,direction:String%7CSymbol=%22asc%22,&)-instance-method" class="signature"><strong>#find_in_batches</strong>(batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)</a>
+        <a href="#find_in_batches%28batch_size%3AInt32%3D1000%2Cstart%3Dnil%2Cdirection%3AString%7CSymbol%3D%22asc%22%2C%26%29-instance-method" class="signature"><strong>#find_in_batches</strong>(batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)</a>
         
           <div class="summary"><p>Yields each batch of records that was found by the specified query.</p></div>
         
@@ -1396,40 +1401,40 @@
       <li class="entry-summary">
         <a href="#model_class-instance-method" class="signature"><strong>#model_class</strong></a>
         
-          <div class="summary"><p><span class="flag purple">NOTE</span>  improperly detects source of #abstract_class if run sam with only Version model</p></div>
+          <div class="summary"><p><span class="flag purple">NOTE</span>  improperly detects source of #abstract_class if run Sam with only Version model</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#patch(options:Hash%7CNamedTuple)-instance-method" class="signature"><strong>#patch</strong>(options : Hash | NamedTuple)</a>
+        <a href="#patch%28options%3AHash%7CNamedTuple%29-instance-method" class="signature"><strong>#patch</strong>(options : Hash | NamedTuple)</a>
         
           <div class="summary"><p>Triggers <code>#update</code> on the each matched object.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#patch(**opts)-instance-method" class="signature"><strong>#patch</strong>(**opts)</a>
+        <a href="#patch%28%2A%2Aopts%29-instance-method" class="signature"><strong>#patch</strong>(**opts)</a>
         
           <div class="summary"><p>Triggers <code>#update</code> on the each matched object.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#patch!(options:Hash%7CNamedTuple)-instance-method" class="signature"><strong>#patch!</strong>(options : Hash | NamedTuple)</a>
+        <a href="#patch%21%28options%3AHash%7CNamedTuple%29-instance-method" class="signature"><strong>#patch!</strong>(options : Hash | NamedTuple)</a>
         
           <div class="summary"><p>Triggers <code>#update!</code> on the each matched object.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#patch!(**opts)-instance-method" class="signature"><strong>#patch!</strong>(**opts)</a>
+        <a href="#patch%21%28%2A%2Aopts%29-instance-method" class="signature"><strong>#patch!</strong>(**opts)</a>
         
           <div class="summary"><p>Triggers <code>#update!</code> on the each matched object.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#relation(name,type=:left)-instance-method" class="signature"><strong>#relation</strong>(name, type = <span class="n">:left</span>)</a>
+        <a href="#relation%28name%2Ctype%3D%3Aleft%29-instance-method" class="signature"><strong>#relation</strong>(name, type = <span class="n">:left</span>)</a>
         
           <div class="summary"><p>Joins <em>name</em> relation.</p></div>
         
@@ -1455,17 +1460,17 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/EagerLoading.html">Jennifer::QueryBuilder::EagerLoading</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/EagerLoading.html#_select_fields:Array(Criteria)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/EagerLoading.html#_select_fields%3AArray%28Criteria%29-instance-method" class="tooltip">
       <span>_select_fields : Array(Criteria)</span>
     _select_fields</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/EagerLoading.html#eager_load(*names,**deep_relations)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/EagerLoading.html#eager_load%28%2Anames%2C%2A%2Adeep_relations%29-instance-method" class="tooltip">
       <span>eager_load(*names, **deep_relations)</span>
     eager_load</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/EagerLoading.html#includes(*names,**deep_relations)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/EagerLoading.html#includes%28%2Anames%2C%2A%2Adeep_relations%29-instance-method" class="tooltip">
       <span>includes(*names, **deep_relations)</span>
     includes</a>, 
     
@@ -1475,17 +1480,17 @@
     multi_query_relation_tree</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/EagerLoading.html#nested_relation_tree:NestedRelationTree-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/EagerLoading.html#nested_relation_tree%3ANestedRelationTree-instance-method" class="tooltip">
       <span>nested_relation_tree : NestedRelationTree</span>
     nested_relation_tree</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/EagerLoading.html#preload(*names,**deep_relations)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/EagerLoading.html#preload%28%2Anames%2C%2A%2Adeep_relations%29-instance-method" class="tooltip">
       <span>preload(*names, **deep_relations)</span>
     preload</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/EagerLoading.html#with_relation(names:Array)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/EagerLoading.html#with_relation%28names%3AArray%29-instance-method" class="tooltip">
       <span>with_relation(names : Array)<br/>with_relation(*names)</span>
     with_relation</a>
     
@@ -1504,17 +1509,17 @@
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/QueryBuilder/Query.html">Jennifer::QueryBuilder::Query</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#_select_fields:Array(Criteria)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#_select_fields%3AArray%28Criteria%29-instance-method" class="tooltip">
       <span>_select_fields : Array(Criteria)</span>
     _select_fields</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#adapter:Adapter::Base-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#adapter%3AAdapter%3A%3ABase-instance-method" class="tooltip">
       <span>adapter : Adapter::Base</span>
     adapter</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#as_sql(generator)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#as_sql%28generator%29-instance-method" class="tooltip">
       <span>as_sql(generator)<br/>as_sql</span>
     as_sql</a>, 
     
@@ -1529,67 +1534,67 @@
     distinct</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#do_nothing?:Bool-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#do_nothing%3F%3ABool-instance-method" class="tooltip">
       <span>do_nothing? : Bool</span>
     do_nothing?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#empty?-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#empty%3F-instance-method" class="tooltip">
       <span>empty?</span>
     empty?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#eql?(other:Query)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#eql%3F%28other%3AQuery%29-instance-method" class="tooltip">
       <span>eql?(other : Query)<br/>eql?(other : Statement | LogicOperator)</span>
     eql?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#except(parts:Array(String))-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#except%28parts%3AArray%28String%29%29-instance-method" class="tooltip">
       <span>except(parts : Array(String))</span>
     except</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#exec(&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#exec%28%26%29-instance-method" class="tooltip">
       <span>exec(&)</span>
     exec</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#expression_builder:Jennifer::QueryBuilder::ExpressionBuilder-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#expression_builder%3AJennifer%3A%3AQueryBuilder%3A%3AExpressionBuilder-instance-method" class="tooltip">
       <span>expression_builder : Jennifer::QueryBuilder::ExpressionBuilder</span>
     expression_builder</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#filterable?-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#filterable%3F-instance-method" class="tooltip">
       <span>filterable?</span>
     filterable?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#from(from:String%7CQuery)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#from%28from%3AString%7CQuery%29-instance-method" class="tooltip">
       <span>from(from : String | Query)</span>
     from</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#group(column:String)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#group%28column%3AString%29-instance-method" class="tooltip">
       <span>group(column : String)<br/>group(column : Symbol)<br/>group(column : Criteria)<br/>group(*columns : String)<br/>group(*columns : Symbol)<br/>group(&)</span>
     group</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#having(&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#having%28%26%29-instance-method" class="tooltip">
       <span>having(&)</span>
     having</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#limit(count:Int32)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#limit%28count%3AInt32%29-instance-method" class="tooltip">
       <span>limit(count : Int32)</span>
     limit</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#lock(type:String%7CBool=true)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#lock%28type%3AString%7CBool%3Dtrue%29-instance-method" class="tooltip">
       <span>lock(type : String | Bool = <span class="n">true</span>)</span>
     lock</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#merge(other:self)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#merge%28other%3Aself%29-instance-method" class="tooltip">
       <span>merge(other : <span class="k">self</span>)</span>
     merge</a>, 
     
@@ -1599,62 +1604,62 @@
     none</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#offset(count:Int32)-instance-method" class="tooltip">
-      <span>offset(count : Int32)</span>
+    <a href="../../Jennifer/QueryBuilder/Query.html#offset%28count%3AInt32%7CInt64%29-instance-method" class="tooltip">
+      <span>offset(count : Int32 | Int64)</span>
     offset</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#select(raw_sql:String)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#select%28raw_sql%3AString%29-instance-method" class="tooltip">
       <span>select(raw_sql : String)<br/>select(field : Criteria)<br/>select(fields : Array(Criteria))<br/>select(*fields : Symbol)<br/>select(&)</span>
     select</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#set_tree(other:LogicOperator%7CCondition)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#set_tree%28other%3ALogicOperator%7CCondition%29-instance-method" class="tooltip">
       <span>set_tree(other : LogicOperator | Condition)<br/>set_tree(other : Query)<br/>set_tree(other : SQLNode)<br/>set_tree(other : Nil)</span>
     set_tree</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#sql_args:Array(DBAny)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#sql_args%3AArray%28DBAny%29-instance-method" class="tooltip">
       <span>sql_args : Array(DBAny)</span>
     sql_args</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#table:String-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#table%3AString-instance-method" class="tooltip">
       <span>table : String</span>
     table</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#to_json(only:Array(String)?=nil,except:Array(String)?=nil,&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#to_json%28only%3AArray%28String%29%3F%3Dnil%2Cexcept%3AArray%28String%29%3F%3Dnil%2C%26%29-instance-method" class="tooltip">
       <span>to_json(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)<br/>to_json(json : JSON::Builder)<br/>to_json(json : JSON::Builder, only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)<br/>to_json(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>)</span>
     to_json</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#to_s(io:IO)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#to_s%28io%3AIO%29-instance-method" class="tooltip">
       <span>to_s(io : IO)</span>
     to_s</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#tree:Condition%7CLogicOperator%7CNil-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#tree%3ACondition%7CLogicOperator%7CNil-instance-method" class="tooltip">
       <span>tree : Condition | LogicOperator | Nil</span>
     tree</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#tree=(tree:Condition%7CLogicOperator%7CNil)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#tree%3D%28tree%3ACondition%7CLogicOperator%7CNil%29-instance-method" class="tooltip">
       <span>tree=(tree : Condition | LogicOperator | Nil)</span>
     tree=</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#union(query,all:Bool=false)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#union%28query%2Call%3ABool%3Dfalse%29-instance-method" class="tooltip">
       <span>union(query, all : Bool = <span class="n">false</span>)</span>
     union</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#where(&)-instance-method" class="tooltip">
-      <span>where(&)<br/>where(conditions : Hash(Symbol, _))</span>
+    <a href="../../Jennifer/QueryBuilder/Query.html#where%28%26%29-instance-method" class="tooltip">
+      <span>where(&)<br/>where(conditions : Hash(Symbol | String, _))</span>
     where</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#with(name:String%7CSymbol,query:Query,recursive:Bool=false)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#with%28name%3AString%7CSymbol%2Cquery%3AQuery%2Crecursive%3ABool%3Dfalse%29-instance-method" class="tooltip">
       <span>with(name : String | Symbol, query : Query, recursive : Bool = <span class="n">false</span>)</span>
     with</a>
     
@@ -1666,8 +1671,8 @@
   <h3>Constructor methods inherited from class <code><a href="../../Jennifer/QueryBuilder/Query.html">Jennifer::QueryBuilder::Query</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#new(table,adapter=Adapter.default_adapter)-class-method" class="tooltip">
-      <span>new(table, adapter = <span class="t">Adapter</span>.default_adapter)<br/>new</span>
+    <a href="../../Jennifer/QueryBuilder/Query.html#new%28table%3AString%2Cadapter%3AJennifer%3A%3AAdapter%3A%3ABase%3DAdapter.default_adapter%29-class-method" class="tooltip">
+      <span>new(table : String, adapter : Jennifer::Adapter::Base = <span class="t">Adapter</span>.default_adapter)<br/>new</span>
     new</a>
     
   
@@ -1678,17 +1683,17 @@
   <h3>Class methods inherited from class <code><a href="../../Jennifer/QueryBuilder/Query.html">Jennifer::QueryBuilder::Query</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#[](*args)-class-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#%5B%5D%28%2Aargs%29-class-method" class="tooltip">
       <span>[](*args)</span>
     []</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#build(*args)-class-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#build%28%2Aargs%29-class-method" class="tooltip">
       <span>build(*args)</span>
     build</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Query.html#null(table=%22%22)-class-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Query.html#null%28table%3D%22%22%29-class-method" class="tooltip">
       <span>null(table = <span class="s">&quot;&quot;</span>)</span>
     null</a>
     
@@ -1701,12 +1706,12 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/Executables.html">Jennifer::QueryBuilder::Executables</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#db_results:Array(Hash(String,DBAny))-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#db_results%3AArray%28Hash%28String%2CDBAny%29%29-instance-method" class="tooltip">
       <span>db_results : Array(Hash(String, DBAny))</span>
     db_results</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#decrement(fields:Hash(Symbol,_))-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#decrement%28fields%3AHash%28Symbol%2C_%29%29-instance-method" class="tooltip">
       <span>decrement(fields : Hash(Symbol, _))<br/>decrement(**fields)</span>
     decrement</a>, 
     
@@ -1716,37 +1721,47 @@
     delete</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#each(&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#each%28%26%29-instance-method" class="tooltip">
       <span>each(&)</span>
     each</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#each_result_set(&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#each_result_set%28%26%29-instance-method" class="tooltip">
       <span>each_result_set(&)</span>
     each_result_set</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#exists?:Bool-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#exists%3F%3ABool-instance-method" class="tooltip">
       <span>exists? : Bool</span>
     exists?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#explain:String-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#explain%3AString-instance-method" class="tooltip">
       <span>explain : String</span>
     explain</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#find_each(primary_key:String,batch_size:Int32=1000,start=nil,direction:String%7CSymbol=%22asc%22,&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#find_by%28conditions%3AHash%28Symbol%7CString%2C_%29%29-instance-method" class="tooltip">
+      <span>find_by(conditions : Hash(Symbol | String, _))</span>
+    find_by</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#find_by%21%28conditions%3AHash%28Symbol%7CString%2C_%29%29-instance-method" class="tooltip">
+      <span>find_by!(conditions : Hash(Symbol | String, _))</span>
+    find_by!</a>, 
+    
+  
+    <a href="../../Jennifer/QueryBuilder/Executables.html#find_each%28primary_key%3AString%2Cbatch_size%3AInt32%3D1000%2Cstart%3Dnil%2Cdirection%3AString%7CSymbol%3D%22asc%22%2C%26%29-instance-method" class="tooltip">
       <span>find_each(primary_key : String, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(primary_key : Criteria, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(primary_key : Nil, batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_each(batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)</span>
     find_each</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#find_in_batches(primary_key:String,batch_size:Int32=1000,start:Int32?=nil,direction:String%7CSymbol=%22asc%22,&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#find_in_batches%28primary_key%3AString%2Cbatch_size%3AInt32%3D1000%2Cstart%3AInt32%3F%3Dnil%2Cdirection%3AString%7CSymbol%3D%22asc%22%2C%26%29-instance-method" class="tooltip">
       <span>find_in_batches(primary_key : String, batch_size : Int32 = <span class="n">1000</span>, start : Int32? = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_in_batches(batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, &)<br/>find_in_batches(primary_key : Criteria, batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)<br/>find_in_batches(primary_key : Nil, batch_size : Int32 = <span class="n">1000</span>, start : Int32 = <span class="n">0</span>, &)</span>
     find_in_batches</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#find_records_by_sql(query:String,args:Array(DBAny)=[]ofDBAny)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#find_records_by_sql%28query%3AString%2Cargs%3AArray%28DBAny%29%3D%5B%5DofDBAny%29-instance-method" class="tooltip">
       <span>find_records_by_sql(query : String, args : Array(DBAny) = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>)</span>
     find_records_by_sql</a>, 
     
@@ -1756,7 +1771,7 @@
     first</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#first!-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#first%21-instance-method" class="tooltip">
       <span>first!</span>
     first!</a>, 
     
@@ -1766,12 +1781,12 @@
     ids</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#increment(fields:Hash(Symbol,_))-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#increment%28fields%3AHash%28Symbol%2C_%29%29-instance-method" class="tooltip">
       <span>increment(fields : Hash(Symbol, _))<br/>increment(**fields)</span>
     increment</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#insert(fields:Array(String),values:Array(Array(DBAny)))-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#insert%28fields%3AArray%28String%29%2Cvalues%3AArray%28Array%28DBAny%29%29%29-instance-method" class="tooltip">
       <span>insert(fields : Array(String), values : Array(Array(DBAny)))<br/>insert(options : Hash(String | Symbol, DBAny) | NamedTuple)</span>
     insert</a>, 
     
@@ -1781,17 +1796,17 @@
     last</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#last!-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#last%21-instance-method" class="tooltip">
       <span>last!</span>
     last!</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#pluck(fields:Array):Array(Array(DBAny))-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#pluck%28fields%3AArray%29%3AArray%28Array%28DBAny%29%29-instance-method" class="tooltip">
       <span>pluck(fields : Array) : Array(Array(DBAny))<br/>pluck(field : String | Symbol) : Array(DBAny)<br/>pluck(*fields : String | Symbol) : Array(Array(DBAny))<br/>pluck(**types : **T) forall T</span>
     pluck</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#results:Array(Record)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#results%3AArray%28Record%29-instance-method" class="tooltip">
       <span>results : Array(Record)</span>
     results</a>, 
     
@@ -1801,12 +1816,12 @@
     to_a</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#update(&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#update%28%26%29-instance-method" class="tooltip">
       <span>update(&)<br/>update(options : Hash)<br/>update(**options)</span>
     update</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Executables.html#upsert(fields:Array(String),values:Array(Array(DBAny)),unique_fields:Array=[]ofString)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Executables.html#upsert%28fields%3AArray%28String%29%2Cvalues%3AArray%28Array%28DBAny%29%29%2Cunique_fields%3AArray%3D%5B%5DofString%29-instance-method" class="tooltip">
       <span>upsert(fields : Array(String), values : Array(Array(DBAny)), unique_fields : Array = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)<br/>upsert(fields : Array(String), values : Array(Array(DBAny)), unique_fields : Array, &)</span>
     upsert</a>
     
@@ -1825,22 +1840,22 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/Joining.html">Jennifer::QueryBuilder::Joining</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Joining.html#join(source:Class,table_alias:String?=nil,type=:inner,relation:String?=nil,&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Joining.html#join%28source%3AClass%2Ctable_alias%3AString%3F%3Dnil%2Ctype%3D%3Ainner%2Crelation%3AString%3F%3Dnil%2C%26%29-instance-method" class="tooltip">
       <span>join(source : Class, table_alias : String? = <span class="n">nil</span>, type = <span class="n">:inner</span>, relation : String? = <span class="n">nil</span>, &)<br/>join(source : String, table_alias : String? = <span class="n">nil</span>, type = <span class="n">:inner</span>, relation : String? = <span class="n">nil</span>, &)<br/>join(source : Query, table_alias : String, type = <span class="n">:inner</span>, &)</span>
     join</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Joining.html#lateral_join(source:Query,table_alias:String,type=:inner,&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Joining.html#lateral_join%28source%3AQuery%2Ctable_alias%3AString%2Ctype%3D%3Ainner%2C%26%29-instance-method" class="tooltip">
       <span>lateral_join(source : Query, table_alias : String, type = <span class="n">:inner</span>, &)</span>
     lateral_join</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Joining.html#left_join(source:Class,table_alias:String?=nil,&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Joining.html#left_join%28source%3AClass%2Ctable_alias%3AString%3F%3Dnil%2C%26%29-instance-method" class="tooltip">
       <span>left_join(source : Class, table_alias : String? = <span class="n">nil</span>, &)<br/>left_join(source : String, table_alias : String? = <span class="n">nil</span>, &)</span>
     left_join</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Joining.html#right_join(source:Class,table_alias:String?=nil,&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Joining.html#right_join%28source%3AClass%2Ctable_alias%3AString%3F%3Dnil%2C%26%29-instance-method" class="tooltip">
       <span>right_join(source : Class, table_alias : String? = <span class="n">nil</span>, &)<br/>right_join(source : String, table_alias : String? = <span class="n">nil</span>, &)</span>
     right_join</a>
     
@@ -1859,17 +1874,17 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/Ordering.html">Jennifer::QueryBuilder::Ordering</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Ordering.html#order(opts:Hash(String,String%7CSymbol))-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Ordering.html#order%28opts%3AHash%28String%2CString%7CSymbol%29%29-instance-method" class="tooltip">
       <span>order(opts : Hash(String, String | Symbol))<br/>order(opts : Hash(Symbol, String | Symbol))<br/>order(opt : OrderExpression)<br/>order(opts : Array(OrderExpression))<br/>order(opts : Hash(String | Symbol, String | Symbol))<br/>order(**opts)<br/>order(&)</span>
     order</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Ordering.html#ordered?-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Ordering.html#ordered%3F-instance-method" class="tooltip">
       <span>ordered?</span>
     ordered?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Ordering.html#reorder(opts:Hash(String,String%7CSymbol))-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Ordering.html#reorder%28opts%3AHash%28String%2CString%7CSymbol%29%29-instance-method" class="tooltip">
       <span>reorder(opts : Hash(String, String | Symbol))<br/>reorder(opts : Hash(Symbol, String | Symbol))<br/>reorder(opt : OrderExpression)<br/>reorder(opts : Array(OrderExpression))<br/>reorder(opts : Hash(String | Symbol, String | Symbol))<br/>reorder(**opts)<br/>reorder(&)</span>
     reorder</a>
     
@@ -1888,52 +1903,52 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/Aggregations.html">Jennifer::QueryBuilder::Aggregations</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Aggregations.html#avg(field,klass:T.class):TforallT-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#avg%28field%2Cklass%3AT.class%29%3ATforallT-instance-method" class="tooltip">
       <span>avg(field, klass : <span class="t">T</span>.<span class="k">class</span>) : T forall T</span>
     avg</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Aggregations.html#count:Int32-instance-method" class="tooltip">
-      <span>count : Int32</span>
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#count%3AInt64-instance-method" class="tooltip">
+      <span>count : Int64</span>
     count</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_avg(field,klass:T.class):Array(T)forallT-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_avg%28field%2Cklass%3AT.class%29%3AArray%28T%29forallT-instance-method" class="tooltip">
       <span>group_avg(field, klass : <span class="t">T</span>.<span class="k">class</span>) : Array(T) forall T</span>
     group_avg</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_count(field)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_count%28field%29-instance-method" class="tooltip">
       <span>group_count(field)</span>
     group_count</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_max(field,klass:T.class):Array(T)forallT-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_max%28field%2Cklass%3AT.class%29%3AArray%28T%29forallT-instance-method" class="tooltip">
       <span>group_max(field, klass : <span class="t">T</span>.<span class="k">class</span>) : Array(T) forall T</span>
     group_max</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_min(field,klass:T.class):Array(T)forallT-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_min%28field%2Cklass%3AT.class%29%3AArray%28T%29forallT-instance-method" class="tooltip">
       <span>group_min(field, klass : <span class="t">T</span>.<span class="k">class</span>) : Array(T) forall T</span>
     group_min</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_sum(field,klass:T.class):Array(T)forallT-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#group_sum%28field%2Cklass%3AT.class%29%3AArray%28T%29forallT-instance-method" class="tooltip">
       <span>group_sum(field, klass : <span class="t">T</span>.<span class="k">class</span>) : Array(T) forall T</span>
     group_sum</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Aggregations.html#max(field,klass:T.class):TforallT-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#max%28field%2Cklass%3AT.class%29%3ATforallT-instance-method" class="tooltip">
       <span>max(field, klass : <span class="t">T</span>.<span class="k">class</span>) : T forall T</span>
     max</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Aggregations.html#min(field,klass:T.class):TforallT-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#min%28field%2Cklass%3AT.class%29%3ATforallT-instance-method" class="tooltip">
       <span>min(field, klass : <span class="t">T</span>.<span class="k">class</span>) : T forall T</span>
     min</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Aggregations.html#sum(field,klass:T.class):TforallT-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Aggregations.html#sum%28field%2Cklass%3AT.class%29%3ATforallT-instance-method" class="tooltip">
       <span>sum(field, klass : <span class="t">T</span>.<span class="k">class</span>) : T forall T</span>
     sum</a>
     
@@ -1952,17 +1967,17 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/Statement.html">Jennifer::QueryBuilder::Statement</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Statement.html#as_sql(sql_generator)-instance-method" class="tooltip">
-      <span>as_sql(sql_generator)</span>
+    <a href="../../Jennifer/QueryBuilder/Statement.html#as_sql%28generator%29-instance-method" class="tooltip">
+      <span>as_sql(generator)</span>
     as_sql</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Statement.html#filterable?-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Statement.html#filterable%3F-instance-method" class="tooltip">
       <span>filterable?</span>
     filterable?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Statement.html#sql_args:Array(DBAny)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Statement.html#sql_args%3AArray%28DBAny%29-instance-method" class="tooltip">
       <span>sql_args : Array(DBAny)</span>
     sql_args</a>
     
@@ -2028,7 +2043,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2044,14 +2059,13 @@
         <div class="doc">
           
           <p>Triggers <code><a href="../../Jennifer/QueryBuilder/IModelQuery.html#destroy-instance-method">#destroy</a></code> on the each matched object.</p>
-
-<pre><code class="language-crystal">Contact.all.where { _name.like('%John%') }.destroy</code></pre>
+<pre><code class="language-crystal">Contact.all.where { _name.like(&#39;%John%&#39;) }.destroy</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L95" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L95" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2061,20 +2075,19 @@
         
         def <strong>find</strong>(id)
 
-        <a class="method-permalink" href="#find(id)-instance-method">#</a>
+        <a class="method-permalink" href="#find%28id%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns record by given primary field or <code>nil</code> otherwise.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.find(<span class="n">-1</span>) <span class="c"># =&gt; nil</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2084,20 +2097,19 @@
         
         def <strong>find!</strong>(id)
 
-        <a class="method-permalink" href="#find!(id)-instance-method">#</a>
+        <a class="method-permalink" href="#find%21%28id%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns record by given primary field or raises <code><a href="../../Jennifer/RecordNotFound.html">Jennifer::RecordNotFound</a></code> exception otherwise.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.find!(<span class="n">-1</span>) <span class="c"># Jennifer::RecordNotFound</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L52" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L52" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2107,17 +2119,15 @@
         
         def <strong>find_each</strong>(batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)
 
-        <a class="method-permalink" href="#find_each(batch_size:Int32=1000,start=nil,direction:String%7CSymbol=%22asc%22,&)-instance-method">#</a>
+        <a class="method-permalink" href="#find_each%28batch_size%3AInt32%3D1000%2Cstart%3Dnil%2Cdirection%3AString%7CSymbol%3D%22asc%22%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Yields each record in batches from #find_in_batches.</p>
-
 <p>Looping through a collection of records from the database is very inefficient since it will instantiate all the objects
 at once. In that case batch processing methods allow you to work with the records
 in batches, thereby greatly reducing memory consumption.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.where { _age <span class="o">&gt;</span> <span class="n">21</span> }.find_each <span class="k">do</span> <span class="o">|</span>contact<span class="o">|</span>
   puts contact.id
 <span class="k">end</span></code></pre>
@@ -2126,7 +2136,7 @@ in batches, thereby greatly reducing memory consumption.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L86" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L86" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2136,21 +2146,18 @@ in batches, thereby greatly reducing memory consumption.</p>
         
         def <strong>find_in_batches</strong>(batch_size : Int32 = <span class="n">1000</span>, start = <span class="n">nil</span>, direction : String | Symbol = <span class="s">&quot;asc&quot;</span>, &)
 
-        <a class="method-permalink" href="#find_in_batches(batch_size:Int32=1000,start=nil,direction:String%7CSymbol=%22asc%22,&)-instance-method">#</a>
+        <a class="method-permalink" href="#find_in_batches%28batch_size%3AInt32%3D1000%2Cstart%3Dnil%2Cdirection%3AString%7CSymbol%3D%22asc%22%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Yields each batch of records that was found by the specified query.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.where { _age <span class="o">&gt;</span> <span class="n">21</span> }.find_in_batches <span class="k">do</span> <span class="o">|</span>batch<span class="o">|</span>
   batch.each <span class="k">do</span> <span class="o">|</span>contact<span class="o">|</span>
     puts contact.id
   <span class="k">end</span>
 <span class="k">end</span></code></pre>
-
 <p>To get each record one by one use #find_each instead.</p>
-
 <p><span class="flag purple">NOTE</span>  any given ordering will be ignored and query will be reordered based on the
 <em>primary_key</em> and <em>direction</em>.</p>
         </div>
@@ -2158,7 +2165,7 @@ in batches, thereby greatly reducing memory consumption.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2173,13 +2180,13 @@ in batches, thereby greatly reducing memory consumption.</p>
       
         <div class="doc">
           
-          <p><span class="flag purple">NOTE</span>  improperly detects source of #abstract_class if run sam with only Version model</p>
+          <p><span class="flag purple">NOTE</span>  improperly detects source of #abstract_class if run Sam with only Version model</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2189,22 +2196,20 @@ in batches, thereby greatly reducing memory consumption.</p>
         
         def <strong>patch</strong>(options : Hash | NamedTuple)
 
-        <a class="method-permalink" href="#patch(options:Hash%7CNamedTuple)-instance-method">#</a>
+        <a class="method-permalink" href="#patch%28options%3AHash%7CNamedTuple%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Triggers <code>#update</code> on the each matched object.</p>
-
 <p>As a result all callbacks and validations are invoked.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.where { _name <span class="o">==</span> <span class="s">&quot;Ohn&quot;</span> }.patch({name: <span class="s">&quot;John&quot;</span>})</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L106" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L106" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2214,22 +2219,20 @@ in batches, thereby greatly reducing memory consumption.</p>
         
         def <strong>patch</strong>(**opts)
 
-        <a class="method-permalink" href="#patch(**opts)-instance-method">#</a>
+        <a class="method-permalink" href="#patch%28%2A%2Aopts%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Triggers <code>#update</code> on the each matched object.</p>
-
 <p>As a result all callbacks and validations are invoked.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.where { _name <span class="o">==</span> <span class="s">&quot;Ohn&quot;</span> }.patch({name: <span class="s">&quot;John&quot;</span>})</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L111" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L111" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2239,23 +2242,21 @@ in batches, thereby greatly reducing memory consumption.</p>
         
         def <strong>patch!</strong>(options : Hash | NamedTuple)
 
-        <a class="method-permalink" href="#patch!(options:Hash%7CNamedTuple)-instance-method">#</a>
+        <a class="method-permalink" href="#patch%21%28options%3AHash%7CNamedTuple%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Triggers <code>#update!</code> on the each matched object.</p>
-
 <p>As a result all callbacks and validations are invoked. If any individual update raise exception -
 it will stop all following operations.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.where { _name <span class="o">==</span> <span class="s">&quot;Ohn&quot;</span> }.patch!({name: <span class="s">&quot;John&quot;</span>})</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L123" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L123" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2265,23 +2266,21 @@ it will stop all following operations.</p>
         
         def <strong>patch!</strong>(**opts)
 
-        <a class="method-permalink" href="#patch!(**opts)-instance-method">#</a>
+        <a class="method-permalink" href="#patch%21%28%2A%2Aopts%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Triggers <code>#update!</code> on the each matched object.</p>
-
 <p>As a result all callbacks and validations are invoked. If any individual update raise exception -
 it will stop all following operations.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.where { _name <span class="o">==</span> <span class="s">&quot;Ohn&quot;</span> }.patch!({name: <span class="s">&quot;John&quot;</span>})</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L128" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L128" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2291,22 +2290,20 @@ it will stop all following operations.</p>
         
         def <strong>relation</strong>(name, type = <span class="n">:left</span>)
 
-        <a class="method-permalink" href="#relation(name,type=:left)-instance-method">#</a>
+        <a class="method-permalink" href="#relation%28name%2Ctype%3D%3Aleft%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Joins <em>name</em> relation.</p>
-
 <p>You can specify join type passing it as 2nd argument.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.relation(<span class="n">:addresses</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2327,7 +2324,7 @@ it will stop all following operations.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/i_model_query.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/i_model_query.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>

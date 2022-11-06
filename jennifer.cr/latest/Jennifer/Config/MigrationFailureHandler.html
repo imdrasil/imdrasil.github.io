@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1283,9 +1288,12 @@
   </h2>
 
   <p>Supported migration execution failure strategies.</p>
-
-<ul><li><code><a href="../../Jennifer/Config/MigrationFailureHandler.html#ReverseDirection">MigrationFailureHandler::ReverseDirection</a></code> - will invoke an opposite method
-(<code>#down</code> for up-migration and vice versa)</li><li><code><a href="../../Jennifer/Config/MigrationFailureHandler.html#Callback">MigrationFailureHandler::Callback</a></code> - will invoke <code>#after_up_failure</code> or <code>#after_down_failure</code> method</li><li><code><a href="../../Jennifer/Config/MigrationFailureHandler.html#None">MigrationFailureHandler::None</a></code> - do nothing</li></ul>
+<ul>
+<li><code><a href="../../Jennifer/Config/MigrationFailureHandler.html#ReverseDirection">MigrationFailureHandler::ReverseDirection</a></code> - will invoke an opposite method
+(<code>#down</code> for up-migration and vice versa)</li>
+<li><code><a href="../../Jennifer/Config/MigrationFailureHandler.html#Callback">MigrationFailureHandler::Callback</a></code> - will invoke <code>#after_up_failure</code> or <code>#after_down_failure</code> method</li>
+<li><code><a href="../../Jennifer/Config/MigrationFailureHandler.html#None">MigrationFailureHandler::None</a></code> - do nothing</li>
+</ul>
 
 
 
@@ -1310,7 +1318,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/config.cr#L55" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/config.cr#L60" target="_blank">
         jennifer/config.cr
       </a>
     
@@ -1365,17 +1373,17 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#callback?-instance-method" class="signature"><strong>#callback?</strong></a>
+        <a href="#callback%3F-instance-method" class="signature"><strong>#callback?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#none?-instance-method" class="signature"><strong>#none?</strong></a>
+        <a href="#none%3F-instance-method" class="signature"><strong>#none?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#reverse_direction?-instance-method" class="signature"><strong>#reverse_direction?</strong></a>
+        <a href="#reverse_direction%3F-instance-method" class="signature"><strong>#reverse_direction?</strong></a>
         
       </li>
     
@@ -1448,13 +1456,13 @@
         
         def <strong>callback?</strong>
 
-        <a class="method-permalink" href="#callback?-instance-method">#</a>
+        <a class="method-permalink" href="#callback%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/config.cr#L57" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/config.cr#L62" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1464,13 +1472,13 @@
         
         def <strong>none?</strong>
 
-        <a class="method-permalink" href="#none?-instance-method">#</a>
+        <a class="method-permalink" href="#none%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/config.cr#L58" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/config.cr#L63" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1480,13 +1488,13 @@
         
         def <strong>reverse_direction?</strong>
 
-        <a class="method-permalink" href="#reverse_direction?-instance-method">#</a>
+        <a class="method-permalink" href="#reverse_direction%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/config.cr#L56" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/config.cr#L61" target="_blank">View source</a>]
         
       </div>
     </div>

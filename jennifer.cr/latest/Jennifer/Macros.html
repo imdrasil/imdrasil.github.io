@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1321,7 +1326,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/macros.cr#L3" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/macros.cr#L3" target="_blank">
         jennifer/macros.cr
       </a>
     
@@ -1343,7 +1348,7 @@
   <dl>
     
       <dt class="entry-const" id="Primary32">
-        <strong>Primary32</strong> = <code>{<span class="k">type</span>: <span class="t">Int32</span>, primary: <span class="n">true</span>}</code>
+        <strong>Primary32</strong> = <code>{<span class="k">type</span>: <span class="t">::</span><span class="t">Union</span>(<span class="t">Int32</span>, <span class="t">::</span><span class="t">Nil</span>), primary: <span class="n">true</span>, auto: <span class="n">true</span>}</code>
       </dt>
       
       <dd class="entry-const-doc">
@@ -1352,7 +1357,7 @@
       
     
       <dt class="entry-const" id="Primary64">
-        <strong>Primary64</strong> = <code>{<span class="k">type</span>: <span class="t">Int64</span>, primary: <span class="n">true</span>}</code>
+        <strong>Primary64</strong> = <code>{<span class="k">type</span>: <span class="t">::</span><span class="t">Union</span>(<span class="t">Int64</span>, <span class="t">::</span><span class="t">Nil</span>), primary: <span class="n">true</span>, auto: <span class="n">true</span>}</code>
       </dt>
       
       <dd class="entry-const-doc">

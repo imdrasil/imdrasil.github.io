@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1298,7 +1303,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/create_foreign_key.cr#L6" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/create_foreign_key.cr#L6" target="_blank">
         jennifer/migration/table_builder/create_foreign_key.cr
       </a>
     
@@ -1320,7 +1325,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(adapter,from_table,to_table,column,primary_key,name,on_update,on_delete)-class-method" class="signature"><strong>.new</strong>(adapter, from_table, to_table, column, primary_key, name, on_update, on_delete)</a>
+        <a href="#new%28adapter%2Cfrom_table%3AString%2Cto_table%3AString%2Ccolumn%2Cprimary_key%2Cname%2Con_update%3ASymbol%2Con_delete%3ASymbol%29-class-method" class="signature"><strong>.new</strong>(adapter, from_table : String, to_table : String, column, primary_key, name, on_update : Symbol, on_delete : Symbol)</a>
         
       </li>
     
@@ -1341,7 +1346,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#column:String-instance-method" class="signature"><strong>#column</strong> : String</a>
+        <a href="#column%3AString-instance-method" class="signature"><strong>#column</strong> : String</a>
         
       </li>
     
@@ -1353,22 +1358,22 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#from_table:String-instance-method" class="signature"><strong>#from_table</strong> : String</a>
+        <a href="#from_table%3AString-instance-method" class="signature"><strong>#from_table</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#on_delete:Symbol-instance-method" class="signature"><strong>#on_delete</strong> : Symbol</a>
+        <a href="#on_delete%3ASymbol-instance-method" class="signature"><strong>#on_delete</strong> : Symbol</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#on_update:Symbol-instance-method" class="signature"><strong>#on_update</strong> : Symbol</a>
+        <a href="#on_update%3ASymbol-instance-method" class="signature"><strong>#on_update</strong> : Symbol</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#primary_key:String-instance-method" class="signature"><strong>#primary_key</strong> : String</a>
+        <a href="#primary_key%3AString-instance-method" class="signature"><strong>#primary_key</strong> : String</a>
         
       </li>
     
@@ -1380,7 +1385,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#to_table:String-instance-method" class="signature"><strong>#to_table</strong> : String</a>
+        <a href="#to_table%3AString-instance-method" class="signature"><strong>#to_table</strong> : String</a>
         
       </li>
     
@@ -1397,12 +1402,12 @@
   <h3>Instance methods inherited from class <code><a href="../../../Jennifer/Migration/TableBuilder/Base.html">Jennifer::Migration::TableBuilder::Base</a></code></h3>
   
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#adapter:Adapter::Base-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#adapter%3AAdapter%3A%3ABase-instance-method" class="tooltip">
       <span>adapter : Adapter::Base</span>
     adapter</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#column_exists?(*args,**options)-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
       <span>column_exists?(*args, **options)<br/>column_exists?(*args, **options, &)</span>
     column_exists?</a>, 
     
@@ -1412,12 +1417,12 @@
     explain</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#index_exists?(*args,**options)-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#index_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
       <span>index_exists?(*args, **options)<br/>index_exists?(*args, **options, &)</span>
     index_exists?</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#name:String-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#name%3AString-instance-method" class="tooltip">
       <span>name : String</span>
     name</a>, 
     
@@ -1432,12 +1437,12 @@
     process_commands</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#schema_processor(*args,**options)-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#schema_processor%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
       <span>schema_processor(*args, **options)<br/>schema_processor(*args, **options, &)</span>
     schema_processor</a>, 
     
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#table_exists?(*args,**options)-instance-method" class="tooltip">
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#table_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
       <span>table_exists?(*args, **options)<br/>table_exists?(*args, **options, &)</span>
     table_exists?</a>
     
@@ -1449,8 +1454,8 @@
   <h3>Constructor methods inherited from class <code><a href="../../../Jennifer/Migration/TableBuilder/Base.html">Jennifer::Migration::TableBuilder::Base</a></code></h3>
   
   
-    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#new(adapter,name:String%7CSymbol)-class-method" class="tooltip">
-      <span>new(adapter, name : String | Symbol)</span>
+    <a href="../../../Jennifer/Migration/TableBuilder/Base.html#new%28adapter%3AJennifer%3A%3AAdapter%3A%3ABase%2Cname%3AString%7CSymbol%29-class-method" class="tooltip">
+      <span>new(adapter : Jennifer::Adapter::Base, name : String | Symbol)</span>
     new</a>
     
   
@@ -1492,18 +1497,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(adapter,from_table,to_table,column,primary_key,name,on_update,on_delete)-class-method">
+    <div class="entry-detail" id="new(adapter,from_table:String,to_table:String,column,primary_key,name,on_update:Symbol,on_delete:Symbol)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(adapter, from_table, to_table, column, primary_key, name, on_update, on_delete)
+        def self.<strong>new</strong>(adapter, from_table : String, to_table : String, column, primary_key, name, on_update : Symbol, on_delete : Symbol)
 
-        <a class="method-permalink" href="#new(adapter,from_table,to_table,column,primary_key,name,on_update,on_delete)-class-method">#</a>
+        <a class="method-permalink" href="#new%28adapter%2Cfrom_table%3AString%2Cto_table%3AString%2Ccolumn%2Cprimary_key%2Cname%2Con_update%3ASymbol%2Con_delete%3ASymbol%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/create_foreign_key.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/create_foreign_key.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1527,13 +1532,13 @@
         
         def <strong>column</strong> : String
 
-        <a class="method-permalink" href="#column:String-instance-method">#</a>
+        <a class="method-permalink" href="#column%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/create_foreign_key.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/create_foreign_key.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1558,7 +1563,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/create_foreign_key.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/create_foreign_key.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1568,13 +1573,13 @@
         
         def <strong>from_table</strong> : String
 
-        <a class="method-permalink" href="#from_table:String-instance-method">#</a>
+        <a class="method-permalink" href="#from_table%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/create_foreign_key.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/create_foreign_key.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1584,13 +1589,13 @@
         
         def <strong>on_delete</strong> : Symbol
 
-        <a class="method-permalink" href="#on_delete:Symbol-instance-method">#</a>
+        <a class="method-permalink" href="#on_delete%3ASymbol-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/create_foreign_key.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/create_foreign_key.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1600,13 +1605,13 @@
         
         def <strong>on_update</strong> : Symbol
 
-        <a class="method-permalink" href="#on_update:Symbol-instance-method">#</a>
+        <a class="method-permalink" href="#on_update%3ASymbol-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/create_foreign_key.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/create_foreign_key.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1616,13 +1621,13 @@
         
         def <strong>primary_key</strong> : String
 
-        <a class="method-permalink" href="#primary_key:String-instance-method">#</a>
+        <a class="method-permalink" href="#primary_key%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/create_foreign_key.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/create_foreign_key.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1647,7 +1652,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/create_foreign_key.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/create_foreign_key.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1657,13 +1662,13 @@
         
         def <strong>to_table</strong> : String
 
-        <a class="method-permalink" href="#to_table:String-instance-method">#</a>
+        <a class="method-permalink" href="#to_table%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/migration/table_builder/create_foreign_key.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/migration/table_builder/create_foreign_key.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>

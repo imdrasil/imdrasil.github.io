@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1285,10 +1290,8 @@
   </h2>
 
   <p>General data structure for the raw data retrieved for the DB.</p>
-
-<p>Dynamically generates getters using <code><a href="../Jennifer/Record.html#method_missing(call)-macro">.method_missing</a></code>. If class <code>T</code> is passed
+<p>Dynamically generates getters using <code><a href="../Jennifer/Record.html#method_missing%28call%29-macro">.method_missing</a></code>. If class <code>T</code> is passed
 as an argument - return value is automatically casted to it.</p>
-
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;users&quot;</span>].first.name(<span class="t">String</span>)</code></pre>
 
 
@@ -1314,7 +1317,7 @@ as an argument - return value is automatically casted to it.</p>
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L10" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L10" target="_blank">
         jennifer/adapter/record.cr
       </a>
     
@@ -1336,7 +1339,7 @@ as an argument - return value is automatically casted to it.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(attributes:Hash(String,DBAny))-class-method" class="signature"><strong>.new</strong>(attributes : Hash(String, DBAny))</a>
+        <a href="#new%28attributes%3AHash%28String%2CDBAny%29%29-class-method" class="signature"><strong>.new</strong>(attributes : Hash(String, DBAny))</a>
         
       </li>
     
@@ -1362,35 +1365,35 @@ as an argument - return value is automatically casted to it.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#[](name:Symbol%7CString)-instance-method" class="signature"><strong>#[]</strong>(name : Symbol | String)</a>
+        <a href="#%5B%5D%28name%3ASymbol%7CString%29-instance-method" class="signature"><strong>#[]</strong>(name : Symbol | String)</a>
         
           <div class="summary"><p>Alias for #attribute.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#attribute(name:String%7CSymbol,type:T.class):TforallT-instance-method" class="signature"><strong>#attribute</strong>(name : String | Symbol, type : <span class="t">T</span>.<span class="k">class</span>) : T forall T</a>
+        <a href="#attribute%28name%3AString%7CSymbol%2Ctype%3AT.class%29%3ATforallT-instance-method" class="signature"><strong>#attribute</strong>(name : String | Symbol, type : <span class="t">T</span>.<span class="k">class</span>) : T forall T</a>
         
           <div class="summary"><p>Returns casted value of attribute <em>name</em> to the type <em>type</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#attribute(name:String)-instance-method" class="signature"><strong>#attribute</strong>(name : String)</a>
+        <a href="#attribute%28name%3AString%29-instance-method" class="signature"><strong>#attribute</strong>(name : String)</a>
         
           <div class="summary"><p>Returns value by attribute <em>name</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#attribute(name:Symbol)-instance-method" class="signature"><strong>#attribute</strong>(name : Symbol)</a>
+        <a href="#attribute%28name%3ASymbol%29-instance-method" class="signature"><strong>#attribute</strong>(name : Symbol)</a>
         
           <div class="summary"><p>Returns value by attribute <em>name</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#attributes:Hash(String,Array(Char)%7CArray(Float32)%7CArray(Float64)%7CArray(Int16)%7CArray(Int32)%7CArray(Int64)%7CArray(String)%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON::Any%7CPG::Geo::Box%7CPG::Geo::Circle%7CPG::Geo::Line%7CPG::Geo::LineSegment%7CPG::Geo::Path%7CPG::Geo::Point%7CPG::Geo::Polygon%7CPG::Numeric%7CSlice(UInt8)%7CString%7CTime%7CTime::Span%7CUInt32%7CUUID%7CNil)-instance-method" class="signature"><strong>#attributes</strong> : Hash(String, Array(Char) | Array(Float32) | Array(Float64) | Array(Int16) | Array(Int32) | Array(Int64) | Array(String) | Bool | Char | Float32 | Float64 | Int16 | Int32 | Int64 | Int8 | JSON::Any | PG::Geo::Box | PG::Geo::Circle | PG::Geo::Line | PG::Geo::LineSegment | PG::Geo::Path | PG::Geo::Point | PG::Geo::Polygon | PG::Numeric | Slice(UInt8) | String | Time | Time::Span | UInt32 | UUID | Nil)</a>
+        <a href="#attributes%3AHash%28String%2CArray%28Char%29%7CArray%28Float32%29%7CArray%28Float64%29%7CArray%28Int16%29%7CArray%28Int32%29%7CArray%28Int64%29%7CArray%28String%29%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON%3A%3AAny%7CJSON%3A%3APullParser%7CPG%3A%3AGeo%3A%3ABox%7CPG%3A%3AGeo%3A%3ACircle%7CPG%3A%3AGeo%3A%3ALine%7CPG%3A%3AGeo%3A%3ALineSegment%7CPG%3A%3AGeo%3A%3APath%7CPG%3A%3AGeo%3A%3APoint%7CPG%3A%3AGeo%3A%3APolygon%7CPG%3A%3ANumeric%7CSlice%28UInt8%29%7CString%7CTime%7CTime%3A%3ASpan%7CUInt32%7CUUID%7CNil%29-instance-method" class="signature"><strong>#attributes</strong> : Hash(String, Array(Char) | Array(Float32) | Array(Float64) | Array(Int16) | Array(Int32) | Array(Int64) | Array(String) | Bool | Char | Float32 | Float64 | Int16 | Int32 | Int64 | Int8 | JSON::Any | JSON::PullParser | PG::Geo::Box | PG::Geo::Circle | PG::Geo::Line | PG::Geo::LineSegment | PG::Geo::Path | PG::Geo::Point | PG::Geo::Polygon | PG::Numeric | Slice(UInt8) | String | Time | Time::Span | UInt32 | UUID | Nil)</a>
         
       </li>
     
@@ -1402,31 +1405,31 @@ as an argument - return value is automatically casted to it.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#inspect(io):Nil-instance-method" class="signature"><strong>#inspect</strong>(io) : Nil</a>
+        <a href="#inspect%28io%29%3ANil-instance-method" class="signature"><strong>#inspect</strong>(io) : Nil</a>
         
           <div class="summary"><p>Returns a string containing a human-readable representation of object.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_json(only:Array(String)?=nil,except:Array(String)?=nil,&)-instance-method" class="signature"><strong>#to_json</strong>(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)</a>
+        <a href="#to_json%28only%3AArray%28String%29%3F%3Dnil%2Cexcept%3AArray%28String%29%3F%3Dnil%2C%26%29-instance-method" class="signature"><strong>#to_json</strong>(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)</a>
         
           <div class="summary"><p>Returns a JSON string representing data set.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_json(json:JSON::Builder)-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
+        <a href="#to_json%28json%3AJSON%3A%3ABuilder%29-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_json(json:JSON::Builder,only:Array(String)?=nil,except:Array(String)?=nil,&)-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder, only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)</a>
+        <a href="#to_json%28json%3AJSON%3A%3ABuilder%2Conly%3AArray%28String%29%3F%3Dnil%2Cexcept%3AArray%28String%29%3F%3Dnil%2C%26%29-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder, only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_json(only:Array(String)?=nil,except:Array(String)?=nil)-instance-method" class="signature"><strong>#to_json</strong>(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>)</a>
+        <a href="#to_json%28only%3AArray%28String%29%3F%3Dnil%2Cexcept%3AArray%28String%29%3F%3Dnil%29-instance-method" class="signature"><strong>#to_json</strong>(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -1445,7 +1448,7 @@ as an argument - return value is automatically casted to it.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#method_missing(call)-macro" class="signature"><strong>method_missing</strong>(call)</a>
+        <a href="#method_missing%28call%29-macro" class="signature"><strong>method_missing</strong>(call)</a>
         
       </li>
     
@@ -1502,13 +1505,13 @@ as an argument - return value is automatically casted to it.</p>
         
         def self.<strong>new</strong>(attributes : Hash(String, <a href="../Jennifer/DBAny.html">DBAny</a>))
 
-        <a class="method-permalink" href="#new(attributes:Hash(String,DBAny))-class-method">#</a>
+        <a class="method-permalink" href="#new%28attributes%3AHash%28String%2CDBAny%29%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1524,7 +1527,7 @@ as an argument - return value is automatically casted to it.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1548,7 +1551,7 @@ as an argument - return value is automatically casted to it.</p>
         
         def <strong>[]</strong>(name : Symbol | String)
 
-        <a class="method-permalink" href="#[](name:Symbol%7CString)-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%28name%3ASymbol%7CString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1559,7 +1562,7 @@ as an argument - return value is automatically casted to it.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L26" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1569,7 +1572,7 @@ as an argument - return value is automatically casted to it.</p>
         
         def <strong>attribute</strong>(name : String | Symbol, type : <span class="t">T</span>.<span class="k">class</span>) : T forall T
 
-        <a class="method-permalink" href="#attribute(name:String%7CSymbol,type:T.class):TforallT-instance-method">#</a>
+        <a class="method-permalink" href="#attribute%28name%3AString%7CSymbol%2Ctype%3AT.class%29%3ATforallT-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1580,7 +1583,7 @@ as an argument - return value is automatically casted to it.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L43" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L43" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1590,7 +1593,7 @@ as an argument - return value is automatically casted to it.</p>
         
         def <strong>attribute</strong>(name : String)
 
-        <a class="method-permalink" href="#attribute(name:String)-instance-method">#</a>
+        <a class="method-permalink" href="#attribute%28name%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1601,7 +1604,7 @@ as an argument - return value is automatically casted to it.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1611,7 +1614,7 @@ as an argument - return value is automatically casted to it.</p>
         
         def <strong>attribute</strong>(name : Symbol)
 
-        <a class="method-permalink" href="#attribute(name:Symbol)-instance-method">#</a>
+        <a class="method-permalink" href="#attribute%28name%3ASymbol%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1622,23 +1625,23 @@ as an argument - return value is automatically casted to it.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L38" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="attributes:Hash(String,Array(Char)|Array(Float32)|Array(Float64)|Array(Int16)|Array(Int32)|Array(Int64)|Array(String)|Bool|Char|Float32|Float64|Int16|Int32|Int64|Int8|JSON::Any|PG::Geo::Box|PG::Geo::Circle|PG::Geo::Line|PG::Geo::LineSegment|PG::Geo::Path|PG::Geo::Point|PG::Geo::Polygon|PG::Numeric|Slice(UInt8)|String|Time|Time::Span|UInt32|UUID|Nil)-instance-method">
+    <div class="entry-detail" id="attributes:Hash(String,Array(Char)|Array(Float32)|Array(Float64)|Array(Int16)|Array(Int32)|Array(Int64)|Array(String)|Bool|Char|Float32|Float64|Int16|Int32|Int64|Int8|JSON::Any|JSON::PullParser|PG::Geo::Box|PG::Geo::Circle|PG::Geo::Line|PG::Geo::LineSegment|PG::Geo::Path|PG::Geo::Point|PG::Geo::Polygon|PG::Numeric|Slice(UInt8)|String|Time|Time::Span|UInt32|UUID|Nil)-instance-method">
       <div class="signature">
         
-        def <strong>attributes</strong> : Hash(String, Array(<a href="../Char.html">Char</a>) | Array(Float32) | Array(Float64) | Array(Int16) | Array(Int32) | Array(Int64) | Array(String) | Bool | <a href="../Char.html">Char</a> | Float32 | Float64 | Int16 | Int32 | Int64 | Int8 | JSON::Any | PG::Geo::Box | PG::Geo::Circle | PG::Geo::Line | PG::Geo::LineSegment | PG::Geo::Path | PG::Geo::Point | PG::Geo::Polygon | PG::Numeric | <a href="../Slice.html">Slice(UInt8)</a> | String | Time | Time::Span | UInt32 | UUID | Nil)
+        def <strong>attributes</strong> : Hash(String, Array(<a href="../Char.html">Char</a>) | Array(Float32) | Array(Float64) | Array(Int16) | Array(Int32) | Array(Int64) | Array(String) | Bool | <a href="../Char.html">Char</a> | Float32 | Float64 | Int16 | Int32 | Int64 | Int8 | JSON::Any | JSON::PullParser | PG::Geo::Box | PG::Geo::Circle | PG::Geo::Line | PG::Geo::LineSegment | PG::Geo::Path | PG::Geo::Point | PG::Geo::Polygon | PG::Numeric | <a href="../Slice.html">Slice(UInt8)</a> | String | Time | Time::Span | UInt32 | UUID | Nil)
 
-        <a class="method-permalink" href="#attributes:Hash(String,Array(Char)%7CArray(Float32)%7CArray(Float64)%7CArray(Int16)%7CArray(Int32)%7CArray(Int64)%7CArray(String)%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON::Any%7CPG::Geo::Box%7CPG::Geo::Circle%7CPG::Geo::Line%7CPG::Geo::LineSegment%7CPG::Geo::Path%7CPG::Geo::Point%7CPG::Geo::Polygon%7CPG::Numeric%7CSlice(UInt8)%7CString%7CTime%7CTime::Span%7CUInt32%7CUUID%7CNil)-instance-method">#</a>
+        <a class="method-permalink" href="#attributes%3AHash%28String%2CArray%28Char%29%7CArray%28Float32%29%7CArray%28Float64%29%7CArray%28Int16%29%7CArray%28Int32%29%7CArray%28Int64%29%7CArray%28String%29%7CBool%7CChar%7CFloat32%7CFloat64%7CInt16%7CInt32%7CInt64%7CInt8%7CJSON%3A%3AAny%7CJSON%3A%3APullParser%7CPG%3A%3AGeo%3A%3ABox%7CPG%3A%3AGeo%3A%3ACircle%7CPG%3A%3AGeo%3A%3ALine%7CPG%3A%3AGeo%3A%3ALineSegment%7CPG%3A%3AGeo%3A%3APath%7CPG%3A%3AGeo%3A%3APoint%7CPG%3A%3AGeo%3A%3APolygon%7CPG%3A%3ANumeric%7CSlice%28UInt8%29%7CString%7CTime%7CTime%3A%3ASpan%7CUInt32%7CUUID%7CNil%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1659,7 +1662,7 @@ as an argument - return value is automatically casted to it.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1669,7 +1672,7 @@ as an argument - return value is automatically casted to it.</p>
         
         def <strong>inspect</strong>(io) : Nil
 
-        <a class="method-permalink" href="#inspect(io):Nil-instance-method">#</a>
+        <a class="method-permalink" href="#inspect%28io%29%3ANil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1680,7 +1683,7 @@ as an argument - return value is automatically casted to it.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1690,20 +1693,19 @@ as an argument - return value is automatically casted to it.</p>
         
         def <strong>to_json</strong>(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)
 
-        <a class="method-permalink" href="#to_json(only:Array(String)?=nil,except:Array(String)?=nil,&)-instance-method">#</a>
+        <a class="method-permalink" href="#to_json%28only%3AArray%28String%29%3F%3Dnil%2Cexcept%3AArray%28String%29%3F%3Dnil%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns a JSON string representing data set.</p>
-
 <p>For more details see <code>Resource#to_json</code>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L66" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L66" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1713,13 +1715,13 @@ as an argument - return value is automatically casted to it.</p>
         
         def <strong>to_json</strong>(json : JSON::Builder)
 
-        <a class="method-permalink" href="#to_json(json:JSON::Builder)-instance-method">#</a>
+        <a class="method-permalink" href="#to_json%28json%3AJSON%3A%3ABuilder%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L72" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L72" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1729,13 +1731,13 @@ as an argument - return value is automatically casted to it.</p>
         
         def <strong>to_json</strong>(json : JSON::Builder, only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)
 
-        <a class="method-permalink" href="#to_json(json:JSON::Builder,only:Array(String)?=nil,except:Array(String)?=nil,&)-instance-method">#</a>
+        <a class="method-permalink" href="#to_json%28json%3AJSON%3A%3ABuilder%2Conly%3AArray%28String%29%3F%3Dnil%2Cexcept%3AArray%28String%29%3F%3Dnil%2C%26%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L76" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L76" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1745,13 +1747,13 @@ as an argument - return value is automatically casted to it.</p>
         
         def <strong>to_json</strong>(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#to_json(only:Array(String)?=nil,except:Array(String)?=nil)-instance-method">#</a>
+        <a class="method-permalink" href="#to_json%28only%3AArray%28String%29%3F%3Dnil%2Cexcept%3AArray%28String%29%3F%3Dnil%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L93" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L93" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1773,13 +1775,13 @@ as an argument - return value is automatically casted to it.</p>
         
         macro <strong>method_missing</strong>(call)
 
-        <a class="method-permalink" href="#method_missing(call)-macro">#</a>
+        <a class="method-permalink" href="#method_missing%28call%29-macro">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/record.cr#L99" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/record.cr#L99" target="_blank">View source</a>]
         
       </div>
     </div>

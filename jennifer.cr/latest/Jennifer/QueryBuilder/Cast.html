@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1309,7 +1314,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L3" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L3" target="_blank">
         jennifer/query_builder/cast.cr
       </a>
     
@@ -1331,7 +1336,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(expression,type)-class-method" class="signature"><strong>.new</strong>(expression, type)</a>
+        <a href="#new%28expression%3AJennifer%3A%3AQueryBuilder%3A%3ASQLNode%2Ctype%3AString%29-class-method" class="signature"><strong>.new</strong>(expression : Jennifer::QueryBuilder::SQLNode, type : String)</a>
         
       </li>
     
@@ -1352,29 +1357,29 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#alias_tables(*args,**options)-instance-method" class="signature"><strong>#alias_tables</strong>(*args, **options)</a>
+        <a href="#alias_tables%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#alias_tables</strong>(*args, **options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#alias_tables(*args,**options,&)-instance-method" class="signature"><strong>#alias_tables</strong>(*args, **options, &)</a>
+        <a href="#alias_tables%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#alias_tables</strong>(*args, **options, &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#as_sql(generator)-instance-method" class="signature"><strong>#as_sql</strong>(generator)</a>
+        <a href="#as_sql%28generator%29-instance-method" class="signature"><strong>#as_sql</strong>(generator)</a>
         
-          <div class="summary"><p>Converts node to SQL using <em>sql_generator</em> SQLGenerator.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#change_table(*args,**options)-instance-method" class="signature"><strong>#change_table</strong>(*args, **options)</a>
+          <div class="summary"><p>Converts node to SQL using <em>generator</em> SQLGenerator.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#change_table(*args,**options,&)-instance-method" class="signature"><strong>#change_table</strong>(*args, **options, &)</a>
+        <a href="#change_table%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#change_table</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#change_table%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#change_table</strong>(*args, **options, &)</a>
         
       </li>
     
@@ -1386,37 +1391,37 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#expression:SQLNode-instance-method" class="signature"><strong>#expression</strong> : SQLNode</a>
+        <a href="#expression%3ASQLNode-instance-method" class="signature"><strong>#expression</strong> : SQLNode</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#filterable?(*args,**options)-instance-method" class="signature"><strong>#filterable?</strong>(*args, **options)</a>
+        <a href="#filterable%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#filterable?</strong>(*args, **options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#filterable?(*args,**options,&)-instance-method" class="signature"><strong>#filterable?</strong>(*args, **options, &)</a>
+        <a href="#filterable%3F%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#filterable?</strong>(*args, **options, &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_relation(*args,**options)-instance-method" class="signature"><strong>#set_relation</strong>(*args, **options)</a>
+        <a href="#set_relation%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#set_relation</strong>(*args, **options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_relation(*args,**options,&)-instance-method" class="signature"><strong>#set_relation</strong>(*args, **options, &)</a>
+        <a href="#set_relation%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#set_relation</strong>(*args, **options, &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#sql_args(*args,**options):Array(DBAny)-instance-method" class="signature"><strong>#sql_args</strong>(*args, **options) : Array(DBAny)</a>
+        <a href="#sql_args%28%2Aargs%2C%2A%2Aoptions%29%3AArray%28DBAny%29-instance-method" class="signature"><strong>#sql_args</strong>(*args, **options) : Array(DBAny)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#type:String-instance-method" class="signature"><strong>#type</strong> : String</a>
+        <a href="#type%3AString-instance-method" class="signature"><strong>#type</strong> : String</a>
         
       </li>
     
@@ -1433,7 +1438,7 @@
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/QueryBuilder/SQLNode.html">Jennifer::QueryBuilder::SQLNode</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/SQLNode.html#alias_tables(aliases)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#alias_tables%28aliases%29-instance-method" class="tooltip">
       <span>alias_tables(aliases)</span>
     alias_tables</a>, 
     
@@ -1443,17 +1448,17 @@
     as_sql</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/SQLNode.html#change_table(old_name,new_name)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#change_table%28old_name%2Cnew_name%29-instance-method" class="tooltip">
       <span>change_table(old_name, new_name)</span>
     change_table</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/SQLNode.html#eql?(other)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#eql%3F%28other%29-instance-method" class="tooltip">
       <span>eql?(other)</span>
     eql?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/SQLNode.html#set_relation(table,name)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/SQLNode.html#set_relation%28table%2Cname%29-instance-method" class="tooltip">
       <span>set_relation(table, name)</span>
     set_relation</a>, 
     
@@ -1477,17 +1482,17 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/Statement.html">Jennifer::QueryBuilder::Statement</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/Statement.html#as_sql(sql_generator)-instance-method" class="tooltip">
-      <span>as_sql(sql_generator)</span>
+    <a href="../../Jennifer/QueryBuilder/Statement.html#as_sql%28generator%29-instance-method" class="tooltip">
+      <span>as_sql(generator)</span>
     as_sql</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Statement.html#filterable?-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Statement.html#filterable%3F-instance-method" class="tooltip">
       <span>filterable?</span>
     filterable?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/Statement.html#sql_args:Array(DBAny)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/Statement.html#sql_args%3AArray%28DBAny%29-instance-method" class="tooltip">
       <span>sql_args : Array(DBAny)</span>
     sql_args</a>
     
@@ -1533,18 +1538,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(expression,type)-class-method">
+    <div class="entry-detail" id="new(expression:Jennifer::QueryBuilder::SQLNode,type:String)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(expression, type)
+        def self.<strong>new</strong>(expression : <a href="../../Jennifer/QueryBuilder/SQLNode.html">Jennifer::QueryBuilder::SQLNode</a>, type : String)
 
-        <a class="method-permalink" href="#new(expression,type)-class-method">#</a>
+        <a class="method-permalink" href="#new%28expression%3AJennifer%3A%3AQueryBuilder%3A%3ASQLNode%2Ctype%3AString%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1568,13 +1573,13 @@
         
         def <strong>alias_tables</strong>(*args, **options)
 
-        <a class="method-permalink" href="#alias_tables(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#alias_tables%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1584,13 +1589,13 @@
         
         def <strong>alias_tables</strong>(*args, **options, &)
 
-        <a class="method-permalink" href="#alias_tables(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#alias_tables%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1600,7 +1605,7 @@
         
         def <strong>as_sql</strong>(generator)
 
-        <a class="method-permalink" href="#as_sql(generator)-instance-method">#</a>
+        <a class="method-permalink" href="#as_sql%28generator%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1609,13 +1614,13 @@
               Description copied from module <a href="../../Jennifer/QueryBuilder/Statement.html">Jennifer::QueryBuilder::Statement</a>
             </div>
           
-          <p>Converts node to SQL using <em>sql_generator</em> SQLGenerator.</p>
+          <p>Converts node to SQL using <em>generator</em> SQLGenerator.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1625,13 +1630,13 @@
         
         def <strong>change_table</strong>(*args, **options)
 
-        <a class="method-permalink" href="#change_table(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#change_table%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1641,13 +1646,13 @@
         
         def <strong>change_table</strong>(*args, **options, &)
 
-        <a class="method-permalink" href="#change_table(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#change_table%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1668,7 +1673,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1678,13 +1683,13 @@
         
         def <strong>expression</strong> : <a href="../../Jennifer/QueryBuilder/SQLNode.html">SQLNode</a>
 
-        <a class="method-permalink" href="#expression:SQLNode-instance-method">#</a>
+        <a class="method-permalink" href="#expression%3ASQLNode-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1694,13 +1699,13 @@
         
         def <strong>filterable?</strong>(*args, **options)
 
-        <a class="method-permalink" href="#filterable?(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#filterable%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1710,13 +1715,13 @@
         
         def <strong>filterable?</strong>(*args, **options, &)
 
-        <a class="method-permalink" href="#filterable?(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#filterable%3F%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1726,13 +1731,13 @@
         
         def <strong>set_relation</strong>(*args, **options)
 
-        <a class="method-permalink" href="#set_relation(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#set_relation%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1742,13 +1747,13 @@
         
         def <strong>set_relation</strong>(*args, **options, &)
 
-        <a class="method-permalink" href="#set_relation(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#set_relation%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1758,13 +1763,13 @@
         
         def <strong>sql_args</strong>(*args, **options) : Array(<a href="../../Jennifer/DBAny.html">DBAny</a>)
 
-        <a class="method-permalink" href="#sql_args(*args,**options):Array(DBAny)-instance-method">#</a>
+        <a class="method-permalink" href="#sql_args%28%2Aargs%2C%2A%2Aoptions%29%3AArray%28DBAny%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1774,13 +1779,13 @@
         
         def <strong>type</strong> : String
 
-        <a class="method-permalink" href="#type:String-instance-method">#</a>
+        <a class="method-permalink" href="#type%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/cast.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/cast.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>

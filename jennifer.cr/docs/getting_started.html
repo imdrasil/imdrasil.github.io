@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/getting_started.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/getting_started.html","headline":"Imdrasil Homebrew Stuff","@context":"https://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/getting_started.html","description":"Personal site","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -35,55 +35,55 @@
     <nav class="site-nav">
       <div class="trigger">
         
-          <a class="page-link" href="./timestamps">Timestamps</a>
-        
-          <a class="page-link" href="./view">Views</a>
-        
-          <a class="page-link" href="./query_dsl">Query DSL</a>
-        
-          <a class="page-link" href="./getting_started">Getting started</a>
-        
-          <a class="page-link" href="./configuration">Configuration</a>
-        
-          <a class="page-link" href="./time">Time</a>
-        
           <a class="page-link" href="./aggregation">Aggregations</a>
-        
-          <a class="page-link" href="./record">Record</a>
-        
-          <a class="page-link" href="./callbacks">Callbacks</a>
-        
-          <a class="page-link" href="./index">Jennifer Documentation</a>
-        
-          <a class="page-link" href="./model_sti">STI</a>
-        
-          <a class="page-link" href="./model_mapping">Mapping</a>
-        
-          <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
-        
-          <a class="page-link" href="./crud">CRUD</a>
-        
-          <a class="page-link" href="./model_scopes">Scopes</a>
-        
-          <a class="page-link" href="./relations">Relations</a>
-        
-          <a class="page-link" href="./validation">Validation</a>
-        
-          <a class="page-link" href="./eager_loading">Eager Loading</a>
-        
-          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
-        
-          <a class="page-link" href="./migration">Migration</a>
-        
-          <a class="page-link" href="./pagination_and_ordering">Pagination &amp; Ordering</a>
-        
-          <a class="page-link" href="./command_line">Command Line</a>
-        
-          <a class="page-link" href="./internationalization">Internationalization</a>
         
           <a class="page-link" href="./authentication">Authentication</a>
         
+          <a class="page-link" href="./callbacks">Callbacks</a>
+        
+          <a class="page-link" href="./command_line">Command Line</a>
+        
+          <a class="page-link" href="./configuration">Configuration</a>
+        
+          <a class="page-link" href="./crud">CRUD</a>
+        
+          <a class="page-link" href="./eager_loading">Eager Loading</a>
+        
+          <a class="page-link" href="./getting_started">Getting started</a>
+        
+          <a class="page-link" href="./index">Jennifer Documentation</a>
+        
+          <a class="page-link" href="./internationalization">Internationalization</a>
+        
+          <a class="page-link" href="./migration">Migration</a>
+        
+          <a class="page-link" href="./model_mapping">Mapping</a>
+        
+          <a class="page-link" href="./model_scopes">Scopes</a>
+        
+          <a class="page-link" href="./model_sti">STI</a>
+        
+          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
+        
+          <a class="page-link" href="./pagination_and_ordering">Pagination &amp; Ordering</a>
+        
+          <a class="page-link" href="./query_dsl">Query DSL</a>
+        
+          <a class="page-link" href="./record">Record</a>
+        
+          <a class="page-link" href="./relations">Relationships</a>
+        
           <a class="page-link" href="./serialization">Serialization</a>
+        
+          <a class="page-link" href="./time">Time</a>
+        
+          <a class="page-link" href="./timestamps">Timestamps</a>
+        
+          <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
+        
+          <a class="page-link" href="./validation">Validation</a>
+        
+          <a class="page-link" href="./view">Views</a>
         
       </div>
     </nav>
@@ -99,7 +99,7 @@
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.11.1"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.12.0"</span>
 </code></pre></div></div>
 
 <p>For MySQL and PostgreSQL you need to add related driver shard - <a href="https://github.com/crystal-lang/crystal-mysql">crystal-mysql</a> or <a href="https://github.com/will/crystal-pg">crystal-pg</a>:</p>
@@ -107,14 +107,14 @@
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.11.1"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.12.0"</span>
   <span class="na">pg</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">will/crystal-pg</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.23.2"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.26.0"</span>
   <span class="c1"># or for mysql</span>
   <span class="na">crystal-mysql</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">crystal-lang/crystal-mysql</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.13.0"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.14.0"</span>
 </code></pre></div></div>
 
 <p>If you want to use SQLite3 - add <a href="https://github.com/imdrasil/jennifer_sqlite3_adapter">Jennifer SQLite3 <strong>adapter</strong></a>:</p>
@@ -122,7 +122,7 @@
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
   <span class="na">jennifer</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer.cr</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.11.1"</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">=</span><span class="nv"> </span><span class="s">0.12.0"</span>
   <span class="na">jennifer_sqlite3_adapter</span><span class="pi">:</span>
     <span class="na">github</span><span class="pi">:</span> <span class="s">imdrasil/jennifer_sqlite3_adapter</span>
     <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~&gt;</span><span class="nv"> </span><span class="s">0.3.1"</span>
@@ -167,11 +167,11 @@
 
 <span class="ss">test:
   </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="n">default</span>
-  <span class="ss">db: </span><span class="n">application_database_name_development</span>
+  <span class="ss">db: </span><span class="n">application_database_name_test</span>
 
 <span class="ss">production:
   </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="n">default</span>
-  <span class="ss">db: </span><span class="n">application_database_name_development</span>
+  <span class="ss">db: </span><span class="n">application_database_name_production</span>
 </code></pre></div></div>
 
 <blockquote>
@@ -226,7 +226,7 @@
   <span class="n">with_timestamps</span>
 
   <span class="n">mapping</span><span class="p">(</span>
-    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">id: </span><span class="no">Primary64</span><span class="p">,</span>
     <span class="ss">name: </span><span class="no">String</span><span class="p">,</span>
     <span class="ss">age: </span><span class="no">Int32</span><span class="p">,</span>
   <span class="p">)</span>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1285,7 +1290,6 @@
   </h2>
 
   <p>Converts string value to given <em>T</em> crystal <code>enum</code>.</p>
-
 <pre><code class="language-crystal"><span class="k">enum</span> <span class="t">Category</span>
   <span class="t">GOOD</span>
   <span class="t">BAD</span>
@@ -1321,7 +1325,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/enum_converter.cr#L17" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/enum_converter.cr#L17" target="_blank">
         jennifer/model/enum_converter.cr
       </a>
     
@@ -1345,22 +1349,22 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#from_db(pull,options)-class-method" class="signature"><strong>.from_db</strong>(pull, options)</a>
+        <a href="#from_db%28pull%2Coptions%29-class-method" class="signature"><strong>.from_db</strong>(pull, options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#from_hash(hash:Hash,column,options)-class-method" class="signature"><strong>.from_hash</strong>(hash : Hash, column, options)</a>
+        <a href="#from_hash%28hash%3AHash%2Ccolumn%2Coptions%29-class-method" class="signature"><strong>.from_hash</strong>(hash : Hash, column, options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_db(value:Nil,options):Nil-class-method" class="signature"><strong>.to_db</strong>(value : Nil, options) : Nil</a>
+        <a href="#to_db%28value%3ANil%2Coptions%29%3ANil-class-method" class="signature"><strong>.to_db</strong>(value : Nil, options) : Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_db(value:T,options):String-class-method" class="signature"><strong>.to_db</strong>(value : T, options) : String</a>
+        <a href="#to_db%28value%3AT%2Coptions%29%3AString-class-method" class="signature"><strong>.to_db</strong>(value : T, options) : String</a>
         
       </li>
     
@@ -1413,13 +1417,13 @@
         
         def self.<strong>from_db</strong>(pull, options)
 
-        <a class="method-permalink" href="#from_db(pull,options)-class-method">#</a>
+        <a class="method-permalink" href="#from_db%28pull%2Coptions%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/enum_converter.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/enum_converter.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1429,13 +1433,13 @@
         
         def self.<strong>from_hash</strong>(hash : Hash, column, options)
 
-        <a class="method-permalink" href="#from_hash(hash:Hash,column,options)-class-method">#</a>
+        <a class="method-permalink" href="#from_hash%28hash%3AHash%2Ccolumn%2Coptions%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/enum_converter.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/enum_converter.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1445,13 +1449,13 @@
         
         def self.<strong>to_db</strong>(value : Nil, options) : Nil
 
-        <a class="method-permalink" href="#to_db(value:Nil,options):Nil-class-method">#</a>
+        <a class="method-permalink" href="#to_db%28value%3ANil%2Coptions%29%3ANil-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/enum_converter.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/enum_converter.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1461,13 +1465,13 @@
         
         def self.<strong>to_db</strong>(value : T, options) : String
 
-        <a class="method-permalink" href="#to_db(value:T,options):String-class-method">#</a>
+        <a class="method-permalink" href="#to_db%28value%3AT%2Coptions%29%3AString-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/enum_converter.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/enum_converter.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1296,7 +1301,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/authentication.cr#L5" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/authentication.cr#L5" target="_blank">
         jennifer/model/authentication.cr
       </a>
     
@@ -1352,7 +1357,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#with_authentication(password=%22password%22,password_hash=%22password_digest%22,skip_validation=false)-macro" class="signature"><strong>with_authentication</strong>(password = <span class="s">&quot;password&quot;</span>, password_hash = <span class="s">&quot;password_digest&quot;</span>, skip_validation = <span class="n">false</span>)</a>
+        <a href="#with_authentication%28password%3D%22password%22%2Cpassword_hash%3D%22password_digest%22%2Cskip_validation%3Dfalse%29-macro" class="signature"><strong>with_authentication</strong>(password = <span class="s">&quot;password&quot;</span>, password_hash = <span class="s">&quot;password_digest&quot;</span>, skip_validation = <span class="n">false</span>)</a>
         
           <div class="summary"><p>Adds methods to set and authenticate against a Crypto::Bcrypt password.</p></div>
         
@@ -1387,20 +1392,23 @@
         
         macro <strong>with_authentication</strong>(password = <span class="s">&quot;password&quot;</span>, password_hash = <span class="s">&quot;password_digest&quot;</span>, skip_validation = <span class="n">false</span>)
 
-        <a class="method-permalink" href="#with_authentication(password=%22password%22,password_hash=%22password_digest%22,skip_validation=false)-macro">#</a>
+        <a class="method-permalink" href="#with_authentication%28password%3D%22password%22%2Cpassword_hash%3D%22password_digest%22%2Cskip_validation%3Dfalse%29-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds methods to set and authenticate against a Crypto::Bcrypt password.</p>
-
-<ul><li><code>password</code> - password field name (default is <code>"password"</code>);</li><li><code>password_hash</code> - password digest attribute name (default is <code>"password_digest"</code>);</li><li><code>skip_validation</code> - whether validations shouldn't be generated (default is <code>false</code>).</li></ul>
+<ul>
+<li><code>password</code> - password field name (default is <code>&quot;password&quot;</code>);</li>
+<li><code>password_hash</code> - password digest attribute name (default is <code>&quot;password_digest&quot;</code>);</li>
+<li><code>skip_validation</code> - whether validations shouldn't be generated (default is <code>false</code>).</li>
+</ul>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/authentication.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/authentication.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>

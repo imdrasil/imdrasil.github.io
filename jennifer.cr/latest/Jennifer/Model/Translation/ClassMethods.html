@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1296,7 +1301,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/translation.cr#L7" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/translation.cr#L7" target="_blank">
         jennifer/model/translation.cr
       </a>
     
@@ -1322,16 +1327,16 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#human(count=nil)-instance-method" class="signature"><strong>#human</strong>(count = <span class="n">nil</span>)</a>
+        <a href="#human%28count%3Dnil%29-instance-method" class="signature"><strong>#human</strong>(count = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Returns localized model name.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#human_attribute_name(attribute:String%7CSymbol)-instance-method" class="signature"><strong>#human_attribute_name</strong>(attribute : String | Symbol)</a>
+        <a href="#human_attribute_name%28name%3AString%7CSymbol%29-instance-method" class="signature"><strong>#human_attribute_name</strong>(name : String | Symbol)</a>
         
-          <div class="summary"><p>Search translation for given attribute.</p></div>
+          <div class="summary"><p>Search translation for given attribute name.</p></div>
         
       </li>
     
@@ -1350,7 +1355,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#lookup_ancestors(&)-instance-method" class="signature"><strong>#lookup_ancestors</strong>(&)</a>
+        <a href="#lookup_ancestors%28%26%29-instance-method" class="signature"><strong>#lookup_ancestors</strong>(&)</a>
         
           <div class="summary"><p>Yields all ancestors until <code><a href="../../../Jennifer/Model/Base.html">Base</a></code>.</p></div>
         
@@ -1385,7 +1390,7 @@
         
         def <strong>human</strong>(count = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#human(count=nil)-instance-method">#</a>
+        <a class="method-permalink" href="#human%28count%3Dnil%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1396,28 +1401,28 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/translation.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/translation.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="human_attribute_name(attribute:String|Symbol)-instance-method">
+    <div class="entry-detail" id="human_attribute_name(name:String|Symbol)-instance-method">
       <div class="signature">
         
-        def <strong>human_attribute_name</strong>(attribute : String | Symbol)
+        def <strong>human_attribute_name</strong>(name : String | Symbol)
 
-        <a class="method-permalink" href="#human_attribute_name(attribute:String%7CSymbol)-instance-method">#</a>
+        <a class="method-permalink" href="#human_attribute_name%28name%3AString%7CSymbol%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Search translation for given attribute.</p>
+          <p>Search translation for given attribute name.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/translation.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/translation.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1438,7 +1443,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/translation.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/translation.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1459,7 +1464,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/translation.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/translation.cr#L37" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1469,7 +1474,7 @@
         
         def <strong>lookup_ancestors</strong>(&)
 
-        <a class="method-permalink" href="#lookup_ancestors(&)-instance-method">#</a>
+        <a class="method-permalink" href="#lookup_ancestors%28%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1480,7 +1485,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/translation.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/translation.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>

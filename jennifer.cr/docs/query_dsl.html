@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/query_dsl.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/query_dsl.html","headline":"Imdrasil Homebrew Stuff","@context":"https://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/query_dsl.html","description":"Personal site","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -35,55 +35,55 @@
     <nav class="site-nav">
       <div class="trigger">
         
-          <a class="page-link" href="./timestamps">Timestamps</a>
-        
-          <a class="page-link" href="./view">Views</a>
-        
-          <a class="page-link" href="./query_dsl">Query DSL</a>
-        
-          <a class="page-link" href="./getting_started">Getting started</a>
-        
-          <a class="page-link" href="./configuration">Configuration</a>
-        
-          <a class="page-link" href="./time">Time</a>
-        
           <a class="page-link" href="./aggregation">Aggregations</a>
-        
-          <a class="page-link" href="./record">Record</a>
-        
-          <a class="page-link" href="./callbacks">Callbacks</a>
-        
-          <a class="page-link" href="./index">Jennifer Documentation</a>
-        
-          <a class="page-link" href="./model_sti">STI</a>
-        
-          <a class="page-link" href="./model_mapping">Mapping</a>
-        
-          <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
-        
-          <a class="page-link" href="./crud">CRUD</a>
-        
-          <a class="page-link" href="./model_scopes">Scopes</a>
-        
-          <a class="page-link" href="./relations">Relations</a>
-        
-          <a class="page-link" href="./validation">Validation</a>
-        
-          <a class="page-link" href="./eager_loading">Eager Loading</a>
-        
-          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
-        
-          <a class="page-link" href="./migration">Migration</a>
-        
-          <a class="page-link" href="./pagination_and_ordering">Pagination &amp; Ordering</a>
-        
-          <a class="page-link" href="./command_line">Command Line</a>
-        
-          <a class="page-link" href="./internationalization">Internationalization</a>
         
           <a class="page-link" href="./authentication">Authentication</a>
         
+          <a class="page-link" href="./callbacks">Callbacks</a>
+        
+          <a class="page-link" href="./command_line">Command Line</a>
+        
+          <a class="page-link" href="./configuration">Configuration</a>
+        
+          <a class="page-link" href="./crud">CRUD</a>
+        
+          <a class="page-link" href="./eager_loading">Eager Loading</a>
+        
+          <a class="page-link" href="./getting_started">Getting started</a>
+        
+          <a class="page-link" href="./index">Jennifer Documentation</a>
+        
+          <a class="page-link" href="./internationalization">Internationalization</a>
+        
+          <a class="page-link" href="./migration">Migration</a>
+        
+          <a class="page-link" href="./model_mapping">Mapping</a>
+        
+          <a class="page-link" href="./model_scopes">Scopes</a>
+        
+          <a class="page-link" href="./model_sti">STI</a>
+        
+          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
+        
+          <a class="page-link" href="./pagination_and_ordering">Pagination &amp; Ordering</a>
+        
+          <a class="page-link" href="./query_dsl">Query DSL</a>
+        
+          <a class="page-link" href="./record">Record</a>
+        
+          <a class="page-link" href="./relations">Relationships</a>
+        
           <a class="page-link" href="./serialization">Serialization</a>
+        
+          <a class="page-link" href="./time">Time</a>
+        
+          <a class="page-link" href="./timestamps">Timestamps</a>
+        
+          <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
+        
+          <a class="page-link" href="./validation">Validation</a>
+        
+          <a class="page-link" href="./view">Views</a>
         
       </div>
     </nav>
@@ -92,24 +92,24 @@
 
 <h1 id="query-dsl">Query DSL</h1>
 
-<p>My favorite part. Jennifer allows you to build lazy evaluated queries with chaining syntax. But some of them could be only at the and of a chain (such as <code class="language-plaintext highlighter-rouge">#first</code>, <code class="language-plaintext highlighter-rouge">#find</code> or <code class="language-plaintext highlighter-rouge">#pluck</code>).</p>
+<p>My favorite part. Jennifer allows you to build lazy evaluated queries with chaining syntax. But some of them could be only at the and of a chain (such as <code class="language-plaintext highlighter-rouge">#first</code>, <code class="language-plaintext highlighter-rouge">#find</code> or <code class="language-plaintext highlighter-rouge">#pluck</code>) because they trigger request.</p>
 
 <h2 id="where">WHERE</h2>
 
-<p><code class="language-plaintext highlighter-rouge">.all</code> creates empty request for model it is invoked on.</p>
+<p><code class="language-plaintext highlighter-rouge">.all</code> creates empty request for a model it is invoked on.</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span>
 </code></pre></div></div>
 
 <p>Specifying where clause is really flexible. Method accepts block which presents <code class="language-plaintext highlighter-rouge">WHERE</code> clause of request (or it’s part - you can chain several <code class="language-plaintext highlighter-rouge">#where</code> and they will be concatenated using <code class="language-plaintext highlighter-rouge">AND</code>).</p>
 
-<p>To specify field use <code class="language-plaintext highlighter-rouge">#c</code> method which accepts string as field name. As I’ve mentioned after declaring model attributes, you can use their names inside of block: <code class="language-plaintext highlighter-rouge">_field_name</code> if it is for current table and <code class="language-plaintext highlighter-rouge">ModelName._field_name</code> if for another model. Also there you can specify attribute of some model or table using underscores: <code class="language-plaintext highlighter-rouge">_some_model_or_table_name__field_name</code> - model/table name is separated from field name by “__”. You can specify relation in space of which you want to declare condition using double <code class="language-plaintext highlighter-rouge">_</code> at the beginning and block. Several examples:</p>
+<p>To specify table column use <code class="language-plaintext highlighter-rouge">#c</code> method which accepts string parameter as a name. As it was mentioned earlier after declaring model attributes, you can use their names inside of block: <code class="language-plaintext highlighter-rouge">_field_name</code> if it is for current table and <code class="language-plaintext highlighter-rouge">ModelName._field_name</code> if you need to reference a column <code class="language-plaintext highlighter-rouge">field_name</code> of the table related to <code class="language-plaintext highlighter-rouge">ModelName</code> model. Also there you can specify attribute of some model or table using underscores: <code class="language-plaintext highlighter-rouge">_some_model_or_table_name__field_name</code> - model/table name is separated from field name by <code class="language-plaintext highlighter-rouge">__</code>. You can specify relation in space of which you want to declare condition using double <code class="language-plaintext highlighter-rouge">_</code> at the beginning and block. Several examples:</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">c</span><span class="p">(</span><span class="s2">"id"</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
 <span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_id</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
-<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">Address</span><span class="p">)</span> <span class="p">{</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">_id</span> <span class="o">==</span> <span class="n">_contact_id</span> <span class="p">}</span>
-<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">relation</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">).</span><span class="nf">where</span> <span class="p">{</span> <span class="n">__addresses</span> <span class="p">{</span> <span class="n">_id</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span> <span class="p">}</span>
-<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_contacts__id</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">Address</span><span class="p">)</span> <span class="p">{</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">_id</span> <span class="o">==</span> <span class="n">_contact_id</span> <span class="p">}</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">relation</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">).</span><span class="nf">where</span> <span class="p">{</span> <span class="n">__addresses</span> <span class="p">{</span> <span class="n">_id</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span> <span class="p">}</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_contacts__id</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Also you can use <code class="language-plaintext highlighter-rouge">primary</code> to mention primary field:</p>
@@ -172,9 +172,9 @@
 
 <p>Also there are shortcuts for <code class="language-plaintext highlighter-rouge">AND</code>, <code class="language-plaintext highlighter-rouge">OR</code> and <code class="language-plaintext highlighter-rouge">XOR</code> operators to emit extra brackets around operands and wraps the result into them:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Post</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_active</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">_likes</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">}</span> <span class="c1"># WHERE posts.active AND users.likes &gt; 10</span>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Post</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_active</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">_likes</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">}</span> <span class="c1"># WHERE posts.active AND users.likes &gt; 10</span>
 
-<span class="no">Post</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">and</span><span class="p">(</span><span class="n">_active</span><span class="p">,</span> <span class="n">_likes</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">}</span> <span class="c1"># WHERE (posts.active AND users.likes &gt; 10)</span>
+<span class="no">Post</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">and</span><span class="p">(</span><span class="n">_active</span><span class="p">,</span> <span class="n">_likes</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">}</span> <span class="c1"># WHERE (posts.active AND users.likes &gt; 10)</span>
 </code></pre></div></div>
 
 <p>Operator-like methods:</p>
@@ -253,6 +253,11 @@
 
 <p>Also Jennifer supports json field path methods for criteria: <code class="language-plaintext highlighter-rouge">Criteria#take</code> (also accessible as <code class="language-plaintext highlighter-rouge">Criteria#[]</code>) and <code class="language-plaintext highlighter-rouge">Criteria#path</code>.</p>
 
+<p>If you need to fetch the first matched record</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">find_by!</span><span class="p">({</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span> <span class="ss">:surname</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">})</span> <span class="c1"># #&lt;Contact name: "John", surname: "Doe"&gt;</span>
+</code></pre></div></div>
+
 <h3 id="mysql">MySQL</h3>
 
 <p>For mysql both <code class="language-plaintext highlighter-rouge">take</code> and <code class="language-plaintext highlighter-rouge">path</code> methods behave in the same way.</p>
@@ -297,8 +302,8 @@
 
 <p>Several examples:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="p">(</span><span class="n">_id</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">_name</span><span class="p">.</span><span class="nf">regexp</span><span class="p">(</span><span class="s2">"^[a-d]"</span><span class="p">)</span> <span class="p">}</span>
-<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">and</span><span class="p">(</span><span class="n">_id</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">,</span> <span class="n">_name</span><span class="p">.</span><span class="nf">regexp</span><span class="p">(</span><span class="s2">"^[a-d]"</span><span class="p">))</span> <span class="p">}</span>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="p">(</span><span class="n">_id</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">_name</span><span class="p">.</span><span class="nf">regexp</span><span class="p">(</span><span class="s2">"^[a-d]"</span><span class="p">)</span> <span class="p">}</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">and</span><span class="p">(</span><span class="n">_id</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">,</span> <span class="n">_name</span><span class="p">.</span><span class="nf">regexp</span><span class="p">(</span><span class="s2">"^[a-d]"</span><span class="p">))</span> <span class="p">}</span>
 
 <span class="no">Address</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_contact_id</span><span class="p">.</span><span class="nf">is</span><span class="p">(</span><span class="kp">nil</span><span class="p">)</span> <span class="p">}</span>
 
@@ -313,7 +318,7 @@
 <p>To specify exact SQL query use <code class="language-plaintext highlighter-rouge">#sql</code> method:</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># it behaves like regular criterion</span>
-<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"age &gt; ?"</span><span class="p">,</span>  <span class="p">[</span><span class="mi">15</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">_name</span> <span class="o">==</span> <span class="s2">"Stephan"</span><span class="p">)</span> <span class="p">}</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"age &gt; ?"</span><span class="p">,</span>  <span class="p">[</span><span class="mi">15</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">_name</span> <span class="o">==</span> <span class="s2">"Stephan"</span><span class="p">)</span> <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Query will be inserted “as is”. Prefer to avoid such usage but it allows to use database specific functions and features. By default given SQL statement is surrounded with brackets, to avoid them - pass <code class="language-plaintext highlighter-rouge">false</code> as 2nd (or 3rd) argument.</p>
@@ -334,7 +339,7 @@ WHERE contacts.name = lower($1)
 
 <p>To design some complex logical expression like <code class="language-plaintext highlighter-rouge">a &amp; (b | c) &amp; d</code> use <code class="language-plaintext highlighter-rouge">ExpressionBuilder#g</code> method:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">where</span> <span class="k">do</span>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">where</span> <span class="k">do</span>
   <span class="p">(</span><span class="n">_id</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">g</span><span class="p">(</span><span class="n">_name</span><span class="p">.</span><span class="nf">like</span><span class="p">(</span><span class="s2">"%asd%"</span><span class="p">)</span> <span class="o">|</span> <span class="n">_age</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nb">id</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div></div>
@@ -391,7 +396,6 @@ WHERE contacts.name = lower($1)
 <p>Raw SQL for <code class="language-plaintext highlighter-rouge">SELECT</code> clause could be passed into <code class="language-plaintext highlighter-rouge">#select</code> method. This have the highest priority during <code class="language-plaintext highlighter-rouge">SELECT</code> clause composing  of SQL request.</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span>
-  <span class="p">.</span><span class="nf">all</span>
   <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="s2">"COUNT(id) AS count"</span><span class="p">)</span>
   <span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span>
   <span class="p">.</span><span class="nf">having</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"COUNT(id)"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
@@ -401,14 +405,13 @@ WHERE contacts.name = lower($1)
 <p>Also <code class="language-plaintext highlighter-rouge">#select</code> accepts block where all fields could be specified and aliased:</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span>
-  <span class="p">.</span><span class="nf">all</span>
   <span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="p">[</span><span class="n">sql</span><span class="p">(</span><span class="s2">"COUNT(id)"</span><span class="p">).</span><span class="nf">alias</span><span class="p">(</span><span class="s2">"count"</span><span class="p">)]</span> <span class="p">}</span>
   <span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span>
   <span class="p">.</span><span class="nf">having</span> <span class="p">{</span> <span class="n">sql</span><span class="p">(</span><span class="s2">"count"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
   <span class="p">.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:count</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>It is important to note that currently it is impossible to pass <code class="language-plaintext highlighter-rouge">Jennifer::QueryBuilder::Condition</code> to <code class="language-plaintext highlighter-rouge">#select</code>. In other words <code class="language-plaintext highlighter-rouge">Contact.all.select { [(_age * 2).alias("age")] }</code> isn’t allowed. As a workaround you can temporary use <code class="language-plaintext highlighter-rouge">#sql</code>: <code class="language-plaintext highlighter-rouge">Contact.all.select { [sql("age * 2").alias("age")] }</code>.</p>
+<p>It is important to note that currently it is impossible to pass <code class="language-plaintext highlighter-rouge">Jennifer::QueryBuilder::Condition</code> to <code class="language-plaintext highlighter-rouge">#select</code>. In other words <code class="language-plaintext highlighter-rouge">Contact.select { [(_age * 2).alias("age")] }</code> isn’t allowed. As a workaround you can temporary use <code class="language-plaintext highlighter-rouge">#sql</code>: <code class="language-plaintext highlighter-rouge">Contact.select { [sql("age * 2").alias("age")] }</code>.</p>
 
 <h2 id="join">JOIN</h2>
 
@@ -416,15 +419,15 @@ WHERE contacts.name = lower($1)
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">field</span> <span class="o">=</span> <span class="s2">"contact_id"</span>
 <span class="n">table</span> <span class="o">=</span> <span class="s2">"passports"</span>
-<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">Address</span><span class="p">)</span> <span class="p">{</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">_id</span> <span class="o">==</span> <span class="n">_contact_id</span> <span class="p">}.</span><span class="nf">join</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="p">{</span> <span class="n">c</span><span class="p">(</span><span class="n">field</span><span class="p">)</span> <span class="o">==</span> <span class="n">_id</span> <span class="p">}</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">Address</span><span class="p">)</span> <span class="p">{</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">_id</span> <span class="o">==</span> <span class="n">_contact_id</span> <span class="p">}.</span><span class="nf">join</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="p">{</span> <span class="n">c</span><span class="p">(</span><span class="n">field</span><span class="p">)</span> <span class="o">==</span> <span class="n">_id</span> <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Query, built inside of block, will passed to <code class="language-plaintext highlighter-rouge">ON</code> section of <code class="language-plaintext highlighter-rouge">JOIN</code>. Current context of block is joined table.</p>
 
 <p>Also there is two shortcuts for left and right joins:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">left_join</span><span class="p">(</span><span class="no">Address</span><span class="p">)</span> <span class="p">{</span> <span class="n">_contacts__id</span> <span class="o">==</span> <span class="n">_contact_id</span> <span class="p">}</span>
-<span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">right_join</span><span class="p">(</span><span class="s2">"addresses"</span><span class="p">)</span> <span class="p">{</span> <span class="n">_contacts__id</span> <span class="o">==</span> <span class="n">c</span><span class="p">(</span><span class="s2">"contact_id"</span><span class="p">)</span> <span class="p">}</span>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">left_join</span><span class="p">(</span><span class="no">Address</span><span class="p">)</span> <span class="p">{</span> <span class="n">_contacts__id</span> <span class="o">==</span> <span class="n">_contact_id</span> <span class="p">}</span>
+<span class="no">Contact</span><span class="p">.</span><span class="nf">right_join</span><span class="p">(</span><span class="s2">"addresses"</span><span class="p">)</span> <span class="p">{</span> <span class="n">_contacts__id</span> <span class="o">==</span> <span class="n">c</span><span class="p">(</span><span class="s2">"contact_id"</span><span class="p">)</span> <span class="p">}</span>
 </code></pre></div></div>
 
 <blockquote>
@@ -435,7 +438,7 @@ WHERE contacts.name = lower($1)
 
 <p>To join model relation (has_many, belongs_to and has_one) pass it’s name and join type:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">relation</span><span class="p">(</span><span class="s2">"addresses"</span><span class="p">).</span><span class="nf">relation</span><span class="p">(</span><span class="ss">:passport</span><span class="p">,</span> <span class="ss">type: :left</span><span class="p">)</span>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">relation</span><span class="p">(</span><span class="s2">"addresses"</span><span class="p">).</span><span class="nf">relation</span><span class="p">(</span><span class="ss">:passport</span><span class="p">,</span> <span class="ss">type: :left</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="relation-eager-loading">Relation eager loading</h3>
@@ -444,7 +447,7 @@ WHERE contacts.name = lower($1)
 
 <p>To automatically join some relation and get it from db use <code class="language-plaintext highlighter-rouge">#eager_load</code> and pass relation name:</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">eager_load</span><span class="p">(</span><span class="s2">"addresses"</span><span class="p">)</span>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">eager_load</span><span class="p">(</span><span class="s2">"addresses"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>If there are several eager_load with same table - Jennifer will auto alias tables.</p>
@@ -453,18 +456,17 @@ WHERE contacts.name = lower($1)
 
 <p>To load all related objects after main query being executed use <code class="language-plaintext highlighter-rouge">#includes</code> method (or it’s alias <code class="language-plaintext highlighter-rouge">#preload</code>):</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="ss">:addresses</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="group-by">GROUP BY</h2>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"id"</span><span class="p">).</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:id</span><span class="p">)</span>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"id"</span><span class="p">).</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:id</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">#group</code> allows to add columns for <code class="language-plaintext highlighter-rouge">GROUP BY</code> section. If passing arguments are tuple of strings or just one string - all columns will be parsed as current table columns. If there is a need to group on joined table or using fields from several tables use next:</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span>
-  <span class="p">.</span><span class="nf">all</span>
   <span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="p">[</span><span class="n">_addresses__street</span><span class="p">,</span> <span class="n">_contacts__name</span><span class="p">]</span> <span class="p">}</span>
   <span class="p">.</span><span class="nf">relation</span><span class="p">(</span><span class="s2">"addresses"</span><span class="p">)</span>
   <span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="ss">addresses: </span><span class="p">[</span><span class="s2">"street"</span><span class="p">],</span> <span class="ss">contacts: </span><span class="p">[</span><span class="s2">"name"</span><span class="p">])</span>
@@ -473,7 +475,7 @@ WHERE contacts.name = lower($1)
 
 <h2 id="having">HAVING</h2>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">).</span><span class="nf">having</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">&gt;</span> <span class="mi">15</span> <span class="p">}</span>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">).</span><span class="nf">having</span> <span class="p">{</span> <span class="n">_age</span> <span class="o">&gt;</span> <span class="mi">15</span> <span class="p">}</span>
 </code></pre></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">#having</code> allows to add <code class="language-plaintext highlighter-rouge">HAVING</code> part of query. It accepts block same way as <code class="language-plaintext highlighter-rouge">#where</code> does.</p>
@@ -489,7 +491,7 @@ WHERE contacts.name = lower($1)
 
 <p>Adds <code class="language-plaintext highlighter-rouge">DISTINCT</code> keyword of at the very beginning of <code class="language-plaintext highlighter-rouge">SELECT</code> statement</p>
 
-<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">distinct</span> <span class="c1"># Array(Contact) with unique attributes (all)</span>
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Contact</span><span class="p">.</span><span class="nf">distinct</span> <span class="c1"># Array(Contact) with unique attributes (all)</span>
 </code></pre></div></div>
 
 <h2 id="union">UNION</h2>
@@ -497,12 +499,10 @@ WHERE contacts.name = lower($1)
 <p>To make common SQL <code class="language-plaintext highlighter-rouge">UNION</code> you can use <code class="language-plaintext highlighter-rouge">#union</code> method which accepts other query object. But be careful - all selected fields should have same name and type.</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Address</span>
-  <span class="p">.</span><span class="nf">all</span>
   <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="ss">:contact_id</span><span class="p">)</span>
   <span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_street</span><span class="p">.</span><span class="nf">like</span><span class="p">(</span><span class="s2">"%St. Paul%"</span><span class="p">)</span> <span class="p">}</span>
   <span class="p">.</span><span class="nf">union</span><span class="p">(</span>
     <span class="no">Profile</span>
-      <span class="p">.</span><span class="nf">all</span>
       <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="ss">:contact_id</span><span class="p">)</span>
       <span class="p">.</span><span class="nf">where</span> <span class="p">{</span> <span class="n">_login</span><span class="p">.</span><span class="nf">in</span><span class="p">([</span><span class="s2">"login1"</span><span class="p">,</span> <span class="s2">"login2"</span><span class="p">])</span> <span class="p">}</span>
   <span class="p">)</span>

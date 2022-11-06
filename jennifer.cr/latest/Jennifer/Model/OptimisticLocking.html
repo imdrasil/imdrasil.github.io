@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1310,7 +1315,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/optimistic_locking.cr#L2" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/optimistic_locking.cr#L2" target="_blank">
         jennifer/model/optimistic_locking.cr
       </a>
     
@@ -1338,7 +1343,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#with_optimistic_lock(locking_column=lock_version)-macro" class="signature"><strong>with_optimistic_lock</strong>(locking_column = lock_version)</a>
+        <a href="#with_optimistic_lock%28locking_column%3Dlock_version%29-macro" class="signature"><strong>with_optimistic_lock</strong>(locking_column = lock_version)</a>
         
           <div class="summary"><p>Add optimistic locking to model By default, it uses column <code>lock_version : Int32</code> as lock The column used as lock must be type <code>Int32</code> or <code>Int64</code> and the default value of 0 You can use a different column name as lock by passing the column name to the method.</p></div>
         
@@ -1373,7 +1378,7 @@
         
         macro <strong>with_optimistic_lock</strong>(locking_column = lock_version)
 
-        <a class="method-permalink" href="#with_optimistic_lock(locking_column=lock_version)-macro">#</a>
+        <a class="method-permalink" href="#with_optimistic_lock%28locking_column%3Dlock_version%29-macro">#</a>
       </div>
       
         <div class="doc">
@@ -1382,7 +1387,6 @@
 By default, it uses column <code>lock_version : Int32</code> as lock
 The column used as lock must be type <code>Int32</code> or <code>Int64</code> and the default value of 0
 You can use a different column name as lock by passing the column name to the method.</p>
-
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">MyModel</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   with_optimistic_lock
 
@@ -1391,9 +1395,7 @@ You can use a different column name as lock by passing the column name to the me
     lock_version: {<span class="k">type</span>: <span class="t">Int32</span>, default: <span class="n">0</span>},
   )
 <span class="k">end</span></code></pre>
-
 <p>Or use a custom column name for the locking column:</p>
-
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">MyModel</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   with_optimistic_lock <span class="n">:custom_lock</span>
 
@@ -1407,7 +1409,7 @@ You can use a different column name as lock by passing the column name to the me
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/optimistic_locking.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/optimistic_locking.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>

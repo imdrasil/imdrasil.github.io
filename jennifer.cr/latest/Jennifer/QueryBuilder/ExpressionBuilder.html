@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1285,26 +1290,17 @@
   </h2>
 
   <p>Stands for creating criteria for the query.</p>
-
 <p>This class provides straight forward way to define criteria and a bit (pretty huge one)
 of metaprogramming.</p>
-
-<p>You can use standard method <code><a href="../../Jennifer/QueryBuilder/ExpressionBuilder.html#c(name:String,table_name:String=@table,relation:String?=nil)-instance-method">#c</a></code> to create criteria for current table or for any other (passing it's name
+<p>You can use standard method <code><a href="../../Jennifer/QueryBuilder/ExpressionBuilder.html#c%28name%3AString%2Ctable_name%3AString%3D%40table%2Crelation%3AString%3F%3Dnil%29-instance-method">#c</a></code> to create criteria for current table or for any other (passing it's name
 as a 2nd argument):</p>
-
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;contacts&quot;</span>].join(<span class="s">&quot;addresses&quot;</span>) { c(<span class="s">&quot;contact_id&quot;</span>) <span class="o">==</span> c(<span class="s">&quot;id&quot;</span>, <span class="s">&quot;contacts&quot;</span>) }</code></pre>
-
-<p>Also you can use "<em>magic</em>" underscored methods to specify current table fields putting "_" before a name:</p>
-
+<p>Also you can use &quot;<em>magic</em>&quot; underscored methods to specify current table fields putting &quot;_&quot; before a name:</p>
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;contacts&quot;</span>].join(<span class="s">&quot;addresses&quot;</span>) { _contact_id <span class="o">==</span> c(<span class="s">&quot;id&quot;</span>, <span class="s">&quot;contacts&quot;</span>) }</code></pre>
-
-<p>Obviously, you also can specify same way table name for the field. Just put "__" (double underscore) between table name
+<p>Obviously, you also can specify same way table name for the field. Just put &quot;__&quot; (double underscore) between table name
 and field name as well.</p>
-
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;contacts&quot;</span>].join(<span class="s">&quot;addresses&quot;</span>) { _contact_id <span class="o">==</span> _contacts__id }</code></pre>
-
-<p>Because of double underscore between symbols between field and table you can safely reference tables with "_".</p>
-
+<p>Because of double underscore between symbols between field and table you can safely reference tables with &quot;_&quot;.</p>
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;facebook_profiles&quot;</span>].join(<span class="s">&quot;addresses&quot;</span>) { _profile_id <span class="o">==</span> _facebook_profiles__id }</code></pre>
 
 
@@ -1330,133 +1326,133 @@ and field name as well.</p>
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L33" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L33" target="_blank">
         jennifer/query_builder/expression_builder.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L163" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L163" target="_blank">
         jennifer/query_builder/function.cr:163
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L176" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L176" target="_blank">
         jennifer/query_builder/function.cr:176
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L189" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L189" target="_blank">
         jennifer/query_builder/function.cr:189
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L202" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L202" target="_blank">
         jennifer/query_builder/function.cr:202
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L208" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L208" target="_blank">
         jennifer/query_builder/function.cr:208
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L214" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L214" target="_blank">
         jennifer/query_builder/function.cr:214
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L220" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L220" target="_blank">
         jennifer/query_builder/function.cr:220
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L226" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L226" target="_blank">
         jennifer/query_builder/function.cr:226
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L239" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L239" target="_blank">
         jennifer/query_builder/function.cr:239
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L252" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L252" target="_blank">
         jennifer/query_builder/function.cr:252
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L258" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L258" target="_blank">
         jennifer/query_builder/function.cr:258
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L271" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L271" target="_blank">
         jennifer/query_builder/function.cr:271
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L284" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L284" target="_blank">
         jennifer/query_builder/function.cr:284
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L305" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L305" target="_blank">
         jennifer/query_builder/function.cr:305
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L318" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L318" target="_blank">
         jennifer/query_builder/function.cr:318
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L331" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L331" target="_blank">
         jennifer/query_builder/function.cr:331
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L344" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L344" target="_blank">
         jennifer/query_builder/function.cr:344
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L357" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L357" target="_blank">
         jennifer/query_builder/function.cr:357
       </a>
     
@@ -1478,7 +1474,7 @@ and field name as well.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(table,relation=nil,query=nil)-class-method" class="signature"><strong>.new</strong>(table, relation = <span class="n">nil</span>, query = <span class="n">nil</span>)</a>
+        <a href="#new%28table%3AString%2Crelation%3AString%3F%3Dnil%2Cquery%3AJennifer%3A%3AQueryBuilder%3A%3AQuery%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(table : String, relation : String? = <span class="n">nil</span>, query : Jennifer::QueryBuilder::Query? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -1499,72 +1495,72 @@ and field name as well.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#abs(arg0)-instance-method" class="signature"><strong>#abs</strong>(arg0)</a>
+        <a href="#abs%28arg0%29-instance-method" class="signature"><strong>#abs</strong>(arg0)</a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/AbsFunction.html">AbsFunction</a>"</code> function.</p></div>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/AbsFunction.html">AbsFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#all(query:Query)-instance-method" class="signature"><strong>#all</strong>(query : Query)</a>
+        <a href="#all%28query%3AQuery%29-instance-method" class="signature"><strong>#all</strong>(query : Query)</a>
         
           <div class="summary"><p>Creates <code>ALL</code> SQL statement.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#and(first_condition,second_condition,*conditions)-instance-method" class="signature"><strong>#and</strong>(first_condition, second_condition, *conditions)</a>
+        <a href="#and%28first_condition%2Csecond_condition%2C%2Aconditions%29-instance-method" class="signature"><strong>#and</strong>(first_condition, second_condition, *conditions)</a>
         
           <div class="summary"><p>Combines given <em>first_condition</em>, <em>second_condition</em> and all other <em>conditions</em> by <code>AND</code> operator.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#and(conditions:Array)-instance-method" class="signature"><strong>#and</strong>(conditions : Array)</a>
+        <a href="#and%28conditions%3AArray%29-instance-method" class="signature"><strong>#and</strong>(conditions : Array)</a>
         
           <div class="summary"><p>Combines given array of conditions by <code>AND</code> operator.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#any(query:Query)-instance-method" class="signature"><strong>#any</strong>(query : Query)</a>
+        <a href="#any%28query%3AQuery%29-instance-method" class="signature"><strong>#any</strong>(query : Query)</a>
         
           <div class="summary"><p>Creates <code>ANY</code> SQL statement.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#avg(arg0)-instance-method" class="signature"><strong>#avg</strong>(arg0)</a>
+        <a href="#avg%28arg0%29-instance-method" class="signature"><strong>#avg</strong>(arg0)</a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/AvgFunction.html">AvgFunction</a>"</code> function.</p></div>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/AvgFunction.html">AvgFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#c(name:String,table_name:String=@table,relation:String?=nil)-instance-method" class="signature"><strong>#c</strong>(name : String, table_name : String = @table, relation : String? = <span class="n">nil</span>)</a>
+        <a href="#c%28name%3AString%2Ctable_name%3AString%3D%40table%2Crelation%3AString%3F%3Dnil%29-instance-method" class="signature"><strong>#c</strong>(name : String, table_name : String = @table, relation : String? = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Creates criterion for current table by given name <em>name</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#c_with_relation(name:String,relation:String)-instance-method" class="signature"><strong>#c_with_relation</strong>(name : String, relation : String)</a>
+        <a href="#c_with_relation%28name%3AString%2Crelation%3AString%29-instance-method" class="signature"><strong>#c_with_relation</strong>(name : String, relation : String)</a>
         
           <div class="summary"><p>Creates criterion by given name <em>name</em> for the <em>relation</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#cast(expression,type:String)-instance-method" class="signature"><strong>#cast</strong>(expression, type : String)</a>
+        <a href="#cast%28expression%2Ctype%3AString%29-instance-method" class="signature"><strong>#cast</strong>(expression, type : String)</a>
         
-          <div class="summary"><p>Cases <em>expression</em> to the given <em>type</em>.</p></div>
+          <div class="summary"><p>Casts <em>expression</em> to the given <em>type</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#ceil(arg0)-instance-method" class="signature"><strong>#ceil</strong>(arg0)</a>
+        <a href="#ceil%28arg0%29-instance-method" class="signature"><strong>#ceil</strong>(arg0)</a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/CeilFunction.html">CeilFunction</a>"</code> function.</p></div>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/CeilFunction.html">CeilFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
@@ -1576,112 +1572,112 @@ and field name as well.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#coalesce(*args)-instance-method" class="signature"><strong>#coalesce</strong>(*args)</a>
+        <a href="#coalesce%28%2Aargs%29-instance-method" class="signature"><strong>#coalesce</strong>(*args)</a>
         
           <div class="summary"><p>Create <code>:<a href="../../Jennifer/QueryBuilder/CoalesceFunction.html">CoalesceFunction</a></code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#concat(*args)-instance-method" class="signature"><strong>#concat</strong>(*args)</a>
+        <a href="#concat%28%2Aargs%29-instance-method" class="signature"><strong>#concat</strong>(*args)</a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/ConcatFunction.html">ConcatFunction</a>"</code> function.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#concat_ws(*args)-instance-method" class="signature"><strong>#concat_ws</strong>(*args)</a>
-        
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/ConcatWsFunction.html">ConcatWsFunction</a>"</code> function.</p></div>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/ConcatFunction.html">ConcatFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#count(*args)-instance-method" class="signature"><strong>#count</strong>(*args)</a>
+        <a href="#concat_ws%28%2Aargs%29-instance-method" class="signature"><strong>#concat_ws</strong>(*args)</a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/CountFunction.html">CountFunction</a>"</code> function.</p></div>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/ConcatWsFunction.html">ConcatWsFunction</a>&quot;</code> function.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#count%28%2Aargs%29-instance-method" class="signature"><strong>#count</strong>(*args)</a>
+        
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/CountFunction.html">CountFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#current_date-instance-method" class="signature"><strong>#current_date</strong></a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/CurrentDateFunction.html">CurrentDateFunction</a>"</code> function.</p></div>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/CurrentDateFunction.html">CurrentDateFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#current_time-instance-method" class="signature"><strong>#current_time</strong></a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/CurrentTimeFunction.html">CurrentTimeFunction</a>"</code> function.</p></div>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/CurrentTimeFunction.html">CurrentTimeFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#current_timestamp-instance-method" class="signature"><strong>#current_timestamp</strong></a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/CurrentTimestampFunction.html">CurrentTimestampFunction</a>"</code> function.</p></div>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/CurrentTimestampFunction.html">CurrentTimestampFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#floor(arg0)-instance-method" class="signature"><strong>#floor</strong>(arg0)</a>
+        <a href="#floor%28arg0%29-instance-method" class="signature"><strong>#floor</strong>(arg0)</a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/FloorFunction.html">FloorFunction</a>"</code> function.</p></div>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/FloorFunction.html">FloorFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#g(condition)-instance-method" class="signature"><strong>#g</strong>(condition)</a>
+        <a href="#g%28condition%29-instance-method" class="signature"><strong>#g</strong>(condition)</a>
         
           <div class="summary"><p>Creates grouping for the given <em>condition</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#group(condition)-instance-method" class="signature"><strong>#group</strong>(condition)</a>
+        <a href="#group%28condition%29-instance-method" class="signature"><strong>#group</strong>(condition)</a>
         
           <div class="summary"><p>Alias for #g.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#lower(arg0)-instance-method" class="signature"><strong>#lower</strong>(arg0)</a>
+        <a href="#lower%28arg0%29-instance-method" class="signature"><strong>#lower</strong>(arg0)</a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/LowerFunction.html">LowerFunction</a>"</code> function.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#max(arg0)-instance-method" class="signature"><strong>#max</strong>(arg0)</a>
-        
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/MaxFunction.html">MaxFunction</a>"</code> function.</p></div>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/LowerFunction.html">LowerFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#min(arg0)-instance-method" class="signature"><strong>#min</strong>(arg0)</a>
+        <a href="#max%28arg0%29-instance-method" class="signature"><strong>#max</strong>(arg0)</a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/MinFunction.html">MinFunction</a>"</code> function.</p></div>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/MaxFunction.html">MaxFunction</a>&quot;</code> function.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#min%28arg0%29-instance-method" class="signature"><strong>#min</strong>(arg0)</a>
+        
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/MinFunction.html">MinFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#now-instance-method" class="signature"><strong>#now</strong></a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/NowFunction.html">NowFunction</a>"</code> function.</p></div>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/NowFunction.html">NowFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#or(first_condition,second_condition,*conditions)-instance-method" class="signature"><strong>#or</strong>(first_condition, second_condition, *conditions)</a>
+        <a href="#or%28first_condition%2Csecond_condition%2C%2Aconditions%29-instance-method" class="signature"><strong>#or</strong>(first_condition, second_condition, *conditions)</a>
         
           <div class="summary"><p>Combines given <em>first_condition</em>, <em>second_condition</em> and all other <em>conditions</em> by <code>OR</code> operator.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#or(conditions:Array)-instance-method" class="signature"><strong>#or</strong>(conditions : Array)</a>
+        <a href="#or%28conditions%3AArray%29-instance-method" class="signature"><strong>#or</strong>(conditions : Array)</a>
         
           <div class="summary"><p>Combines given array of conditions by <code>OR</code> operator.</p></div>
         
@@ -1695,83 +1691,83 @@ and field name as well.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#query:Query?-instance-method" class="signature"><strong>#query</strong> : Query?</a>
+        <a href="#query%3AQuery%3F-instance-method" class="signature"><strong>#query</strong> : Query?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#query=(query:Query?)-instance-method" class="signature"><strong>#query=</strong>(query : Query?)</a>
+        <a href="#query%3D%28query%3AQuery%3F%29-instance-method" class="signature"><strong>#query=</strong>(query : Query?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#relation:String?-instance-method" class="signature"><strong>#relation</strong> : String?</a>
+        <a href="#relation%3AString%3F-instance-method" class="signature"><strong>#relation</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#round(*args)-instance-method" class="signature"><strong>#round</strong>(*args)</a>
+        <a href="#round%28%2Aargs%29-instance-method" class="signature"><strong>#round</strong>(*args)</a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/RoundFunction.html">RoundFunction</a>"</code> function.</p></div>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/RoundFunction.html">RoundFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#sql(query:String,args:Array(DBAny)=[]ofDBAny,use_brackets:Bool=true)-instance-method" class="signature"><strong>#sql</strong>(query : String, args : Array(DBAny) = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>, use_brackets : Bool = <span class="n">true</span>)</a>
+        <a href="#sql%28query%3AString%2Cargs%3AArray%28DBAny%29%3D%5B%5DofDBAny%2Cuse_brackets%3ABool%3Dtrue%29-instance-method" class="signature"><strong>#sql</strong>(query : String, args : Array(DBAny) = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>, use_brackets : Bool = <span class="n">true</span>)</a>
         
           <div class="summary"><p>Adds plain query <em>query</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#sql(query:String,use_brackets:Bool=true)-instance-method" class="signature"><strong>#sql</strong>(query : String, use_brackets : Bool = <span class="n">true</span>)</a>
+        <a href="#sql%28query%3AString%2Cuse_brackets%3ABool%3Dtrue%29-instance-method" class="signature"><strong>#sql</strong>(query : String, use_brackets : Bool = <span class="n">true</span>)</a>
         
           <div class="summary"><p>Adds plain query <em>query</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#star(table:String=@table)-instance-method" class="signature"><strong>#star</strong>(table : String = @table)</a>
+        <a href="#star%28table%3AString%3D%40table%29-instance-method" class="signature"><strong>#star</strong>(table : String = @table)</a>
         
           <div class="summary"><p>Creates select star for <em>table</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#sum(arg0)-instance-method" class="signature"><strong>#sum</strong>(arg0)</a>
+        <a href="#sum%28arg0%29-instance-method" class="signature"><strong>#sum</strong>(arg0)</a>
         
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/SumFunction.html">SumFunction</a>"</code> function.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#table:String-instance-method" class="signature"><strong>#table</strong> : String</a>
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/SumFunction.html">SumFunction</a>&quot;</code> function.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#upper(arg0)-instance-method" class="signature"><strong>#upper</strong>(arg0)</a>
-        
-          <div class="summary"><p>Create <code>"<a href="../../Jennifer/QueryBuilder/UpperFunction.html">UpperFunction</a>"</code> function.</p></div>
+        <a href="#table%3AString-instance-method" class="signature"><strong>#table</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#values(field:Symbol)-instance-method" class="signature"><strong>#values</strong>(field : Symbol)</a>
+        <a href="#upper%28arg0%29-instance-method" class="signature"><strong>#upper</strong>(arg0)</a>
+        
+          <div class="summary"><p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/UpperFunction.html">UpperFunction</a>&quot;</code> function.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#values%28field%3ASymbol%29-instance-method" class="signature"><strong>#values</strong>(field : Symbol)</a>
         
           <div class="summary"><p>Returns reference to the <em>field</em> in upsert operation.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#xor(first_condition,second_condition,*conditions)-instance-method" class="signature"><strong>#xor</strong>(first_condition, second_condition, *conditions)</a>
+        <a href="#xor%28first_condition%2Csecond_condition%2C%2Aconditions%29-instance-method" class="signature"><strong>#xor</strong>(first_condition, second_condition, *conditions)</a>
         
           <div class="summary"><p>Combines given <em>first_condition</em>, <em>second_condition</em> and all other <em>conditions</em> by <code>XOR</code> operator.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#xor(conditions:Array)-instance-method" class="signature"><strong>#xor</strong>(conditions : Array)</a>
+        <a href="#xor%28conditions%3AArray%29-instance-method" class="signature"><strong>#xor</strong>(conditions : Array)</a>
         
           <div class="summary"><p>Combines given array of conditions by <code>XOR</code> operator.</p></div>
         
@@ -1792,7 +1788,7 @@ and field name as well.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#method_missing(call)-macro" class="signature"><strong>method_missing</strong>(call)</a>
+        <a href="#method_missing%28call%29-macro" class="signature"><strong>method_missing</strong>(call)</a>
         
       </li>
     
@@ -1834,18 +1830,18 @@ and field name as well.</p>
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(table,relation=nil,query=nil)-class-method">
+    <div class="entry-detail" id="new(table:String,relation:String?=nil,query:Jennifer::QueryBuilder::Query?=nil)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(table, relation = <span class="n">nil</span>, query = <span class="n">nil</span>)
+        def self.<strong>new</strong>(table : String, relation : String? = <span class="n">nil</span>, query : <a href="../../Jennifer/QueryBuilder/Query.html">Jennifer::QueryBuilder::Query</a>? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(table,relation=nil,query=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28table%3AString%2Crelation%3AString%3F%3Dnil%2Cquery%3AJennifer%3A%3AQueryBuilder%3A%3AQuery%3F%3Dnil%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1869,18 +1865,18 @@ and field name as well.</p>
         
         def <strong>abs</strong>(arg0)
 
-        <a class="method-permalink" href="#abs(arg0)-instance-method">#</a>
+        <a class="method-permalink" href="#abs%28arg0%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/AbsFunction.html">AbsFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/AbsFunction.html">AbsFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L252" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L252" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1890,13 +1886,12 @@ and field name as well.</p>
         
         def <strong>all</strong>(query : <a href="../../Jennifer/QueryBuilder/Query.html">Query</a>)
 
-        <a class="method-permalink" href="#all(query:Query)-instance-method">#</a>
+        <a class="method-permalink" href="#all%28query%3AQuery%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates <code>ALL</code> SQL statement.</p>
-
 <pre><code class="language-crystal">nested_query <span class="o">=</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;contacts&quot;</span>].<span class="k">select</span>(<span class="n">:age</span>).where { _tag <span class="o">==</span> <span class="s">&quot;phone&quot;</span> }
 <span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;contacts&quot;</span>].where { _age <span class="o">&gt;</span> all(nested_query) }</code></pre>
         </div>
@@ -1904,7 +1899,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L130" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L130" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1914,15 +1909,13 @@ and field name as well.</p>
         
         def <strong>and</strong>(first_condition, second_condition, *conditions)
 
-        <a class="method-permalink" href="#and(first_condition,second_condition,*conditions)-instance-method">#</a>
+        <a class="method-permalink" href="#and%28first_condition%2Csecond_condition%2C%2Aconditions%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Combines given <em>first_condition</em>, <em>second_condition</em> and all other <em>conditions</em> by <code>AND</code> operator.</p>
-
 <p>All given conditions will be wrapped in <code><a href="../../Jennifer/QueryBuilder/Grouping.html">Grouping</a></code>.</p>
-
 <pre><code class="language-crystal"><span class="t">User</span>.all.where { and(_name.like(<span class="s">&quot;%on&quot;</span>), _age <span class="o">&gt;</span> <span class="n">3</span>) }
 <span class="c"># WHERE (users.name LIKE &#39;%on&#39; AND users.age &gt; 3)</span></code></pre>
         </div>
@@ -1930,7 +1923,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L174" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L174" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1940,15 +1933,13 @@ and field name as well.</p>
         
         def <strong>and</strong>(conditions : Array)
 
-        <a class="method-permalink" href="#and(conditions:Array)-instance-method">#</a>
+        <a class="method-permalink" href="#and%28conditions%3AArray%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Combines given array of conditions by <code>AND</code> operator.</p>
-
 <p>All given conditions will be wrapped in <code><a href="../../Jennifer/QueryBuilder/Grouping.html">Grouping</a></code>.</p>
-
 <pre><code class="language-crystal"><span class="t">User</span>.all.where { and([_name.like(<span class="s">&quot;%on&quot;</span>), _age <span class="o">&gt;</span> <span class="n">3</span>]) }
 <span class="c"># WHERE (users.name LIKE &#39;%on&#39; AND users.age &gt; 3)</span></code></pre>
         </div>
@@ -1956,7 +1947,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L188" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L188" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1966,13 +1957,12 @@ and field name as well.</p>
         
         def <strong>any</strong>(query : <a href="../../Jennifer/QueryBuilder/Query.html">Query</a>)
 
-        <a class="method-permalink" href="#any(query:Query)-instance-method">#</a>
+        <a class="method-permalink" href="#any%28query%3AQuery%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates <code>ANY</code> SQL statement.</p>
-
 <pre><code class="language-crystal">nested_query <span class="o">=</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;addresses&quot;</span>].where { _main }.<span class="k">select</span>(<span class="n">:contact_id</span>)
 <span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;contacts&quot;</span>].where { _id <span class="o">==</span> any(nested_query) }</code></pre>
         </div>
@@ -1980,7 +1970,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L120" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L120" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1990,18 +1980,18 @@ and field name as well.</p>
         
         def <strong>avg</strong>(arg0)
 
-        <a class="method-permalink" href="#avg(arg0)-instance-method">#</a>
+        <a class="method-permalink" href="#avg%28arg0%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/AvgFunction.html">AvgFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/AvgFunction.html">AvgFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L344" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L344" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2011,20 +2001,19 @@ and field name as well.</p>
         
         def <strong>c</strong>(name : String, table_name : String = @table, relation : String? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#c(name:String,table_name:String=@table,relation:String?=nil)-instance-method">#</a>
+        <a class="method-permalink" href="#c%28name%3AString%2Ctable_name%3AString%3D%40table%2Crelation%3AString%3F%3Dnil%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates criterion for current table by given name <em>name</em>.</p>
-
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;users&quot;</span>].where { c(<span class="s">&quot;id&quot;</span>) } <span class="c"># =&gt; &quot;users&quot;.&quot;id&quot;</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L85" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L85" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2034,7 +2023,7 @@ and field name as well.</p>
         
         def <strong>c_with_relation</strong>(name : String, relation : String)
 
-        <a class="method-permalink" href="#c_with_relation(name:String,relation:String)-instance-method">#</a>
+        <a class="method-permalink" href="#c_with_relation%28name%3AString%2Crelation%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2045,7 +2034,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L93" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L93" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2055,15 +2044,13 @@ and field name as well.</p>
         
         def <strong>cast</strong>(expression, type : String)
 
-        <a class="method-permalink" href="#cast(expression,type:String)-instance-method">#</a>
+        <a class="method-permalink" href="#cast%28expression%2Ctype%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Cases <em>expression</em> to the given <em>type</em>.</p>
-
+          <p>Casts <em>expression</em> to the given <em>type</em>.</p>
 <p><em>type</em> field is pasted as-is.</p>
-
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;&quot;</span>].<span class="k">select</span> { [cast(sql(<span class="s">&quot;&#39;100&#39;&quot;</span>, <span class="n">false</span>), <span class="s">&quot;integer&quot;</span>).<span class="k">alias</span>(<span class="s">&quot;field&quot;</span>)] }
 <span class="c"># =&gt; SELECT CAST(&#39;100&#39; AS INTEGER) AS field</span></code></pre>
         </div>
@@ -2071,7 +2058,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L162" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L162" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2081,18 +2068,18 @@ and field name as well.</p>
         
         def <strong>ceil</strong>(arg0)
 
-        <a class="method-permalink" href="#ceil(arg0)-instance-method">#</a>
+        <a class="method-permalink" href="#ceil%28arg0%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/CeilFunction.html">CeilFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/CeilFunction.html">CeilFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L258" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L258" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2113,7 +2100,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L38" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2123,7 +2110,7 @@ and field name as well.</p>
         
         def <strong>coalesce</strong>(*args)
 
-        <a class="method-permalink" href="#coalesce(*args)-instance-method">#</a>
+        <a class="method-permalink" href="#coalesce%28%2Aargs%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2134,7 +2121,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L163" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L163" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2144,18 +2131,18 @@ and field name as well.</p>
         
         def <strong>concat</strong>(*args)
 
-        <a class="method-permalink" href="#concat(*args)-instance-method">#</a>
+        <a class="method-permalink" href="#concat%28%2Aargs%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/ConcatFunction.html">ConcatFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/ConcatFunction.html">ConcatFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L226" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L226" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2165,18 +2152,18 @@ and field name as well.</p>
         
         def <strong>concat_ws</strong>(*args)
 
-        <a class="method-permalink" href="#concat_ws(*args)-instance-method">#</a>
+        <a class="method-permalink" href="#concat_ws%28%2Aargs%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/ConcatWsFunction.html">ConcatWsFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/ConcatWsFunction.html">ConcatWsFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L239" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L239" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2186,18 +2173,18 @@ and field name as well.</p>
         
         def <strong>count</strong>(*args)
 
-        <a class="method-permalink" href="#count(*args)-instance-method">#</a>
+        <a class="method-permalink" href="#count%28%2Aargs%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/CountFunction.html">CountFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/CountFunction.html">CountFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L284" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L284" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2212,13 +2199,13 @@ and field name as well.</p>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/CurrentDateFunction.html">CurrentDateFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/CurrentDateFunction.html">CurrentDateFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L208" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L208" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2233,13 +2220,13 @@ and field name as well.</p>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/CurrentTimeFunction.html">CurrentTimeFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/CurrentTimeFunction.html">CurrentTimeFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L214" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L214" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2254,13 +2241,13 @@ and field name as well.</p>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/CurrentTimestampFunction.html">CurrentTimestampFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/CurrentTimestampFunction.html">CurrentTimestampFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L202" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L202" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2270,18 +2257,18 @@ and field name as well.</p>
         
         def <strong>floor</strong>(arg0)
 
-        <a class="method-permalink" href="#floor(arg0)-instance-method">#</a>
+        <a class="method-permalink" href="#floor%28arg0%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/FloorFunction.html">FloorFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/FloorFunction.html">FloorFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L271" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L271" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2291,20 +2278,19 @@ and field name as well.</p>
         
         def <strong>g</strong>(condition)
 
-        <a class="method-permalink" href="#g(condition)-instance-method">#</a>
+        <a class="method-permalink" href="#g%28condition%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates grouping for the given <em>condition</em>.</p>
-
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;users&quot;</span>].where { c1 <span class="o">&amp;</span> g(c2 <span class="o">|</span> c3) }</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L105" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L105" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2314,7 +2300,7 @@ and field name as well.</p>
         
         def <strong>group</strong>(condition)
 
-        <a class="method-permalink" href="#group(condition)-instance-method">#</a>
+        <a class="method-permalink" href="#group%28condition%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2325,7 +2311,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L110" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L110" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2335,18 +2321,18 @@ and field name as well.</p>
         
         def <strong>lower</strong>(arg0)
 
-        <a class="method-permalink" href="#lower(arg0)-instance-method">#</a>
+        <a class="method-permalink" href="#lower%28arg0%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/LowerFunction.html">LowerFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/LowerFunction.html">LowerFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L176" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L176" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2356,18 +2342,18 @@ and field name as well.</p>
         
         def <strong>max</strong>(arg0)
 
-        <a class="method-permalink" href="#max(arg0)-instance-method">#</a>
+        <a class="method-permalink" href="#max%28arg0%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/MaxFunction.html">MaxFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/MaxFunction.html">MaxFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L305" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L305" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2377,18 +2363,18 @@ and field name as well.</p>
         
         def <strong>min</strong>(arg0)
 
-        <a class="method-permalink" href="#min(arg0)-instance-method">#</a>
+        <a class="method-permalink" href="#min%28arg0%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/MinFunction.html">MinFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/MinFunction.html">MinFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L318" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L318" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2403,13 +2389,13 @@ and field name as well.</p>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/NowFunction.html">NowFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/NowFunction.html">NowFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L220" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L220" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2419,15 +2405,13 @@ and field name as well.</p>
         
         def <strong>or</strong>(first_condition, second_condition, *conditions)
 
-        <a class="method-permalink" href="#or(first_condition,second_condition,*conditions)-instance-method">#</a>
+        <a class="method-permalink" href="#or%28first_condition%2Csecond_condition%2C%2Aconditions%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Combines given <em>first_condition</em>, <em>second_condition</em> and all other <em>conditions</em> by <code>OR</code> operator.</p>
-
 <p>All given conditions will be wrapped in <code><a href="../../Jennifer/QueryBuilder/Grouping.html">Grouping</a></code>.</p>
-
 <pre><code class="language-crystal"><span class="t">User</span>.all.where { or(_name.like(<span class="s">&quot;%on&quot;</span>), _age <span class="o">&gt;</span> <span class="n">3</span>) }
 <span class="c"># =&gt; WHERE (users.name LIKE &#39;%on&#39; OR users.age &gt; 3)</span></code></pre>
         </div>
@@ -2435,7 +2419,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L207" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L207" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2445,15 +2429,13 @@ and field name as well.</p>
         
         def <strong>or</strong>(conditions : Array)
 
-        <a class="method-permalink" href="#or(conditions:Array)-instance-method">#</a>
+        <a class="method-permalink" href="#or%28conditions%3AArray%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Combines given array of conditions by <code>OR</code> operator.</p>
-
 <p>All given conditions will be wrapped in <code><a href="../../Jennifer/QueryBuilder/Grouping.html">Grouping</a></code>.</p>
-
 <pre><code class="language-crystal"><span class="t">User</span>.all.where { or([_name.like(<span class="s">&quot;%on&quot;</span>), _age <span class="o">&gt;</span> <span class="n">3</span>]) }
 <span class="c"># WHERE (users.name LIKE &#39;%on&#39; OR users.age &gt; 3)</span></code></pre>
         </div>
@@ -2461,7 +2443,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L219" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L219" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2477,14 +2459,13 @@ and field name as well.</p>
         <div class="doc">
           
           <p>Query's model primary field criterion.</p>
-
 <p>Can be used only in a scope of <code><a href="../../Jennifer/QueryBuilder/IModelQuery.html">IModelQuery</a></code>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2494,13 +2475,13 @@ and field name as well.</p>
         
         def <strong>query</strong> : <a href="../../Jennifer/QueryBuilder/Query.html">Query</a>?
 
-        <a class="method-permalink" href="#query:Query?-instance-method">#</a>
+        <a class="method-permalink" href="#query%3AQuery%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2510,13 +2491,13 @@ and field name as well.</p>
         
         def <strong>query=</strong>(query : <a href="../../Jennifer/QueryBuilder/Query.html">Query</a>?)
 
-        <a class="method-permalink" href="#query=(query:Query?)-instance-method">#</a>
+        <a class="method-permalink" href="#query%3D%28query%3AQuery%3F%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2526,13 +2507,13 @@ and field name as well.</p>
         
         def <strong>relation</strong> : String?
 
-        <a class="method-permalink" href="#relation:String?-instance-method">#</a>
+        <a class="method-permalink" href="#relation%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2542,18 +2523,18 @@ and field name as well.</p>
         
         def <strong>round</strong>(*args)
 
-        <a class="method-permalink" href="#round(*args)-instance-method">#</a>
+        <a class="method-permalink" href="#round%28%2Aargs%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/RoundFunction.html">RoundFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/RoundFunction.html">RoundFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L357" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L357" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2563,15 +2544,13 @@ and field name as well.</p>
         
         def <strong>sql</strong>(query : String, args : Array(<a href="../../Jennifer/DBAny.html">DBAny</a>) = <span class="o">[]</span> <span class="k">of</span> <span class="t">DBAny</span>, use_brackets : Bool = <span class="n">true</span>)
 
-        <a class="method-permalink" href="#sql(query:String,args:Array(DBAny)=[]ofDBAny,use_brackets:Bool=true)-instance-method">#</a>
+        <a class="method-permalink" href="#sql%28query%3AString%2Cargs%3AArray%28DBAny%29%3D%5B%5DofDBAny%2Cuse_brackets%3ABool%3Dtrue%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds plain query <em>query</em>.</p>
-
 <p>If you need to wrap query set <em>use_brackets</em> to <code>true</code>.</p>
-
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;&quot;</span>].<span class="k">select</span> { [sql(<span class="s">&quot;1&quot;</span>, <span class="n">false</span>)] } <span class="c"># =&gt; SELECT 1</span>
 <span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;&quot;</span>].<span class="k">select</span> { [sql(<span class="s">&quot;1&quot;</span>)] }        <span class="c"># =&gt; SELECT (1)</span>
 <span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;&quot;</span>].<span class="k">select</span> { [sql(<span class="s">&quot;TIMESTAMP %s AT TIME ZONE %s&quot;</span>, [<span class="s">&quot;2001-02-16 20:38:40&quot;</span>, <span class="s">&quot;MST&quot;</span>], <span class="n">false</span>)] }
@@ -2581,7 +2560,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2591,15 +2570,13 @@ and field name as well.</p>
         
         def <strong>sql</strong>(query : String, use_brackets : Bool = <span class="n">true</span>)
 
-        <a class="method-permalink" href="#sql(query:String,use_brackets:Bool=true)-instance-method">#</a>
+        <a class="method-permalink" href="#sql%28query%3AString%2Cuse_brackets%3ABool%3Dtrue%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds plain query <em>query</em>.</p>
-
 <p>If you need to wrap query set <em>use_brackets</em> to <code>true</code>.</p>
-
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;&quot;</span>].<span class="k">select</span> { [sql(<span class="s">&quot;1&quot;</span>, <span class="n">false</span>)] } <span class="c"># =&gt; SELECT 1</span>
 <span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;&quot;</span>].<span class="k">select</span> { [sql(<span class="s">&quot;1&quot;</span>)] }        <span class="c"># =&gt; SELECT (1)</span>
 <span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;&quot;</span>].<span class="k">select</span> { [sql(<span class="s">&quot;TIMESTAMP %s AT TIME ZONE %s&quot;</span>, [<span class="s">&quot;2001-02-16 20:38:40&quot;</span>, <span class="s">&quot;MST&quot;</span>], <span class="n">false</span>)] }
@@ -2609,7 +2586,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L72" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L72" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2619,20 +2596,19 @@ and field name as well.</p>
         
         def <strong>star</strong>(table : String = @table)
 
-        <a class="method-permalink" href="#star(table:String=@table)-instance-method">#</a>
+        <a class="method-permalink" href="#star%28table%3AString%3D%40table%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates select star for <em>table</em>.</p>
-
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;users&quot;</span>].<span class="k">select</span> { [star(<span class="s">&quot;contacts&quot;</span>)] } <span class="c"># =&gt; SELECT contacts.* FROM users</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L139" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L139" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2642,18 +2618,18 @@ and field name as well.</p>
         
         def <strong>sum</strong>(arg0)
 
-        <a class="method-permalink" href="#sum(arg0)-instance-method">#</a>
+        <a class="method-permalink" href="#sum%28arg0%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/SumFunction.html">SumFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/SumFunction.html">SumFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L331" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L331" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2663,13 +2639,13 @@ and field name as well.</p>
         
         def <strong>table</strong> : String
 
-        <a class="method-permalink" href="#table:String-instance-method">#</a>
+        <a class="method-permalink" href="#table%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2679,18 +2655,18 @@ and field name as well.</p>
         
         def <strong>upper</strong>(arg0)
 
-        <a class="method-permalink" href="#upper(arg0)-instance-method">#</a>
+        <a class="method-permalink" href="#upper%28arg0%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Create <code>"<a href="../../Jennifer/QueryBuilder/UpperFunction.html">UpperFunction</a>"</code> function.</p>
+          <p>Create <code>&quot;<a href="../../Jennifer/QueryBuilder/UpperFunction.html">UpperFunction</a>&quot;</code> function.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/function.cr#L189" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/function.cr#L189" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2700,22 +2676,21 @@ and field name as well.</p>
         
         def <strong>values</strong>(field : Symbol)
 
-        <a class="method-permalink" href="#values(field:Symbol)-instance-method">#</a>
+        <a class="method-permalink" href="#values%28field%3ASymbol%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns reference to the <em>field</em> in upsert operation.</p>
-
 <pre><code class="language-crystal"><span class="t">Jennifer</span><span class="t">::</span><span class="t">Query</span>[<span class="s">&quot;orders&quot;</span>].upsert(<span class="s">%w(name uid price)</span>, [[<span class="s">&quot;Order 1&quot;</span>, <span class="n">123</span>, <span class="n">3</span>]], <span class="s">%w(uid)</span>) <span class="k">do</span>
-  {<span class="n">:price</span> => values(<span class="n">:price</span>) <span class="o">+</span> _price}
+  {<span class="n">:price</span> <span class="o">=&gt;</span> values(<span class="n">:price</span>) <span class="o">+</span> _price}
 <span class="k">end</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L150" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L150" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2725,15 +2700,13 @@ and field name as well.</p>
         
         def <strong>xor</strong>(first_condition, second_condition, *conditions)
 
-        <a class="method-permalink" href="#xor(first_condition,second_condition,*conditions)-instance-method">#</a>
+        <a class="method-permalink" href="#xor%28first_condition%2Csecond_condition%2C%2Aconditions%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Combines given <em>first_condition</em>, <em>second_condition</em> and all other <em>conditions</em> by <code>XOR</code> operator.</p>
-
 <p>All given conditions will be wrapped in <code><a href="../../Jennifer/QueryBuilder/Grouping.html">Grouping</a></code>.</p>
-
 <pre><code class="language-crystal"><span class="t">User</span>.all.where { xor(_name.like(<span class="s">&quot;%on&quot;</span>), _age <span class="o">&gt;</span> <span class="n">3</span>) }
 <span class="c"># =&gt; WHERE (users.name LIKE &#39;%on&#39; XOR users.age &gt; 3)</span></code></pre>
         </div>
@@ -2741,7 +2714,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L238" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L238" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2751,15 +2724,13 @@ and field name as well.</p>
         
         def <strong>xor</strong>(conditions : Array)
 
-        <a class="method-permalink" href="#xor(conditions:Array)-instance-method">#</a>
+        <a class="method-permalink" href="#xor%28conditions%3AArray%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Combines given array of conditions by <code>XOR</code> operator.</p>
-
 <p>All given conditions will be wrapped in <code><a href="../../Jennifer/QueryBuilder/Grouping.html">Grouping</a></code>.</p>
-
 <pre><code class="language-crystal"><span class="t">User</span>.all.where { xor([_name.like(<span class="s">&quot;%on&quot;</span>), _age <span class="o">&gt;</span> <span class="n">3</span>]) }
 <span class="c"># WHERE (users.name LIKE &#39;%on&#39; XOR users.age &gt; 3)</span></code></pre>
         </div>
@@ -2767,7 +2738,7 @@ and field name as well.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L250" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L250" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2789,13 +2760,13 @@ and field name as well.</p>
         
         macro <strong>method_missing</strong>(call)
 
-        <a class="method-permalink" href="#method_missing(call)-macro">#</a>
+        <a class="method-permalink" href="#method_missing%28call%29-macro">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/expression_builder.cr#L261" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/expression_builder.cr#L261" target="_blank">View source</a>]
         
       </div>
     </div>

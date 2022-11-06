@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1298,7 +1303,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/exec_result.cr#L3" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/exec_result.cr#L3" target="_blank">
         jennifer/adapter/postgres/exec_result.cr
       </a>
     
@@ -1320,12 +1325,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(last_insert_id,rows_affected)-class-method" class="signature"><strong>.new</strong>(last_insert_id, rows_affected)</a>
+        <a href="#new%28last_insert_id%3AInt64%2Crows_affected%3AInt64%29-class-method" class="signature"><strong>.new</strong>(last_insert_id : Int64, rows_affected : Int64)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(last_insert_id)-class-method" class="signature"><strong>.new</strong>(last_insert_id)</a>
+        <a href="#new%28last_insert_id%3AInt64%29-class-method" class="signature"><strong>.new</strong>(last_insert_id : Int64)</a>
         
       </li>
     
@@ -1346,12 +1351,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#last_insert_id:Int64-instance-method" class="signature"><strong>#last_insert_id</strong> : Int64</a>
+        <a href="#last_insert_id%3AInt64-instance-method" class="signature"><strong>#last_insert_id</strong> : Int64</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#rows_affected:Int64-instance-method" class="signature"><strong>#rows_affected</strong> : Int64</a>
+        <a href="#rows_affected%3AInt64-instance-method" class="signature"><strong>#rows_affected</strong> : Int64</a>
         
       </li>
     
@@ -1405,34 +1410,34 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(last_insert_id,rows_affected)-class-method">
+    <div class="entry-detail" id="new(last_insert_id:Int64,rows_affected:Int64)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(last_insert_id, rows_affected)
+        def self.<strong>new</strong>(last_insert_id : Int64, rows_affected : Int64)
 
-        <a class="method-permalink" href="#new(last_insert_id,rows_affected)-class-method">#</a>
+        <a class="method-permalink" href="#new%28last_insert_id%3AInt64%2Crows_affected%3AInt64%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/exec_result.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/exec_result.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="new(last_insert_id)-class-method">
+    <div class="entry-detail" id="new(last_insert_id:Int64)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(last_insert_id)
+        def self.<strong>new</strong>(last_insert_id : Int64)
 
-        <a class="method-permalink" href="#new(last_insert_id)-class-method">#</a>
+        <a class="method-permalink" href="#new%28last_insert_id%3AInt64%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/exec_result.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/exec_result.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1456,13 +1461,13 @@
         
         def <strong>last_insert_id</strong> : Int64
 
-        <a class="method-permalink" href="#last_insert_id:Int64-instance-method">#</a>
+        <a class="method-permalink" href="#last_insert_id%3AInt64-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/exec_result.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/exec_result.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1472,13 +1477,13 @@
         
         def <strong>rows_affected</strong> : Int64
 
-        <a class="method-permalink" href="#rows_affected:Int64-instance-method">#</a>
+        <a class="method-permalink" href="#rows_affected%3AInt64-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/exec_result.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/exec_result.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>

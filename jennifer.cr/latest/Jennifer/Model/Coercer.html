@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1296,7 +1301,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/coercer.cr#L2" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/coercer.cr#L2" target="_blank">
         jennifer/model/coercer.cr
       </a>
     
@@ -1344,57 +1349,57 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#coerce(value:String,type:Int8%7C::Nil.class)-class-method" class="signature"><strong>.coerce</strong>(value : String, type : <span class="t">Int8</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)</a>
+        <a href="#coerce%28value%3AString%2Ctype%3A%28Int8%7C%3A%3ANil%29.class%29-class-method" class="signature"><strong>.coerce</strong>(value : String, type : (<span class="t">Int8</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#coerce(value:String,type:Int16%7C::Nil.class)-class-method" class="signature"><strong>.coerce</strong>(value : String, type : <span class="t">Int16</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)</a>
+        <a href="#coerce%28value%3AString%2Ctype%3A%28Int16%7C%3A%3ANil%29.class%29-class-method" class="signature"><strong>.coerce</strong>(value : String, type : (<span class="t">Int16</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#coerce(value:String,type:Int32%7C::Nil.class)-class-method" class="signature"><strong>.coerce</strong>(value : String, type : <span class="t">Int32</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)</a>
+        <a href="#coerce%28value%3AString%2Ctype%3A%28Int32%7C%3A%3ANil%29.class%29-class-method" class="signature"><strong>.coerce</strong>(value : String, type : (<span class="t">Int32</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#coerce(value:String,type:Int64%7C::Nil.class)-class-method" class="signature"><strong>.coerce</strong>(value : String, type : <span class="t">Int64</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)</a>
+        <a href="#coerce%28value%3AString%2Ctype%3A%28Int64%7C%3A%3ANil%29.class%29-class-method" class="signature"><strong>.coerce</strong>(value : String, type : (<span class="t">Int64</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#coerce(value:String,type:String%7C::Nil.class)-class-method" class="signature"><strong>.coerce</strong>(value : String, type : <span class="t">String</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)</a>
+        <a href="#coerce%28value%3AString%2Ctype%3A%28String%7C%3A%3ANil%29.class%29-class-method" class="signature"><strong>.coerce</strong>(value : String, type : (<span class="t">String</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#coerce(value:String,type:Float32%7C::Nil.class)-class-method" class="signature"><strong>.coerce</strong>(value : String, type : <span class="t">Float32</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)</a>
+        <a href="#coerce%28value%3AString%2Ctype%3A%28Float32%7C%3A%3ANil%29.class%29-class-method" class="signature"><strong>.coerce</strong>(value : String, type : (<span class="t">Float32</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#coerce(value:String,type:Float64%7C::Nil.class)-class-method" class="signature"><strong>.coerce</strong>(value : String, type : <span class="t">Float64</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)</a>
+        <a href="#coerce%28value%3AString%2Ctype%3A%28Float64%7C%3A%3ANil%29.class%29-class-method" class="signature"><strong>.coerce</strong>(value : String, type : (<span class="t">Float64</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#coerce(value:String,type:Bool%7C::Nil.class)-class-method" class="signature"><strong>.coerce</strong>(value : String, type : <span class="t">Bool</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)</a>
+        <a href="#coerce%28value%3AString%2Ctype%3A%28Bool%7C%3A%3ANil%29.class%29-class-method" class="signature"><strong>.coerce</strong>(value : String, type : (<span class="t">Bool</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#coerce(value:String,type:BigDecimal%7C::Nil.class)-class-method" class="signature"><strong>.coerce</strong>(value : String, type : <span class="t">BigDecimal</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)</a>
+        <a href="#coerce%28value%3AString%2Ctype%3A%28UUID%7C%3A%3ANil%29.class%29-class-method" class="signature"><strong>.coerce</strong>(value : String, type : (<span class="t">UUID</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#coerce(value:String,type:UUID%7C::Nil.class)-class-method" class="signature"><strong>.coerce</strong>(value : String, type : <span class="t">UUID</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)</a>
+        <a href="#coerce%28value%3AString%2Ctype%3A%28BigDecimal%7C%3A%3ANil%29.class%29-class-method" class="signature"><strong>.coerce</strong>(value : String, type : (<span class="t">BigDecimal</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#coerce(value:String,type)-class-method" class="signature"><strong>.coerce</strong>(value : String, type)</a>
+        <a href="#coerce%28value%3AString%2Ctype%29-class-method" class="signature"><strong>.coerce</strong>(value : String, type)</a>
         
           <div class="summary"><p><span class="flag orange">TODO</span>  add PG::Numeric support</p></div>
         
@@ -1424,162 +1429,162 @@
     Class Method Detail
   </h2>
   
-    <div class="entry-detail" id="coerce(value:String,type:Int8|::Nil.class)-class-method">
+    <div class="entry-detail" id="coerce(value:String,type:(Int8|::Nil).class)-class-method">
       <div class="signature">
         
-        def self.<strong>coerce</strong>(value : String, type : <span class="t">Int8</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)
+        def self.<strong>coerce</strong>(value : String, type : (<span class="t">Int8</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)
 
-        <a class="method-permalink" href="#coerce(value:String,type:Int8%7C::Nil.class)-class-method">#</a>
+        <a class="method-permalink" href="#coerce%28value%3AString%2Ctype%3A%28Int8%7C%3A%3ANil%29.class%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/coercer.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/coercer.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="coerce(value:String,type:Int16|::Nil.class)-class-method">
+    <div class="entry-detail" id="coerce(value:String,type:(Int16|::Nil).class)-class-method">
       <div class="signature">
         
-        def self.<strong>coerce</strong>(value : String, type : <span class="t">Int16</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)
+        def self.<strong>coerce</strong>(value : String, type : (<span class="t">Int16</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)
 
-        <a class="method-permalink" href="#coerce(value:String,type:Int16%7C::Nil.class)-class-method">#</a>
+        <a class="method-permalink" href="#coerce%28value%3AString%2Ctype%3A%28Int16%7C%3A%3ANil%29.class%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/coercer.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/coercer.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="coerce(value:String,type:Int32|::Nil.class)-class-method">
+    <div class="entry-detail" id="coerce(value:String,type:(Int32|::Nil).class)-class-method">
       <div class="signature">
         
-        def self.<strong>coerce</strong>(value : String, type : <span class="t">Int32</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)
+        def self.<strong>coerce</strong>(value : String, type : (<span class="t">Int32</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)
 
-        <a class="method-permalink" href="#coerce(value:String,type:Int32%7C::Nil.class)-class-method">#</a>
+        <a class="method-permalink" href="#coerce%28value%3AString%2Ctype%3A%28Int32%7C%3A%3ANil%29.class%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/coercer.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/coercer.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="coerce(value:String,type:Int64|::Nil.class)-class-method">
+    <div class="entry-detail" id="coerce(value:String,type:(Int64|::Nil).class)-class-method">
       <div class="signature">
         
-        def self.<strong>coerce</strong>(value : String, type : <span class="t">Int64</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)
+        def self.<strong>coerce</strong>(value : String, type : (<span class="t">Int64</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)
 
-        <a class="method-permalink" href="#coerce(value:String,type:Int64%7C::Nil.class)-class-method">#</a>
+        <a class="method-permalink" href="#coerce%28value%3AString%2Ctype%3A%28Int64%7C%3A%3ANil%29.class%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/coercer.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/coercer.cr#L24" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="coerce(value:String,type:String|::Nil.class)-class-method">
+    <div class="entry-detail" id="coerce(value:String,type:(String|::Nil).class)-class-method">
       <div class="signature">
         
-        def self.<strong>coerce</strong>(value : String, type : <span class="t">String</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)
+        def self.<strong>coerce</strong>(value : String, type : (<span class="t">String</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)
 
-        <a class="method-permalink" href="#coerce(value:String,type:String%7C::Nil.class)-class-method">#</a>
+        <a class="method-permalink" href="#coerce%28value%3AString%2Ctype%3A%28String%7C%3A%3ANil%29.class%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/coercer.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/coercer.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="coerce(value:String,type:Float32|::Nil.class)-class-method">
+    <div class="entry-detail" id="coerce(value:String,type:(Float32|::Nil).class)-class-method">
       <div class="signature">
         
-        def self.<strong>coerce</strong>(value : String, type : <span class="t">Float32</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)
+        def self.<strong>coerce</strong>(value : String, type : (<span class="t">Float32</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)
 
-        <a class="method-permalink" href="#coerce(value:String,type:Float32%7C::Nil.class)-class-method">#</a>
+        <a class="method-permalink" href="#coerce%28value%3AString%2Ctype%3A%28Float32%7C%3A%3ANil%29.class%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/coercer.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/coercer.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="coerce(value:String,type:Float64|::Nil.class)-class-method">
+    <div class="entry-detail" id="coerce(value:String,type:(Float64|::Nil).class)-class-method">
       <div class="signature">
         
-        def self.<strong>coerce</strong>(value : String, type : <span class="t">Float64</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)
+        def self.<strong>coerce</strong>(value : String, type : (<span class="t">Float64</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)
 
-        <a class="method-permalink" href="#coerce(value:String,type:Float64%7C::Nil.class)-class-method">#</a>
+        <a class="method-permalink" href="#coerce%28value%3AString%2Ctype%3A%28Float64%7C%3A%3ANil%29.class%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/coercer.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/coercer.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="coerce(value:String,type:Bool|::Nil.class)-class-method">
+    <div class="entry-detail" id="coerce(value:String,type:(Bool|::Nil).class)-class-method">
       <div class="signature">
         
-        def self.<strong>coerce</strong>(value : String, type : <span class="t">Bool</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)
+        def self.<strong>coerce</strong>(value : String, type : (<span class="t">Bool</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)
 
-        <a class="method-permalink" href="#coerce(value:String,type:Bool%7C::Nil.class)-class-method">#</a>
+        <a class="method-permalink" href="#coerce%28value%3AString%2Ctype%3A%28Bool%7C%3A%3ANil%29.class%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/coercer.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/coercer.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="coerce(value:String,type:BigDecimal|::Nil.class)-class-method">
+    <div class="entry-detail" id="coerce(value:String,type:(UUID|::Nil).class)-class-method">
       <div class="signature">
         
-        def self.<strong>coerce</strong>(value : String, type : <span class="t">BigDecimal</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)
+        def self.<strong>coerce</strong>(value : String, type : (<span class="t">UUID</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)
 
-        <a class="method-permalink" href="#coerce(value:String,type:BigDecimal%7C::Nil.class)-class-method">#</a>
+        <a class="method-permalink" href="#coerce%28value%3AString%2Ctype%3A%28UUID%7C%3A%3ANil%29.class%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/coercer.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/coercer.cr#L60" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="coerce(value:String,type:UUID|::Nil.class)-class-method">
+    <div class="entry-detail" id="coerce(value:String,type:(BigDecimal|::Nil).class)-class-method">
       <div class="signature">
         
-        def self.<strong>coerce</strong>(value : String, type : <span class="t">UUID</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>.<span class="k">class</span>)
+        def self.<strong>coerce</strong>(value : String, type : (<span class="t">BigDecimal</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>).<span class="k">class</span>)
 
-        <a class="method-permalink" href="#coerce(value:String,type:UUID%7C::Nil.class)-class-method">#</a>
+        <a class="method-permalink" href="#coerce%28value%3AString%2Ctype%3A%28BigDecimal%7C%3A%3ANil%29.class%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/coercer.cr#L60" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/coercer.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1589,7 +1594,7 @@
         
         def self.<strong>coerce</strong>(value : String, type)
 
-        <a class="method-permalink" href="#coerce(value:String,type)-class-method">#</a>
+        <a class="method-permalink" href="#coerce%28value%3AString%2Ctype%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1600,7 +1605,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/coercer.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/coercer.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>

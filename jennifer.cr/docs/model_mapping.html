@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/model_mapping.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/model_mapping.html","headline":"Imdrasil Homebrew Stuff","@context":"https://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/model_mapping.html","description":"Personal site","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -35,55 +35,55 @@
     <nav class="site-nav">
       <div class="trigger">
         
-          <a class="page-link" href="./timestamps">Timestamps</a>
-        
-          <a class="page-link" href="./view">Views</a>
-        
-          <a class="page-link" href="./query_dsl">Query DSL</a>
-        
-          <a class="page-link" href="./getting_started">Getting started</a>
-        
-          <a class="page-link" href="./configuration">Configuration</a>
-        
-          <a class="page-link" href="./time">Time</a>
-        
           <a class="page-link" href="./aggregation">Aggregations</a>
-        
-          <a class="page-link" href="./record">Record</a>
-        
-          <a class="page-link" href="./callbacks">Callbacks</a>
-        
-          <a class="page-link" href="./index">Jennifer Documentation</a>
-        
-          <a class="page-link" href="./model_sti">STI</a>
-        
-          <a class="page-link" href="./model_mapping">Mapping</a>
-        
-          <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
-        
-          <a class="page-link" href="./crud">CRUD</a>
-        
-          <a class="page-link" href="./model_scopes">Scopes</a>
-        
-          <a class="page-link" href="./relations">Relations</a>
-        
-          <a class="page-link" href="./validation">Validation</a>
-        
-          <a class="page-link" href="./eager_loading">Eager Loading</a>
-        
-          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
-        
-          <a class="page-link" href="./migration">Migration</a>
-        
-          <a class="page-link" href="./pagination_and_ordering">Pagination &amp; Ordering</a>
-        
-          <a class="page-link" href="./command_line">Command Line</a>
-        
-          <a class="page-link" href="./internationalization">Internationalization</a>
         
           <a class="page-link" href="./authentication">Authentication</a>
         
+          <a class="page-link" href="./callbacks">Callbacks</a>
+        
+          <a class="page-link" href="./command_line">Command Line</a>
+        
+          <a class="page-link" href="./configuration">Configuration</a>
+        
+          <a class="page-link" href="./crud">CRUD</a>
+        
+          <a class="page-link" href="./eager_loading">Eager Loading</a>
+        
+          <a class="page-link" href="./getting_started">Getting started</a>
+        
+          <a class="page-link" href="./index">Jennifer Documentation</a>
+        
+          <a class="page-link" href="./internationalization">Internationalization</a>
+        
+          <a class="page-link" href="./migration">Migration</a>
+        
+          <a class="page-link" href="./model_mapping">Mapping</a>
+        
+          <a class="page-link" href="./model_scopes">Scopes</a>
+        
+          <a class="page-link" href="./model_sti">STI</a>
+        
+          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
+        
+          <a class="page-link" href="./pagination_and_ordering">Pagination &amp; Ordering</a>
+        
+          <a class="page-link" href="./query_dsl">Query DSL</a>
+        
+          <a class="page-link" href="./record">Record</a>
+        
+          <a class="page-link" href="./relations">Relationships</a>
+        
           <a class="page-link" href="./serialization">Serialization</a>
+        
+          <a class="page-link" href="./time">Time</a>
+        
+          <a class="page-link" href="./timestamps">Timestamps</a>
+        
+          <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
+        
+          <a class="page-link" href="./validation">Validation</a>
+        
+          <a class="page-link" href="./view">Views</a>
         
       </div>
     </nav>
@@ -97,7 +97,7 @@
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Contact</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">with_timestamps</span>
   <span class="n">mapping</span><span class="p">(</span>
-    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span> <span class="c1"># same as {type: Int32, primary: true}</span>
+    <span class="ss">id: </span><span class="no">Primary64</span><span class="p">,</span> <span class="c1"># same as {type: Int64, primary: true}</span>
     <span class="ss">name: </span><span class="no">String</span><span class="p">,</span>
     <span class="ss">gender: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">?,</span> <span class="ss">default: </span><span class="s2">"male"</span><span class="p">},</span>
     <span class="ss">age: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int32</span><span class="p">,</span> <span class="ss">default: </span><span class="mi">10</span><span class="p">},</span>
@@ -130,10 +130,10 @@
 
 <span class="k">class</span> <span class="nc">Address</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">mapping</span><span class="p">(</span>
-    <span class="ss">id: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int32</span><span class="p">,</span> <span class="ss">primary: </span><span class="kp">true</span><span class="p">},</span>
+    <span class="ss">id: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int64</span><span class="p">,</span> <span class="ss">primary: </span><span class="kp">true</span><span class="p">},</span>
     <span class="ss">main: </span><span class="no">Bool</span><span class="p">,</span>
     <span class="ss">street: </span><span class="no">String</span><span class="p">,</span>
-    <span class="ss">contact_id: </span><span class="no">Int32</span><span class="p">?,</span>
+    <span class="ss">contact_id: </span><span class="no">Int64</span><span class="p">?,</span>
     <span class="ss">details: </span><span class="no">JSON</span><span class="o">::</span><span class="no">Any</span><span class="p">?</span>
   <span class="p">)</span>
   <span class="n">validates_format</span> <span class="p">:</span><span class="n">street</span><span class="p">,</span> <span class="sr">/st\.|street/</span>
@@ -146,7 +146,7 @@
 <span class="k">class</span> <span class="nc">Passport</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">mapping</span><span class="p">(</span>
     <span class="ss">enn: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">,</span> <span class="ss">primary: </span><span class="kp">true</span><span class="p">},</span>
-    <span class="ss">contact_id: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int32</span><span class="p">,</span> <span class="ss">null: </span><span class="kp">true</span><span class="p">}</span>
+    <span class="ss">contact_id: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Int64</span><span class="p">,</span> <span class="ss">null: </span><span class="kp">true</span><span class="p">}</span>
   <span class="p">)</span>
 
   <span class="n">validates_with</span> <span class="no">EnnValidator</span>
@@ -155,9 +155,9 @@
 
 <span class="k">class</span> <span class="nc">Profile</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">mapping</span><span class="p">(</span>
-    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">id: </span><span class="no">Primary64</span><span class="p">,</span>
     <span class="ss">login: </span><span class="no">String</span><span class="p">,</span>
-    <span class="ss">contact_id: </span><span class="no">Int32</span><span class="p">?,</span>
+    <span class="ss">contact_id: </span><span class="no">Int64</span><span class="p">?,</span>
     <span class="ss">type: </span><span class="no">String</span>
   <span class="p">)</span>
 
@@ -180,7 +180,7 @@
 
 <span class="k">class</span> <span class="nc">Country</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">mapping</span><span class="p">(</span>
-    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">id: </span><span class="no">Primary64</span><span class="p">,</span>
     <span class="ss">name: </span><span class="no">String</span>
   <span class="p">)</span>
 
@@ -237,7 +237,11 @@ instead of type. Next keys are supported:</p>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">:virtual</code></td>
-      <td>mark field as virtual - will not be stored and retrieved from db</td>
+      <td>mark field as virtual - will not be stored and retrieved from DB</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">:generated</code></td>
+      <td>field represents generated column (is only read from the DB)</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">:converter</code></td>
@@ -420,7 +424,7 @@ instead of type. Next keys are supported:</p>
 
 <p>All allowed types are listed on the <a href="https://imdrasil.github.io/jennifer.cr/docs/migration">Migration</a> page.</p>
 
-<p>All defined mapping properties are accessible via <code class="language-plaintext highlighter-rouge">COLUMNS_METADATA</code> constant and <code class="language-plaintext highlighter-rouge">::columns_tuple</code> method.</p>
+<p>All defined mapping properties are accessible via <code class="language-plaintext highlighter-rouge">COLUMNS_METADATA</code> constant and <code class="language-plaintext highlighter-rouge">.columns_tuple</code> method.</p>
 
 <p>It may be useful to have one parent class for all your models - just make it abstract and everything will work well:</p>
 
@@ -429,7 +433,7 @@ instead of type. Next keys are supported:</p>
 
 <span class="k">class</span> <span class="nc">SomeModel</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
   <span class="n">mapping</span><span class="p">(</span>
-    <span class="ss">id: </span><span class="no">Int32</span><span class="p">,</span>
+    <span class="ss">id: </span><span class="no">Int64</span><span class="p">,</span>
     <span class="ss">name: </span><span class="no">String</span>
   <span class="p">)</span>
 <span class="k">end</span>
@@ -445,10 +449,10 @@ to use Jennifer’s <code class="language-plaintext highlighter-rouge">mapping</
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
   <span class="c1"># JSON.mapping used *before* model mapping:</span>
-  <span class="no">JSON</span><span class="p">.</span><span class="nf">mapping</span><span class="p">(</span><span class="ss">id: </span><span class="no">Int32</span><span class="p">,</span> <span class="ss">name: </span><span class="no">String</span><span class="p">)</span>
+  <span class="no">JSON</span><span class="p">.</span><span class="nf">mapping</span><span class="p">(</span><span class="ss">id: </span><span class="no">Int64</span><span class="p">,</span> <span class="ss">name: </span><span class="no">String</span><span class="p">)</span>
 
   <span class="c1"># Model mapping used last:</span>
-  <span class="n">mapping</span><span class="p">(</span><span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span> <span class="ss">name: </span><span class="no">String</span><span class="p">)</span>
+  <span class="n">mapping</span><span class="p">(</span><span class="ss">id: </span><span class="no">Primary64</span><span class="p">,</span> <span class="ss">name: </span><span class="no">String</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div></div>
 
@@ -559,13 +563,13 @@ to use Jennifer’s <code class="language-plaintext highlighter-rouge">mapping</
 
 <h3 id="mapping-types">Mapping Types</h3>
 
-<p>Jennifer has built-in system of predefined options for some usage. They are not data types on language level (you can’t defined variable of <code class="language-plaintext highlighter-rouge">Primary32</code> type) and can be used only in mapping definition (standard usage).</p>
+<p>Jennifer has built-in system of predefined options for some usage. They are not data types on language level (you can’t defined variable of <code class="language-plaintext highlighter-rouge">Primary64</code> type) and can be used only in mapping definition (standard usage).</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Post</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">mapping</span><span class="p">(</span>
-    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">id: </span><span class="no">Primary64</span><span class="p">,</span>
     <span class="c1"># or even with full definition</span>
-    <span class="ss">pk: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Primary32</span><span class="p">,</span> <span class="ss">primary: </span><span class="kp">false</span><span class="p">,</span> <span class="ss">virtual: </span><span class="kp">true</span><span class="p">}</span>
+    <span class="ss">pk: </span><span class="p">{</span><span class="ss">type: </span><span class="no">Primary64</span><span class="p">,</span> <span class="ss">primary: </span><span class="kp">false</span><span class="p">,</span> <span class="ss">virtual: </span><span class="kp">true</span><span class="p">}</span>
   <span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div></div>
@@ -598,13 +602,13 @@ to use Jennifer’s <code class="language-plaintext highlighter-rouge">mapping</
   <li><code class="language-plaintext highlighter-rouge">Password = { type: String?, virtual: true, setter: false }</code></li>
 </ul>
 
-<h3 id="virtual-attributes">Virtual attributes</h3>
+<h3 id="virtual-and-generated-attributes">Virtual and generated attributes</h3>
 
 <p>If you pass <code class="language-plaintext highlighter-rouge">virtual: true</code> option for some field - it will not be stored to db and tried to be retrieved from there. Such behavior is useful if you have model-level attributes but it is not obvious to store them into db. Such approach allows mass assignment and dynamic get/set based on their name.</p>
 
 <div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">mapping</span><span class="p">(</span>
-    <span class="ss">id: </span><span class="no">Primary32</span><span class="p">,</span>
+    <span class="ss">id: </span><span class="no">Primary64</span><span class="p">,</span>
     <span class="ss">password_hash: </span><span class="no">String</span><span class="p">,</span>
     <span class="ss">password: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">?,</span> <span class="ss">virtual: </span><span class="kp">true</span><span class="p">},</span>
     <span class="ss">password_confirmation: </span><span class="p">{</span><span class="ss">type: </span><span class="no">String</span><span class="p">?,</span> <span class="ss">virtual: </span><span class="kp">true</span><span class="p">}</span>
@@ -621,6 +625,24 @@ to use Jennifer’s <code class="language-plaintext highlighter-rouge">mapping</
 
 <span class="no">User</span><span class="p">.</span><span class="nf">create!</span><span class="p">(</span><span class="ss">password: </span><span class="s2">"qwe"</span><span class="p">,</span> <span class="ss">password_confirmation: </span><span class="s2">"qwe"</span><span class="p">)</span>
 </code></pre></div></div>
+
+<p>It is important to distinguish between virtual and generated attributes. Generated attributes belongs to the database level (they are created using <code class="language-plaintext highlighter-rouge">GENERATED ALWAYS AS</code> statements). As their values are handled by database itself we should only read them from database but don’t write. To achieve this use <code class="language-plaintext highlighter-rouge">generated: true</code>.</p>
+
+<div class="language-crystal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">Jennifer</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">mapping</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="no">Primary64</span><span class="p">,</span>
+    <span class="ss">first_name: </span><span class="no">String</span><span class="p">,</span>
+    <span class="ss">last_name: </span><span class="no">String</span><span class="p">,</span>
+    <span class="ss">full_name: </span><span class="p">{</span> <span class="ss">type: </span><span class="no">String</span><span class="p">?,</span> <span class="ss">generated: </span><span class="kp">true</span><span class="p">}</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>For convenient <code class="language-plaintext highlighter-rouge">generated: true</code> doesn’t disable setter from being generated, but you can do this explicitly by <code class="language-plaintext highlighter-rouge">setter: false</code> option.</p>
+
+<blockquote>
+  <p>Some database versions doesn’t support this feature, e.g. <code class="language-plaintext highlighter-rouge">postgresql &gt;= 12.0</code> starts to supported stored generated columns.</p>
+</blockquote>
 
 <h2 id="table-name">Table name</h2>
 

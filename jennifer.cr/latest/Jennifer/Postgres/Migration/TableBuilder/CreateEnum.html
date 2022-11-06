@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1298,7 +1303,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/migration/table_builder/create_enum.cr#L5" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/migration/table_builder/create_enum.cr#L5" target="_blank">
         jennifer/adapter/postgres/migration/table_builder/create_enum.cr
       </a>
     
@@ -1320,7 +1325,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(adapter,name,values:Array(String))-class-method" class="signature"><strong>.new</strong>(adapter, name, values : Array(String))</a>
+        <a href="#new%28adapter%2Cname%2Cvalues%3AArray%28String%29%29-class-method" class="signature"><strong>.new</strong>(adapter, name, values : Array(String))</a>
         
       </li>
     
@@ -1391,12 +1396,12 @@
   <h3>Instance methods inherited from class <code><a href="../../../../Jennifer/Migration/TableBuilder/Base.html">Jennifer::Migration::TableBuilder::Base</a></code></h3>
   
   
-    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#adapter:Adapter::Base-instance-method" class="tooltip">
+    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#adapter%3AAdapter%3A%3ABase-instance-method" class="tooltip">
       <span>adapter : Adapter::Base</span>
     adapter</a>, 
     
   
-    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#column_exists?(*args,**options)-instance-method" class="tooltip">
+    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#column_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
       <span>column_exists?(*args, **options)<br/>column_exists?(*args, **options, &)</span>
     column_exists?</a>, 
     
@@ -1406,12 +1411,12 @@
     explain</a>, 
     
   
-    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#index_exists?(*args,**options)-instance-method" class="tooltip">
+    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#index_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
       <span>index_exists?(*args, **options)<br/>index_exists?(*args, **options, &)</span>
     index_exists?</a>, 
     
   
-    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#name:String-instance-method" class="tooltip">
+    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#name%3AString-instance-method" class="tooltip">
       <span>name : String</span>
     name</a>, 
     
@@ -1426,12 +1431,12 @@
     process_commands</a>, 
     
   
-    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#schema_processor(*args,**options)-instance-method" class="tooltip">
+    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#schema_processor%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
       <span>schema_processor(*args, **options)<br/>schema_processor(*args, **options, &)</span>
     schema_processor</a>, 
     
   
-    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#table_exists?(*args,**options)-instance-method" class="tooltip">
+    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#table_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
       <span>table_exists?(*args, **options)<br/>table_exists?(*args, **options, &)</span>
     table_exists?</a>
     
@@ -1443,8 +1448,8 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Jennifer/Migration/TableBuilder/Base.html">Jennifer::Migration::TableBuilder::Base</a></code></h3>
   
   
-    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#new(adapter,name:String%7CSymbol)-class-method" class="tooltip">
-      <span>new(adapter, name : String | Symbol)</span>
+    <a href="../../../../Jennifer/Migration/TableBuilder/Base.html#new%28adapter%3AJennifer%3A%3AAdapter%3A%3ABase%2Cname%3AString%7CSymbol%29-class-method" class="tooltip">
+      <span>new(adapter : Jennifer::Adapter::Base, name : String | Symbol)</span>
     new</a>
     
   
@@ -1491,13 +1496,13 @@
         
         def self.<strong>new</strong>(adapter, name, values : Array(String))
 
-        <a class="method-permalink" href="#new(adapter,name,values:Array(String))-class-method">#</a>
+        <a class="method-permalink" href="#new%28adapter%2Cname%2Cvalues%3AArray%28String%29%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/migration/table_builder/create_enum.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/migration/table_builder/create_enum.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1536,7 +1541,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/migration/table_builder/create_enum.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/migration/table_builder/create_enum.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1561,7 +1566,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/migration/table_builder/create_enum.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/migration/table_builder/create_enum.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>

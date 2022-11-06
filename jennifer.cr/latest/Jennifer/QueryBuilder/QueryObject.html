@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1285,7 +1290,6 @@
   </h2>
 
   <p>Base abstract class for query object.</p>
-
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">OrderedArticlesQuery</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">QueryBuilder</span><span class="t">::</span><span class="t">QueryObject</span>
   <span class="t">SORTABLE_FIELDS</span> <span class="o">=</span> <span class="s">%w(by_date by_title by_author)</span>
 
@@ -1336,7 +1340,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/query_object.cr#L33" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/query_object.cr#L33" target="_blank">
         jennifer/query_builder/query_object.cr
       </a>
     
@@ -1358,7 +1362,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(relation)-class-method" class="signature"><strong>.new</strong>(relation)</a>
+        <a href="#new%28relation%3AJennifer%3A%3AQueryBuilder%3A%3AIModelQuery%29-class-method" class="signature"><strong>.new</strong>(relation : Jennifer::QueryBuilder::IModelQuery)</a>
         
       </li>
     
@@ -1384,7 +1388,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#relation:Jennifer::QueryBuilder::IModelQuery-instance-method" class="signature"><strong>#relation</strong> : Jennifer::QueryBuilder::IModelQuery</a>
+        <a href="#relation%3AJennifer%3A%3AQueryBuilder%3A%3AIModelQuery-instance-method" class="signature"><strong>#relation</strong> : Jennifer::QueryBuilder::IModelQuery</a>
         
       </li>
     
@@ -1428,18 +1432,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(relation)-class-method">
+    <div class="entry-detail" id="new(relation:Jennifer::QueryBuilder::IModelQuery)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(relation)
+        def self.<strong>new</strong>(relation : <a href="../../Jennifer/QueryBuilder/IModelQuery.html">Jennifer::QueryBuilder::IModelQuery</a>)
 
-        <a class="method-permalink" href="#new(relation)-class-method">#</a>
+        <a class="method-permalink" href="#new%28relation%3AJennifer%3A%3AQueryBuilder%3A%3AIModelQuery%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/query_object.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/query_object.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1469,7 +1473,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/query_object.cr#L39" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/query_object.cr#L39" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1479,13 +1483,13 @@
         
         def <strong>relation</strong> : <a href="../../Jennifer/QueryBuilder/IModelQuery.html">Jennifer::QueryBuilder::IModelQuery</a>
 
-        <a class="method-permalink" href="#relation:Jennifer::QueryBuilder::IModelQuery-instance-method">#</a>
+        <a class="method-permalink" href="#relation%3AJennifer%3A%3AQueryBuilder%3A%3AIModelQuery-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/query_object.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/query_object.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>

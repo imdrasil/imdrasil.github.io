@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1321,7 +1326,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/presentable.cr#L3" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/presentable.cr#L3" target="_blank">
         jennifer/model/presentable.cr
       </a>
     
@@ -1347,35 +1352,35 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#attribute(name:String%7CSymbol,raise_exception:Bool=true)-instance-method" class="signature"><strong>#attribute</strong>(name : String | Symbol, raise_exception : Bool = <span class="n">true</span>)</a>
+        <a href="#attribute%28name%3AString%7CSymbol%2Craise_exception%3ABool%3Dtrue%29-instance-method" class="signature"><strong>#attribute</strong>(name : String | Symbol, raise_exception : Bool = <span class="n">true</span>)</a>
         
           <div class="summary"><p>Returns value by attribute <em>name</em> or raises <code><a href="../Jennifer/BaseException.html">Jennifer::BaseException</a></code> if none.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#attribute_metadata(name:String%7CSymbol)-instance-method" class="signature"><strong>#attribute_metadata</strong>(name : String | Symbol)</a>
+        <a href="#attribute_metadata%28name%3AString%7CSymbol%29-instance-method" class="signature"><strong>#attribute_metadata</strong>(name : String | Symbol)</a>
         
           <div class="summary"><p>Returns field <em>name</em> metadata or raises <code>ArgumentError</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#class_name:String-instance-method" class="signature"><strong>#class_name</strong> : String</a>
+        <a href="#class_name%3AString-instance-method" class="signature"><strong>#class_name</strong> : String</a>
         
           <div class="summary"><p>Returns underscored model class name.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#errors:Jennifer::Model::Errors-instance-method" class="signature"><strong>#errors</strong> : Jennifer::Model::Errors</a>
+        <a href="#errors%3AJennifer%3A%3AModel%3A%3AErrors-instance-method" class="signature"><strong>#errors</strong> : Jennifer::Model::Errors</a>
         
           <div class="summary"><p>Returns container with object's validation errors.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#human_attribute_name(name:String%7CSymbol)-instance-method" class="signature"><strong>#human_attribute_name</strong>(name : String | Symbol)</a>
+        <a href="#human_attribute_name%28name%3AString%7CSymbol%29-instance-method" class="signature"><strong>#human_attribute_name</strong>(name : String | Symbol)</a>
         
           <div class="summary"><p>Returns human readable attribute name based on translations.</p></div>
         
@@ -1410,20 +1415,19 @@
         abstract 
         def <strong>attribute</strong>(name : String | Symbol, raise_exception : Bool = <span class="n">true</span>)
 
-        <a class="method-permalink" href="#attribute(name:String%7CSymbol,raise_exception:Bool=true)-instance-method">#</a>
+        <a class="method-permalink" href="#attribute%28name%3AString%7CSymbol%2Craise_exception%3ABool%3Dtrue%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns value by attribute <em>name</em> or raises <code><a href="../Jennifer/BaseException.html">Jennifer::BaseException</a></code> if none.</p>
-
 <pre><code class="language-crystal"><span class="t">User</span>.all.last.attribute(<span class="n">:email</span>) <span class="c"># =&gt; &quot;test@example.com&quot;</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/presentable.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/presentable.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1433,7 +1437,7 @@
         abstract 
         def <strong>attribute_metadata</strong>(name : String | Symbol)
 
-        <a class="method-permalink" href="#attribute_metadata(name:String%7CSymbol)-instance-method">#</a>
+        <a class="method-permalink" href="#attribute_metadata%28name%3AString%7CSymbol%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1444,7 +1448,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/presentable.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/presentable.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1454,20 +1458,19 @@
         abstract 
         def <strong>class_name</strong> : String
 
-        <a class="method-permalink" href="#class_name:String-instance-method">#</a>
+        <a class="method-permalink" href="#class_name%3AString-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns underscored model class name.</p>
-
 <pre><code class="language-crystal"><span class="t">Admin</span><span class="t">::</span><span class="t">User</span>.all.last.class_name <span class="c"># =&gt; &quot;admin_user&quot;</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/presentable.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/presentable.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1477,7 +1480,7 @@
         abstract 
         def <strong>errors</strong> : <a href="../Jennifer/Model/Errors.html">Jennifer::Model::Errors</a>
 
-        <a class="method-permalink" href="#errors:Jennifer::Model::Errors-instance-method">#</a>
+        <a class="method-permalink" href="#errors%3AJennifer%3A%3AModel%3A%3AErrors-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1488,7 +1491,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/presentable.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/presentable.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1498,7 +1501,7 @@
         abstract 
         def <strong>human_attribute_name</strong>(name : String | Symbol)
 
-        <a class="method-permalink" href="#human_attribute_name(name:String%7CSymbol)-instance-method">#</a>
+        <a class="method-permalink" href="#human_attribute_name%28name%3AString%7CSymbol%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1509,7 +1512,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/presentable.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/presentable.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1283,7 +1288,6 @@
   </h2>
 
   <p>Includes methods required for associations eager loading.</p>
-
 <p>Eager loading is a way to find objects of a certain class and a number of named associations.
 It is one of the easiest ways to prevent the dreaded N+1 problem in which fetching 100 posts
 that each need to display their author triggers 101 database queries. Through the use of eager
@@ -1326,7 +1330,7 @@ loading, the number of queries will be reduced from 101 to 2.</p>
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/eager_loading.cr#L9" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/eager_loading.cr#L9" target="_blank">
         jennifer/query_builder/eager_loading.cr
       </a>
     
@@ -1352,19 +1356,19 @@ loading, the number of queries will be reduced from 101 to 2.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#_select_fields:Array(Criteria)-instance-method" class="signature"><strong>#_select_fields</strong> : Array(Criteria)</a>
+        <a href="#_select_fields%3AArray%28Criteria%29-instance-method" class="signature"><strong>#_select_fields</strong> : Array(Criteria)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#eager_load(*names,**deep_relations)-instance-method" class="signature"><strong>#eager_load</strong>(*names, **deep_relations)</a>
+        <a href="#eager_load%28%2Anames%2C%2A%2Adeep_relations%29-instance-method" class="signature"><strong>#eager_load</strong>(*names, **deep_relations)</a>
         
           <div class="summary"><p>Adds to select statement given relations (with corresponding <code>LEFT OUTER JOIN</code>) and loads them from results.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#includes(*names,**deep_relations)-instance-method" class="signature"><strong>#includes</strong>(*names, **deep_relations)</a>
+        <a href="#includes%28%2Anames%2C%2A%2Adeep_relations%29-instance-method" class="signature"><strong>#includes</strong>(*names, **deep_relations)</a>
         
           <div class="summary"><p>Specify relationships to be included in the result set.</p></div>
         
@@ -1376,26 +1380,26 @@ loading, the number of queries will be reduced from 101 to 2.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#nested_relation_tree:NestedRelationTree-instance-method" class="signature"><strong>#nested_relation_tree</strong> : NestedRelationTree</a>
+        <a href="#nested_relation_tree%3ANestedRelationTree-instance-method" class="signature"><strong>#nested_relation_tree</strong> : NestedRelationTree</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#preload(*names,**deep_relations)-instance-method" class="signature"><strong>#preload</strong>(*names, **deep_relations)</a>
+        <a href="#preload%28%2Anames%2C%2A%2Adeep_relations%29-instance-method" class="signature"><strong>#preload</strong>(*names, **deep_relations)</a>
         
           <div class="summary"><p>Alias for includes.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#with_relation(names:Array)-instance-method" class="signature"><strong>#with_relation</strong>(names : Array)</a>
+        <a href="#with_relation%28names%3AArray%29-instance-method" class="signature"><strong>#with_relation</strong>(names : Array)</a>
         
           <div class="summary"><p>Mark recently added join to be used to retrieve for relations given in <em>names</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#with_relation(*names)-instance-method" class="signature"><strong>#with_relation</strong>(*names)</a>
+        <a href="#with_relation%28%2Anames%29-instance-method" class="signature"><strong>#with_relation</strong>(*names)</a>
         
           <div class="summary"><p>Mark recently added join to be used to retrieve for relations given in <em>names</em>.</p></div>
         
@@ -1430,13 +1434,13 @@ loading, the number of queries will be reduced from 101 to 2.</p>
         
         def <strong>_select_fields</strong> : Array(<a href="../../Jennifer/QueryBuilder/Criteria.html">Criteria</a>)
 
-        <a class="method-permalink" href="#_select_fields:Array(Criteria)-instance-method">#</a>
+        <a class="method-permalink" href="#_select_fields%3AArray%28Criteria%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/eager_loading.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/eager_loading.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1446,27 +1450,24 @@ loading, the number of queries will be reduced from 101 to 2.</p>
         
         def <strong>eager_load</strong>(*names, **deep_relations)
 
-        <a class="method-permalink" href="#eager_load(*names,**deep_relations)-instance-method">#</a>
+        <a class="method-permalink" href="#eager_load%28%2Anames%2C%2A%2Adeep_relations%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds to select statement given relations (with corresponding <code>LEFT OUTER JOIN</code>) and loads them from results.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.eager_load(<span class="n">:addresses</span>)
 <span class="c"># SELECT contacts.*, addresses.*</span>
 <span class="c"># FROM users</span>
 <span class="c"># LEFT JOIN addresses ON addresses.contact_id = contacts.id</span></code></pre>
-
-<p>You can specify nested relationships same way as in <code><a href="../../Jennifer/QueryBuilder/EagerLoading.html#includes(*names,**deep_relations)-instance-method">#includes</a></code>:</p>
-
+<p>You can specify nested relationships same way as in <code><a href="../../Jennifer/QueryBuilder/EagerLoading.html#includes%28%2Anames%2C%2A%2Adeep_relations%29-instance-method">#includes</a></code>:</p>
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.includes(<span class="n">:addresses</span>, friends: <span class="s">%i(addresses followers)</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/eager_loading.cr#L104" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/eager_loading.cr#L104" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1476,15 +1477,13 @@ loading, the number of queries will be reduced from 101 to 2.</p>
         
         def <strong>includes</strong>(*names, **deep_relations)
 
-        <a class="method-permalink" href="#includes(*names,**deep_relations)-instance-method">#</a>
+        <a class="method-permalink" href="#includes%28%2Anames%2C%2A%2Adeep_relations%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Specify relationships to be included in the result set.</p>
-
 <p>All specified relationships are loaded in a separate queries.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.includes(<span class="n">:addresses</span>)
 <span class="t">Contact</span>.all.includes(<span class="n">:addresses</span>, friends: <span class="s">%i(addresses followers)</span>)</code></pre>
         </div>
@@ -1492,7 +1491,7 @@ loading, the number of queries will be reduced from 101 to 2.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/eager_loading.cr#L72" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/eager_loading.cr#L72" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1508,7 +1507,7 @@ loading, the number of queries will be reduced from 101 to 2.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/eager_loading.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/eager_loading.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1518,13 +1517,13 @@ loading, the number of queries will be reduced from 101 to 2.</p>
         abstract 
         def <strong>nested_relation_tree</strong> : <a href="../../Jennifer/QueryBuilder/NestedRelationTree.html">NestedRelationTree</a>
 
-        <a class="method-permalink" href="#nested_relation_tree:NestedRelationTree-instance-method">#</a>
+        <a class="method-permalink" href="#nested_relation_tree%3ANestedRelationTree-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/eager_loading.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/eager_loading.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1534,7 +1533,7 @@ loading, the number of queries will be reduced from 101 to 2.</p>
         
         def <strong>preload</strong>(*names, **deep_relations)
 
-        <a class="method-permalink" href="#preload(*names,**deep_relations)-instance-method">#</a>
+        <a class="method-permalink" href="#preload%28%2Anames%2C%2A%2Adeep_relations%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1545,7 +1544,7 @@ loading, the number of queries will be reduced from 101 to 2.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/eager_loading.cr#L86" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/eager_loading.cr#L86" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1555,22 +1554,20 @@ loading, the number of queries will be reduced from 101 to 2.</p>
         
         def <strong>with_relation</strong>(names : Array)
 
-        <a class="method-permalink" href="#with_relation(names:Array)-instance-method">#</a>
+        <a class="method-permalink" href="#with_relation%28names%3AArray%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Mark recently added join to be used to retrieve for relations given in <em>names</em>.</p>
-
 <p>This allows to specify custom JOIN and load results into specified relation.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.join(<span class="t">Address</span>) { and(<span class="t">Address</span>._contact_id <span class="o">==</span> <span class="t">Contact</span>._id, <span class="t">Address</span>._main) }.with_relation([<span class="n">:addresses</span>])</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/eager_loading.cr#L43" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/eager_loading.cr#L43" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1580,22 +1577,20 @@ loading, the number of queries will be reduced from 101 to 2.</p>
         
         def <strong>with_relation</strong>(*names)
 
-        <a class="method-permalink" href="#with_relation(*names)-instance-method">#</a>
+        <a class="method-permalink" href="#with_relation%28%2Anames%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Mark recently added join to be used to retrieve for relations given in <em>names</em>.</p>
-
 <p>This allows to specify custom JOIN and load results into specified relation.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.join(<span class="t">Address</span>) { and(<span class="t">Address</span>._contact_id <span class="o">==</span> <span class="t">Contact</span>._id, <span class="t">Address</span>._main) }.with_relation(<span class="n">:addresses</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/eager_loading.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/eager_loading.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>

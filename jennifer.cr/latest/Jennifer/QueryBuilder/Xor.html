@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1298,7 +1303,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/logic_operator.cr#L109" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/logic_operator.cr#L109" target="_blank">
         jennifer/query_builder/logic_operator.cr
       </a>
     
@@ -1367,37 +1372,37 @@
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/QueryBuilder/LogicOperator.html">Jennifer::QueryBuilder::LogicOperator</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#==(other)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#%3D%3D%28other%29-instance-method" class="tooltip">
       <span>==(other)</span>
     ==</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#alias_tables(aliases)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#alias_tables%28aliases%29-instance-method" class="tooltip">
       <span>alias_tables(aliases)</span>
     alias_tables</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#as_sql(generator)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#as_sql%28generator%29-instance-method" class="tooltip">
       <span>as_sql(generator)<br/>as_sql</span>
     as_sql</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#change_table(old_name,new_name)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#change_table%28old_name%2Cnew_name%29-instance-method" class="tooltip">
       <span>change_table(old_name, new_name)</span>
     change_table</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#eql?(other:LogicOperator)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#eql%3F%28other%3ALogicOperator%29-instance-method" class="tooltip">
       <span>eql?(other : LogicOperator)<br/>eql?(other)</span>
     eql?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#filterable?-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#filterable%3F-instance-method" class="tooltip">
       <span>filterable?</span>
     filterable?</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#lhs:Operandable-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#lhs%3AOperandable-instance-method" class="tooltip">
       <span>lhs : Operandable</span>
     lhs</a>, 
     
@@ -1407,22 +1412,22 @@
     operator</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#rhs:Operandable-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#rhs%3AOperandable-instance-method" class="tooltip">
       <span>rhs : Operandable</span>
     rhs</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#set_relation(table,name)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#set_relation%28table%2Cname%29-instance-method" class="tooltip">
       <span>set_relation(table, name)</span>
     set_relation</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#sql_args:Array(DBAny)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#sql_args%3AArray%28DBAny%29-instance-method" class="tooltip">
       <span>sql_args : Array(DBAny)</span>
     sql_args</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#to_s(io:IO)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#to_s%28io%3AIO%29-instance-method" class="tooltip">
       <span>to_s(io : IO)</span>
     to_s</a>
     
@@ -1434,8 +1439,8 @@
   <h3>Constructor methods inherited from class <code><a href="../../Jennifer/QueryBuilder/LogicOperator.html">Jennifer::QueryBuilder::LogicOperator</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#new(lhs,rhs)-class-method" class="tooltip">
-      <span>new(lhs, rhs)</span>
+    <a href="../../Jennifer/QueryBuilder/LogicOperator.html#new%28lhs%3AJennifer%3A%3AQueryBuilder%3A%3ACondition%7CJennifer%3A%3AQueryBuilder%3A%3ALogicOperator%7CJennifer%3A%3AQueryBuilder%3A%3ASQLNode%2Crhs%3AJennifer%3A%3AQueryBuilder%3A%3ACondition%7CJennifer%3A%3AQueryBuilder%3A%3ALogicOperator%7CJennifer%3A%3AQueryBuilder%3A%3ASQLNode%29-class-method" class="tooltip">
+      <span>new(lhs : Jennifer::QueryBuilder::Condition | Jennifer::QueryBuilder::LogicOperator | Jennifer::QueryBuilder::SQLNode, rhs : Jennifer::QueryBuilder::Condition | Jennifer::QueryBuilder::LogicOperator | Jennifer::QueryBuilder::SQLNode)</span>
     new</a>
     
   
@@ -1450,19 +1455,19 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html">Jennifer::QueryBuilder::LogicOperator::Operators</a></code></h3>
   
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#&(other:Criteria)-instance-method" class="tooltip">
+    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#%26%28other%3ACriteria%29-instance-method" class="tooltip">
       <span>&(other : Criteria)<br/>&(other : Operandable)</span>
     &</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#xor(other:Criteria)-instance-method" class="tooltip">
-      <span>xor(other : Criteria)<br/>xor(other : Operandable)</span>
-    xor</a>, 
+    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#%7C%28other%3ACriteria%29-instance-method" class="tooltip">
+      <span>|(other : Criteria)<br/>|(other : Operandable)</span>
+    |</a>, 
     
   
-    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#%7C(other:Criteria)-instance-method" class="tooltip">
-      <span>|(other : Criteria)<br/>|(other : Operandable)</span>
-    |</a>
+    <a href="../../Jennifer/QueryBuilder/LogicOperator/Operators.html#xor%28other%3ACriteria%29-instance-method" class="tooltip">
+      <span>xor(other : Criteria)<br/>xor(other : Operandable)</span>
+    xor</a>
     
   
 
@@ -1526,7 +1531,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/logic_operator.cr#L112" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/logic_operator.cr#L112" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1542,7 +1547,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/logic_operator.cr#L114" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/logic_operator.cr#L114" target="_blank">View source</a>]
         
       </div>
     </div>

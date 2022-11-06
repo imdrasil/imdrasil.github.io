@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1284,7 +1289,6 @@
 
   <p>Callbacks are hooks into the life cycle of a model object that allow you to trigger logic before
 or after an alteration of the object state.</p>
-
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">User</span> <span class="o">&lt;</span> <span class="t">Jennifer</span><span class="t">::</span><span class="t">Model</span><span class="t">::</span><span class="t">Base</span>
   <span class="c"># mapping()</span>
 
@@ -1337,7 +1341,7 @@ or after an alteration of the object state.</p>
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L22" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L22" target="_blank">
         jennifer/model/callback.cr
       </a>
     
@@ -1365,93 +1369,93 @@ or after an alteration of the object state.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#after_commit(*names,on)-macro" class="signature"><strong>after_commit</strong>(*names, on)</a>
+        <a href="#after_commit%28%2Anames%2Con%29-macro" class="signature"><strong>after_commit</strong>(*names, on)</a>
         
           <div class="summary"><p>Defines callbacks which are called after a record has been created, updated, or destroyed.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#after_create(*names)-macro" class="signature"><strong>after_create</strong>(*names)</a>
+        <a href="#after_create%28%2Anames%29-macro" class="signature"><strong>after_create</strong>(*names)</a>
         
-          <div class="summary"><p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> on new objects that haven’t been saved yet (no record exists).</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#after_destroy(*names)-macro" class="signature"><strong>after_destroy</strong>(*names)</a>
-        
-          <div class="summary"><p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#destroy(ids:Array)-class-method">Base.destroy</a></code>.</p></div>
+          <div class="summary"><p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> on new objects that haven’t been saved yet (no record exists).</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#after_initialize(*names)-macro" class="signature"><strong>after_initialize</strong>(*names)</a>
+        <a href="#after_destroy%28%2Anames%29-macro" class="signature"><strong>after_destroy</strong>(*names)</a>
         
-          <div class="summary"><p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#build(values:Hash%7CNamedTuple,new_record:Bool)-class-method">Base.build</a></code> call.</p></div>
+          <div class="summary"><p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#destroy%28ids%3AArray%29-class-method">Base.destroy</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#after_rollback(*names,on)-macro" class="signature"><strong>after_rollback</strong>(*names, on)</a>
+        <a href="#after_initialize%28%2Anames%29-macro" class="signature"><strong>after_initialize</strong>(*names)</a>
+        
+          <div class="summary"><p>Defines callbacks which are called after <code>Base.new</code> call.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#after_rollback%28%2Anames%2Con%29-macro" class="signature"><strong>after_rollback</strong>(*names, on)</a>
         
           <div class="summary"><p>Defines callbacks which are called after a create, update, or destroy are rolled back.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#after_save(*names)-macro" class="signature"><strong>after_save</strong>(*names)</a>
+        <a href="#after_save%28%2Anames%29-macro" class="signature"><strong>after_save</strong>(*names)</a>
         
-          <div class="summary"><p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> (regardless of whether it's a <code>create</code> or <code>update</code> save).</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#after_update(*names)-macro" class="signature"><strong>after_update</strong>(*names)</a>
-        
-          <div class="summary"><p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> on existing objects that have a record.</p></div>
+          <div class="summary"><p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> (regardless of whether it's a <code>create</code> or <code>update</code> save).</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#after_validation(*names)-macro" class="signature"><strong>after_validation</strong>(*names)</a>
+        <a href="#after_update%28%2Anames%29-macro" class="signature"><strong>after_update</strong>(*names)</a>
         
-          <div class="summary"><p>Defines callbacks which are called after <code>Base.validate!</code> (which is part of the <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> call).</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#before_create(*names)-macro" class="signature"><strong>before_create</strong>(*names)</a>
-        
-          <div class="summary"><p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> on new objects that haven’t been saved yet (no record exists).</p></div>
+          <div class="summary"><p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> on existing objects that have a record.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#before_destroy(*names)-macro" class="signature"><strong>before_destroy</strong>(*names)</a>
+        <a href="#after_validation%28%2Anames%29-macro" class="signature"><strong>after_validation</strong>(*names)</a>
         
-          <div class="summary"><p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#destroy(ids:Array)-class-method">Base.destroy</a></code></p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#before_save(*names)-macro" class="signature"><strong>before_save</strong>(*names)</a>
-        
-          <div class="summary"><p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> (regardless of whether it's a <code>create</code> or <code>update</code> save).</p></div>
+          <div class="summary"><p>Defines callbacks which are called after <code>Base.validate!</code> (which is part of the <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> call).</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#before_update(*names)-macro" class="signature"><strong>before_update</strong>(*names)</a>
+        <a href="#before_create%28%2Anames%29-macro" class="signature"><strong>before_create</strong>(*names)</a>
         
-          <div class="summary"><p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> on existing objects that have a record.</p></div>
+          <div class="summary"><p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> on new objects that haven’t been saved yet (no record exists).</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#before_validation(*names)-macro" class="signature"><strong>before_validation</strong>(*names)</a>
+        <a href="#before_destroy%28%2Anames%29-macro" class="signature"><strong>before_destroy</strong>(*names)</a>
         
-          <div class="summary"><p>Defines callbacks which are called before <code>Base.validate!</code> (which is part of the <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> call).</p></div>
+          <div class="summary"><p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#destroy%28ids%3AArray%29-class-method">Base.destroy</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#before_save%28%2Anames%29-macro" class="signature"><strong>before_save</strong>(*names)</a>
+        
+          <div class="summary"><p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> (regardless of whether it's a <code>create</code> or <code>update</code> save).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#before_update%28%2Anames%29-macro" class="signature"><strong>before_update</strong>(*names)</a>
+        
+          <div class="summary"><p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> on existing objects that have a record.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#before_validation%28%2Anames%29-macro" class="signature"><strong>before_validation</strong>(*names)</a>
+        
+          <div class="summary"><p>Defines callbacks which are called before <code>Base.validate!</code> (which is part of the <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> call).</p></div>
         
       </li>
     
@@ -1484,15 +1488,13 @@ or after an alteration of the object state.</p>
         
         macro <strong>after_commit</strong>(*names, on)
 
-        <a class="method-permalink" href="#after_commit(*names,on)-macro">#</a>
+        <a class="method-permalink" href="#after_commit%28%2Anames%2Con%29-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Defines callbacks which are called after a record has been created, updated, or destroyed.</p>
-
 <p>You can specify that the callback should only be fired by a certain action with the :on option:</p>
-
 <pre><code class="language-crystal">after_commit <span class="n">:var</span>, on: <span class="n">:save</span>
 after_commit <span class="n">:foo</span>, on: <span class="n">:create</span>
 after_commit <span class="n">:bar</span>, on: <span class="n">:update</span>
@@ -1502,7 +1504,7 @@ after_commit <span class="n">:baz</span>, on: <span class="n">:destroy</span></c
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L233" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L233" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1512,21 +1514,20 @@ after_commit <span class="n">:baz</span>, on: <span class="n">:destroy</span></c
         
         macro <strong>after_create</strong>(*names)
 
-        <a class="method-permalink" href="#after_create(*names)-macro">#</a>
+        <a class="method-permalink" href="#after_create%28%2Anames%29-macro">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> on new objects that haven’t been saved yet
+          <p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> on new objects that haven’t been saved yet
 (no record exists).</p>
-
 <p>Note that these callbacks is still wrapped in the transaction around save.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L140" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L140" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1536,18 +1537,18 @@ after_commit <span class="n">:baz</span>, on: <span class="n">:destroy</span></c
         
         macro <strong>after_destroy</strong>(*names)
 
-        <a class="method-permalink" href="#after_destroy(*names)-macro">#</a>
+        <a class="method-permalink" href="#after_destroy%28%2Anames%29-macro">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#destroy(ids:Array)-class-method">Base.destroy</a></code>.</p>
+          <p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#destroy%28ids%3AArray%29-class-method">Base.destroy</a></code>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L194" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L194" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1557,18 +1558,18 @@ after_commit <span class="n">:baz</span>, on: <span class="n">:destroy</span></c
         
         macro <strong>after_initialize</strong>(*names)
 
-        <a class="method-permalink" href="#after_initialize(*names)-macro">#</a>
+        <a class="method-permalink" href="#after_initialize%28%2Anames%29-macro">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#build(values:Hash%7CNamedTuple,new_record:Bool)-class-method">Base.build</a></code> call.</p>
+          <p>Defines callbacks which are called after <code>Base.new</code> call.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L174" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L174" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1578,20 +1579,19 @@ after_commit <span class="n">:baz</span>, on: <span class="n">:destroy</span></c
         
         macro <strong>after_rollback</strong>(*names, on)
 
-        <a class="method-permalink" href="#after_rollback(*names,on)-macro">#</a>
+        <a class="method-permalink" href="#after_rollback%28%2Anames%2Con%29-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Defines callbacks which are called after a create, update, or destroy are rolled back.</p>
-
-<p>Please check the documentation of <code><a href="../../Jennifer/Model/Callback.html#after_commit(*names,on)-macro">after_commit</a></code> macro for options.</p>
+<p>Please check the documentation of <code><a href="../../Jennifer/Model/Callback.html#after_commit%28%2Anames%2Con%29-macro">after_commit</a></code> macro for options.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L250" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L250" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1601,20 +1601,19 @@ after_commit <span class="n">:baz</span>, on: <span class="n">:destroy</span></c
         
         macro <strong>after_save</strong>(*names)
 
-        <a class="method-permalink" href="#after_save(*names)-macro">#</a>
+        <a class="method-permalink" href="#after_save%28%2Anames%29-macro">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> (regardless of whether it's a <code>create</code> or <code>update</code> save).</p>
-
+          <p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> (regardless of whether it's a <code>create</code> or <code>update</code> save).</p>
 <p>Note that these callbacks are still wrapped in the transaction around save.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L114" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L114" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1624,20 +1623,19 @@ after_commit <span class="n">:baz</span>, on: <span class="n">:destroy</span></c
         
         macro <strong>after_update</strong>(*names)
 
-        <a class="method-permalink" href="#after_update(*names)-macro">#</a>
+        <a class="method-permalink" href="#after_update%28%2Anames%29-macro">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> on existing objects that have a record.</p>
-
+          <p>Defines callbacks which are called after <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> on existing objects that have a record.</p>
 <p>Note that these callbacks are still wrapped in the transaction around save.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L164" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L164" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1647,18 +1645,18 @@ after_commit <span class="n">:baz</span>, on: <span class="n">:destroy</span></c
         
         macro <strong>after_validation</strong>(*names)
 
-        <a class="method-permalink" href="#after_validation(*names)-macro">#</a>
+        <a class="method-permalink" href="#after_validation%28%2Anames%29-macro">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines callbacks which are called after <code>Base.validate!</code> (which is part of the <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> call).</p>
+          <p>Defines callbacks which are called after <code>Base.validate!</code> (which is part of the <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> call).</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L214" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L214" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1668,21 +1666,20 @@ after_commit <span class="n">:baz</span>, on: <span class="n">:destroy</span></c
         
         macro <strong>before_create</strong>(*names)
 
-        <a class="method-permalink" href="#before_create(*names)-macro">#</a>
+        <a class="method-permalink" href="#before_create%28%2Anames%29-macro">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> on new objects that haven’t been saved yet
+          <p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> on new objects that haven’t been saved yet
 (no record exists).</p>
-
 <p>Note that these callbacks are already wrapped in the transaction around save.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L127" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L127" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1692,18 +1689,18 @@ after_commit <span class="n">:baz</span>, on: <span class="n">:destroy</span></c
         
         macro <strong>before_destroy</strong>(*names)
 
-        <a class="method-permalink" href="#before_destroy(*names)-macro">#</a>
+        <a class="method-permalink" href="#before_destroy%28%2Anames%29-macro">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#destroy(ids:Array)-class-method">Base.destroy</a></code></p>
+          <p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#destroy%28ids%3AArray%29-class-method">Base.destroy</a></code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L184" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L184" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1713,20 +1710,19 @@ after_commit <span class="n">:baz</span>, on: <span class="n">:destroy</span></c
         
         macro <strong>before_save</strong>(*names)
 
-        <a class="method-permalink" href="#before_save(*names)-macro">#</a>
+        <a class="method-permalink" href="#before_save%28%2Anames%29-macro">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> (regardless of whether it's a <code>create</code> or <code>update</code> save).</p>
-
+          <p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> (regardless of whether it's a <code>create</code> or <code>update</code> save).</p>
 <p>Note that these callbacks are already wrapped in the transaction around save.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L102" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L102" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1736,20 +1732,19 @@ after_commit <span class="n">:baz</span>, on: <span class="n">:destroy</span></c
         
         macro <strong>before_update</strong>(*names)
 
-        <a class="method-permalink" href="#before_update(*names)-macro">#</a>
+        <a class="method-permalink" href="#before_update%28%2Anames%29-macro">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> on existing objects that have a record.</p>
-
+          <p>Defines callbacks which are called before <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> on existing objects that have a record.</p>
 <p>Note that these callbacks are already wrapped in the transaction around save.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L152" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L152" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1759,18 +1754,18 @@ after_commit <span class="n">:baz</span>, on: <span class="n">:destroy</span></c
         
         macro <strong>before_validation</strong>(*names)
 
-        <a class="method-permalink" href="#before_validation(*names)-macro">#</a>
+        <a class="method-permalink" href="#before_validation%28%2Anames%29-macro">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines callbacks which are called before <code>Base.validate!</code> (which is part of the <code><a href="../../Jennifer/Model/Base.html#save(skip_validation:Bool=false):Bool-instance-method">Base.save</a></code> call).</p>
+          <p>Defines callbacks which are called before <code>Base.validate!</code> (which is part of the <code><a href="../../Jennifer/Model/Base.html#save%28skip_validation%3ABool%3Dfalse%29%3ABool-instance-method">Base.save</a></code> call).</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/callback.cr#L204" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/callback.cr#L204" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1296,7 +1301,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L3" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L3" target="_blank">
         jennifer/adapter/postgres/quoting.cr
       </a>
     
@@ -1322,77 +1327,77 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#quote(value:String)-instance-method" class="signature"><strong>#quote</strong>(value : String)</a>
+        <a href="#quote%28value%3AString%29-instance-method" class="signature"><strong>#quote</strong>(value : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote(value:PG::Geo::Box)-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::Box)</a>
+        <a href="#quote%28value%3APG%3A%3AGeo%3A%3ABox%29-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::Box)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote(value:PG::Geo::Circle)-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::Circle)</a>
+        <a href="#quote%28value%3APG%3A%3AGeo%3A%3ACircle%29-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::Circle)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote(value:PG::Geo::Line)-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::Line)</a>
+        <a href="#quote%28value%3APG%3A%3AGeo%3A%3ALine%29-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::Line)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote(value:PG::Geo::LineSegment)-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::LineSegment)</a>
+        <a href="#quote%28value%3APG%3A%3AGeo%3A%3ALineSegment%29-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::LineSegment)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote(value:PG::Geo::Path)-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::Path)</a>
+        <a href="#quote%28value%3APG%3A%3AGeo%3A%3APath%29-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::Path)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote(value:PG::Geo::Point,quote=true)-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::Point, quote = <span class="n">true</span>)</a>
+        <a href="#quote%28value%3APG%3A%3AGeo%3A%3APoint%2Cquote%3Dtrue%29-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::Point, quote = <span class="n">true</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote(value:PG::Geo::Polygon)-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::Polygon)</a>
+        <a href="#quote%28value%3APG%3A%3AGeo%3A%3APolygon%29-instance-method" class="signature"><strong>#quote</strong>(value : PG::Geo::Polygon)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote(value:PG::Numeric)-instance-method" class="signature"><strong>#quote</strong>(value : PG::Numeric)</a>
+        <a href="#quote%28value%3APG%3A%3ANumeric%29-instance-method" class="signature"><strong>#quote</strong>(value : PG::Numeric)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote(value:Array)-instance-method" class="signature"><strong>#quote</strong>(value : Array)</a>
+        <a href="#quote%28value%3AArray%29-instance-method" class="signature"><strong>#quote</strong>(value : Array)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote(value:Slice(UInt8))-instance-method" class="signature"><strong>#quote</strong>(value : Slice(UInt8))</a>
+        <a href="#quote%28value%3ASlice%28UInt8%29%29-instance-method" class="signature"><strong>#quote</strong>(value : Slice(UInt8))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote_array_value(value:String)-instance-method" class="signature"><strong>#quote_array_value</strong>(value : String)</a>
+        <a href="#quote_array_value%28value%3AString%29-instance-method" class="signature"><strong>#quote_array_value</strong>(value : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote_array_value(value)-instance-method" class="signature"><strong>#quote_array_value</strong>(value)</a>
+        <a href="#quote_array_value%28value%29-instance-method" class="signature"><strong>#quote_array_value</strong>(value)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote_identifier(identifier:String%7CSymbol)-instance-method" class="signature"><strong>#quote_identifier</strong>(identifier : String | Symbol)</a>
+        <a href="#quote_identifier%28identifier%3AString%7CSymbol%29-instance-method" class="signature"><strong>#quote_identifier</strong>(identifier : String | Symbol)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quote_table(table:String)-instance-method" class="signature"><strong>#quote_table</strong>(table : String)</a>
+        <a href="#quote_table%28table%3AString%29-instance-method" class="signature"><strong>#quote_table</strong>(table : String)</a>
         
       </li>
     
@@ -1425,13 +1430,13 @@
         
         def <strong>quote</strong>(value : String)
 
-        <a class="method-permalink" href="#quote(value:String)-instance-method">#</a>
+        <a class="method-permalink" href="#quote%28value%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1441,13 +1446,13 @@
         
         def <strong>quote</strong>(value : PG::Geo::Box)
 
-        <a class="method-permalink" href="#quote(value:PG::Geo::Box)-instance-method">#</a>
+        <a class="method-permalink" href="#quote%28value%3APG%3A%3AGeo%3A%3ABox%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1457,13 +1462,13 @@
         
         def <strong>quote</strong>(value : PG::Geo::Circle)
 
-        <a class="method-permalink" href="#quote(value:PG::Geo::Circle)-instance-method">#</a>
+        <a class="method-permalink" href="#quote%28value%3APG%3A%3AGeo%3A%3ACircle%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1473,13 +1478,13 @@
         
         def <strong>quote</strong>(value : PG::Geo::Line)
 
-        <a class="method-permalink" href="#quote(value:PG::Geo::Line)-instance-method">#</a>
+        <a class="method-permalink" href="#quote%28value%3APG%3A%3AGeo%3A%3ALine%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1489,13 +1494,13 @@
         
         def <strong>quote</strong>(value : PG::Geo::LineSegment)
 
-        <a class="method-permalink" href="#quote(value:PG::Geo::LineSegment)-instance-method">#</a>
+        <a class="method-permalink" href="#quote%28value%3APG%3A%3AGeo%3A%3ALineSegment%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1505,13 +1510,13 @@
         
         def <strong>quote</strong>(value : PG::Geo::Path)
 
-        <a class="method-permalink" href="#quote(value:PG::Geo::Path)-instance-method">#</a>
+        <a class="method-permalink" href="#quote%28value%3APG%3A%3AGeo%3A%3APath%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L24" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1521,13 +1526,13 @@
         
         def <strong>quote</strong>(value : PG::Geo::Point, quote = <span class="n">true</span>)
 
-        <a class="method-permalink" href="#quote(value:PG::Geo::Point,quote=true)-instance-method">#</a>
+        <a class="method-permalink" href="#quote%28value%3APG%3A%3AGeo%3A%3APoint%2Cquote%3Dtrue%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1537,13 +1542,13 @@
         
         def <strong>quote</strong>(value : PG::Geo::Polygon)
 
-        <a class="method-permalink" href="#quote(value:PG::Geo::Polygon)-instance-method">#</a>
+        <a class="method-permalink" href="#quote%28value%3APG%3A%3AGeo%3A%3APolygon%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1553,13 +1558,13 @@
         
         def <strong>quote</strong>(value : PG::Numeric)
 
-        <a class="method-permalink" href="#quote(value:PG::Numeric)-instance-method">#</a>
+        <a class="method-permalink" href="#quote%28value%3APG%3A%3ANumeric%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L52" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L52" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1569,13 +1574,13 @@
         
         def <strong>quote</strong>(value : Array)
 
-        <a class="method-permalink" href="#quote(value:Array)-instance-method">#</a>
+        <a class="method-permalink" href="#quote%28value%3AArray%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L56" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1585,13 +1590,13 @@
         
         def <strong>quote</strong>(value : <a href="../../Slice.html">Slice</a>(UInt8))
 
-        <a class="method-permalink" href="#quote(value:Slice(UInt8))-instance-method">#</a>
+        <a class="method-permalink" href="#quote%28value%3ASlice%28UInt8%29%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1601,13 +1606,13 @@
         
         def <strong>quote_array_value</strong>(value : String)
 
-        <a class="method-permalink" href="#quote_array_value(value:String)-instance-method">#</a>
+        <a class="method-permalink" href="#quote_array_value%28value%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1617,13 +1622,13 @@
         
         def <strong>quote_array_value</strong>(value)
 
-        <a class="method-permalink" href="#quote_array_value(value)-instance-method">#</a>
+        <a class="method-permalink" href="#quote_array_value%28value%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L75" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L75" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1633,13 +1638,13 @@
         
         def <strong>quote_identifier</strong>(identifier : String | Symbol)
 
-        <a class="method-permalink" href="#quote_identifier(identifier:String%7CSymbol)-instance-method">#</a>
+        <a class="method-permalink" href="#quote_identifier%28identifier%3AString%7CSymbol%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L79" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L79" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1649,13 +1654,13 @@
         
         def <strong>quote_table</strong>(table : String)
 
-        <a class="method-permalink" href="#quote_table(table:String)-instance-method">#</a>
+        <a class="method-permalink" href="#quote_table%28table%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/quoting.cr#L83" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/quoting.cr#L83" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1298,7 +1303,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L4" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L4" target="_blank">
         jennifer/adapter/command_shell/command.cr
       </a>
     
@@ -1320,7 +1325,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(executable,options=[]ofOption,inline_vars=%7B%7DofString=%3EOption,in_stream=%22%22,out_stream=%22%22)-class-method" class="signature"><strong>.new</strong>(executable, options = <span class="o">[]</span> <span class="k">of</span> <span class="t">Option</span>, inline_vars = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">Option</span>, in_stream = <span class="s">&quot;&quot;</span>, out_stream = <span class="s">&quot;&quot;</span>)</a>
+        <a href="#new%28executable%3AString%2Coptions%3AArray%28String%29%3D%5B%5DofOption%2Cinline_vars%3AHash%28String%2CString%29%3D%7B%7DofString%3D%3EOption%2Cin_stream%3AString%3D%22%22%2Cout_stream%3AString%3D%22%22%29-class-method" class="signature"><strong>.new</strong>(executable : String, options : Array(String) = <span class="o">[]</span> <span class="k">of</span> <span class="t">Option</span>, inline_vars : Hash(String, String) = {} <span class="k">of</span> <span class="t">String</span> <span class="o">=&gt;</span> <span class="t">Option</span>, in_stream : String = <span class="s">&quot;&quot;</span>, out_stream : String = <span class="s">&quot;&quot;</span>)</a>
         
       </li>
     
@@ -1341,67 +1346,67 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#executable:String-instance-method" class="signature"><strong>#executable</strong> : String</a>
+        <a href="#executable%3AString-instance-method" class="signature"><strong>#executable</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#executable=(executable:String)-instance-method" class="signature"><strong>#executable=</strong>(executable : String)</a>
+        <a href="#executable%3D%28executable%3AString%29-instance-method" class="signature"><strong>#executable=</strong>(executable : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#in_stream:String-instance-method" class="signature"><strong>#in_stream</strong> : String</a>
+        <a href="#in_stream%3AString-instance-method" class="signature"><strong>#in_stream</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#in_stream=(in_stream:String)-instance-method" class="signature"><strong>#in_stream=</strong>(in_stream : String)</a>
+        <a href="#in_stream%3D%28in_stream%3AString%29-instance-method" class="signature"><strong>#in_stream=</strong>(in_stream : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#in_stream?-instance-method" class="signature"><strong>#in_stream?</strong></a>
+        <a href="#in_stream%3F-instance-method" class="signature"><strong>#in_stream?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#inline_vars:Hash(String,Option)-instance-method" class="signature"><strong>#inline_vars</strong> : Hash(String, Option)</a>
+        <a href="#inline_vars%3AHash%28String%2COption%29-instance-method" class="signature"><strong>#inline_vars</strong> : Hash(String, Option)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#inline_vars=(inline_vars:Hash(String,Option))-instance-method" class="signature"><strong>#inline_vars=</strong>(inline_vars : Hash(String, Option))</a>
+        <a href="#inline_vars%3D%28inline_vars%3AHash%28String%2COption%29%29-instance-method" class="signature"><strong>#inline_vars=</strong>(inline_vars : Hash(String, Option))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#inline_vars?-instance-method" class="signature"><strong>#inline_vars?</strong></a>
+        <a href="#inline_vars%3F-instance-method" class="signature"><strong>#inline_vars?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#options:Array(Option)-instance-method" class="signature"><strong>#options</strong> : Array(Option)</a>
+        <a href="#options%3AArray%28Option%29-instance-method" class="signature"><strong>#options</strong> : Array(Option)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#options=(options:Array(Option))-instance-method" class="signature"><strong>#options=</strong>(options : Array(Option))</a>
+        <a href="#options%3D%28options%3AArray%28Option%29%29-instance-method" class="signature"><strong>#options=</strong>(options : Array(Option))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#out_stream:String-instance-method" class="signature"><strong>#out_stream</strong> : String</a>
+        <a href="#out_stream%3AString-instance-method" class="signature"><strong>#out_stream</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#out_stream=(out_stream:String)-instance-method" class="signature"><strong>#out_stream=</strong>(out_stream : String)</a>
+        <a href="#out_stream%3D%28out_stream%3AString%29-instance-method" class="signature"><strong>#out_stream=</strong>(out_stream : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#out_stream?-instance-method" class="signature"><strong>#out_stream?</strong></a>
+        <a href="#out_stream%3F-instance-method" class="signature"><strong>#out_stream?</strong></a>
         
       </li>
     
@@ -1445,18 +1450,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(executable,options=[]ofOption,inline_vars={}ofString=&gt;Option,in_stream=&quot;&quot;,out_stream=&quot;&quot;)-class-method">
+    <div class="entry-detail" id="new(executable:String,options:Array(String)=[]ofOption,inline_vars:Hash(String,String)={}ofString=&gt;Option,in_stream:String=&quot;&quot;,out_stream:String=&quot;&quot;)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(executable, options = <span class="o">[]</span> <span class="k">of</span> <span class="t">Option</span>, inline_vars = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">Option</span>, in_stream = <span class="s">&quot;&quot;</span>, out_stream = <span class="s">&quot;&quot;</span>)
+        def self.<strong>new</strong>(executable : String, options : Array(String) = <span class="o">[]</span> <span class="k">of</span> <span class="t">Option</span>, inline_vars : Hash(String, String) = {} <span class="k">of</span> <span class="t">String</span> <span class="o">=&gt;</span> <span class="t">Option</span>, in_stream : String = <span class="s">&quot;&quot;</span>, out_stream : String = <span class="s">&quot;&quot;</span>)
 
-        <a class="method-permalink" href="#new(executable,options=[]ofOption,inline_vars=%7B%7DofString=%3EOption,in_stream=%22%22,out_stream=%22%22)-class-method">#</a>
+        <a class="method-permalink" href="#new%28executable%3AString%2Coptions%3AArray%28String%29%3D%5B%5DofOption%2Cinline_vars%3AHash%28String%2CString%29%3D%7B%7DofString%3D%3EOption%2Cin_stream%3AString%3D%22%22%2Cout_stream%3AString%3D%22%22%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1480,13 +1485,13 @@
         
         def <strong>executable</strong> : String
 
-        <a class="method-permalink" href="#executable:String-instance-method">#</a>
+        <a class="method-permalink" href="#executable%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1496,13 +1501,13 @@
         
         def <strong>executable=</strong>(executable : String)
 
-        <a class="method-permalink" href="#executable=(executable:String)-instance-method">#</a>
+        <a class="method-permalink" href="#executable%3D%28executable%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1512,13 +1517,13 @@
         
         def <strong>in_stream</strong> : String
 
-        <a class="method-permalink" href="#in_stream:String-instance-method">#</a>
+        <a class="method-permalink" href="#in_stream%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1528,13 +1533,13 @@
         
         def <strong>in_stream=</strong>(in_stream : String)
 
-        <a class="method-permalink" href="#in_stream=(in_stream:String)-instance-method">#</a>
+        <a class="method-permalink" href="#in_stream%3D%28in_stream%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1544,13 +1549,13 @@
         
         def <strong>in_stream?</strong>
 
-        <a class="method-permalink" href="#in_stream?-instance-method">#</a>
+        <a class="method-permalink" href="#in_stream%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1560,13 +1565,13 @@
         
         def <strong>inline_vars</strong> : Hash(String, <a href="../../../Jennifer/Adapter/ICommandShell/Command/Option.html">Option</a>)
 
-        <a class="method-permalink" href="#inline_vars:Hash(String,Option)-instance-method">#</a>
+        <a class="method-permalink" href="#inline_vars%3AHash%28String%2COption%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1576,13 +1581,13 @@
         
         def <strong>inline_vars=</strong>(inline_vars : Hash(String, <a href="../../../Jennifer/Adapter/ICommandShell/Command/Option.html">Option</a>))
 
-        <a class="method-permalink" href="#inline_vars=(inline_vars:Hash(String,Option))-instance-method">#</a>
+        <a class="method-permalink" href="#inline_vars%3D%28inline_vars%3AHash%28String%2COption%29%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1592,13 +1597,13 @@
         
         def <strong>inline_vars?</strong>
 
-        <a class="method-permalink" href="#inline_vars?-instance-method">#</a>
+        <a class="method-permalink" href="#inline_vars%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1608,13 +1613,13 @@
         
         def <strong>options</strong> : Array(<a href="../../../Jennifer/Adapter/ICommandShell/Command/Option.html">Option</a>)
 
-        <a class="method-permalink" href="#options:Array(Option)-instance-method">#</a>
+        <a class="method-permalink" href="#options%3AArray%28Option%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1624,13 +1629,13 @@
         
         def <strong>options=</strong>(options : Array(<a href="../../../Jennifer/Adapter/ICommandShell/Command/Option.html">Option</a>))
 
-        <a class="method-permalink" href="#options=(options:Array(Option))-instance-method">#</a>
+        <a class="method-permalink" href="#options%3D%28options%3AArray%28Option%29%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1640,13 +1645,13 @@
         
         def <strong>out_stream</strong> : String
 
-        <a class="method-permalink" href="#out_stream:String-instance-method">#</a>
+        <a class="method-permalink" href="#out_stream%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1656,13 +1661,13 @@
         
         def <strong>out_stream=</strong>(out_stream : String)
 
-        <a class="method-permalink" href="#out_stream=(out_stream:String)-instance-method">#</a>
+        <a class="method-permalink" href="#out_stream%3D%28out_stream%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1672,13 +1677,13 @@
         
         def <strong>out_stream?</strong>
 
-        <a class="method-permalink" href="#out_stream?-instance-method">#</a>
+        <a class="method-permalink" href="#out_stream%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/command_shell/command.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/command_shell/command.cr#L26" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1284,45 +1289,38 @@
 
   <p>The DB module is a unified interface for database access.
 Individual database systems are supported by specific database driver shards.</p>
-
 <p>Available drivers include:</p>
-
-<ul><li><a href="https://github.com/crystal-lang/crystal-sqlite3">crystal-lang/crystal-sqlite3</a> for SQLite</li><li><a href="https://github.com/crystal-lang/crystal-mysql">crystal-lang/crystal-mysql</a> for MySQL and MariaDB</li><li><a href="https://github.com/will/crystal-pg">will/crystal-pg</a> for PostgreSQL</li><li><a href="https://github.com/kaukas/crystal-cassandra">kaukas/crystal-cassandra</a> for Cassandra</li></ul>
-
+<ul>
+<li><a href="https://github.com/crystal-lang/crystal-sqlite3">crystal-lang/crystal-sqlite3</a> for SQLite</li>
+<li><a href="https://github.com/crystal-lang/crystal-mysql">crystal-lang/crystal-mysql</a> for MySQL and MariaDB</li>
+<li><a href="https://github.com/will/crystal-pg">will/crystal-pg</a> for PostgreSQL</li>
+<li><a href="https://github.com/kaukas/crystal-cassandra">kaukas/crystal-cassandra</a> for Cassandra</li>
+</ul>
 <p>For basic instructions on implementing a new database driver, check <code>Driver</code> and the existing drivers.</p>
-
 <p>DB manages a connection pool. The connection pool can be configured by query parameters to the
 connection <code>URI</code> as described in <code>Database</code>.</p>
-
 <h3><a id="usage" class="anchor" href="#usage">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Usage</h3>
-
 <p>Assuming <code>crystal-sqlite3</code> is included a SQLite3 database can be opened with <code>#open</code>.</p>
-
 <pre><code class="language-crystal">db <span class="o">=</span> <span class="t">DB</span>.open <span class="s">&quot;sqlite3:./path/to/db/file.db&quot;</span>
 db.close</code></pre>
-
 <p>If a block is given to <code>#open</code> the database is closed automatically</p>
-
 <pre><code class="language-crystal"><span class="t">DB</span>.open <span class="s">&quot;sqlite3:./file.db&quot;</span> <span class="k">do</span> <span class="o">|</span>db<span class="o">|</span>
   <span class="c"># work with db</span>
 <span class="k">end</span> <span class="c"># db is closed</span></code></pre>
-
 <p>In the code above <code>db</code> is a <code>Database</code>. Methods available for querying it are described in <code>QueryMethods</code>.</p>
-
 <p>Three kind of statements can be performed:</p>
-
-<ol><li><code>Database#exec</code> waits no response from the database.</li><li><code>Database#scalar</code> reads a single value of the response.</li><li><code>Database#query</code> returns a ResultSet that allows iteration over the rows in the response and column information.</li></ol>
-
+<ol>
+<li><code>Database#exec</code> waits no response from the database.</li>
+<li><code>Database#scalar</code> reads a single value of the response.</li>
+<li><code>Database#query</code> returns a ResultSet that allows iteration over the rows in the response and column information.</li>
+</ol>
 <p>All of the above methods allows parametrised query. Either positional or named arguments.</p>
-
 <p>Check a full working version:</p>
-
 <p>The following example uses SQLite where <code>?</code> indicates the arguments. If PostgreSQL is used <code>$1</code>, <code>$2</code>, etc. should be used. <code>crystal-db</code> does not interpret the statements.</p>
-
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;db&quot;</span>
 <span class="k">require</span> <span class="s">&quot;sqlite3&quot;</span>
 
@@ -1374,154 +1372,154 @@ db.close</code></pre>
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db.cr#L78" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db.cr#L78" target="_blank">
         lib/db/src/db.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/begin_transaction.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/begin_transaction.cr#L1" target="_blank">
         lib/db/src/db/begin_transaction.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/connection.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/connection.cr#L1" target="_blank">
         lib/db/src/db/connection.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/connection_context.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/connection_context.cr#L1" target="_blank">
         lib/db/src/db/connection_context.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/database.cr#L4" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/database.cr#L4" target="_blank">
         lib/db/src/db/database.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/disposable.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/disposable.cr#L1" target="_blank">
         lib/db/src/db/disposable.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/driver.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/driver.cr#L1" target="_blank">
         lib/db/src/db/driver.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/enumerable_concat.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/enumerable_concat.cr#L1" target="_blank">
         lib/db/src/db/enumerable_concat.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/error.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/error.cr#L1" target="_blank">
         lib/db/src/db/error.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/mapping.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/mapping.cr#L1" target="_blank">
         lib/db/src/db/mapping.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/pool.cr#L5" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/pool.cr#L5" target="_blank">
         lib/db/src/db/pool.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/pool_prepared_statement.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/pool_prepared_statement.cr#L1" target="_blank">
         lib/db/src/db/pool_prepared_statement.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/pool_statement.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/pool_statement.cr#L1" target="_blank">
         lib/db/src/db/pool_statement.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/pool_unprepared_statement.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/pool_unprepared_statement.cr#L1" target="_blank">
         lib/db/src/db/pool_unprepared_statement.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/query_methods.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/query_methods.cr#L1" target="_blank">
         lib/db/src/db/query_methods.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/result_set.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/result_set.cr#L1" target="_blank">
         lib/db/src/db/result_set.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/serializable.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/serializable.cr#L1" target="_blank">
         lib/db/src/db/serializable.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/session_methods.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/session_methods.cr#L1" target="_blank">
         lib/db/src/db/session_methods.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/statement.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/statement.cr#L1" target="_blank">
         lib/db/src/db/statement.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/string_key_cache.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/string_key_cache.cr#L1" target="_blank">
         lib/db/src/db/string_key_cache.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/transaction.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/transaction.cr#L1" target="_blank">
         lib/db/src/db/transaction.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/shared/db.cr#L1" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/shared/db.cr#L1" target="_blank">
         jennifer/adapter/shared/db.cr
       </a>
     

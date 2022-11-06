@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1298,7 +1303,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/relation/polymorphic_has_one.cr#L3" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/relation/polymorphic_has_one.cr#L3" target="_blank">
         jennifer/relation/polymorphic_has_one.cr
       </a>
     
@@ -1320,7 +1325,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(name,foreign,primary,query,foreign_type:String%7CSymbol?,inverse_of:String%7CSymbol)-class-method" class="signature"><strong>.new</strong>(name, foreign, primary, query, foreign_type : String | Symbol?, inverse_of : String | Symbol)</a>
+        <a href="#new%28name%2Cforeign%2Cprimary%2Cquery%2Cforeign_type%3AString%7CSymbol%3F%2Cinverse_of%3AString%7CSymbol%29-class-method" class="signature"><strong>.new</strong>(name, foreign, primary, query, foreign_type : String | Symbol?, inverse_of : String | Symbol)</a>
         
       </li>
     
@@ -1341,12 +1346,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#condition_clause(ids:Array(DBAny))-instance-method" class="signature"><strong>#condition_clause</strong>(ids : Array(DBAny))</a>
+        <a href="#condition_clause%28ids%3AArray%28DBAny%29%29-instance-method" class="signature"><strong>#condition_clause</strong>(ids : Array(DBAny))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#condition_clause(id:DBAny)-instance-method" class="signature"><strong>#condition_clause</strong>(id : DBAny)</a>
+        <a href="#condition_clause%28id%3ADBAny%29-instance-method" class="signature"><strong>#condition_clause</strong>(id : DBAny)</a>
         
       </li>
     
@@ -1356,17 +1361,17 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#foreign_type:String-instance-method" class="signature"><strong>#foreign_type</strong> : String</a>
+        <a href="#foreign_type%3AString-instance-method" class="signature"><strong>#foreign_type</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#insert(obj:Q,rel:Hash(String,T::AttrType))-instance-method" class="signature"><strong>#insert</strong>(obj : Q, rel : Hash(String, T::AttrType))</a>
+        <a href="#insert%28obj%3AQ%2Crel%3AHash%28String%2CT%3A%3AAttrType%29%29-instance-method" class="signature"><strong>#insert</strong>(obj : Q, rel : Hash(String, T::AttrType))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#insert(obj:Q,rel:T)-instance-method" class="signature"><strong>#insert</strong>(obj : Q, rel : T)</a>
+        <a href="#insert%28obj%3AQ%2Crel%3AT%29-instance-method" class="signature"><strong>#insert</strong>(obj : Q, rel : T)</a>
         
       </li>
     
@@ -1376,12 +1381,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#remove(obj:Q,rel:T)-instance-method" class="signature"><strong>#remove</strong>(obj : Q, rel : T)</a>
+        <a href="#remove%28obj%3AQ%2Crel%3AT%29-instance-method" class="signature"><strong>#remove</strong>(obj : Q, rel : T)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#remove(obj:Q)-instance-method" class="signature"><strong>#remove</strong>(obj : Q)</a>
+        <a href="#remove%28obj%3AQ%29-instance-method" class="signature"><strong>#remove</strong>(obj : Q)</a>
         
           <div class="summary"><p>Removes related instance of class <em>T</em> from DB without it's id.</p></div>
         
@@ -1405,12 +1410,12 @@
     adapter</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#condition_clause(ids:Array(DBAny))-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#condition_clause%28ids%3AArray%28DBAny%29%29-instance-method" class="tooltip">
       <span>condition_clause(ids : Array(DBAny))<br/>condition_clause(id : DBAny)<br/>condition_clause</span>
     condition_clause</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#foreign:String?-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#foreign%3AString%3F-instance-method" class="tooltip">
       <span>foreign : String?</span>
     foreign</a>, 
     
@@ -1420,17 +1425,17 @@
     foreign_field</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#insert(obj:Q,rel:Hash(String,T::AttrType))-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#insert%28obj%3AQ%2Crel%3AHash%28String%2CT%3A%3AAttrType%29%29-instance-method" class="tooltip">
       <span>insert(obj : Q, rel : Hash(String, T::AttrType))<br/>insert(obj : Q, rel : Hash(Symbol, T::AttrType))<br/>insert(obj : Q, rel : T)</span>
     insert</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#join_condition(query,type)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#join_condition%28query%2Ctype%29-instance-method" class="tooltip">
       <span>join_condition(query, type)</span>
     join_condition</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#join_query:QueryBuilder::Condition%7CQueryBuilder::LogicOperator%7CNil-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#join_query%3AQueryBuilder%3A%3ACondition%7CQueryBuilder%3A%3ALogicOperator%7CNil-instance-method" class="tooltip">
       <span>join_query : QueryBuilder::Condition | QueryBuilder::LogicOperator | Nil</span>
     join_query</a>, 
     
@@ -1440,17 +1445,17 @@
     model_class</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#name:String-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#name%3AString-instance-method" class="tooltip">
       <span>name : String</span>
     name</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#preload_relation(collection,out_collection:Array(Model::Resource),pk_repo)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#preload_relation%28collection%2Cout_collection%3AArray%28Model%3A%3AResource%29%2Cpk_repo%29-instance-method" class="tooltip">
       <span>preload_relation(collection, out_collection : Array(Model::Resource), pk_repo)</span>
     preload_relation</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#primary:String?-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#primary%3AString%3F-instance-method" class="tooltip">
       <span>primary : String?</span>
     primary</a>, 
     
@@ -1460,12 +1465,12 @@
     primary_field</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#query(primary_value_or_array)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#query%28primary_value_or_array%29-instance-method" class="tooltip">
       <span>query(primary_value_or_array)</span>
     query</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#remove(obj:Q,rel:T)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#remove%28obj%3AQ%2Crel%3AT%29-instance-method" class="tooltip">
       <span>remove(obj : Q, rel : T)</span>
     remove</a>, 
     
@@ -1475,7 +1480,7 @@
     table_name</a>, 
     
   
-    <a href="../../Jennifer/Relation/Base.html#through:Symbol?-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/Base.html#through%3ASymbol%3F-instance-method" class="tooltip">
       <span>through : Symbol?</span>
     through</a>
     
@@ -1487,8 +1492,8 @@
   <h3>Constructor methods inherited from class <code><a href="../../Jennifer/Relation/Base.html">Jennifer::Relation::Base(T, Q)</a></code></h3>
   
   
-    <a href="../../Jennifer/Relation/Base.html#new(name,foreign:String%7CSymbol?,primary:String%7CSymbol?,query:QueryBuilder::Query,through=nil)-class-method" class="tooltip">
-      <span>new(name, foreign : String | Symbol?, primary : String | Symbol?, query : QueryBuilder::Query, through = <span class="n">nil</span>)</span>
+    <a href="../../Jennifer/Relation/Base.html#new%28name%3AString%2Cforeign%3AString%7CSymbol%3F%2Cprimary%3AString%7CSymbol%3F%2Cquery%3AQueryBuilder%3A%3AQuery%2Cthrough%3ASymbol%3F%3Dnil%29-class-method" class="tooltip">
+      <span>new(name : String, foreign : String | Symbol?, primary : String | Symbol?, query : QueryBuilder::Query, through : Symbol? = <span class="n">nil</span>)</span>
     new</a>
     
   
@@ -1503,8 +1508,8 @@
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/Relation/IRelation.html">Jennifer::Relation::IRelation</a></code></h3>
   
   
-    <a href="../../Jennifer/Relation/IRelation.html#join_condition(a,b)-instance-method" class="tooltip">
-      <span>join_condition(a, b)</span>
+    <a href="../../Jennifer/Relation/IRelation.html#join_condition%28query%2Ctype%29-instance-method" class="tooltip">
+      <span>join_condition(query, type)</span>
     join_condition</a>, 
     
   
@@ -1518,13 +1523,13 @@
     model_class</a>, 
     
   
-    <a href="../../Jennifer/Relation/IRelation.html#preload_relation(collection,out_collection:Array(Model::Resource),pk_repo)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Relation/IRelation.html#preload_relation%28collection%2Cout_collection%3AArray%28Model%3A%3AResource%29%2Cpk_repo%29-instance-method" class="tooltip">
       <span>preload_relation(collection, out_collection : Array(Model::Resource), pk_repo)</span>
     preload_relation</a>, 
     
   
-    <a href="../../Jennifer/Relation/IRelation.html#query(primary_value)-instance-method" class="tooltip">
-      <span>query(primary_value)</span>
+    <a href="../../Jennifer/Relation/IRelation.html#query%28primary_value_or_array%29-instance-method" class="tooltip">
+      <span>query(primary_value_or_array)</span>
     query</a>, 
     
   
@@ -1579,13 +1584,13 @@
         
         def self.<strong>new</strong>(name, foreign, primary, query, foreign_type : String | Symbol?, inverse_of : String | Symbol)
 
-        <a class="method-permalink" href="#new(name,foreign,primary,query,foreign_type:String%7CSymbol?,inverse_of:String%7CSymbol)-class-method">#</a>
+        <a class="method-permalink" href="#new%28name%2Cforeign%2Cprimary%2Cquery%2Cforeign_type%3AString%7CSymbol%3F%2Cinverse_of%3AString%7CSymbol%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/relation/polymorphic_has_one.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/relation/polymorphic_has_one.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1609,13 +1614,13 @@
         
         def <strong>condition_clause</strong>(ids : Array(<a href="../../Jennifer/DBAny.html">DBAny</a>))
 
-        <a class="method-permalink" href="#condition_clause(ids:Array(DBAny))-instance-method">#</a>
+        <a class="method-permalink" href="#condition_clause%28ids%3AArray%28DBAny%29%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/relation/polymorphic_has_one.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/relation/polymorphic_has_one.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1625,13 +1630,13 @@
         
         def <strong>condition_clause</strong>(id : <a href="../../Jennifer/DBAny.html">DBAny</a>)
 
-        <a class="method-permalink" href="#condition_clause(id:DBAny)-instance-method">#</a>
+        <a class="method-permalink" href="#condition_clause%28id%3ADBAny%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/relation/polymorphic_has_one.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/relation/polymorphic_has_one.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1647,7 +1652,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/relation/polymorphic_has_one.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/relation/polymorphic_has_one.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1657,13 +1662,13 @@
         
         def <strong>foreign_type</strong> : String
 
-        <a class="method-permalink" href="#foreign_type:String-instance-method">#</a>
+        <a class="method-permalink" href="#foreign_type%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/relation/polymorphic_has_one.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/relation/polymorphic_has_one.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1673,13 +1678,13 @@
         
         def <strong>insert</strong>(obj : Q, rel : Hash(String, T::AttrType))
 
-        <a class="method-permalink" href="#insert(obj:Q,rel:Hash(String,T::AttrType))-instance-method">#</a>
+        <a class="method-permalink" href="#insert%28obj%3AQ%2Crel%3AHash%28String%2CT%3A%3AAttrType%29%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/relation/polymorphic_has_one.cr#L27" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/relation/polymorphic_has_one.cr#L27" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1689,13 +1694,13 @@
         
         def <strong>insert</strong>(obj : Q, rel : T)
 
-        <a class="method-permalink" href="#insert(obj:Q,rel:T)-instance-method">#</a>
+        <a class="method-permalink" href="#insert%28obj%3AQ%2Crel%3AT%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/relation/polymorphic_has_one.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/relation/polymorphic_has_one.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1711,7 +1716,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/relation/polymorphic_has_one.cr#L56" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/relation/polymorphic_has_one.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1721,13 +1726,13 @@
         
         def <strong>remove</strong>(obj : Q, rel : T)
 
-        <a class="method-permalink" href="#remove(obj:Q,rel:T)-instance-method">#</a>
+        <a class="method-permalink" href="#remove%28obj%3AQ%2Crel%3AT%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/relation/polymorphic_has_one.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/relation/polymorphic_has_one.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1737,7 +1742,7 @@
         
         def <strong>remove</strong>(obj : Q)
 
-        <a class="method-permalink" href="#remove(obj:Q)-instance-method">#</a>
+        <a class="method-permalink" href="#remove%28obj%3AQ%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1748,7 +1753,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/relation/polymorphic_has_one.cr#L50" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/relation/polymorphic_has_one.cr#L50" target="_blank">View source</a>]
         
       </div>
     </div>

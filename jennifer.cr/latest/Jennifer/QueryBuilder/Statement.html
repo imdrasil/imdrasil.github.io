@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1314,7 +1319,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/statement.cr#L3" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/statement.cr#L3" target="_blank">
         jennifer/query_builder/statement.cr
       </a>
     
@@ -1340,21 +1345,21 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#as_sql(sql_generator)-instance-method" class="signature"><strong>#as_sql</strong>(sql_generator)</a>
+        <a href="#as_sql%28generator%29-instance-method" class="signature"><strong>#as_sql</strong>(generator)</a>
         
-          <div class="summary"><p>Converts node to SQL using <em>sql_generator</em> SQLGenerator.</p></div>
+          <div class="summary"><p>Converts node to SQL using <em>generator</em> SQLGenerator.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#filterable?-instance-method" class="signature"><strong>#filterable?</strong></a>
+        <a href="#filterable%3F-instance-method" class="signature"><strong>#filterable?</strong></a>
         
           <div class="summary"><p>Returns whether node has an argument to be added to SQL statement arguments.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#sql_args:Array(DBAny)-instance-method" class="signature"><strong>#sql_args</strong> : Array(DBAny)</a>
+        <a href="#sql_args%3AArray%28DBAny%29-instance-method" class="signature"><strong>#sql_args</strong> : Array(DBAny)</a>
         
           <div class="summary"><p>Returns array of SQL query arguments.</p></div>
         
@@ -1384,23 +1389,23 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="as_sql(sql_generator)-instance-method">
+    <div class="entry-detail" id="as_sql(generator)-instance-method">
       <div class="signature">
         abstract 
-        def <strong>as_sql</strong>(sql_generator)
+        def <strong>as_sql</strong>(generator)
 
-        <a class="method-permalink" href="#as_sql(sql_generator)-instance-method">#</a>
+        <a class="method-permalink" href="#as_sql%28generator%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Converts node to SQL using <em>sql_generator</em> SQLGenerator.</p>
+          <p>Converts node to SQL using <em>generator</em> SQLGenerator.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/statement.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/statement.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1410,7 +1415,7 @@
         abstract 
         def <strong>filterable?</strong>
 
-        <a class="method-permalink" href="#filterable?-instance-method">#</a>
+        <a class="method-permalink" href="#filterable%3F-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1421,7 +1426,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/statement.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/statement.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1431,7 +1436,7 @@
         abstract 
         def <strong>sql_args</strong> : Array(<a href="../../Jennifer/DBAny.html">DBAny</a>)
 
-        <a class="method-permalink" href="#sql_args:Array(DBAny)-instance-method">#</a>
+        <a class="method-permalink" href="#sql_args%3AArray%28DBAny%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1442,7 +1447,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/statement.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/statement.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>

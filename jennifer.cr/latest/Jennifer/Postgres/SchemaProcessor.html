@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1298,7 +1303,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L5" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L5" target="_blank">
         jennifer/adapter/postgres/schema_processor.cr
       </a>
     
@@ -1324,74 +1329,74 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#add_index(table,name,fields:Array,type:Symbol?=nil,order:Hash?=nil,length:Hash?=nil)-instance-method" class="signature"><strong>#add_index</strong>(table, name, fields : Array, type : Symbol? = <span class="n">nil</span>, order : Hash? = <span class="n">nil</span>, length : Hash? = <span class="n">nil</span>)</a>
+        <a href="#add_index%28table%2Cname%2Cfields%3AArray%2Ctype%3ASymbol%3F%3Dnil%2Corder%3AHash%3F%3Dnil%2Clength%3AHash%3F%3Dnil%29-instance-method" class="signature"><strong>#add_index</strong>(table, name, fields : Array, type : Symbol? = <span class="n">nil</span>, order : Hash? = <span class="n">nil</span>, length : Hash? = <span class="n">nil</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#build_change_enum(name,options)-instance-method" class="signature"><strong>#build_change_enum</strong>(name, options)</a>
+        <a href="#build_change_enum%28name%2Coptions%29-instance-method" class="signature"><strong>#build_change_enum</strong>(name, options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#build_create_enum(name,values)-instance-method" class="signature"><strong>#build_create_enum</strong>(name, values)</a>
+        <a href="#build_create_enum%28name%2Cvalues%29-instance-method" class="signature"><strong>#build_create_enum</strong>(name, values)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#build_create_materialized_view(name,source)-instance-method" class="signature"><strong>#build_create_materialized_view</strong>(name, source)</a>
+        <a href="#build_create_materialized_view%28name%2Csource%29-instance-method" class="signature"><strong>#build_create_materialized_view</strong>(name, source)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#build_drop_enum(name)-instance-method" class="signature"><strong>#build_drop_enum</strong>(name)</a>
+        <a href="#build_drop_enum%28name%29-instance-method" class="signature"><strong>#build_drop_enum</strong>(name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#build_drop_materialized_view(name)-instance-method" class="signature"><strong>#build_drop_materialized_view</strong>(name)</a>
+        <a href="#build_drop_materialized_view%28name%29-instance-method" class="signature"><strong>#build_drop_materialized_view</strong>(name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#change_column(table,old_name,new_name,opts)-instance-method" class="signature"><strong>#change_column</strong>(table, old_name, new_name, opts)</a>
+        <a href="#change_column%28table%2Cold_name%2Cnew_name%2Copts%29-instance-method" class="signature"><strong>#change_column</strong>(table, old_name, new_name, opts)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#define_enum(name:String%7CSymbol,values:Array)-instance-method" class="signature"><strong>#define_enum</strong>(name : String | Symbol, values : Array)</a>
+        <a href="#define_enum%28name%3AString%7CSymbol%2Cvalues%3AArray%29-instance-method" class="signature"><strong>#define_enum</strong>(name : String | Symbol, values : Array)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#drop_enum(name)-instance-method" class="signature"><strong>#drop_enum</strong>(name)</a>
+        <a href="#drop_enum%28name%29-instance-method" class="signature"><strong>#drop_enum</strong>(name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#drop_foreign_key(from_table,_to_table,name)-instance-method" class="signature"><strong>#drop_foreign_key</strong>(from_table, _to_table, name)</a>
+        <a href="#drop_foreign_key%28from_table%2C_to_table%2Cname%29-instance-method" class="signature"><strong>#drop_foreign_key</strong>(from_table, _to_table, name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#drop_index(table,name)-instance-method" class="signature"><strong>#drop_index</strong>(table, name)</a>
+        <a href="#drop_index%28table%2Cname%29-instance-method" class="signature"><strong>#drop_index</strong>(table, name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#enum_exists?(*args,**options)-instance-method" class="signature"><strong>#enum_exists?</strong>(*args, **options)</a>
+        <a href="#enum_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#enum_exists?</strong>(*args, **options)</a>
         
           <div class="summary"><p>:nodoc:</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#enum_exists?(*args,**options,&)-instance-method" class="signature"><strong>#enum_exists?</strong>(*args, **options, &)</a>
+        <a href="#enum_exists%3F%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#enum_exists?</strong>(*args, **options, &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#rename_table(old_name:String%7CSymbol,new_name:String%7CSymbol)-instance-method" class="signature"><strong>#rename_table</strong>(old_name : String | Symbol, new_name : String | Symbol)</a>
+        <a href="#rename_table%28old_name%3AString%7CSymbol%2Cnew_name%3AString%7CSymbol%29-instance-method" class="signature"><strong>#rename_table</strong>(old_name : String | Symbol, new_name : String | Symbol)</a>
         
       </li>
     
@@ -1408,67 +1413,67 @@
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/Adapter/SchemaProcessor.html">Jennifer::Adapter::SchemaProcessor</a></code></h3>
   
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#adapter:Adapter::Base-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#adapter%3AAdapter%3A%3ABase-instance-method" class="tooltip">
       <span>adapter : Adapter::Base</span>
     adapter</a>, 
     
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#add_column(table,name,opts:Hash)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#add_column%28table%2Cname%2Copts%3AHash%29-instance-method" class="tooltip">
       <span>add_column(table, name, opts : Hash)</span>
     add_column</a>, 
     
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#add_foreign_key(from_table,to_table,column,primary_key,name,on_update,on_delete)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#add_foreign_key%28from_table%2Cto_table%2Ccolumn%2Cprimary_key%2Cname%2Con_update%2Con_delete%29-instance-method" class="tooltip">
       <span>add_foreign_key(from_table, to_table, column, primary_key, name, on_update, on_delete)</span>
     add_foreign_key</a>, 
     
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#add_index(table,name,fields:Array,type:Symbol?=nil,order:Hash?=nil,length:Hash?=nil)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#add_index%28table%2Cname%2Cfields%3AArray%2Ctype%3ASymbol%3F%3Dnil%2Corder%3AHash%3F%3Dnil%2Clength%3AHash%3F%3Dnil%29-instance-method" class="tooltip">
       <span>add_index(table, name, fields : Array, type : Symbol? = <span class="n">nil</span>, order : Hash? = <span class="n">nil</span>, length : Hash? = <span class="n">nil</span>)</span>
     add_index</a>, 
     
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#change_column(table,old_name,new_name,opts:Hash)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#change_column%28table%2Cold_name%2Cnew_name%2Copts%3AHash%29-instance-method" class="tooltip">
       <span>change_column(table, old_name, new_name, opts : Hash)</span>
     change_column</a>, 
     
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#create_table(builder:Migration::TableBuilder::CreateTable)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#create_table%28builder%3AMigration%3A%3ATableBuilder%3A%3ACreateTable%29-instance-method" class="tooltip">
       <span>create_table(builder : Migration::TableBuilder::CreateTable)</span>
     create_table</a>, 
     
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#create_view(name,query,silent=true)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#create_view%28name%2Cquery%2Csilent%3Dtrue%29-instance-method" class="tooltip">
       <span>create_view(name, query, silent = <span class="n">true</span>)</span>
     create_view</a>, 
     
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#drop_column(table,name)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#drop_column%28table%2Cname%29-instance-method" class="tooltip">
       <span>drop_column(table, name)</span>
     drop_column</a>, 
     
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#drop_foreign_key(from_table,_to_table,name)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#drop_foreign_key%28from_table%2C_to_table%2Cname%29-instance-method" class="tooltip">
       <span>drop_foreign_key(from_table, _to_table, name)</span>
     drop_foreign_key</a>, 
     
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#drop_index(table,name)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#drop_index%28table%2Cname%29-instance-method" class="tooltip">
       <span>drop_index(table, name)</span>
     drop_index</a>, 
     
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#drop_table(builder:Migration::TableBuilder::DropTable)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#drop_table%28builder%3AMigration%3A%3ATableBuilder%3A%3ADropTable%29-instance-method" class="tooltip">
       <span>drop_table(builder : Migration::TableBuilder::DropTable)</span>
     drop_table</a>, 
     
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#drop_view(name,silent=true)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#drop_view%28name%2Csilent%3Dtrue%29-instance-method" class="tooltip">
       <span>drop_view(name, silent = <span class="n">true</span>)</span>
     drop_view</a>, 
     
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#rename_table(old_name:String%7CSymbol,new_name:String%7CSymbol)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#rename_table%28old_name%3AString%7CSymbol%2Cnew_name%3AString%7CSymbol%29-instance-method" class="tooltip">
       <span>rename_table(old_name : String | Symbol, new_name : String | Symbol)</span>
     rename_table</a>
     
@@ -1480,8 +1485,8 @@
   <h3>Constructor methods inherited from class <code><a href="../../Jennifer/Adapter/SchemaProcessor.html">Jennifer::Adapter::SchemaProcessor</a></code></h3>
   
   
-    <a href="../../Jennifer/Adapter/SchemaProcessor.html#new(adapter)-class-method" class="tooltip">
-      <span>new(adapter)</span>
+    <a href="../../Jennifer/Adapter/SchemaProcessor.html#new%28adapter%3AJennifer%3A%3AAdapter%3A%3ABase%29-class-method" class="tooltip">
+      <span>new(adapter : Jennifer::Adapter::Base)</span>
     new</a>
     
   
@@ -1532,13 +1537,13 @@
         
         def <strong>add_index</strong>(table, name, fields : Array, type : Symbol? = <span class="n">nil</span>, order : Hash? = <span class="n">nil</span>, length : Hash? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#add_index(table,name,fields:Array,type:Symbol?=nil,order:Hash?=nil,length:Hash?=nil)-instance-method">#</a>
+        <a class="method-permalink" href="#add_index%28table%2Cname%2Cfields%3AArray%2Ctype%3ASymbol%3F%3Dnil%2Corder%3AHash%3F%3Dnil%2Clength%3AHash%3F%3Dnil%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1548,13 +1553,13 @@
         
         def <strong>build_change_enum</strong>(name, options)
 
-        <a class="method-permalink" href="#build_change_enum(name,options)-instance-method">#</a>
+        <a class="method-permalink" href="#build_change_enum%28name%2Coptions%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1564,13 +1569,13 @@
         
         def <strong>build_create_enum</strong>(name, values)
 
-        <a class="method-permalink" href="#build_create_enum(name,values)-instance-method">#</a>
+        <a class="method-permalink" href="#build_create_enum%28name%2Cvalues%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1580,13 +1585,13 @@
         
         def <strong>build_create_materialized_view</strong>(name, source)
 
-        <a class="method-permalink" href="#build_create_materialized_view(name,source)-instance-method">#</a>
+        <a class="method-permalink" href="#build_create_materialized_view%28name%2Csource%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L24" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1596,13 +1601,13 @@
         
         def <strong>build_drop_enum</strong>(name)
 
-        <a class="method-permalink" href="#build_drop_enum(name)-instance-method">#</a>
+        <a class="method-permalink" href="#build_drop_enum%28name%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1612,13 +1617,13 @@
         
         def <strong>build_drop_materialized_view</strong>(name)
 
-        <a class="method-permalink" href="#build_drop_materialized_view(name)-instance-method">#</a>
+        <a class="method-permalink" href="#build_drop_materialized_view%28name%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L28" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L28" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1628,13 +1633,13 @@
         
         def <strong>change_column</strong>(table, old_name, new_name, opts)
 
-        <a class="method-permalink" href="#change_column(table,old_name,new_name,opts)-instance-method">#</a>
+        <a class="method-permalink" href="#change_column%28table%2Cold_name%2Cnew_name%2Copts%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L74" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L74" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1644,13 +1649,13 @@
         
         def <strong>define_enum</strong>(name : String | Symbol, values : Array)
 
-        <a class="method-permalink" href="#define_enum(name:String%7CSymbol,values:Array)-instance-method">#</a>
+        <a class="method-permalink" href="#define_enum%28name%3AString%7CSymbol%2Cvalues%3AArray%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1660,13 +1665,13 @@
         
         def <strong>drop_enum</strong>(name)
 
-        <a class="method-permalink" href="#drop_enum(name)-instance-method">#</a>
+        <a class="method-permalink" href="#drop_enum%28name%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1676,13 +1681,13 @@
         
         def <strong>drop_foreign_key</strong>(from_table, _to_table, name)
 
-        <a class="method-permalink" href="#drop_foreign_key(from_table,_to_table,name)-instance-method">#</a>
+        <a class="method-permalink" href="#drop_foreign_key%28from_table%2C_to_table%2Cname%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L106" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L105" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1692,13 +1697,13 @@
         
         def <strong>drop_index</strong>(table, name)
 
-        <a class="method-permalink" href="#drop_index(table,name)-instance-method">#</a>
+        <a class="method-permalink" href="#drop_index%28table%2Cname%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1708,7 +1713,7 @@
         
         def <strong>enum_exists?</strong>(*args, **options)
 
-        <a class="method-permalink" href="#enum_exists?(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#enum_exists%3F%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1723,7 +1728,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1733,13 +1738,13 @@
         
         def <strong>enum_exists?</strong>(*args, **options, &)
 
-        <a class="method-permalink" href="#enum_exists?(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#enum_exists%3F%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1749,13 +1754,13 @@
         
         def <strong>rename_table</strong>(old_name : String | Symbol, new_name : String | Symbol)
 
-        <a class="method-permalink" href="#rename_table(old_name:String%7CSymbol,new_name:String%7CSymbol)-instance-method">#</a>
+        <a class="method-permalink" href="#rename_table%28old_name%3AString%7CSymbol%2Cnew_name%3AString%7CSymbol%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/postgres/schema_processor.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/postgres/schema_processor.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>

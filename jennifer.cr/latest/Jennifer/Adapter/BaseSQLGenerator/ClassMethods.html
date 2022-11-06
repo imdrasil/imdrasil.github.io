@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1296,7 +1301,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/base_sql_generator.cr#L7" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/base_sql_generator.cr#L7" target="_blank">
         jennifer/adapter/base_sql_generator.cr
       </a>
     
@@ -1322,24 +1327,24 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#insert(obj:Model::Base)-instance-method" class="signature"><strong>#insert</strong>(obj : Model::Base)</a>
+        <a href="#insert%28obj%3AModel%3A%3ABase%29-instance-method" class="signature"><strong>#insert</strong>(obj : Model::Base)</a>
         
           <div class="summary"><p>Generates query for inserting new record to db</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#insert_on_duplicate(table,fields,rows:Int32,unique_fields,on_conflict)-instance-method" class="signature"><strong>#insert_on_duplicate</strong>(table, fields, rows : Int32, unique_fields, on_conflict)</a>
+        <a href="#insert_on_duplicate%28table%2Cfields%2Crows%3AInt32%2Cunique_fields%2Con_conflict%29-instance-method" class="signature"><strong>#insert_on_duplicate</strong>(table, fields, rows : Int32, unique_fields, on_conflict)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#json_path(path:QueryBuilder::JSONSelector)-instance-method" class="signature"><strong>#json_path</strong>(path : QueryBuilder::JSONSelector)</a>
+        <a href="#json_path%28path%3AQueryBuilder%3A%3AJSONSelector%29-instance-method" class="signature"><strong>#json_path</strong>(path : QueryBuilder::JSONSelector)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#values_expression(field:Symbol)-instance-method" class="signature"><strong>#values_expression</strong>(field : Symbol)</a>
+        <a href="#values_expression%28field%3ASymbol%29-instance-method" class="signature"><strong>#values_expression</strong>(field : Symbol)</a>
         
           <div class="summary"><p>Generates SQL for VALUES reference in `INSERT ...</p></div>
         
@@ -1374,7 +1379,7 @@
         abstract 
         def <strong>insert</strong>(obj : <a href="../../../Jennifer/Model/Base.html">Model::Base</a>)
 
-        <a class="method-permalink" href="#insert(obj:Model::Base)-instance-method">#</a>
+        <a class="method-permalink" href="#insert%28obj%3AModel%3A%3ABase%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1385,7 +1390,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/base_sql_generator.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/base_sql_generator.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1395,13 +1400,13 @@
         abstract 
         def <strong>insert_on_duplicate</strong>(table, fields, rows : Int32, unique_fields, on_conflict)
 
-        <a class="method-permalink" href="#insert_on_duplicate(table,fields,rows:Int32,unique_fields,on_conflict)-instance-method">#</a>
+        <a class="method-permalink" href="#insert_on_duplicate%28table%2Cfields%2Crows%3AInt32%2Cunique_fields%2Con_conflict%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/base_sql_generator.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/base_sql_generator.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1411,13 +1416,13 @@
         abstract 
         def <strong>json_path</strong>(path : <a href="../../../Jennifer/QueryBuilder/JSONSelector.html">QueryBuilder::JSONSelector</a>)
 
-        <a class="method-permalink" href="#json_path(path:QueryBuilder::JSONSelector)-instance-method">#</a>
+        <a class="method-permalink" href="#json_path%28path%3AQueryBuilder%3A%3AJSONSelector%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/base_sql_generator.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/base_sql_generator.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1427,7 +1432,7 @@
         abstract 
         def <strong>values_expression</strong>(field : Symbol)
 
-        <a class="method-permalink" href="#values_expression(field:Symbol)-instance-method">#</a>
+        <a class="method-permalink" href="#values_expression%28field%3ASymbol%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1438,7 +1443,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/base_sql_generator.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/base_sql_generator.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1284,12 +1289,14 @@
     Overview
   </h2>
 
-  <p>Base class for a database <a href="https://en.wikipedia.org/wiki/View_(SQL">view</a>).</p>
-
+  <p>Base class for a database <a href="https://en.wikipedia.org/wiki/View_(SQL)">view</a>.</p>
 <p>The functionality provided by view is close to the one of <code><a href="../../Jennifer/Model/Base.html">Model::Base</a></code> but has next limitations:</p>
-
-<ul><li>supports only <code><a href="../../Jennifer/View/Base.html#after_initialize(*names)-macro">after_initialize</a></code> callback</li><li>doesn't support any relations</li><li>has no persistence mechanism</li><li>doesn't support virtual attributes</li></ul>
-
+<ul>
+<li>supports only <code><a href="../../Jennifer/View/Base.html#after_initialize%28%2Anames%29-macro">after_initialize</a></code> callback</li>
+<li>doesn't support any relations</li>
+<li>has no persistence mechanism</li>
+<li>doesn't support virtual attributes</li>
+</ul>
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">FemaleContact</span> <span class="o">&lt;</span> <span class="t">BaseView</span>
   mapping({
     id:   <span class="t">Primary32</span>,
@@ -1349,7 +1356,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/view/base.cr#L23" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/view/base.cr#L23" target="_blank">
         jennifer/view/base.cr
       </a>
     
@@ -1373,14 +1380,14 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#build(values:Hash%7CNamedTuple,new_record:Bool)-class-method" class="signature"><strong>.build</strong>(values : Hash | NamedTuple, new_record : Bool)</a>
+        <a href="#build%28values%3AHash%7CNamedTuple%2Cnew_record%3ABool%29-class-method" class="signature"><strong>.build</strong>(values : Hash | NamedTuple, new_record : Bool)</a>
         
           <div class="summary"><p>Alias for <code>.new</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#build(pull:DB::ResultSet)-class-method" class="signature"><strong>.build</strong>(pull : DB::ResultSet)</a>
+        <a href="#build%28pull%3ADB%3A%3AResultSet%29-class-method" class="signature"><strong>.build</strong>(pull : DB::ResultSet)</a>
         
           <div class="summary"><p>Alias for <code>.new</code>.</p></div>
         
@@ -1392,12 +1399,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#relation(name)-class-method" class="signature"><strong>.relation</strong>(name)</a>
+        <a href="#relation%28name%29-class-method" class="signature"><strong>.relation</strong>(name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#view_name(value:String)-class-method" class="signature"><strong>.view_name</strong>(value : String)</a>
+        <a href="#view_name%28value%3AString%29-class-method" class="signature"><strong>.view_name</strong>(value : String)</a>
         
           <div class="summary"><p>Sets view name.</p></div>
         
@@ -1453,9 +1460,9 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#after_initialize(*names)-macro" class="signature"><strong>after_initialize</strong>(*names)</a>
+        <a href="#after_initialize%28%2Anames%29-macro" class="signature"><strong>after_initialize</strong>(*names)</a>
         
-          <div class="summary"><p>Allows registering <code><a href="../../Jennifer/View/Base.html#after_initialize(*names)-macro">after_initialize</a></code> callbacks.</p></div>
+          <div class="summary"><p>Allows registering <code><a href="../../Jennifer/View/Base.html#after_initialize%28%2Anames%29-macro">after_initialize</a></code> callbacks.</p></div>
         
       </li>
     
@@ -1480,7 +1487,7 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/Model/Mapping.html">Jennifer::Model::Mapping</a></code></h3>
   
   
-    <a href="../../Jennifer/Model/Mapping.html#attribute_metadata(name:String%7CSymbol)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Mapping.html#attribute_metadata%28name%3AString%7CSymbol%29-instance-method" class="tooltip">
       <span>attribute_metadata(name : String | Symbol)</span>
     attribute_metadata</a>
     
@@ -1519,22 +1526,22 @@
   <h3>Instance methods inherited from class <code><a href="../../Jennifer/Model/Resource.html">Jennifer::Model::Resource</a></code></h3>
   
   
-    <a href="../../Jennifer/Model/Resource.html#append_relation(name:String,hash)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#append_relation%28name%3AString%2Chash%29-instance-method" class="tooltip">
       <span>append_relation(name : String, hash)</span>
     append_relation</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#attribute(name:String%7CSymbol,raise_exception:Bool=true)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#attribute%28name%3AString%7CSymbol%2Craise_exception%3ABool%3Dtrue%29-instance-method" class="tooltip">
       <span>attribute(name : String | Symbol, raise_exception : Bool = <span class="n">true</span>)</span>
     attribute</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#get_relation(name:String)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#get_relation%28name%3AString%29-instance-method" class="tooltip">
       <span>get_relation(name : String)</span>
     get_relation</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#inspect(io):Nil-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#inspect%28io%29%3ANil-instance-method" class="tooltip">
       <span>inspect(io) : Nil</span>
     inspect</a>, 
     
@@ -1544,7 +1551,7 @@
     primary</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#set_inverse_of(name:String,object)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#set_inverse_of%28name%3AString%2Cobject%29-instance-method" class="tooltip">
       <span>set_inverse_of(name : String, object)</span>
     set_inverse_of</a>, 
     
@@ -1554,7 +1561,7 @@
     to_h</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#to_json(only:Array(String)?=nil,except:Array(String)?=nil)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#to_json%28only%3AArray%28String%29%3F%3Dnil%2Cexcept%3AArray%28String%29%3F%3Dnil%29-instance-method" class="tooltip">
       <span>to_json(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>)<br/>to_json(only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)<br/>to_json(json : JSON::Builder)<br/>to_json(json : JSON::Builder, only : Array(String)? = <span class="n">nil</span>, except : Array(String)? = <span class="n">nil</span>, &)</span>
     to_json</a>, 
     
@@ -1584,12 +1591,12 @@
     all</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#build(values:Hash(Symbol,Jennifer::DBAny)%7CNamedTuple)-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#build%28values%3AHash%28Symbol%2CJennifer%3A%3ADBAny%29%7CNamedTuple%29-class-method" class="tooltip">
       <span>build(values : Hash(Symbol, Jennifer::DBAny) | NamedTuple)<br/>build(values : Hash(String, Jennifer::DBAny))<br/>build(**values)</span>
     build</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#c(name:String%7CSymbol,relation)-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#c%28name%3AString%7CSymbol%2Crelation%29-class-method" class="tooltip">
       <span>c(name : String | Symbol, relation)<br/>c(name : String | Symbol)</span>
     c</a>, 
     
@@ -1604,7 +1611,7 @@
     read_adapter</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#relation(name)-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#relation%28name%29-class-method" class="tooltip">
       <span>relation(name)</span>
     relation</a>, 
     
@@ -1614,19 +1621,14 @@
     star</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#table_name(value:String%7CSymbol)-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#table_name%28value%3AString%7CSymbol%29-class-method" class="tooltip">
       <span>table_name(value : String | Symbol)<br/>table_name : String</span>
     table_name</a>, 
     
   
-    <a href="../../Jennifer/Model/Resource.html#transaction(&)-class-method" class="tooltip">
+    <a href="../../Jennifer/Model/Resource.html#transaction%28%26%29-class-method" class="tooltip">
       <span>transaction(&)</span>
     transaction</a>, 
-    
-  
-    <a href="../../Jennifer/Model/Resource.html#where(&)-class-method" class="tooltip">
-      <span>where(&)<br/>where(conditions : Hash(Symbol, _))</span>
-    where</a>, 
     
   
     <a href="../../Jennifer/Model/Resource.html#write_adapter-class-method" class="tooltip">
@@ -1652,22 +1654,22 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/Model/RelationDefinition.html">Jennifer::Model::RelationDefinition</a></code></h3>
   
   
-    <a href="../../Jennifer/Model/RelationDefinition.html#append_relation(name:String,hash)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/RelationDefinition.html#append_relation%28name%3AString%2Chash%29-instance-method" class="tooltip">
       <span>append_relation(name : String, hash)</span>
     append_relation</a>, 
     
   
-    <a href="../../Jennifer/Model/RelationDefinition.html#get_relation(name:String)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/RelationDefinition.html#get_relation%28name%3AString%29-instance-method" class="tooltip">
       <span>get_relation(name : String)</span>
     get_relation</a>, 
     
   
-    <a href="../../Jennifer/Model/RelationDefinition.html#relation_retrieved(name:String)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/RelationDefinition.html#relation_retrieved%28name%3AString%29-instance-method" class="tooltip">
       <span>relation_retrieved(name : String)</span>
     relation_retrieved</a>, 
     
   
-    <a href="../../Jennifer/Model/RelationDefinition.html#set_inverse_of(name:String,object)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/RelationDefinition.html#set_inverse_of%28name%3AString%2Cobject%29-instance-method" class="tooltip">
       <span>set_inverse_of(name : String, object)</span>
     set_inverse_of</a>
     
@@ -1696,17 +1698,17 @@
   <h3>Instance methods inherited from module <code><a href="../../Jennifer/Model/Translation.html">Jennifer::Model::Translation</a></code></h3>
   
   
-    <a href="../../Jennifer/Model/Translation.html#class_name:String-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Translation.html#class_name%3AString-instance-method" class="tooltip">
       <span>class_name : String</span>
     class_name</a>, 
     
   
-    <a href="../../Jennifer/Model/Translation.html#human_attribute_name(attribute:String%7CSymbol)-instance-method" class="tooltip">
-      <span>human_attribute_name(attribute : String | Symbol)</span>
+    <a href="../../Jennifer/Model/Translation.html#human_attribute_name%28name%3AString%7CSymbol%29-instance-method" class="tooltip">
+      <span>human_attribute_name(name : String | Symbol)</span>
     human_attribute_name</a>, 
     
   
-    <a href="../../Jennifer/Model/Translation.html#lookup_ancestors(&)-instance-method" class="tooltip">
+    <a href="../../Jennifer/Model/Translation.html#lookup_ancestors%28%26%29-instance-method" class="tooltip">
       <span>lookup_ancestors(&)</span>
     lookup_ancestors</a>
     
@@ -1759,7 +1761,7 @@
         
         def self.<strong>build</strong>(values : Hash | NamedTuple, new_record : Bool)
 
-        <a class="method-permalink" href="#build(values:Hash%7CNamedTuple,new_record:Bool)-class-method">#</a>
+        <a class="method-permalink" href="#build%28values%3AHash%7CNamedTuple%2Cnew_record%3ABool%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1770,7 +1772,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/view/base.cr#L58" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/view/base.cr#L58" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1780,7 +1782,7 @@
         
         def self.<strong>build</strong>(pull : DB::ResultSet)
 
-        <a class="method-permalink" href="#build(pull:DB::ResultSet)-class-method">#</a>
+        <a class="method-permalink" href="#build%28pull%3ADB%3A%3AResultSet%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1791,7 +1793,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/view/base.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/view/base.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1807,7 +1809,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/view/base.cr#L62" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/view/base.cr#L62" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1817,13 +1819,13 @@
         
         def self.<strong>relation</strong>(name)
 
-        <a class="method-permalink" href="#relation(name)-class-method">#</a>
+        <a class="method-permalink" href="#relation%28name%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/view/base.cr#L77" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/view/base.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1833,20 +1835,19 @@
         
         def self.<strong>view_name</strong>(value : String)
 
-        <a class="method-permalink" href="#view_name(value:String)-class-method">#</a>
+        <a class="method-permalink" href="#view_name%28value%3AString%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Sets view name.</p>
-
 <p>An alias for <code>.table_name(value : String)</code>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/view/base.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/view/base.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1862,14 +1863,13 @@
         <div class="doc">
           
           <p>Returns view name.</p>
-
 <p>An alias for <code>.table_name</code>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/view/base.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/view/base.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1890,7 +1890,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/view/base.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/view/base.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1918,9 +1918,7 @@
         <div class="doc">
           
           <p>Reloads the record from the database.</p>
-
 <p>This method finds record by its primary key and modifies the receiver in-place.</p>
-
 <pre><code class="language-crystal">user <span class="o">=</span> <span class="t">AdminUser</span>.first!
 user.name <span class="o">=</span> <span class="s">&quot;John&quot;</span>
 user.reload <span class="c"># =&gt; #&lt;AdminUser id: 1, name: &quot;Will&quot;&gt;</span></code></pre>
@@ -1929,7 +1927,7 @@ user.reload <span class="c"># =&gt; #&lt;AdminUser id: 1, name: &quot;Will&quot;
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/view/base.cr#L90" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/view/base.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1951,18 +1949,18 @@ user.reload <span class="c"># =&gt; #&lt;AdminUser id: 1, name: &quot;Will&quot;
         
         macro <strong>after_initialize</strong>(*names)
 
-        <a class="method-permalink" href="#after_initialize(*names)-macro">#</a>
+        <a class="method-permalink" href="#after_initialize%28%2Anames%29-macro">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Allows registering <code><a href="../../Jennifer/View/Base.html#after_initialize(*names)-macro">after_initialize</a></code> callbacks.</p>
+          <p>Allows registering <code><a href="../../Jennifer/View/Base.html#after_initialize%28%2Anames%29-macro">after_initialize</a></code> callbacks.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/view/base.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/view/base.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>

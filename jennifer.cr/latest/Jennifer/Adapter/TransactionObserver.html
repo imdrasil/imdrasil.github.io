@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1298,7 +1303,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/transaction_observer.cr#L3" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/transaction_observer.cr#L3" target="_blank">
         jennifer/adapter/transaction_observer.cr
       </a>
     
@@ -1320,7 +1325,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(transaction)-class-method" class="signature"><strong>.new</strong>(transaction)</a>
+        <a href="#new%28transaction%3ADB%3A%3ATransaction%29-class-method" class="signature"><strong>.new</strong>(transaction : DB::Transaction)</a>
         
       </li>
     
@@ -1341,22 +1346,22 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#connection(*args,**options)-instance-method" class="signature"><strong>#connection</strong>(*args, **options)</a>
+        <a href="#connection%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#connection</strong>(*args, **options)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#connection(*args,**options,&)-instance-method" class="signature"><strong>#connection</strong>(*args, **options, &)</a>
+        <a href="#connection%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#connection</strong>(*args, **options, &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#observe_commit(block)-instance-method" class="signature"><strong>#observe_commit</strong>(block)</a>
+        <a href="#observe_commit%28block%29-instance-method" class="signature"><strong>#observe_commit</strong>(block)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#observe_rollback(block)-instance-method" class="signature"><strong>#observe_rollback</strong>(block)</a>
+        <a href="#observe_rollback%28block%29-instance-method" class="signature"><strong>#observe_rollback</strong>(block)</a>
         
       </li>
     
@@ -1366,12 +1371,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#transaction:DB::Transaction-instance-method" class="signature"><strong>#transaction</strong> : DB::Transaction</a>
+        <a href="#transaction%3ADB%3A%3ATransaction-instance-method" class="signature"><strong>#transaction</strong> : DB::Transaction</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#transaction=(transaction:DB::Transaction)-instance-method" class="signature"><strong>#transaction=</strong>(transaction : DB::Transaction)</a>
+        <a href="#transaction%3D%28transaction%3ADB%3A%3ATransaction%29-instance-method" class="signature"><strong>#transaction=</strong>(transaction : DB::Transaction)</a>
         
       </li>
     
@@ -1420,18 +1425,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(transaction)-class-method">
+    <div class="entry-detail" id="new(transaction:DB::Transaction)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(transaction)
+        def self.<strong>new</strong>(transaction : DB::Transaction)
 
-        <a class="method-permalink" href="#new(transaction)-class-method">#</a>
+        <a class="method-permalink" href="#new%28transaction%3ADB%3A%3ATransaction%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/transaction_observer.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/transaction_observer.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1455,13 +1460,13 @@
         
         def <strong>connection</strong>(*args, **options)
 
-        <a class="method-permalink" href="#connection(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#connection%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/transaction_observer.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/transaction_observer.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1471,13 +1476,13 @@
         
         def <strong>connection</strong>(*args, **options, &)
 
-        <a class="method-permalink" href="#connection(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#connection%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/transaction_observer.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/transaction_observer.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1487,13 +1492,13 @@
         
         def <strong>observe_commit</strong>(block)
 
-        <a class="method-permalink" href="#observe_commit(block)-instance-method">#</a>
+        <a class="method-permalink" href="#observe_commit%28block%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/transaction_observer.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/transaction_observer.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1503,13 +1508,13 @@
         
         def <strong>observe_rollback</strong>(block)
 
-        <a class="method-permalink" href="#observe_rollback(block)-instance-method">#</a>
+        <a class="method-permalink" href="#observe_rollback%28block%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/transaction_observer.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/transaction_observer.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1525,7 +1530,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/transaction_observer.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/transaction_observer.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1535,13 +1540,13 @@
         
         def <strong>transaction</strong> : DB::Transaction
 
-        <a class="method-permalink" href="#transaction:DB::Transaction-instance-method">#</a>
+        <a class="method-permalink" href="#transaction%3ADB%3A%3ATransaction-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/transaction_observer.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/transaction_observer.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1551,13 +1556,13 @@
         
         def <strong>transaction=</strong>(transaction : DB::Transaction)
 
-        <a class="method-permalink" href="#transaction=(transaction:DB::Transaction)-instance-method">#</a>
+        <a class="method-permalink" href="#transaction%3D%28transaction%3ADB%3A%3ATransaction%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/transaction_observer.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/transaction_observer.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1573,7 +1578,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/transaction_observer.cr#L27" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/transaction_observer.cr#L27" target="_blank">View source</a>]
         
       </div>
     </div>

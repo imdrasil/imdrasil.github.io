@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://imdrasil.github.io/jennifer.cr/docs/configuration.html" />
 <meta property="og:site_name" content="Imdrasil Homebrew Stuff" />
 <script type="application/ld+json">
-{"description":"Personal site","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/configuration.html","headline":"Imdrasil Homebrew Stuff","@context":"https://schema.org"}</script>
+{"headline":"Imdrasil Homebrew Stuff","@type":"WebPage","url":"https://imdrasil.github.io/jennifer.cr/docs/configuration.html","description":"Personal site","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://imdrasil.github.io/feed.xml" title="Imdrasil Homebrew Stuff" /></head>
 <body><header class="site-header">
@@ -35,55 +35,55 @@
     <nav class="site-nav">
       <div class="trigger">
         
-          <a class="page-link" href="./timestamps">Timestamps</a>
-        
-          <a class="page-link" href="./view">Views</a>
-        
-          <a class="page-link" href="./query_dsl">Query DSL</a>
-        
-          <a class="page-link" href="./getting_started">Getting started</a>
-        
-          <a class="page-link" href="./configuration">Configuration</a>
-        
-          <a class="page-link" href="./time">Time</a>
-        
           <a class="page-link" href="./aggregation">Aggregations</a>
-        
-          <a class="page-link" href="./record">Record</a>
-        
-          <a class="page-link" href="./callbacks">Callbacks</a>
-        
-          <a class="page-link" href="./index">Jennifer Documentation</a>
-        
-          <a class="page-link" href="./model_sti">STI</a>
-        
-          <a class="page-link" href="./model_mapping">Mapping</a>
-        
-          <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
-        
-          <a class="page-link" href="./crud">CRUD</a>
-        
-          <a class="page-link" href="./model_scopes">Scopes</a>
-        
-          <a class="page-link" href="./relations">Relations</a>
-        
-          <a class="page-link" href="./validation">Validation</a>
-        
-          <a class="page-link" href="./eager_loading">Eager Loading</a>
-        
-          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
-        
-          <a class="page-link" href="./migration">Migration</a>
-        
-          <a class="page-link" href="./pagination_and_ordering">Pagination &amp; Ordering</a>
-        
-          <a class="page-link" href="./command_line">Command Line</a>
-        
-          <a class="page-link" href="./internationalization">Internationalization</a>
         
           <a class="page-link" href="./authentication">Authentication</a>
         
+          <a class="page-link" href="./callbacks">Callbacks</a>
+        
+          <a class="page-link" href="./command_line">Command Line</a>
+        
+          <a class="page-link" href="./configuration">Configuration</a>
+        
+          <a class="page-link" href="./crud">CRUD</a>
+        
+          <a class="page-link" href="./eager_loading">Eager Loading</a>
+        
+          <a class="page-link" href="./getting_started">Getting started</a>
+        
+          <a class="page-link" href="./index">Jennifer Documentation</a>
+        
+          <a class="page-link" href="./internationalization">Internationalization</a>
+        
+          <a class="page-link" href="./migration">Migration</a>
+        
+          <a class="page-link" href="./model_mapping">Mapping</a>
+        
+          <a class="page-link" href="./model_scopes">Scopes</a>
+        
+          <a class="page-link" href="./model_sti">STI</a>
+        
+          <a class="page-link" href="./multiple_adapters">Multiple adapters</a>
+        
+          <a class="page-link" href="./pagination_and_ordering">Pagination &amp; Ordering</a>
+        
+          <a class="page-link" href="./query_dsl">Query DSL</a>
+        
+          <a class="page-link" href="./record">Record</a>
+        
+          <a class="page-link" href="./relations">Relationships</a>
+        
           <a class="page-link" href="./serialization">Serialization</a>
+        
+          <a class="page-link" href="./time">Time</a>
+        
+          <a class="page-link" href="./timestamps">Timestamps</a>
+        
+          <a class="page-link" href="./transaction_and_lock">Transaction &amp; Lock</a>
+        
+          <a class="page-link" href="./validation">Validation</a>
+        
+          <a class="page-link" href="./view">Views</a>
         
       </div>
     </nav>
@@ -262,6 +262,11 @@
   <li><code class="language-plaintext highlighter-rouge">pool_size</code> - count of simultaneously alive database connection; default: <code class="language-plaintext highlighter-rouge">1</code></li>
   <li><code class="language-plaintext highlighter-rouge">retry_attempts</code> - count of attempts to connect to the database before raising an exception; default: <code class="language-plaintext highlighter-rouge">1</code></li>
   <li><code class="language-plaintext highlighter-rouge">retry_delay</code> - amount of seconds to wait between connection retries; default: <code class="language-plaintext highlighter-rouge">1.0</code></li>
+  <li><code class="language-plaintext highlighter-rouge">auth_methods</code> - comma separated list of auth methods; optional; default: <code class="language-plaintext highlighter-rouge">""</code>; available methods: <code class="language-plaintext highlighter-rouge">cleartext,md5,scram-sha-256,scram-sha-256-plus</code>; <code class="language-plaintext highlighter-rouge">crystal-pg</code> uses <code class="language-plaintext highlighter-rouge">scram-sha-256-plus,scram-sha-256,md5</code> if not provided</li>
+  <li><code class="language-plaintext highlighter-rouge">sslmode</code> - determines whether or with what priority a secure SSL TCP/IP connection will be negotiated with the server; optional; default <code class="language-plaintext highlighter-rouge">""</code>; There are six modes: <code class="language-plaintext highlighter-rouge">disable</code>, <code class="language-plaintext highlighter-rouge">allow</code>, <code class="language-plaintext highlighter-rouge">prefer</code>, <code class="language-plaintext highlighter-rouge">require</code>, <code class="language-plaintext highlighter-rouge">verify-ca</code>, <code class="language-plaintext highlighter-rouge">verify-full</code>; <code class="language-plaintext highlighter-rouge">crystal-pg</code> uses <code class="language-plaintext highlighter-rouge">prefer</code> if not provided</li>
+  <li><code class="language-plaintext highlighter-rouge">sslcert</code> - file path to client SSL certificate; optional; default: <code class="language-plaintext highlighter-rouge">""</code></li>
+  <li><code class="language-plaintext highlighter-rouge">sslkey</code> - file path to secret key used for the client certificate; optional; default: <code class="language-plaintext highlighter-rouge">""</code></li>
+  <li><code class="language-plaintext highlighter-rouge">sslrootcert</code> - file path to SSL certificate authority (CA) certificate(s) which is used to verify the server’s certificate; optional; default: <code class="language-plaintext highlighter-rouge">""</code></li>
   <li><code class="language-plaintext highlighter-rouge">checkout_timeout</code> - amount of seconds to be wait for connection; default: <code class="language-plaintext highlighter-rouge">5.0</code></li>
   <li><code class="language-plaintext highlighter-rouge">local_time_zone_name</code> - local time zone name; automatically taken from <code class="language-plaintext highlighter-rouge">Time::Location.local.name</code></li>
   <li><code class="language-plaintext highlighter-rouge">skip_dumping_schema_sql</code> - skip dumping database structure if set to <code class="language-plaintext highlighter-rouge">true</code>; default: <code class="language-plaintext highlighter-rouge">false</code></li>

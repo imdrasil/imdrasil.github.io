@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1310,7 +1315,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/joining.cr#L3" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/joining.cr#L3" target="_blank">
         jennifer/query_builder/joining.cr
       </a>
     
@@ -1336,59 +1341,58 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#join(source:Class,table_alias:String?=nil,type=:inner,relation:String?=nil,&)-instance-method" class="signature"><strong>#join</strong>(source : Class, table_alias : String? = <span class="n">nil</span>, type = <span class="n">:inner</span>, relation : String? = <span class="n">nil</span>, &)</a>
+        <a href="#join%28source%3AClass%2Ctable_alias%3AString%3F%3Dnil%2Ctype%3D%3Ainner%2Crelation%3AString%3F%3Dnil%2C%26%29-instance-method" class="signature"><strong>#join</strong>(source : Class, table_alias : String? = <span class="n">nil</span>, type = <span class="n">:inner</span>, relation : String? = <span class="n">nil</span>, &)</a>
         
           <div class="summary"><p>Adds <code>JOIN</code> of the <em>source</em>'s class table to the request.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#join(source:String,table_alias:String?=nil,type=:inner,relation:String?=nil,&)-instance-method" class="signature"><strong>#join</strong>(source : String, table_alias : String? = <span class="n">nil</span>, type = <span class="n">:inner</span>, relation : String? = <span class="n">nil</span>, &)</a>
+        <a href="#join%28source%3AString%2Ctable_alias%3AString%3F%3Dnil%2Ctype%3D%3Ainner%2Crelation%3AString%3F%3Dnil%2C%26%29-instance-method" class="signature"><strong>#join</strong>(source : String, table_alias : String? = <span class="n">nil</span>, type = <span class="n">:inner</span>, relation : String? = <span class="n">nil</span>, &)</a>
         
           <div class="summary"><p>Adds <code>JOIN</code> of <em>source</em> table to the request.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#join(source:Query,table_alias:String,type=:inner,&)-instance-method" class="signature"><strong>#join</strong>(source : Query, table_alias : String, type = <span class="n">:inner</span>, &)</a>
+        <a href="#join%28source%3AQuery%2Ctable_alias%3AString%2Ctype%3D%3Ainner%2C%26%29-instance-method" class="signature"><strong>#join</strong>(source : Query, table_alias : String, type = <span class="n">:inner</span>, &)</a>
         
           <div class="summary"><p>Adds <code>JOIN</code> of <em>source</em> query to the request.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#lateral_join(source:Query,table_alias:String,type=:inner,&)-instance-method" class="signature"><strong>#lateral_join</strong>(source : Query, table_alias : String, type = <span class="n">:inner</span>, &)</a>
+        <a href="#lateral_join%28source%3AQuery%2Ctable_alias%3AString%2Ctype%3D%3Ainner%2C%26%29-instance-method" class="signature"><strong>#lateral_join</strong>(source : Query, table_alias : String, type = <span class="n">:inner</span>, &)</a>
         
           <div class="summary"><p>Adds <code>JOIN LATERAL</code> of <em>source</em> query to the request.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#left_join(source:Class,table_alias:String?=nil,&)-instance-method" class="signature"><strong>#left_join</strong>(source : Class, table_alias : String? = <span class="n">nil</span>, &)</a>
+        <a href="#left_join%28source%3AClass%2Ctable_alias%3AString%3F%3Dnil%2C%26%29-instance-method" class="signature"><strong>#left_join</strong>(source : Class, table_alias : String? = <span class="n">nil</span>, &)</a>
         
           <div class="summary"><p>Adds <code>LEFT JOIN</code> of the <em>source</em>'s class table to the request.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#left_join(source:String,table_alias:String?=nil,&)-instance-method" class="signature"><strong>#left_join</strong>(source : String, table_alias : String? = <span class="n">nil</span>, &)</a>
+        <a href="#left_join%28source%3AString%2Ctable_alias%3AString%3F%3Dnil%2C%26%29-instance-method" class="signature"><strong>#left_join</strong>(source : String, table_alias : String? = <span class="n">nil</span>, &)</a>
         
           <div class="summary"><p>Adds <code>LEFT JOIN</code> of <em>source</em> table to the request.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#right_join(source:Class,table_alias:String?=nil,&)-instance-method" class="signature"><strong>#right_join</strong>(source : Class, table_alias : String? = <span class="n">nil</span>, &)</a>
+        <a href="#right_join%28source%3AClass%2Ctable_alias%3AString%3F%3Dnil%2C%26%29-instance-method" class="signature"><strong>#right_join</strong>(source : Class, table_alias : String? = <span class="n">nil</span>, &)</a>
         
           <div class="summary"><p>Adds <code>RIGHT JOIN</code> of the <em>source</em>'s class table to the request.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#right_join(source:String,table_alias:String?=nil,&)-instance-method" class="signature"><strong>#right_join</strong>(source : String, table_alias : String? = <span class="n">nil</span>, &)</a>
+        <a href="#right_join%28source%3AString%2Ctable_alias%3AString%3F%3Dnil%2C%26%29-instance-method" class="signature"><strong>#right_join</strong>(source : String, table_alias : String? = <span class="n">nil</span>, &)</a>
         
-          <div class="summary"><h1><a id="adds-right-join-of-source-table-to-the-request." class="anchor" href="#adds-right-join-of-source-table-to-the-request.">
-  <svg class="octicon-link" aria-hidden="true">
+          <div class="summary"><h1><a id="adds-right-join-of-source-table-to-the-request." class="anchor" href="#adds-right-join-of-source-table-to-the-request.">  <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Adds <code>RIGHT JOIN</code> of <em>source</em> table to the request.</h1></div>
@@ -1424,21 +1428,19 @@
         
         def <strong>join</strong>(source : Class, table_alias : String? = <span class="n">nil</span>, type = <span class="n">:inner</span>, relation : String? = <span class="n">nil</span>, &)
 
-        <a class="method-permalink" href="#join(source:Class,table_alias:String?=nil,type=:inner,relation:String?=nil,&)-instance-method">#</a>
+        <a class="method-permalink" href="#join%28source%3AClass%2Ctable_alias%3AString%3F%3Dnil%2Ctype%3D%3Ainner%2Crelation%3AString%3F%3Dnil%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds <code>JOIN</code> of the <em>source</em>'s class table to the request.</p>
-
 <p>You can pass table alias which will be automatically used by given expression builder.</p>
-
 <p>Method block provides two arguments:</p>
-
-<ul><li>expression builder for the table that is mentioned in the <code>FROM</code> clause;</li><li>expression builder for the table that is joined.</li></ul>
-
+<ul>
+<li>expression builder for the table that is mentioned in the <code>FROM</code> clause;</li>
+<li>expression builder for the table that is joined.</li>
+</ul>
 <p>At the same time block is executed in context of <strong>joined</strong> table.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.join(<span class="t">Address</span>) { <span class="o">|</span>t<span class="o">|</span> _contact_id <span class="o">==</span> t._id }
 <span class="c"># =&gt; JOIN addresses ON addresses.contact_id = contacts.id</span>
 
@@ -1449,7 +1451,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/joining.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/joining.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1459,13 +1461,12 @@
         
         def <strong>join</strong>(source : String, table_alias : String? = <span class="n">nil</span>, type = <span class="n">:inner</span>, relation : String? = <span class="n">nil</span>, &)
 
-        <a class="method-permalink" href="#join(source:String,table_alias:String?=nil,type=:inner,relation:String?=nil,&)-instance-method">#</a>
+        <a class="method-permalink" href="#join%28source%3AString%2Ctable_alias%3AString%3F%3Dnil%2Ctype%3D%3Ainner%2Crelation%3AString%3F%3Dnil%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds <code>JOIN</code> of <em>source</em> table to the request.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.join(<span class="s">&quot;addresses&quot;</span>) { <span class="o">|</span>t<span class="o">|</span> _contact_id <span class="o">==</span> t._id }
 <span class="c"># =&gt; JOIN addresses ON addresses.contact_id = contacts.id</span></code></pre>
         </div>
@@ -1473,7 +1474,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/joining.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/joining.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1483,13 +1484,12 @@
         
         def <strong>join</strong>(source : <a href="../../Jennifer/QueryBuilder/Query.html">Query</a>, table_alias : String, type = <span class="n">:inner</span>, &)
 
-        <a class="method-permalink" href="#join(source:Query,table_alias:String,type=:inner,&)-instance-method">#</a>
+        <a class="method-permalink" href="#join%28source%3AQuery%2Ctable_alias%3AString%2Ctype%3D%3Ainner%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds <code>JOIN</code> of <em>source</em> query to the request.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.join(<span class="t">Address</span>.all, <span class="s">&quot;some_table&quot;</span>) { <span class="o">|</span>t<span class="o">|</span> _contact_id <span class="o">==</span> t._id }
 <span class="c"># =&gt; JOIN (SELECT addresses.* FROM addresses) some_table ON some_table.contact_id = contacts.id</span></code></pre>
         </div>
@@ -1497,7 +1497,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/joining.cr#L50" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/joining.cr#L50" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1507,13 +1507,12 @@
         
         def <strong>lateral_join</strong>(source : <a href="../../Jennifer/QueryBuilder/Query.html">Query</a>, table_alias : String, type = <span class="n">:inner</span>, &)
 
-        <a class="method-permalink" href="#lateral_join(source:Query,table_alias:String,type=:inner,&)-instance-method">#</a>
+        <a class="method-permalink" href="#lateral_join%28source%3AQuery%2Ctable_alias%3AString%2Ctype%3D%3Ainner%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds <code>JOIN LATERAL</code> of <em>source</em> query to the request.</p>
-
 <pre><code class="language-crystal"><span class="t">Contact</span>.all.lateral_join(<span class="t">Address</span>.all, <span class="s">&quot;some_table&quot;</span>) { <span class="o">|</span>t<span class="o">|</span> _contact_id <span class="o">==</span> t._id }
 <span class="c"># =&gt; JOIN LATERAL (SELECT addresses.* FROM addresses) some_table ON some_table.contact_id = contacts.id</span></code></pre>
         </div>
@@ -1521,7 +1520,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/joining.cr#L63" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/joining.cr#L63" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1531,20 +1530,19 @@
         
         def <strong>left_join</strong>(source : Class, table_alias : String? = <span class="n">nil</span>, &)
 
-        <a class="method-permalink" href="#left_join(source:Class,table_alias:String?=nil,&)-instance-method">#</a>
+        <a class="method-permalink" href="#left_join%28source%3AClass%2Ctable_alias%3AString%3F%3Dnil%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds <code>LEFT JOIN</code> of the <em>source</em>'s class table to the request.</p>
-
-<p>Alias for <code><a href="../../Jennifer/QueryBuilder/Joining.html#join(source:Query,table_alias:String,type=:inner,&)-instance-method">#join(source, table_alias, :left)</a></code>.</p>
+<p>Alias for <code><a href="../../Jennifer/QueryBuilder/Joining.html#join%28source%3AQuery%2Ctable_alias%3AString%2Ctype%3D%3Ainner%2C%26%29-instance-method">#join(source, table_alias, :left)</a></code>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/joining.cr#L73" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/joining.cr#L73" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1554,20 +1552,19 @@
         
         def <strong>left_join</strong>(source : String, table_alias : String? = <span class="n">nil</span>, &)
 
-        <a class="method-permalink" href="#left_join(source:String,table_alias:String?=nil,&)-instance-method">#</a>
+        <a class="method-permalink" href="#left_join%28source%3AString%2Ctable_alias%3AString%3F%3Dnil%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds <code>LEFT JOIN</code> of <em>source</em> table to the request.</p>
-
-<p>Alias for <code><a href="../../Jennifer/QueryBuilder/Joining.html#join(source:Query,table_alias:String,type=:inner,&)-instance-method">#join(source, table_alias, :left)</a></code>.</p>
+<p>Alias for <code><a href="../../Jennifer/QueryBuilder/Joining.html#join%28source%3AQuery%2Ctable_alias%3AString%2Ctype%3D%3Ainner%2C%26%29-instance-method">#join(source, table_alias, :left)</a></code>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/joining.cr#L80" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/joining.cr#L80" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1577,20 +1574,19 @@
         
         def <strong>right_join</strong>(source : Class, table_alias : String? = <span class="n">nil</span>, &)
 
-        <a class="method-permalink" href="#right_join(source:Class,table_alias:String?=nil,&)-instance-method">#</a>
+        <a class="method-permalink" href="#right_join%28source%3AClass%2Ctable_alias%3AString%3F%3Dnil%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds <code>RIGHT JOIN</code> of the <em>source</em>'s class table to the request.</p>
-
-<p>Alias for <code><a href="../../Jennifer/QueryBuilder/Joining.html#join(source:Query,table_alias:String,type=:inner,&)-instance-method">#join(source, table_alias, :right)</a></code>.</p>
+<p>Alias for <code><a href="../../Jennifer/QueryBuilder/Joining.html#join%28source%3AQuery%2Ctable_alias%3AString%2Ctype%3D%3Ainner%2C%26%29-instance-method">#join(source, table_alias, :right)</a></code>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/joining.cr#L87" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/joining.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1600,24 +1596,22 @@
         
         def <strong>right_join</strong>(source : String, table_alias : String? = <span class="n">nil</span>, &)
 
-        <a class="method-permalink" href="#right_join(source:String,table_alias:String?=nil,&)-instance-method">#</a>
+        <a class="method-permalink" href="#right_join%28source%3AString%2Ctable_alias%3AString%3F%3Dnil%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <h1><a id="adds-right-join-of-source-table-to-the-request." class="anchor" href="#adds-right-join-of-source-table-to-the-request.">
-  <svg class="octicon-link" aria-hidden="true">
+          <h1><a id="adds-right-join-of-source-table-to-the-request." class="anchor" href="#adds-right-join-of-source-table-to-the-request.">  <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Adds <code>RIGHT JOIN</code> of <em>source</em> table to the request.</h1>
-
-<p>Alias for <code><a href="../../Jennifer/QueryBuilder/Joining.html#join(source:Query,table_alias:String,type=:inner,&)-instance-method">#join(source, table_alias, :right)</a></code>.</p>
+<p>Alias for <code><a href="../../Jennifer/QueryBuilder/Joining.html#join%28source%3AQuery%2Ctable_alias%3AString%2Ctype%3D%3Ainner%2C%26%29-instance-method">#join(source, table_alias, :right)</a></code>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/query_builder/joining.cr#L94" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/query_builder/joining.cr#L94" target="_blank">View source</a>]
         
       </div>
     </div>

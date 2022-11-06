@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1286,14 +1291,18 @@
 
   <p>Represents a query in a <code>Connection</code>.
 It should be created by <code>QueryMethods</code>.</p>
-
 <h3><a id="note-to-implementors" class="anchor" href="#note-to-implementors">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Note to implementors</h3>
-
-<ol><li>Subclass <code>Statements</code></li><li><code>Statements</code> are created from a custom driver <code>Connection#prepare</code> method.</li><li><code>#perform_query</code> executes a query that is expected to return a <code>ResultSet</code></li><li><code>#perform_exec</code> executes a query that is expected to return an <code>ExecResult</code></li><li><code>#do_close</code> is called to release the statement resources.</li></ol>
+<ol>
+<li>Subclass <code>Statements</code></li>
+<li><code>Statements</code> are created from a custom driver <code>Connection#prepare</code> method.</li>
+<li><code>#perform_query</code> executes a query that is expected to return a <code>ResultSet</code></li>
+<li><code>#perform_exec</code> executes a query that is expected to return an <code>ExecResult</code></li>
+<li><code>#do_close</code> is called to release the statement resources.</li>
+</ol>
 
 
 
@@ -1332,14 +1341,14 @@ It should be created by <code>QueryMethods</code>.</p>
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/lib/db/src/db/statement.cr#L48" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/lib/db/src/db/statement.cr#L48" target="_blank">
         lib/db/src/db/statement.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/shared/db.cr#L2" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/shared/db.cr#L2" target="_blank">
         jennifer/adapter/shared/db.cr
       </a>
     

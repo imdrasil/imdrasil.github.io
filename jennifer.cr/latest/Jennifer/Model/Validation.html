@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1324,7 +1329,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/validation.cr#L5" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/validation.cr#L5" target="_blank">
         jennifer/model/validation.cr
       </a>
     
@@ -1350,28 +1355,28 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#errors:Errors-instance-method" class="signature"><strong>#errors</strong> : Errors</a>
+        <a href="#errors%3AErrors-instance-method" class="signature"><strong>#errors</strong> : Errors</a>
         
           <div class="summary"><p>Returns container with object's validation errors.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#invalid?-instance-method" class="signature"><strong>#invalid?</strong></a>
+        <a href="#invalid%3F-instance-method" class="signature"><strong>#invalid?</strong></a>
         
-          <div class="summary"><p>Returns whether <code><a href="../../Jennifer/Model/Validation.html#errors:Errors-instance-method">#errors</a></code> container has any error.</p></div>
+          <div class="summary"><p>Returns whether <code><a href="../../Jennifer/Model/Validation.html#errors%3AErrors-instance-method">#errors</a></code> container has any error.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#valid?-instance-method" class="signature"><strong>#valid?</strong></a>
+        <a href="#valid%3F-instance-method" class="signature"><strong>#valid?</strong></a>
         
           <div class="summary"><p>Returns whether object is valid.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#validate!(skip=false):Bool-instance-method" class="signature"><strong>#validate!</strong>(skip = <span class="n">false</span>) : Bool</a>
+        <a href="#validate%21%28skip%3Dfalse%29%3ABool-instance-method" class="signature"><strong>#validate!</strong>(skip = <span class="n">false</span>) : Bool</a>
         
           <div class="summary"><p>Invokes validation and callbacks.</p></div>
         
@@ -1416,7 +1421,7 @@
         
         def <strong>errors</strong> : <a href="../../Jennifer/Model/Errors.html">Errors</a>
 
-        <a class="method-permalink" href="#errors:Errors-instance-method">#</a>
+        <a class="method-permalink" href="#errors%3AErrors-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1427,7 +1432,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/validation.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/validation.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1437,20 +1442,19 @@
         
         def <strong>invalid?</strong>
 
-        <a class="method-permalink" href="#invalid?-instance-method">#</a>
+        <a class="method-permalink" href="#invalid%3F-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Returns whether <code><a href="../../Jennifer/Model/Validation.html#errors:Errors-instance-method">#errors</a></code> container has any error.</p>
-
+          <p>Returns whether <code><a href="../../Jennifer/Model/Validation.html#errors%3AErrors-instance-method">#errors</a></code> container has any error.</p>
 <p>Doesn't trigger validation.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/validation.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/validation.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1460,23 +1464,21 @@
         
         def <strong>valid?</strong>
 
-        <a class="method-permalink" href="#valid?-instance-method">#</a>
+        <a class="method-permalink" href="#valid%3F-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns whether object is valid.</p>
-
 <p>Each invocation of this method triggers validations from scratch. If you want to avoid this -
-use <code><a href="../../Jennifer/Model/Validation.html#invalid?-instance-method">#invalid?</a></code>.</p>
-
-<pre><code class="language-crystal"><span class="t">User</span>.<span class="k">new</span>({age: <span class="n">-2</span>}).valid?</code></pre>
+use <code><a href="../../Jennifer/Model/Validation.html#invalid%3F-instance-method">#invalid?</a></code>.</p>
+<pre><code class="language-crystal"><span class="t">User</span>.new({age: <span class="n">-2</span>}).valid?</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/validation.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/validation.cr#L24" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1486,7 +1488,7 @@ use <code><a href="../../Jennifer/Model/Validation.html#invalid?-instance-method
         
         def <strong>validate!</strong>(skip = <span class="n">false</span>) : Bool
 
-        <a class="method-permalink" href="#validate!(skip=false):Bool-instance-method">#</a>
+        <a class="method-permalink" href="#validate%21%28skip%3Dfalse%29%3ABool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1497,7 +1499,7 @@ use <code><a href="../../Jennifer/Model/Validation.html#invalid?-instance-method
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/model/validation.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/model/validation.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>

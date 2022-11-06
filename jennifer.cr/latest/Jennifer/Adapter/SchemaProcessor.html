@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="jennifer">
 
@@ -503,6 +503,11 @@
   
   <li class=" " data-id="jennifer/Jennifer/Model/PgEnumConverter" data-name="jennifer::model::pgenumconverter">
       <a href="../../Jennifer/Model/PgEnumConverter.html">PgEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="jennifer/Jennifer/Model/Querying" data-name="jennifer::model::querying">
+      <a href="../../Jennifer/Model/Querying.html">Querying</a>
       
     </li>
   
@@ -1314,7 +1319,7 @@
   </h2>
   
     
-      <a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L5" target="_blank">
+      <a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L5" target="_blank">
         jennifer/adapter/schema_processor.cr
       </a>
     
@@ -1336,7 +1341,7 @@
   <dl>
     
       <dt class="entry-const" id="ON_EVENT_ACTION_TRANSLATIONS">
-        <strong>ON_EVENT_ACTION_TRANSLATIONS</strong> = <code>{<span class="t">FkEventActions</span><span class="t">::</span><span class="t">NoAction</span> => <span class="s">&quot;NO ACTION&quot;</span>, <span class="t">FkEventActions</span><span class="t">::</span><span class="t">Restrict</span> => <span class="s">&quot;RESTRICT&quot;</span>, <span class="t">FkEventActions</span><span class="t">::</span><span class="t">Cascade</span> => <span class="s">&quot;CASCADE&quot;</span>, <span class="t">FkEventActions</span><span class="t">::</span><span class="t">SetNull</span> => <span class="s">&quot;SET NULL&quot;</span>}</code>
+        <strong>ON_EVENT_ACTION_TRANSLATIONS</strong> = <code>{<span class="t">FkEventActions</span><span class="t">::</span><span class="t">NoAction</span> <span class="o">=&gt;</span> <span class="s">&quot;NO ACTION&quot;</span>, <span class="t">FkEventActions</span><span class="t">::</span><span class="t">Restrict</span> <span class="o">=&gt;</span> <span class="s">&quot;RESTRICT&quot;</span>, <span class="t">FkEventActions</span><span class="t">::</span><span class="t">Cascade</span> <span class="o">=&gt;</span> <span class="s">&quot;CASCADE&quot;</span>, <span class="t">FkEventActions</span><span class="t">::</span><span class="t">SetNull</span> <span class="o">=&gt;</span> <span class="s">&quot;SET NULL&quot;</span>}</code>
       </dt>
       
     
@@ -1355,7 +1360,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(adapter)-class-method" class="signature"><strong>.new</strong>(adapter)</a>
+        <a href="#new%28adapter%3AJennifer%3A%3AAdapter%3A%3ABase%29-class-method" class="signature"><strong>.new</strong>(adapter : Jennifer::Adapter::Base)</a>
         
       </li>
     
@@ -1376,67 +1381,67 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#adapter:Adapter::Base-instance-method" class="signature"><strong>#adapter</strong> : Adapter::Base</a>
+        <a href="#adapter%3AAdapter%3A%3ABase-instance-method" class="signature"><strong>#adapter</strong> : Adapter::Base</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#add_column(table,name,opts:Hash)-instance-method" class="signature"><strong>#add_column</strong>(table, name, opts : Hash)</a>
+        <a href="#add_column%28table%2Cname%2Copts%3AHash%29-instance-method" class="signature"><strong>#add_column</strong>(table, name, opts : Hash)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#add_foreign_key(from_table,to_table,column,primary_key,name,on_update,on_delete)-instance-method" class="signature"><strong>#add_foreign_key</strong>(from_table, to_table, column, primary_key, name, on_update, on_delete)</a>
+        <a href="#add_foreign_key%28from_table%2Cto_table%2Ccolumn%2Cprimary_key%2Cname%2Con_update%2Con_delete%29-instance-method" class="signature"><strong>#add_foreign_key</strong>(from_table, to_table, column, primary_key, name, on_update, on_delete)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#add_index(table,name,fields:Array,type:Symbol?=nil,order:Hash?=nil,length:Hash?=nil)-instance-method" class="signature"><strong>#add_index</strong>(table, name, fields : Array, type : Symbol? = <span class="n">nil</span>, order : Hash? = <span class="n">nil</span>, length : Hash? = <span class="n">nil</span>)</a>
+        <a href="#add_index%28table%2Cname%2Cfields%3AArray%2Ctype%3ASymbol%3F%3Dnil%2Corder%3AHash%3F%3Dnil%2Clength%3AHash%3F%3Dnil%29-instance-method" class="signature"><strong>#add_index</strong>(table, name, fields : Array, type : Symbol? = <span class="n">nil</span>, order : Hash? = <span class="n">nil</span>, length : Hash? = <span class="n">nil</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#change_column(table,old_name,new_name,opts:Hash)-instance-method" class="signature"><strong>#change_column</strong>(table, old_name, new_name, opts : Hash)</a>
+        <a href="#change_column%28table%2Cold_name%2Cnew_name%2Copts%3AHash%29-instance-method" class="signature"><strong>#change_column</strong>(table, old_name, new_name, opts : Hash)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_table(builder:Migration::TableBuilder::CreateTable)-instance-method" class="signature"><strong>#create_table</strong>(builder : Migration::TableBuilder::CreateTable)</a>
+        <a href="#create_table%28builder%3AMigration%3A%3ATableBuilder%3A%3ACreateTable%29-instance-method" class="signature"><strong>#create_table</strong>(builder : Migration::TableBuilder::CreateTable)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_view(name,query,silent=true)-instance-method" class="signature"><strong>#create_view</strong>(name, query, silent = <span class="n">true</span>)</a>
+        <a href="#create_view%28name%2Cquery%2Csilent%3Dtrue%29-instance-method" class="signature"><strong>#create_view</strong>(name, query, silent = <span class="n">true</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#drop_column(table,name)-instance-method" class="signature"><strong>#drop_column</strong>(table, name)</a>
+        <a href="#drop_column%28table%2Cname%29-instance-method" class="signature"><strong>#drop_column</strong>(table, name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#drop_foreign_key(from_table,_to_table,name)-instance-method" class="signature"><strong>#drop_foreign_key</strong>(from_table, _to_table, name)</a>
+        <a href="#drop_foreign_key%28from_table%2C_to_table%2Cname%29-instance-method" class="signature"><strong>#drop_foreign_key</strong>(from_table, _to_table, name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#drop_index(table,name)-instance-method" class="signature"><strong>#drop_index</strong>(table, name)</a>
+        <a href="#drop_index%28table%2Cname%29-instance-method" class="signature"><strong>#drop_index</strong>(table, name)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#drop_table(builder:Migration::TableBuilder::DropTable)-instance-method" class="signature"><strong>#drop_table</strong>(builder : Migration::TableBuilder::DropTable)</a>
+        <a href="#drop_table%28builder%3AMigration%3A%3ATableBuilder%3A%3ADropTable%29-instance-method" class="signature"><strong>#drop_table</strong>(builder : Migration::TableBuilder::DropTable)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#drop_view(name,silent=true)-instance-method" class="signature"><strong>#drop_view</strong>(name, silent = <span class="n">true</span>)</a>
+        <a href="#drop_view%28name%2Csilent%3Dtrue%29-instance-method" class="signature"><strong>#drop_view</strong>(name, silent = <span class="n">true</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#rename_table(old_name:String%7CSymbol,new_name:String%7CSymbol)-instance-method" class="signature"><strong>#rename_table</strong>(old_name : String | Symbol, new_name : String | Symbol)</a>
+        <a href="#rename_table%28old_name%3AString%7CSymbol%2Cnew_name%3AString%7CSymbol%29-instance-method" class="signature"><strong>#rename_table</strong>(old_name : String | Symbol, new_name : String | Symbol)</a>
         
       </li>
     
@@ -1480,18 +1485,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(adapter)-class-method">
+    <div class="entry-detail" id="new(adapter:Jennifer::Adapter::Base)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(adapter)
+        def self.<strong>new</strong>(adapter : <a href="../../Jennifer/Adapter/Base.html">Jennifer::Adapter::Base</a>)
 
-        <a class="method-permalink" href="#new(adapter)-class-method">#</a>
+        <a class="method-permalink" href="#new%28adapter%3AJennifer%3A%3AAdapter%3A%3ABase%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1515,13 +1520,13 @@
         
         def <strong>adapter</strong> : <a href="../../Jennifer/Adapter/Base.html">Adapter::Base</a>
 
-        <a class="method-permalink" href="#adapter:Adapter::Base-instance-method">#</a>
+        <a class="method-permalink" href="#adapter%3AAdapter%3A%3ABase-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1531,13 +1536,13 @@
         
         def <strong>add_column</strong>(table, name, opts : Hash)
 
-        <a class="method-permalink" href="#add_column(table,name,opts:Hash)-instance-method">#</a>
+        <a class="method-permalink" href="#add_column%28table%2Cname%2Copts%3AHash%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L68" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L68" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1547,13 +1552,13 @@
         
         def <strong>add_foreign_key</strong>(from_table, to_table, column, primary_key, name, on_update, on_delete)
 
-        <a class="method-permalink" href="#add_foreign_key(from_table,to_table,column,primary_key,name,on_update,on_delete)-instance-method">#</a>
+        <a class="method-permalink" href="#add_foreign_key%28from_table%2Cto_table%2Ccolumn%2Cprimary_key%2Cname%2Con_update%2Con_delete%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L121" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L121" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1563,13 +1568,13 @@
         
         def <strong>add_index</strong>(table, name, fields : Array, type : Symbol? = <span class="n">nil</span>, order : Hash? = <span class="n">nil</span>, length : Hash? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#add_index(table,name,fields:Array,type:Symbol?=nil,order:Hash?=nil,length:Hash?=nil)-instance-method">#</a>
+        <a class="method-permalink" href="#add_index%28table%2Cname%2Cfields%3AArray%2Ctype%3ASymbol%3F%3Dnil%2Corder%3AHash%3F%3Dnil%2Clength%3AHash%3F%3Dnil%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1579,13 +1584,13 @@
         
         def <strong>change_column</strong>(table, old_name, new_name, opts : Hash)
 
-        <a class="method-permalink" href="#change_column(table,old_name,new_name,opts:Hash)-instance-method">#</a>
+        <a class="method-permalink" href="#change_column%28table%2Cold_name%2Cnew_name%2Copts%3AHash%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L77" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1595,13 +1600,13 @@
         
         def <strong>create_table</strong>(builder : <a href="../../Jennifer/Migration/TableBuilder/CreateTable.html">Migration::TableBuilder::CreateTable</a>)
 
-        <a class="method-permalink" href="#create_table(builder:Migration::TableBuilder::CreateTable)-instance-method">#</a>
+        <a class="method-permalink" href="#create_table%28builder%3AMigration%3A%3ATableBuilder%3A%3ACreateTable%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L90" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1611,13 +1616,13 @@
         
         def <strong>create_view</strong>(name, query, silent = <span class="n">true</span>)
 
-        <a class="method-permalink" href="#create_view(name,query,silent=true)-instance-method">#</a>
+        <a class="method-permalink" href="#create_view%28name%2Cquery%2Csilent%3Dtrue%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L102" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L102" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1627,13 +1632,13 @@
         
         def <strong>drop_column</strong>(table, name)
 
-        <a class="method-permalink" href="#drop_column(table,name)-instance-method">#</a>
+        <a class="method-permalink" href="#drop_column%28table%2Cname%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L64" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L64" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1643,13 +1648,13 @@
         
         def <strong>drop_foreign_key</strong>(from_table, _to_table, name)
 
-        <a class="method-permalink" href="#drop_foreign_key(from_table,_to_table,name)-instance-method">#</a>
+        <a class="method-permalink" href="#drop_foreign_key%28from_table%2C_to_table%2Cname%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L135" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L135" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1659,13 +1664,13 @@
         
         def <strong>drop_index</strong>(table, name)
 
-        <a class="method-permalink" href="#drop_index(table,name)-instance-method">#</a>
+        <a class="method-permalink" href="#drop_index%28table%2Cname%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L60" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L60" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1675,13 +1680,13 @@
         
         def <strong>drop_table</strong>(builder : <a href="../../Jennifer/Migration/TableBuilder/DropTable.html">Migration::TableBuilder::DropTable</a>)
 
-        <a class="method-permalink" href="#drop_table(builder:Migration::TableBuilder::DropTable)-instance-method">#</a>
+        <a class="method-permalink" href="#drop_table%28builder%3AMigration%3A%3ATableBuilder%3A%3ADropTable%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L86" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L86" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1691,13 +1696,13 @@
         
         def <strong>drop_view</strong>(name, silent = <span class="n">true</span>)
 
-        <a class="method-permalink" href="#drop_view(name,silent=true)-instance-method">#</a>
+        <a class="method-permalink" href="#drop_view%28name%2Csilent%3Dtrue%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L112" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L112" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1707,13 +1712,13 @@
         abstract 
         def <strong>rename_table</strong>(old_name : String | Symbol, new_name : String | Symbol)
 
-        <a class="method-permalink" href="#rename_table(old_name:String%7CSymbol,new_name:String%7CSymbol)-instance-method">#</a>
+        <a class="method-permalink" href="#rename_table%28old_name%3AString%7CSymbol%2Cnew_name%3AString%7CSymbol%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/imdrasil/jennifer.cr/blob/4b375baff918069103772937122dc2eed5fb428a/src/jennifer/adapter/schema_processor.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/imdrasil/jennifer.cr/blob/7a59a2f3b4fef1d23c50c2b045f3c80aef28d242/src/jennifer/adapter/schema_processor.cr#L38" target="_blank">View source</a>]
         
       </div>
     </div>
