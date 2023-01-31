@@ -9,7 +9,7 @@ gem "rouge"
 gem "natural_sort"
 gem "pry"
 
-gem "activesupport", "~>4.2.6"
+gem "activesupport", "~>6.0.6"
 gem "faraday", "= 1.0.1"
 gem "listen", "= 3.5.0"
 gem "nokogiri", "= 1.10.10"
